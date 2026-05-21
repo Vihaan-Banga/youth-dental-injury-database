@@ -36,14 +36,24 @@ Scripts will be created as needed during the extraction and harmonization phases
 
 ### `01_neiss_download.py`
 
-Downloads NEISS data for years 2000–present, filters for sports-related dental/orofacial injuries. NEISS data is available at:
+Downloads NEISS data for years 2000–present, filters for sports-related dental/orofacial injuries. NEISS landing page:
 https://www.cpsc.gov/Research--Statistics/NEISS-Injury-Data
 
-The site provides annual CSV files. The script:
-1. Downloads each year's CSV to `data/raw/neiss/`
-2. Filters for body part codes: 76 (mouth), 77 (lower face/jaw), 88 (face) — verify codes against NEISS coding manual
-3. Filters for sport-related product codes (basketball = 1205, football = 1211, etc.)
-4. Outputs filtered subset to `data/extracted/neiss_dental_sports.csv`
+**Note on access:** CPSC does not publish stable direct URLs for annual files. Two options:
+- Use the on-line query system (https://www.cpsc.gov/cgibin/NEISSQuery/) and pull tab-delimited exports by year. This is the canonical path but is interactive.
+- Use the archived annual data mirror on DataLumos (https://www.datalumos.org/datalumos/project/230963/view) for years up to the most recent archive. Acceptable as a programmatic source provided we cite the mirror.
+
+The script should:
+1. Download each year's tab-delimited file to `data/raw/neiss/neiss_<year>.tsv`
+2. Cache the coding manual under `data/raw/neiss/_reference/coding_manual_<year>.pdf`
+3. Filter rows by:
+   - `Body_Part == 88` (Mouth, including teeth) — primary filter
+   - `Body_Part == 76` (Face) — secondary filter, AND `Diagnosis` / narrative indicates dental involvement
+   - `Product_1 IN {1205, 1207, 1211, 1215, 1266, 1267, 1270, 1272, 1279, 1295, 1333, 3234, 3245, 3254, 3257, 3272, 3274, 3276, 3284, 5030, 5032, 5034, 5041}` (verified 2026-05-21; see `docs/decisions.md` for full code-to-sport mapping)
+   - `Age` between 5 and 22 (NEISS codes <2y old as 200+age_in_months — handle that quirk)
+4. Output filtered subset to `data/extracted/neiss_dental_sports.csv` using `DATA_DICTIONARY.md` column names
+
+**The body-part codes in PROTOCOL.md §4.1 are incorrect** (76/77/88 are mislabeled). The correct codes above come from the 2024 NEISS Coding Manual Appendix C, verified 2026-05-21. See `docs/decisions.md` for the correction entry.
 
 ### `02_pdf_extract.py`
 
