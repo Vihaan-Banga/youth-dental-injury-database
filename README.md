@@ -75,4 +75,4 @@ For strategic decisions, scoping questions, or drafting emails to advisors — u
 
 ## Contact
 
-Vihaan Banga — [email to be added]
+Vihaan Banga — GitHub [@Vihaan-Banga](https://github.com/Vihaan-Banga) ([email to be added])
