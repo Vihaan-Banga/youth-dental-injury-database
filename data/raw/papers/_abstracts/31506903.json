@@ -1,0 +1,33 @@
+{
+  "pmid": "31506903",
+  "title": "Injury Risk in New Zealand Rugby Union: A Nationwide Study of Injury Insurance Claims from 2005 to 2017.",
+  "abstract": "OBJECTIVES: The Accident Compensation Corporation is a compulsory, 24-h, no-fault personal injury insurance scheme in New Zealand. The purpose of this large-scale retrospective cohort study was to use Accident Compensation Corporation records to provide information about rugby injury epidemiology in New Zealand, with a focus on describing differences in risk by age and gender.\nMETHODS: A total of 635,657 rugby injury claims were made to the Accident Compensation Corporation for players aged 5-40 years over the period 2005-2017. Information about player numbers and estimates of player exposure was obtained from New Zealand Rugby, the administrative organisation for rugby in New Zealand.\nRESULTS: Over three quarters of claims (76%) were for soft-tissue injuries, with 11% resulting from fractures or dislocations, 6.7% from lacerations, 3.1% from concussions and 2.0% from dental injuries. Body regions injured included shoulder (14%), knee (14%), wrist/hand (13%), neck/spine (13%), head/face (12%), leg (11%) and ankle (10%). The probability of a player making at least one injury claim in a season (expressed as a percentage) was calculated under the assumption that the incidence of claims follows a Poisson distribution. Players aged 5-6 years had a probability of making at least one claim per season of 1.0%, compared to 8.3% for players aged 7-12 years, 35% for age 13-17 years, 53% for age 18-20 years, 57% for age 21-30 years and 47% for age 31-40 years. The overall probability of making at least one claim per season across all age groups was 29%. The relative claim rate for adults (players aged 18 years and over) was 3.92 (90% confidence interval 3.90-3.94) times that of children. Ten percent of players were female, and they sustained 6% of the injuries. Overall, the relative claim rate for female players was 0.57 times that of male players (90% confidence interval 0.56-0.58). The relative claim rate of female to male players tended to increase with age. There were very few female players aged over 30 years; however, those who did play had higher claim rates than male players of the same age group (1.49; 90% confidence interval 1.45-1.53).\nCONCLUSIONS: Injuries resulting from rugby are distributed across the body, and most of the claims are for soft-tissue injuries. Rates of injury increase rapidly through the teenage years until the early 20 s; for male players they then decrease until the mid-30 s. For female players, the injury rate does not decrease as players move into their 30 s. Combining Accident Compensation Corporation injury claim data with national player registration data provides useful information about the risks faced by New Zealand's community rugby players, and the insights derived are used in the development of rugby injury prevention programme content.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "mesh": [
+    "Adolescent",
+    "Adult",
+    "Age Factors",
+    "Athletic Injuries",
+    "Child",
+    "Child, Preschool",
+    "Female",
+    "Football",
+    "Humans",
+    "Insurance Claim Reporting",
+    "Male",
+    "New Zealand",
+    "Retrospective Studies",
+    "Sex Factors",
+    "Young Adult"
+  ],
+  "language": "eng",
+  "pub_year": "2020",
+  "journal": "Sports medicine (Auckland, N.Z.)",
+  "authors": [
+    "Quarrie K",
+    "Gianotti S",
+    "Murphy I"
+  ]
+}

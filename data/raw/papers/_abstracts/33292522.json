@@ -1,0 +1,17 @@
+{
+  "pmid": "33292522",
+  "title": "Random forest algorithm to identify factors associated with sports-related dental injuries in 6 to 13-year-old athlete children in Hamadan, Iran-2018 -a cross-sectional study.",
+  "abstract": "BACKGROUND: Traumatic dental injuries are one of the most important problems with major physical, aesthetic, psychological, social, functional and therapeutic problems that adversely affect the quality of life of children and adolescents. Recently the development of methods based on machine learning algorithms has provided researchers with more powerful tools to more accurate prediction in different domains and evaluate the factors affecting different phenomena more reliably than traditional regression models. This study tries to investigate the performance of random forest (RF) in identifying factors associated with sports-related dental injuries. Also, the accuracy of the RF model for predicting sports-related dental injuries was compared with logistic regression model as traditional competitor.\nMETHODS: This cross-sectional study was applied to 356 athlete children aged 6 to 13-year-old in Hamadan, Iran. Random forest and logistic regression constructed by using sports-related dental injuries as response variables and age, sex, parent's education, child's birth order, type of sports activity, duration of sports activity, awareness regarding the mouthguard, mouthguard use as input. A self-reported questionnaire was used to obtain information.\nRESULTS: Fifty-five (15.4%) subjects had experienced a sports-related dental injury. The mean age of children with sports injuries was significantly higher than children without the experience of injury (p = 0.006). The prevalence of injury was significantly higher in boys (p = 0.008). Children with illiterate mothers are more likely to be injured than children with educated mothers (p = 0.045). Awareness of mouthguard and its use during exercise has a significant effect on reducing the prevalence of injury among users (p < 0.001). Random forest model has a higher prediction accuracy (89.3%) for predicting sports-related dental injuries compared to the logistic regression (84.2%). The results of the relative importance of variables, based on RF showed, mouthguard use, and mouthguard awareness has more contributed importance in dental sport-related injuries' prediction. Subsequently, the importance of sex and age is in the next position.\nCONCLUSIONS: Using predictive models such as RF challenges existing inaccurate predictions due to high complexity and interactions between variables would be minimized. This helps to achieve more accurate identification of factors in sport-related dental injury among the general population of children.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "mesh": [],
+  "language": "eng",
+  "pub_year": "2020",
+  "journal": "BMC sports science, medicine & rehabilitation",
+  "authors": [
+    "Farhadian M",
+    "Torkaman S",
+    "Mojarad F"
+  ]
+}

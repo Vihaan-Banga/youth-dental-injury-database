@@ -1,0 +1,38 @@
+{
+  "pmid": "16809595",
+  "title": "Neighborhood social capital and dental injuries in Brazilian adolescents.",
+  "abstract": "OBJECTIVES: Evidence suggests that communities with higher levels of social capital have better health, but this association has not been explored specifically in relation to dental injury. We investigated the association between social capital and dental injury.\nMETHODS: We conducted a multilevel study assessed individual and neighborhood effects on dental injury of 1302 14- to 15-year-old adolescents in 39 schools of Distrito Federal, Brazil. Children underwent a dental examination and, with their parents, answered a questionnaire about their local environments. Our data analysis used logistic multilevel modeling of students and neighborhood (the latter defined by catchment areas of schools).\nRESULTS: The prevalence of dental injury was significantly lower in neighborhoods with higher levels of social capital, especially among boys. After control for individual and neighborhood variables, the adjusted odds ratio for a 1-unit increase in the standardized social capital index was 0.55 (95% confidence interval=0.37, 0.81; P=.002) among boys.\nCONCLUSIONS: Social capital may explain inequalities in rates of dental injury, especially among boys.",
+  "publication_types": [
+    "Journal Article",
+    "Research Support, Non-U.S. Gov't"
+  ],
+  "mesh": [
+    "Adolescent",
+    "Athletic Injuries",
+    "Brazil",
+    "Female",
+    "Health Status Indicators",
+    "Humans",
+    "Logistic Models",
+    "Male",
+    "Odds Ratio",
+    "Play and Playthings",
+    "Prevalence",
+    "Proportional Hazards Models",
+    "Residence Characteristics",
+    "Social Support",
+    "Socioeconomic Factors",
+    "Students",
+    "Surveys and Questionnaires",
+    "Tooth Injuries",
+    "Violence"
+  ],
+  "language": "eng",
+  "pub_year": "2006",
+  "journal": "American journal of public health",
+  "authors": [
+    "Pattussi MP",
+    "Hardy R",
+    "Sheiham A"
+  ]
+}

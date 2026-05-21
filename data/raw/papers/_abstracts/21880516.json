@@ -1,0 +1,47 @@
+{
+  "pmid": "21880516",
+  "title": "The association between orthodontic treatment need and maxillary incisor trauma, a retrospective clinical study.",
+  "abstract": "OBJECTIVES: Identifying risk factors for dental trauma in children is important. The main aim of this retrospective study was to investigate the association between maxillary incisor trauma (MIT) and variables such as gender, malocclusion complexity, and orthodontic treatment need (OTN).\nSTUDY DESIGN: ICON (Index of Complexity, Outcome and Need) scores were calculated in 502 schoolchildren (253 girls and 249 boys, aged 11-14-years). Subjects were categorized into 5 ICON complexity groups (easy to very difficult) and into 2 groups according to OTN (ICON >43, ICON <44). Logistic regression was performed to test for any differences in risk of MIT among subjects in different ICON complexity groups and to estimate the predictive value of gender, OTN, and ICON scores for MIT.\nRESULTS: Nine percent experienced incisor trauma (93.4% maxilla, 6.6% mandible). Enamel fracture was the most common type (6.2%) of dental trauma. Boys had greater odds of MIT compared with girls (odds ratio [OR] 2.16, 95% confidence interval [CI] 1.11-4.21). Subjects with OTN showed greater odds of MIT compared to those without (OR 2.37, 95% CI 1.21-4.64). Only subjects presenting with difficult complexity grade (64 < ICON < 77) showed significantly higher odds of experiencing MIT (OR 3.16, 95% CI 1.25-8.01) compared with the easy complexity group (ICON <29).\nCONCLUSION: The higher risk of experiencing MIT in malocclusions with difficult complexity warrants more vigilant screening of this group before and during dental or orthodontic treatment.",
+  "publication_types": [
+    "Comparative Study",
+    "Journal Article",
+    "Research Support, Non-U.S. Gov't"
+  ],
+  "mesh": [
+    "Accidents",
+    "Adolescent",
+    "Athletic Injuries",
+    "Child",
+    "Cross-Sectional Studies",
+    "Dental Enamel",
+    "Dental Pulp",
+    "Dentin",
+    "Epidemiologic Studies",
+    "Female",
+    "Humans",
+    "Incisor",
+    "Index of Orthodontic Treatment Need",
+    "Iran",
+    "Male",
+    "Malocclusion",
+    "Mandible",
+    "Maxilla",
+    "Open Bite",
+    "Overbite",
+    "Prevalence",
+    "Retrospective Studies",
+    "Risk Factors",
+    "Sex Factors",
+    "Tooth Avulsion",
+    "Tooth Discoloration",
+    "Tooth Fractures",
+    "Urban Health"
+  ],
+  "language": "eng",
+  "pub_year": "2011",
+  "journal": "Oral surgery, oral medicine, oral pathology, oral radiology, and endodontics",
+  "authors": [
+    "Borzabadi-Farahani A",
+    "Borzabadi-Farahani A"
+  ]
+}

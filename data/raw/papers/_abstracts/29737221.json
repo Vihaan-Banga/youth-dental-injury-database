@@ -1,0 +1,30 @@
+{
+  "pmid": "29737221",
+  "title": "Injuries in karate: systematic review.",
+  "abstract": "OBJECTIVES: to identify all studies of Karate injuries and assess injury rates, types, location, and causes.\nMETHODS: Six electronic and four grey literature databases were searched. Two reviewers independently assessed titles/abstracts, abstracted data and assessed risk-of-bias with the Newcastle-Ottawa scale. Average injury rates/1000AE (AE = athletic-encounter) and/1000minutesAE, injury location and type weighted by study size were calculated.\nRESULTS: In competitions rates of injury/1000AE and/1000 minutesAE were similar for males (111.4/1000AE, 75.4/1000 minAE) and females (105.8/1000AE, 72.8/1000 minAE). Location of injury rates/1000AE for males were 44.0 for head/neck, 11.9 lower extremities, 8.1 torso and 5.4 upper extremities and were similar for females: 41.2 head/neck, 12.4 lower extremities, 9.1 torso and 6.3 upper extremities. Injury rates varied widely by study. Rates/1000AE for type of injury were contusions/abrasions/lacerations/bruises/tooth avulsion for males (68.1) and females (30.4); hematomas/bleeding/epistaxis males (11.4) and females (12.1); strains/sprains males (3.5) and females (0.1); dislocations males (2.9) and females (0.9); concussions males (2.5) and females (3.9); and fractures males (2.9) and females (1.4). Punches were a more common mechanism of injury for males (59.8) than females (40.8) and kicks similar (males 19.7, females 21.7). Weighted averages were not calculated for weight class or belt colour because there were too few studies. Nineteen injury surveys reported annual injury rates from 30% to rates ten times higher but used different reporting methods. Studies provided no data to explain wide rate ranges.\nCONCLUSIONS: Studies need to adopt one injury definition, one data-collection form, and collect comprehensive data for each study for both training and competitions. More data are needed to measure the effect of weight, age and experience on injuries, rates and types of injury during training, and for competitors with high injury rates. RCTs are needed of interventions such as training and feedback of performance data to reduce injury rates.",
+  "publication_types": [
+    "Journal Article",
+    "Systematic Review"
+  ],
+  "mesh": [
+    "Athletic Injuries",
+    "Brain Concussion",
+    "Female",
+    "Fractures, Bone",
+    "Humans",
+    "Joint Dislocations",
+    "Lower Extremity",
+    "Male",
+    "Martial Arts",
+    "Risk Factors",
+    "Sprains and Strains",
+    "Upper Extremity"
+  ],
+  "language": "eng",
+  "pub_year": "2018",
+  "journal": "The Physician and sportsmedicine",
+  "authors": [
+    "Thomas RE",
+    "Ornstein J"
+  ]
+}

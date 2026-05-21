@@ -1,0 +1,42 @@
+{
+  "pmid": "20666978",
+  "title": "Prevalence and associated factors of traumatic dental injuries in Brazilian schoolchildren.",
+  "abstract": "OBJECTIVES: This study investigated the prevalence of traumatic dental injury (TDI) and associated factors in the permanent incisors of Brazilian schoolchildren.\nMETHODS: A cross-sectional survey was carried out with 1,612 male and female children aged 11 to 14 attending public and private elementary schools in Belo Horizonte, Brazil. A multistage sampling technique was adopted to select the children. Oral examinations were performed by calibrated examiners for the diagnosis of TDI (criteria proposed by Andreasen) and dental caries [Decayed, Missing and Filled Teeth Index (DMFT)]. The Social Vulnerability Index was used for socioeconomic classification. Data analysis involved descriptive statistics and the Poisson regression model.\nRESULTS: The prevalence of TDI was 17.1%. Falls (43.6%) were the most common cause of TDI, mainly at home (41.8%). Boys were more affected than girls. There was no statistically significant association between TDI and socioeconomic status. The adjusted results revealed that TDI was significantly associated with DMFT [1.11, 95% confidence interval (CI): 1.06 to 1.16] and overjet (1.15, 95% CI: 1.00 to 1.31).\nCONCLUSIONS: TDI was associated with dental caries and overjet and was not influenced by socioeconomic status.",
+  "publication_types": [
+    "Journal Article",
+    "Research Support, Non-U.S. Gov't"
+  ],
+  "mesh": [
+    "Accidental Falls",
+    "Adolescent",
+    "Athletic Injuries",
+    "Brazil",
+    "Child",
+    "Cross-Sectional Studies",
+    "DMF Index",
+    "Dental Caries",
+    "Female",
+    "Humans",
+    "Incisor",
+    "Male",
+    "Overbite",
+    "Prevalence",
+    "Regression Analysis",
+    "Sex Ratio",
+    "Social Class",
+    "Tooth Injuries",
+    "Vulnerable Populations"
+  ],
+  "language": "eng",
+  "pub_year": "2010",
+  "journal": "Journal of public health dentistry",
+  "authors": [
+    "Bendo CB",
+    "Paiva SM",
+    "Oliveira AC",
+    "Goursand D",
+    "Torres CS",
+    "Pordeus IA",
+    "Vale MP"
+  ]
+}

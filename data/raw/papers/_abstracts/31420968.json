@@ -1,0 +1,34 @@
+{
+  "pmid": "31420968",
+  "title": "Prevalence of dentofacial injuries among combat sports practitioners: A systematic review and meta-analysis.",
+  "abstract": "BACKGROUND/AIM: Combat sports might result in injuries to the face and teeth. However, it is unclear how often they occur and which sports presents the highest rates. The aim of this study was to investigate the prevalence of dentofacial injuries in combat sports participants.\nMATERIAL AND METHODS: A systematic review was performed. Six main electronic databases and three grey literature databases were searched. Studies were blindly selected by two reviewers based on pre-defined eligibility criteria. Studies that evaluated the prevalence of dentofacial injuries (teeth, alveolar bone, jaw, lips, and/or cheekbones) among combat sports participants were considered eligible. Risk of bias was assessed using the Joanna Briggs Institute Critical Appraisal Checklist. The software r statistics version was used to perform all meta-analyses. Cumulative evidence of the included articles was evaluated using GRADE criteria (Grading of Recommendations Assessment, Development and Evaluation).\nRESULTS: From 1104 articles found on all databases, 27 were finally included. Eighteen studies were judged at low, seven at moderate, and two at high risk of bias. The following sports were investigated: boxing, capoeira, fencing, jiu-jitsu, judo, karate, kendo, kickboxing, kung fu, muay thai, sumo, taekwondo, wrestling, and wushu. Results from the meta-analysis suggested a dental pooled prevalence of 25.2% (12.3%-40.8%, i2  = 100%) and dentofacial pooled prevalence of 30.3 (18.1%-44.1%, i2  = 100%). Considering the sports' categories individually, jiu-jitsu had the highest pooled prevalence of dentofacial injuries (52.9% [37.9%-67.8%, i2  = 92%]), while judo was the sport with the lowest pooled prevalence (25.0% [7.6%-48.2%, i2  = 98%]). Among Panamerican sports, boxing had the highest prevalence of dental injuries (73.7% [58.7%-86.3%, i2  = 0%]). For dentofacial injuries, the GRADE criteria were considered low.\nCONCLUSIONS: Overall pooled prevalence of dentofacial injuries in combat sports was approximately 30%. Raising awareness regarding the frequency of these injuries might encourage the use of protective devices and reduce complications related to these incidents.",
+  "publication_types": [
+    "Journal Article",
+    "Meta-Analysis",
+    "Systematic Review"
+  ],
+  "mesh": [
+    "Athletic Injuries",
+    "Boxing",
+    "Facial Injuries",
+    "Martial Arts",
+    "Prevalence",
+    "Tooth Injuries",
+    "Wrestling"
+  ],
+  "language": "eng",
+  "pub_year": "2020",
+  "journal": "Dental traumatology : official publication of International Association for Dental Traumatology",
+  "authors": [
+    "Polmann H",
+    "Melo G",
+    "Conti Réus J",
+    "Domingos FL",
+    "de Souza BDM",
+    "Padilha AC",
+    "Duque TM",
+    "Porporatti AL",
+    "Flores-Mir C",
+    "De Luca Canto G"
+  ]
+}

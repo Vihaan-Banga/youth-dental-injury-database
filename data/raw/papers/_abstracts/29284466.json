@@ -1,0 +1,39 @@
+{
+  "pmid": "29284466",
+  "title": "Factors associated with sports-related dental injuries among young athletes: a cross-sectional study in Miyagi prefecture.",
+  "abstract": "BACKGROUND: Sports-related dental injuries, such as tooth fracture, loosening, and avulsion, are a major concern among young athletes because they directly impair oral function. Although the preventive efficacy of mouthguards has been well established, the prevalence of sports-related dental injuries remains high among young athletes. The aim of this study is to identify the variables contributing to the risk of sports-related dental injuries by conducting a survey on large population of young athletes in Miyagi prefecture.\nMETHODS: A cross-sectional study was conducted with school-aged athletes (aged 6-15 years, n = 5735) using a self-reported questionnaire. The questionnaire examined general variables, including sex, age, and body mass index; sports-related variables, including sports-type, team level, activity schedule, break time, and verbal/physical abuse by coaches; and lifestyle variables related to free time, including screen-time and sleep duration. Their associations with sports-related dental injuries were examined using multivariate logistic regression models.\nRESULTS: The prevalence of sports-related dental injuries was 13.3% (763 of 5735 young athletes) and was higher in males (14.3%, 592 of 4132) than in females (10.7%, 171 of 1603; adjusted odds ratios [ORs] and 95% confidence intervals [CIs]: 1.48 [1.22-1.79], p < 0.001). After stratification according to sex, significant associations with the prevalence of sports-related dental injuries were evident for three variables-insufficient break time, verbal abuse, and physical punishment-in males (adjusted ORs [95% CI]: 1.35 [1.03-1.77], p = 0.032; 1.31 [1.05-1.62], p = 0.015; and 1.36 [1.06-1.75], p = 0.016, respectively) but not in females (adjusted ORs [95% CI]: 0.88 [0.53-1.47], p = 0.623; 1.29 [0.87-1.91], p = 0.206; and 0.97 [0.57-1.63], p = 0.894, respectively).\nCONCLUSIONS: Although our results might be based on the individual athlete's self-perception to the sports-related variables, our results suggest that insufficient break time, verbal abuse, and physical punishment from coaches are positively associated with the prevalence of sports-related dental injuries in young male athletes.",
+  "publication_types": [
+    "Journal Article",
+    "Research Support, Non-U.S. Gov't"
+  ],
+  "mesh": [
+    "Adolescent",
+    "Athletic Injuries",
+    "Child",
+    "Cross-Sectional Studies",
+    "Female",
+    "Humans",
+    "Japan",
+    "Male",
+    "Prevalence",
+    "Risk Factors",
+    "Sex Factors",
+    "Surveys and Questionnaires",
+    "Tooth Injuries"
+  ],
+  "language": "eng",
+  "pub_year": "2017",
+  "journal": "BMC oral health",
+  "authors": [
+    "Tsuchiya S",
+    "Tsuchiya M",
+    "Momma H",
+    "Sekiguchi T",
+    "Kuroki K",
+    "Kanazawa K",
+    "Koseki T",
+    "Igarashi K",
+    "Nagatomi R",
+    "Hagiwara Y"
+  ]
+}

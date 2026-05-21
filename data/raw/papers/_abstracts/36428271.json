@@ -1,0 +1,30 @@
+{
+  "pmid": "36428271",
+  "title": "Quantitative text analysis of the mechanisms of tooth injury: Analysis of accidents in five sports that occurred in 15 years under school control.",
+  "abstract": "BACKGROUND/AIM: Dental trauma may occur in school settings and it can impact patients' quality of life. Analysis of the occurrences of dental trauma is essential in identifying preventive methods. There are numerous reports of such accidents but most are quantitative analyses with limited data. The aim of this study was to extract information on the mechanisms of injuries that leads to prevention by performing a qualitative analysis of the occurrence of dental trauma.\nMATERIAL AND METHODS: After screening 7684 cases of dental injuries that occured in schools and were reported to the Japan Sports Council between 2005 and 2020, 533 detailed descriptions of injuries that occurred during sports were included. Quantitative text analysis was performed on the target data by performing statistical analysis, extracting frequently used words, and creating a co-occurrence network. Injury mechanisms were evaluated based on appearance of words.\nRESULTS: Dental injuries occurred frequently in five sports included in the survey. They were in order of decreasing frequency: baseball, basketball, soccer, volleyball, and rugby. Males were injured more often in all sports other than volleyball. The number of accidents increased in all sports among high school students. The frequent word list and co-occurrence network were different for each sport. This allowed typical accident occurrence mechanisms to be extracted for these five sports.\nCONCLUSIONS: Typical accident occurrence mechanisms were extracted from quantitative text analysis targeting free texts on the occurrence of accidents for five sports. Quantitative text analysis is useful for the evaluation of accident cases, which may aid in accident prevention.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "mesh": [
+    "Male",
+    "Humans",
+    "Quality of Life",
+    "Athletic Injuries",
+    "Basketball",
+    "Tooth Injuries",
+    "Accidents"
+  ],
+  "language": "eng",
+  "pub_year": "2023",
+  "journal": "Dental traumatology : official publication of International Association for Dental Traumatology",
+  "authors": [
+    "Shimizu S",
+    "Tanabe G",
+    "Hayashi K",
+    "Churei H",
+    "Anzai T",
+    "Takahashi K",
+    "Ueno T",
+    "Fueki K"
+  ]
+}

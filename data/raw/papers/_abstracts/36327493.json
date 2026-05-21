@@ -1,0 +1,31 @@
+{
+  "pmid": "36327493",
+  "title": "'Benched' the effect of the COVID-19 lockdown on injury incidence in sub-elite football in Australia: a retrospective population study using injury insurance records.",
+  "abstract": "OBJECTIVES: The primary aim of this study was to compare injury rates pre- and post-COVID-19 lockdown in sub-elite football (soccer) players by analysing the full season and the first month of each season between 2018 and 2020. Secondary aims were to describe the incidence, location and type of injuries and to compare injuries by age group and sex.\nDESIGN: Descriptive epidemiological study.\nMETHODS: A de-identified insurance database was retrospectively coded using the Orchard Sports Injury Classification System. Injury incidence per 1000 hours as well as incidence rate ratios (IRR) with confidence intervals were calculated.\nRESULTS: No significant difference was found in the overall incidence rate in 2020 compared with the 2018 and 2019 seasons (IRR, 1.04 [95% CI, 0.96-1.13]; p = 0.294). However, overall injuries increased by 26% (IRR: 1.26 [95% CI 1.07-1.47]; p < 0.005) and joint sprains increased by 45% (IRR: 1.45 [95% CI 1.14-1.84]; p < 0.005) in the first month of 2020 compared with 2018-2019. Between 2018 and 2020, there were 4149 injury insurance claims, with anterior cruciate ligament (ACL) ruptures accounting for 19% of all injuries. When comparing sex, female players had significantly more ankle sprains whilst male players suffered more dental injuries.\nCONCLUSIONS: This study adds to a growing body of evidence investigating injury rates post-COVID-19 lockdowns in sport. Sub-elite players appear to be at higher risk of joint injuries within the first month of training following a period of lockdown. Overall, stakeholders involved in sub-elite football should prioritise knee and ankle joint injury prevention.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "mesh": [
+    "Male",
+    "Humans",
+    "Female",
+    "Soccer",
+    "Retrospective Studies",
+    "Incidence",
+    "COVID-19",
+    "Communicable Disease Control",
+    "Anterior Cruciate Ligament Injuries",
+    "Ankle Injuries",
+    "Australia"
+  ],
+  "language": "eng",
+  "pub_year": "2024",
+  "journal": "Science & medicine in football",
+  "authors": [
+    "Ross AG",
+    "McKay MJ",
+    "Pappas E",
+    "Bhimani N",
+    "Peek K"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "pmid": "33793079",
+  "title": "Prevalence of orofacial injuries in wheeled non-motor sports athletes: A systematic review and meta-analysis.",
+  "abstract": "BACKGROUND/AIMS: As the popularity of sports activities grows, so do the number of sport-related injuries. Furthermore, sports that use equipment or vehicles that modify the speed of the player can present more serious injuries. The aim of this systematic review was to identify the overall prevalence of orofacial trauma in wheeled non-motor sports athletes.\nMETHODS: The search strategy was applied in eight electronic databases (Embase, LILACS, Livivo, PEDro, PubMed, Scopus, SportDiscus, and Web of Science). Additionally, a complementary search of the gray literature (Google Scholar, OpenGrey, and ProQuest Dissertations & Theses Global), reference lists of included articles, and studies indicated by experts on the subject was done. The included articles were observational studies with sufficient data of orofacial trauma (type and anatomical site) in wheeled non-motor sport athletes, regardless of the competition level. Risk of bias was assessed by using the Joanna Briggs Institute Critical Appraisal Checklist for Studies Reporting Prevalence Data. The meta-analysis was performed using R Statistics software, and the strength of cumulative evidence was assessed by The Grading of Recommendations Assessment, Development, and Evaluation.\nRESULTS: From 4042 identified studies, after the removal of duplicates and phase one of selection (title and abstracts screening), 251 studies remained for phase two (full-text screening). Five articles were finally included. One study was considered to have a low risk of bias and four had a moderate risk of bias. The cumulative prevalence of orofacial injuries in wheeled non-motor sport athletes was 21.7% (CI: 8.7-34.7; I2 :97.6%) and the prevalence of dental injuries in these sports was 7.5% (CI:4.3-10.7; I2 :61.9%). The certainty in cumulative evidence was considered to be very low.\nCONCLUSION: About 22% of the wheeled non-motor sport athletes have suffered orofacial injuries. The most prevalent type of injury was classified as dental trauma.",
+  "publication_types": [
+    "Journal Article",
+    "Meta-Analysis",
+    "Systematic Review"
+  ],
+  "mesh": [
+    "Athletes",
+    "Athletic Injuries",
+    "Humans",
+    "Prevalence",
+    "Sports"
+  ],
+  "language": "eng",
+  "pub_year": "2021",
+  "journal": "Dental traumatology : official publication of International Association for Dental Traumatology",
+  "authors": [
+    "de Oliveira JMD",
+    "Pauletto P",
+    "Werlich MO",
+    "Massignan C",
+    "Lehmkuhl KM",
+    "Porfírio GJM",
+    "Curi Hallal AL",
+    "De Luca Canto G"
+  ]
+}

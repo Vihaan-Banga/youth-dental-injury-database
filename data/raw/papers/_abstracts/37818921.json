@@ -1,0 +1,24 @@
+{
+  "pmid": "37818921",
+  "title": "Mechanisms of dental injuries in basketball, United States, 2003-2022.",
+  "abstract": "BACKGROUND/AIM: Oral injuries such as oral soft tissue lacerations and contusions can occur in basketball by mechanisms such as running into other players or falling. Given a high enough impact force, dental injuries such as tooth fractures and avulsions can occur. Previous research has studied the different types of oral injuries as well as the mechanisms that cause them. Yet, the mechanisms resulting in dental injuries have remained unexplored. The aims of this study were to investigate the distribution of different oral injuries within each injury mechanism and evaluate which mechanisms were most likely to lead to a dental injury.\nMATERIALS AND METHODS: This is a retrospective cohort study using the National Electronic Injury Surveillance System (NEISS). Subjects who experienced oral injuries from basketball between January 1, 2003 and December 31, 2022 were included in this study. The independent variable was the injury mechanism. The dependent variable was the dental injury outcome (yes/no). Multivariate logistic regression was used to measure the association between the injury mechanism and the dental injury outcome. A p < .05 was considered statistically significant.\nRESULTS: This study included 4419 subjects who experienced oral injuries (national estimate, 138,980). Approximately 14.7% of oral injuries were dental injuries. Subjects experiencing collisions with objects such as walls or the basketball hoop (odds ratio (OR), 4.39; p < .001), falls (OR, 3.35; p < .001), or contact with the basketball (OR, 1.77; p = .006) had significantly higher odds of sustaining a dental injury relative to those experiencing contact with another player.\nCONCLUSIONS: Basketball players experiencing contact to the mouth have high odds of sustaining a dental injury. An understanding of injury mechanisms is important for medical teams to manage these injuries and for coaches to educate athletes on safe and proper playing styles. Furthermore, healthcare providers and basketball staff should encourage athletes to wear mouthguards to reduce the risk of traumatic dental injuries.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "mesh": [
+    "Humans",
+    "United States",
+    "Tooth Injuries",
+    "Athletic Injuries",
+    "Basketball",
+    "Retrospective Studies",
+    "Mouth"
+  ],
+  "language": "eng",
+  "pub_year": "2024",
+  "journal": "Dental traumatology : official publication of International Association for Dental Traumatology",
+  "authors": [
+    "Liang L",
+    "Chuang SK"
+  ]
+}

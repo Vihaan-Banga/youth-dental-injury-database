@@ -1,0 +1,32 @@
+{
+  "pmid": "30222244",
+  "title": "The use of mouthguards and prevalence of dento-alveolar trauma among athletes: A systematic review and meta-analysis.",
+  "abstract": "BACKGROUND/AIMS: The evidence that mouthguards prevent dental trauma is inconsistent. The aim of this study was to determine, through a systematic review and meta-analysis (MA), the impact of mouthguards (MG) on the prevalence of dento-alveolar trauma (DT) among athletes of contact sports.\nMATERIAL AND METHODS: Searches were performed at Medline, Scopus, Web of Science, Lilacs, Cochrane Library, and SIGLE without restriction of language or publication date. After the application of eligibility criteria, studies were evaluated regarding their methodology quality and risk of bias. Two meta-analyses (MA) were performed considering: studies free of problems or with minor problems (MA1) and only free of problems studies (MA2). DT prevalence (events) and total number of athletes from each group (use of MG and non-use of MG) were used for odds ratio calculation (α = 5%). The evidence was quality tested using the GRADE approach.\nRESULTS: A total of 256 articles were identified. After applying the eligibility criteria, 14 studies were selected for qualitative synthesis, and 11 were used in quantitative synthesis. Meta-analyses showed that 73% (MA1) and 83% (MA2) of mouthguard users have a lower prevalence of DT. In MA1 (eight studies), DT prevalence among MG users was 7.75% (n = 183), while non-users had 48.31% (n = 974) (OR = 0.18, 95% CI = 0.07-0.45, P < 0.001). In MA2 (three studies), DT prevalence among MG users was 7.5% (n = 160), while DT prevalence among non-users was 59.48% (n = 750) (OR = 0.10, 95% CI = 0.05-0.08, P < 0.001), with moderate evidence quality level.\nCONCLUSION: Mouthguards contribute to a lower prevalence of dento-alveolar trauma among athletes of contact sports.",
+  "publication_types": [
+    "Journal Article",
+    "Meta-Analysis",
+    "Systematic Review"
+  ],
+  "mesh": [
+    "Athletes",
+    "Athletic Injuries",
+    "Equipment Design",
+    "Humans",
+    "Mouth Protectors",
+    "Prevalence",
+    "Sports",
+    "Tooth Injuries"
+  ],
+  "language": "eng",
+  "pub_year": "2019",
+  "journal": "Dental traumatology : official publication of International Association for Dental Traumatology",
+  "authors": [
+    "Fernandes LM",
+    "Neto JCL",
+    "Lima TFR",
+    "Magno MB",
+    "Santiago BM",
+    "Cavalcanti YW",
+    "de Almeida LFD"
+  ]
+}

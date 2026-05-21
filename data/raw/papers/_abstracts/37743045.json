@@ -1,0 +1,27 @@
+{
+  "pmid": "37743045",
+  "title": "Trends in Soccer-Related Craniomaxillofacial Injuries, United States 2003-2022.",
+  "abstract": "BACKGROUND: Soccer is one of the most popular sports worldwide. However, it has risks of injury to craniomaxillofacial regions such as the head, neck, and mouth.\nPURPOSE: The purpose of this study is to determine which demographic and injury characteristics among soccer players with craniomaxillofacial injuries are associated with increased hospitalizations.\nSTUDY DESIGN, SETTING, AND SAMPLE: This is a retrospective cohort study utilizing the National Electronic Injury Surveillance System. Subjects included in this study experienced an injury to a craniomaxillofacial area from soccer between January 1, 2003, and December 31, 2022.\nPREDICTOR VARIABLE: The predictor variables included demographics (age, sex, race) and injury characteristics (craniomaxillofacial region, diagnosis).\nMAIN OUTCOME VARIABLE: The primary outcome variable was injury severity defined as hospitalization outcome after injury (yes/no). The secondary outcome variable was the trends in the incidence of soccer craniomaxillofacial injuries over time (2003-2022).\nCOVARIATES: The covariates were the heterogenous set of predictor variables in this study.\nANALYSES: Descriptive statistics and univariate analyses were computed. Survey-weighted univariate and multivariate logistic regression were used to measure the association of demographic and injury variables with hospitalization outcome. Statistical significance was defined as P < .05.\nRESULTS: The study sample included 26,642 subjects (national estimate, 799,393). The national incidence of craniomaxillofacial soccer injuries generally increased between 2003 and 2012 and decreased between 2016 and 2020. Subjects in the ≥30 age group had increased odds of hospitalization compared to those in the 10-19 age group (odds ratio [OR], 2.12; P < .001). Compared to females, males had significantly higher odds of hospitalization (OR, 1.53; P < .001). Head (OR, 8.42; P < .001) and neck (OR, 15.8; P < .001) injuries had increased odds of hospitalization compared to facial injuries. Relative to contusions/abrasions, subjects with fractures (OR, 94.7; P < .001), dental injuries (OR, 41.3; P < .001), and concussions (OR, 5.33; P = .017) were at significantly higher odds of hospitalization.\nCONCLUSION AND RELEVANCE: Age, sex, craniomaxillofacial region, and diagnosis were significant predictors of hospitalization outcome after craniomaxillofacial soccer injury. Safer playing styles, use of mouthguards, and proper medical management may reduce future risks of craniomaxillofacial injury from soccer.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "mesh": [
+    "Male",
+    "Female",
+    "Humans",
+    "United States",
+    "Athletic Injuries",
+    "Soccer",
+    "Retrospective Studies",
+    "Fractures, Bone",
+    "Facial Injuries",
+    "Incidence"
+  ],
+  "language": "eng",
+  "pub_year": "2023",
+  "journal": "Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons",
+  "authors": [
+    "Liang L",
+    "Chuang SK"
+  ]
+}

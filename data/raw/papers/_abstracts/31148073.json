@@ -1,0 +1,29 @@
+{
+  "pmid": "31148073",
+  "title": "Effectiveness of Mouthguards for the Prevention of Orofacial Injuries and Concussions in Sports: Systematic Review and Meta-Analysis.",
+  "abstract": "BACKGROUND: Sport activities can account for up to one-third of all orofacial injuries. Mouthguards (MGs) have been proposed as a way to reduce these injuries.\nOBJECTIVES: To present a systematic review and meta-analysis of the effectiveness of MGs for the prevention of sports-related orofacial injuries and concussions.\nMETHODS: Using specific search terms, PubMed, Ovid Embase, and the Cumulative Index to Nursing and Allied Health Literature were searched to find studies that (1) contained original quantitative data on MGs and orofacial injuries and/or concussions, (2) included groups involved in sports or exercise activities, (3) included MG users and non-MG users, and (4) provided either risk ratios (RRs) and 95% confidence intervals (95% CIs) comparing injuries among MG users and non-MG users, or data that could be used to calculate RRs and 95% CIs.\nRESULTS: Twenty-six studies met the review criteria. Investigations employed a variety of study designs, utilized different types of MGs, used widely varying injury case definitions, and had multiple methodological weaknesses. Despite these limitations, meta-analyses indicated that the use of MGs reduced the overall risk of orofacial injuries in 12 cohort trials (summary RR [nonusers/users] = 2.33, 95% CI 1.59-3.44), and 11 trials involving self-report questionnaires (summary RR [nonusers/users] = 2.32, 95% CI 1.04-5.13). The influence of MGs on concussion incidence in five cohort studies was modest (summary RR [nonusers/users] = 1.25, 95% CI 0.90-1.74).\nCONCLUSION: These data indicate that MGs should be used in sports activities where there is significant orofacial injury risk.",
+  "publication_types": [
+    "Journal Article",
+    "Meta-Analysis",
+    "Systematic Review"
+  ],
+  "mesh": [
+    "Athletic Injuries",
+    "Brain Concussion",
+    "Facial Injuries",
+    "Humans",
+    "Incidence",
+    "Mouth",
+    "Mouth Protectors"
+  ],
+  "language": "eng",
+  "pub_year": "2019",
+  "journal": "Sports medicine (Auckland, N.Z.)",
+  "authors": [
+    "Knapik JJ",
+    "Hoedebecke BL",
+    "Rogers GG",
+    "Sharp MA",
+    "Marshall SW"
+  ]
+}
