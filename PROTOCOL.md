@@ -1,9 +1,9 @@
 # Research Protocol: Youth Sports Dental Injury Database
 
 **Status:** Draft v0.1 — pre-registration pending
-**Last updated:** [Date]
-**Project lead:** [Your name]
-**Advisor:** [TBD — to be secured before data collection begins]
+**Last updated:** 2026-05-21
+**Project lead:** Vihaan Banga (Olentangy Liberty High School)
+**Advisor:** [TBD — outreach in progress, project lead leading recruitment independently as of 2026-05-21]
 **Pre-registration:** [OSF link when filed]
 
 ---
@@ -186,7 +186,7 @@ The following are known limitations to be stated transparently in the data descr
 
 ## 11. Authorship and contribution
 
-- **Project lead:** [Your name] — conceived project, designed protocol, performed extraction and harmonization, drafted manuscript
+- **Project lead:** Vihaan Banga (Olentangy Liberty High School) — conceived project, designed protocol, performed extraction and harmonization, drafted manuscript
 - **Senior advisor:** [TBD] — provided methodological guidance, performed reliability review, reviewed manuscript
 
 Both must approve v1.0 release before publication.

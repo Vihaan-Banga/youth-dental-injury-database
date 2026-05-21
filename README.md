@@ -4,7 +4,7 @@ An open-access harmonized database aggregating epidemiological data on dental an
 
 **Status:** Pre-launch (data collection phase). Not yet published. Do not cite externally until v1.0 release.
 
-**Project lead:** [Your name], [Your school], in collaboration with [Advisor name when secured], OSU College of Dentistry.
+**Project lead:** Vihaan Banga, Olentangy Liberty High School, in collaboration with [Advisor name when secured], OSU College of Dentistry.
 
 ## What this is and isn't
 
@@ -49,7 +49,7 @@ youth-dental-injury-database/
 ## How this will be cited (when published)
 
 ```
-[Your name], [Advisor name]. (2026). Youth Sports Dental Injury Database (Version 1.0)
+Banga, V., [Advisor name]. (2026). Youth Sports Dental Injury Database (Version 1.0)
 [Data set]. Zenodo. https://doi.org/[TBD]
 ```
 
@@ -75,4 +75,4 @@ For strategic decisions, scoping questions, or drafting emails to advisors — u
 
 ## Contact
 
-[Your email]
+Vihaan Banga — [email to be added]
