@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Data — DO NOT commit raw downloads
+# These should be re-downloadable from the original source
+data/raw/neiss/*.csv
+data/raw/neiss/*.zip
+data/raw/papers/*.pdf
+data/raw/surveillance_reports/*.pdf
+
+# Keep the folder structure though
+!data/raw/neiss/.gitkeep
+!data/raw/papers/.gitkeep
+!data/raw/surveillance_reports/.gitkeep
+
+# Outputs are regenerable — commit only final versions
+outputs/figures/draft_*
+outputs/tables/draft_*
+
+# Environment
+.env
+*.local
+
+# Logs
+*.log
