@@ -1,6 +1,6 @@
 # Screening Report — PubMed seed of 2026-05-21
 
-_Generated 2026-05-21 from `data/extracted/_screening/screening_decisions.csv`._
+_Generated 2026-05-22 from `data/extracted/_screening/screening_decisions.csv`._
 
 ## What this is
 
@@ -19,16 +19,16 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 
 ## Totals
 
-- `screened_included`: **69**
-- `needs_human_review`: **68**
-- `screened_excluded`: **63**
+- `screened_included`: **73**
+- `needs_human_review`: **63**
+- `screened_excluded`: **64**
 - Total: **200**
 
 ---
 
-## screened_included  (69)
+## screened_included  (73)
 
-### I-pri — Primary epidemiology — sport-related dental/orofacial injury data, ages overlap 5–22  (69)
+### I-pri — Primary epidemiology — sport-related dental/orofacial injury data, ages overlap 5–22  (73)
 
 - **42052228** (2026) — Epidemiology of Softball Injuries Comparison of Softball-Related Injuries at US Emergency Departments Between High School and Collegiate Athletes: A 10-Year NEISS Analysis, 2015-2024.
   - confidence: `high` — 10-yr NEISS analysis 2015–2024 comparing HS vs collegiate softball injuries — direct §3.1 fit with AE-comparable data.
@@ -40,6 +40,8 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
   - confidence: `high` — n=125 youth basketball players Turkey 2024–25 season; TDI prevalence + mouthguard knowledge — direct §3.1 fit.
 - **40655786** (2025) — Prevalence and Outcomes of Dental Trauma in Sports-Related Injuries in the Last 2 Years.
   - confidence: `high` — Retrospective 100-case sports-related dental trauma study with focus on children/adolescents and contact sports.
+- **39452438** (2024) — Traumatic Dental Injuries: Prevalence, First Aid, and Mouthguard Use in a Sample of Italian Kickboxing Athletes.
+  - confidence: `high` — PMC full-text confirms n=142 amateur athletes ages 5–65; n=38 (27%) are under 18 (youth subset). Source qualifies for inclusion; per the 2026-05-22 decision, youth rows tagged youth_primary and adult rows tagged adult_comparator. [Resolved via PMC11505621 full-text fetch, 2026-05-22.]
 - **39297708** (2024) — Permanent tooth avulsions: A retrospective analysis of the demographics and aetiology of cases at a tertiary hospital in Sydney, Australia.
   - confidence: `high` — Sydney tertiary hospital 2001–2021 avulsion cohort, median age 12 (IQR 9–17); non-organized sport = most common cause — youth + sport fit.
 - **38131151** (2024) — Oro-dental trauma burden and mouthguard usage among contact sports players: A call for sports dentistry initiatives in Sri Lanka.
@@ -52,6 +54,8 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
   - confidence: `high` — Japan school head injuries from tooth contact 2012–2018; school-age population by definition; primary count data.
 - **36428271** (2023) — Quantitative text analysis of the mechanisms of tooth injury: Analysis of accidents in five sports that occurred in 15 years under school control.
   - confidence: `high` — n=7684 Japan school dental injury cases over 15 years across 5 sports — large governing-body surveillance dataset.
+- **36394781** (2023) — Assessment of mouthguards worn by Irish children playing contact sports: an observational cross-sectional cohort study.
+  - confidence: `high` — PMC full-text confirms n=106 children aged 9–16 (squarely within scope). Sport = Gaelic football (contact). Primary outcome is MG design adequacy, but the paper carries TDI prevalence data for the cohort as a §3.3 outcome. [Resolved via PMC9669524 full-text fetch, 2026-05-22.]
 - **36317716** (2023) — Traumatic dental injuries in high school athletes in the United States of America from 2005 to 2020.
   - confidence: `high` — National HS Sports-Related Injury Surveillance Study 2005/06–2019/20; dental injury counts + AE + mouthguard utilization — directly extractable.
 - **34879017** (2022) — Baseball-Related Craniofacial Injury Among the Youth: A National Electronic Injury Surveillance System Database Study.
@@ -92,6 +96,8 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
   - confidence: `high` — n=450 children 6–16 New Delhi; dental injury prevalence during sport + mouthguard awareness — direct fit.
 - **29284466** (2017) — Factors associated with sports-related dental injuries among young athletes: a cross-sectional study in Miyagi prefecture.
   - confidence: `high` — School-aged athletes Miyagi prefecture Japan; sports-related dental injury prevalence + risk factors — explicit §3.3 outcome.
+- **28969286** (2017) — Traumatic Dental Injuries Prevalence and their Impact on Self-esteem among Adolescents in India: A Comparative Study.
+  - confidence: `high` — PMC full-text confirms population is 10–17 yr adolescents (squarely within scope). Primary outcome is TDI prevalence with self-esteem comparison; sport activities are listed as a primary etiology. [Resolved via PMC5620908 full-text fetch, 2026-05-22.]
 - **28054391** (2017) — Head injuries in children's football-results from two prospective cohort studies in four European countries.
   - confidence: `high` — Prospective cohort study of organized football in 7–12 yr children across 4 European countries; head/neck injuries documented — age fit + sport-specific.
 - **27452795** (2016) — Descriptive study of dental injury incurred by junior high school and high school students during participation in school sports clubs.
@@ -118,6 +124,8 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
   - confidence: `high` — Cork University Dental School pediatric trauma audit; cause and prevalence by type — primary clinical data.
 - **21197817** (2010) — ACC claims for sports-related dental trauma from 1999 to 2008: a retrospective analysis.
   - confidence: `high` — NZ ACC sports-related dental insurance claims 1999–2008; ~25–31k claims/year with age/sex/region/sport breakdown — large-scale surveillance, youth subset extractable.
+- **21063551** (2010) — Prevalence and patterns of combat sport related maxillofacial injuries.
+  - confidence: `high` — PMC full-text confirms ages 18–25 (mean ~22). Within-scope: 18–22 subset = youth_primary; 23–25 subset = adult_comparator (decision 2026-05-22). Combat sports (boxing/taekwondo/kickboxing/Muay Thai). [Resolved via PMC2966561 full-text fetch, 2026-05-22.]
 - **20486946** (2010) — Orofacial and dental injuries of snowboarders in Turkey.
   - confidence: `high` — Snowboarders Turkey n=86; framed as 'adolescent and young adult' — within 5–22 envelope.
 - **19614738** (2009) — Consumer products and activities associated with dental injuries to children treated in United States emergency departments, 1990-2003.
@@ -171,9 +179,9 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 
 ---
 
-## needs_human_review  (68)
+## needs_human_review  (63)
 
-### R-age — Needs review — age range / population unclear from abstract  (37)
+### R-age — Needs review — age range / population unclear from abstract  (35)
 
 - **39630092** (2026) — Experience of Orofacial Injuries and Use of Mouthguards - A Survey in German Elite Sport.
   - confidence: `medium` — German elite athletes 18–35; 18–22 subset within scope but mixed-ages population.
@@ -223,12 +231,8 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
   - confidence: `medium` — Para-Pan American Games athletes Rio — adults likely dominate; youth (16–22) subset may be present.
 - **22107072** (2012) — Dental injuries in water polo, a survey of players in Switzerland.
   - confidence: `medium` — Water polo Switzerland n=415 players from 6 divisions — likely mostly adult but youth subset may exist.
-- **21382033** (2011) — A survey of orofacial injuries among basketball players.
-  - confidence: `medium` — Basketball players Benin City Nigeria — age range not stated in abstract.
 - **21199336** (2011) — Eye injuries and orofacial traumas in floorball--a survey in Switzerland and Sweden.
   - confidence: `medium` — Floorball Switzerland + Sweden n=608 (565 athletes + 43 coaches); age range not stated.
-- **21063551** (2010) — Prevalence and patterns of combat sport related maxillofacial injuries.
-  - confidence: `medium` — n=120 male combat sport athletes (boxing/taekwondo/kickboxing/Muay Thai) — age range not stated.
 - **20669600** (2010) — Maxillofacial and dental injuries sustained in hurling.
   - confidence: `medium` — Hurling injuries Mid-Western Regional Hospital Limerick n=70; age range not stated.
 - **20572841** (2010) — Prevalence of dental trauma in Pan American games athletes.
@@ -250,12 +254,8 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 - **11880801** (2002) — Dental injuries in ice hockey games and training.
   - confidence: `medium` — Finland ice hockey 1991–1992 insurance dataset (n=479 injured); abstract does not state age distribution — likely includes youth + adult, full text needed.
 
-### R-data — Needs review — extractable numerical injury data unclear from abstract  (23)
+### R-data — Needs review — extractable numerical injury data unclear from abstract  (21)
 
-- **36394781** (2023) — Assessment of mouthguards worn by Irish children playing contact sports: an observational cross-sectional cohort study.
-  - confidence: `medium` — Irish children contact sport (Gaelic football) MG assessment — primary outcome is MG design adequacy, not injury counts.
-- **28969286** (2017) — Traumatic Dental Injuries Prevalence and their Impact on Self-esteem among Adolescents in India: A Comparative Study.
-  - confidence: `medium` — Indian adolescents TDI vs self-esteem; sport-related subset not isolated.
 - **26939219** (2015) — Prevalence and unmet treatment need of traumatized incisor among Cameroonian schoolchildren in North West Province.
   - confidence: `medium` — Cameroon 12–13 schoolchildren incisor trauma n=2287; sport-related subset not isolated.
 - **26545273** (2015) — Mandatory mouthguard rules for high school athletes in the United States.
@@ -299,10 +299,8 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 - **11678537** (2001) — A retrospective study of dento-alveolar injuries of children in Ankara, Turkey.
   - confidence: `medium` — n=150 Ankara children TDI study; abstract does not isolate sport-related subset — confirm in full text whether sport-related counts are extractable.
 
-### R-mixed — Needs review — mixed adult+youth, youth subset extractability needs full text  (8)
+### R-mixed — Needs review — mixed adult+youth, youth subset extractability needs full text  (7)
 
-- **39452438** (2024) — Traumatic Dental Injuries: Prevalence, First Aid, and Mouthguard Use in a Sample of Italian Kickboxing Athletes.
-  - confidence: `medium` — Italian kickboxing athletes n=142 ages 5–65 — youth subset (5–22) extractable but needs full text.
 - **30431180** (2019) — Prevalence of dental trauma in individuals with special needs participating in local Special Olympics games.
   - confidence: `medium` — Israeli Special Olympics 2016 — Special Olympics athletes mixed ages (8+ allowed); youth subset extractable.
 - **25600092** (2015) — A multicenter study on dental trauma in permanent incisors among Special Olympics athletes in Europe and Eurasia.
@@ -320,9 +318,9 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 
 ---
 
-## screened_excluded  (63)
+## screened_excluded  (64)
 
-### E-age — Excluded — population outside 5–22 age range (§3.1)  (6)
+### E-age — Excluded — population outside 5–22 age range (§3.1)  (7)
 
 - **40267058** (2025) — Motivators and barriers to mouthguard compliance by adult Gaelic football athletes.
   - confidence: `high` — Adult Gaelic football athletes mouthguard compliance; population explicitly adult.
@@ -330,6 +328,8 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
   - confidence: `high` — Professional alpine ski racers worldwide; professional adults, outside 5–22.
 - **21496201** (2011) — Orofacial trauma in Brazilian basketball players and level of information concerning trauma and mouthguards.
   - confidence: `high` — Brazilian Basketball Confederation Category A-1 adult athletes / national team — outside 5–22.
+- **21382033** (2011) — A survey of orofacial injuries among basketball players.
+  - confidence: `high` — PMC full-text confirms mean age 23 (no further age stratification visible) — population is predominantly adult, outside 5–22 scope. [Resolved via PMC9374803 full-text fetch, 2026-05-22.]
 - **20711109** (2011) — Study of the effect of oral health on physical condition of professional soccer players of the Football Club Barcelona.
   - confidence: `high` — FC Barcelona professional soccer players — adult professionals, outside 5–22 (§3.1).
 - **19055884** (2008) — Mouthguards in the American Hockey League [AHL].
