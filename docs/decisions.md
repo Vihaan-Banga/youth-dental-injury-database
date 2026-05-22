@@ -141,6 +141,39 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 ---
 
+### 2026-05-22: Schema gaps surfaced by first harmonization run (master.csv v0.1)
+
+**Trigger:** First run of `scripts/07_harmonize.py` + `scripts/08_validate.py` against the three pilot extractions produced two C10 (duplicate-key) warnings flagging legitimate stratifications the schema can't disambiguate:
+
+- **collins2016**: three rows share (source × sport × age × sex × level × basis × season) but differ on **exposure context** (all / competition / practice). Currently disambiguated only via `rate_denominator_raw` free text.
+- **labella2002**: two rows share the same key but differ on **mouthguard subgroup** (users vs non-users). Currently disambiguated only via `mouthguard_use_rate` value (1.0 vs 0.0) — fragile because that field is also used for population-prevalence semantics.
+
+**Question:** Add new columns to the data dictionary now to express these stratifications, or wait until more sources demand them?
+
+**Decision (deferred — not making the schema change yet):** Keep `rate_denominator_raw` carrying the exposure context (e.g., "...(competition only)") and `mouthguard_use_rate` carrying the subgroup identifier for now. Revisit at the latest of: (a) the 10th extracted source, (b) advisor sign-off, or (c) the point at which we discover a third stratification dimension. Proposed columns when we do change:
+- `exposure_context` ∈ `all` | `competition` | `practice` | `training` | `other`
+- `subgroup_label` (free-text short label for protective-equipment / risk-modifier subgroups)
+
+**Reasoning:** Two sources is not enough to lock in column choices; we'd risk picking names that don't generalize. Validation C10 will continue to warn on these rows, which is fine — they are surfaced as schema-design todos, not as data quality issues.
+
+**Affected rows:** collins2016 (3 stratified rows), labella2002 (2 subgroup rows). No change to extractions; only the validator's interpretation of the warning.
+
+**Reviewer:** Pending advisor review.
+
+---
+
+### 2026-05-22: stewart2009 primary-dentition row age_category re-tagged from `youth` to `unspecified`
+
+**Trigger:** Validation check C5 flagged a <50% overlap between the row's age range (0–6) and the `youth` category band (5–12).
+
+**Decision:** Re-tag `age_category = unspecified` for this row. Per PROTOCOL §6.2, when a source reports a range spanning categories, it's reported under the majority category — for this row, the majority is sub-5 (5 of 7 years), which is below the §3.1 inclusion floor and not represented in the youth/adolescent/collegiate/adult taxonomy. `unspecified` is the honest tag.
+
+**Affected rows:** stewart2009 row "primary dentition" (age_min=0, age_max=6). Source still qualifies for inclusion because *other* age bands in the same source (mixed dentition 7–12, permanent 13–17) are squarely within scope.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 ### 2026-05-22: Issues surfaced by pilot extractions (collins2016, labella2002, stewart2009)
 
 **Trigger:** Three pilot extractions performed against the data dictionary before formal extraction begins (PROTOCOL pre-registration checklist item "First two sources extracted as pilot" — methodologically; formal extraction still gated on OSF pre-registration).
