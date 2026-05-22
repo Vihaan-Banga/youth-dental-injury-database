@@ -43,7 +43,9 @@ Thumbs.db
 # Data — DO NOT commit raw downloads
 # These should be re-downloadable from the original source
 data/raw/neiss/*.csv
+data/raw/neiss/*.tsv
 data/raw/neiss/*.zip
+data/raw/neiss/*.rda
 data/raw/papers/*.pdf
 data/raw/surveillance_reports/*.pdf
 

@@ -141,4 +141,65 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 ---
 
+### 2026-05-22: Issues surfaced by pilot extractions (collins2016, labella2002, stewart2009)
+
+**Trigger:** Three pilot extractions performed against the data dictionary before formal extraction begins (PROTOCOL pre-registration checklist item "First two sources extracted as pilot" — methodologically; formal extraction still gated on OSF pre-registration).
+
+**Issues surfaced and provisional handling:**
+
+1. **Aggregate / non-sport-specific rows need `sport` values not in the controlled vocabulary.** The pilots produced rows that don't map cleanly: `all_sports_aggregate` (collins2016 pooled rate), `all_activities_aggregate` (NEISS overall), `recreational_mixed` (NEISS 7–12y bicycle-led), `sports_aggregate` (NEISS 13–17y), `non_sport_setting` (NEISS home/furniture-led primary dentition).
+   - **Provisional decision:** Add these as legitimate `sport` values for aggregate/non-sport-specific rows, with `sport_category = ''` (empty) since the contact taxonomy doesn't apply.
+   - **Why:** Sources frequently report headline aggregate rates alongside per-sport rates. Throwing the aggregate row out loses important context. The alternative (one row per sport with `is_aggregate=TRUE` flag) restructures the schema more than needed.
+   - **Add to taxonomy:** Pending advisor review. For now, these values flow through the data dictionary unchanged.
+
+2. **Population-denominator surveillance is not AE-denominator.** NEISS-based stewart2009 reports rates as "per 100,000 children <18 yrs per year" (population denominator); the data dictionary's `rate_per_1000_ae` assumes athlete-exposure denominator. The two cannot be converted without external exposure data.
+   - **Decision:** When the source uses a population denominator, leave `rate_per_1000_ae` empty; preserve the source's number in `rate_raw` and the denominator phrase in `rate_denominator_raw`. Note in `extraction_notes`.
+   - **Why:** Fabricating an AE rate from population data would corrupt downstream analyses. The raw fields exist for exactly this case (PROTOCOL §6.4 — original denominators preserved).
+
+3. **`mouthguard_use_rate` semantics are ambiguous.** Sources can report (a) MG use among all athletes in the sample, (b) MG use *among injured* athletes only (e.g., collins2016: "72.5% of injuries occurred while not wearing a MG"). These are different denominators.
+   - **Provisional decision:** Use `mouthguard_use_rate` for the population-level prevalence whenever the source reports it. When only the injured-subset prevalence is available, record it in `mouthguard_use_rate` and clearly say so in `extraction_notes`. Add an explicit `mouthguard_use_rate_denominator` column in a future data dictionary revision if this becomes common.
+   - **Pending:** Decide whether to add the explicit denominator column before scaling extraction.
+
+4. **Injury counts sometimes have to be back-calculated.** labella2002 abstract gives rates (per 1000 AE) and total AE, but does not state injury counts directly. Reading the full text will give the exact counts; for the pilot, the count column is left empty and the back-calc is noted in `extraction_notes`.
+   - **Decision:** Do **not** populate `injury_count` with back-calculated values when the source doesn't state the count explicitly. Leave the field empty and note the back-calc in `extraction_notes` so analysts know it can be computed but isn't sourced.
+
+5. **Sub-5 ages overlap the inclusion floor.** stewart2009 reports a primary-dentition (<7y) age band that partially overlaps below the 5–22 inclusion floor.
+   - **Decision:** Extract the row as the source reports it (`age_min = 0, age_max = 6`), flag `quality_flag = partial_data`, and let downstream filtering by `age_min >= 5` handle exclusion if needed. The alternative (synthetically restricting the band) is unjustified without raw data.
+
+**Affected rows/sources:** Pilot extractions at `data/extracted/{collins2016, labella2002, stewart2009}.csv` (11 rows total). All future extractions follow these rules until revised. The data dictionary is updated to flag the population-denominator case; the others will be revisited after advisor review.
+
+**Reviewer:** Pending advisor review.
+
+---
+
+### 2026-05-22: Extract adult-comparator rows from already-included sources
+
+**Trigger:** Project lead asked whether the youth-only scope (PROTOCOL §3.1, ages 5–22) was too narrow and whether adult populations should be incorporated. Screening of the 200 PubMed candidates produced 51 records held back by age (6 `E-age`, 37 `R-age`, 8 `R-mixed`) — meaningful but not catastrophic.
+
+**Question:** Should the project (a) broaden inclusion to all ages, (b) keep youth-only and discard adult data even when it is present in included sources, or (c) keep youth-only at the *source* level but extract adult bands alongside youth when the source reports both?
+
+**Options considered:**
+- (a) Broaden to all ages. Doubles the include set (~120 records) and dilutes the project's stated differentiator (PROTOCOL §1 — the gap is youth-specific). Rebrand required; Conrad Challenge alignment weakens; ~doubles extraction workload before the Sept–Nov deadline.
+- (b) Status quo. Throws away age-stratified adult data already present in surveillance sources (NEISS, NZ ACC, NCAA-adjacent insurance, multi-age cohort studies) at extraction time. Wasteful.
+- (c) Middle path: source inclusion stays youth-only; extraction captures all age bands the source reports; adult bands tagged `extraction_basis = adult_comparator`.
+
+**Decision:** Option (c).
+
+**Reasoning:**
+- The project's headline identity ("Youth Sports Dental Injury Database") and its stated gap (PROTOCOL §1) remain youth-centred — no rebrand, no narrative shift, no Conrad Challenge framing rework.
+- Adult rows are essentially free to extract when they sit in the same table as the youth data we are already extracting. Discarding them would be a sunk-cost loss.
+- Researchers using the dataset can answer cross-age questions ("is youth rate higher than adult?") by including the comparator rows; the published headline analyses subset to `extraction_basis = 'youth_primary'`.
+- This does **not** rescue any of the records currently held in `screened_excluded` for `E-age` (adult-only sources), since those sources have no youth data to anchor inclusion.
+
+**Implementation:**
+- `DATA_DICTIONARY.md`: add `adult` to allowed `age_category` values and add an `extraction_basis` column with values `youth_primary` | `adult_comparator`.
+- `PROTOCOL.md` §6.2.1 added (new subsection); §9 outputs note that master.csv carries both row types.
+- Re-screening not needed: the 6 `E-age` and 37 `R-age` records were excluded/held because their *source* had no youth data; the new rule changes only what we extract from sources that already pass §3.1.
+
+**Affected rows/sources:** None of the existing 200 candidate decisions change. The decision affects extraction templates for every future extraction. When pilot extractions are run, both youth and adult bands are captured per source.
+
+**Reviewer:** Pending advisor review when advisor is secured.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

@@ -134,8 +134,15 @@ Original age data preserved when available. Standardized categories applied for 
 - Youth (5–12)
 - Adolescent (13–17)
 - Collegiate (18–22)
+- Adult (23+) — *comparator only*, see §6.2.1
 
 When a source reports a range spanning categories, it is flagged and reported in whichever category contains the majority of the sample.
+
+#### 6.2.1 Adult comparator rows
+
+The v1.0 source-inclusion criterion (§3.1) is unchanged: a source qualifies iff it reports some data on individuals aged 5–22. Once a source clears that gate, however, all of its age-stratified rows are extracted, including adult bands when reported alongside youth. Adult rows are tagged `age_category = adult` and `extraction_basis = adult_comparator`; youth rows are tagged `extraction_basis = youth_primary`.
+
+Rationale: many of the strongest surveillance sources (NEISS, ACC NZ, multi-age cohort studies) report youth and adult data together. Discarding the adult fraction at extraction would lose information that future researchers will value for cross-age comparison without changing the project's headline scope. See `DATA_DICTIONARY.md` ("Adult comparator rows") and `docs/decisions.md` (2026-05-22 decision).
 
 ### 6.3 Injury classification
 
@@ -170,7 +177,7 @@ The following are known limitations to be stated transparently in the data descr
 
 ## 9. Outputs
 
-- **Master dataset:** CSV with DOI, deposited on Zenodo, licensed CC BY 4.0
+- **Master dataset:** CSV with DOI, deposited on Zenodo, licensed CC BY 4.0. Contains both youth-primary and adult-comparator rows (see §6.2.1); the data descriptor's headline analyses use the youth-primary subset.
 - **Data dictionary:** Public, versioned
 - **Methods paper:** Submitted to *Data in Brief* (Elsevier) or *Scientific Data* (Nature) as a data descriptor
 - **Project website:** Static site with interactive dashboard, hosted on free infrastructure

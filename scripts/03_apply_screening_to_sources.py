@@ -76,6 +76,13 @@ def doi_link(rec):
     return ""
 
 
+EXTRACTED_DIR = ROOT / "data/extracted"
+EXTRACTED_SOURCES = {
+    p.stem for p in EXTRACTED_DIR.glob("*.csv")
+    if not p.stem.startswith("_") and p.is_file()
+}
+
+
 def fmt_row(d):
     pmid = d["pmid"]
     rec = records.get(pmid, {})
@@ -84,7 +91,12 @@ def fmt_row(d):
     cite = short_cite(rec).replace("|", "\\|")
     journal = (rec.get("journal") or "").replace("|", "\\|")
     decision = d["decision"]
-    reason = d["reason_code"] if decision != "screened_included" else ""
+    # If we've already extracted this source, status advances to 'extracted'.
+    if sid in EXTRACTED_SOURCES:
+        decision = "extracted"
+        reason = ""
+    else:
+        reason = d["reason_code"] if decision != "screened_included" else ""
     # Short-form note for the table
     return (f"| {sid} | {pmid_link} | {cite} | {journal} |  | "
             f"{decision} | {reason} | 2026-05-21 | {EXTRACTOR_TAG} |")
@@ -94,8 +106,11 @@ rows = [fmt_row(d) for d in sorted(
     decisions, key=lambda r: (r["decision"], r["pub_year"] or "0", r["pmid"]), reverse=True
 )]
 
-# Stats for the header note
-by_dec = Counter(d["decision"] for d in decisions)
+# Stats for the header note (post-extraction-advance)
+by_dec = Counter()
+for d in decisions:
+    sid = sid_for_pmid[d["pmid"]]
+    by_dec[("extracted" if sid in EXTRACTED_SOURCES else d["decision"])] += 1
 by_code = Counter(d["reason_code"] for d in decisions if d["decision"] != "screened_included")
 
 content = f"""# Source Tracking Log

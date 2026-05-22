@@ -28,7 +28,8 @@ When adding a new source, follow these definitions exactly. When a definition is
 | `population_setting` | category | One of: `school`, `club`, `recreational`, `professional`, `mixed`, `unspecified` | `school` |
 | `age_min` | integer | Minimum age in sample (years) | `12` |
 | `age_max` | integer | Maximum age in sample (years) | `17` |
-| `age_category` | category | One of: `youth` (5–12), `adolescent` (13–17), `collegiate` (18–22), `mixed`, `unspecified`. See PROTOCOL §6.2 for rules when sample spans categories. | `adolescent` |
+| `age_category` | category | One of: `youth` (5–12), `adolescent` (13–17), `collegiate` (18–22), `adult` (23+ — see "Adult comparator rows" below), `mixed`, `unspecified`. See PROTOCOL §6.2 for rules when sample spans categories. | `adolescent` |
+| `extraction_basis` | category | `youth_primary` (row is within the v1.0 inclusion scope of 5–22) or `adult_comparator` (row was extracted alongside the youth data for context — see "Adult comparator rows" below). | `youth_primary` |
 | `sex` | category | One of: `male`, `female`, `mixed`, `unspecified` | `mixed` |
 | `level_of_play` | category | One of: `recreational`, `school_jv`, `school_varsity`, `club`, `elite`, `mixed`, `unspecified` | `school_varsity` |
 
@@ -88,6 +89,22 @@ When adding a new source, follow these definitions exactly. When a definition is
 - Extracted source: `data/extracted/<source_id>.csv`
 - Cleaned source: `data/cleaned/<source_id>_clean.csv`
 - Master: `data/harmonized/master.csv`
+
+---
+
+## Adult comparator rows
+
+The v1.0 inclusion criterion (PROTOCOL §3.1) restricts the **source** scope to studies that report data on individuals aged 5–22. Once a source clears that gate, however, many of those sources *also* report stratified adult data (NEISS, ACC NZ insurance claims, NCAA-adjacent surveillance, multi-age cohort studies). Throwing away that adult data would be wasteful.
+
+Rule (decision 2026-05-22, see `docs/decisions.md`):
+
+- A source qualifies for inclusion **iff** it reports some data on individuals aged 5–22 (criterion unchanged).
+- When extracting from an included source, all of its age-stratified rows are extracted — including adult bands when reported alongside youth.
+- Adult rows are tagged `age_category = adult` and `extraction_basis = adult_comparator`.
+- Youth rows (5–22) are tagged with the appropriate youth/adolescent/collegiate/mixed value and `extraction_basis = youth_primary`.
+- Analyses can subset by `extraction_basis = 'youth_primary'` to get a v1.0-scope view (the headline result), or include adult rows for comparator context.
+
+This avoids re-scoping the project (the headline remains youth-focused) while preserving information that's already in front of us at extraction time.
 
 ---
 
