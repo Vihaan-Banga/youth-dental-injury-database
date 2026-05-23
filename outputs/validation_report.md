@@ -1,4 +1,4 @@
-# Validation Report — 2026-05-22
+# Validation Report — 2026-05-23
 
 _Run against `data/harmonized/master.csv` (11 rows)._
 
@@ -7,17 +7,12 @@ _Run against `data/harmonized/master.csv` (11 rows)._
 - Rows checked: **11**
 - Distinct sources: **3**
 - FAILs: **0**
-- WARNs: **2**
+- WARNs: **0**
 - Rows flagged `quality_flag=review_needed`: **0**
 
 ## ✅ No FAILs
 
 All hard validation checks (schema, categorical values, numeric ranges, age consistency, source coverage) passed.
-
-## ⚠️  WARNs (review, not blocking)
-
-- **C10** — 3 rows share key ('collins2016', 'all_sports_aggregate', 'adolescent', 'mixed', 'school_varsity', 'youth_primary', '2008/09–2013/14 academic years') — possible duplicate or valid stratification we haven't captured in another column
-- **C10** — 2 rows share key ('labella2002', 'basketball', 'collegiate', 'male', 'elite', 'youth_primary', '1999–2000 season') — possible duplicate or valid stratification we haven't captured in another column
 
 ## Check reference
 

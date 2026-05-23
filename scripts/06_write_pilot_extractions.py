@@ -32,8 +32,8 @@ COLUMNS = [
     "age_min", "age_max", "age_category", "extraction_basis",
     "sex", "level_of_play",
     # Exposure
-    "sport_raw", "sport", "sport_category", "sample_size",
-    "athlete_exposures", "season_or_timeframe",
+    "sport_raw", "sport", "sport_category", "exposure_context", "subgroup_label",
+    "sample_size", "athlete_exposures", "season_or_timeframe",
     # Outcome
     "injury_count", "injury_type_raw", "injury_category",
     "rate_raw", "rate_denominator_raw", "rate_per_1000_ae",
@@ -82,6 +82,8 @@ collins_common = {
     "age_category": "adolescent",
     "extraction_basis": "youth_primary",
     "level_of_play": "school_varsity",
+    "exposure_context": "all",
+    "subgroup_label": "",
     "season_or_timeframe": "2008/09–2013/14 academic years",
     "mouthguard_required": "no",
     "mouthguard_injury_relation": "analyzed",
@@ -158,6 +160,7 @@ collins_competition = dict(collins_common,
     sport_raw="All sports (competition)",
     sport="all_sports_aggregate",
     sport_category="",
+    exposure_context="competition",
     sample_size="",
     athlete_exposures="",
     injury_count="",
@@ -177,6 +180,7 @@ collins_practice = dict(collins_common,
     sport_raw="All sports (practice)",
     sport="all_sports_aggregate",
     sport_category="",
+    exposure_context="practice",
     sample_size="",
     athlete_exposures="",
     injury_count="",
@@ -221,6 +225,7 @@ labella_common = {
     "sport_raw": "men's college basketball",
     "sport": "basketball",
     "sport_category": "limited_contact",
+    "exposure_context": "all",
     "season_or_timeframe": "1999–2000 season",
     "mouthguard_required": "no",
     "mouthguard_injury_relation": "analyzed",
@@ -231,6 +236,7 @@ labella_common = {
 }
 # Two rows: mouthguard users vs nonusers
 labella_mg_users = dict(labella_common,
+    subgroup_label="mouthguard_users",
     sample_size=50,  # teams; individual count not in abstract
     athlete_exposures=8663,
     injury_count="",
@@ -246,6 +252,7 @@ labella_mg_users = dict(labella_common,
     quality_flag="partial_data",
 )
 labella_mg_nonusers = dict(labella_common,
+    subgroup_label="mouthguard_nonusers",
     sample_size=50,  # teams
     athlete_exposures=70_936 - 8_663,  # = 62,273
     injury_count="",
@@ -285,6 +292,8 @@ stewart_common = {
     "population_setting": "mixed",  # NEISS ED-treated, all settings
     "sex": "mixed",
     "level_of_play": "unspecified",
+    "exposure_context": "all",
+    "subgroup_label": "",
     "season_or_timeframe": "1990–2003",
     "mouthguard_required": "unspecified",
     "mouthguard_use_rate": "",

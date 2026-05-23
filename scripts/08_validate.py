@@ -43,8 +43,8 @@ EXPECTED_COLUMNS = [
     "country", "region", "population_setting",
     "age_min", "age_max", "age_category", "extraction_basis",
     "sex", "level_of_play",
-    "sport_raw", "sport", "sport_category", "sample_size",
-    "athlete_exposures", "season_or_timeframe",
+    "sport_raw", "sport", "sport_category", "exposure_context", "subgroup_label",
+    "sample_size", "athlete_exposures", "season_or_timeframe",
     "injury_count", "injury_type_raw", "injury_category",
     "rate_raw", "rate_denominator_raw", "rate_per_1000_ae",
     "mouthguard_required", "mouthguard_use_rate", "mouthguard_injury_relation",
@@ -64,6 +64,7 @@ ALLOWED = {
     "level_of_play": {"recreational", "school_jv", "school_varsity", "club",
                       "elite", "mixed", "unspecified", ""},
     "sport_category": {"contact", "limited_contact", "non_contact", ""},
+    "exposure_context": {"all", "competition", "practice", "training", "other", ""},
     "injury_category": {"enamel_fracture", "crown_fracture", "root_fracture",
                         "luxation", "avulsion", "concussion", "other_dental",
                         "orofacial_with_dental", "unspecified_dental", ""},
@@ -211,16 +212,20 @@ def main():
             add("FAIL", "C9", f"source_id='{sid}' has no youth_primary row "
                               f"(found only: {sorted(bases)})")
 
-    # C10 — duplicate row check
+    # C10 — duplicate row check (uniqueness key per DATA_DICTIONARY.md
+    # "Exposure context and subgroup rows")
     seen = Counter()
     for r in rows:
         key = (r["source_id"], r["sport"], r["age_category"], r["sex"],
-               r["level_of_play"], r["extraction_basis"], r["season_or_timeframe"])
+               r["level_of_play"], r["extraction_basis"],
+               r.get("exposure_context", ""), r.get("subgroup_label", ""),
+               r["season_or_timeframe"])
         seen[key] += 1
     for key, n in seen.items():
         if n > 1:
-            add("WARN", "C10", f"{n} rows share key {key} — possible duplicate or "
-                                f"valid stratification we haven't captured in another column")
+            add("FAIL", "C10", f"{n} rows share key {key} — true duplicate "
+                                "(exposure_context + subgroup_label should already "
+                                "disambiguate legitimate stratifications)")
 
     # Generate report
     fails = [f for f in findings if f[0] == "FAIL"]

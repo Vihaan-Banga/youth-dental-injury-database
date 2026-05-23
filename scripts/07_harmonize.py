@@ -33,8 +33,8 @@ EXPECTED_COLUMNS = [
     "country", "region", "population_setting",
     "age_min", "age_max", "age_category", "extraction_basis",
     "sex", "level_of_play",
-    "sport_raw", "sport", "sport_category", "sample_size",
-    "athlete_exposures", "season_or_timeframe",
+    "sport_raw", "sport", "sport_category", "exposure_context", "subgroup_label",
+    "sample_size", "athlete_exposures", "season_or_timeframe",
     "injury_count", "injury_type_raw", "injury_category",
     "rate_raw", "rate_denominator_raw", "rate_per_1000_ae",
     "mouthguard_required", "mouthguard_use_rate", "mouthguard_injury_relation",
@@ -74,7 +74,8 @@ def main():
             age_min = int(r["age_min"])
         except (TypeError, ValueError):
             age_min = 999
-        return (r["source_id"], r["sport"], age_min, r["extraction_basis"])
+        return (r["source_id"], r["sport"], age_min, r["extraction_basis"],
+                r.get("exposure_context", ""), r.get("subgroup_label", ""))
     all_rows.sort(key=sort_key)
 
     HARMONIZED.parent.mkdir(parents=True, exist_ok=True)

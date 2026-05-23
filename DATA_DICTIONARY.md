@@ -40,6 +40,8 @@ When adding a new source, follow these definitions exactly. When a definition is
 | `sport_raw` | string | Sport as named in the source | `"American football"` |
 | `sport` | category | Standardized sport name per controlled vocabulary (see `docs/decisions.md`) | `football_american` |
 | `sport_category` | category | One of: `contact`, `limited_contact`, `non_contact`. See `docs/decisions.md` for assignment rules. | `contact` |
+| `exposure_context` | category | Which activity context the row's data describes: `all` (combined / not stratified), `competition`, `practice`, `training`, `other`. Empty when the row is not exposure-stratified at all (e.g., a one-shot prevalence survey). See "Exposure context and subgroup rows" below. | `competition` |
+| `subgroup_label` | string | Short snake_case label for any *within-source* subgroup that isn't already captured by sex / age_category / level_of_play / sport / exposure_context. Used for protective-equipment splits (`mouthguard_users`, `mouthguard_nonusers`), helmet groups, special populations (`with_orthodontic_appliance`), etc. Empty when the row is the source's main/pooled estimate. See "Exposure context and subgroup rows" below. | `mouthguard_users` |
 | `sample_size` | integer | Number of individuals in sample | `1245` |
 | `athlete_exposures` | integer | Total athlete-exposures (athlete × session) if reported; empty if not | `45000` |
 | `season_or_timeframe` | string | Data collection period | `"2018-2019 season"` |
@@ -89,6 +91,34 @@ When adding a new source, follow these definitions exactly. When a definition is
 - Extracted source: `data/extracted/<source_id>.csv`
 - Cleaned source: `data/cleaned/<source_id>_clean.csv`
 - Master: `data/harmonized/master.csv`
+
+---
+
+## Exposure context and subgroup rows
+
+Sports-injury sources routinely report the same outcome more than once for the same population — broken out by competition vs practice, by mouthguard wearer vs non-wearer, etc. `exposure_context` and `subgroup_label` are how the schema distinguishes those rows from each other (and from accidental duplicates).
+
+**`exposure_context`** — *what activity is the row's count/rate measuring?*
+
+- `all` — combined estimate across activity contexts (competition + practice, or "during the season," etc.). Most rows.
+- `competition` — competition / games / matches only.
+- `practice` — practice / drills only.
+- `training` — strength-and-conditioning / off-season training only (distinguished from `practice` only when the source itself distinguishes them).
+- `other` — anything that doesn't fit; explain in `extraction_notes`.
+- *(empty)* — row isn't exposure-stratified at all (e.g., a one-shot prevalence survey where the rate isn't tied to an exposure window).
+
+**`subgroup_label`** — *what within-source subgroup is this row?*
+
+Use a short snake_case label, only when the row represents a subgroup that isn't already captured by sex, `age_category`, `level_of_play`, `sport`, or `exposure_context`. Examples:
+
+- `mouthguard_users` / `mouthguard_nonusers`
+- `with_helmet` / `without_helmet`
+- `with_orthodontic_appliance`
+- `varsity_jv_combined` (rare — typically use `level_of_play` instead)
+
+Leave empty when the row is the source's main / pooled estimate. Document the labeling decision in `docs/decisions.md` if you invent a new label.
+
+**Together, `(sport × sex × age_category × level_of_play × extraction_basis × exposure_context × subgroup_label × season_or_timeframe)` is the uniqueness key.** Two rows sharing all those values are duplicates; rows that differ on any one of them are legitimately distinct slices of the source's data.
 
 ---
 

@@ -141,6 +141,29 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 ---
 
+### 2026-05-23: Add `exposure_context` and `subgroup_label` columns to the data dictionary
+
+**Trigger:** Project lead approved option A from the 2026-05-22 schema-gap entry. The schema-design todo flagged by validator check C10 is now resolved.
+
+**Decision:** Two new columns added to the master extraction schema:
+
+- `exposure_context` ∈ {`all`, `competition`, `practice`, `training`, `other`, *empty*} — which activity context the row's count/rate covers.
+- `subgroup_label` (free-text snake_case) — within-source subgroups not already captured by sex / age_category / level_of_play / sport / exposure_context (most commonly: protective-equipment splits).
+
+**Reasoning:** Even with only 3 pilot sources extracted, both patterns are universal in sports-injury epidemiology — every RIO-style surveillance paper reports competition/practice splits, and every protective-equipment study reports user/non-user subgroups. Waiting until source #10 to introduce the columns would mean re-extracting up to 7 additional sources. Doing it now costs 3 re-extractions (the pilots).
+
+**Implementation:**
+- `DATA_DICTIONARY.md`: columns + an "Exposure context and subgroup rows" section spelling out the values and the new uniqueness key `(sport × sex × age × level × basis × exposure_context × subgroup_label × season)`.
+- `scripts/07_harmonize.py` `EXPECTED_COLUMNS` list extended.
+- `scripts/08_validate.py`: new categorical check on `exposure_context`; C10 uniqueness key now includes both new columns; C10 should no longer warn on the two legitimate stratifications in collins2016 and labella2002.
+- `scripts/06_write_pilot_extractions.py`: each of the 11 pilot rows tagged with the new columns. collins2016's overall row → `exposure_context=all`; competition row → `competition`; practice row → `practice`. labella2002's two rows → `subgroup_label=mouthguard_users` / `mouthguard_nonusers`. stewart2009's rows → `exposure_context=all`, `subgroup_label=""` (no protective-equipment subgroups in that source).
+
+**Affected rows/sources:** 11 pilot rows in `data/extracted/{collins2016,labella2002,stewart2009}.csv`. PROTOCOL.md unchanged (this is a data-dictionary / extraction-schema concern, not a methodology change).
+
+**Reviewer:** Pending advisor review.
+
+---
+
 ### 2026-05-22: Schema gaps surfaced by first harmonization run (master.csv v0.1)
 
 **Trigger:** First run of `scripts/07_harmonize.py` + `scripts/08_validate.py` against the three pilot extractions produced two C10 (duplicate-key) warnings flagging legitimate stratifications the schema can't disambiguate:
