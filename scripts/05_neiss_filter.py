@@ -129,47 +129,71 @@ def filter_file(in_path: Path, out_path: Path) -> dict:
         reader = csv.DictReader(f, delimiter=delim)
         headers = reader.fieldnames or []
         col_body_part = find_column(headers, "Body_Part", "body_part_1", "body part 1", "body part")
+        # Body_Part_2 was added to NEISS in 2019 — may not exist in older files
+        try:
+            col_body_part_2 = find_column(headers, "Body_Part_2", "body_part_2", "body part 2")
+        except KeyError:
+            col_body_part_2 = None
         col_product_1 = find_column(headers, "Product_1", "product_1", "product 1")
         col_age = find_column(headers, "Age")
         col_diagnosis = find_column(headers, "Diagnosis", "Diagnosis_1", "diagnosis 1")
         col_narrative = None
-        for c in ("Narrative", "narrative_1", "narrative", "Other_Race"):
+        for c in ("Narrative", "Narrative_1", "narrative_1", "narrative"):
             if c in headers:
                 col_narrative = c
                 break
 
         kept_rows = []
-        counts = {"total": 0, "kept_88": 0, "kept_76": 0,
+        counts = {"total": 0, "kept_88_primary": 0, "kept_88_secondary": 0, "kept_76": 0,
                   "rejected_body": 0, "rejected_product": 0,
                   "rejected_age": 0, "rejected_76_no_dental": 0}
         for row in reader:
             counts["total"] += 1
             bp = (row.get(col_body_part) or "").strip()
+            bp2 = (row.get(col_body_part_2) or "").strip() if col_body_part_2 else ""
             prod = (row.get(col_product_1) or "").strip()
             age = (row.get(col_age) or "").strip()
             dx = (row.get(col_diagnosis) or "")
             narrative = (row.get(col_narrative) or "") if col_narrative else ""
 
-            if bp not in (PRIMARY_BODY_PART, SECONDARY_BODY_PART):
+            # Body-part criteria: primary = 88 (Mouth), OR
+            #                     secondary = 88 (since 2019), OR
+            #                     primary = 76 (Face) with dental-dx evidence
+            body_keep = None
+            if bp == PRIMARY_BODY_PART:
+                body_keep = "primary_88"
+            elif bp2 == PRIMARY_BODY_PART:
+                body_keep = "secondary_88"
+            elif bp == SECONDARY_BODY_PART:
+                if likely_dental(dx, narrative):
+                    body_keep = "primary_76_dental"
+                else:
+                    counts["rejected_76_no_dental"] += 1
+                    continue
+            else:
                 counts["rejected_body"] += 1
                 continue
+
             if prod not in SPORT_PRODUCT_CODES:
                 counts["rejected_product"] += 1
                 continue
             if not is_in_age_range(age):
                 counts["rejected_age"] += 1
                 continue
-            if bp == SECONDARY_BODY_PART and not likely_dental(dx, narrative):
-                counts["rejected_76_no_dental"] += 1
-                continue
 
             sport, sport_cat = SPORT_PRODUCT_CODES[prod]
             row["__sport__"] = sport
             row["__sport_category__"] = sport_cat
-            row["__body_part_label__"] = "Mouth" if bp == PRIMARY_BODY_PART else "Face_with_dental"
+            row["__body_part_label__"] = {
+                "primary_88": "Mouth_primary",
+                "secondary_88": "Mouth_secondary",
+                "primary_76_dental": "Face_with_dental",
+            }[body_keep]
             kept_rows.append(row)
-            if bp == PRIMARY_BODY_PART:
-                counts["kept_88"] += 1
+            if body_keep == "primary_88":
+                counts["kept_88_primary"] += 1
+            elif body_keep == "secondary_88":
+                counts["kept_88_secondary"] += 1
             else:
                 counts["kept_76"] += 1
 
@@ -213,7 +237,7 @@ def main():
         print(" or pyreadr on a machine with sufficient memory/time.)")
         return
 
-    grand_total = {"total": 0, "kept_88": 0, "kept_76": 0,
+    grand_total = {"total": 0, "kept_88_primary": 0, "kept_88_secondary": 0, "kept_76": 0,
                    "rejected_body": 0, "rejected_product": 0,
                    "rejected_age": 0, "rejected_76_no_dental": 0}
     for in_path in files:
@@ -227,9 +251,11 @@ def main():
             continue
         for k, v in counts.items():
             grand_total[k] = grand_total.get(k, 0) + v
-        kept = counts["kept_88"] + counts["kept_76"]
+        kept = counts["kept_88_primary"] + counts["kept_88_secondary"] + counts["kept_76"]
         print(f"   {counts['total']:>7} rows -> {kept:>5} kept "
-              f"({counts['kept_88']} body=88, {counts['kept_76']} body=76+dental). "
+              f"({counts['kept_88_primary']} body1=88, "
+              f"{counts['kept_88_secondary']} body2=88, "
+              f"{counts['kept_76']} body=76+dental). "
               f"Output: {out_path.name}")
     print()
     print("TOTAL:", grand_total)
