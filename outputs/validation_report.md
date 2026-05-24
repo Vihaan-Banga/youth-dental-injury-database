@@ -1,14 +1,14 @@
 # Validation Report — 2026-05-23
 
-_Run against `data/harmonized/master.csv` (11 rows)._
+_Run against `data/harmonized/master.csv` (33 rows)._
 
 ## Summary
 
-- Rows checked: **11**
-- Distinct sources: **3**
+- Rows checked: **33**
+- Distinct sources: **6**
 - FAILs: **0**
 - WARNs: **0**
-- Rows flagged `quality_flag=review_needed`: **0**
+- Rows flagged `quality_flag=review_needed`: **3**
 
 ## ✅ No FAILs
 
@@ -31,6 +31,9 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 
 | source_id | rows | bases |
 |---|---|---|
+| azadani2023 | 5 | youth_primary |
 | collins2016 | 5 | youth_primary |
 | labella2002 | 2 | youth_primary |
+| quarrie2020 | 7 | adult_comparator, youth_primary |
 | stewart2009 | 4 | youth_primary |
+| welch2010 | 10 | youth_primary |

@@ -141,6 +141,30 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 ---
 
+### 2026-05-23: Sport taxonomy expansion needed — cricket, netball, cycling, hurling, Kabaddi
+
+**Trigger:** welch2010 extraction (NZ ACC sports dental claims 1999-2008) reports per-sport shares for cricket, netball, and cycling — none in the current §6.1 controlled vocabulary. Several already-included PubMed sources also reference hurling (PMID 20669600) and Kabaddi (PMID 36922269), which are also not in the vocabulary.
+
+**Temporary handling (for now):** these sport names are stuffed into `sport = all_activities_aggregate` with the source's original sport name preserved in `subgroup_label = source_sport_<name>` and `quality_flag = review_needed`. Validator passes; the audit trail is preserved.
+
+**Decision needed at advisor sign-off / before formal extraction begins:** add the following to the §6.1 sport vocabulary in this file:
+
+| proposed value | includes | proposed sport_category | rationale |
+|---|---|---|---|
+| `cricket` | hardball cricket, traditional formats | limited_contact | major sport in UK/India/Australia/NZ youth populations; explicitly mentioned in 19566982 (PMID, included) |
+| `netball` | indoor / outdoor variants | limited_contact | major in Commonwealth youth sports; mentioned in welch2010 |
+| `cycling` | road, BMX, mountain bike when not extreme | non_contact OR move under "recreational" | high in NZ ACC data; debate whether to count cycling as a sport vs recreation |
+| `hurling` | Gaelic hurling | contact | mentioned in 20669600 (Ireland) |
+| `kabaddi` | traditional South Asian contact sport | contact | mentioned in 36922269 (India) |
+| `gaelic_football_mens` / `gaelic_football_womens` | distinguish from football_american / football_association | contact / limited_contact | mentioned in 37791703 (Ladies GAA), 36394781 (Gaelic football children), 40267058 (adult Gaelic football) |
+| `australian_rules_football` | AFL | contact | mentioned in 23529288 (review), 36327493 (sub-elite Australia) |
+
+**Affected rows:** welch2010's per-sport breakdown (3 rows under all_activities_aggregate); future extractions of hurling / Kabaddi / Gaelic football sources.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 ### 2026-05-23: Add `exposure_context` and `subgroup_label` columns to the data dictionary
 
 **Trigger:** Project lead approved option A from the 2026-05-22 schema-gap entry. The schema-design todo flagged by validator check C10 is now resolved.
