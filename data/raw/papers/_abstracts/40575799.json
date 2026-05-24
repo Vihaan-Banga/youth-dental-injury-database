@@ -1,0 +1,25 @@
+{
+  "pmid": "40575799",
+  "title": "Preoperative Moderate Pivot-Shift Phenomenon: A Risk Factor for Ramp Lesions in Patients Undergoing Anterior Cruciate Ligament Reconstruction?",
+  "abstract": "BACKGROUND: While various risk factors for ramp lesions have been reported, few studies have used multivariate and categorical analyses to quantify their specific impact.\nHYPOTHESIS: Multivariate and categorical analyses would reveal a smaller pivot-shift phenomenon, along with previously reported factors, as independent factors for ramp lesions.\nSTUDY DESIGN: Cross-sectional study; Level of evidence, 3.\nMETHODS: The records of consecutive patients who underwent primary anterior cruciate ligament reconstruction between January 2017 and August 2023 were retrospectively reviewed. Patients with past ligamentous injuries in the affected knee or accompanying grade 2 or 3 ligament injuries were excluded. Logistic regression analysis was performed to identify preoperative factors associated with ramp lesions by comparing groups with and without ramp lesions. The factors extracted from the multivariate analysis were also categorically analyzed.\nRESULTS: A total of 262 patients were included in this study. Ramp lesions were identified in 58 patients (22.1%). Multivariate logistic regression analysis revealed that the pivot-shift test grade (OR, 1.560; 95% CI, 1.210-2.020; P < .01), age (OR, 0.966; 95% CI, 0.939-0.995; P = .02), and male sex (OR, 2.170; 95% CI, 1.120-4.190; P = .02) were independently associated with the ramp lesions. The categorical analysis revealed that the odds ratios for ramp lesions were 2.8-fold higher for those with pivot grade ≥4 than for those with grade <4, 2.0-fold higher for those aged <20 years than those aged ≥20 years, and 2.0-fold higher for males than females.\nCONCLUSION: Even a moderate pivot shift is a preoperative risk factor for ramp lesions, alongside younger age and male sex. Paying attention to these factors may reduce the chances of overlooking these lesions.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "language": "eng",
+  "pub_year": "2025",
+  "journal": "Orthopaedic journal of sports medicine",
+  "authors": [
+    "Hasegawa S",
+    "Koga H",
+    "Nakamura T",
+    "Nakagawa Y",
+    "Hoshino T",
+    "Katakura M",
+    "Amemiya M",
+    "Yoshihara A",
+    "Tokumoto Y",
+    "Sekiya I",
+    "Ozeki N"
+  ],
+  "mesh": []
+}

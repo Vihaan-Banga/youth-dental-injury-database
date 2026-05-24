@@ -1,0 +1,48 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "8",
+    "retmax": "8",
+    "retstart": "0",
+    "idlist": [
+      "29336880",
+      "23439051",
+      "23439040",
+      "22152627",
+      "19345791",
+      "12236313",
+      "12017183",
+      "1061792"
+    ],
+    "translationset": [
+      {
+        "from": "dental",
+        "to": "\"dental health services\"[MeSH Terms] OR (\"dental\"[All Fields] AND \"health\"[All Fields] AND \"services\"[All Fields]) OR \"dental health services\"[All Fields] OR \"dental\"[All Fields] OR \"dentally\"[All Fields] OR \"dentals\"[All Fields]"
+      },
+      {
+        "from": "tooth",
+        "to": "\"teeth's\"[All Fields] OR \"teeths\"[All Fields] OR \"tooth\"[MeSH Terms] OR \"tooth\"[All Fields] OR \"teeth\"[All Fields] OR \"tooth's\"[All Fields] OR \"tooths\"[All Fields]"
+      },
+      {
+        "from": "avulsion",
+        "to": "\"avulse\"[All Fields] OR \"avulsed\"[All Fields] OR \"avulsing\"[All Fields] OR \"avulsive\"[All Fields] OR \"fractures, avulsion\"[MeSH Terms] OR (\"fractures\"[All Fields] AND \"avulsion\"[All Fields]) OR \"avulsion fractures\"[All Fields] OR \"avulsion\"[All Fields] OR \"avulsions\"[All Fields]"
+      },
+      {
+        "from": "luxation",
+        "to": "\"luxated\"[All Fields] OR \"luxating\"[All Fields] OR \"luxation\"[All Fields] OR \"luxations\"[All Fields]"
+      },
+      {
+        "from": "sport",
+        "to": "\"sport's\"[All Fields] OR \"sports\"[MeSH Terms] OR \"sports\"[All Fields] OR \"sport\"[All Fields] OR \"sporting\"[All Fields]"
+      },
+      {
+        "from": "athletic",
+        "to": "\"athlete's\"[All Fields] OR \"athletes\"[MeSH Terms] OR \"athletes\"[All Fields] OR \"athlete\"[All Fields] OR \"athletically\"[All Fields] OR \"athlets\"[All Fields] OR \"sports\"[MeSH Terms] OR \"sports\"[All Fields] OR \"athletic\"[All Fields] OR \"athletics\"[All Fields]"
+      }
+    ],
+    "querytranslation": "\"J Endod\"[Journal] AND (\"dental health services\"[MeSH Terms] OR (\"dental\"[All Fields] AND \"health\"[All Fields] AND \"services\"[All Fields]) OR \"dental health services\"[All Fields] OR \"dental\"[All Fields] OR \"dentally\"[All Fields] OR \"dentals\"[All Fields] OR (\"teeth s\"[All Fields] OR \"teeths\"[All Fields] OR \"tooth\"[MeSH Terms] OR \"tooth\"[All Fields] OR \"teeth\"[All Fields] OR \"tooth s\"[All Fields] OR \"tooths\"[All Fields]) OR (\"avulse\"[All Fields] OR \"avulsed\"[All Fields] OR \"avulsing\"[All Fields] OR \"avulsive\"[All Fields] OR \"fractures, avulsion\"[MeSH Terms] OR (\"fractures\"[All Fields] AND \"avulsion\"[All Fields]) OR \"avulsion fractures\"[All Fields] OR \"avulsion\"[All Fields] OR \"avulsions\"[All Fields]) OR (\"luxated\"[All Fields] OR \"luxating\"[All Fields] OR \"luxation\"[All Fields] OR \"luxations\"[All Fields])) AND (\"sport s\"[All Fields] OR \"sports\"[MeSH Terms] OR \"sports\"[All Fields] OR \"sport\"[All Fields] OR \"sporting\"[All Fields] OR (\"athlete s\"[All Fields] OR \"athletes\"[MeSH Terms] OR \"athletes\"[All Fields] OR \"athlete\"[All Fields] OR \"athletically\"[All Fields] OR \"athlets\"[All Fields] OR \"sports\"[MeSH Terms] OR \"sports\"[All Fields] OR \"athletic\"[All Fields] OR \"athletics\"[All Fields]))"
+  }
+}

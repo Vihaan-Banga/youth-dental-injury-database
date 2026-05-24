@@ -1,0 +1,37 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "5",
+    "retmax": "5",
+    "retstart": "0",
+    "idlist": [
+      "18519488",
+      "15060208",
+      "11331714",
+      "8784371",
+      "7862484"
+    ],
+    "translationset": [
+      {
+        "from": "dental",
+        "to": "\"dental health services\"[MeSH Terms] OR (\"dental\"[All Fields] AND \"health\"[All Fields] AND \"services\"[All Fields]) OR \"dental health services\"[All Fields] OR \"dental\"[All Fields] OR \"dentally\"[All Fields] OR \"dentals\"[All Fields]"
+      },
+      {
+        "from": "tooth",
+        "to": "\"teeth's\"[All Fields] OR \"teeths\"[All Fields] OR \"tooth\"[MeSH Terms] OR \"tooth\"[All Fields] OR \"teeth\"[All Fields] OR \"tooth's\"[All Fields] OR \"tooths\"[All Fields]"
+      },
+      {
+        "from": "sport",
+        "to": "\"sport's\"[All Fields] OR \"sports\"[MeSH Terms] OR \"sports\"[All Fields] OR \"sport\"[All Fields] OR \"sporting\"[All Fields]"
+      },
+      {
+        "from": "athletic",
+        "to": "\"athlete's\"[All Fields] OR \"athletes\"[MeSH Terms] OR \"athletes\"[All Fields] OR \"athlete\"[All Fields] OR \"athletically\"[All Fields] OR \"athlets\"[All Fields] OR \"sports\"[MeSH Terms] OR \"sports\"[All Fields] OR \"athletic\"[All Fields] OR \"athletics\"[All Fields]"
+      }
+    ],
+    "querytranslation": "\"Pediatrics\"[Journal] AND (\"dental health services\"[MeSH Terms] OR (\"dental\"[All Fields] AND \"health\"[All Fields] AND \"services\"[All Fields]) OR \"dental health services\"[All Fields] OR \"dental\"[All Fields] OR \"dentally\"[All Fields] OR \"dentals\"[All Fields] OR (\"teeth s\"[All Fields] OR \"teeths\"[All Fields] OR \"tooth\"[MeSH Terms] OR \"tooth\"[All Fields] OR \"teeth\"[All Fields] OR \"tooth s\"[All Fields] OR \"tooths\"[All Fields]) OR \"orofacial\"[All Fields] OR \"maxillofacial\"[All Fields]) AND (\"sport s\"[All Fields] OR \"sports\"[MeSH Terms] OR \"sports\"[All Fields] OR \"sport\"[All Fields] OR \"sporting\"[All Fields] OR (\"athlete s\"[All Fields] OR \"athletes\"[MeSH Terms] OR \"athletes\"[All Fields] OR \"athlete\"[All Fields] OR \"athletically\"[All Fields] OR \"athlets\"[All Fields] OR \"sports\"[MeSH Terms] OR \"sports\"[All Fields] OR \"athletic\"[All Fields] OR \"athletics\"[All Fields]))"
+  }
+}

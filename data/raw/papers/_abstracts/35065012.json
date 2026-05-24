@@ -1,0 +1,22 @@
+{
+  "pmid": "35065012",
+  "title": "Which Sport Is More Dangerous: Ice Hockey or Field Hockey? A Review of the Head and Neck Injuries Associated With the Two Sports.",
+  "abstract": "PURPOSE: Ice hockey and field hockey are contact sports with the potential for injury, especially to the head and neck regions. The purpose of this study is to estimate and compare hospital admission (injury severity) between ice hockey and field hockey of those who presented to the emergency department with head and neck injuries.\nMETHODS: The investigators designed and implemented a 20-year retrospective cohort study using the National Electronic Injury Surveillance System database. We included data related to ice hockey and field hockey injuries from January 2000 to December 2019 in this study. The primary predictor variable was sport played (ice hockey vs field hockey). Secondary predictor variables and covariates were derived from patient and injury characteristics. The primary outcome variable was hospital admission. Logistic regression was used to determine independent risk factors for the outcome variable.\nRESULTS: Our final sample was composed of 5,472 patients: 4,472 patients suffered head and neck injuries from ice hockey while the remaining 1,000 patients suffered head and neck injuries from field hockey. Players less than 18 years old were associated with 2.07-fold odds of admission (P < .01). Injury to the head (odds ratio [OR] = 14.339; 95% confidence interval [CI], 2.0 to 105.1; P < .01) and neck (OR = 89.260; 95% CI, 11.2 to 712.6; P < .01) were independently associated with an increased odds of admission. Relative to contusions/abrasions, players who suffered a concussion (OR = 141.637; 95% CI, 11.5 to 1,741.5; P < .01), fracture (OR = 155.434; 95% CI, 17.0 to 1,419.2; P < .01), internal organ injury (OR = 186.450; 95% CI, 15.5 to 2,236.8; P < .01), or hematoma (OR = 23.046; 95% CI, 1.2 to 442.5; P < .05) were all independently associated with an increased odds of admission. Ice hockey was not an independent risk factor for admission relative to field hockey.\nCONCLUSIONS: The findings of this study suggest that ice hockey was more associated with injuries to the head and neck as well as with concussions and internal organ injury compared to field hockey. However, ice hockey was not associated with increased risk of hospitalization relative to field hockey.",
+  "publication_types": [
+    "Journal Article",
+    "Review"
+  ],
+  "language": "eng",
+  "pub_year": "2022",
+  "journal": "Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons",
+  "authors": [
+    "Stanbouly D",
+    "Richardson J",
+    "Richardson N",
+    "Reynolds RM",
+    "Recker MJ",
+    "Bass K",
+    "Chuang SK"
+  ],
+  "mesh": []
+}

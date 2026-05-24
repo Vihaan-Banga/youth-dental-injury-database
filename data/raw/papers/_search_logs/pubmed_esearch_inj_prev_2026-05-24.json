@@ -1,0 +1,52 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "24",
+    "retmax": "24",
+    "retstart": "0",
+    "idlist": [
+      "41087084",
+      "40935598",
+      "39832883",
+      "39060115",
+      "38811153",
+      "36368911",
+      "34483102",
+      "32839249",
+      "32332142",
+      "31915273",
+      "31915268",
+      "27597403",
+      "25416466",
+      "23322260",
+      "16081755",
+      "15805433",
+      "15178672",
+      "11770650",
+      "11003192",
+      "10728540",
+      "9666366",
+      "9666364",
+      "9338837",
+      "9338836"
+    ],
+    "translationset": [
+      {
+        "from": "dental",
+        "to": "\"dental health services\"[MeSH Terms] OR (\"dental\"[All Fields] AND \"health\"[All Fields] AND \"services\"[All Fields]) OR \"dental health services\"[All Fields] OR \"dental\"[All Fields] OR \"dentally\"[All Fields] OR \"dentals\"[All Fields]"
+      },
+      {
+        "from": "tooth",
+        "to": "\"teeth's\"[All Fields] OR \"teeths\"[All Fields] OR \"tooth\"[MeSH Terms] OR \"tooth\"[All Fields] OR \"teeth\"[All Fields] OR \"tooth's\"[All Fields] OR \"tooths\"[All Fields]"
+      },
+      {
+        "from": "mouthguard",
+        "to": "\"mouth protectors\"[MeSH Terms] OR (\"mouth\"[All Fields] AND \"protectors\"[All Fields]) OR \"mouth protectors\"[All Fields] OR \"mouthguard\"[All Fields] OR \"mouthguards\"[All Fields]"
+      }
+    ],
+    "querytranslation": "\"Inj Prev\"[Journal] AND (\"dental health services\"[MeSH Terms] OR (\"dental\"[All Fields] AND \"health\"[All Fields] AND \"services\"[All Fields]) OR \"dental health services\"[All Fields] OR \"dental\"[All Fields] OR \"dentally\"[All Fields] OR \"dentals\"[All Fields] OR \"orofacial\"[All Fields] OR (\"teeth s\"[All Fields] OR \"teeths\"[All Fields] OR \"tooth\"[MeSH Terms] OR \"tooth\"[All Fields] OR \"teeth\"[All Fields] OR \"tooth s\"[All Fields] OR \"tooths\"[All Fields]) OR \"maxillofacial\"[All Fields] OR (\"mouth protectors\"[MeSH Terms] OR (\"mouth\"[All Fields] AND \"protectors\"[All Fields]) OR \"mouth protectors\"[All Fields] OR \"mouthguard\"[All Fields] OR \"mouthguards\"[All Fields]))"
+  }
+}

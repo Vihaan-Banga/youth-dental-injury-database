@@ -1,0 +1,20 @@
+{
+  "pmid": "40935598",
+  "title": "Impact of school closures and reopenings on paediatric fracture incidence during the COVID-19 pandemic: an interrupted time series analysis in Japan.",
+  "abstract": "BACKGROUND: The COVID-19 pandemic significantly disrupted children's daily lives through school closures and restricted activities. Fracture injuries, which frequently occur during school activities, may subsequently have been impacted. This study examines the influence of the pandemic on paediatric fracture incidence rates in Niigata City, Japan.\nMETHODS: Monthly fracture data from 2020 were analysed using an interrupted time series design, comparing trends to 2014-2019. Segmented regression assessed level and slope changes after school closure (March 2020) and reopening (June 2020). Data were stratified by school level and gender. Activity contexts were also descriptively compared.\nRESULTS: Fracture incidence declined immediately after school closures, with level decreases ranging from -1.0‰ to -3.0‰ across all groups. Following reopening, a transient increase was observed (+1.0‰ to +3.0‰), though slope changes were not statistically significant. After reopening, the proportion of fractures occurring during physical education and commuting increased across all subgroups.\nDISCUSSION AND CONCLUSIONS: School closures led to an immediate but temporary reduction in fracture incidence. Although fracture incidence temporarily increased after school reopening, no sustained trend was observed. These findings highlight the importance of focusing on the acute surge in injuries immediately after school reopening and on how injury risks shifted during activity reintegration under continued restrictions.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "language": "eng",
+  "pub_year": "2025",
+  "journal": "Injury prevention : journal of the International Society for Child and Adolescent Injury Prevention",
+  "authors": [
+    "Koga H",
+    "Omori G",
+    "Takagi S",
+    "Mochizuki T",
+    "Koga Y",
+    "Kawashima H"
+  ],
+  "mesh": []
+}

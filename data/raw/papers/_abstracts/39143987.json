@@ -1,0 +1,22 @@
+{
+  "pmid": "39143987",
+  "title": "Predictive Value of the KOJI AWARENESS Self-Evaluation System for Running Injuries in Elite Male Long-Distance Runners: A Prospective Cohort Study.",
+  "abstract": "BACKGROUND: The KOJI AWARENESS (KA) test is a practical self-evaluation tool that assesses body movements and may help develop individual conditioning plans to improve movement function. However, the association between preseason KA scores and in-season injury occurrence remains unexplored.\nPURPOSE: To investigate whether the KA self-screening test score can predict running-related injuries in elite long-distance runners.\nSTUDY DESIGN: Cohort study; Level of evidence, 2.\nMETHODS: A total of 47 elite college male long-distance runners (age, 18-22 years) were enrolled in this study in June 2022. The participants underwent the KA self-screening test to assess preseason upper limb, core, and lower limb function. Running-related injuries with a training time loss of >3 weeks were tracked for 6 months during the season. The participants were divided into injury and noninjury groups, and between-group comparisons and receiver operating characteristic (ROC) curve analysis were used to determine the association between the KA scores and the injury incidence. Chi-square tests and risk ratios were calculated based on the cutoff value- and injury-based grouping.\nRESULTS: Among the runners, 10 (21.3%) sustained an injury. There were no significant differences in the demographic characteristics between the injury and noninjury groups. The injury group had significantly lower KA scores than the noninjury group (median, 44.5 [interquartile range, 43-46.8] vs median, 48 [interquartile range, 46-50], respectively; P = .009). The ROC curve analysis determined a cutoff value of 46.5 points (sensitivity, 73%; specificity, 63.6%), indicating that the KA scores exhibited a relatively high predictive value for running-related injuries (area under the ROC curve, 0.764 [95% CI, 0.600-0.930]). The risk ratio for group division based on the cutoff value was 2.590 (95% CI, 1.329-5.047).\nCONCLUSION: These findings demonstrated that the KA test is an effective self-screening tool for predicting the risk of running-related injuries in elite male long-distance runners.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "language": "eng",
+  "pub_year": "2024",
+  "journal": "Orthopaedic journal of sports medicine",
+  "authors": [
+    "Murofushi K",
+    "Mitomo S",
+    "Hirohata K",
+    "Furuya H",
+    "Katagiri H",
+    "Kaneoka K",
+    "Hara S",
+    "Yagishita K"
+  ],
+  "mesh": []
+}

@@ -1,0 +1,58 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "30",
+    "retmax": "30",
+    "retstart": "0",
+    "idlist": [
+      "42052228",
+      "41798103",
+      "40771885",
+      "40575799",
+      "39157590",
+      "39143987",
+      "39143984",
+      "38274016",
+      "37693805",
+      "37213661",
+      "37123994",
+      "36874048",
+      "36250031",
+      "36199825",
+      "35958291",
+      "35601732",
+      "35464903",
+      "35340727",
+      "34568508",
+      "34541011",
+      "33614796",
+      "33553456",
+      "33354581",
+      "33244476",
+      "33015213",
+      "32995346",
+      "32953922",
+      "31696130",
+      "30937322",
+      "28695139"
+    ],
+    "translationset": [
+      {
+        "from": "dental",
+        "to": "\"dental health services\"[MeSH Terms] OR (\"dental\"[All Fields] AND \"health\"[All Fields] AND \"services\"[All Fields]) OR \"dental health services\"[All Fields] OR \"dental\"[All Fields] OR \"dentally\"[All Fields] OR \"dentals\"[All Fields]"
+      },
+      {
+        "from": "tooth",
+        "to": "\"teeth's\"[All Fields] OR \"teeths\"[All Fields] OR \"tooth\"[MeSH Terms] OR \"tooth\"[All Fields] OR \"teeth\"[All Fields] OR \"tooth's\"[All Fields] OR \"tooths\"[All Fields]"
+      },
+      {
+        "from": "mouth",
+        "to": "\"mouth\"[MeSH Terms] OR \"mouth\"[All Fields] OR \"mouths\"[All Fields] OR \"mouth's\"[All Fields] OR \"mouthed\"[All Fields] OR \"mouthful\"[All Fields] OR \"mouthfuls\"[All Fields] OR \"mouthing\"[All Fields]"
+      }
+    ],
+    "querytranslation": "\"Orthop J Sports Med\"[Journal] AND (\"dental health services\"[MeSH Terms] OR (\"dental\"[All Fields] AND \"health\"[All Fields] AND \"services\"[All Fields]) OR \"dental health services\"[All Fields] OR \"dental\"[All Fields] OR \"dentally\"[All Fields] OR \"dentals\"[All Fields] OR \"orofacial\"[All Fields] OR (\"teeth s\"[All Fields] OR \"teeths\"[All Fields] OR \"tooth\"[MeSH Terms] OR \"tooth\"[All Fields] OR \"teeth\"[All Fields] OR \"tooth s\"[All Fields] OR \"tooths\"[All Fields]) OR (\"mouth\"[MeSH Terms] OR \"mouth\"[All Fields] OR \"mouths\"[All Fields] OR \"mouth s\"[All Fields] OR \"mouthed\"[All Fields] OR \"mouthful\"[All Fields] OR \"mouthfuls\"[All Fields] OR \"mouthing\"[All Fields]) OR \"maxillofacial\"[All Fields])"
+  }
+}

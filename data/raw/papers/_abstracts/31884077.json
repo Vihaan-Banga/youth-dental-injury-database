@@ -1,0 +1,20 @@
+{
+  "pmid": "31884077",
+  "title": "Characterizing Craniomaxillofacial Injuries in American Professional Sports Leagues.",
+  "abstract": "PURPOSE: The purpose of this study was to characterize the types of craniomaxillofacial (CMF) injuries that occur in professional sports leagues and the associated recovery times.\nMATERIALS AND METHODS: A retrospective cohort study was designed and implemented using the Pro Sports Transaction Archive. The database was queried for all registered CMF injuries in the 4 main men's major professional sports leagues in the United States from 2013 to 2018. The sport, injury location, and season were the predictor variables, and the frequency and length of time on the injured list were the outcome variables. Descriptive statistics were computed, and Fisher's exact tests were used to determine the association between the predictor and outcome variables. Analysis of variance was used to compare the injury frequency and duration.\nRESULTS: Of the 198 injuries that met the inclusion criteria, 60 were from Major League Baseball (MLB) (30%), 49 from the National Basketball Association (25%), 8 from the National Football League (4%), and 81 from the National Hockey League (NHL) (41%). Injuries to the midface were most common (mean, 25.2 ± 3.6 injuries per season; P < .001) compared with the upper face (mean, 6.0 ± 2.0 injuries per season) and lower face (mean, 8.4 ± 2.3 injuries per season). The mean time on the injured list after CMF trauma was 8.4 ± 10.4 days, with MLB injuries requiring the shortest duration (mean, 3.9 ± 6.6 days; P = .001). A significant association was found between the injury location and sport (P < .001). However, no statistically significant difference was found in the number of injuries per season from 2013 to 2018 for each league (P = .818).\nCONCLUSIONS: Midface trauma was significantly more common than upper or lower face trauma in professional sports leagues during the past 5 seasons. The NHL had the greatest injury rate, even after adjustment for games played.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "language": "eng",
+  "pub_year": "2020",
+  "journal": "Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons",
+  "authors": [
+    "Wu BW",
+    "Jazayeri HE",
+    "Lee KC",
+    "Khavanin N",
+    "Dorafshar AH",
+    "Peacock ZS"
+  ],
+  "mesh": []
+}

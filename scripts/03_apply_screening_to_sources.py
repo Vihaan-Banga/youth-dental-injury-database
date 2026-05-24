@@ -187,6 +187,12 @@ Document every search query run, where, when, and how many results.
 | 2026-05-23 | PubMed (E-utilities) | journal-restricted: `"Br J Sports Med"[journal] AND (dental OR orofacial OR tooth OR maxillofacial)` | 47 | (see screening report) | Targeted search per PROTOCOL §4.2 supplementary list. |
 | 2026-05-23 | PubMed (E-utilities) | journal-restricted: `"J Athl Train"[journal] AND (dental OR orofacial OR tooth OR maxillofacial)` | 10 | (see screening report) | Targeted search per PROTOCOL §4.2 supplementary list. |
 | 2026-05-23 | (deduplication) | Union of 2026-05-23 journal searches | 212 | 132 NEW after deduplication against 2026-05-21 seed | Dumps at `data/raw/papers/_search_logs/pubmed_*_journal_2026-05-23.*`. |
+| 2026-05-24 | PubMed (E-utilities) | journal-restricted: `"J Endod"[journal] AND (dental OR tooth OR avulsion OR luxation) AND (sport OR athletic)` | 8 | (see screening report) | Round 2 of PROTOCOL §4.2 supplementary searches. |
+| 2026-05-24 | PubMed (E-utilities) | journal-restricted: `"J Oral Maxillofac Surg"[journal] AND (dental OR mouth OR orofacial OR tooth) AND (sport OR athletic)` | 44 | (see screening report) | Round 2. |
+| 2026-05-24 | PubMed (E-utilities) | journal-restricted: `"Pediatrics"[journal] AND (dental OR tooth OR orofacial OR maxillofacial) AND (sport OR athletic)` | 5 | (see screening report) | Round 2. |
+| 2026-05-24 | PubMed (E-utilities) | journal-restricted: `"Inj Prev"[journal] AND (dental OR orofacial OR tooth OR maxillofacial OR mouthguard)` | 24 | (see screening report) | Round 2. |
+| 2026-05-24 | PubMed (E-utilities) | journal-restricted: `"Orthop J Sports Med"[journal] AND (dental OR orofacial OR tooth OR mouth OR maxillofacial)` | 30 | (see screening report) | Round 2. |
+| 2026-05-24 | (deduplication) | Union of 2026-05-24 journal searches | 111 | 104 NEW after deduplication against prior seeds | Dumps at `data/raw/papers/_search_logs/pubmed_*_journal2_2026-05-24.*` and per-journal esearch JSONs. |
 
 ---
 

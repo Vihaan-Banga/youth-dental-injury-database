@@ -1,0 +1,23 @@
+{
+  "pmid": "27597403",
+  "title": "Development and validation of a new ICD-10-based trauma mortality prediction scoring system using a Japanese national inpatient database.",
+  "abstract": "INTRODUCTION: To develop and validate a new trauma mortality prediction scoring system based on International Statistical Classification of Diseases (ICD)-10 codes, using a Japanese administrative claims and discharge abstract database.\nMETHODS: This retrospective observational study used the Japanese Diagnosis Procedure Combination database. Injuries were categorised into 33 groups with 5 additional groups based on injury sites and types. A multivariable logistic regression analysis was performed for in-hospital mortality in a derivation cohort after adjusting for the 38 groups, patient's sex, age and Charlson Comorbidity Index score. Each variable was assigned a score that was equal to the value of the regression coefficient. The new severity score was defined as the sum of the scores. The new scoring system was tested in a validation cohort.\nRESULTS: The mortality rates were 2.4% (9270/393 395) and 2.5% (8778/349 285) in the derivation and validation cohorts, respectively. The area under the receiver operating curve (AUROC) of the new scoring system was 0.887 (95% CI 0.884 to 0.890) in the validation cohort. Subgroup analyses showed that the scoring system retained high predictive performance both for patients <65 years (AUROC 0.934, 95% CI 0.928 to 0.939) and for elderly patients at the age of ≥65 years (AUROC 0.825, 95% CI 0.820 to 0.829).\nCONCLUSIONS: A new ICD-10-based injury severity scoring system was developed and validated. Further studies are required to validate the scoring system in other databases.",
+  "publication_types": [
+    "Journal Article",
+    "Observational Study",
+    "Validation Study"
+  ],
+  "language": "eng",
+  "pub_year": "2017",
+  "journal": "Injury prevention : journal of the International Society for Child and Adolescent Injury Prevention",
+  "authors": [
+    "Wada T",
+    "Yasunaga H",
+    "Yamana H",
+    "Matsui H",
+    "Matsubara T",
+    "Fushimi K",
+    "Nakajima S"
+  ],
+  "mesh": []
+}

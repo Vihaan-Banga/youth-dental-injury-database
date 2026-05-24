@@ -1,0 +1,23 @@
+{
+  "pmid": "39832883",
+  "title": "Can a novel computer vision-based framework detect head-on-head impacts during a rugby league tackle?",
+  "abstract": "BACKGROUND: Head-on-head impacts are a risk factor for concussion, which is a concern for sports. Computer vision frameworks may provide an automated process to identify head-on-head impacts, although this has not been applied or evaluated in rugby.\nMETHODS: This study developed and evaluated a novel computer vision framework to automatically classify head-on-head and non-head-on-head impacts. Tackle events from professional rugby league matches were coded as either head-on-head or non-head-on-head impacts. These included non-televised standard-definition and televised high-definition video clips to train (n=341) and test (n=670) the framework. A computer vision framework consisting of two deep learning networks, an object detection algorithm and three-dimensional Convolutional Neural Networks, was employed and compared with the analyst-coded criterion. Sensitivity, specificity and positive predictive value were reported.\nRESULTS: The overall performance evaluation of the framework to classify head-on-head impacts against manual coding had a sensitivity, specificity and positive predictive value (95% CIs) of 68% (58% to 78%), 84% (78% to 88%) and 0.61 (0.54 to 0.69) in standard-definition clips, and 65% (55% to 75%), 84% (79% to 89%) and 0.61 (0.53 to 0.68) in high-definition clips.\nCONCLUSION: The study introduces a novel computer vision framework for head-on-head impact detection. Governing bodies may also use the framework in real time, or for retrospective analysis of historical videos, to establish head-on-head rates and evaluate prevention strategies. Future work should explore the application of the framework to other head-contact mechanisms and also the utility in real time to identify potential events for clinical assessment.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "language": "eng",
+  "pub_year": "2026",
+  "journal": "Injury prevention : journal of the International Society for Child and Adolescent Injury Prevention",
+  "authors": [
+    "Mohan M",
+    "Weaving D",
+    "Gardner AJ",
+    "Hendricks S",
+    "Stokes KA",
+    "Phillips G",
+    "Cross M",
+    "Owen C",
+    "Jones B"
+  ],
+  "mesh": []
+}

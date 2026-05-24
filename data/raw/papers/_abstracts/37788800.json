@@ -1,0 +1,20 @@
+{
+  "pmid": "37788800",
+  "title": "Facial Injuries in the National Basketball Association.",
+  "abstract": "BACKGROUND: Sport injuries can negatively impact physical and psychological aspects of athletes. There is a gap in the literature regarding facial trauma present in basketball.\nPURPOSE: The purpose of this study is to identify and describe facial trauma present in the National Basketball Association (NBA).\nSTUDY DESIGN, SETTING, SAMPLE: This is a retrospective cohort study in which the sample (n = 206) consists of players that missed games due to facial injuries in the NBA, the data were collected from a public access online resource.\nINDEPENDENT VARIABLE: The predictor variables were player position (center, point guard, shooting guard, small forward, and power forward), team conference (Eastern/Western), and if played games occurred in playoff season.\nMAIN OUTCOME VARIABLES: The primary outcome variable was the injury location (upper, middle, and lower facial third), and the secondary outcome was type of injury (soft tissue/bone fracture).\nCOVARIATES: Player's age, height, weight, and body mass index were collected.\nANALYSES: χ2 and logistic regression were calculated to determine associations between predictor and outcome variables. Logistic regression was used to determine if variables were predictive for injury. Odds ratio was also computed for significant results. P value less than .05 (95% confidence interval) was considered statistically significant.\nRESULTS: A total of 206 players missed games due to facial injuries, and a total of 212 injuries were quantified. The mean age of the injured players was 27.24 ± 4.06 years, mean height (centimeters) was 201 ± 59.31 cm, mean weight (kilograms) was 99.48 ± 12.41 kg, and body mass index was 24.52 ± 1.75 kg/m2. Of the 212 injuries, none of them occurred in the upper facial third, 158 (75%) were in the middle third, and 54 (25%) were in the lower third; 151 of them were fractures (61%) and 61 were soft tissue injuries (29%). Most injuries were concentrated in centers (23%) and power forwards (23%). The most common fracture occurred in the nasal bones (39.2%), and most soft tissue injuries occurred in the eye globes (25%). Almost all injuries occurred during regular season games (97%), and the Eastern conference was slightly predominant (52%).\nCONCLUSION AND RELEVANCE: Significant facial trauma in the NBA has risen in recent years. The player's position, height, and weight were the primary factors associated with facial trauma in the NBA.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "language": "eng",
+  "pub_year": "2023",
+  "journal": "Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons",
+  "authors": [
+    "Sifuentes-Cervantes JS",
+    "Bravo-Liranza VM",
+    "Pérez-Nuñez LI",
+    "Martinez-Rovira A",
+    "Castro-Núñez J",
+    "Guerrero LM"
+  ],
+  "mesh": []
+}
