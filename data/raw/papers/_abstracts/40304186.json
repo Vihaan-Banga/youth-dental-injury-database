@@ -1,0 +1,23 @@
+{
+  "pmid": "40304186",
+  "title": "The Influence of Sport Impacts on Injuries of the Temporomandibular System: Frontal Impacts.",
+  "abstract": "OBJECTIVE: The orofacial injuries (temporomandibular joint (TMJ) injuries, mandible fractures, etc.) represent a high incidence in sports medicine. But the mechanism of injuries caused by sport impacts was poorly studied. This study aimed to fill this gap.\nDESIGN: Different frontal impacts were applied to the finite element model. The motions and biomechanical responses of the joint and mandible were analyzed and compared with active open-closing mouth movement in order to evaluate injury causes.\nMETHODS: Firstly, the maxillofacial morphology and open-closing motion were captured. Then an improved FE maxillofacial model for dynamic analysis was established for impact and mouth open-closing simulations.\nRESULTS: The rotation degrees of the mandible and the stress level of the TMJ increased as the impacts got greater. The disc sustained squeeze and the capsule sustained stretch. The mandibular body and ramus sustained greater stretch under impacts over 2000 N.\nCONCLUSION: It indicated that the injuries of the TMJ were primarily from excessive squeezing on the disc and stretching on the capsule, caused by excessive displacement of the condyle. The mandibular body and ramus were at great risk of fracture.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "mesh": [
+    "Humans",
+    "Finite Element Analysis",
+    "Biomechanical Phenomena",
+    "Athletic Injuries",
+    "Temporomandibular Joint"
+  ],
+  "language": "eng",
+  "pub_year": "2025",
+  "journal": "Dental traumatology : official publication of International Association for Dental Traumatology",
+  "authors": [
+    "Li A",
+    "Shao B",
+    "Liu Z"
+  ]
+}

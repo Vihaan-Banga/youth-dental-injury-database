@@ -180,7 +180,13 @@ Document every search query run, where, when, and how many results.
 
 | date | source | query | results_count | screened_in | notes |
 |---|---|---|---|---|---|
-| 2026-05-21 | PubMed (E-utilities) | PROTOCOL.md §4.2 verbatim | 202 | """ + f"{by_dec.get('screened_included', 0)} included + {by_dec.get('needs_human_review', 0)} pending full-text" + """ | Top 200 PMIDs retrieved via esearch+esummary+efetch. Dumps under `data/raw/papers/_search_logs/`. AI-assisted screening details in `outputs/screening_report_2026-05-21.md`. |
+| 2026-05-21 | PubMed (E-utilities) | PROTOCOL.md §4.2 main query verbatim | 202 | (see screening report) | Top 200 PMIDs retrieved via esearch+esummary+efetch. Dumps under `data/raw/papers/_search_logs/`. AI-assisted screening details in `outputs/screening_report_2026-05-21.md`. |
+| 2026-05-23 | PubMed (E-utilities) | journal-restricted: `"Dent Traumatol"[journal] AND (dental OR tooth OR orofacial) AND (sport OR athletic)` | 140 | (see screening report) | Targeted search per PROTOCOL §4.2 supplementary list. |
+| 2026-05-23 | PubMed (E-utilities) | journal-restricted: `"Pediatr Dent"[journal] AND (trauma OR injury) AND (sport OR athletic)` | 4 | (see screening report) | Targeted search per PROTOCOL §4.2 supplementary list. |
+| 2026-05-23 | PubMed (E-utilities) | journal-restricted: `"Am J Sports Med"[journal] AND (dental OR orofacial OR tooth OR maxillofacial)` | 11 | (see screening report) | Targeted search per PROTOCOL §4.2 supplementary list. |
+| 2026-05-23 | PubMed (E-utilities) | journal-restricted: `"Br J Sports Med"[journal] AND (dental OR orofacial OR tooth OR maxillofacial)` | 47 | (see screening report) | Targeted search per PROTOCOL §4.2 supplementary list. |
+| 2026-05-23 | PubMed (E-utilities) | journal-restricted: `"J Athl Train"[journal] AND (dental OR orofacial OR tooth OR maxillofacial)` | 10 | (see screening report) | Targeted search per PROTOCOL §4.2 supplementary list. |
+| 2026-05-23 | (deduplication) | Union of 2026-05-23 journal searches | 212 | 132 NEW after deduplication against 2026-05-21 seed | Dumps at `data/raw/papers/_search_logs/pubmed_*_journal_2026-05-23.*`. |
 
 ---
 

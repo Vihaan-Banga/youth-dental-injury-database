@@ -1,0 +1,35 @@
+{
+  "pmid": "22805585",
+  "title": "Shock absorption ability of laminate mouth guards in two different malocclusions using fiber Bragg grating (FBG) sensor.",
+  "abstract": "PURPOSE: The majority of orofacial injuries affect the upper jaw, with the maxillary incisors being most prone to injury, often accounting for as many as 80% of all cases. Children with malocclusion in the anterior segment of the maxilla are more prone to traumatic injuries than those exhibiting normal occlusion, because most often the damaging force impacts directly against the maxillary anterior teeth. Hence, because of the difference of dissipation of the impact force because of the presence or absence of malocclusion, the mouthguard's shock absorption capacity would be influenced by certain factors. In the present study, a unique in vitro experiment utilizing fiber Bragg Grating (FBG) as distributed strain sensors was carried out to evaluate the shock absorption ability of laminate customized mouthguards in two different malocclusions compared with normal occlusion.\nMATERIAL AND METHODS: The impact was produced using a customized pendulum device with three interchangeable impact objects on typhodont models with two different malocclusions and normal occlusion from different heights. Response of gratings was monitored using an optical spectrum analyzer. Strain induced because each impact was determined from the Bragg's wavelength shifts for each grating. For every model, 12 impact strikes were measured using three different impact objects on the two specified sites by releasing the object from two different heights.\nRESULTS AND CONCLUSIONS: The laminated mouthguards showed significant variation in shock absorption ability when different malocclusions were compared. Hence, modifications in the original design of the laminated mouthguards should be considered for athletic competitors with malocclusion to provide adequate protection against impact. FBG sensor has shown the unique advantage of high sensitivity to strain measurement and can be used in further studies. The height of the impact is an important variable in determining the shock absorption ability of mouthguards.",
+  "publication_types": [
+    "Comparative Study",
+    "Journal Article"
+  ],
+  "mesh": [
+    "Absorption",
+    "Analysis of Variance",
+    "Biomechanical Phenomena",
+    "Dental Stress Analysis",
+    "Equipment Design",
+    "Humans",
+    "Incisor",
+    "Malocclusion",
+    "Models, Dental",
+    "Mouth Protectors",
+    "Stress, Mechanical",
+    "Tooth Injuries"
+  ],
+  "language": "eng",
+  "pub_year": "2013",
+  "journal": "Dental traumatology : official publication of International Association for Dental Traumatology",
+  "authors": [
+    "Bhalla A",
+    "Grewal N",
+    "Tiwari U",
+    "Mishra V",
+    "Mehla NS",
+    "Raviprakash S",
+    "Kapur P"
+  ]
+}

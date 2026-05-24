@@ -70,6 +70,15 @@ def auto_decide(rec):
     if "Review" in pts:
         return ("screened_excluded", "E-review", "high",
                 "Narrative review — kept for reference mining; not extracted per §3.2.")
+    # Non-primary literature types that cannot supply extractable epi data.
+    for non_primary, label in [
+        ("Editorial", "Editorial"),
+        ("Letter", "Letter to the editor"),
+        ("Comment", "Comment / correspondence"),
+    ]:
+        if non_primary in pts:
+            return ("screened_excluded", "E-noprim", "high",
+                    f"{label} — no extractable primary numerical data (§3.1).")
     return None
 
 

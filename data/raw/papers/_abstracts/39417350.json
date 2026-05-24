@@ -1,0 +1,31 @@
+{
+  "pmid": "39417350",
+  "title": "Stress Distribution in Proclined Anterior Teeth of Pediatric Patients With and Without Mouthguard Use: A 3D Finite Element Analysis.",
+  "abstract": "BACKGROUND: Traumatic dental injuries related to sports are a significant concern, as they can have severe physical and psychological impacts on children. Using mouthguards is essential, particularly in sports like skating, where high-impact forces are common.\nAIM: The study aimed to evaluate how stress is distributed on the teeth and surrounding bone in children with proclined anterior teeth when a force of 614.12 N was applied to two different regions of the jaws. The evaluation was conducted using finite element analysis (FEA), both with and without the use of a mouthguard.\nMETHODS AND METHODOLOGY: A 3-dimensional finite element analysis (FEA) model was constructed using a cone beam computed tomography (CBCT) scan of a 12-year-old male patient. An average standardized force of 614.12 N was calculated, based on the average weight of children aged 11 to 13 years and the average speed of 13.4 m/s with which the children skate. The force was applied in two different directions and areas of the jaws: a lateral blow, perpendicular to the crown and root with the maxillary and mandibular teeth in occlusion (between the first molar and second premolar), and a blow obliquely at the pogonion point on the chin. Static simulations were then performed for four realistic scenarios-two with mouthguards and two without mouthguards.\nRESULT: The Von Mises stresses were evaluated under all conditions. When the applied force was directed laterally, the stress values observed were 126.76 MPa with a mouthguard and 140 MPa without a mouthguard. When the force was applied to the chin region, the stress values were 37.997 MPa with a mouthguard and 40.67 MPa without a mouthguard.\nCONCLUSION: The use of a mouthguard in children is beneficial for protecting teeth and surrounding structures, especially in cases of proclined anterior teeth, as it helps dampen the generated stresses.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "mesh": [
+    "Humans",
+    "Finite Element Analysis",
+    "Child",
+    "Mouth Protectors",
+    "Male",
+    "Imaging, Three-Dimensional",
+    "Cone-Beam Computed Tomography",
+    "Tooth Injuries",
+    "Stress, Mechanical",
+    "Dental Stress Analysis",
+    "Adolescent",
+    "Incisor",
+    "Athletic Injuries"
+  ],
+  "language": "eng",
+  "pub_year": "2025",
+  "journal": "Dental traumatology : official publication of International Association for Dental Traumatology",
+  "authors": [
+    "Bhadule SN",
+    "Kalaskar RR",
+    "Doiphode A"
+  ]
+}

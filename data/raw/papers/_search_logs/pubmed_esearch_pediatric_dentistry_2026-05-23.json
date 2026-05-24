@@ -1,0 +1,19 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "4",
+    "retmax": "4",
+    "retstart": "0",
+    "idlist": [
+      "23635988",
+      "9566015",
+      "9442537",
+      "2638006"
+    ],
+    "translationset": [],
+    "querytranslation": "\"Pediatr Dent\"[Journal] AND (\"trauma\"[Text Word] OR \"injury\"[Text Word]) AND (\"sport\"[Text Word] OR \"athletic\"[Text Word])"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "pmid": "31937578",
+  "title": "Mouthguard use in youth ice hockey and the risk of concussion: nested case-control study of 315 cases.",
+  "abstract": "BACKGROUND: Concussion is the most common injury in youth ice hockey. Whether mouthguard use lowers the odds of concussion remains an unanswered question.\nOBJECTIVE: To determine the association between concussion and mouthguard use in youth ice hockey.\nMETHODS: Nested case-control design. Cases and controls were identified from two prospective cohort studies using valid injury surveillance methods. Cases were players concussed during a game or practice; controls were players who sustained a non-concussion injury during a game or practice. The primary exposure was mouthguard use at time of injury; mouthguard type (dental custom fit or off the shelf) was a secondary exposure. Physician-diagnosed or therapist-suspected concussion was the primary outcome. Dental injury was a secondary outcome. Multilevel logistic regression with random effect at a team level was used to obtain ORs for the mouthguard effect, adjusted for level of play, age group, position, concussion history, mechanism of injury, cohort, session type and body checking policy.\nRESULTS: Among cases, 236/315 (75%) were wearing a mouthguard at time of injury, while 224/270 (83%) controls were wearing a mouthguard at time of injury. Any mouthguard use was associated with an adjusted OR for concussion of 0.36 (95% CI 0.17 to 0.73). Off-the-shelf mouthguards were associated with a 69% lower odds of concussion (adjusted OR: 0.31; 95% CI 0.14 to 0.65). Dental custom-fit mouthguards were associated with a non-significant 49% lower odds of concussion (adjusted OR: 0.51; 95% CI 0.22 to 1.10). No dental injuries were identified in either cohort.\nCONCLUSION: Mouthguard use was associated with lower odds of concussion. Players should be required to wear mouthguards in youth ice hockey.",
+  "publication_types": [
+    "Journal Article"
+  ],
+  "mesh": [
+    "Adolescent",
+    "Brain Concussion",
+    "Case-Control Studies",
+    "Child",
+    "Equipment Design",
+    "Female",
+    "Hockey",
+    "Humans",
+    "Male",
+    "Mouth Protectors",
+    "Retrospective Studies",
+    "Risk Factors",
+    "Tooth Injuries"
+  ],
+  "language": "eng",
+  "pub_year": "2020",
+  "journal": "British journal of sports medicine",
+  "authors": [
+    "Chisholm DA",
+    "Black AM",
+    "Palacios-Derflingher L",
+    "Eliason PH",
+    "Schneider KJ",
+    "Emery CA",
+    "Hagel BE"
+  ]
+}

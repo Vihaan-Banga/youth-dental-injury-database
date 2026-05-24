@@ -1,0 +1,25 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "10",
+    "retmax": "10",
+    "retstart": "0",
+    "idlist": [
+      "33848349",
+      "27875057",
+      "19030141",
+      "17597943",
+      "15970958",
+      "15970953",
+      "15592602",
+      "16558422",
+      "16558367",
+      "16558261"
+    ],
+    "translationset": [],
+    "querytranslation": "\"J Athl Train\"[Journal] AND (\"dental\"[Text Word] OR \"orofacial\"[Text Word] OR \"tooth\"[Text Word] OR \"maxillofacial\"[Text Word])"
+  }
+}

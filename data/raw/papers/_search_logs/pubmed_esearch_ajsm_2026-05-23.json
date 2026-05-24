@@ -1,0 +1,26 @@
+{
+  "header": {
+    "type": "esearch",
+    "version": "0.3"
+  },
+  "esearchresult": {
+    "count": "11",
+    "retmax": "11",
+    "retstart": "0",
+    "idlist": [
+      "29554460",
+      "26093006",
+      "11798994",
+      "9006695",
+      "8883693",
+      "2610287",
+      "2907269",
+      "3812864",
+      "4014535",
+      "6614299",
+      "6102441"
+    ],
+    "translationset": [],
+    "querytranslation": "\"Am J Sports Med\"[Journal] AND (\"dental\"[Text Word] OR \"orofacial\"[Text Word] OR \"tooth\"[Text Word] OR \"maxillofacial\"[Text Word])"
+  }
+}

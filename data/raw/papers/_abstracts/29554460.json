@@ -1,0 +1,32 @@
+{
+  "pmid": "29554460",
+  "title": "Reporting of Mesenchymal Stem Cell Preparation Protocols and Composition: A Systematic Review of the Clinical Orthopaedic Literature.",
+  "abstract": "BACKGROUND: Mesenchymal stem cells (MSCs) are increasingly being used in the treatment of a wide variety of sports-related conditions. Despite this enthusiasm, the biological properties of MSCs and their effects on musculoskeletal tissue healing remain poorly understood. MSC-based strategies encompass cell populations with heterogeneous phenotypes isolated from multiple tissues and using different methods. Therefore, comprehensive reporting of the source, preparation methods, and characteristics of MSC strategies is essential to enable interpretation of results.\nPURPOSE: To perform a systematic review of levels of reporting of key variables in MSC preparation and composition for clinical studies evaluating MSC-based therapies in the treatment of musculoskeletal conditions.\nSTUDY DESIGN: Systematic review.\nMETHODS: A systematic review of the clinical orthopaedic and sports medicine literature from 2002 to 2017 was performed. The following inclusion criteria were used: human clinical trials, published in the English language, involving the administration of MSC-based therapies for orthopaedic or sports medicine applications. In vitro or ex vivo studies, editorials, letters to the editor, and studies relating to cosmetic, neurological, or dental applications were excluded.\nRESULTS: Of the 1259 studies identified on the initial search, 36 studies were found to satisfy the inclusion criteria for analysis on comprehensive review. Fifty-seven percent of studies evaluated bone marrow-derived MSCs, 41% evaluated adipose-derived MSCs, and 2% evaluated synovium-derived MSCs. Considerable deficiencies in the reporting of key variables, including the details of stem cell processing, culture conditions, and the characteristics of cell populations delivered, were noted. Overall, studies reported only 52% (range, 30%-80%) of variables that may critically influence outcome. No study provided adequate information relating to all of these variables.\nCONCLUSION: All existing clinical studies evaluating MSCs for orthopaedic or sports medicine applications are limited by inadequate reporting of both preparation protocols and composition. Deficient reporting of the variables that may critically influence outcome precludes interpretation, prevents others from reproducing experimental conditions, and makes comparisons across studies difficult. We encourage the adoption of emerging minimum reporting standards for clinical studies evaluating the use of MSCs in orthopaedics.",
+  "publication_types": [
+    "Journal Article",
+    "Research Support, Non-U.S. Gov't",
+    "Systematic Review"
+  ],
+  "mesh": [
+    "Athletic Injuries",
+    "Histocytological Preparation Techniques",
+    "Humans",
+    "Mesenchymal Stem Cell Transplantation",
+    "Mesenchymal Stem Cells",
+    "Musculoskeletal Diseases",
+    "Musculoskeletal System",
+    "Orthopedic Procedures"
+  ],
+  "language": "eng",
+  "pub_year": "2019",
+  "journal": "The American journal of sports medicine",
+  "authors": [
+    "Robinson PG",
+    "Murray IR",
+    "West CC",
+    "Goudie EB",
+    "Yong LY",
+    "White TO",
+    "LaPrade RF"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "pmid": "23511697",
+  "title": "Sports injury prevention in your pocket?! Prevention apps assessed against the available scientific evidence: a review.",
+  "abstract": "BACKGROUND: High costs and personal burden follow sports and physical activity-related injuries (SPRI). The last decades' knowledge on how to prevent SPRIs has grown. Past years' eHealth is emerging and mobile applications (apps) helping to prevent SPRIs are appearing.\nAIM: To review the content of iPhone and iPad apps containing a claim to prevent sports and physical activity-related injuries and to appraise this claim against best available scientific evidence.\nMETHODS: The US iTunes App Store was searched using the keywords 'injury', 'prevention' and 'rehabilitation'. Apps within the categories 'health & fitness', 'sports' and 'medical' containing a preventive claim in the app name, description or screenshots were included. Claims were extracted and a search for best available evidence was performed.\nRESULTS: Eighteen apps met our inclusion criteria. Four of these apps contained claims for which evidence was available: three apps covered ankle sprains and provided information on taping or neuromuscular training. Of these three apps, one app also provided information on prevention of dental injury with mouth guards. One app provided a routine to prevent anterior cruciate ligament injury. The main focus of the five apps was running injury prevention; for their content evidence of absence of efficacy was found. For nine apps no evidence supporting their content was found.\nCONCLUSIONS: f 18 apps included, only four contained claims that could be supported by available literature and five apps contained false claims. This lack of scientifically sound apps provides an opportunity for caretakers to develop apps with evidence-based claims to prevent SPRIs.",
+  "publication_types": [
+    "Evaluation Study",
+    "Journal Article",
+    "Review"
+  ],
+  "mesh": [
+    "Athletic Injuries",
+    "Cell Phone",
+    "Evidence-Based Medicine",
+    "Female",
+    "Humans",
+    "Male",
+    "Mobile Applications",
+    "Surgical Tape",
+    "Telemedicine"
+  ],
+  "language": "eng",
+  "pub_year": "2014",
+  "journal": "British journal of sports medicine",
+  "authors": [
+    "van Mechelen DM",
+    "van Mechelen W",
+    "Verhagen EA"
+  ]
+}
