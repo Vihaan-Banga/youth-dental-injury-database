@@ -55,12 +55,12 @@ Banga, V., [Advisor name]. (2026). Youth Sports Dental Injury Database (Version 
 
 A formal `CITATION.cff` file will be added at publication.
 
-## License (planned)
+## License
 
-- **Data:** Creative Commons Attribution 4.0 International (CC BY 4.0) — free use with citation
-- **Code:** MIT License
+- **Code:** MIT — see [`LICENSE`](LICENSE)
+- **Data:** Creative Commons Attribution 4.0 International (CC BY 4.0) — see [`LICENSE-DATA`](LICENSE-DATA)
 
-Final license selection happens at v1.0 publication.
+Use the code freely (with attribution per MIT). Use the data freely (with attribution per CC BY 4.0). The two-license split is standard for open-research projects: open code, open data.
 
 ## Working with Claude Code
 

@@ -1,0 +1,57 @@
+Creative Commons Attribution 4.0 International License (CC BY 4.0)
+
+Copyright (c) 2026 Vihaan Banga
+
+This data license covers the *data and database content* in this repository:
+- Everything under `data/`
+- `docs/sources.md` (the source tracking log)
+- `docs/decisions.md` (the harmonization decisions log)
+- `outputs/` (validation reports, summary tables, derived figures)
+- Citations, extractions, and any other tabular or textual data product
+
+The code (under `scripts/` and similar) is licensed separately under the MIT
+License — see the `LICENSE` file.
+
+---
+
+# Human-readable summary (from creativecommons.org)
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format
+  Adapt — remix, transform, and build upon the material for any purpose,
+          even commercially.
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit, provide a link to the
+                license, and indicate if changes were made. You may do so in
+                any reasonable manner, but not in any way that suggests the
+                licensor endorses you or your use.
+
+  No additional restrictions — You may not apply legal terms or technological
+                measures that legally restrict others from doing anything
+                the license permits.
+
+# How to cite
+
+When using data from this repository, please cite as follows (placeholder until
+v1.0 release with a Zenodo DOI):
+
+  Banga, V., [Advisor name]. (2026). Youth Sports Dental Injury Database
+  (Version 1.0) [Data set]. Zenodo. https://doi.org/[TBD]
+
+A `CITATION.cff` file will be added at v1.0 to support automated citation
+generation by GitHub and Zenodo.
+
+---
+
+# Full license text
+
+The full legal code of the Creative Commons Attribution 4.0 International
+Public License is available at:
+
+  https://creativecommons.org/licenses/by/4.0/legalcode
+
+By using, redistributing, or adapting the data in this repository, you accept
+and agree to be bound by the terms and conditions of CC BY 4.0.
