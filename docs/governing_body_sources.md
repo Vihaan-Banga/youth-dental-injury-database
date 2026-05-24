@@ -29,18 +29,33 @@ Local copies of each PDF are under `data/raw/surveillance_reports/`. The `.gitig
 - NATA Position Statement on Preventing and Managing Sport-Related Dental and Oral Injuries (PMID 27875057 — already in `sources.md` as `E-noprim` exclusion; but the position statement itself does mine the primary literature in a useful way — consider promoting it to a secondary-source mining record like aapd2025).
 - NCAA Injury Surveillance Program (NCAA ISP / Datalys) aggregate reports — datalys.org returned no response on 2026-05-23, likely the program migrated. Try ncaa.org/sportsscience or the SOSS data portal.
 
+## International governing-body sources (canvassed 2026-05-24)
+
+| source_id | citation_short | publisher | url | status | date_added | extractor | notes |
+|---|---|---|---|---|---|---|---|
+| world_rugby_iss_2023 | World Rugby Medical Commission (2024). 2023 Annual Injury Surveillance Review. | World Rugby | https://resources.worldrugby-rims.pulselive.com/worldrugby/document/2024/11/12/91fe0cef-ae77-4dec-8c35-192066e2adfa/6-c.-2023_MCC_Annual-ISS-Review.pdf | identified | 2026-05-24 | VB-AI-assisted-2026-05-24 | Adult elite rugby focus per protocol §3 — needs youth-subset review. Useful for cross-reference to youth-sport rugby data we have. |
+| england_prisp_2022-23 | England Professional Rugby Injury Surveillance Project (2024). PRISP 2022-23 Report. | RFU / PRISP | https://keepyourbootson.co.uk/wp-content/uploads/2024/04/PRISP-22-23-Report.pdf | identified | 2026-05-24 | VB-AI-assisted-2026-05-24 | English professional rugby — adult, but useful denominators. 37 pages. |
+| rugby_europe_iss_2024 | Rugby Europe (2024). Injury Surveillance Report March 2024. | Rugby Europe | https://www.rugbyeurope.eu/media/gxwdngx2/re-injury-surveillance-report-march-2024.pdf | identified | 2026-05-24 | VB-AI-assisted-2026-05-24 | Includes Under-20 and Under-18 championship data — DIRECTLY in scope. 16 pages. |
+| orchard_afl_comparison | Orchard JW. (n.d.). Comparing AFL Injury Surveillance to other Codes. | John Orchard (independent) | https://www.johnorchard.com/resources/article-comparisoncodesSH.pdf | identified | 2026-05-24 | VB-AI-assisted-2026-05-24 | Methodological comparison piece; useful for harmonization decisions about AE denominators across rugby/AFL/soccer. 4 pages. |
+
+**Not found / blocked**:
+- USA Hockey (https://www.usahockey.com) — only player-facing claim forms publicly available; aggregate annual injury reports not public.
+- Hockey Canada — same: player-facing injury report forms only, no aggregate.
+- AFL annual injury reports (aflplayers.com.au, afl.com.au) — visible in WebSearch but pages return 403 to non-browser clients. User could fetch with Chrome MCP if needed.
+- AIHW Sports Injury in Australia — 403 to WebFetch.
+- US Lacrosse / USA Wrestling / USA Football / USA Boxing — searches did not surface aggregate injury surveillance reports beyond what RIO already covers (i.e., HS-level data is in RIO summaries we already have).
+
+**Pending governing bodies (PROTOCOL §4.3) — not yet canvassed:**
+- NFHS direct (their Sports Medicine Advisory Committee) — Have RIO via PIPER instead, which is funded by NFHS; likely redundant.
+
 ## Pending governing bodies (not yet searched)
 
-Per PROTOCOL §4.3 these are listed but have not been canvassed yet:
-- USA Hockey (https://www.usahockey.com) — no dedicated injury surveillance found in initial search; may have a Safety/Sport Sciences page worth checking manually.
+Per PROTOCOL §4.3 these are listed but the original search may want manual exploration:
+- USA Hockey (https://www.usahockey.com) — see note above.
 - US Lacrosse (now USA Lacrosse)
 - USA Wrestling
 - USA Football
 - USA Boxing
-- NFHS (National Federation of State High School Associations) — has a Sports Medicine Advisory Committee
-- International equivalents: Hockey Canada, Rugby Football Union (England), Hockey Australia — English-language
-
-Manual exploration of each governing body's website is the most realistic next step (no programmatic API).
 
 ---
 
