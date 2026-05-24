@@ -1,11 +1,11 @@
-# Validation Report — 2026-05-23
+# Validation Report — 2026-05-24
 
-_Run against `data/harmonized/master.csv` (240 rows)._
+_Run against `data/harmonized/master.csv` (256 rows)._
 
 ## Summary
 
-- Rows checked: **240**
-- Distinct sources: **61**
+- Rows checked: **256**
+- Distinct sources: **73**
 - FAILs: **0**
 - WARNs: **0**
 - Rows flagged `quality_flag=review_needed`: **3**
@@ -31,27 +31,37 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 
 | source_id | rows | bases |
 |---|---|---|
+| alawawdeh2021 | 1 | youth_primary |
+| alawawdeh2022 | 1 | youth_primary |
 | ali2007 | 2 | youth_primary |
+| alotaibi2014 | 1 | youth_primary |
 | amy2005 | 1 | youth_primary |
 | azadani2023 | 5 | youth_primary |
 | azimi2020 | 1 | youth_primary |
+| baek2021 | 1 | youth_primary |
 | benson2002 | 3 | youth_primary |
 | calderon2020 | 1 | youth_primary |
 | carter2000 | 1 | youth_primary |
 | cetin2026 | 1 | youth_primary |
 | cetinbas2008 | 2 | youth_primary |
 | chan2011 | 1 | youth_primary |
+| chapman2004 | 1 | youth_primary |
 | collins2004 | 5 | youth_primary |
 | collins2016 | 5 | youth_primary |
+| collins_baseball2008 | 1 | youth_primary |
 | collins_rugby2008 | 2 | youth_primary |
+| danis2000 | 1 | youth_primary |
 | deshpande2014 | 2 | youth_primary |
+| emshoff1997 | 3 | youth_primary |
 | fakhruddin2009 | 1 | youth_primary |
+| finch2005 | 1 | youth_primary |
 | goswami2017 | 4 | youth_primary |
 | hamdan2026 | 1 | youth_primary |
 | hayran2010 | 1 | youth_primary |
 | hosea1996 | 1 | youth_primary |
 | ivanovics2012 | 1 | youth_primary |
 | labella2002 | 2 | youth_primary |
+| leite2012 | 1 | youth_primary |
 | levin2003 | 3 | youth_primary |
 | levin2007 | 1 | youth_primary |
 | livny2008 | 1 | youth_primary |
@@ -74,6 +84,7 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 | neiss2023 | 21 | youth_primary |
 | pattussi2006 | 1 | youth_primary |
 | quarrie2020 | 7 | adult_comparator, youth_primary |
+| radelet1996 | 1 | youth_primary |
 | ranalli2005 | 1 | youth_primary |
 | shore2023 | 1 | youth_primary |
 | singh2014 | 2 | youth_primary |
@@ -86,6 +97,7 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 | williams2023 | 1 | youth_primary |
 | williams2024 | 1 | youth_primary |
 | wong2008 | 1 | youth_primary |
+| wormald2022 | 3 | youth_primary |
 | yamada2009 | 2 | youth_primary |
 | yard2008 | 1 | youth_primary |
 | yard2015 | 2 | youth_primary |
