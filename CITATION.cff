@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+title: Youth Sports Dental Injury Database
+message: >-
+  If you use this database or its accompanying code, please cite it
+  using the metadata below.
+type: dataset
+authors:
+  - given-names: Vihaan
+    family-names: Banga
+    affiliation: Olentangy Liberty High School
+    # Add ORCID when registered:
+    # orcid: 'https://orcid.org/0000-0000-0000-0000'
+repository-code: 'https://github.com/Vihaan-Banga/youth-dental-injury-database'
+url: 'https://github.com/Vihaan-Banga/youth-dental-injury-database'
+abstract: >-
+  An open-access harmonized database aggregating epidemiological data on
+  dental and orofacial injuries in youth sports (ages 5-22), drawn from
+  national surveillance systems (NEISS, High School RIO), peer-reviewed
+  research, and sport-governing-body reports. Source inclusion is restricted
+  to studies reporting on individuals aged 5-22; once a source qualifies,
+  adult-stratified rows are extracted alongside as comparator data.
+  The dataset is intended as research infrastructure for cross-sport,
+  cross-age, cross-geography comparison of youth dental injury epidemiology.
+keywords:
+  - dental trauma
+  - youth sports
+  - sports injury
+  - orofacial injury
+  - injury surveillance
+  - epidemiology
+  - mouthguard
+  - NEISS
+  - High School RIO
+  - open data
+license: CC-BY-4.0
+license-url: 'https://creativecommons.org/licenses/by/4.0/'
+version: 0.1.0-dev
+date-released: '2026-05-23'
+# When v1.0 ships and a Zenodo DOI is minted, update the following:
+# doi: 'TBD'
+# preferred-citation:
+#   type: article
+#   ...
