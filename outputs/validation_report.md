@@ -1,11 +1,11 @@
 # Validation Report — 2026-05-23
 
-_Run against `data/harmonized/master.csv` (180 rows)._
+_Run against `data/harmonized/master.csv` (201 rows)._
 
 ## Summary
 
-- Rows checked: **180**
-- Distinct sources: **24**
+- Rows checked: **201**
+- Distinct sources: **35**
 - FAILs: **0**
 - WARNs: **0**
 - Rows flagged `quality_flag=review_needed`: **3**
@@ -33,14 +33,21 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 |---|---|---|
 | amy2005 | 1 | youth_primary |
 | azadani2023 | 5 | youth_primary |
+| azimi2020 | 1 | youth_primary |
+| calderon2020 | 1 | youth_primary |
+| cetin2026 | 1 | youth_primary |
 | cetinbas2008 | 2 | youth_primary |
 | chan2011 | 1 | youth_primary |
 | collins2016 | 5 | youth_primary |
+| deshpande2014 | 2 | youth_primary |
 | goswami2017 | 4 | youth_primary |
 | hamdan2026 | 1 | youth_primary |
 | labella2002 | 2 | youth_primary |
 | levin2003 | 3 | youth_primary |
 | levin2007 | 1 | youth_primary |
+| mooney2021 | 1 | youth_primary |
+| naasan2021 | 3 | youth_primary |
+| nasu2023 | 3 | youth_primary |
 | neiss2013 | 22 | youth_primary |
 | neiss2014 | 19 | youth_primary |
 | neiss2015 | 19 | youth_primary |
@@ -55,3 +62,7 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 | udayamalee2024 | 2 | youth_primary |
 | vanierssel2021 | 1 | youth_primary |
 | welch2010 | 10 | youth_primary |
+| williams2023 | 1 | youth_primary |
+| williams2024 | 1 | youth_primary |
+| yard2015 | 2 | youth_primary |
+| zaror2018 | 5 | youth_primary |
