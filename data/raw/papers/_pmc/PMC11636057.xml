@@ -1,0 +1,591 @@
+<?xml version="1.0"  ?><!DOCTYPE pmc-articleset PUBLIC "-//NLM//DTD ARTICLE SET 2.0//EN" "https://dtd.nlm.nih.gov/ncbi/pmc/articleset/nlm-articleset-2.0.dtd"><pmc-articleset><article id="aej12891" xml:lang="en" article-type="research-article" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Aust Endod J</journal-id><journal-id journal-id-type="iso-abbrev">Aust Endod J</journal-id><journal-id journal-id-type="pmc-domain-id">379</journal-id><journal-id journal-id-type="pmc-domain">blackwellopen</journal-id><journal-id journal-id-type="publisher-id">AEJ</journal-id><journal-title-group><journal-title>Australian Endodontic Journal</journal-title></journal-title-group><issn pub-type="ppub">1329-1947</issn><issn pub-type="epub">1747-4477</issn><custom-meta-group><custom-meta><meta-name>pmc-is-collection-domain</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-collection-title</meta-name><meta-value>Wiley Open Access Collection</meta-value></custom-meta></custom-meta-group></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC11636057</article-id><article-id pub-id-type="pmcid-ver">PMC11636057.1</article-id><article-id pub-id-type="pmcaid">11636057</article-id><article-id pub-id-type="pmcaiid">11636057</article-id><article-id pub-id-type="pmid">39297708</article-id><article-id pub-id-type="doi">10.1111/aej.12891</article-id><article-id pub-id-type="publisher-id">AEJ12891</article-id><article-id pub-id-type="other">AEJ-2024-220.R1</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="overline"><subject>Original Research</subject></subj-group><subj-group subj-group-type="heading"><subject>Original Research</subject></subj-group></article-categories><title-group><article-title>Permanent tooth avulsions: A retrospective analysis of the demographics and aetiology of cases at a tertiary hospital in Sydney, Australia</article-title><alt-title alt-title-type="right-running-head">Permanent tooth avulsions: A retrospective analysis of the demographics and aetiology of cases at a tertiary hospital in Sydney, Australia</alt-title><alt-title alt-title-type="left-running-head">Bradshaw et al.</alt-title></title-group><contrib-group><contrib id="aej12891-cr-0001" contrib-type="author" corresp="yes"><name name-style="western"><surname>Bradshaw</surname><given-names initials="J">Julia</given-names></name><degrees>BDS, BScD(Hons), DClinDent(Paed Dent), MRACDS (Paed Dent)</degrees><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-0317-9558</contrib-id><xref rid="aej12891-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="aej12891-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><address><email>julia.grace.bradshaw@gmail.com</email></address></contrib><contrib id="aej12891-cr-0002" contrib-type="author"><name name-style="western"><surname>Kahler</surname><given-names initials="B">Bill</given-names></name><degrees>DClinDent (Endo), PhD</degrees><xref rid="aej12891-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="aej12891-cr-0003" contrib-type="author"><name name-style="western"><surname>Nanayakkara</surname><given-names initials="S">Shanika</given-names></name><degrees>MBBS, PhD</degrees><xref rid="aej12891-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref></contrib><contrib id="aej12891-cr-0004" contrib-type="author"><name name-style="western"><surname>Prabhu</surname><given-names initials="N">Neeta</given-names></name><degrees>BDS, MDS (Paed Dent), MPhil, MRACDS (Paed Dent), FRACDS, FICD</degrees><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-0267-2172</contrib-id><xref rid="aej12891-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="aej12891-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib></contrib-group><aff id="aej12891-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">School of Dentistry, Faculty of Medicine and Health</named-content>
+<institution>The University of Sydney</institution>
+<city>Sydney</city>
+<named-content content-type="country-part">New South Wales</named-content>
+<country country="AU">Australia</country>
+</aff><aff id="aej12891-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">Department of Paediatric Dentistry</named-content>
+<institution>Westmead Centre for Oral Health</institution>
+<city>Westmead</city>
+<named-content content-type="country-part">New South Wales</named-content>
+<country country="AU">Australia</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence</bold>
+<break/>
+Julia Bradshaw, School of Dentistry, Faculty of Medicine and Health, The University of Sydney, Sydney, New South Wales, Australia.<break/>
+Email: <email>julia.grace.bradshaw@gmail.com</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>19</day><month>9</month><year>2024</year></pub-date><pub-date pub-type="ppub"><month>12</month><year>2024</year></pub-date><volume>50</volume><issue seq="240">3</issue><issue-id pub-id-type="pmc-issue-id">476884</issue-id><issue-id pub-id-type="doi">10.1111/aej.v50.3</issue-id><fpage>640</fpage><lpage>648</lpage><history><date date-type="rev-recd"><day>05</day><month>9</month><year>2024</year></date><date date-type="received"><day>20</day><month>6</month><year>2024</year></date><date date-type="accepted"><day>08</day><month>9</month><year>2024</year></date></history><pub-history><event event-type="pmc-release"><date><day>12</day><month>12</month><year>2024</year></date></event><event event-type="pmc-live"><date><day>13</day><month>12</month><year>2024</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2024-12-17 14:25:13.860"><day>17</day><month>12</month><year>2024</year></date></event></pub-history><permissions><copyright-statement content-type="article-copyright">© 2024 The Author(s). <italic toggle="yes">Australian Endodontic Journal</italic> published by John Wiley &amp; Sons Australia, Ltd on behalf of Australian Society of Endodontology Inc.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="AEJ-50-640.pdf"/><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pdf" xlink:href="file:AEJ-50-640.pdf"/><abstract><title>Abstract</title><p>This retrospective analysis reviewed the demographics of patients sustaining dental avulsion injuries at a tertiary dental hospital in Sydney, Australia. Data were extracted from dental records of patients who presented with avulsed permanent anterior teeth and were treated between 1 January 2001 and 30 June 2021. Demographic, clinical and radiographic data from 91 patients with 117 avulsed permanent anterior teeth were available for analysis. The median age of the patients was 12 years (IQR 9.0–17.0). Males accounted for 68.4% of avulsion injuries. Non‐organised sports were the most common cause of injury (42.7%). Maxillary central incisors were the most frequently avulsed tooth (83.3%). Peak prevalence of injuries occurred on the weekend. The findings from this study may reflect regional factors such as climate and participation in sport. Anticipatory guidance should be provided to patients at elevated risk of dental avulsion.</p></abstract><kwd-group kwd-group-type="author-generated"><kwd id="aej12891-kwd-0001">children</kwd><kwd id="aej12891-kwd-0002">dental trauma</kwd><kwd id="aej12891-kwd-0003">epidemiology</kwd><kwd id="aej12891-kwd-0004">tooth avulsion</kwd><kwd id="aej12891-kwd-0005">tooth replantation</kwd></kwd-group><counts><fig-count count="3"/><table-count count="5"/><page-count count="9"/><word-count count="5100"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>December 2024</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.5.1 mode:remove_FC converted:12.12.2024</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="AEJ12891-cit-2001">
+<string-name name-style="western">
+<surname>Bradshaw</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kahler</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nanayakkara</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Prabhu</surname>
+<given-names>N</given-names>
+</string-name>. <article-title>Permanent tooth avulsions: A retrospective analysis of the demographics and aetiology of cases at a tertiary hospital in Sydney, Australia</article-title>. <source>Aust Endod J</source>. <year>2024</year>;<volume>50</volume>:<fpage>640</fpage>–<lpage>648</lpage>. <pub-id pub-id-type="doi">10.1111/aej.12891</pub-id>
+<pub-id pub-id-type="pmcid">PMC11636057</pub-id><pub-id pub-id-type="pmid">39297708</pub-id></mixed-citation>
+</p></notes></front><body id="aej12891-body-0001"><sec id="aej12891-sec-0001"><title>INTRODUCTION</title><p>Traumatic dental injuries (TDIs) present a significant global public health concern. Epidemiological studies have demonstrated an annual incidence of TDIs of up to 4.5% [<xref rid="aej12891-bib-0001" ref-type="bibr">1</xref>]. Dental trauma peaks in early life and adolescence, both important periods of psychological development [<xref rid="aej12891-bib-0002" ref-type="bibr">2</xref>, <xref rid="aej12891-bib-0003" ref-type="bibr">3</xref>]. Based on the available evidence, maxillary central incisors are the most commonly injured tooth [<xref rid="aej12891-bib-0002" ref-type="bibr">2</xref>]. Previous studies report that males experience a higher prevalence of dental trauma in the permanent dentition than females; however, this trend appears to be on the decline, possibly reflecting increased female participation in sport [<xref rid="aej12891-bib-0002" ref-type="bibr">2</xref>]. Falls, sport, violence and road traffic accidents are commonly cited causes of dental trauma [<xref rid="aej12891-bib-0004" ref-type="bibr">4</xref>]. Risk factors for TDIs include increased overjet and inadequate lip coverage [<xref rid="aej12891-bib-0004" ref-type="bibr">4</xref>, <xref rid="aej12891-bib-0005" ref-type="bibr">5</xref>]. Other factors identified in the literature include risk‐taking children, children being bullied, children with attention deficit hyperactivity disorder (ADHD), learning difficulties, physical limitations, obesity and oral piercings [<xref rid="aej12891-bib-0004" ref-type="bibr">4</xref>].</p><p>Tooth avulsion is defined as the complete exarticulation of a tooth from its socket. Avulsion injuries are one of the most serious TDIs, resulting in damage to the neurovascular supply of the tooth, the periodontal ligament (PDL) and supporting gingival tissues and the alveolar bone. Avulsion injuries account for 0.5%–16% of TDIs in the permanent dentition [<xref rid="aej12891-bib-0006" ref-type="bibr">6</xref>, <xref rid="aej12891-bib-0007" ref-type="bibr">7</xref>, <xref rid="aej12891-bib-0008" ref-type="bibr">8</xref>]. Avulsion injuries peak in children aged 7–9 years old, likely reflecting the loosely structured PDL in recently erupted teeth and less mineralised alveolar bone [<xref rid="aej12891-bib-0006" ref-type="bibr">6</xref>, <xref rid="aej12891-bib-0009" ref-type="bibr">9</xref>, <xref rid="aej12891-bib-0010" ref-type="bibr">10</xref>]. Replantation of avulsed permanent teeth is generally accepted as the best practice; however, it is associated with significant pulpal and periodontal complications such as pulp necrosis, inflammatory external root resorption and replacement external root resorption [<xref rid="aej12891-bib-0009" ref-type="bibr">9</xref>, <xref rid="aej12891-bib-0010" ref-type="bibr">10</xref>]. Since 2001, the International Association of Dental Traumatology has published multiple evidence‐based guidelines on the recommended management of TDIs, attempting to standardise management. Management of avulsed permanent teeth is influenced by the root development of the injured tooth and the extra‐oral dry time [<xref rid="aej12891-bib-0011" ref-type="bibr">11</xref>]. Overall, functional health is observed between 16% and 58% of avulsed permanent teeth [<xref rid="aej12891-bib-0009" ref-type="bibr">9</xref>, <xref rid="aej12891-bib-0012" ref-type="bibr">12</xref>, <xref rid="aej12891-bib-0013" ref-type="bibr">13</xref>, <xref rid="aej12891-bib-0014" ref-type="bibr">14</xref>, <xref rid="aej12891-bib-0015" ref-type="bibr">15</xref>, <xref rid="aej12891-bib-0016" ref-type="bibr">16</xref>, <xref rid="aej12891-bib-0017" ref-type="bibr">17</xref>].</p><p>There have been no publications to date in Australasia regarding outcomes or survival of replanted permanent avulsed teeth. This publication aims to review the demographics of patients who had ongoing treatment for avulsion injuries at a tertiary hospital in Sydney, Australia.</p></sec><sec sec-type="materials-and-methods" id="aej12891-sec-0002"><title>MATERIALS AND METHODS</title><p>Ethics approval for the study was obtained from the Western Sydney Local Health District (WSLHD) (HREC reference: 2007‐05 QA). This retrospective study involved the extraction of data from dental records of patients with ongoing treatment at the Westmead Centre for Oral Health (WCOH), Sydney, Australia between January 2001 and June 2021. Included patients had one or more avulsed and replanted permanent anterior teeth, which may have been replanted at WCOH or referred to WCOH for ongoing management after the initial emergency replantation. Referral locations included the Children's Hospital at Westmead (CHW) and private practice. Inclusion criteria included [<xref rid="aej12891-bib-0001" ref-type="bibr">1</xref>] traumatised permanent anterior tooth with an avulsion injury (complete displacement of a tooth from its socket), [<xref rid="aej12891-bib-0002" ref-type="bibr">2</xref>] the avulsed tooth was replanted, [<xref rid="aej12891-bib-0003" ref-type="bibr">3</xref>] the tooth was followed up at WCOH for a minimum of 30 days (unless the tooth was lost prior to this time) and [<xref rid="aej12891-bib-0004" ref-type="bibr">4</xref>] the follow‐up appointment had an accompanying radiograph. The inclusion and exclusion criteria are outlined in Figure <xref rid="aej12891-fig-0001" ref-type="fig">1</xref>. All stages of root development were included. Stage of root development was divided into six stages according to the Moorrees classification of root development [<xref rid="aej12891-bib-0018" ref-type="bibr">18</xref>]. Teeth with Stages 1–4 root development were considered immature, while teeth with Stage 5 and 6 development were considered mature. Data obtained from records included patient demographics, trauma history, treatment provided and follow‐up information. Oral predisposing factors were excluded. Number of visits in the first 12 months was recorded for patients who attended Westmead Hospital/WCOH for the initial replantation of the avulsed tooth. WCOH is part of a larger Westmead Hospital and shares mutual records. Appointments were excluded if they were unrelated to the dental trauma.</p><fig position="float" fig-type="FIGURE" id="aej12891-fig-0001" orientation="portrait"><label>FIGURE 1</label><caption><p>Flow chart—inclusion and exclusion criteria used to determine the study population in this research.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-1" orientation="portrait" xlink:href="AEJ-50-640-g002.jpg"/></fig><p>The data collected were entered manually into an MS Excel spreadsheet (Microsoft Office 365 Excel) and the statistical analysis was performed using IBM SPSS Statistics, version 23 (IBM SPSS Inc., Chicago, IL, USA). The level of significance for all statistical analyses was set at ≤0.05. Following normality assessment, quantitative data were summarised using median and percentiles while categorical data were summarised using percentages. Non‐parametric Mann–Whitney <italic toggle="yes">U</italic> test was used to compare means between groups and Spearman's rank correlation coefficient to assess correlation between variables.</p></sec><sec sec-type="results" id="aej12891-sec-0003"><title>RESULTS</title><p>The study population consisted of 91 patients with 117 avulsed teeth. The median follow‐up time was 18.5 months (median 556 days, IQR 250–963 days) (Table <xref rid="aej12891-tbl-0001" ref-type="table">1</xref>). The median number of visits to WCOH was seven in the first 12 months following the tooth avulsion injury (Table <xref rid="aej12891-tbl-0001" ref-type="table">1</xref>). There was no significant difference in the number of visits between mature and immature avulsions (<italic toggle="yes">p</italic> = 0.48). Further, no significant correlation was observed between age of the participants and number of visits (<italic toggle="yes">r</italic> = −0.16, <italic toggle="yes">p</italic> = 0.21).</p><table-wrap position="float" id="aej12891-tbl-0001" content-type="TABLE" orientation="portrait"><label>TABLE 1</label><caption><p>Observation time and visiting patterns.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Observation time (days) (<italic toggle="yes">N</italic> = 117)</th><th align="left" valign="bottom" rowspan="1" colspan="1"/></tr></thead><tbody valign="top"><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Min</td><td align="left" valign="top" rowspan="1" colspan="1">14</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Max</td><td align="left" valign="top" rowspan="1" colspan="1">4418</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Median (25th–75th percentile)</td><td align="left" valign="top" rowspan="1" colspan="1">556 (250–963)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Number of visits (<italic toggle="yes">N</italic> = 56)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Min</td><td align="left" valign="top" rowspan="1" colspan="1">2</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Max</td><td align="left" valign="top" rowspan="1" colspan="1">20</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Median (25th–75th percentile)</td><td align="left" valign="top" rowspan="1" colspan="1">7.0 (5.0–9.0)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Immature (<italic toggle="yes">N</italic> = 6)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Min</td><td align="left" valign="top" rowspan="1" colspan="1">5</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Max</td><td align="left" valign="top" rowspan="1" colspan="1">10</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Median (25th–75th percentile)</td><td align="left" valign="top" rowspan="1" colspan="1">5.5 (5.0–6.8)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Mature (<italic toggle="yes">N</italic> = 50)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Min</td><td align="left" valign="top" rowspan="1" colspan="1">2</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Max</td><td align="left" valign="top" rowspan="1" colspan="1">20</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Median (25th–75th percentile)</td><td align="left" valign="top" rowspan="1" colspan="1">7.0 (6.0–9.0)</td></tr></tbody></table></table-wrap><p>Age of the patients ranged between 5 and 90 years, with a median age of 12 years (IQR 9.0–17.0) (Table <xref rid="aej12891-tbl-0002" ref-type="table">2</xref>). Majority of the study population were males accounting for 68.4% of avulsion injures, while females accounted for 31.6% (Table <xref rid="aej12891-tbl-0002" ref-type="table">2</xref>). Thirteen patients (11.1%) were categorised as having a significant medical history (Table <xref rid="aej12891-tbl-0002" ref-type="table">2</xref>) including autism, epilepsy, ADHD, von Willebrand disease, juvenile arthritis, Type 1 diabetes mellitus, osteoporosis (including patients on bisphosphonates), bipolar disorder and cerebral palsy. A majority (70.1%) of patients presented to a hospital emergency department after an avulsion injury, while 18.8% presented directly to WCOH, 8.5% presented to a private general dental practitioner (GDP) and 1.7% presented to a general medical practitioner (GMP) (Table <xref rid="aej12891-tbl-0002" ref-type="table">2</xref>).</p><table-wrap position="float" id="aej12891-tbl-0002" content-type="TABLE" orientation="portrait"><label>TABLE 2</label><caption><p>Distribution of patient demographics and clinical characteristics of the avulsed teeth (<italic toggle="no">N</italic> = 117).</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1"/><th align="left" valign="bottom" rowspan="1" colspan="1">
+<italic toggle="yes">N</italic> (%)</th></tr></thead><tbody valign="top"><tr><td align="left" colspan="2" valign="top" rowspan="1">Age</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Min</td><td align="left" valign="top" rowspan="1" colspan="1">5 (years)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Max</td><td align="left" valign="top" rowspan="1" colspan="1">90 (years)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Median (25th–75th percentile)</td><td align="left" valign="top" rowspan="1" colspan="1">12.0 (9.0–17.0) (years)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Gender</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Male</td><td align="left" valign="top" rowspan="1" colspan="1">80 (68.4%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Female</td><td align="left" valign="top" rowspan="1" colspan="1">37 (31.6%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Significant medical history</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Yes</td><td align="left" valign="top" rowspan="1" colspan="1">13 (11.1%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">No</td><td align="left" valign="top" rowspan="1" colspan="1">104 (88.9%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Cause of injury</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Assault</td><td align="left" valign="top" rowspan="1" colspan="1">14 (12.0%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Dog bite</td><td align="left" valign="top" rowspan="1" colspan="1">1 (0.9%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Fall or collision</td><td align="left" valign="top" rowspan="1" colspan="1">36 (30.8%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Non‐organised sport</td><td align="left" valign="top" rowspan="1" colspan="1">50 (42.7%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Organised sport</td><td align="left" valign="top" rowspan="1" colspan="1">13 (11.1%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Seizure</td><td align="left" valign="top" rowspan="1" colspan="1">2 (1.7%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Missing data</td><td align="left" valign="top" rowspan="1" colspan="1">1 (0.9%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Location of initial presentation</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Public dental hospital</td><td align="left" valign="top" rowspan="1" colspan="1">22 (18.8%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Emergency department</td><td align="left" valign="top" rowspan="1" colspan="1">82 (70.1%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Private GDP</td><td align="left" valign="top" rowspan="1" colspan="1">10 (8.5%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">GMP</td><td align="left" valign="top" rowspan="1" colspan="1">2 (1.7%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Missing data</td><td align="left" valign="top" rowspan="1" colspan="1">1 (0.9%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Location of avulsion management</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Westmead Hospital (including WCOH)</td><td align="left" valign="top" rowspan="1" colspan="1">65 (55.6%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">CHW</td><td align="left" valign="top" rowspan="1" colspan="1">41 (35.0%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Private</td><td align="left" valign="top" rowspan="1" colspan="1">9 (7.7%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Other</td><td align="left" valign="top" rowspan="1" colspan="1">2 (1.7%)</td></tr></tbody></table></table-wrap><p>Non‐organised sport (such as scooters, push bikes, trampolines and swimming pools) accounted for the most common cause of injury in this cohort (42.7%), followed by falls or collisions (30.8%) (Table <xref rid="aej12891-tbl-0002" ref-type="table">2</xref>, Figure <xref rid="aej12891-fig-0002" ref-type="fig">2</xref>). Organised sport was defined as sporting activity affiliated with a school or club (such as rugby, cricket and karate) and accounted for 11.1% of injuries (Table <xref rid="aej12891-tbl-0002" ref-type="table">2</xref>).</p><fig position="float" fig-type="FIGURE" id="aej12891-fig-0002" orientation="portrait"><label>FIGURE 2</label><caption><p>Cause of avulsion injury (<italic toggle="yes">N</italic> = 117).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-3" orientation="portrait" xlink:href="AEJ-50-640-g001.jpg"/></fig><p>Concomitant extra‐oral injuries such as facial lacerations and bony fractures had a prevalence of 43.6% (Table <xref rid="aej12891-tbl-0003" ref-type="table">3</xref>). Gingival lacerations were observed in 44.4% of teeth, while 18.8% recorded an alveolar fracture (Table <xref rid="aej12891-tbl-0003" ref-type="table">3</xref>). The median number of injured teeth (including the avulsed tooth) was three (Table <xref rid="aej12891-tbl-0003" ref-type="table">3</xref>, Figure <xref rid="aej12891-fig-0003" ref-type="fig">3</xref>). Maxillary central incisors were the most frequently avulsed tooth (83.8%) (Table <xref rid="aej12891-tbl-0004" ref-type="table">4</xref>). Mandibular teeth accounted for 6.8% of injuries (Table <xref rid="aej12891-tbl-0004" ref-type="table">4</xref>). Concomitant crown fractures were observed in 12.0% of teeth, all of which were mature (Table <xref rid="aej12891-tbl-0004" ref-type="table">4</xref>). A minority of teeth in the data were immature (15.3%) (Table <xref rid="aej12891-tbl-0004" ref-type="table">4</xref>). A minority of teeth were categorised as compromised (5.1%), all of which were mature (Table <xref rid="aej12891-tbl-0004" ref-type="table">4</xref>). Compromised teeth included those with early periodontal disease (<italic toggle="yes">N</italic> = 2), large restorations (<italic toggle="yes">N</italic> = 3) and previous trauma (<italic toggle="yes">N</italic> = 1). Two teeth included in the study had concomitant apical root fractures (Table <xref rid="aej12891-tbl-0003" ref-type="table">3</xref>).</p><table-wrap position="float" id="aej12891-tbl-0003" content-type="TABLE" orientation="portrait"><label>TABLE 3</label><caption><p>Descriptive statistics for concomitant injuries (<italic toggle="no">N</italic> = 117).</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1"/><th align="left" valign="bottom" rowspan="1" colspan="1">
+<italic toggle="yes">N</italic> (%)</th></tr></thead><tbody valign="top"><tr><td align="left" colspan="2" valign="top" rowspan="1">Total number of injured teeth</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Min (no. of teeth)</td><td align="left" valign="top" rowspan="1" colspan="1">1</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Max (no. of teeth)</td><td align="left" valign="top" rowspan="1" colspan="1">9</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Median (25th–75th percentile) (no. of teeth)</td><td align="left" valign="top" rowspan="1" colspan="1">3 (2.0–3.0)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Extra‐oral injury</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Yes</td><td align="left" valign="top" rowspan="1" colspan="1">51 (43.6%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">No</td><td align="left" valign="top" rowspan="1" colspan="1">66 (56.4%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Apical root fracture</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Yes</td><td align="left" valign="top" rowspan="1" colspan="1">2 (1.7%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">No</td><td align="left" valign="top" rowspan="1" colspan="1">115 (98.3%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Alveolar fracture</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Yes</td><td align="left" valign="top" rowspan="1" colspan="1">22 (18.8%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">No</td><td align="left" valign="top" rowspan="1" colspan="1">95 (81.2%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Gingival laceration</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Yes</td><td align="left" valign="top" rowspan="1" colspan="1">52 (44.4%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">No</td><td align="left" valign="top" rowspan="1" colspan="1">65 (55.6%)</td></tr></tbody></table></table-wrap><fig position="float" fig-type="FIGURE" id="aej12891-fig-0003" orientation="portrait"><label>FIGURE 3</label><caption><p>Total number of injured teeth (including avulsed tooth) (<italic toggle="yes">N</italic> = 117).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-5" orientation="portrait" xlink:href="AEJ-50-640-g003.jpg"/></fig><table-wrap position="float" id="aej12891-tbl-0004" content-type="TABLE" orientation="portrait"><label>TABLE 4</label><caption><p>Clinical characteristics of the avulsed teeth (<italic toggle="no">N</italic> = 117).</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1"/><th align="left" valign="bottom" rowspan="1" colspan="1">
+<italic toggle="yes">N</italic> (%)</th></tr></thead><tbody valign="top"><tr><td align="left" colspan="2" valign="top" rowspan="1">Tooth location</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Maxilla</td><td align="left" valign="top" rowspan="1" colspan="1">109 (93.2%)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Central incisors</td><td align="left" valign="top" rowspan="1" colspan="1">98 (83.8%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Tooth 11</td><td align="left" valign="top" rowspan="1" colspan="1">50 (42.7%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Tooth 21</td><td align="left" valign="top" rowspan="1" colspan="1">48 (41.0%)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Lateral incisor</td><td align="left" valign="top" rowspan="1" colspan="1">11 (9.4%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Tooth 12</td><td align="left" valign="top" rowspan="1" colspan="1">8 (6.8%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Tooth 22</td><td align="left" valign="top" rowspan="1" colspan="1">3 (2.6%)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Mandible</td><td align="left" valign="top" rowspan="1" colspan="1">8 (6.8%)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Central incisor</td><td align="left" valign="top" rowspan="1" colspan="1">5 (4.3%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Tooth 31</td><td align="left" valign="top" rowspan="1" colspan="1">3 (2.6%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Tooth 41</td><td align="left" valign="top" rowspan="1" colspan="1">2 (1.7%)</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Lateral incisor</td><td align="left" valign="top" rowspan="1" colspan="1">3 (2.6%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Tooth 32</td><td align="left" valign="top" rowspan="1" colspan="1">2 (1.7%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Tooth 42</td><td align="left" valign="top" rowspan="1" colspan="1">1 (0.9%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Crown fracture</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Yes</td><td align="left" valign="top" rowspan="1" colspan="1">14 (12.0%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">No</td><td align="left" valign="top" rowspan="1" colspan="1">103 (88.0%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Root development</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Mature</td><td align="left" valign="top" rowspan="1" colspan="1">99 (84.6%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Immature</td><td align="left" valign="top" rowspan="1" colspan="1">18 (15.4%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Stage of root development</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">1</td><td align="left" valign="top" rowspan="1" colspan="1">0 (0.0%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">2</td><td align="left" valign="top" rowspan="1" colspan="1">8 (6.8%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">3</td><td align="left" valign="top" rowspan="1" colspan="1">3 (2.6%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">4</td><td align="left" valign="top" rowspan="1" colspan="1">7 (6.0%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">5</td><td align="left" valign="top" rowspan="1" colspan="1">12 (10.3%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">6</td><td align="left" valign="top" rowspan="1" colspan="1">87 (74.4%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Compromised tooth</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Yes</td><td align="left" valign="top" rowspan="1" colspan="1">6 (5.1%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">No</td><td align="left" valign="top" rowspan="1" colspan="1">111 (94.9%)</td></tr></tbody></table></table-wrap><p>The highest prevalence of traumas occurred in autumn (33.3%), and the lowest in winter (14.5%) (Table <xref rid="aej12891-tbl-0005" ref-type="table">5</xref>). Injuries peaked on the weekend, with Sunday (23.9%) and Saturday (17.9%) having the highest incidence (Table <xref rid="aej12891-tbl-0005" ref-type="table">5</xref>).</p><table-wrap position="float" id="aej12891-tbl-0005" content-type="TABLE" orientation="portrait"><label>TABLE 5</label><caption><p>Timing of avulsion (<italic toggle="no">N</italic> = 117).</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1"/><th align="left" valign="bottom" rowspan="1" colspan="1">
+<italic toggle="yes">N</italic> (%)</th></tr></thead><tbody valign="top"><tr><td align="left" colspan="2" valign="top" rowspan="1">Season</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Summer</td><td align="left" valign="top" rowspan="1" colspan="1">31 (26.5%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Autumn</td><td align="left" valign="top" rowspan="1" colspan="1">39 (33.3%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Winter</td><td align="left" valign="top" rowspan="1" colspan="1">17 (14.5%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Spring</td><td align="left" valign="top" rowspan="1" colspan="1">30 (25.6%)</td></tr><tr><td align="left" colspan="2" valign="top" rowspan="1">Day of the week</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Monday</td><td align="left" valign="top" rowspan="1" colspan="1">13 (11.1%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Tuesday</td><td align="left" valign="top" rowspan="1" colspan="1">13 (11.1%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Wednesday</td><td align="left" valign="top" rowspan="1" colspan="1">18 (15.4%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Thursday</td><td align="left" valign="top" rowspan="1" colspan="1">13 (11.1%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Friday</td><td align="left" valign="top" rowspan="1" colspan="1">11 (9.4%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Saturday</td><td align="left" valign="top" rowspan="1" colspan="1">21 (17.9%)</td></tr><tr><td align="left" style="padding-left:10%" valign="top" rowspan="1" colspan="1">Sunday</td><td align="left" valign="top" rowspan="1" colspan="1">28 (23.9%)</td></tr></tbody></table></table-wrap></sec><sec sec-type="discussion" id="aej12891-sec-0004"><title>DISCUSSION</title><p>The demographics of this study population are consistent with the currently published literature on dental traumatology. Paediatric patients accounted for the largest cohort in the study, with a median age of 12 years at the time of the injury. This finding is relatively comparable to recent publications in the literature, with Müller et al. [<xref rid="aej12891-bib-0017" ref-type="bibr">17</xref>] observing a mean of 13.8 years (range 5–82), while Coste et al. [<xref rid="aej12891-bib-0019" ref-type="bibr">19</xref>] observed a mean of 13.3 years (range 5–73). Age has been identified in the literature as a well‐known risk factor for dental trauma [<xref rid="aej12891-bib-0002" ref-type="bibr">2</xref>]. The majority of TDIs occur during childhood and adolescence, with an estimated 71%–92% of all TDIs occurring before 19 years of age [<xref rid="aej12891-bib-0002" ref-type="bibr">2</xref>]. Children have more loosely structured PDL and less mineralised bone reducing resistance to force [<xref rid="aej12891-bib-0006" ref-type="bibr">6</xref>]. However, an increase in older people remaining dentate may result in a shift in this finding, particularly given the elderly are prone to accidental falls. In this cohort, 19.7% of avulsions occurred in people aged 19 and over, and 3.4% in people aged 60 and over. The oldest person included in the study was 90 years of age. Males were observed to experience 2.2 times the frequency of avulsion injuries than females in this study. A meta‐analysis supports this finding with a higher frequency of TDIs observed in males compared to females [<xref rid="aej12891-bib-0020" ref-type="bibr">20</xref>]. Lam [<xref rid="aej12891-bib-0001" ref-type="bibr">1</xref>] reported a closing disparity between TDI prevalence in males and females, likely reflecting an increase in participation in organised sport by females. Such a finding was not reflected in this study.</p><p>The median number of visits in the first 12 months was seven visits, although one patient attended the department 20 times. This incurs significant loss of school time and/or work, in addition to the physiologic and psychologic burden of dental trauma. Immature and mature teeth had comparable attendance patterns. Nguyen et al. [<xref rid="aej12891-bib-0021" ref-type="bibr">21</xref>] observed an average treatment time of 7.2 h in the first year of trauma, with almost all children and adults reporting loss of school and work time.</p><p>A significant medical history was observed in a minority of patients. However, several older patients with comorbidities and children with complex medical background such as seizure disorders and cerebral palsy were included in the study. Inclusion of such patients may result in patients at higher risk of repeat trauma. Cerebral palsy has been observed to have a high correlation with dental trauma. Holan et al. [<xref rid="aej12891-bib-0022" ref-type="bibr">22</xref>] conducted an observational study at a special needs school in Israel, observing 57% of the 68 included children had signs of trauma to their permanent dentition. People with cerebral palsy have significantly increased frequency of Class II malocclusion [<xref rid="aej12891-bib-0023" ref-type="bibr">23</xref>]. In addition, they have difficulties ambulating and increased prevalence of seizures [<xref rid="aej12891-bib-0022" ref-type="bibr">22</xref>]. This combination of risk factors results in people with cerebral palsy having increased prevalence of dental trauma [<xref rid="aej12891-bib-0023" ref-type="bibr">23</xref>]. Epilepsy has also been identified as increasing risk of dental trauma. Moreira Falci et al. [<xref rid="aej12891-bib-0024" ref-type="bibr">24</xref>] in a systematic review and meta‐analysis observed over five times increased risk of oral and maxillofacial injuries in epileptic patients when compared to healthy individuals (OR 5.22, 95% CI: 2.84–9.36).</p><p>Three patients with ADHD were noted in the cohort; however, with an estimated prevalence of 8% of Australian children having ADHD, this appears to be representative of the normal population [<xref rid="aej12891-bib-0025" ref-type="bibr">25</xref>]. Wadia [<xref rid="aej12891-bib-0026" ref-type="bibr">26</xref>] conducted a systematic review and meta‐analysis on the prevalence of dental trauma in children and adolescents with ADHD. They observed an increased prevalence of dental trauma in this cohort compared to their non‐ADHD peers; however, the level of evidence was deemed very low and a causal relationship could not be established.</p><p>Fights and sporting injuries are commonly reported causes of tooth avulsion, although significant variation depending on culture and region of the world is noted [<xref rid="aej12891-bib-0004" ref-type="bibr">4</xref>, <xref rid="aej12891-bib-0008" ref-type="bibr">8</xref>]. Non‐organised sport had the highest prevalence in this study, accounting for 42.7% of the avulsions. Falls and collisions were the second most prevalent aetiology (30.8%). Assaults (12.0%) and organised sport (11.1%) accounted for a minority of injuries. These findings may reflect the large paediatric cohort in this study, where violence was less frequently noted as a cause of injury.</p><p>Three injuries included in the study involved trampolines. Trampolines account for 1737 hospitalised injuries nationally annually in Australia between 2002 and 2011, with injury frequency and rate increasing [<xref rid="aej12891-bib-0027" ref-type="bibr">27</xref>]. Injury rates are the highest in children aged 5–9 years of age, correlating with peak age for dental trauma [<xref rid="aej12891-bib-0002" ref-type="bibr">2</xref>]. Trampoline parks have also increased in popularity in recent years in Australia and have been associated with a concerning number of serious injuries [<xref rid="aej12891-bib-0028" ref-type="bibr">28</xref>].</p><p>Push bike riding was the most common non‐organised sport resulting in dental avulsion in this study, accounting for 25% of total injuries (<italic toggle="yes">N</italic> = 31). Cycling is a common activity in Australia with 21.4% of Australians reported to cycle at least once a month [<xref rid="aej12891-bib-0029" ref-type="bibr">29</xref>]. Despite a multitude of health benefits, cycling carries risk of traumatic injuries. Helmet use for cycling in Australia is mandatory. Numerous studies have supported the use of helmets in reducing traumatic brain injuries [<xref rid="aej12891-bib-0030" ref-type="bibr">30</xref>]. However, traditional helmets offer no protection to the lower face. Despite this, a recent systematic review Stassen et al. [<xref rid="aej12891-bib-0031" ref-type="bibr">31</xref>] observed a reduced incidence of maxillofacial injury in patients wearing helmets in push bike accidents (OR 0.68). Such findings are supportive of the strict helmet legislation observed in Australia and the high prevalence of dental trauma while cycling. Full‐face helmets have shown to offer additional protection against facial injuries in motorised motorcycle accidents, although there is a paucity of literature on their use in cycling [<xref rid="aej12891-bib-0032" ref-type="bibr">32</xref>, <xref rid="aej12891-bib-0033" ref-type="bibr">33</xref>]. Full‐face shields have been demonstrated to reduce dental injuries in ice hockey [<xref rid="aej12891-bib-0034" ref-type="bibr">34</xref>]. The IADT supports mandatory wearing of full‐face shields for high risk sports, in conjunction with use of a mouthguard [<xref rid="aej12891-bib-0035" ref-type="bibr">35</xref>]. Faces shields should also be considered for all patients who have sustained a previous significant dental trauma [<xref rid="aej12891-bib-0035" ref-type="bibr">35</xref>].</p><p>In addition, scooter injuries featured frequently in our cohort (4.3%). A previous Australian study observed injuries resulting in hospital presentation from scooters include fractures (31.3%) and head injuries (21.8%) [<xref rid="aej12891-bib-0036" ref-type="bibr">36</xref>]. Electric scooters have become increasingly popular in Australia with emerging research observing frequent injury [<xref rid="aej12891-bib-0037" ref-type="bibr">37</xref>]. However, electric scooters remain illegal for use in New South Wales, Australia, where this research was performed.</p><p>Two patients included in this cohort were recorded as suffering multiple dental trauma episodes. The first had a historic uncomplicated crown fracture and was included. The second patient had a repeat avulsion injury to the same tooth (with the second injury excluded from the data set). Multiple dental trauma episodes to a tooth have been reported between 8% and 45% of injured teeth [<xref rid="aej12891-bib-0038" ref-type="bibr">38</xref>, <xref rid="aej12891-bib-0039" ref-type="bibr">39</xref>]. Repeated trauma may reflect oral predisposing factors such as increased overjet and lip incompetence or environmental factors such as risk‐taking behaviours and physical limitations [<xref rid="aej12891-bib-0004" ref-type="bibr">4</xref>].</p><p>Concomitant injuries were frequently observed in this cohort. Extra‐oral injuries such as facial lacerations and bony fractures were observed in 43.6% of patients. However, 70.1% of patients were referred for management from an emergency department, which may reflect the very high rate of concomitant injuries. Maxillary central incisors were the most frequently avulsed tooth with no side predilection, as reported in the literature [<xref rid="aej12891-bib-0008" ref-type="bibr">8</xref>].</p><p>Sydney has a humid sub‐tropical climate, with mild winters and warm summers, encouraging outdoor recreational activities. Contact sports such as Australian rules football, rugby union and rugby league are winter sports in Australia. The finding of low rates of dental avulsions in winter correlates with the low rates of injuries resulting from organised sports. This may be due to the use of mouthguards in organised sport. The use of mouthguards in organised sport significantly reduces prevalence of TDIs [<xref rid="aej12891-bib-0040" ref-type="bibr">40</xref>]. Mouthguards reduce stress and absorb energy generated by impact to the teeth during sport, thus minimising injury to the teeth and supportive structures [<xref rid="aej12891-bib-0041" ref-type="bibr">41</xref>]. The low rate of dental trauma in organised sport may reflect a high use of mouthguards. Use of appropriate protective equipment in sport, safe public spaces, school policies against bullying and violence and alcohol and drug policies may all additionally assist in reducing dental trauma [<xref rid="aej12891-bib-0004" ref-type="bibr">4</xref>]. This area would benefit from further research. Dental avulsion injury frequency was the highest on the weekend (Sunday 23.9%, and Saturday 17.9%), with the lowest frequency on Friday (9.4%). These data suggest schools and workplaces may be protective against dental injuries compared to leisure time.</p><p>There is a lack of consensus in the literature whether TDIs are preventable. This reflects one school of thought that TDIs are unavoidable accidents [<xref rid="aej12891-bib-0004" ref-type="bibr">4</xref>]. However, the literature has demonstrated modifiable risk factors for TDI if addressed, may reduce risk of injury [<xref rid="aej12891-bib-0042" ref-type="bibr">42</xref>]. Oral predisposing factors such as increased overjet of maxillary teeth and lip incompetence increase risk of trauma [<xref rid="aej12891-bib-0005" ref-type="bibr">5</xref>]. Interceptive orthodontics to reduce increased overjet of children in the mixed dentition may decrease risk of trauma; however, the current evidence is heterogenous and at high risk of bias [<xref rid="aej12891-bib-0042" ref-type="bibr">42</xref>]. Nonetheless, interceptive orthodontics may significantly increase treatment burden for children, with longer treatment time and more appointments [<xref rid="aej12891-bib-0042" ref-type="bibr">42</xref>]. However, this also needs to be weighed against the risk of future dental trauma complicating future orthodontic treatment [<xref rid="aej12891-bib-0043" ref-type="bibr">43</xref>]. Oral predisposing factors were excluded in this study due to inconsistencies in record keeping. Increased overjet and lip incompetence were highlighted in multiple cases but patient records did not include sufficient detail of the occlusion. Dental professionals should provide anticipatory guidance to individuals at an elevated risk of dental trauma, including recommending immediate replantation in event of permanent tooth avulsion.</p><p>This study was retrospective in origin, presenting a major limitation. Missing data and lack of standardisation were frequently encountered issues. Irregularities between different dental departments was observed in follow up protocol. The paediatric patients' were able to be follow up all patients with a Medicare card (universal health care insurance card in Australia) until 18 years of age. However, adults required a government issued concession card (Health Care Card or Pension Concession Card) for continuing ongoing care after the initial emergency management at WCOH. This resulted in less adult patients' having follow‐up care and inclusion in this study. An additional limitation in sampling was the significant cohort of paediatric patients that had initial management at CHW. CHW is a separate children's hospital network and was not included in this study. Children referred from CHW to WCOH for ongoing care from July 2018 were included, as were children identified in recall clinics as having had a historic trauma. This may have led to selection bias and an underrepresentation of paediatric patients in our cohort, particularly those with more severe injuries. Additionally, record keeping was hand‐written and not standardised. The use of proformas for TDIs and electronic records may assist data management and future research projects.</p><p>The inclusion criteria in this study was broader than recent publications on avulsion injuries, including teeth with concomitant crown fractures and root fractures, as well as patients with a significant medical history. Despite the limitations of this retrospective analysis, it provides insight into ‘real world’ management of avulsion injuries in a major tertiary hospital in Australia.</p></sec><sec sec-type="conclusions" id="aej12891-sec-0005"><title>CONCLUSION</title><p>The causes of dental trauma in this study were shown to be varied. Non‐organised sport was the most common aetiology of dental avulsion, which included activities such as scooters, skateboards, push bikes, trampolines and swimming pools. Injuries were most prevalent in the paediatric population and occurred more frequently on weekends. In light of the high frequency of avulsion injuries occurring during non‐organised sport, public health programmes and clinicians should target prevention and anticipatory guidance towards this cohort. Examples include the regulation regarding the use of helmets and mouthguards. Staff working in high‐risk environments should be educated on first aid for dental trauma. The demographics of this cohort reflect regional factors such as weather and high participation in non‐organised and organised sport. Standardisation of records, such as by using a proforma, would assist in future assessment of epidemiological and aetiological parameters of dental trauma.</p></sec><sec sec-type="COI-statement" id="aej12891-sec-0006"><title>CONFLICT OF INTEREST STATEMENT</title><p>The authors have no conflict of interest to declare.</p></sec></body><back><ack id="aej12891-sec-0012"><title>ACKNOWLEDGEMENTS</title><p>This research received no financial grants or funding. The authors have no industrial links or affiliations. Open access publishing facilitated by The University of Sydney, as part of the Wiley ‐ The University of Sydney agreement via the Council of Australian University Librarians.</p></ack><ref-list content-type="cited-references" id="aej12891-bibl-0001"><title>REFERENCES</title><ref id="aej12891-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="aej12891-cit-0001">
+<string-name name-style="western">
+<surname>Lam</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Epidemiology and outcomes of traumatic dental injuries: a review of the literature</article-title>. <source>Aust Dent J</source>. <year>2016</year>;<volume>61</volume>:<fpage>4</fpage>–<lpage>20</lpage>.<pub-id pub-id-type="pmid">26923445</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/adj.12395</pub-id></mixed-citation></ref><ref id="aej12891-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="aej12891-cit-0002">
+<string-name name-style="western">
+<surname>Glendor</surname>
+<given-names>U</given-names>
+</string-name>. <article-title>Epidemiology of traumatic dental injuries—a 12 year review of the literature</article-title>. <source>Dent Traumatol</source>. <year>2008</year>;<volume>24</volume>:<fpage>603</fpage>–<lpage>611</lpage>.<pub-id pub-id-type="pmid">19021651</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-9657.2008.00696.x</pub-id></mixed-citation></ref><ref id="aej12891-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="aej12891-cit-0003">
+<string-name name-style="western">
+<surname>Mahler</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>McDevitti</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>Thoughts on the emergence of the sense of self, with particular emphasis on the body self</article-title>. <source>J Am Psychoanal Assoc</source>. <year>1982</year>;<volume>30</volume>:<fpage>827</fpage>–<lpage>848</lpage>.<pub-id pub-id-type="pmid">6927241</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1177/000306518203000401</pub-id></mixed-citation></ref><ref id="aej12891-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="aej12891-cit-0004">
+<string-name name-style="western">
+<surname>Glendor</surname>
+<given-names>U</given-names>
+</string-name>. <article-title>Aetiology and risk factors related to traumatic dental injuries—a review of the literature</article-title>. <source>Dent Traumatol</source>. <year>2009</year>;<volume>25</volume>:<fpage>19</fpage>–<lpage>31</lpage>.<pub-id pub-id-type="pmid">19208007</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-9657.2008.00694.x</pub-id></mixed-citation></ref><ref id="aej12891-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="aej12891-cit-0005">
+<string-name name-style="western">
+<surname>Arraj</surname>
+<given-names>GP</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rossi‐Fedele</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Doğramacı</surname>
+<given-names>EJ</given-names>
+</string-name>. <article-title>The association of overjet size and traumatic dental injuries—a systematic review and meta‐analysis</article-title>. <source>Dent Traumatol</source>. <year>2019</year>;<volume>35</volume>:<fpage>217</fpage>–<lpage>232</lpage>.<pub-id pub-id-type="pmid">31062510</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/edt.12481</pub-id></mixed-citation></ref><ref id="aej12891-bib-0006"><label>6</label><mixed-citation publication-type="book" id="aej12891-cit-0006">
+<string-name name-style="western">
+<surname>Andreasen</surname>
+<given-names>JO</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Andreasen</surname>
+<given-names>FM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tsilingaridis</surname>
+<given-names>G</given-names>
+</string-name>. <part-title>Avulsions</part-title>. In: <person-group person-group-type="editor">
+<string-name name-style="western">
+<surname>Andreasen</surname>
+<given-names>JO</given-names>
+</string-name>
+</person-group>, <person-group person-group-type="editor">
+<string-name name-style="western">
+<surname>Andreasen</surname>
+<given-names>FM</given-names>
+</string-name>
+</person-group>, <person-group person-group-type="editor">
+<string-name name-style="western">
+<surname>Andersson</surname>
+<given-names>L</given-names>
+</string-name>
+</person-group>, editors. <source>Textbook and color atlas of traumatic injuries to the teeth</source>. Volume <volume>6</volume>. <edition designator="5">5th ed.</edition>
+<publisher-loc>Oxford</publisher-loc>: <publisher-name>Wiley‐Blackwell</publisher-name>; <year>2019</year>. p. <fpage>486</fpage>–<lpage>528</lpage>.</mixed-citation></ref><ref id="aej12891-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="aej12891-cit-0007">
+<string-name name-style="western">
+<surname>Glendor</surname>
+<given-names>U</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Halling</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Andersson</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Eilert‐Petersson</surname>
+<given-names>E</given-names>
+</string-name>. <article-title>Incidence of traumatic tooth injuries in children and adolescents in the county of Vastmanland, Sweden</article-title>. <source>Swed Dent J</source>. <year>1996</year>;<volume>20</volume>:<fpage>15</fpage>–<lpage>28</lpage>.<pub-id pub-id-type="pmid">8738905</pub-id>
+</mixed-citation></ref><ref id="aej12891-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="aej12891-cit-0008">
+<string-name name-style="western">
+<surname>Andreasen</surname>
+<given-names>JO</given-names>
+</string-name>. <article-title>Etiology and pathogenesis of traumatic dental injuries a clinical study of 1,298 cases</article-title>. <source>Eur J Oral Sci</source>. <year>1970</year>;<volume>78</volume>:<fpage>329</fpage>–<lpage>342</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-0722.1970.tb02080.x</pub-id><pub-id pub-id-type="pmid">4394635</pub-id></mixed-citation></ref><ref id="aej12891-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="aej12891-cit-0009">
+<string-name name-style="western">
+<surname>Andreasen</surname>
+<given-names>JO</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hjorting‐Hansen</surname>
+<given-names>E</given-names>
+</string-name>. <article-title>Replantation of teeth. I. Radiographic and clinical study of 110 human teeth replanted after accidental loss</article-title>. <source>Acta Odontol Scand</source>. <year>1966</year>;<volume>24</volume>:<fpage>263</fpage>–<lpage>286</lpage>.<pub-id pub-id-type="pmid">5225449</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.3109/00016356609028222</pub-id></mixed-citation></ref><ref id="aej12891-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="aej12891-cit-0010">
+<string-name name-style="western">
+<surname>Andreasen</surname>
+<given-names>JO</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Borum</surname>
+<given-names>MK</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Jacobsen</surname>
+<given-names>HL</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Andreasen</surname>
+<given-names>FM</given-names>
+</string-name>. <article-title>Replantation of 400 avulsed permanent incisors. 1. Diagnosis of healing complications</article-title>. <source>Endod Dent Traumatol</source>. <year>1995</year>;<volume>11</volume>:<fpage>51</fpage>–<lpage>58</lpage>.<pub-id pub-id-type="pmid">7641619</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-9657.1995.tb00461.x</pub-id></mixed-citation></ref><ref id="aej12891-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="aej12891-cit-0011">
+<string-name name-style="western">
+<surname>Fouad</surname>
+<given-names>AF</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Abbott</surname>
+<given-names>PV</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tsilingaridis</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cohenca</surname>
+<given-names>N</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lauridsen</surname>
+<given-names>E</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bourguignon</surname>
+<given-names>C</given-names>
+</string-name>, et al. <article-title>International Association of Dental Traumatology guidelines for the management of traumatic dental injuries: 2 Avulsion of Permanent Teeth</article-title>. <source>Dent Traumatol</source>. <year>2020</year>;<volume>36</volume>:<fpage>331</fpage>–<lpage>342</lpage>.<pub-id pub-id-type="pmid">32460393</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/edt.12573</pub-id></mixed-citation></ref><ref id="aej12891-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="aej12891-cit-0012">
+<string-name name-style="western">
+<surname>Andersson</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bodin</surname>
+<given-names>I</given-names>
+</string-name>. <article-title>Avulsed human teeth replanted within 15 minutes—a long‐term clinical follow‐up study</article-title>. <source>Dent Traumatol</source>. <year>1990</year>;<volume>6</volume>:<fpage>37</fpage>–<lpage>42</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-9657.1990.tb00385.x</pub-id><pub-id pub-id-type="pmid">2390966</pub-id></mixed-citation></ref><ref id="aej12891-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="aej12891-cit-0013">
+<string-name name-style="western">
+<surname>Andreasen</surname>
+<given-names>JO</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Borum</surname>
+<given-names>MK</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Jacobsen</surname>
+<given-names>HL</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Andreasen</surname>
+<given-names>FM</given-names>
+</string-name>. <article-title>Replantation of 400 avulsed permanent incisors. 4. Factors related to periodontal ligament healing</article-title>. <source>Endod Dent Traumatol</source>. <year>1995</year>;<volume>11</volume>:<fpage>76</fpage>–<lpage>89</lpage>.<pub-id pub-id-type="pmid">7641622</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-9657.1995.tb00464.x</pub-id></mixed-citation></ref><ref id="aej12891-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="aej12891-cit-0014">
+<string-name name-style="western">
+<surname>Chappuis</surname>
+<given-names>V</given-names>
+</string-name>, <string-name name-style="western">
+<surname>von Arx</surname>
+<given-names>T</given-names>
+</string-name>. <article-title>Replantation of 45 avulsed permanent teeth: a 1‐year follow‐up study</article-title>. <source>Dent Traumatol</source>. <year>2005</year>;<volume>21</volume>:<fpage>289</fpage>–<lpage>296</lpage>.<pub-id pub-id-type="pmid">16149925</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-9657.2005.00330.x</pub-id></mixed-citation></ref><ref id="aej12891-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="aej12891-cit-0015">
+<string-name name-style="western">
+<surname>Petrovic</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Marković</surname>
+<given-names>D</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Peric</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Blagojevic</surname>
+<given-names>D</given-names>
+</string-name>. <article-title>Factors related to treatment and outcomes of avulsed teeth</article-title>. <source>Dent Traumatol</source>. <year>2010</year>;<volume>26</volume>:<fpage>52</fpage>–<lpage>59</lpage>.<pub-id pub-id-type="pmid">19919541</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-9657.2009.00836.x</pub-id></mixed-citation></ref><ref id="aej12891-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="aej12891-cit-0016">
+<string-name name-style="western">
+<surname>Wang</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Wang</surname>
+<given-names>C</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Qin</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>A retrospective study of survival of 196 replanted permanent teeth in children</article-title>. <source>Dent Traumatol</source>. <year>2019</year>;<volume>35</volume>:<fpage>251</fpage>–<lpage>258</lpage>.<pub-id pub-id-type="pmid">30980776</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/edt.12475</pub-id></mixed-citation></ref><ref id="aej12891-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="aej12891-cit-0017">
+<string-name name-style="western">
+<surname>Müller</surname>
+<given-names>DD</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bissinger</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Reymus</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bücher</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hickel</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kühnisch</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>Survival and complication analyses of avulsed and replanted permanent teeth</article-title>. <source>Sci Rep</source>. <year>2020</year>;<volume>10</volume>:<fpage>2841</fpage>.<pub-id pub-id-type="pmid">32071357</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41598-020-59843-1</pub-id><pub-id pub-id-type="pmcid">PMC7028940</pub-id></mixed-citation></ref><ref id="aej12891-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="aej12891-cit-0018">
+<string-name name-style="western">
+<surname>Moorrees</surname>
+<given-names>CF</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fanning</surname>
+<given-names>EA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hunt</surname>
+<given-names>EE</given-names>
+<suffix>Jr</suffix>
+</string-name>. <article-title>Age variation of formation stages for ten permanent teeth</article-title>. <source>J Dent Res</source>. <year>1963</year>;<volume>42</volume>:<fpage>1490</fpage>–<lpage>1502</lpage>.<pub-id pub-id-type="pmid">14081973</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1177/00220345630420062701</pub-id></mixed-citation></ref><ref id="aej12891-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="aej12891-cit-0019">
+<string-name name-style="western">
+<surname>Coste</surname>
+<given-names>SC</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Silva</surname>
+<given-names>EFE</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Santos</surname>
+<given-names>LCM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Barbato Ferreira</surname>
+<given-names>DA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Côrtes</surname>
+<given-names>MIDS</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Colosimo</surname>
+<given-names>EA</given-names>
+</string-name>, et al. <article-title>Survival of replanted permanent teeth after traumatic avulsion</article-title>. <source>J Endod</source>. <year>2020</year>;<volume>46</volume>:<fpage>370</fpage>–<lpage>375</lpage>.<pub-id pub-id-type="pmid">31959484</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.joen.2019.11.013</pub-id></mixed-citation></ref><ref id="aej12891-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="aej12891-cit-0020">
+<string-name name-style="western">
+<surname>Petti</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Glendor</surname>
+<given-names>U</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Andersson</surname>
+<given-names>L</given-names>
+</string-name>. <article-title>World traumatic dental injury prevalence and incidence, a meta‐analysis‐one billion living people have had traumatic dental injuries</article-title>. <source>Dent Traumatol</source>. <year>2018</year>;<volume>34</volume>:<fpage>71</fpage>–<lpage>86</lpage>.<pub-id pub-id-type="pmid">29455471</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/edt.12389</pub-id></mixed-citation></ref><ref id="aej12891-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="aej12891-cit-0021">
+<string-name name-style="western">
+<surname>Nguyen</surname>
+<given-names>PM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kenny</surname>
+<given-names>DJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Barrett</surname>
+<given-names>EJ</given-names>
+</string-name>. <article-title>Socio‐economic burden of permanent incisor replantation on children and parents</article-title>. <source>Dent Traumatol</source>. <year>2004</year>;<volume>20</volume>:<fpage>123</fpage>–<lpage>133</lpage>.<pub-id pub-id-type="pmid">15144442</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-4469.2004.00235.x</pub-id></mixed-citation></ref><ref id="aej12891-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="aej12891-cit-0022">
+<string-name name-style="western">
+<surname>Holan</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Peretz</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Efrat</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Shapira</surname>
+<given-names>Y</given-names>
+</string-name>. <article-title>Traumatic injuries to the teeth in young individuals with cerebral palsy</article-title>. <source>Dent Traumatol</source>. <year>2005</year>;<volume>21</volume>:<fpage>65</fpage>–<lpage>69</lpage>.<pub-id pub-id-type="pmid">15773884</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-9657.2004.00274.x</pub-id></mixed-citation></ref><ref id="aej12891-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="aej12891-cit-0023">
+<string-name name-style="western">
+<surname>Bensi</surname>
+<given-names>C</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Costacurta</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Docimo</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Oral health in children with cerebral palsy: a systematic review and meta‐analysis</article-title>. <source>Spec Care Dentist</source>. <year>2020</year>;<volume>40</volume>:<fpage>401</fpage>–<lpage>411</lpage>.<pub-id pub-id-type="pmid">32815638</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/scd.12506</pub-id></mixed-citation></ref><ref id="aej12891-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="aej12891-cit-0024">
+<string-name name-style="western">
+<surname>Moreira Falci</surname>
+<given-names>SG</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Duarte‐Rodrigues</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Primo‐Miranda</surname>
+<given-names>EF</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Furtado Gonçalves</surname>
+<given-names>P</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lanza</surname>
+<given-names>GE</given-names>
+</string-name>. <article-title>Association between epilepsy and oral maxillofacial trauma: a systematic review and meta‐analysis</article-title>. <source>Spec Care Dentist</source>. <year>2019</year>;<volume>39</volume>:<fpage>362</fpage>–<lpage>374</lpage>.<pub-id pub-id-type="pmid">31144360</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/scd.12398</pub-id></mixed-citation></ref><ref id="aej12891-bib-0025"><label>25</label><mixed-citation publication-type="book" id="aej12891-cit-0025">
+<collab collab-type="authors">Australian Institute of Health and Welfare</collab>
+. <source>Australia's children</source>. <publisher-loc>Canberra, Australia</publisher-loc>: <publisher-name>Australian Institute of Health and Welfare</publisher-name>; <year>2020</year> Available from: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.aihw.gov.au/reports/children-youth/australias-children/contents/health/birthweight" ext-link-type="uri">https://www.aihw.gov.au/reports/children‐youth/australias‐children/contents/health/birthweight</ext-link>
+</mixed-citation></ref><ref id="aej12891-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="aej12891-cit-0026">
+<string-name name-style="western">
+<surname>Wadia</surname>
+<given-names>R</given-names>
+</string-name>. <article-title>Dental trauma in ADHD</article-title>. <source>Br Dent J</source>. <year>2023</year>;<volume>234</volume>:<fpage>100</fpage>.</mixed-citation></ref><ref id="aej12891-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="aej12891-cit-0027">
+<string-name name-style="western">
+<surname>Ashby</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Pointer</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Eager</surname>
+<given-names>D</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Day</surname>
+<given-names>L</given-names>
+</string-name>. <article-title>Australian trampoline injury patterns and trends</article-title>. <source>Aust N Z J Public Health</source>. <year>2015</year>;<volume>39</volume>:<fpage>491</fpage>–<lpage>494</lpage>.<pub-id pub-id-type="pmid">26123781</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/1753-6405.12404</pub-id></mixed-citation></ref><ref id="aej12891-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="aej12891-cit-0028">
+<string-name name-style="western">
+<surname>Sharwood</surname>
+<given-names>LN</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Adams</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Blaszkow</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Eager</surname>
+<given-names>D</given-names>
+</string-name>. <article-title>Increasing injuries as trampoline parks expand within Australia: a call for mandatory standards</article-title>. <source>Aust N Z J Public Health</source>. <year>2018</year>;<volume>42</volume>:<fpage>153</fpage>–<lpage>156</lpage>.<pub-id pub-id-type="pmid">29442403</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/1753-6405.12783</pub-id></mixed-citation></ref><ref id="aej12891-bib-0029"><label>29</label><mixed-citation publication-type="miscellaneous" id="aej12891-cit-0029">
+<collab collab-type="authors">Cycling and Walking Australia and New Zealand</collab>
+. <article-title>National walking and cycling participation survey</article-title>. <year>2021</year> Available from: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.cwanz.com.au/wp-content/uploads/2021/08/NWCPS_2021_report_v2.0.pdf" ext-link-type="uri">https://www.cwanz.com.au/wp‐content/uploads/2021/08/NWCPS_2021_report_v2.0.pdf</ext-link>
+</mixed-citation></ref><ref id="aej12891-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="aej12891-cit-0030">
+<string-name name-style="western">
+<surname>Høye</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>Bicycle helmets—to wear or not to wear? A meta‐analyses of the effects of bicycle helmets on injuries</article-title>. <source>Accid Anal Prev</source>. <year>2018</year>;<volume>117</volume>:<fpage>85</fpage>–<lpage>97</lpage>.<pub-id pub-id-type="pmid">29677686</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.aap.2018.03.026</pub-id></mixed-citation></ref><ref id="aej12891-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="aej12891-cit-0031">
+<string-name name-style="western">
+<surname>Stassen</surname>
+<given-names>HS</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Atalik</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Haagsma</surname>
+<given-names>JA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Wolvius</surname>
+<given-names>EB</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Verdonschot</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rozeboom</surname>
+<given-names>AVJ</given-names>
+</string-name>. <article-title>Effect of helmet use on maxillofacial injuries due to bicycle and scooter accidents: a systematic literature review and meta‐analysis</article-title>. <source>Int J Oral Maxillofac Surg</source>. <year>2023</year>;<volume>53</volume>:<fpage>28</fpage>–<lpage>35</lpage>.<pub-id pub-id-type="pmid">37031014</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.ijom.2023.01.013</pub-id></mixed-citation></ref><ref id="aej12891-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="aej12891-cit-0032">
+<string-name name-style="western">
+<surname>Wu</surname>
+<given-names>D</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Dufournet</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Martin</surname>
+<given-names>JL</given-names>
+</string-name>. <article-title>Does a full‐face helmet effectively protect against facial injuries?</article-title>
+<source>Inj Epidemiol</source>. <year>2019</year>;<volume>6</volume>:<fpage>19</fpage>.<pub-id pub-id-type="pmid">31240168</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s40621-019-0197-8</pub-id><pub-id pub-id-type="pmcid">PMC6544930</pub-id></mixed-citation></ref><ref id="aej12891-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="aej12891-cit-0033">
+<string-name name-style="western">
+<surname>Novelli</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Moretti</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>De Ponti</surname>
+<given-names>E</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bozzetti</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sozzi</surname>
+<given-names>D</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Canzi</surname>
+<given-names>G</given-names>
+</string-name>. <article-title>Analysis of different safety devices in the prevention of motorcycle‐related craniofacial trauma—a retrospective study</article-title>. <source>Ann Maxillofac Surg</source>. <year>2021</year>;<volume>11</volume>:<fpage>293</fpage>–<lpage>297</lpage>.<pub-id pub-id-type="pmid">35265501</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.4103/ams.ams_203_21</pub-id><pub-id pub-id-type="pmcid">PMC8848692</pub-id></mixed-citation></ref><ref id="aej12891-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="aej12891-cit-0034">
+<string-name name-style="western">
+<surname>Asplund</surname>
+<given-names>C</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bettcher</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Borchers</surname>
+<given-names>J</given-names>
+</string-name>. <article-title>Facial protection and head injuries in ice hockey: a systematic review</article-title>. <source>Br J Sports Med</source>. <year>2009</year>;<volume>43</volume>:<fpage>993</fpage>–<lpage>999</lpage>.<pub-id pub-id-type="pmid">19703823</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1136/bjsm.2009.060152</pub-id></mixed-citation></ref><ref id="aej12891-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="aej12891-cit-0035">
+<string-name name-style="western">
+<surname>Abbott</surname>
+<given-names>PV</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tewari</surname>
+<given-names>N</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mills</surname>
+<given-names>SC</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Stasiuk</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Roettger</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>O'Connell</surname>
+<given-names>AC</given-names>
+</string-name>, et al. <article-title>The International Association of Dental Traumatology (IADT) and the Academy for Sports Dentistry (ASD) guidelines for prevention of traumatic dental injuries: Part 4: Faceshields for the prevention of dental and oral trauma</article-title>. <source>Dent Traumatol</source>. <year>2024</year>;<volume>40</volume>(<issue>Suppl 1</issue>):<fpage>10</fpage>–<lpage>11</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/edt.12926</pub-id><pub-id pub-id-type="pmid">38363703</pub-id></mixed-citation></ref><ref id="aej12891-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="aej12891-cit-0036">
+<string-name name-style="western">
+<surname>Stokes</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Corbo</surname>
+<given-names>MP</given-names>
+</string-name>. <article-title>Scooter injuries to children</article-title>. <source>Inj Prev</source>. <year>2001</year>;<volume>7</volume>:<fpage>166</fpage>.<pub-id pub-id-type="pmid">11428567</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1136/ip.7.2.166-a</pub-id><pub-id pub-id-type="pmcid">PMC1730705</pub-id></mixed-citation></ref><ref id="aej12891-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="aej12891-cit-0037">
+<string-name name-style="western">
+<surname>Mitchell</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tsao</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Randell</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Marks</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mackay</surname>
+<given-names>P</given-names>
+</string-name>. <article-title>Impact of electric scooters to a tertiary emergency department: 8‐week review after implementation of a scooter share scheme</article-title>. <source>Emerg Med Australas</source>. <year>2019</year>;<volume>31</volume>:<fpage>930</fpage>–<lpage>934</lpage>.<pub-id pub-id-type="pmid">31423709</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/1742-6723.13356</pub-id></mixed-citation></ref><ref id="aej12891-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="aej12891-cit-0038">
+<string-name name-style="western">
+<surname>Glendor</surname>
+<given-names>U</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Koucheki</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Halling</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>Risk evaluation and type of treatment of multiple dental trauma episodes to permanent teeth</article-title>. <source>Endod Dent Traumatol</source>. <year>2000</year>;<volume>16</volume>:<fpage>205</fpage>–<lpage>210</lpage>.<pub-id pub-id-type="pmid">11202883</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1034/j.1600-9657.2000.016005205.x</pub-id></mixed-citation></ref><ref id="aej12891-bib-0039"><label>39</label><mixed-citation publication-type="journal" id="aej12891-cit-0039">
+<string-name name-style="western">
+<surname>Sharma</surname>
+<given-names>D</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Garg</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sheoran</surname>
+<given-names>N</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Swami</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Singh</surname>
+<given-names>G</given-names>
+</string-name>. <article-title>Multidisciplinary approach to the rehabilitation of a tooth with two trauma episodes: systematic review and report of a case</article-title>. <source>Dent Traumatol</source>. <year>2011</year>;<volume>27</volume>:<fpage>321</fpage>–<lpage>326</lpage>.<pub-id pub-id-type="pmid">21535402</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-9657.2011.01006.x</pub-id></mixed-citation></ref><ref id="aej12891-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="aej12891-cit-0040">
+<string-name name-style="western">
+<surname>Fernandes</surname>
+<given-names>LM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Neto</surname>
+<given-names>JCL</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lima</surname>
+<given-names>TFR</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Magno</surname>
+<given-names>MB</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Santiago</surname>
+<given-names>BM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cavalcanti</surname>
+<given-names>YW</given-names>
+</string-name>, et al. <article-title>The use of mouthguards and prevalence of dento‐alveolar trauma among athletes: a systematic review and meta‐analysis</article-title>. <source>Dent Traumatol</source>. <year>2019</year>;<volume>35</volume>:<fpage>54</fpage>–<lpage>72</lpage>.<pub-id pub-id-type="pmid">30222244</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/edt.12441</pub-id></mixed-citation></ref><ref id="aej12891-bib-0041"><label>41</label><mixed-citation publication-type="journal" id="aej12891-cit-0041">
+<string-name name-style="western">
+<surname>Hoffmann</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Alfter</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rudolph</surname>
+<given-names>N</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Göz</surname>
+<given-names>G</given-names>
+</string-name>. <article-title>Experimental comparative study of various mouthguards</article-title>. <source>Dent Traumatol</source>. <year>1999</year>;<volume>15</volume>:<fpage>157</fpage>–<lpage>163</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1600-9657.1999.tb00794.x</pub-id><pub-id pub-id-type="pmid">10815564</pub-id></mixed-citation></ref><ref id="aej12891-bib-0042"><label>42</label><mixed-citation publication-type="journal" id="aej12891-cit-0042">
+<string-name name-style="western">
+<surname>Cobourne</surname>
+<given-names>MT</given-names>
+</string-name>, <string-name name-style="western">
+<surname>DiBiase</surname>
+<given-names>AT</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Seehra</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Papageorgiou</surname>
+<given-names>SN</given-names>
+</string-name>. <article-title>Should we recommend early overjet reduction to prevent dental trauma?</article-title>
+<source>Br Dent J</source>. <year>2022</year>;<volume>233</volume>:<fpage>387</fpage>–<lpage>390</lpage>.<pub-id pub-id-type="pmid">36085463</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/s41415-022-4916-0</pub-id><pub-id pub-id-type="pmcid">PMC9463065</pub-id></mixed-citation></ref><ref id="aej12891-bib-0043"><label>43</label><mixed-citation publication-type="journal" id="aej12891-cit-0044">
+<string-name name-style="western">
+<surname>Kindelan</surname>
+<given-names>SA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Day</surname>
+<given-names>PF</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kindelan</surname>
+<given-names>JD</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Spencer</surname>
+<given-names>JR</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Duggal</surname>
+<given-names>MS</given-names>
+</string-name>. <article-title>Dental trauma: an overview of its influence on the management of orthodontic treatment. Part 1</article-title>. <source>J Orthod</source>. <year>2008</year>;<volume>35</volume>:<fpage>68</fpage>–<lpage>78</lpage>.<pub-id pub-id-type="pmid">18525070</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1179/146531207225022482</pub-id></mixed-citation></ref></ref-list></back></article></pmc-articleset>
