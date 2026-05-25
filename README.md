@@ -1,5 +1,7 @@
 # Youth Sports Dental Injury Database
 
+[![Validate master.csv](https://github.com/Vihaan-Banga/youth-dental-injury-database/actions/workflows/validate.yml/badge.svg)](https://github.com/Vihaan-Banga/youth-dental-injury-database/actions/workflows/validate.yml)
+
 An open-access harmonized database aggregating epidemiological data on dental and orofacial injuries in youth sports, drawn from national surveillance systems, published research, and sport-governing-body reports.
 
 **Status:** Pre-launch (data collection phase). Not yet published. Do not cite externally until v1.0 release.
