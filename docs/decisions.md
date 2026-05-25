@@ -160,6 +160,21 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 ---
 
+### 2026-05-24: Cross-source rate comparison surfaces denominator-unit issue
+
+**Trigger:** First run of `scripts/21_cross_source_compare.py` showed basketball with a 345× spread in `rate_per_1000_ae` across 5 sources. Investigation: the wormald2022 rows had per-1000-AE-HOURS values stuffed into the per-1000-AE column. These are different units (1 AE ≈ 1 hour for some sports, but ~2-3 hours for soccer games, etc.).
+
+**Decision:**
+- For wormald2022, move the rates from `rate_per_1000_ae` into `rate_raw` (keeping the original number), leave `rate_per_1000_ae` empty, and update `rate_denominator_raw` to say "per 1000 athlete-exposure HOURS (not per AE)".
+- Add a project-wide rule: `rate_per_1000_ae` is reserved for rates whose denominator is *exposures* (an athlete-session count). If the source's denominator is *hours*, `athlete-seasons`, `players` or `population`, leave `rate_per_1000_ae` empty and put the value in `rate_raw` with an explicit denominator string.
+- Future refinement: add an `ae_denominator_type` controlled-vocab column (`ae`, `ae_hours`, `athlete_seasons`, `player_match_hours`, `population`, `players`) so the validator can enforce this. Deferred for now (additional schema change costs re-extraction).
+
+**Affected rows:** wormald2022.csv (3 rows updated). Cross-source comparison re-run produces a cleaner basketball view.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 ### 2026-05-24: Sport taxonomy formally expanded
 
 **Trigger:** Project lead approved the taxonomy expansion that had been deferred since the 2026-05-23 "Sport taxonomy expansion needed" entry below. As of this entry these sports are now part of the controlled vocabulary instead of being stuffed into `sport = all_sports_aggregate` with a `subgroup_label` workaround.

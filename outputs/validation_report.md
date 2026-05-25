@@ -1,11 +1,11 @@
 # Validation Report — 2026-05-25
 
-_Run against `data/harmonized/master.csv` (256 rows)._
+_Run against `data/harmonized/master.csv` (264 rows)._
 
 ## Summary
 
-- Rows checked: **256**
-- Distinct sources: **73**
+- Rows checked: **264**
+- Distinct sources: **74**
 - FAILs: **0**
 - WARNs: **0**
 - Rows flagged `quality_flag=review_needed`: **0**
@@ -86,6 +86,7 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 | quarrie2020 | 7 | adult_comparator, youth_primary |
 | radelet1996 | 1 | youth_primary |
 | ranalli2005 | 1 | youth_primary |
+| rugby_europe_iss_2024 | 8 | youth_primary |
 | shore2023 | 1 | youth_primary |
 | singh2014 | 2 | youth_primary |
 | stewart2009 | 4 | youth_primary |
