@@ -24,7 +24,8 @@ diffs are reviewable.
 import csv
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+# Resolve relative to this script's location so it works on any machine / CI.
+ROOT = Path(__file__).resolve().parent.parent
 EXTRACTED_DIR = ROOT / "data/extracted"
 HARMONIZED = ROOT / "data/harmonized/master.csv"
 

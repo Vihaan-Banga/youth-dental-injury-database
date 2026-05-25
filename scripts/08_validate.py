@@ -34,7 +34,8 @@ from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+# Resolve relative to this script so it works on any machine / CI.
+ROOT = Path(__file__).resolve().parent.parent
 MASTER = ROOT / "data/harmonized/master.csv"
 REPORT = ROOT / "outputs/validation_report.md"
 
