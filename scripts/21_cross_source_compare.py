@@ -19,7 +19,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 MASTER = ROOT / "data/harmonized/master.csv"
 OUT_MD = ROOT / "outputs/cross_source_rate_comparison.md"
 OUT_PNG = ROOT / "outputs/figures/cross_source_comparison.png"

@@ -5,7 +5,7 @@ journal searches (J Endod/J OMFS/Pediatrics/Inj Prev/OJSM)."""
 import csv
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data/extracted"
 COLUMNS = [
     "source_id", "citation", "doi", "pub_year", "study_type", "peer_reviewed",

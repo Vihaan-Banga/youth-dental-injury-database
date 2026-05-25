@@ -21,7 +21,7 @@ quality_flag = 'partial_data' until a full-text re-extraction.
 import csv
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data/extracted"
 OUT.mkdir(parents=True, exist_ok=True)
 

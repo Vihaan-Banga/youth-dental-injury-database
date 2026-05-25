@@ -16,7 +16,7 @@ import json
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 XML_PATH = ROOT / "data/raw/papers/_search_logs/pubmed_efetch_abstracts_2026-05-21.xml"
 OUT_DIR = ROOT / "data/raw/papers/_abstracts"
 OUT_DIR.mkdir(parents=True, exist_ok=True)

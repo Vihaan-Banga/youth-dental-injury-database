@@ -35,7 +35,7 @@ import csv
 import re
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = ROOT / "data/raw/neiss"
 OUT_DIR = ROOT / "data/extracted"
 

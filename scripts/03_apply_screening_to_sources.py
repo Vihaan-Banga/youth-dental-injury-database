@@ -20,7 +20,7 @@ from collections import Counter
 from datetime import date
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 SOURCES_MD = ROOT / "docs/sources.md"
 DECISIONS_CSV = ROOT / "data/extracted/_screening/screening_decisions.csv"
 ABS_DIR = ROOT / "data/raw/papers/_abstracts"

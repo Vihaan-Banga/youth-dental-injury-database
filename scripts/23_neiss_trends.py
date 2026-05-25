@@ -20,7 +20,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 MASTER = ROOT / "data/harmonized/master.csv"
 OUT_MD = ROOT / "outputs/neiss_trends.md"
 TBL_DIR = ROOT / "outputs/tables"; TBL_DIR.mkdir(parents=True, exist_ok=True)

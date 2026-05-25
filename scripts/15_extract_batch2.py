@@ -8,7 +8,7 @@ injury counts; would yield an empty epi row).
 import csv
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data/extracted"
 
 COLUMNS = [

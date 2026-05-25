@@ -35,7 +35,7 @@ import csv
 import json
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 ABS_DIR = ROOT / "data/raw/papers/_abstracts"
 OUT_DIR = ROOT / "data/extracted/_screening"
 OUT_DIR.mkdir(parents=True, exist_ok=True)

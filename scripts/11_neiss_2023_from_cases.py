@@ -21,7 +21,7 @@ import csv
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 FILTERED = ROOT / "data/extracted/neiss_dental_sports_neiss_2023.csv"
 OUT = ROOT / "data/extracted/neiss2023.csv"
 

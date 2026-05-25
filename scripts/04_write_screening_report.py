@@ -14,7 +14,7 @@ from collections import defaultdict
 from datetime import date
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 DECISIONS_CSV = ROOT / "data/extracted/_screening/screening_decisions.csv"
 ABS_DIR = ROOT / "data/raw/papers/_abstracts"
 OUT_PATH = ROOT / "outputs/screening_report_2026-05-21.md"

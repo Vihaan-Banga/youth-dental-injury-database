@@ -11,7 +11,7 @@ Each source produces 1-3 rows depending on how much the abstract stratifies
 import csv
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data/extracted"
 
 COLUMNS = [

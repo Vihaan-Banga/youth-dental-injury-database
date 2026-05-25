@@ -17,7 +17,7 @@ import sys
 from datetime import date, timedelta
 from pathlib import Path
 
-ROOT = Path("/Users/vihaanbanga/youth-dental-injury-database")
+ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data/raw/neiss/injuries_hadley_2013-2017.csv"
 OUT_DIR = ROOT / "data/extracted"
 
