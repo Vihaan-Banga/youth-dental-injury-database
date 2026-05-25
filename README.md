@@ -62,17 +62,6 @@ A formal `CITATION.cff` file will be added at publication.
 
 Use the code freely (with attribution per MIT). Use the data freely (with attribution per CC BY 4.0). The two-license split is standard for open-research projects: open code, open data.
 
-## Working with Claude Code
-
-This project is structured to work cleanly with Claude Code sessions. When you start a session:
-
-1. Open Claude Code in the project root.
-2. Tell it the current phase ("I'm extracting data from paper X" or "I'm harmonizing sport classifications").
-3. Reference specific files (PROTOCOL.md, DATA_DICTIONARY.md) rather than re-explaining context.
-4. Commit work at the end of each session so you have a clean history.
-
-For strategic decisions, scoping questions, or drafting emails to advisors — use Claude on the web in the project conversation, not Claude Code.
-
 ## Contact
 
 Vihaan Banga — GitHub [@Vihaan-Banga](https://github.com/Vihaan-Banga) ([email to be added])
