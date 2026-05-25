@@ -1,11 +1,11 @@
 # Validation Report — 2026-05-25
 
-_Run against `data/harmonized/master.csv` (389 rows)._
+_Run against `data/harmonized/master.csv` (407 rows)._
 
 ## Summary
 
-- Rows checked: **389**
-- Distinct sources: **80**
+- Rows checked: **407**
+- Distinct sources: **90**
 - FAILs: **0**
 - WARNs: **0**
 - Rows flagged `quality_flag=review_needed`: **0**
@@ -34,11 +34,13 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 | alawawdeh2021 | 1 | youth_primary |
 | alawawdeh2022 | 1 | youth_primary |
 | ali2007 | 2 | youth_primary |
+| alkilzy2019 | 1 | youth_primary |
 | alotaibi2014 | 1 | youth_primary |
 | amy2005 | 1 | youth_primary |
 | azadani2023 | 5 | youth_primary |
 | azimi2020 | 1 | youth_primary |
 | baek2021 | 1 | youth_primary |
+| basketball_craniofacial2021 | 1 | youth_primary |
 | benson2002 | 3 | youth_primary |
 | calderon2020 | 1 | youth_primary |
 | carter2000 | 1 | youth_primary |
@@ -46,12 +48,16 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 | cetinbas2008 | 2 | youth_primary |
 | chan2011 | 1 | youth_primary |
 | chapman2004 | 1 | youth_primary |
+| chisholm2020 | 2 | youth_primary |
 | collins2004 | 5 | youth_primary |
 | collins2016 | 5 | youth_primary |
 | collins_baseball2008 | 1 | youth_primary |
+| collins_neiss2019 | 1 | youth_primary |
 | collins_rugby2008 | 2 | youth_primary |
+| dafnis_soccer2021 | 1 | youth_primary |
 | danis2000 | 1 | youth_primary |
 | deshpande2014 | 2 | youth_primary |
+| ekanayake2021 | 2 | youth_primary |
 | emshoff1997 | 3 | youth_primary |
 | fakhruddin2009 | 1 | youth_primary |
 | finch2005 | 1 | youth_primary |
@@ -60,6 +66,8 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 | hayran2010 | 1 | youth_primary |
 | hosea1996 | 1 | youth_primary |
 | ivanovics2012 | 1 | youth_primary |
+| kanagasingam2016 | 1 | youth_primary |
+| kaplan2022 | 2 | youth_primary |
 | labella2002 | 2 | youth_primary |
 | leite2012 | 1 | youth_primary |
 | levin2003 | 3 | youth_primary |
@@ -88,9 +96,11 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 | neiss2023 | 21 | youth_primary |
 | neiss2024 | 22 | youth_primary |
 | neiss2025 | 23 | youth_primary |
+| otsuru2016 | 4 | youth_primary |
 | pattussi2006 | 1 | youth_primary |
 | quarrie2020 | 7 | adult_comparator, youth_primary |
 | radelet1996 | 1 | youth_primary |
+| rajan2021 | 3 | youth_primary |
 | ranalli2005 | 1 | youth_primary |
 | rugby_europe_iss_2024 | 8 | youth_primary |
 | shore2023 | 1 | youth_primary |

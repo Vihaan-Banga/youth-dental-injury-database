@@ -1,12 +1,12 @@
 # Football Association — Factsheet
 
-_Auto-generated from `master.csv`. 17 rows across 17 sources._
+_Auto-generated from `master.csv`. 19 rows across 19 sources._
 
 **Sport identifier in database:** `football_association`
 **Sport category:** `limited_contact`
-**Countries:** IL, NZ, US
+**Countries:** IL, KW, NZ, US
 **Year span:** 2003-2025
-**Sources contributing:** chapman2004, collins2004, levin2003, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, welch2010, williams2023
+**Sources contributing:** alkilzy2019, chapman2004, collins2004, dafnis_soccer2021, levin2003, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, welch2010, williams2023
 
 ## Rates per 1000 athlete-exposures
 
@@ -27,10 +27,10 @@ _Min 0.127, max 0.127, n=1._
 
 | age_category | count |     | sex | count |
 |---|---:|---|---|---:|
-| collegiate | 1 | | male | 2 |
-| mixed | 16 | | mixed | 15 |
+| collegiate | 1 | | male | 3 |
+| mixed | 18 | | mixed | 16 |
 
-_Cumulative reported `injury_count` across these 17 rows: **27,465**._
+_Cumulative reported `injury_count` across these 19 rows: **27,634**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

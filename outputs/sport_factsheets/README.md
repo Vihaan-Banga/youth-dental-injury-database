@@ -4,19 +4,19 @@ _One-page Markdown summary per sport with ≥3 rows in master.csv. Auto-generate
 
 | sport | rows | sources | year span | countries |
 |---|---:|---:|---|---|
-| [baseball](baseball.md) | 15 | 15 | 1996-2025 | US |
-| [basketball](basketball.md) | 27 | 24 | 1996-2026 | IL, IN, JP, NZ, TR, US |
+| [baseball](baseball.md) | 17 | 16 | 1996-2025 | US |
+| [basketball](basketball.md) | 28 | 25 | 1996-2026 | IL, IN, JP, NZ, TR, US |
 | [boxing](boxing.md) | 5 | 5 | 2013-2025 | US |
 | [cheerleading](cheerleading.md) | 11 | 11 | 2013-2025 | US |
 | [football_american](football_american.md) | 15 | 15 | 2004-2025 | CA, US |
-| [football_association](football_association.md) | 17 | 17 | 2003-2025 | IL, NZ, US |
+| [football_association](football_association.md) | 19 | 19 | 2003-2025 | IL, KW, NZ, US |
 | [gymnastics](gymnastics.md) | 11 | 11 | 2013-2025 | US |
 | [hockey_field](hockey_field.md) | 12 | 11 | 2013-2025 | ES, US |
-| [hockey_ice](hockey_ice.md) | 11 | 9 | 2002-2024 | CA, TR, US |
+| [hockey_ice](hockey_ice.md) | 15 | 11 | 2002-2024 | CA, TR, US |
 | [hockey_unspecified](hockey_unspecified.md) | 13 | 13 | 2010-2025 | NZ, US |
 | [lacrosse_mens](lacrosse_mens.md) | 5 | 5 | 2016-2025 | US |
 | [martial_arts_other](martial_arts_other.md) | 8 | 7 | 2004-2025 | US |
-| [rugby](rugby.md) | 25 | 10 | 2005-2024 | CA, NZ, US |
+| [rugby](rugby.md) | 26 | 11 | 2005-2024 | AU, CA, NZ, US |
 | [skateboarding](skateboarding.md) | 12 | 12 | 2013-2025 | US |
 | [softball](softball.md) | 12 | 12 | 2013-2025 | US |
 | [swimming](swimming.md) | 12 | 12 | 2010-2025 | NZ, US |

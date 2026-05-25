@@ -1,12 +1,12 @@
 # Rugby — Factsheet
 
-_Auto-generated from `master.csv`. 25 rows across 10 sources._
+_Auto-generated from `master.csv`. 26 rows across 11 sources._
 
 **Sport identifier in database:** `rugby`
 **Sport category:** `contact`
-**Countries:** CA, NZ, US
+**Countries:** AU, CA, NZ, US
 **Year span:** 2005-2024
-**Sources contributing:** collins_rugby2008, mcintosh2005, neiss2013, neiss2015, neiss2017, neiss2018, neiss2021, quarrie2020, rugby_europe_iss_2024, welch2010
+**Sources contributing:** collins_rugby2008, kanagasingam2016, mcintosh2005, neiss2013, neiss2015, neiss2017, neiss2018, neiss2021, quarrie2020, rugby_europe_iss_2024, welch2010
 
 ## Rates per 1000 athlete-exposures
 
@@ -31,6 +31,7 @@ _Min 7.850, max 70.600, n=10._
 |---|---:|---|---|---:|---|
 | mcintosh2005 | 2005 | female | rugby_female | **100%** | analyzed |
 | mcintosh2005 | 2005 | male | rugby_male | **100%** | analyzed |
+| kanagasingam2016 | 2016 | mixed | junior_rugby_league | **68%** | mentioned_only |
 
 ## Distribution of rows
 
@@ -38,10 +39,10 @@ _Min 7.850, max 70.600, n=10._
 |---|---:|---|---|---:|
 | adolescent | 9 | | female | 6 |
 | adult | 2 | | male | 6 |
-| collegiate | 5 | | mixed | 13 |
+| collegiate | 5 | | mixed | 14 |
 
 
-_Cumulative reported `injury_count` across these 25 rows: **13,618**._
+_Cumulative reported `injury_count` across these 26 rows: **13,618**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

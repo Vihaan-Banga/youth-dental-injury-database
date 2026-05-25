@@ -1,25 +1,32 @@
 # Hockey Ice — Factsheet
 
-_Auto-generated from `master.csv`. 11 rows across 9 sources._
+_Auto-generated from `master.csv`. 15 rows across 11 sources._
 
 **Sport identifier in database:** `hockey_ice`
 **Sport category:** `contact`
 **Countries:** CA, TR, US
 **Year span:** 2002-2024
-**Sources contributing:** benson2002, neiss2013, neiss2014, neiss2015, neiss2016, neiss2018, neiss2022, neiss2024, ranalli2005
+**Sources contributing:** benson2002, chisholm2020, ekanayake2021, neiss2013, neiss2014, neiss2015, neiss2016, neiss2018, neiss2022, neiss2024, ranalli2005
 
 ## Rates per 1000 athlete-exposures
 
 _No rows with `rate_per_1000_ae` populated. See `rate_raw` + `rate_denominator_raw` for source-original rates with non-AE denominators._
 
+## Mouthguard use
+
+| source | year | sex | subgroup | use rate | injury-relation analysis |
+|---|---:|---|---|---:|---|
+| chisholm2020 | 2020 | mixed | controls_other_injury | **83%** | analyzed |
+| chisholm2020 | 2020 | mixed | cases_concussion | **75%** | analyzed |
+
 ## Distribution of rows
 
 | age_category | count |     | sex | count |
 |---|---:|---|---|---:|
-| mixed | 11 | | male | 3 |
+| adolescent | 3 | | male | 3 |
+| mixed | 12 | | mixed | 12 |
 
-
-_Cumulative reported `injury_count` across these 11 rows: **162**._
+_Cumulative reported `injury_count` across these 15 rows: **4,660**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 
