@@ -1,4 +1,4 @@
-# Validation Report — 2026-05-24
+# Validation Report — 2026-05-25
 
 _Run against `data/harmonized/master.csv` (256 rows)._
 
@@ -8,7 +8,7 @@ _Run against `data/harmonized/master.csv` (256 rows)._
 - Distinct sources: **73**
 - FAILs: **0**
 - WARNs: **0**
-- Rows flagged `quality_flag=review_needed`: **3**
+- Rows flagged `quality_flag=review_needed`: **0**
 
 ## ✅ No FAILs
 

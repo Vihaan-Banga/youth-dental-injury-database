@@ -73,18 +73,32 @@ ALLOWED = {
     "quality_flag": {"clean", "assumption_made", "partial_data", "review_needed", ""},
 }
 
-# Controlled sport vocabulary plus accepted aggregate values (decisions.md 2026-05-22).
+# Controlled sport vocabulary plus accepted aggregate values.
+# Last expanded 2026-05-24 (see docs/decisions.md "Sport taxonomy formally expanded").
 ALLOWED_SPORTS = {
+    # Original v0.1 vocabulary (PROTOCOL §6.1 / decisions.md 2026-05-22)
     "basketball", "football_american", "football_association",
     "hockey_ice", "hockey_field", "lacrosse_mens", "lacrosse_womens",
     "rugby", "wrestling", "boxing", "mma", "baseball", "softball",
     "volleyball", "tennis", "track_and_field", "swimming", "water_polo",
     "gymnastics", "cheerleading", "skateboarding", "martial_arts_other",
-    # provisional taxonomy additions (decisions.md 2026-05-21 NEISS section)
+    # Provisional hockey variants (decisions.md 2026-05-21 NEISS section)
     "hockey_street", "hockey_roller", "hockey_unspecified",
-    # provisional aggregate / non-sport-specific values (decisions.md 2026-05-22)
+    # Aggregate / non-sport-specific values (decisions.md 2026-05-22)
     "all_sports_aggregate", "all_activities_aggregate", "sports_aggregate",
     "recreational_mixed", "non_sport_setting",
+    "sports_aggregate_unmapped",  # used when source's sport label has no v0.1 mapping yet
+    # Sport taxonomy expansion (decisions.md 2026-05-24)
+    "cricket", "netball",
+    "cycling", "mountain_biking",
+    "hurling", "kabaddi",
+    "gaelic_football_mens", "gaelic_football_womens",
+    "australian_rules_football",
+    "skiing", "snowboarding",
+    "equestrian", "inline_skating",
+    "crossfit",
+    "kickboxing", "muay_thai", "judo",
+    "handball", "floorball",
     "",
 }
 

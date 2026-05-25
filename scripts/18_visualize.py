@@ -155,26 +155,33 @@ save("injury_count_by_sport.png")
 # ---------------------------------------------------------------------
 # 8. Overall stats panel — one figure with 4 sub-stats
 # ---------------------------------------------------------------------
-fig, axes = plt.subplots(1, 4, figsize=(16, 4))
-ax = axes[0]
-ax.axis("off")
-ax.text(0.5, 0.6, f"{len(rows):,}", ha="center", fontsize=36, fontweight="bold", color="#4c72b0")
-ax.text(0.5, 0.3, "rows in\nmaster.csv", ha="center", fontsize=12)
-ax = axes[1]
-ax.axis("off")
-ax.text(0.5, 0.6, f"{len(src_counts):,}", ha="center", fontsize=36, fontweight="bold", color="#dd8452")
-ax.text(0.5, 0.3, "distinct\nsources", ha="center", fontsize=12)
-ax = axes[2]
-ax.axis("off")
-ax.text(0.5, 0.6, f"{len(country_to_sources):,}", ha="center", fontsize=36, fontweight="bold", color="#55a868")
-ax.text(0.5, 0.3, "countries\nrepresented", ha="center", fontsize=12)
-ax = axes[3]
-ax.axis("off")
+fig, axes = plt.subplots(1, 4, figsize=(16, 5))
+fig.patch.set_facecolor("white")
 total_inj = sum(sport_to_inj.values())
-ax.text(0.5, 0.6, f"{total_inj:,}", ha="center", fontsize=36, fontweight="bold", color="#c44e52")
-ax.text(0.5, 0.3, "cumulative\nreported injuries", ha="center", fontsize=12)
-plt.suptitle(f"Youth Sports Dental Injury Database — snapshot",
-             fontsize=14, y=1.0)
-save("headline_snapshot.png")
+tiles = [
+    (f"{len(rows):,}",              "rows in master.csv",       "#4c72b0"),
+    (f"{len(src_counts):,}",        "distinct sources",         "#dd8452"),
+    (f"{len(country_to_sources):,}", "countries represented",   "#55a868"),
+    (f"{total_inj:,}",              "cumulative reported\ninjuries (across sources)", "#c44e52"),
+]
+for ax, (big, label, color) in zip(axes, tiles):
+    # Use explicit limits so text always lands inside the rendered area
+    ax.set_xlim(0, 1); ax.set_ylim(0, 1)
+    ax.set_xticks([]); ax.set_yticks([])
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    # background tint
+    ax.set_facecolor("#f8f8f8")
+    # large number
+    ax.text(0.5, 0.62, big, ha="center", va="center",
+            fontsize=44, fontweight="bold", color=color,
+            transform=ax.transAxes)
+    # label
+    ax.text(0.5, 0.25, label, ha="center", va="center",
+            fontsize=13, color="#333333",
+            transform=ax.transAxes)
+plt.suptitle("Youth Sports Dental Injury Database — snapshot",
+             fontsize=16, y=0.98, fontweight="bold")
+save("headline_snapshot.png", dpi=160)
 
 print(f"\nGenerated {len(list(OUT.glob('*.png')))} figures in {OUT.relative_to(ROOT)}/")

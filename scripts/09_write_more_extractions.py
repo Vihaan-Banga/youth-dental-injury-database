@@ -371,13 +371,13 @@ welch_youth = dict(welch_common,
 welch_sport_rows = []
 for sport_raw, sport, sport_cat, share_pct_low, share_pct_high in [
     ("rugby",         "rugby",                  "contact",         22.2, 33.1),
-    ("water sports",  "swimming",               "non_contact",     14.2, 20.8),  # imperfect — water sports broader
-    ("cycling",       "non_sport_setting",      "",                 1.5, 15.3),  # cycling not a §3.1 sport
+    ("water sports",  "swimming",               "non_contact",     14.2, 20.8),  # imperfect — water sports broader than swimming
+    ("cycling",       "cycling",                "non_contact",      1.5, 15.3),  # added 2026-05-24 to taxonomy
     ("hockey",        "hockey_unspecified",     "",                 4.4, 4.4),
     ("basketball",    "basketball",             "limited_contact",  4.8, 4.8),
     ("soccer",        "football_association",   "limited_contact",  6.9, 6.9),
-    ("cricket",       "all_activities_aggregate", "",               4.7, 4.7),  # cricket not in current taxonomy
-    ("netball",       "all_activities_aggregate", "",               3.9, 3.9),  # netball not in current taxonomy
+    ("cricket",       "cricket",                "limited_contact",  4.7, 4.7),  # added 2026-05-24
+    ("netball",       "netball",                "limited_contact",  3.9, 3.9),  # added 2026-05-24
 ]:
     share_repr = f"{share_pct_low}-{share_pct_high}%" if share_pct_low != share_pct_high else f"{share_pct_low}%"
     # Use the raw sport name in subgroup_label so cricket/netball/cycling

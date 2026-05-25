@@ -57,7 +57,26 @@ Standardized `sport` column values. Add to this list before extracting a new spo
 | `gymnastics` | artistic, rhythmic | non_contact | |
 | `cheerleading` | competitive, sideline | limited_contact | |
 | `skateboarding` | | limited_contact | |
-| `martial_arts_other` | karate, taekwondo, judo if not boxing/MMA | contact | sub-discipline in notes |
+| `martial_arts_other` | karate, taekwondo if not boxing/MMA | contact | sub-discipline in notes |
+| `judo` | judo | contact | broken out from martial_arts_other 2026-05-24 |
+| `kickboxing` | kickboxing | contact | added 2026-05-24 |
+| `muay_thai` | Muay Thai | contact | added 2026-05-24 |
+| `cricket` | cricket all formats | limited_contact | added 2026-05-24 |
+| `netball` | netball | limited_contact | added 2026-05-24 |
+| `cycling` | road, BMX, MTB-not-split, scooter | non_contact | added 2026-05-24 |
+| `mountain_biking` | MTB when reported separately | limited_contact | added 2026-05-24 |
+| `hurling` | Gaelic hurling | contact | added 2026-05-24 |
+| `kabaddi` | Kabaddi | contact | added 2026-05-24 |
+| `gaelic_football_mens` | men's Gaelic football | contact | added 2026-05-24 |
+| `gaelic_football_womens` | Ladies Gaelic football | limited_contact | added 2026-05-24 |
+| `australian_rules_football` | AFL | contact | added 2026-05-24 |
+| `skiing` | alpine + telemark | non_contact | added 2026-05-24 |
+| `snowboarding` | snowboard | limited_contact | added 2026-05-24 |
+| `equestrian` | pony + horseback + showjumping | limited_contact | added 2026-05-24 |
+| `inline_skating` | inline skating + inline-skater hockey | limited_contact | added 2026-05-24 |
+| `crossfit` | CrossFit | limited_contact | added 2026-05-24 |
+| `handball` | team handball | contact | added 2026-05-24 (broken out from generic) |
+| `floorball` | floorball | limited_contact | added 2026-05-24 |
 
 When a new sport is encountered:
 1. Check if it fits an existing category
@@ -138,6 +157,49 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 **Sources of truth:**
 - [NEISS Coding Manual, January 2024](https://www.cpsc.gov/s3fs-public/January-2024-NEISS-CPSC-only-Coding-Manual.pdf), Appendix C (Body Part Codes), p. 24 of PDF body text
 - A local copy preserved at `data/raw/neiss/_reference/coding_manual_2024.pdf` (after first download — see `scripts/README.md`)
+
+---
+
+### 2026-05-24: Sport taxonomy formally expanded
+
+**Trigger:** Project lead approved the taxonomy expansion that had been deferred since the 2026-05-23 "Sport taxonomy expansion needed" entry below. As of this entry these sports are now part of the controlled vocabulary instead of being stuffed into `sport = all_sports_aggregate` with a `subgroup_label` workaround.
+
+**Decision:** the following are added to the §6.1 controlled vocabulary (also reflected in this file's "Sport taxonomy" table at the top):
+
+| sport (column value) | includes | sport_category | rationale |
+|---|---|---|---|
+| `cricket` | hardball cricket all formats | limited_contact | yamada2009 (UK + AU schoolboy), 19566982 |
+| `netball` | indoor / outdoor netball | limited_contact | welch2010 (NZ ACC) |
+| `cycling` | road, BMX, mountain-bike, scooter (when reported as cycling) | non_contact | welch2010, emshoff1997, baek2021, NEISS papers |
+| `hurling` | Gaelic hurling | contact | 20669600 |
+| `kabaddi` | Kabaddi (South Asian contact sport) | contact | 36922269 |
+| `gaelic_football_mens` | Gaelic football men's | contact | 34643329, 36394781 |
+| `gaelic_football_womens` | Ladies Gaelic football | limited_contact | 37791703 |
+| `australian_rules_football` | AFL | contact | finch2005, 23529288 |
+| `skiing` | alpine ski, telemark | non_contact | 33377302, 20486946 (snowboarding-adjacent), emshoff1997 |
+| `snowboarding` | snowboard riding | limited_contact | hayran2010 (PMID 20486946) |
+| `equestrian` | pony + horseback riding, showjumping | limited_contact | nalcaci2006 (PMID 17073918), 26542314 (showjumping) |
+| `inline_skating` | inline skating (incl. inline skater hockey when not split) | limited_contact | 17511835, 36878220 |
+| `mountain_biking` | MTB specifically (when reported separately from road cycling) | limited_contact | 18821955, 33220143 |
+| `crossfit` | CrossFit | limited_contact | 33188561 |
+| `kickboxing` | kickboxing | contact | 40662680, 39452438 |
+| `muay_thai` | Muay Thai | contact | 40662680 |
+| `judo` | judo | contact | 31994310 |
+| `handball` | team handball | contact | 23532813, 27622524, 28160512, 34047017 |
+| `floorball` | floorball | limited_contact | 21199336 |
+
+**Implementation:**
+- Top-of-file taxonomy table extended (see "Sport taxonomy" section).
+- `scripts/08_validate.py` `ALLOWED_SPORTS` set extended (validator now accepts these).
+- A small follow-up pass over existing extractions updates rows that were using the `all_sports_aggregate + subgroup_label` workaround to use the proper sport value. Specifically:
+  - welch2010 cricket/netball/cycling rows.
+  - emshoff1997 cycling row.
+  - mooney2021 / shore2023 / 34643329 Gaelic football rows.
+  - finch2005 → `australian_rules_football`.
+  - nalcaci2006 → `equestrian`.
+  - hayran2010 → `snowboarding`.
+
+**Reviewer:** Project lead approved 2026-05-24. Pending advisor review.
 
 ---
 
