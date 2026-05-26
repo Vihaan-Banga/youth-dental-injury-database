@@ -1,0 +1,70 @@
+# Changelog
+
+All notable changes to the Youth Sports Dental Injury Database are documented here. The format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [SemVer](https://semver.org/) once we reach v1.0. Pre-1.0 versions are timeline snapshots.
+
+## [Unreleased]
+
+(Working state on `main`. Will become v0.1.0 at the next tag.)
+
+### Added
+- GitHub Pages site at https://vihaan-banga.github.io/youth-dental-injury-database/ (Jekyll, theme `minima`).
+- `outputs/sources_bibliography.bib` — BibTeX file with 93 included PubMed sources + 5 governing-body @misc entries.
+- `data/harmonized/master.sqlite` — SQLite export of `master.csv` for easier querying (487 KB). With sample queries in `data/harmonized/README_sqlite.md`.
+- `CONTRIBUTING.md` — contribution guidelines.
+- `CHANGELOG.md` (this file).
+
+## 2026-05-25 — pre-v0.1 working snapshot
+
+### Added
+- **NEISS coverage expanded to 12 treatment years** (2013–2019, 2021–2025) after user manually downloaded 2018–2019 and 2021–2025 from CPSC. 2020 returned no matching cases (real COVID-era youth-sport gap). 6 new per-year extractions: `neiss2018`, `neiss2019`, `neiss2021`, `neiss2022`, `neiss2024`, `neiss2025`.
+- `outputs/neiss_trends.md` + 3 trend figures — first published 12-year aggregation of NEISS youth dental-sport data.
+- `outputs/cross_source_rate_comparison.md` + figure — internal consistency check.
+- `outputs/methods_paper_draft.md` — Scientific Data data-descriptor skeleton.
+- `outputs/sport_factsheets/` — 19 per-sport one-pagers.
+- GitHub Actions CI at `.github/workflows/validate.yml` — runs validator on every push and PR.
+- 10 more PubMed bulk extractions (batch 6): `collins_neiss2019`, `kaplan2022`, `rajan2021`, `ekanayake2021`, `dafnis_soccer2021`, `basketball_craniofacial2021`, `chisholm2020`, `alkilzy2019`, `otsuru2016`, `kanagasingam2016`.
+
+### Changed
+- All 20 scripts now use `Path(__file__).resolve().parent.parent` for ROOT — portable across machines / CI.
+- `wormald2022` rates moved from `rate_per_1000_ae` to `rate_raw` after cross-source analysis revealed they were per-AE-HOURS not per-AE. Documented as a project-wide rule.
+
+### Fixed
+- `headline_snapshot.png` rendering — earlier version was blank for some viewers; switched to explicit axis limits.
+
+## 2026-05-24 — sport-taxonomy expansion
+
+### Added
+- 19 new sport taxonomy entries: cricket, netball, cycling, mountain_biking, hurling, kabaddi, gaelic_football_mens, gaelic_football_womens, australian_rules_football, skiing, snowboarding, equestrian, inline_skating, crossfit, kickboxing, muay_thai, judo, handball, floorball.
+- Rugby Europe 2024 U-18 PDF extraction.
+- 12 more PubMed bulk extractions across 5 batches.
+- 8 baseline visualization PNGs.
+- `CITATION.cff` for GitHub "Cite this repository" button.
+
+### Changed
+- NEISS filter (`scripts/05_neiss_filter.py`) now also accepts `Body_Part_2 = 88` (Mouth as secondary body part — column added by NEISS in 2019). Recovered ~15% more cases per applicable year.
+
+## 2026-05-23 — repo publication + extractions
+
+### Added
+- Repo published publicly on GitHub.
+- `exposure_context` + `subgroup_label` columns to data dictionary (option A from previous schema todo).
+- 11 RIO summary report PDFs (2008-09 through 2023-24, 2 from state-association mirrors).
+- 132 new PubMed candidates via 5 journal-restricted searches (Dent Traumatol, Pediatr Dent, AJSM, BJSM, J Athl Train).
+- Adult-comparator scope decision implemented (`extraction_basis` column).
+- 3 abstract-only extractions: `azadani2023`, `quarrie2020`, `welch2010`.
+- Initial NEISS pipeline (filter + 2023 extraction + hadley 2013-2017 archive).
+
+## 2026-05-22 — schema-gap fixes
+
+### Added
+- 11 governing-body PDFs catalogued.
+- First pilot extractions: `collins2016`, `labella2002`, `stewart2009`.
+
+## 2026-05-21 — project initialization
+
+### Added
+- Git repo initialized.
+- PubMed seed search via NCBI E-utilities — 200 candidates.
+- AI-assisted screening of all 200 against PROTOCOL §3.1–3.3.
+- NEISS body-part codes verified against 2024 NEISS Coding Manual (corrected protocol's incorrect labels for codes 76/77/88).
+- Initial scripts: harmonize, validate, screen.
