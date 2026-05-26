@@ -1,0 +1,47 @@
+title: Youth Sports Dental Injury Database
+description: An open-access harmonized database of dental and orofacial injury epidemiology in youth sports (ages 5–22), drawn from national surveillance systems (NEISS, NFHS/RIO), peer-reviewed studies, and sport-governing-body reports.
+url: "https://vihaan-banga.github.io"
+baseurl: "/youth-dental-injury-database"
+
+# Jekyll theme — minima is GitHub Pages' default; clean and readable
+theme: jekyll-theme-minima
+minima:
+  skin: classic
+  social_links:
+    github: Vihaan-Banga
+
+# Author block (rendered in footer and meta tags)
+author:
+  name: Vihaan Banga
+  email: # to be added
+  github: Vihaan-Banga
+
+# Show navigation links for these pages
+header_pages:
+  - index.md
+  - sources.md
+  - decisions.md
+  - governing_body_sources.md
+
+# Don't render these as pages (they're either Claude-Code-specific or notes folders)
+exclude:
+  - claude_code_prompts.md
+  - meeting_notes/
+  - _config.yml
+  - Gemfile
+
+# Plugins available on the GitHub Pages whitelist
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Markdown processor settings
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+# Show metadata
+show_excerpts: false
+permalink: pretty
