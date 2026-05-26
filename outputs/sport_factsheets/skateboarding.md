@@ -1,24 +1,31 @@
 # Skateboarding — Factsheet
 
-_Auto-generated from `master.csv`. 12 rows across 12 sources._
+_Auto-generated from `master.csv`. 13 rows across 13 sources._
 
 **Sport identifier in database:** `skateboarding`
 **Sport category:** `limited_contact`
-**Countries:** US
-**Year span:** 2013-2025
-**Sources contributing:** neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025
+**Countries:** CH, US
+**Year span:** 2012-2025
+**Sources contributing:** muller_bolla2012, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025
 
 ## Rates per 1000 athlete-exposures
 
 _No rows with `rate_per_1000_ae` populated. See `rate_raw` + `rate_denominator_raw` for source-original rates with non-AE denominators._
 
+## Mouthguard use
+
+| source | year | sex | subgroup | use rate | injury-relation analysis |
+|---|---:|---|---|---:|---|
+| muller_bolla2012 | 2012 | mixed | kick_scooter | **2%** | not_addressed |
+
 ## Distribution of rows
 
 | age_category | count |     | sex | count |
 |---|---:|---|---|---:|
-| mixed | 12 | | mixed | 12 |
+| mixed | 12 | | mixed | 13 |
 
-_Cumulative reported `injury_count` across these 12 rows: **394**._
+
+_Cumulative reported `injury_count` across these 13 rows: **425**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

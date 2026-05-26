@@ -1,12 +1,12 @@
 # Hockey Ice — Factsheet
 
-_Auto-generated from `master.csv`. 15 rows across 11 sources._
+_Auto-generated from `master.csv`. 16 rows across 12 sources._
 
 **Sport identifier in database:** `hockey_ice`
 **Sport category:** `contact`
 **Countries:** CA, TR, US
 **Year span:** 2002-2024
-**Sources contributing:** benson2002, chisholm2020, ekanayake2021, neiss2013, neiss2014, neiss2015, neiss2016, neiss2018, neiss2022, neiss2024, ranalli2005
+**Sources contributing:** benson2002, chisholm2020, ekanayake2021, neiss2013, neiss2014, neiss2015, neiss2016, neiss2018, neiss2022, neiss2024, nielsen2018, ranalli2005
 
 ## Rates per 1000 athlete-exposures
 
@@ -24,9 +24,9 @@ _No rows with `rate_per_1000_ae` populated. See `rate_raw` + `rate_denominator_r
 | age_category | count |     | sex | count |
 |---|---:|---|---|---:|
 | adolescent | 3 | | male | 3 |
-| mixed | 12 | | mixed | 12 |
+| mixed | 13 | | mixed | 13 |
 
-_Cumulative reported `injury_count` across these 15 rows: **4,660**._
+_Cumulative reported `injury_count` across these 16 rows: **6,649**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

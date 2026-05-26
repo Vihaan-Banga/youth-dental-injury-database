@@ -1,12 +1,12 @@
 # Softball — Factsheet
 
-_Auto-generated from `master.csv`. 12 rows across 12 sources._
+_Auto-generated from `master.csv`. 15 rows across 13 sources._
 
 **Sport identifier in database:** `softball`
 **Sport category:** `limited_contact`
 **Countries:** US
-**Year span:** 2013-2025
-**Sources contributing:** neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025
+**Year span:** 2013-2026
+**Sources contributing:** neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, tyler2026
 
 ## Rates per 1000 athlete-exposures
 
@@ -16,9 +16,11 @@ _No rows with `rate_per_1000_ae` populated. See `rate_raw` + `rate_denominator_r
 
 | age_category | count |     | sex | count |
 |---|---:|---|---|---:|
-| mixed | 12 | | mixed | 12 |
+| adolescent | 1 | | female | 3 |
+| collegiate | 1 | | mixed | 12 |
 
-_Cumulative reported `injury_count` across these 12 rows: **412**._
+
+_Cumulative reported `injury_count` across these 15 rows: **3,797**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 
