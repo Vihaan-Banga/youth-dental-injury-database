@@ -10,14 +10,14 @@ Repository: **https://github.com/Vihaan-Banga/youth-dental-injury-database**
 
 ## Current scale (v0.1-dev)
 
-- **264 rows in master.csv**
-- **74 distinct sources** extracted
-  - 67 peer-reviewed primary research papers (PubMed-keyed)
-  - 6 NEISS year extractions (2013–2017 via the hadley archive + 2023 via the user's manual query)
+- **407 rows in master.csv**
+- **90 distinct sources** extracted
+  - 77 peer-reviewed primary research papers (PubMed-keyed)
+  - **12 NEISS year extractions** (2013–2017 via the hadley archive + 2018, 2019, 2021, 2022, 2023, 2024, 2025 directly from CPSC; 2020 returned no matching cases — COVID youth-sport shutdown)
   - 1 international governing-body report (Rugby Europe 2024 U-18 Sevens)
-- **~437 candidate sources** identified in total (PubMed-keyed). 91 still pending full-text screening.
-- **19 countries** represented (US, UK, CA, AU, IE, IL, IN ×3 contexts, BR, ZA, LB, NZ, JP, TR ×4, ES, HU, RO, AT, KR, SY, LK, NG, others)
-- **Years covered:** 1996 to 2026 (publication years); treatment-year data from 1985 onwards.
+- **~444 candidate sources** identified in total (PubMed-keyed). 91 still pending full-text screening.
+- **19+ countries** represented (US, UK, CA, AU, IE, IL, IN, BR, ZA, LB, NZ, JP, TR, ES, HU, RO, AT, KR, SY, LK, KW, etc.)
+- **Years covered:** 1996 to 2026 (publication years); treatment-year data 1985–2025.
 
 ## Schema highlights
 
