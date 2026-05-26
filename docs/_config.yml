@@ -3,8 +3,8 @@ description: An open-access harmonized database of dental and orofacial injury e
 url: "https://vihaan-banga.github.io"
 baseurl: "/youth-dental-injury-database"
 
-# Jekyll theme — minima is GitHub Pages' default; clean and readable
-theme: jekyll-theme-minima
+# Jekyll theme — `minima` is the supported name on GitHub Pages
+theme: minima
 minima:
   skin: classic
   social_links:
