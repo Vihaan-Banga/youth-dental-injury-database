@@ -158,7 +158,7 @@ function render(){
   document.getElementById('summary').innerHTML =
     `<b>${rows.length}</b> row${rows.length===1?'':'s'} for <b>${esc(prettySport(sport))}</b>`+
     (age==='__all'?', all age groups':`, ${esc(prettyAge(age))}`)+
-    `. ${nAE} carry a per-1000-athlete-exposure rate (directly comparable); the rest use native denominators — compare with care.`;
+    `. ${nAE} carry a value in the normalized rate field, but denominators still vary across rows (per&nbsp;1000 AE, per&nbsp;100,000 AE, per player-hours, …) — always read the denominator next to each rate; only same-denominator rates are directly comparable.`;
 
   // Mouthguard evidence panel (analyzed rows for this sport, any age)
   const mgRows=DATA.rows.filter(r=>r.sport===sport && r.mouthguard_injury_relation==='analyzed');
