@@ -1,12 +1,21 @@
 # `needs_human_review` pile — status & next steps
 
-_As of 2026-05-25._
+_As of 2026-06-12 (originally 2026-05-25)._
 
-**91 PubMed records** remain in `needs_human_review` status — abstracts indicated insufficient information (usually age range or sport-specific subset) to make a final include/exclude call.
+> **2026-06-12 update — full-text review of the open-access subset.** A full-text
+> review pass resolved **7 records (pile 91 → 84)**: 1 included (`halabchi2007`,
+> women's Shotokan karate, Iran) and 6 full-text excluded. `scripts/30_oa_url_lookup.py`
+> (Unpaywall) found a free URL for **24/91**, and `scripts/31_pmc_availability.py`
+> found a free PMC full text for **8/91**. The rest are still unreachable
+> programmatically (Cloudflare/paywalled publisher PDFs, scanned page-image PMC
+> records, dead URLs). Per-record decisions and the full fetch log:
+> `outputs/needs_human_review_fulltext_review_2026-06-12.md` and `docs/decisions.md`.
+
+**84 PubMed records** remain in `needs_human_review` status — abstracts (and, for the unreachable open-access subset, the still-unread full text) lack enough information (usually age range or sport-specific subset) to make a final include/exclude call.
 
 ## Why they're stuck
 
-Most need full-text retrieval. Unpaywall finds open-access PDFs for **~18 of 91** (20%), but when we attempt to fetch those URLs directly:
+Most need full-text retrieval. Unpaywall finds a free URL for **24 of 91**, and PMC adds free full text for **8 of 91** — but the publisher copies behind those URLs usually block direct fetching:
 
 | publisher | result |
 |---|---|

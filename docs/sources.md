@@ -33,11 +33,14 @@ Every candidate source — whether eventually included or excluded — is logged
 
 ## Sources
 
-**Screening summary as of 2026-05-21** (AI-assisted first pass; project lead and advisor still need to second-screen the 20% reliability sample per PROTOCOL §4.4, and the `needs_human_review` set requires full-text review before a final decision):
+**Screening summary** (abstract screen 2026-05-21, AI-assisted first pass; full-text review of the open-access `needs_human_review` subset 2026-06-12 — see `docs/decisions.md` and `outputs/needs_human_review_fulltext_review_2026-06-12.md`. The project lead and advisor still need to second-screen the 20% reliability sample per PROTOCOL §4.4.) Percentages are of 436 screened records:
 
-- `screened_included`: **69** (34%)
-- `needs_human_review`: **84** (42%)
-- `screened_excluded`: **251** (125%)
+- `screened_included`: **69** (15%) — abstract passed, full-text pending
+- `included`: **0** (0%) — full-text passed, queued for extraction
+- `extracted`: **26** (5%) — data in master.csv
+- `needs_human_review`: **84** (19%)
+- `fulltext_excluded`: **6** (1%) — excluded after full-text review
+- `screened_excluded`: **251** (57%)
 
 PubMed initial seed (search run 2026-05-21, query per PROTOCOL.md §4.2 — 202 hits, top 200 retrieved). See `outputs/screening_report_2026-05-21.md` for per-decision reasoning. Raw esearch/esummary/efetch dumps preserved under `data/raw/papers/_search_logs/`.
 
@@ -472,7 +475,7 @@ PubMed initial seed (search run 2026-05-21, query per PROTOCOL.md §4.2 — 202 
 | sane1988 | [2907269](https://pubmed.ncbi.nlm.nih.gov/2907269/) | Sane J (1988) — Comparison of maxillofacial and dental injuries in four contact team sports: American foot... | The American journal of sports medicine |  | needs_human_review | R-age | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | upson1982 | [6130812](https://pubmed.ncbi.nlm.nih.gov/6130812/) | Upson N (1982) — Dental injuries and the attitudes of rugby players to mouthguards | British journal of sports medicine |  | needs_human_review | R-age | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | davies1977 | [18254](https://pubmed.ncbi.nlm.nih.gov/18254/) | Davies RM (1977) — The prevalence of dental injuries in rugby players and their attitude to mouthguards | British journal of sports medicine |  | needs_human_review | R-age | 2026-05-21 | VB-AI-assisted-2026-05-21 |
-| halabchi2007 | [24198704](https://pubmed.ncbi.nlm.nih.gov/24198704/) | Halabchi F (2007) — Injury profile in women shotokan karate championships in iran (2004-2005) | Journal of sports science & medicine |  | included | I-pri | 2026-05-21 | VB-AI-assisted-2026-05-21 |
+| halabchi2007 | [24198704](https://pubmed.ncbi.nlm.nih.gov/24198704/) | Halabchi F (2007) — Injury profile in women shotokan karate championships in iran (2004-2005) | Journal of sports science & medicine |  | extracted |  | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | tadmor2025 | [39060115](https://pubmed.ncbi.nlm.nih.gov/39060115/) | Tadmor DI (2025) — Non-reporting of sport-related concussion symptoms: a cross-sectional study of community r... | Injury prevention : journal of the International Society for Child and Adolescent Injury Prevention |  | fulltext_excluded | E-nodent | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | karhuketo2023 | [36538371](https://pubmed.ncbi.nlm.nih.gov/36538371/) | Karhuketo L (2023) — Maxillofacial injuries among ice hockey players: a retrospective study from a Finnish trau... | Acta odontologica Scandinavica |  | fulltext_excluded | E-age | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | murphy2009 | [19925982](https://pubmed.ncbi.nlm.nih.gov/19925982/) | Murphy DA (2009) — Factors associated with orofacial injury and willingness to participate in interventions a... | Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons |  | fulltext_excluded | E-offtop | 2026-05-21 | VB-AI-assisted-2026-05-21 |

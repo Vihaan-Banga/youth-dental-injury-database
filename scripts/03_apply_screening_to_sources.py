@@ -148,11 +148,14 @@ Every candidate source — whether eventually included or excluded — is logged
 
 ## Sources
 
-**Screening summary as of 2026-05-21** (AI-assisted first pass; project lead and advisor still need to second-screen the 20% reliability sample per PROTOCOL §4.4, and the `needs_human_review` set requires full-text review before a final decision):
+**Screening summary** (abstract screen 2026-05-21, AI-assisted first pass; full-text review of the open-access `needs_human_review` subset 2026-06-12 — see `docs/decisions.md` and `outputs/needs_human_review_fulltext_review_2026-06-12.md`. The project lead and advisor still need to second-screen the 20% reliability sample per PROTOCOL §4.4.) Percentages are of {sum(by_dec.values())} screened records:
 
-- `screened_included`: **{by_dec.get('screened_included', 0)}** ({100 * by_dec.get('screened_included', 0) // 200}%)
-- `needs_human_review`: **{by_dec.get('needs_human_review', 0)}** ({100 * by_dec.get('needs_human_review', 0) // 200}%)
-- `screened_excluded`: **{by_dec.get('screened_excluded', 0)}** ({100 * by_dec.get('screened_excluded', 0) // 200}%)
+- `screened_included`: **{by_dec.get('screened_included', 0)}** ({100 * by_dec.get('screened_included', 0) // max(1, sum(by_dec.values()))}%) — abstract passed, full-text pending
+- `included`: **{by_dec.get('included', 0)}** ({100 * by_dec.get('included', 0) // max(1, sum(by_dec.values()))}%) — full-text passed, queued for extraction
+- `extracted`: **{by_dec.get('extracted', 0)}** ({100 * by_dec.get('extracted', 0) // max(1, sum(by_dec.values()))}%) — data in master.csv
+- `needs_human_review`: **{by_dec.get('needs_human_review', 0)}** ({100 * by_dec.get('needs_human_review', 0) // max(1, sum(by_dec.values()))}%)
+- `fulltext_excluded`: **{by_dec.get('fulltext_excluded', 0)}** ({100 * by_dec.get('fulltext_excluded', 0) // max(1, sum(by_dec.values()))}%) — excluded after full-text review
+- `screened_excluded`: **{by_dec.get('screened_excluded', 0)}** ({100 * by_dec.get('screened_excluded', 0) // max(1, sum(by_dec.values()))}%)
 
 PubMed initial seed (search run 2026-05-21, query per PROTOCOL.md §4.2 — 202 hits, top 200 retrieved). See `outputs/screening_report_2026-05-21.md` for per-decision reasoning. Raw esearch/esummary/efetch dumps preserved under `data/raw/papers/_search_logs/`.
 

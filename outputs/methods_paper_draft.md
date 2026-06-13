@@ -1,6 +1,6 @@
-# Youth Sports Dental Injury Database — Data Descriptor (draft skeleton)
+# Youth Sports Dental Injury Database — Data Descriptor (working draft)
 
-_Target venue: Nature Scientific Data (data descriptor) or Elsevier Data in Brief. This skeleton follows Scientific Data's structure. Square-bracket items are placeholders awaiting v1.0._
+_Target venue: Nature Scientific Data (data descriptor) or Elsevier Data in Brief. This draft follows Scientific Data's structure. Numbers reflect the current working release (v0.1.x snapshot, 2026-06-12) and will be frozen at v1.0; remaining square-bracket items are placeholders awaiting v1.0 (advisor, Zenodo DOI, OSF link, a small number of external citations)._
 
 **Authors:** Vihaan Banga¹, [Advisor Name]²
 1. Olentangy Liberty High School, Powell, OH, USA
@@ -14,7 +14,7 @@ _Target venue: Nature Scientific Data (data descriptor) or Elsevier Data in Brie
 
 ## Abstract (~200 words)
 
-Dental and orofacial injuries are among the most common facial injuries in youth sports, yet incidence estimates are fragmented across dozens of national surveillance systems, peer-reviewed studies, and sport-governing-body reports — each using different definitions, age ranges, and exposure denominators. We aggregate **[N at v1.0]** epidemiological data points from **[K at v1.0]** sources into a harmonized open-access database covering individuals aged 5–22 across **19+ countries** and 1996–2025. Twelve treatment years of US National Electronic Injury Surveillance System (NEISS) case-level data (2013–2019, 2021–2025; n ≈ 8,800 sport-related youth mouth-injury cases) are integrated alongside published research and governing-body surveillance reports. A consistent column schema captures population, exposure context, intervention subgroup, outcome, and protective-equipment data per row, with explicit provenance and uncertainty flags. The database, code, and pre-registered protocol are public under CC BY 4.0 and MIT licenses. The intended use is to enable cross-sport, cross-age, and cross-geography comparison of youth dental injury epidemiology without re-reconciling each source manually.
+Dental and orofacial injuries are among the most common facial injuries in youth sports, yet incidence estimates are fragmented across dozens of national surveillance systems, peer-reviewed studies, and sport-governing-body reports — each using different definitions, age ranges, and exposure denominators. We aggregate **426** epidemiological data points (rows) from **106** sources into a harmonized open-access database covering individuals aged 5–22 across **29 countries** and 1996–2026. Twelve treatment years of US National Electronic Injury Surveillance System (NEISS) case-level data (2013–2019, 2021–2025; n ≈ 8,800 sport-related youth mouth-injury cases; 250 aggregated rows) are integrated alongside published research and governing-body surveillance reports. A consistent column schema captures population, exposure context, intervention subgroup, outcome, and protective-equipment data per row, with explicit provenance and uncertainty flags. The database, code, and pre-registered protocol are public under CC BY 4.0 and MIT licenses. The intended use is to enable cross-sport, cross-age, and cross-geography comparison of youth dental injury epidemiology without re-reconciling each source manually.
 
 ---
 
@@ -34,7 +34,7 @@ This data descriptor fills that gap.
 
 2. **Twelve treatment-years of NEISS** youth dental-sport case-level data (2013–2025 except 2020), unified and queryable. To our knowledge this is the first published aggregation of NEISS dental-sport data at this temporal breadth for the youth subset; the constituent year-CSVs and the year-over-year trend table are released as part of the database.
 
-3. **A reproducible end-to-end pipeline** (24 versioned Python scripts) covering source identification, AI-assisted screening, per-source extraction, harmonization, validation, and visualization. The pipeline is bound to a pre-registered protocol; every harmonization decision is logged in an append-only decisions file. A CI workflow runs the validator on every commit.
+3. **A reproducible end-to-end pipeline** (32 versioned Python scripts) covering source identification, AI-assisted screening, per-source extraction, harmonization, validation, and visualization. The pipeline is bound to a pre-registered protocol; every harmonization decision is logged in an append-only decisions file. A CI workflow runs the validator on every commit.
 
 4. **Cross-source consistency analysis** built into the deliverable: paired sources for the same sport (e.g., RIO HS basketball across years; NCAA collegiate basketball; comparator international cohorts) are compared on a per-1000-AE basis, surfacing real disagreements (e.g., MG-mandate effects) and incompatible-denominator issues (e.g., per-AE-hours vs per-AE).
 
@@ -68,7 +68,7 @@ Once a source qualifies under the above, **all** its age-stratified rows are ext
 
 **5. Governing-body reports** (PROTOCOL §4.3): AAPD Policy on Prevention of Sports-Related Orofacial Injuries (2025–26 edition), NATA position statement, Rugby Europe 2024 Injury Surveillance Report (includes U-18 Sevens data), World Rugby 2023 ISS review, England PRISP 2022-23.
 
-Each candidate logged in `docs/sources.md` with a screening status: `identified` → `screened_included` / `screened_excluded` / `needs_human_review`. The 444 PubMed candidates were screened against PROTOCOL §3.1–3.3 using a hybrid pipeline: automatic exclusion rules (non-English, Case Reports, Reviews, Editorials/Letters/Comments) cleared ~14%, AI-assisted abstract review (model: Claude Opus) handled the remainder. AI-assisted decisions tagged with extractor=`VB-AI-assisted-<date>` for audit. Full reasoning per decision captured in `outputs/screening_report_*.md`. The project lead (V.B.) is the final screener; an advisor will perform 20% inter-rater reliability re-screening prior to v1.0.
+Each candidate logged in `docs/sources.md` with a screening status: `identified` → `screened_included` / `screened_excluded` / `needs_human_review` → (full-text) `included` / `fulltext_excluded` → `extracted`. The 436 candidate records were screened against PROTOCOL §3.1–3.3 using a hybrid pipeline: automatic exclusion rules (non-English, Case Reports, Reviews, Editorials/Letters/Comments) cleared ~14%, AI-assisted abstract review (model: Claude Opus) handled the remainder. AI-assisted decisions tagged with extractor=`VB-AI-assisted-<date>` for audit. Full reasoning per decision captured in `outputs/screening_report_*.md`. Records whose abstract could not confirm a key §3.1 attribute were held as `needs_human_review` (84 at the current snapshot); a full-text review pass of the open-access subset (2026-06-12) resolved 7 of these (`outputs/needs_human_review_fulltext_review_2026-06-12.md`), the remainder being blocked by paywalled or scanned full text pending advisor library access. The project lead (V.B.) is the final screener; an advisor will perform 20% inter-rater reliability re-screening prior to v1.0.
 
 ### Data extraction (PROTOCOL §5)
 
@@ -85,7 +85,7 @@ Filtered case-level rows are aggregated per year × sport × age band × sex int
 
 ### Harmonization (PROTOCOL §6)
 
-Sport classification follows a controlled vocabulary of [N] sports (DATA_DICTIONARY.md "Sport taxonomy"). Sport categories (`contact`, `limited_contact`, `non_contact`) per the American Academy of Pediatrics classification⁵. Standardized injury category per the Andreasen classification³. Rates are preserved verbatim in `rate_raw` with the source's denominator phrasing in `rate_denominator_raw`; `rate_per_1000_ae` is populated only when the source uses an athlete-exposure (not hours, seasons, players, or population) denominator.
+Sport classification follows a controlled vocabulary maintained in `docs/decisions.md` ("Sport taxonomy"); 36 sport/aggregate values are represented in the current release. Sport categories (`contact`, `limited_contact`, `non_contact`) per the American Academy of Pediatrics classification⁵; the value is left empty for aggregate/non-sport-specific rows (e.g. `all_activities_aggregate`), where the contact taxonomy does not apply. Standardized injury category per the Andreasen classification³. Rates are preserved verbatim in `rate_raw` with the source's denominator phrasing in `rate_denominator_raw`; `rate_per_1000_ae` is populated only when the source uses an athlete-exposure (not hours, seasons, players, or population) denominator.
 
 ### Technical validation (PROTOCOL §7)
 
@@ -94,9 +94,12 @@ A versioned validator (`scripts/08_validate.py`) runs 10 checks (C1-C10) on `dat
 - **C3:** numeric plausibility (`rate_per_1000_ae < 100` per PROTOCOL §7)
 - **C4–C5:** age-min ≤ age-max; `age_category` consistency with the age range
 - **C6:** `extraction_basis = adult_comparator` iff `age_category = adult`
-- **C7:** sport in controlled vocabulary
+- **C7:** sport in controlled vocabulary (or flagged in `extraction_notes`)
+- **C8:** `quality_flag` in the allowed set
 - **C9:** every source has at least one `youth_primary` row
 - **C10:** no duplicate (source × sport × age × sex × level × basis × exposure_context × subgroup × season) keys
+
+C1–C4, C6–C8 and C10 are hard checks (a violation fails the build); C5 and C9 surface as warnings, since age-category banding is intentionally permissive.
 
 Validation runs on every commit via GitHub Actions CI (`.github/workflows/validate.yml`).
 
@@ -106,7 +109,8 @@ Validation runs on every commit via GitHub Actions CI (`.github/workflows/valida
 
 The database is distributed as:
 
-- **`data/harmonized/master.csv`** — the main tabular product. **[N rows / K sources at v1.0]**. 34 columns per DATA_DICTIONARY.md.
+- **`data/harmonized/master.csv`** — the main tabular product. **426 rows from 106 sources** (current release). 34 columns per DATA_DICTIONARY.md. Rows split `youth_primary` (424) vs `adult_comparator` (2); study types span surveillance (37 sources), cross-sectional (41), cohort (13), case series (14), and governing-body report (1).
+- **`data/harmonized/master.sqlite`** — SQLite mirror of `master.csv` with sample queries in `data/harmonized/README_sqlite.md`.
 - **`data/extracted/<source_id>.csv`** — one file per source. Useful for source-level audit. Includes the per-NEISS-year extractions (`neiss2013.csv` through `neiss2025.csv` except `neiss2020.csv` for which NEISS returned zero matching cases).
 - **`data/raw/papers/_abstracts/<PMID>.json`** — parsed PubMed abstract data per candidate (parsed via E-utilities efetch).
 - **`data/raw/papers/_pmc/<PMC>.xml`** — full-text XMLs for the PMC-available subset.
@@ -119,30 +123,52 @@ Each source carries a stable `source_id` of form `<firstauthor><year>` (PubMed-k
 
 ## Technical Validation
 
-[Refer to outputs/validation_report.md state at v1.0 release]
+Current state (v0.1.x snapshot, 2026-06-12): **426 rows / 106 sources / 0 FAILs / 0 WARNs** against the 10 validation checks (`outputs/validation_report.md`), run on every commit via GitHub Actions CI. 23 PMC full-text XMLs cached. Cross-source rate comparison confirms tight agreement on US high-school basketball rates between `collins2016` (0.026 / 100k AE) and `azadani2023` (0.024 / 100k AE) — independent surveillance covering overlapping years yielding statistically indistinguishable estimates (`outputs/cross_source_rate_comparison.md`).
 
-Current state (v0.1-dev): 389 rows / 80 sources / **0 FAILs / 0 WARNs** against the 10 validation checks. 22 PMC full-text XMLs cached. Cross-source rate comparison confirms tight agreement on US HS basketball rates between `collins2016` (0.026 / 100k AE) and `azadani2023` (0.024 / 100k AE) — independent surveillance covering overlapping years yielding statistically indistinguishable estimates.
+Of the 426 rows, 29 carry a computable `rate_per_1000_ae` (the rest preserve the source's native denominator in `rate_raw`/`rate_denominator_raw`), and 41 rows from 41 source-subgroups report a mouthguard use rate; 41 rows record an analyzed mouthguard-vs-injury relationship.
 
 Limitations transparently documented:
 - English-language sources only (v1.0).
-- Single primary extractor with AI assistance; 20% inter-rater reliability is planned for v1.0 sign-off.
+- Single primary extractor with AI assistance; 20% inter-rater reliability re-screening is planned for v1.0 sign-off (pending advisor).
 - NEISS samples ED visits only — undercounts dental injuries treated in dental offices.
-- 2020 NEISS gap reflects COVID-19 youth-sport shutdown; no imputation attempted.
-- A subset of rows is `quality_flag = partial_data` (abstract-only extraction) and should be re-extracted from full text for v1.0.
+- 2020 NEISS gap reflects the COVID-19 youth-sport shutdown; no imputation attempted.
+- All current rows carry `quality_flag = partial_data` (most are abstract-keyed or aggregate extractions); full-text re-extraction and a graduation of clean rows to `quality_flag = clean` are planned for v1.0.
+- Population-denominator surveillance (e.g. ACC NZ, NEISS weighted estimates) is preserved in `rate_raw` but cannot be converted to per-AE rates; such rows leave `rate_per_1000_ae` empty by design.
 
 ---
 
 ## Usage Notes
 
-[Examples for v1.0 — placeholder]
+The headline scope is the youth-primary subset; subset on `extraction_basis == "youth_primary"` for the v1.0-scope view, or include `adult_comparator` rows for cross-age comparison. Always read a rate together with its `rate_denominator_raw`: only the 29 rows with a non-empty `rate_per_1000_ae` share a common athlete-exposure denominator and are directly comparable; the rest preserve heterogeneous native denominators (per-1000-player-hours, per-100k-population, per-season, % of injuries) and must not be pooled blindly. Empty cell = not reported; `0` = reported zero; `NA` = not applicable.
 
 ```python
 import pandas as pd
-df = pd.read_csv("https://raw.githubusercontent.com/Vihaan-Banga/youth-dental-injury-database/main/data/harmonized/master.csv")
-# Youth-primary basketball rates per 1000 AE:
-df[(df.sport == "basketball") &
-   (df.extraction_basis == "youth_primary") &
-   df.rate_per_1000_ae.notna()].head()
+URL = ("https://raw.githubusercontent.com/Vihaan-Banga/"
+       "youth-dental-injury-database/main/data/harmonized/master.csv")
+df = pd.read_csv(URL)
+
+# 1. Youth-primary rows with a comparable per-1000-AE dental injury rate:
+comparable = df[(df.extraction_basis == "youth_primary") &
+                df.rate_per_1000_ae.notna()]
+
+# 2. Sources that analyzed mouthguard use vs. injury:
+mg = df[df.mouthguard_injury_relation == "analyzed"]
+
+# 3. The 12-year NEISS youth dental-sport series (weighted estimates live in
+#    extraction_notes; see outputs/neiss_trends.md for the parsed table):
+neiss = df[df.source_id.str.startswith("neiss")]
+
+# 4. Dental injuries by standardized Andreasen category for a given sport:
+df[df.sport == "basketball"].groupby("injury_category").injury_count.sum()
+```
+
+The same data is queryable via SQLite without pandas:
+
+```bash
+sqlite3 data/harmonized/master.sqlite \
+  "SELECT sport, COUNT(*) rows, SUM(injury_count) injuries
+   FROM master WHERE extraction_basis='youth_primary'
+   GROUP BY sport ORDER BY injuries DESC LIMIT 10;"
 ```
 
 ---
@@ -184,9 +210,11 @@ The authors declare no competing interests.
 
 ---
 
-_Skeleton last updated 2026-05-25. Next steps before v1.0 submission:_
-- _Secure senior advisor (in progress, project lead leading recruitment)_
+_Draft last updated 2026-06-12 (numbers reflect the 426-row / 106-source working release). Next steps before v1.0 submission:_
+- _Secure senior advisor (in progress, project lead leading recruitment) — unlocks the remaining bracketed placeholders (affiliation, acknowledgements, author contributions)_
 - _File OSF pre-registration_
 - _Complete 20% inter-rater reliability re-screening_
-- _Re-extract `quality_flag=partial_data` rows from full text_
-- _Mint Zenodo DOI; populate placeholders_
+- _Re-extract `quality_flag=partial_data` rows from full text and graduate clean rows to `quality_flag=clean`_
+- _Resolve the remaining 84 `needs_human_review` records (advisor library access for paywalled/scanned full text)_
+- _Fill external citation placeholders (ref. 2, lifetime-cost figure) and expand the reference list from `docs/sources.md`_
+- _Mint Zenodo DOI; populate DOI/OSF placeholders_
