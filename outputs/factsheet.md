@@ -8,15 +8,15 @@ An open-access harmonized database of dental and orofacial injury epidemiology i
 
 Repository: **https://github.com/Vihaan-Banga/youth-dental-injury-database**
 
-## Current scale (v0.1-dev)
+## Current scale (v0.1-dev, updated 2026-06-12)
 
-- **407 rows in master.csv**
-- **90 distinct sources** extracted
-  - 77 peer-reviewed primary research papers (PubMed-keyed)
+- **426 rows in master.csv**
+- **106 distinct sources** extracted
+  - 93 peer-reviewed primary research papers (PubMed-keyed)
   - **12 NEISS year extractions** (2013–2017 via the hadley archive + 2018, 2019, 2021, 2022, 2023, 2024, 2025 directly from CPSC; 2020 returned no matching cases — COVID youth-sport shutdown)
   - 1 international governing-body report (Rugby Europe 2024 U-18 Sevens)
-- **~444 candidate sources** identified in total (PubMed-keyed). 91 still pending full-text screening.
-- **19+ countries** represented (US, UK, CA, AU, IE, IL, IN, BR, ZA, LB, NZ, JP, TR, ES, HU, RO, AT, KR, SY, LK, KW, etc.)
+- **436 candidate records** screened in total (PubMed-keyed). 84 still pending full-text review (down from 91 after the 2026-06-12 open-access full-text pass).
+- **29 countries** represented (US, GB, CA, AU, IE, IL, IN, BR, ZA, LB, NZ, JP, TR, ES, HU, RO, AT, KR, SY, LK, KW, IR, IT, CH, LT, LS, PR, TW, plus one more)
 - **Years covered:** 1996 to 2026 (publication years); treatment-year data 1985–2025.
 
 ## Schema highlights

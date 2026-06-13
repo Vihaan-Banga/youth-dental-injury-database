@@ -31,7 +31,7 @@ This database does that reconciliation, once, openly, with a transparent methodo
 ## 3. Concrete state of the project (as of late May 2026)
 
 ### Data
-- **425 rows** in `data/harmonized/master.csv`, drawn from **105 distinct sources** across **19+ countries**
+- **426 rows** in `data/harmonized/master.csv`, drawn from **106 distinct sources** across **29 countries**
 - **12 treatment years of NEISS** case-level data (2013–2019, 2021–2025; 2020 returned no matching cases — real COVID-era youth-sport gap). To my knowledge, this is the first published aggregation of NEISS dental-sport data at this temporal breadth for the youth-specific subset.
 - ~8,800 underlying NEISS case-level records filtered to youth + body-part-mouth + 23 sport product codes.
 - All extracted rows pass 10 automated validation checks (schema, categorical vocabulary, numeric plausibility, age-category consistency, source coverage). **0 FAILs, 0 WARNs** at current state.
@@ -137,7 +137,7 @@ When drafting outreach emails using this brief:
 - **Short — 200–300 words maximum.** Faculty get hundreds of cold emails per year. Length signals that I respect their time.
 - **Specific to the recipient.** Cite at least one of their published papers — ideally one I have already extracted into the database — and explain how it influenced my work or sits in context with other sources.
 - **Lead with the ask, not the backstory.** First paragraph should make clear what I want (their consideration as senior advisor on a publishable data descriptor) so they can decide in 30 seconds whether to read further.
-- **Concrete artifacts, not hand-waving.** Mention specific deliverables ("0-FAIL validated database of 425 rows across 105 sources", "Scientific Data data descriptor skeleton ready"). Include the website link.
+- **Concrete artifacts, not hand-waving.** Mention specific deliverables ("0-FAIL validated database of 426 rows across 106 sources", "Scientific Data data descriptor skeleton ready", "interactive Rate Explorer on the public site"). Include the website link.
 - **Honest about my level.** Explicitly say I'm a high school student, that I built this with AI assistance, that I lead the work and need them for credibility + advisor-level review rather than to do the underlying labor. Hiding this would backfire when they look at my email signature.
 - **No emojis. No exclamation points except where genuinely warranted (which is approximately never).**
 - **End with a specific small ask** — usually "Would you be open to a 30-minute video call in the next two weeks to discuss whether this might fit your interests?" — not an open-ended "let me know if interested."
