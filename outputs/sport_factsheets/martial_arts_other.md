@@ -1,12 +1,12 @@
 # Martial Arts Other — Factsheet
 
-_Auto-generated from `master.csv`. 8 rows across 7 sources._
+_Auto-generated from `master.csv`. 9 rows across 8 sources._
 
 **Sport identifier in database:** `martial_arts_other`
 **Sport category:** `contact`
-**Countries:** US
+**Countries:** IR, US
 **Year span:** 2004-2025
-**Sources contributing:** alawawdeh2022, collins2004, neiss2017, neiss2018, neiss2022, neiss2025, zaror2018
+**Sources contributing:** alawawdeh2022, collins2004, halabchi2007, neiss2017, neiss2018, neiss2022, neiss2025, zaror2018
 
 ## Rates per 1000 athlete-exposures
 
@@ -27,10 +27,10 @@ _Min 0.189, max 0.189, n=1._
 
 | age_category | count |     | sex | count |
 |---|---:|---|---|---:|
-| mixed | 8 | | male | 1 |
+| mixed | 9 | | female | 1 |
 
 
-_Cumulative reported `injury_count` across these 8 rows: **2,888**._
+_Cumulative reported `injury_count` across these 9 rows: **2,891**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

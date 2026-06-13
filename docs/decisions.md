@@ -359,4 +359,51 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 ---
 
+### 2026-06-12: Full-text review of the open-access subset of the needs_human_review pile
+
+**Trigger:** `scripts/30_oa_url_lookup.py` (Unpaywall) and `scripts/31_pmc_availability.py` (NCBI PMC) identified which of the 91 `needs_human_review` PubMed records have free full text. Full texts were retrieved (PMC HTML, repository PDFs read with pdfplumber, OA-journal redirects) and reviewed against PROTOCOL §3.1/§3.3. This is the project lead's full-text screening step (AI-assisted, same basis as the 2026-05-21 abstract screen), not the §4.4 reliability re-screen, which still awaits the advisor.
+
+**Retrievability (why most of the 91 stay pending):** publisher PDFs behind Cloudflare (Wiley `pdfdirect`, BMJ, JOMS, lww) return 403/402 to any non-browser client; three PMC records (PMIDs 18254, 1982928, 6130812 — pre-1995 BJSM rugby papers) are scanned page-images with no OCR text; two Swiss Dental Journal download URLs now 404. These remain `needs_human_review` (advisor library access or a browser session needed).
+
+**Decisions made (7 records resolved; needs_human_review 91 → 84):**
+
+| PMID | source_id | decision | reason | basis |
+|---|---|---|---|---|
+| 24198704 | halabchi2007 | **included** → extracted | I-pri | Iran women's Shotokan karate championships; sport-related dental count (3 avulsion/subluxation) with youth competitors present |
+| 15562172 | exadaktylos2004 | fulltext_excluded | E-age | Swiss ED maxillofacial surveillance; not age-stratified, facial fractures w/o separate dental count |
+| 16118304 | — | fulltext_excluded | E-age | NZ rugby ecological MG study; national all-ages ACC dental claims not separable to 5-22 |
+| 19925982 | — | fulltext_excluded | E-offtop | LA adolescents 14-20 orofacial trauma but only 3% sport-related, no sport-specific data |
+| 2893649 | — | fulltext_excluded | E-age | International (elite adult) field hockey; no age data, no youth subset |
+| 36538371 | — | fulltext_excluded | E-age | Finnish trauma-centre ice-hockey facial fractures; adult-dominated (98.5% male), not age-stratified |
+| 39060115 | tadmor2025 | fulltext_excluded | E-nodent | UK rugby league (brain) concussion symptom non-reporting; no dental/orofacial injury outcome |
+
+One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 2025) had its full text retrieved but stays `needs_human_review` (confidence lowered to `low`): it reports all-ages dental injuries (52 cases, 19%) and MG use, but the subject age distribution sits in a PDF table that did not extract cleanly, so a 5-22 subset could not be confirmed or isolated.
+
+**Reasoning for the exclusions:** several of these report real dental/orofacial data but at the population level with no way to isolate the 5-22 band (§3.1) — consistent with the existing rule that a row needs an identifiable youth (or extractable adult-comparator alongside youth) population. Excluding all-ages-only sources where no youth slice is separable is the honest PRISMA outcome of full-text review, not a scope change.
+
+**Audit trail:** decisions live in `scripts/screening_overrides.py` (with per-record full-text notes dated 2026-06-12); `outputs/needs_human_review_fulltext_review_2026-06-12.md` records every fetch attempt and outcome; `docs/sources.md` and `outputs/screening_report_2026-05-21.md` regenerated via scripts 02→03→04.
+
+**Reviewer:** Pending advisor review.
+
+---
+
+### 2026-06-12: halabchi2007 — combined "avulsion or subluxation" count and mixed-age pooled row
+
+**Trigger:** Extracting halabchi2007 (see entry above).
+
+**Issues and handling:**
+
+1. **Combined injury category that spans two Andreasen classes.** The source reports "tooth avulsion or subluxation (3, 1.6%)" as a single un-splittable count. Avulsion and luxation/subluxation are distinct Andreasen categories, so neither single `injury_category` value is fully correct.
+   - **Decision:** `injury_category = unspecified_dental`, with the verbatim "tooth avulsion or subluxation" preserved in `injury_type_raw` and explained in `extraction_notes`. Do not invent a split of the 3 cases.
+   - **Why:** consistent with existing precedent (e.g. zazryn2010, where a combined displacement/luxation/fracture/avulsion dental count maps to `unspecified_dental`). Preserves the raw description without overclaiming a category.
+
+2. **Dental count not age-stratified in a mixed-age championship.** The 3 dental injuries are pooled across all age groups (≤10 to ≥31); a youth-only count cannot be isolated.
+   - **Decision:** one pooled row, `age_category = mixed`, `extraction_basis = youth_primary` (per the established convention that mixed-age rows from youth-qualifying sources are youth_primary), `age_min`/`age_max` left empty (exact bounds not reported), `quality_flag = partial_data`.
+
+3. **Denominators are bouts/athletes, not athlete-exposures.** `rate_raw = 1.6` (% of 186 injuries) with the denominator phrase preserved; `rate_per_1000_ae` left empty (not convertible without AE data), per the 2026-05-21 population-denominator rule.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

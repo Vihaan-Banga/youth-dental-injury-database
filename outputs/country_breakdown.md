@@ -1,6 +1,6 @@
 # Per-country breakdown
 
-_Auto-generated from `data/harmonized/master.csv`. 30 unique country tags across 425 rows._
+_Auto-generated from `data/harmonized/master.csv`. 30 unique country tags across 426 rows._
 
 ## Coverage table
 
@@ -17,6 +17,7 @@ _Auto-generated from `data/harmonized/master.csv`. 30 unique country tags across
 | Ireland (`IE`) | 4 | 4 | 1 | 2011-2023 | 65 |
 | New Zealand (`NZ`) | 3 | 18 | 8 | 2010-2020 | 13,013 |
 | Israel (`IL`) | 3 | 5 | 2 | 2003-2008 | 644 |
+| Iran (`IR`) | 2 | 2 | 1 | 2007-2020 | 58 |
 | Syria (`SY`) | 2 | 2 | 0 | 2026-2026 | 476 |
 | Brazil (`BR`) | 2 | 2 | 0 | 2001-2006 | 133 |
 | Norway (`NO`) | 2 | 2 | 0 | 2003-2019 | 102 |
@@ -26,7 +27,6 @@ _Auto-generated from `data/harmonized/master.csv`. 30 unique country tags across
 | Sri Lanka (`LK`) | 1 | 2 | 0 | 2024-2024 | 800 |
 | Kuwait (`KW`) | 1 | 1 | 1 | 2019-2019 | 169 |
 | Puerto Rico (`PR`) | 1 | 1 | 0 | 2005-2005 | 18 |
-| Iran (`IR`) | 1 | 1 | 0 | 2020-2020 | 55 |
 | South Korea (`KR`) | 1 | 1 | 0 | 2021-2021 | 517 |
 | Spain (`ES`) | 1 | 1 | 1 | 2020-2020 | 163 |
 | Italy (`IT`) | 1 | 1 | 1 | 2024-2024 | 18 |

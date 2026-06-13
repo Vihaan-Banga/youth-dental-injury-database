@@ -15,7 +15,7 @@ _One-page Markdown summary per sport with ≥3 rows in master.csv. Auto-generate
 | [hockey_ice](hockey_ice.md) | 16 | 12 | 2002-2024 | CA, TR, US |
 | [hockey_unspecified](hockey_unspecified.md) | 13 | 13 | 2010-2025 | NZ, US |
 | [lacrosse_mens](lacrosse_mens.md) | 5 | 5 | 2016-2025 | US |
-| [martial_arts_other](martial_arts_other.md) | 8 | 7 | 2004-2025 | US |
+| [martial_arts_other](martial_arts_other.md) | 9 | 8 | 2004-2025 | IR, US |
 | [rugby](rugby.md) | 26 | 11 | 2005-2024 | AU, CA, NZ, US |
 | [skateboarding](skateboarding.md) | 13 | 13 | 2012-2025 | CH, US |
 | [softball](softball.md) | 15 | 13 | 2013-2026 | US |
