@@ -9,7 +9,7 @@ An open-access harmonized database aggregating epidemiological data on dental an
 
 **Status:** Pre-launch (data collection phase). Not yet published. Do not cite externally until v1.0 release.
 
-**Project lead:** Vihaan Banga, Olentangy Liberty High School, in collaboration with [Advisor name when secured], OSU College of Dentistry.
+**Project lead:** Vihaan Banga, Olentangy Liberty High School, in collaboration with [Advisor name when secured].
 
 ## What this is and isn't
 
