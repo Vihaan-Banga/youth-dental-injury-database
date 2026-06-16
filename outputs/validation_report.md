@@ -1,4 +1,4 @@
-# Validation Report — 2026-06-12
+# Validation Report — 2026-06-15
 
 _Run against `data/harmonized/master.csv` (426 rows)._
 
@@ -26,6 +26,7 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 - **C8** `quality_flag` in allowed set (covered by C2)
 - **C9** every source has at least one `youth_primary` row
 - **C10** no duplicate (source × sport × age × sex × level × basis × season) keys
+- **C11** `rate_per_1000_ae` populated only when `rate_denominator_raw` is an athlete-exposure denominator
 
 ## Per-source row count
 

@@ -89,7 +89,7 @@ Sport classification follows a controlled vocabulary maintained in `docs/decisio
 
 ### Technical validation (PROTOCOL §7)
 
-A versioned validator (`scripts/08_validate.py`) runs 10 checks (C1-C10) on `data/harmonized/master.csv`:
+A versioned validator (`scripts/08_validate.py`) runs 11 checks (C1-C11) on `data/harmonized/master.csv`:
 - **C1–C2:** schema completeness; categorical-vocabulary conformance
 - **C3:** numeric plausibility (`rate_per_1000_ae < 100` per PROTOCOL §7)
 - **C4–C5:** age-min ≤ age-max; `age_category` consistency with the age range
@@ -98,6 +98,7 @@ A versioned validator (`scripts/08_validate.py`) runs 10 checks (C1-C10) on `dat
 - **C8:** `quality_flag` in the allowed set
 - **C9:** every source has at least one `youth_primary` row
 - **C10:** no duplicate (source × sport × age × sex × level × basis × exposure_context × subgroup × season) keys
+- **C11:** `rate_per_1000_ae` populated only when `rate_denominator_raw` is an athlete-exposure denominator
 
 C1–C4, C6–C8 and C10 are hard checks (a violation fails the build); C5 and C9 surface as warnings, since age-category banding is intentionally permissive.
 
@@ -123,9 +124,9 @@ Each source carries a stable `source_id` of form `<firstauthor><year>` (PubMed-k
 
 ## Technical Validation
 
-Current state (v0.1.x snapshot, 2026-06-12): **426 rows / 106 sources / 0 FAILs / 0 WARNs** against the 10 validation checks (`outputs/validation_report.md`), run on every commit via GitHub Actions CI. 23 PMC full-text XMLs cached. Cross-source rate comparison confirms tight agreement on US high-school basketball rates between `collins2016` (0.026 / 100k AE) and `azadani2023` (0.024 / 100k AE) — independent surveillance covering overlapping years yielding statistically indistinguishable estimates (`outputs/cross_source_rate_comparison.md`).
+Current state (v0.1.x snapshot, 2026-06-13): **426 rows / 106 sources / 0 FAILs / 0 WARNs** against the 11 validation checks (`outputs/validation_report.md`), run on every commit via GitHub Actions CI. 23 PMC full-text XMLs cached. Cross-source rate comparison confirms tight agreement on US high-school basketball rates between `collins2016` (0.026 per 1000 AE) and `azadani2023` (0.024 per 1000 AE) — equivalently 2.6 and 2.4 per 100,000 AE — independent surveillance covering overlapping years yielding statistically indistinguishable estimates (`outputs/cross_source_rate_comparison.md`).
 
-Of the 426 rows, 29 carry a value in `rate_per_1000_ae` (the rest preserve the source's native denominator in `rate_raw`/`rate_denominator_raw`); 41 rows report a mouthguard use rate and 41 record an analyzed mouthguard-vs-injury relationship. **Caveat (v0.1.x):** the `rate_per_1000_ae` column currently aggregates source-normalized rates whose denominators still differ (per&nbsp;1000 athlete-exposures, per&nbsp;100,000 athlete-exposures, per&nbsp;1000 athlete-sessions, per&nbsp;1000/100 player-hours), so these values are **not yet all mutually comparable** — each must be read with `rate_denominator_raw`. Two values are directly comparable only when their denominators match (e.g. the `collins2016`/`azadani2023` per-100k-AE basketball pair above). Converting this column to a single true per-1000-AE scale (or splitting it into `rate_value` + `rate_unit`) is a planned v1.0 harmonization step.
+Of the 426 rows, 20 carry a value in `rate_per_1000_ae` (the rest preserve the source's native denominator in `rate_raw`/`rate_denominator_raw`); 41 rows report a mouthguard use rate and 41 record an analyzed mouthguard-vs-injury relationship. All 20 values sit on a single per-1000-athlete-exposure scale: rates the source reported per 100,000&nbsp;AE are stored already divided by 100, athlete-session denominators are treated as athlete-exposures (the standard "one athlete in one practice or game" unit), and rates with time (hours, player-match-hours), population, or percent-of-injuries denominators are excluded from this column by design — kept only in `rate_raw`/`rate_denominator_raw` — and that exclusion is now enforced by validator check C11 (see `docs/decisions.md`, 2026-06-13). The 20 are therefore directly comparable on the denominator axis; as in any cross-source comparison they still differ in injury definition, age range, era, and competition-vs-practice context, so each rate should be read alongside its row attributes. (A future option to split into explicit `rate_value` + `rate_unit` columns, which would also carry the non-AE rates as structured values, remains available but is not needed for v0.1.x.)
 
 Limitations transparently documented:
 - English-language sources only (v1.0).
@@ -139,7 +140,7 @@ Limitations transparently documented:
 
 ## Usage Notes
 
-The headline scope is the youth-primary subset; subset on `extraction_basis == "youth_primary"` for the v1.0-scope view, or include `adult_comparator` rows for cross-age comparison. Always read a rate together with its `rate_denominator_raw`: only the 29 rows with a non-empty `rate_per_1000_ae` share a common athlete-exposure denominator and are directly comparable; the rest preserve heterogeneous native denominators (per-1000-player-hours, per-100k-population, per-season, % of injuries) and must not be pooled blindly. Empty cell = not reported; `0` = reported zero; `NA` = not applicable.
+The headline scope is the youth-primary subset; subset on `extraction_basis == "youth_primary"` for the v1.0-scope view, or include `adult_comparator` rows for cross-age comparison. Always read a rate together with its `rate_denominator_raw`: the 20 rows with a non-empty `rate_per_1000_ae` share a common athlete-exposure denominator and are directly comparable on that axis (subject to the usual definitional, age, and era differences); the rest preserve heterogeneous native denominators (per-1000-player-hours, per-100k-population, per-season, % of injuries) in `rate_raw` and must not be pooled blindly. Empty cell = not reported; `0` = reported zero; `NA` = not applicable.
 
 ```python
 import pandas as pd

@@ -71,7 +71,7 @@ All publicly viewable on the repo:
 - **`DATA_DICTIONARY.md`** — column-by-column data dictionary.
 - **`docs/decisions.md`** — append-only log of every harmonization decision and why. Includes corrections (e.g., NEISS body-part code labels in PROTOCOL §4.1).
 - **`docs/sources.md`** — full audit trail of every candidate source through screening.
-- **`outputs/validation_report.md`** — current pass/fail status against the 10 validation checks.
+- **`outputs/validation_report.md`** — current pass/fail status against the 11 validation checks.
 - **`outputs/screening_report_2026-05-21.md`** — per-decision screening audit.
 
 ## Citation

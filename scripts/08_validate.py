@@ -22,6 +22,8 @@ Checks:
         (catches sources where we accidentally extracted only adult rows from a youth-eligible source)
   C10. No duplicate (source_id, sport, age_category, sex, level_of_play, extraction_basis,
        season_or_timeframe) combinations — surfaces accidental re-extractions
+  C11. rate_per_1000_ae is populated only when rate_denominator_raw names an
+       athlete-exposure denominator (not hours / season / population / % of injuries)
 
 Output: outputs/validation_report.md with per-check counts and any failing rows.
 Exit code 0 if all hard checks pass (any C5/C9 mismatches surface as warnings,
@@ -29,6 +31,7 @@ not failures, since the schema is intentionally permissive for the pilot phase).
 """
 
 import csv
+import re
 import sys
 from collections import Counter, defaultdict
 from datetime import date
@@ -124,6 +127,27 @@ def parse_num(s):
         return float(s)
     except ValueError:
         return ("ERR", s)
+
+
+# Denominators that disqualify a rate from the athlete-exposure scale.
+_NON_AE_DENOM = ("hour", "season", "population", "per cent", "% of",
+                 "person-year", "player-match", "match-hour", "player-hour",
+                 "per 100 player", "players", "per child", "capita")
+# Athlete-exposure family. athlete-session is the standard AE unit
+# (1 athlete in 1 practice/game = 1 AE); see docs/decisions.md 2026-05-24.
+_AE_DENOM = ("athlete-exposure", "athletic-exposure", "athlete exposure",
+             "athlete-session", "athlete session")
+
+
+def denom_is_ae(denom):
+    """True iff `denom` (the rate_denominator_raw phrasing) is an
+    athlete-exposure denominator, so rate_per_1000_ae may be populated."""
+    d = (denom or "").lower()
+    if any(bad in d for bad in _NON_AE_DENOM):
+        return False
+    if any(good in d for good in _AE_DENOM):
+        return True
+    return bool(re.search(r"\bae\b", d))  # e.g. "per 1000 AE (dental specifically)"
 
 
 def main():
@@ -242,6 +266,20 @@ def main():
                                 "(exposure_context + subgroup_label should already "
                                 "disambiguate legitimate stratifications)")
 
+    # C11 — rate_per_1000_ae is reserved for athlete-exposure denominators.
+    # If the row carries a per-1000-AE value, rate_denominator_raw must name an
+    # AE denominator (not hours/season/population/% of injuries).
+    # See DATA_DICTIONARY.md and docs/decisions.md (2026-05-24, 2026-06-13).
+    for i, r in enumerate(rows):
+        if not r.get("rate_per_1000_ae", "").strip():
+            continue
+        denom = r.get("rate_denominator_raw", "")
+        if not denom_is_ae(denom):
+            add("FAIL", "C11", f"row {i+1}: rate_per_1000_ae is populated but "
+                               f"rate_denominator_raw='{denom}' is not an "
+                               f"athlete-exposure denominator — move the value to "
+                               f"rate_raw and leave rate_per_1000_ae empty")
+
     # Generate report
     fails = [f for f in findings if f[0] == "FAIL"]
     warns = [f for f in findings if f[0] == "WARN"]
@@ -282,6 +320,7 @@ def main():
     W("- **C8** `quality_flag` in allowed set (covered by C2)")
     W("- **C9** every source has at least one `youth_primary` row")
     W("- **C10** no duplicate (source × sport × age × sex × level × basis × season) keys")
+    W("- **C11** `rate_per_1000_ae` populated only when `rate_denominator_raw` is an athlete-exposure denominator")
     W("\n## Per-source row count\n")
     W("| source_id | rows | bases |")
     W("|---|---|---|")

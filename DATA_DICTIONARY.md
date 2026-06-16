@@ -53,9 +53,9 @@ When adding a new source, follow these definitions exactly. When a definition is
 | `injury_count` | integer | Number of dental/orofacial injuries reported | `47` |
 | `injury_type_raw` | string | Injury terminology as used in source | `"tooth avulsion"` |
 | `injury_category` | category | Standardized per Andreasen classification: `enamel_fracture`, `crown_fracture`, `root_fracture`, `luxation`, `avulsion`, `concussion`, `other_dental`, `orofacial_with_dental`, `unspecified_dental` | `avulsion` |
-| `rate_raw` | float | Rate as reported in source | `0.43` |
-| `rate_denominator_raw` | string | Original denominator phrasing | `"per 1000 athlete-exposures"` |
-| `rate_per_1000_ae` | float | Standardized rate per 1000 athlete-exposures. Empty if source doesn't provide computable data. | `0.43` |
+| `rate_raw` | float | Rate as reported in source (in the source's own denominator) | `0.43` |
+| `rate_denominator_raw` | string | Original denominator phrasing — describes **`rate_raw`**, not `rate_per_1000_ae`. | `"per 100,000 athlete-exposures"` |
+| `rate_per_1000_ae` | float | Standardized rate per 1000 **athlete-exposures (AE)**. Populated **iff** the source's denominator is an athlete-exposure: athlete-/athletic-exposure, athlete-session (1 athlete in 1 practice or game = 1 AE = 1 session), or a rate already expressed "per … AE". A per-100,000-AE raw rate is stored here already divided by 100 (e.g. `rate_raw` 2.4 per 100k AE → `0.024`). **Leave empty** when the denominator is time (hours, player-match-hours), athlete-seasons, players, population, or percent-of-injuries — those values stay only in `rate_raw` + `rate_denominator_raw`. Enforced by validator check C11. See `docs/decisions.md` 2026-05-24 and 2026-06-13. | `0.024` |
 
 ### Protective equipment
 

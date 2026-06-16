@@ -406,4 +406,36 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 
 ---
 
+### 2026-06-13: `rate_per_1000_ae` is enforced as a single per-1000-athlete-exposure scale
+
+**Trigger:** Audit of the 29 rows carrying a `rate_per_1000_ae` value found the column was being read as if it held a common scale, but next to it sat `rate_denominator_raw` strings naming *different* denominators ("per 100,000 athlete-exposures", "per 1000 player-match-hours", "per 100 player-hours", "per 1000 athlete-sessions"). This extends the 2026-05-24 "denominator-unit issue" entry, which set the rule but was never enforced across the full dataset or by the validator.
+
+**Question:** Were the 29 values actually on different scales, and if so how do we put them on one true per-1000-AE scale (or split into value+unit)?
+
+**Investigation (corrects an assumption in the trigger):**
+- The 9 rows whose *raw* rate is reported "per 100,000 athlete-exposures" (azadani2023 ×3, collins2016 ×5, yard2008 ×1) were **already correctly converted** at extraction time: `rate_per_1000_ae = rate_raw ÷ 100` (e.g. azadani2023 basketball `rate_raw = 2.4` per 100k AE → `rate_per_1000_ae = 0.024` per 1000 AE). The "per 100,000" phrasing in `rate_denominator_raw` describes `rate_raw`, **not** the per-1000-AE column. These needed **no** change — dividing them again would have corrupted correct data.
+- `rate_denominator_raw` is, by definition (DATA_DICTIONARY.md), the original phrasing for `rate_raw`. It is *not* a label for `rate_per_1000_ae`. This was the source of the confusion.
+- The only genuinely mis-filed rows were **time-denominator** rates pasted verbatim into the AE column:
+  - **radelet1996** (1 row): `0.57` per-1000-*player-hours* (raw `0.057` per 100 player-hours).
+  - **rugby_europe_iss_2024** (8 rows): per-1000-*player-match-hours* (Sevens championship/trophy + head/face subsets).
+- **collins2004** (4 rows) reports "per 1000 **athlete-sessions**." An athlete-exposure is, by the standard NCAA-ISS / RIO definition, one athlete participating in one practice or competition — i.e. one session. The 2026-05-24 entry already defines AE as "an athlete-session count." So athlete-sessions **are** the AE unit; these 4 rows are valid per-1000-AE and stay. (An earlier framing of this audit listed athlete-sessions as non-AE; that is incorrect and is overridden here.)
+
+**Decision:**
+- **Approach (a), convert-and-null in place** — keep the `rate_per_1000_ae` column rather than splitting into `rate_value` + `rate_unit`. This honours the 2026-05-24 decision (which reserved this column for AE denominators and explicitly *deferred* a richer multi-column schema because it would force re-extraction). The split option remains available as a future v1.0 step if multi-unit structured comparison is ever needed.
+- **Invariant:** `rate_per_1000_ae` is populated **iff** the source denominator is an athlete-exposure (athlete-/athletic-exposure, athlete-session, or "AE"). Per-100,000-AE rates are stored already divided by 100. Time (hours / player-match-hours), season, population, and percent-of-injuries denominators leave `rate_per_1000_ae` empty; their value stays in `rate_raw` + `rate_denominator_raw`.
+- Blanked `rate_per_1000_ae` for the 9 time-denominator rows above (values preserved in `rate_raw`). Result: 20 rows now carry a per-1000-AE value, all on one scale.
+
+**Implementation:**
+- `data/extracted/radelet1996.csv` (1 row) and `data/extracted/rugby_europe_iss_2024.csv` (8 rows): `rate_per_1000_ae` blanked; all other fields unchanged.
+- `DATA_DICTIONARY.md`: `rate_per_1000_ae` and `rate_denominator_raw` definitions tightened to state the AE-only invariant and that `rate_denominator_raw` describes `rate_raw`.
+- `scripts/08_validate.py`: new **C11** (FAIL) — every populated `rate_per_1000_ae` row must have an AE-type `rate_denominator_raw`.
+- Re-ran `07_harmonize.py` → `08_validate.py` (0 FAILs), `21_cross_source_compare.py`, `33_rate_explorer_data.py`. As a consequence the cross-source view no longer pools rugby AE rates (collins_rugby2008) with rugby player-match-hours rates (rugby_europe).
+- Methods paper and Rate Explorer caveats updated (count 29 → 20; mixed-denominator warning replaced with the normal cross-source comparability caveats).
+
+**Affected rows/sources:** radelet1996 (1), rugby_europe_iss_2024 (8). No other extractions changed.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

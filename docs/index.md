@@ -74,7 +74,7 @@ scripts/01_parse_abstracts.py            # parse efetch XML to per-PMID JSON
 scripts/02_screen_candidates.py          # auto rules + manual decisions
 scripts/05_neiss_filter.py               # filter NEISS TSV by body part 88 + 23 sport codes + age 5-22
 scripts/07_harmonize.py                  # combine data/extracted/*.csv → master.csv
-scripts/08_validate.py                   # 10 validation checks (C1–C10)
+scripts/08_validate.py                   # 11 validation checks (C1–C11)
 scripts/18_visualize.py                  # baseline figures
 scripts/22_neiss_extract_all_years.py    # multi-year NEISS orchestrator
 scripts/23_neiss_trends.py               # year-over-year trend report
