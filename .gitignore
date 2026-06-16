@@ -64,3 +64,6 @@ outputs/tables/draft_*
 
 # Logs
 *.log
+
+# Claude Code local dev config (not part of the dataset)
+.claude/
