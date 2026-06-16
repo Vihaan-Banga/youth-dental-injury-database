@@ -50,9 +50,9 @@ df[(df.sport == "basketball") & (df.extraction_basis == "youth_primary")].head()
 |---|---|
 | Protocol | [`PROTOCOL.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/PROTOCOL.md) — pre-registration-pending research protocol (inclusion criteria, search strategy, harmonization rules) |
 | Data dictionary | [`DATA_DICTIONARY.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/DATA_DICTIONARY.md) — column-by-column definitions |
-| Source tracking | [`docs/sources.md`](sources.html) — every candidate source through screening |
-| Governing-body sources | [`docs/governing_body_sources.md`](governing_body_sources.html) — non-PubMed surveillance sources |
-| Harmonization decisions log | [`docs/decisions.md`](decisions.html) — append-only |
+| Source tracking | [`docs/sources.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/docs/sources.md) — every candidate source through screening |
+| Governing-body sources | [`docs/governing_body_sources.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/docs/governing_body_sources.md) — non-PubMed surveillance sources |
+| Harmonization decisions log | [`docs/decisions.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/docs/decisions.md) — append-only |
 | Validation report | [`outputs/validation_report.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/validation_report.md) |
 | Methods-paper draft | [`outputs/methods_paper_draft.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/methods_paper_draft.md) |
 
