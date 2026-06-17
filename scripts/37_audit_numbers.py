@@ -1,0 +1,161 @@
+#!/usr/bin/env python3
+"""Sanity-check extracted NUMERIC values against the source PubMed abstract.
+
+Companion to scripts/34 (which audits authorship). This checks whether the
+numbers we extracted (sample_size, athlete_exposures, injury_count, rate_raw,
+rate_per_1000_ae, mouthguard_use_rate) actually appear in the paper's abstract
+text (data/raw/papers/_abstracts/<PMID>.json).
+
+IMPORTANT — what this can and cannot tell you:
+  - A value FOUND in the abstract is corroborated against PubMed.
+  - A value NOT FOUND is *not* proof of error: it may legitimately come from a
+    full-text table/figure, or be a value the extractor computed (e.g. a
+    percentage). It is a flag for human/advisor full-text review, nothing more.
+  - NEISS year files and governing-body reports have no PubMed abstract and are
+    reported separately (out of scope for this check).
+
+Read-only. Writes a report to outputs/number_audit.md and prints a summary.
+"""
+from __future__ import annotations
+
+import csv
+import json
+import re
+from collections import defaultdict
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+MASTER = ROOT / "data/harmonized/master.csv"
+ABS_DIR = ROOT / "data/raw/papers/_abstracts"
+SOURCES_MD = ROOT / "docs/sources.md"
+OUT = ROOT / "outputs/number_audit.md"
+
+NUM_FIELDS = ["sample_size", "athlete_exposures", "injury_count",
+              "rate_raw", "rate_per_1000_ae", "mouthguard_use_rate"]
+SKIP_PREFIX = ("neiss",)
+SKIP_IDS = {"rugby_europe_iss_2024"}
+
+
+def norm_num(s: str):
+    """Normalise a numeric token: drop commas/%/spaces, trim trailing .0 / dot."""
+    s = s.strip().replace(",", "").replace("%", "").replace(" ", "")
+    if not s:
+        return None
+    s = re.sub(r"\.0+$", "", s)
+    s = s.rstrip(".")
+    return s or None
+
+
+def abstract_numbers(text: str):
+    """All numeric tokens in the abstract, normalised, as a set. Also keep a
+    comma-stripped raw string for substring fallbacks (e.g. mouthguard rate
+    0.62 reported as '62%' won't match, but 0.62 written as '0.62' will)."""
+    raw = re.findall(r"\d[\d,]*\.?\d*", text)
+    nums = {n for n in (norm_num(t) for t in raw) if n}
+    return nums, text.replace(",", "")
+
+
+def main() -> None:
+    pmid_of = {}
+    for line in SOURCES_MD.read_text().splitlines():
+        m = re.match(r"^\|\s*([A-Za-z0-9_\-]+)\s*\|\s*\[(\d+)\]", line)
+        if m:
+            pmid_of[m.group(1)] = m.group(2)
+
+    rows_by_src = defaultdict(list)
+    for r in csv.DictReader(open(MASTER)):
+        rows_by_src[r["source_id"]].append(r)
+
+    checked = corroborated = not_found = 0
+    no_abstract = []
+    flagged = []   # (source_id, [field=value not found], n_checked)
+    fully_ok = []
+
+    for sid, rows in sorted(rows_by_src.items()):
+        if sid.startswith(SKIP_PREFIX) or sid in SKIP_IDS:
+            continue
+        pmid = pmid_of.get(sid)
+        absf = ABS_DIR / f"{pmid}.json" if pmid else None
+        if not absf or not absf.exists():
+            no_abstract.append(sid)
+            continue
+        rec = json.load(open(absf))
+        # search the title too (e.g. "...2,845 Head and Neck Injuries...")
+        text = (rec.get("abstract") or "") + " " + (rec.get("title") or "")
+        if not (rec.get("abstract") or "").strip():
+            no_abstract.append(sid)
+            continue
+        nums, raw = abstract_numbers(text)
+
+        missing = []
+        n_checked = 0
+        seen_vals = set()
+        for row in rows:
+            for f in NUM_FIELDS:
+                v = (row.get(f) or "").strip()
+                if v in ("", "0", "NA"):       # skip empty / zero / N/A
+                    continue
+                nv = norm_num(v)
+                if not nv or (f, nv) in seen_vals:
+                    continue
+                seen_vals.add((f, nv))
+                n_checked += 1
+                # candidate forms: the value itself, plus proportion<->percent
+                # equivalents (mouthguard_use_rate 0.41 <-> "41%"; rate_raw 14.7
+                # <-> 0.147) so format differences don't read as missing data.
+                cands = {nv}
+                try:
+                    fv = float(nv)
+                    for alt in (fv * 100, fv / 100):
+                        a = norm_num(f"{alt:.10f}".rstrip("0"))
+                        if a:
+                            cands.add(a)
+                except ValueError:
+                    pass
+                if any(c in nums or c in raw for c in cands):
+                    pass
+                else:
+                    missing.append(f"{f}={v}")
+        checked += n_checked
+        corroborated += n_checked - len(missing)
+        not_found += len(missing)
+        if not n_checked:
+            continue
+        if missing:
+            flagged.append((sid, pmid, missing, n_checked))
+        else:
+            fully_ok.append(sid)
+
+    lines = []
+    W = lines.append
+    W("# Numeric corroboration audit (extracted values vs. PubMed abstract)\n")
+    W("_Generated by `scripts/37_audit_numbers.py`. A value **not found** is a "
+      "flag for full-text review, NOT proof of error — it may come from a "
+      "full-text table or be a computed percentage. NEISS year files and "
+      "governing-body reports are excluded (no abstract)._\n")
+    pct = (100 * corroborated // checked) if checked else 0
+    W(f"\n**Checked {checked} distinct numeric values across "
+      f"{len(fully_ok) + len(flagged)} sources.** "
+      f"{corroborated} corroborated in-abstract ({pct}%); {not_found} not found.\n")
+    W(f"- Sources with every checked value corroborated: **{len(fully_ok)}**")
+    W(f"- Sources with ≥1 value not found in abstract: **{len(flagged)}**")
+    W(f"- Sources with no usable abstract (excluded): {len(no_abstract)}\n")
+
+    W("\n## Sources with values not found in the abstract (full-text review)\n")
+    W("| source_id | pmid | n_checked | values not found in abstract |")
+    W("|---|---|---|---|")
+    for sid, pmid, missing, n in sorted(flagged, key=lambda x: -len(x[2])):
+        W(f"| {sid} | [{pmid}](https://pubmed.ncbi.nlm.nih.gov/{pmid}/) "
+          f"| {n} | {'; '.join(missing)} |")
+
+    OUT.write_text("\n".join(lines) + "\n")
+    print(f"Checked {checked} values across {len(fully_ok)+len(flagged)} sources: "
+          f"{corroborated} corroborated ({pct}%), {not_found} not found.")
+    print(f"  fully corroborated sources: {len(fully_ok)}")
+    print(f"  sources with >=1 not-found value: {len(flagged)}")
+    print(f"  excluded (no abstract): {len(no_abstract)}")
+    print(f"Wrote {OUT.relative_to(ROOT)}")
+
+
+if __name__ == "__main__":
+    main()

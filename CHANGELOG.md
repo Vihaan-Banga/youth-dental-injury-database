@@ -14,6 +14,7 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 #### Added
 - `scripts/34_audit_citations.py` — reusable citation/author audit against cached PubMed abstracts (run before releases).
 - `scripts/35_fix_attributions.py`, `scripts/36_fix_batch_script_attributions.py` — the one-time repair (data + scripts).
+- `scripts/37_audit_numbers.py` + `outputs/number_audit.md` — sanity-checks extracted numeric values (counts, rates, sample sizes, mouthguard use) against the source abstract. 80% corroborate in-abstract; the rest are flagged for full-text review (full-text-table values, or computed figures such as back-calculated `injury_count`s). Not a pass/fail — a reviewer aid.
 
 #### Changed
 - `scripts/26_bibliography.py` — BibTeX keys now parsed from `docs/sources.md` (was a hardcoded map that carried the wrong ids).
