@@ -6,7 +6,7 @@ _Auto-generated from `master.csv`. 13 rows across 13 sources._
 **Sport category:** `limited_contact`
 **Countries:** CH, US
 **Year span:** 2012-2025
-**Sources contributing:** muller_bolla2012, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025
+**Sources contributing:** baumgartner2012, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025
 
 ## Rates per 1000 athlete-exposures
 
@@ -16,7 +16,7 @@ _No rows with `rate_per_1000_ae` populated. See `rate_raw` + `rate_denominator_r
 
 | source | year | sex | subgroup | use rate | injury-relation analysis |
 |---|---:|---|---|---:|---|
-| muller_bolla2012 | 2012 | mixed | kick_scooter | **2%** | not_addressed |
+| baumgartner2012 | 2012 | mixed | kick_scooter | **2%** | not_addressed |
 
 ## Distribution of rows
 

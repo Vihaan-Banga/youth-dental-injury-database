@@ -61,8 +61,8 @@ def write_csv(source_id, rows):
 
 
 # ----- hamdan2026 (PMID 41501720) -----
-hamdan_cite = "Hamdan TR, Alshayeb L, Dashash M. (2026). Prevalence and risk factors of orofacial trauma among child and adolescent athletes in Damascus, Syria: a cross-sectional study. BMC Public Health."
-write_csv("hamdan2026", [make("hamdan2026",
+hamdan_cite = "Hamdan TR, Alshayeb L, Dashash M. (2026). Prevalence and risk factors of orofacial trauma among child and adolescent athletes in Damascus, Syria: a cross-sectional study. BMC public health."
+write_csv("hamdan2026a", [make("hamdan2026a",
     citation=hamdan_cite, pub_year=2026, study_type="cross_sectional",
     country="SY", region="Damascus", population_setting="club",
     age_min=6, age_max=16, age_category="mixed",
@@ -81,7 +81,7 @@ write_csv("hamdan2026", [make("hamdan2026",
 
 
 # ----- udayamalee2024 (PMID 38131151) -----
-ud_cite = "Udayamalee I, Amarasinghe H, Zhang P. (2024). Oro-dental trauma burden and mouthguard usage among contact sports players: A call for sports dentistry initiatives in Sri Lanka. Dental Traumatology."
+ud_cite = "Udayamalee I, Amarasinghe H, Zhang P. (2024). Oro-dental trauma burden and mouthguard usage among contact sports players: A call for sports dentistry initiatives in Sri Lanka. Dental traumatology : official publication of International Association for Dental Traumatology."
 ud_common = dict(citation=ud_cite, pub_year=2024, study_type="cross_sectional",
     country="LK", region="Colombo", population_setting="school",
     age_min=13, age_max=18, age_category="adolescent",
@@ -112,8 +112,8 @@ write_csv("udayamalee2024", [
 
 
 # ----- vanierssel2021 (PMID 33848349) -----
-vi_cite = "van Ierssel J, Ledoux AA, Tang K, Zemek R. (2021). Sex-Based Differences in Symptoms With Mouthguard Use After Pediatric Sport-Related Concussion. Journal of Athletic Training."
-write_csv("vanierssel2021", [make("vanierssel2021",
+vi_cite = "van Ierssel J, Ledoux AA, Tang K, Zemek R. (2021). Sex-Based Differences in Symptoms With Mouthguard Use After Pediatric Sport-Related Concussion. Journal of athletic training."
+write_csv("van2021", [make("van2021",
     citation=vi_cite, pub_year=2021, study_type="cohort",
     country="CA", region="", population_setting="mixed",
     age_min=5, age_max=18, age_category="mixed",
@@ -130,7 +130,7 @@ write_csv("vanierssel2021", [make("vanierssel2021",
 
 
 # ----- goswami2017 (PMID 29403232) -----
-go_cite = "Goswami M, Kumar P, Bhushan U. (2017). Evaluation of Knowledge, Awareness, and Occurrence of Dental Injuries in Participant Children during Sports in New Delhi: A Pilot Study. Int J Clin Pediatr Dent."
+go_cite = "Goswami M, Kumar P, Bhushan U. (2017). Evaluation of Knowledge, Awareness, and Occurrence of Dental Injuries in Participant Children during Sports in New Delhi: A Pilot Study. International journal of clinical pediatric dentistry."
 go_common = dict(citation=go_cite, pub_year=2017, study_type="cross_sectional",
     country="IN", region="New Delhi", population_setting="school",
     age_min=6, age_max=16, age_category="mixed",
@@ -173,7 +173,7 @@ write_csv("goswami2017", [
 
 
 # ----- tsuchiya2017 (PMID 29284466) -----
-ts_cite = "Tsuchiya S, Tsuchiya M, Momma H, Sekiguchi T. (2017). Factors associated with sports-related dental injuries among young athletes: a cross-sectional study in Miyagi prefecture. BMC Oral Health."
+ts_cite = "Tsuchiya S, Tsuchiya M, Momma H, Sekiguchi T, Kuroki K, Kanazawa K, Koseki T, Igarashi K, Nagatomi R, Hagiwara Y. (2017). Factors associated with sports-related dental injuries among young athletes: a cross-sectional study in Miyagi prefecture. BMC oral health."
 ts_common = dict(citation=ts_cite, pub_year=2017, study_type="cross_sectional",
     country="JP", region="Miyagi prefecture", population_setting="school",
     age_min=6, age_max=15, age_category="mixed",
@@ -204,7 +204,7 @@ write_csv("tsuchiya2017", [
 
 
 # ----- singh2014 (PMID 25520762) -----
-si_cite = "Singh G, Garg S, Damle SG, Dhindsa A. (2014). A study of sports related occurrence of traumatic orodental injuries and associated risk factors in high school students in north India. Asian J Sports Med."
+si_cite = "Singh G, Garg S, Damle SG, Dhindsa A, Kaur A, Singla S. (2014). A study of sports related occurrence of traumatic orodental injuries and associated risk factors in high school students in north India. Asian journal of sports medicine."
 write_csv("singh2014", [
     make("singh2014",
         citation=si_cite, pub_year=2014, study_type="cross_sectional",
@@ -239,7 +239,7 @@ write_csv("singh2014", [
 
 
 # ----- chan2011 (PMID 21457187) -----
-ch_cite = "Chan YM, Williams S, Davidson LE, Drummond BK. (2011). Orofacial and dental trauma of young children in Dunedin, New Zealand. Dental Traumatology."
+ch_cite = "Chan YM, Williams S, Davidson LE, Drummond BK. (2011). Orofacial and dental trauma of young children in Dunedin, New Zealand. Dental traumatology : official publication of International Association for Dental Traumatology."
 write_csv("chan2011", [make("chan2011",
     citation=ch_cite, pub_year=2011, study_type="case_series",
     country="NZ", region="Dunedin", population_setting="mixed",
@@ -256,7 +256,7 @@ write_csv("chan2011", [make("chan2011",
 
 
 # ----- cetinbas2008 (PMID 18821957) -----
-ce_cite = "Cetinbaş T, Yildirim G, Sönmez H. (2008). The relationship between sports activities and permanent incisor crown fractures in a group of school children aged 7-9 and 11-13 in Ankara, Turkey. Dental Traumatology."
+ce_cite = "Cetinbaş T, Yildirim G, Sönmez H. (2008). The relationship between sports activities and permanent incisor crown fractures in a group of school children aged 7-9 and 11-13 in Ankara, Turkey. Dental traumatology : official publication of International Association for Dental Traumatology."
 write_csv("cetinbas2008", [
     make("cetinbas2008",
         citation=ce_cite, pub_year=2008, study_type="cross_sectional",
@@ -294,7 +294,7 @@ write_csv("cetinbas2008", [
 
 
 # ----- levin2007 (PMID 17991235) -----
-lv7_cite = "Levin L, Samorodnitzky GR, Schwartz-Arad D, Geiger SB. (2007). Dental and oral trauma during childhood and adolescence in Israel: occurrence, causes, and outcomes. Dental Traumatology."
+lv7_cite = "Levin L, Samorodnitzky GR, Schwartz-Arad D, Geiger SB. (2007). Dental and oral trauma during childhood and adolescence in Israel: occurrence, causes, and outcomes. Dental traumatology : official publication of International Association for Dental Traumatology."
 write_csv("levin2007", [make("levin2007",
     citation=lv7_cite, pub_year=2007, study_type="cross_sectional",
     country="IL", region="", population_setting="mixed",
@@ -313,7 +313,7 @@ write_csv("levin2007", [make("levin2007",
 
 
 # ----- shore2023 (PMID 36394781) -----
-sh_cite = "Shore E, O'Connell AC. (2023). Assessment of mouthguards worn by Irish children playing contact sports: an observational cross-sectional cohort study. European Archives of Paediatric Dentistry."
+sh_cite = "Shore E, O'Connell AC. (2023). Assessment of mouthguards worn by Irish children playing contact sports: an observational cross-sectional cohort study. European archives of paediatric dentistry : official journal of the European Academy of Paediatric Dentistry."
 write_csv("shore2023", [make("shore2023",
     citation=sh_cite, pub_year=2023, study_type="cross_sectional",
     country="IE", region="", population_setting="club",
@@ -332,7 +332,7 @@ write_csv("shore2023", [make("shore2023",
 
 
 # ----- amy2005 (PMID 15876321) -----
-am_cite = "Amy E. (2005). Oro-facial injuries in Central American and Caribbean sports games: a 20-year experience. Dental Traumatology."
+am_cite = "Amy E. (2005). Oro-facial injuries in Central American and Caribbean sports games: a 20-year experience. Dental traumatology : official publication of International Association for Dental Traumatology."
 write_csv("amy2005", [make("amy2005",
     citation=am_cite, pub_year=2005, study_type="case_series",
     country="PR", region="",  # Puerto Rican delegation
@@ -352,7 +352,7 @@ write_csv("amy2005", [make("amy2005",
 
 
 # ----- levin2003 (PMID 14708646) -----
-lv3_cite = "Levin L, Friedlander LD, Geiger SB. (2003). Dental and oral trauma and mouthguard use during sport activities in Israel. Dental Traumatology."
+lv3_cite = "Levin L, Friedlander LD, Geiger SB. (2003). Dental and oral trauma and mouthguard use during sport activities in Israel. Dental traumatology : official publication of International Association for Dental Traumatology."
 lv3_common = dict(citation=lv3_cite, pub_year=2003, study_type="cross_sectional",
     country="IL", region="", population_setting="mixed",
     age_min=18, age_max=19, age_category="collegiate",

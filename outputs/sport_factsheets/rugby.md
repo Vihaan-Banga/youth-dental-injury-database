@@ -6,32 +6,24 @@ _Auto-generated from `master.csv`. 26 rows across 11 sources._
 **Sport category:** `contact`
 **Countries:** AU, CA, NZ, US
 **Year span:** 2005-2024
-**Sources contributing:** collins_rugby2008, kanagasingam2016, mcintosh2005, neiss2013, neiss2015, neiss2017, neiss2018, neiss2021, quarrie2020, rugby_europe_iss_2024, welch2010
+**Sources contributing:** barbic2005, kerr2008, kroon2016, neiss2013, neiss2015, neiss2017, neiss2018, neiss2021, quarrie2020, rugby_europe_iss_2024, welch2010
 
 ## Rates per 1000 athlete-exposures
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| rugby_europe_iss_2024 | 2024 | — | adolescent | male | elite | **7.850** | u18_men_trophy_headface | per 1000 player-match-hours (head/face subset) |
-| rugby_europe_iss_2024 | 2024 | — | adolescent | female | elite | **11.780** | u18_women_championship_headface | per 1000 player-match-hours (head/face subset) |
-| rugby_europe_iss_2024 | 2024 | — | adolescent | female | elite | **15.200** | u18_women_trophy | per 1000 player-match-hours (Sevens — U18 Women's Trophy) |
-| rugby_europe_iss_2024 | 2024 | — | adolescent | female | elite | **15.240** | u18_women_trophy_headface | per 1000 player-match-hours (head/face subset) |
-| collins_rugby2008 | 2008 | US | collegiate | male | elite | **22.500** | male_game | per 1000 game athletic-exposures (male) |
-| collins_rugby2008 | 2008 | US | collegiate | female | elite | **22.700** | female_game | per 1000 game athletic-exposures (female) |
-| rugby_europe_iss_2024 | 2024 | — | adolescent | female | elite | **23.600** | u18_women_championship | per 1000 player-match-hours (Sevens — U18 Women's Championsh |
-| rugby_europe_iss_2024 | 2024 | — | adolescent | male | elite | **27.000** | u18_men_championship_headface | per 1000 player-match-hours (head/face subset) |
-| rugby_europe_iss_2024 | 2024 | — | adolescent | male | elite | **63.000** | u18_men_championship | per 1000 player-match-hours (Sevens — U18 Men's Championship |
-| rugby_europe_iss_2024 | 2024 | — | adolescent | male | elite | **70.600** | u18_men_trophy | per 1000 player-match-hours (Sevens — U18 Men's Trophy) |
+| kerr2008 | 2008 | US | collegiate | male | elite | **22.500** | male_game | per 1000 game athletic-exposures (male) |
+| kerr2008 | 2008 | US | collegiate | female | elite | **22.700** | female_game | per 1000 game athletic-exposures (female) |
 
-_Min 7.850, max 70.600, n=10._
+_Min 22.500, max 22.700, n=2._
 
 ## Mouthguard use
 
 | source | year | sex | subgroup | use rate | injury-relation analysis |
 |---|---:|---|---|---:|---|
-| mcintosh2005 | 2005 | female | rugby_female | **100%** | analyzed |
-| mcintosh2005 | 2005 | male | rugby_male | **100%** | analyzed |
-| kanagasingam2016 | 2016 | mixed | junior_rugby_league | **68%** | mentioned_only |
+| barbic2005 | 2005 | female | rugby_female | **100%** | analyzed |
+| barbic2005 | 2005 | male | rugby_male | **100%** | analyzed |
+| kroon2016 | 2016 | mixed | junior_rugby_league | **68%** | mentioned_only |
 
 ## Distribution of rows
 

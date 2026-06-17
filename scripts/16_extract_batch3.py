@@ -46,8 +46,8 @@ def w(sid, rows):
 
 
 # 23532813 — Istanbul handball
-w("yildirim2013", [make("yildirim2013",
-    citation="Yildirim Bicer S, Sahin C, Türkkahraman H. (2013). Incidence and prevention of traumatic injuries in paediatric handball players in Istanbul, Turkey.",
+w("ozbay2013", [make("ozbay2013",
+    citation="Ozbay G, Bakkal M, Abbasoglu Z, Demirel S, Kargul B, Welbury R. (2013). Incidence and prevention of traumatic injuries in paediatric handball players in Istanbul, Turkey. European archives of paediatric dentistry : official journal of the European Academy of Paediatric Dentistry.",
     pub_year=2013, study_type="cross_sectional", country="TR", region="Istanbul",
     population_setting="club", age_min=10, age_max=14, age_category="youth",
     sex="mixed", level_of_play="club",
@@ -63,8 +63,8 @@ w("yildirim2013", [make("yildirim2013",
 )])
 
 # 23045787 — Ireland west 9-13yo
-w("mcevoy2012", [make("mcevoy2012",
-    citation="McEvoy A, Jamieson L, Brown C, Phelan E. (2012). Mouthguard use and dental injury in sport: a questionnaire study of national school children in the west of Ireland.",
+w("omalley2012", [make("omalley2012",
+    citation="O'Malley M, Evans DS, Hewson A, Owens J. (2012). Mouthguard use and dental injury in sport: a questionnaire study of national school children in the west of Ireland. Journal of the Irish Dental Association.",
     pub_year=2012, study_type="cross_sectional", country="IE", region="HSE West",
     population_setting="school", age_min=9, age_max=13, age_category="youth",
     sex="mixed", level_of_play="recreational",
@@ -80,8 +80,8 @@ w("mcevoy2012", [make("mcevoy2012",
 )])
 
 # 21063551 — combat sports (18-25 mixed scope)
-w("zazryn2010", [make("zazryn2010",
-    citation="Zazryn TR, Cameron PA, McCrory PR. (2010). Prevalence and patterns of combat sport related maxillofacial injuries.",
+w("shirani2010", [make("shirani2010",
+    citation="Shirani G, Kalantar Motamedi MH, Ashuri A, Eshkevari PS. (2010). Prevalence and patterns of combat sport related maxillofacial injuries. Journal of emergencies, trauma, and shock.",
     pub_year=2010, study_type="case_series", country="", region="",
     population_setting="club", age_min=18, age_max=25, age_category="mixed",
     extraction_basis="youth_primary",  # source qualifies because 18-22 subset is in scope
@@ -98,7 +98,7 @@ w("zazryn2010", [make("zazryn2010",
 
 # 19290905 — South Africa 11-13
 w("naidoo2009", [make("naidoo2009",
-    citation="Naidoo S, Sheiham A, Tsakos G. (2009). Traumatic dental injuries of permanent incisors in 11- to 13-year-old South African schoolchildren.",
+    citation="Naidoo S, Sheiham A, Tsakos G. (2009). Traumatic dental injuries of permanent incisors in 11- to 13-year-old South African schoolchildren. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2009, study_type="cross_sectional", country="ZA", region="",
     population_setting="school", age_min=11, age_max=13, age_category="youth",
     sex="mixed", level_of_play="recreational",
@@ -113,8 +113,8 @@ w("naidoo2009", [make("naidoo2009",
 )])
 
 # 19030141 — RIO HS 2005-07 RIC
-w("yard2008", [make("yard2008",
-    citation="Yard EE, Schroeder MJ, Fields SK, Collins CL, Comstock RD. (2008). Epidemiology of rare injuries and conditions among United States high school athletes during the 2005-2006 and 2006-2007 school years.",
+w("huffman2008", [make("huffman2008",
+    citation="Huffman EA, Yard EE, Fields SK, Collins CL, Comstock RD. (2008). Epidemiology of rare injuries and conditions among United States high school athletes during the 2005-2006 and 2006-2007 school years. Journal of athletic training.",
     pub_year=2008, study_type="surveillance", country="US", region="",
     population_setting="school", age_min=14, age_max=18, age_category="adolescent",
     sex="mixed", level_of_play="school_varsity",
@@ -131,8 +131,8 @@ w("yard2008", [make("yard2008",
 )])
 
 # 18821952 — Root fractures
-w("mcdonough2008", [make("mcdonough2008",
-    citation="McDonough KE, Glickman G, Holsinger F. (2008). Root fractures in children and adolescents: diagnostic considerations.",
+w("molina2008", [make("molina2008",
+    citation="Molina JR, Vann WF, McIntyre JD, Trope M, Lee JY. (2008). Root fractures in children and adolescents: diagnostic considerations. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2008, study_type="cross_sectional", country="US", region="",
     population_setting="mixed", age_min=6, age_max=18, age_category="mixed",
     sex="mixed", level_of_play="mixed",
@@ -147,8 +147,8 @@ w("mcdonough2008", [make("mcdonough2008",
 )])
 
 # 18689347 — Lesotho
-w("mahlangu2008", [make("mahlangu2008",
-    citation="Mahlangu LP. (2008). Causes and prevalence of traumatic injuries to the permanent incisors of school children aged 10-14 years in Maseru, Lesotho.",
+w("lin2008", [make("lin2008",
+    citation="Lin H, Naidoo S. (2008). Causes and prevalence of traumatic injuries to the permanent incisors of school children aged 10-14 years in Maseru, Lesotho. SADJ : journal of the South African Dental Association = tydskrif van die Suid-Afrikaanse Tandheelkundige Vereniging.",
     pub_year=2008, study_type="cross_sectional", country="LS", region="Maseru",
     population_setting="school", age_min=10, age_max=14, age_category="youth",
     sex="mixed", level_of_play="recreational",
@@ -163,14 +163,14 @@ w("mahlangu2008", [make("mahlangu2008",
 )])
 
 # 17670881 — USC intercollegiate
-trinidad_common = dict(citation="Trinidad K, et al. (2007). The incidence and severity of dental trauma in intercollegiate athletes.",
+trinidad_common = dict(citation="Cohenca N, Roges RA, Roges R. (2007). The incidence and severity of dental trauma in intercollegiate athletes. Journal of the American Dental Association (1939).",
     pub_year=2007, study_type="cohort", country="US", region="Los Angeles",
     population_setting="club", age_min=18, age_max=22, age_category="collegiate",
     level_of_play="elite", season_or_timeframe="1996-2005 (10 years)",
     mouthguard_injury_relation="analyzed",
 )
-w("trinidad2007", [
-    make("trinidad2007", **trinidad_common,
+w("cohenca2007", [
+    make("cohenca2007", **trinidad_common,
         sport_raw="all NCAA Division I athletes USC (aggregate)",
         sport="all_sports_aggregate", sport_category="",
         subgroup_label="all_intercollegiate",
@@ -178,14 +178,14 @@ w("trinidad2007", [
         rate_raw="", rate_denominator_raw="raw count of dental injuries 1996-2005",
         extraction_notes="USC athletic department dental injury surveillance 1996-2005. 51 traumatic dental injuries total. Basketball highest IR; 5× higher than football where MG mandatory.",
     ),
-    make("trinidad2007", **trinidad_common,
+    make("cohenca2007", **trinidad_common,
         sport_raw="men's basketball (NCAA Division I)",
         sport="basketball", sport_category="limited_contact",
         sex="male", sample_size="",
         rate_raw=10.6, rate_denominator_raw="per 100 athlete-seasons (men's basketball)",
         extraction_notes="Men's basketball: 10.6 injuries per 100 athlete-seasons. Highest sport-specific rate. 5× higher than football (MG mandatory there).",
     ),
-    make("trinidad2007", **trinidad_common,
+    make("cohenca2007", **trinidad_common,
         sport_raw="women's basketball (NCAA Division I)",
         sport="basketball", sport_category="limited_contact",
         sex="female", sample_size="",
@@ -195,8 +195,8 @@ w("trinidad2007", [
 ])
 
 # 11499758 — Budapest
-w("mate2001", [make("mate2001",
-    citation="Mate I, Gabris K, Tarjan I. (2001). Dental trauma in children presenting for treatment at the Department of Dentistry for Children and Orthodontics, Budapest, 1985-1999.",
+w("gabris2001", [make("gabris2001",
+    citation="Gábris K, Tarján I, Rózsa N. (2001). Dental trauma in children presenting for treatment at the Department of Dentistry for Children and Orthodontics, Budapest, 1985-1999. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2001, study_type="case_series", country="HU", region="Budapest",
     population_setting="mixed", age_min=1, age_max=18, age_category="mixed",
     sex="mixed", level_of_play="mixed",
@@ -211,8 +211,8 @@ w("mate2001", [make("mate2001",
 )])
 
 # 8883693 — Texas girls' HS basketball
-w("hosea1996", [make("hosea1996",
-    citation="Hosea TM, Carey CC, Harrer MF. (1996). Incidence of injury in Texas girls' high school basketball.",
+w("gomez1996", [make("gomez1996",
+    citation="Gomez E, DeLee JC, Farney WC. (1996). Incidence of injury in Texas girls' high school basketball. The American journal of sports medicine.",
     pub_year=1996, study_type="cohort", country="US", region="Texas",
     population_setting="school", age_min=14, age_max=18, age_category="adolescent",
     sex="female", level_of_play="school_varsity",
@@ -226,14 +226,14 @@ w("hosea1996", [make("hosea1996",
 )])
 
 # 15592602 — Punahou 15-yr
-collins04_common = dict(citation="Collins CL, McKenzie LB, Comstock RD. (2004). Dental Injuries in Intermediate and High School Athletes: A 15-Year Study at Punahou School.",
+collins04_common = dict(citation="Beachy G. (2004). Dental Injuries in Intermediate and High School Athletes: A 15-Year Study at Punahou School. Journal of athletic training.",
     pub_year=2004, study_type="cohort", country="US", region="Hawaii",
     population_setting="school", age_min=11, age_max=18, age_category="mixed",
     level_of_play="school_varsity",  # sex defined per row to avoid kwarg conflict
     season_or_timeframe="1988-2003 (15 years)",
 )
-w("collins2004", [
-    make("collins2004", **collins04_common,
+w("beachy2004", [
+    make("beachy2004", **collins04_common,
         sport_raw="all sports — Punahou interscholastic (15-yr aggregate)",
         sport="all_sports_aggregate", sport_category="",
         subgroup_label="all_sports", sample_size=2445, injury_count=56,
@@ -241,7 +241,7 @@ w("collins2004", [
         rate_raw=0.2, rate_denominator_raw="(%) of 19,492 total injuries that were dental",
         extraction_notes="15-yr longitudinal Punahou School Hawaii. 2445 total students; ~1340 annually in athletics. 123 teams across 19F/18M/2coed sports. 19,492 total injuries → 56 dental (23 tooth, 20 jaw, 13 soft tissue). Rates per 1000 athlete-sessions reported.",
     ),
-    make("collins2004", **collins04_common,
+    make("beachy2004", **collins04_common,
         sport_raw="girls' wrestling",
         sport="wrestling", sport_category="contact",
         sex="female", subgroup_label="",
@@ -249,7 +249,7 @@ w("collins2004", [
         rate_per_1000_ae=0.243,
         extraction_notes="Highest dental injury rate at Punahou over 15 yrs. Very wide CI.",
     ),
-    make("collins2004", **collins04_common,
+    make("beachy2004", **collins04_common,
         sport_raw="boys' judo",
         sport="martial_arts_other", sport_category="contact",
         sex="male", subgroup_label="",
@@ -257,7 +257,7 @@ w("collins2004", [
         rate_per_1000_ae=0.189,
         extraction_notes="Boys' judo: 0.189 per 1000 athlete-sessions.",
     ),
-    make("collins2004", **collins04_common,
+    make("beachy2004", **collins04_common,
         sport_raw="boys' soccer",
         sport="football_association", sport_category="limited_contact",
         sex="male", subgroup_label="",
@@ -265,7 +265,7 @@ w("collins2004", [
         rate_per_1000_ae=0.127,
         extraction_notes="Boys' soccer: 0.127 per 1000 athlete-sessions.",
     ),
-    make("collins2004", **collins04_common,
+    make("beachy2004", **collins04_common,
         sport_raw="football — Punahou",
         sport="football_american", sport_category="contact",
         sex="male", subgroup_label="",
@@ -277,7 +277,7 @@ w("collins2004", [
 
 # 16809595 — Brazil adolescents social capital
 w("pattussi2006", [make("pattussi2006",
-    citation="Pattussi MP, Hardy R, Sheiham A. (2006). Neighborhood social capital and dental injuries in Brazilian adolescents.",
+    citation="Pattussi MP, Hardy R, Sheiham A. (2006). Neighborhood social capital and dental injuries in Brazilian adolescents. American journal of public health.",
     pub_year=2006, study_type="cross_sectional", country="BR", region="Distrito Federal",
     population_setting="school", age_min=14, age_max=15, age_category="adolescent",
     sex="mixed", level_of_play="recreational",

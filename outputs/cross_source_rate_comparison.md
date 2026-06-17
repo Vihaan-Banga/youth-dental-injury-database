@@ -33,7 +33,7 @@ Large spread across sources is expected; it does NOT mean the database is wrong.
 |---|---:|---|---|---|---:|---|---|
 | azadani2023 | 2023 | US | adolescent | female | **0.035** | per 100,000 athlete-exposures |  |
 | collins2016 | 2016 | US | adolescent | female | **0.039** | per 100,000 athlete-exposures |  |
-| yard2015 | 2015 | US | collegiate | female | **0.060** | per 1000 AE (dental specifically) | dental_subset |
-| yard2015 | 2015 | US | collegiate | female | **0.940** | per 1000 AE (head/face/eye combined) | head_face_eye_aggregate |
+| gardner2015 | 2015 | US | collegiate | female | **0.060** | per 1000 AE (dental specifically) | dental_subset |
+| gardner2015 | 2015 | US | collegiate | female | **0.940** | per 1000 AE (head/face/eye combined) | head_face_eye_aggregate |
 
 *Spread: min=0.035, max=0.940, ratio=26.9x*

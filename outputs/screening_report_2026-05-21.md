@@ -1,6 +1,6 @@
 # Screening Report — PubMed seed of 2026-05-21
 
-_Generated 2026-06-12 from `data/extracted/_screening/screening_decisions.csv`._
+_Generated 2026-06-17 from `data/extracted/_screening/screening_decisions.csv`._
 
 ## What this is
 

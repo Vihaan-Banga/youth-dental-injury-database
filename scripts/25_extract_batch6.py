@@ -42,8 +42,8 @@ def w(sid, rows):
 
 
 # 31179757 — NEISS pediatric 2000-2017
-w("collins_neiss2019", [make("collins_neiss2019",
-    citation="Collins CL, et al. (2019). Pediatric Sports- and Recreation-Related Dental Injuries Treated in US Emergency Departments. Clinical Pediatrics.",
+w("montero2019", [make("montero2019",
+    citation="Montero E, Kistamgari S, Chounthirath T, Michaels NL, Zhu M, Smith GA. (2019). Pediatric Sports- and Recreation-Related Dental Injuries Treated in US Emergency Departments. Clinical pediatrics.",
     pub_year=2019, study_type="surveillance", country="US",
     population_setting="mixed", age_min=0, age_max=17, age_category="mixed",
     sex="mixed", level_of_play="mixed",
@@ -59,7 +59,7 @@ w("collins_neiss2019", [make("collins_neiss2019",
 
 
 # 34879017 — NEISS baseball youth craniofacial
-kaplan_common = dict(citation="Kaplan N, Kim M, Slavin B, Kaplan L. (2022). Baseball-Related Craniofacial Injury Among the Youth: A National Electronic Injury Surveillance System Database Study. J Craniofac Surg.",
+kaplan_common = dict(citation="Kaplan N, Kim M, Slavin B, Kaplan L, Thaller SR. (2022). Baseball-Related Craniofacial Injury Among the Youth: A National Electronic Injury Surveillance System Database Study. The Journal of craniofacial surgery.",
     pub_year=2022, study_type="surveillance", country="US",
     population_setting="mixed", sex="mixed", level_of_play="mixed",
     sport_raw="youth baseball (NEISS)",
@@ -87,7 +87,7 @@ w("kaplan2022", [
 
 
 # 33710051 — Columbia NCAA D1 college athletes 682
-rajan_common = dict(citation="Rajan JE, et al. (2021). Prevalence of Dentofacial Injuries and Concussions Among College Athletes and Their Perceptions of Mouthguards.",
+rajan_common = dict(citation="Stanbouly D, Stanbouly R, Lee KC, Chuang SK. (2021). Prevalence of Dentofacial Injuries and Concussions Among College Athletes and Their Perceptions of Mouthguards. The Journal of craniofacial surgery.",
     pub_year=2021, study_type="cross_sectional", country="US", region="New York",
     population_setting="club", age_min=17, age_max=22, age_category="collegiate",
     level_of_play="elite",
@@ -96,22 +96,22 @@ rajan_common = dict(citation="Rajan JE, et al. (2021). Prevalence of Dentofacial
     season_or_timeframe="cross-sectional survey",
     mouthguard_injury_relation="analyzed",
 )
-w("rajan2021", [
-    make("rajan2021", **rajan_common, sex="mixed",
+w("stanbouly2021", [
+    make("stanbouly2021", **rajan_common, sex="mixed",
         subgroup_label="overall",
         sample_size=224,  # the 224 contact-sport athletes inferred from 14.3% × 224 → 32; full 682 includes non-athletes maybe?
         injury_count="", injury_type_raw="overall dental/facial/concussion incidence (survey)",
         mouthguard_use_rate=0.276,
         extraction_notes="682 NCAA D1 college athletes Columbia University. Mean age 19.4 (17-22). 47.6% male. 27.6% reported MG use. Mouth-molded MG most popular (56.7%). MG use much higher in contact athletes (43.3% vs 1.2% noncontact, p<.01).",
     ),
-    make("rajan2021", **rajan_common, sex="mixed",
+    make("stanbouly2021", **rajan_common, sex="mixed",
         subgroup_label="contact_sports",
         sample_size="", injury_count="",
         injury_type_raw="dental injuries (contact sport subset)",
         rate_raw=14.3, rate_denominator_raw="(%) of contact sport athletes with dental injury",
         extraction_notes="Contact sport athletes: dental 14.3%, facial 35.0%, concussion 32.6% (all p<.01 vs noncontact). MG use 43.3%.",
     ),
-    make("rajan2021", **rajan_common, sex="mixed",
+    make("stanbouly2021", **rajan_common, sex="mixed",
         subgroup_label="noncontact_sports",
         sample_size="", injury_count=0,
         injury_type_raw="dental injuries (noncontact subset)",
@@ -122,7 +122,7 @@ w("rajan2021", [
 
 
 # 33710063 — NEISS amateur ice hockey
-ehockey_common = dict(citation="Ekanayake K, et al. (2021). Skating on Thin Ice: Craniofacial Injuries in Amateur Ice Hockey.",
+ehockey_common = dict(citation="Pierrot RG, Weber LE, Wolfe EM, Slavin BR, Eidelson SA, Plotsker E, Mathew PJ, Thaller SR. (2021). Skating on Thin Ice: Craniofacial Injuries in Amateur Ice Hockey. The Journal of craniofacial surgery.",
     pub_year=2021, study_type="surveillance", country="US",
     population_setting="mixed", sex="mixed", level_of_play="mixed",
     sport_raw="amateur ice hockey (NEISS 2010-2019)",
@@ -130,8 +130,8 @@ ehockey_common = dict(citation="Ekanayake K, et al. (2021). Skating on Thin Ice:
     injury_category="orofacial_with_dental",
     season_or_timeframe="2010-2019 (10 years)",
 )
-w("ekanayake2021", [
-    make("ekanayake2021", **ehockey_common,
+w("pierrot2021", [
+    make("pierrot2021", **ehockey_common,
         age_min=5, age_max=99, age_category="mixed",
         extraction_basis="youth_primary",
         subgroup_label="overall",
@@ -139,7 +139,7 @@ w("ekanayake2021", [
         injury_type_raw="craniofacial injuries (concussion 39.9%, dental 1%)",
         extraction_notes="NEISS 2010-2019, 2,544 hockey craniofacial injuries. 12-18yo = 53.8% (largest age band). Concussion 39.9% most frequent dx; dental injuries 1% (least).",
     ),
-    make("ekanayake2021", **ehockey_common,
+    make("pierrot2021", **ehockey_common,
         age_min=12, age_max=18, age_category="adolescent",
         subgroup_label="age_12_18",
         sample_size="",
@@ -152,8 +152,8 @@ w("ekanayake2021", [
 
 
 # 33741876 — NEISS soccer craniofacial
-w("dafnis_soccer2021", [make("dafnis_soccer2021",
-    citation="Dafnis CL, et al. (2021). Kick Start to an Epidemiological Report of Soccer-Related Craniofacial Trauma Analysis.",
+w("nahas2021", [make("nahas2021",
+    citation="Nahas JV, Choi MJ, Wolfe EM, Pierrot RG, Slavin BR, Plotsker EL, Mathew PJ, Thaller SR. (2021). Kick Start to an Epidemiological Report of Soccer-Related Craniofacial Trauma Analysis. The Journal of craniofacial surgery.",
     pub_year=2021, study_type="surveillance", country="US",
     population_setting="mixed", age_min=6, age_max=34, age_category="mixed",
     extraction_basis="youth_primary",
@@ -169,8 +169,8 @@ w("dafnis_soccer2021", [make("dafnis_soccer2021",
 
 
 # 33654038 — NEISS basketball craniofacial
-w("basketball_craniofacial2021", [make("basketball_craniofacial2021",
-    citation="(2021). Heads Up Play: Acute Assessment and Management of Basketball-Related Craniofacial Injuries by On-Court Personnel.",
+w("slavin2021", [make("slavin2021",
+    citation="Slavin BR, Pierrot RG, Sprau AC, Wolfe EM, Mathew PJ, Chopra K, Thaller SR. (2021). Heads Up Play: Acute Assessment and Management of Basketball-Related Craniofacial Injuries by On-Court Personnel. The Journal of craniofacial surgery.",
     pub_year=2021, study_type="surveillance", country="US",
     population_setting="mixed", age_min=5, age_max=49, age_category="mixed",
     extraction_basis="youth_primary",
@@ -186,7 +186,7 @@ w("basketball_craniofacial2021", [make("basketball_craniofacial2021",
 
 
 # 31937578 — Youth ice hockey MG concussion case-control
-chisholm_common = dict(citation="Chisholm DA, et al. (2020). Mouthguard use in youth ice hockey and the risk of concussion: nested case-control study of 315 cases.",
+chisholm_common = dict(citation="Chisholm DA, Black AM, Palacios-Derflingher L, Eliason PH, Schneider KJ, Emery CA, Hagel BE. (2020). Mouthguard use in youth ice hockey and the risk of concussion: nested case-control study of 315 cases. British journal of sports medicine.",
     pub_year=2020, study_type="cohort", country="CA",
     population_setting="club", age_min=10, age_max=17, age_category="adolescent",
     level_of_play="club",
@@ -217,8 +217,8 @@ w("chisholm2020", [
 
 
 # 30865370 — Kuwait amateur soccer 7-18
-w("alkilzy2019", [make("alkilzy2019",
-    citation="Alkilzy M, Aljafar AM, Splieth CH. (2019). Prevalence and severity of traumatic dental injuries among young amateur soccer players: A screening investigation.",
+w("qudeimat2019", [make("qudeimat2019",
+    citation="Qudeimat MA, AlHasan AA, AlHasan MA, Al-Khayat K, Andersson L. (2019). Prevalence and severity of traumatic dental injuries among young amateur soccer players: A screening investigation. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2019, study_type="cross_sectional", country="KW",
     population_setting="club", age_min=7, age_max=18, age_category="mixed",
     sex="male", level_of_play="club",
@@ -234,14 +234,14 @@ w("alkilzy2019", [make("alkilzy2019",
 
 
 # 27452795 — Japan school sports clubs RR
-otsuru_common = dict(citation="Otsuru J, Tamura S. (2016). Descriptive study of dental injury incurred by junior high school and high school students during participation in school sports clubs.",
+otsuru_common = dict(citation="Nonoyama T, Shimazaki Y, Nakagaki H, Tsuge S. (2016). Descriptive study of dental injury incurred by junior high school and high school students during participation in school sports clubs. International dental journal.",
     pub_year=2016, study_type="surveillance", country="JP",
     population_setting="school", level_of_play="school_jv",
     sample_size="", injury_count="",
     season_or_timeframe="fiscal year 2006",
 )
-w("otsuru2016", [
-    make("otsuru2016", **otsuru_common,
+w("nonoyama2016", [
+    make("nonoyama2016", **otsuru_common,
         sport_raw="all sports — Japanese junior HS (boys, exercise-related dental injury RR)",
         sport="all_sports_aggregate", sport_category="",
         age_min=12, age_max=15, age_category="adolescent",
@@ -249,7 +249,7 @@ w("otsuru2016", [
         rate_raw=0.7, rate_denominator_raw="rate ratio (RR) of dental injury sports vs other contexts (Japan JHS boys)",
         extraction_notes="Japan Sport Council 7-prefecture FY2006. JHS boys overall RR 0.7 (p<.001 — counterintuitively LOWER). Top sport for boys JHS: softball RR 7.7.",
     ),
-    make("otsuru2016", **otsuru_common,
+    make("nonoyama2016", **otsuru_common,
         sport_raw="all sports — Japanese junior HS girls",
         sport="all_sports_aggregate", sport_category="",
         age_min=12, age_max=15, age_category="adolescent",
@@ -257,7 +257,7 @@ w("otsuru2016", [
         rate_raw=1.3, rate_denominator_raw="rate ratio (RR) of dental injury sports vs other contexts (Japan JHS girls)",
         extraction_notes="JHS girls RR 1.3 (p<.05). Top sport for girls JHS: handball RR 3.9.",
     ),
-    make("otsuru2016", **otsuru_common,
+    make("nonoyama2016", **otsuru_common,
         sport_raw="all sports — Japanese HS boys",
         sport="all_sports_aggregate", sport_category="",
         age_min=15, age_max=18, age_category="adolescent",
@@ -265,7 +265,7 @@ w("otsuru2016", [
         rate_raw=2.6, rate_denominator_raw="rate ratio (RR) of dental injury sports vs other contexts (Japan HS boys)",
         extraction_notes="HS boys RR 2.6 (p<.001). Top sports: Japanese-style wrestling RR 18.5, rugby RR 7.3.",
     ),
-    make("otsuru2016", **otsuru_common,
+    make("nonoyama2016", **otsuru_common,
         sport_raw="all sports — Japanese HS girls",
         sport="all_sports_aggregate", sport_category="",
         age_min=15, age_max=18, age_category="adolescent",
@@ -277,8 +277,8 @@ w("otsuru2016", [
 
 
 # 25881567 — Junior rugby league Gold Coast
-w("kanagasingam2016", [make("kanagasingam2016",
-    citation="Kanagasingam S, Reddy R, Smith YH. (2016). Mouthguard Use and Awareness of Junior Rugby League Players in the Gold Coast, Australia: A Need for More Education. Clin J Sport Med.",
+w("kroon2016", [make("kroon2016",
+    citation="Kroon J, Cox JA, Knight JE, Nevins PN, Kong WW. (2016). Mouthguard Use and Awareness of Junior Rugby League Players in the Gold Coast, Australia: A Need for More Education. Clinical journal of sport medicine : official journal of the Canadian Academy of Sport Medicine.",
     pub_year=2016, study_type="cross_sectional", country="AU", region="Gold Coast",
     population_setting="club", age_min=6, age_max=17, age_category="mixed",
     sex="mixed", level_of_play="club",

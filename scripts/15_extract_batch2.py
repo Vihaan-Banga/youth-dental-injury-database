@@ -50,8 +50,8 @@ def write_csv(sid, rows):
 
 
 # 40771058 — youth basketball Turkey
-ce_cite = "Cetin SE, et al. (2026). Youth Basketball Players' Awareness and Experiences of Sports-Related Traumatic Dental Injuries and Mouthguards in Turkey: A Cross-Sectional Study."
-write_csv("cetin2026", [make("cetin2026",
+ce_cite = "Comert H, Ozdemir M, Kuscu E. (2026). Youth Basketball Players' Awareness and Experiences of Sports-Related Traumatic Dental Injuries and Mouthguards in Turkey: A Cross-Sectional Study. Dental traumatology : official publication of International Association for Dental Traumatology."
+write_csv("comert2026", [make("comert2026",
     citation=ce_cite, pub_year=2026, study_type="cross_sectional",
     country="TR", region="", population_setting="club",
     age_min=8, age_max=18, age_category="mixed",
@@ -69,8 +69,8 @@ write_csv("cetin2026", [make("cetin2026",
 
 
 # 37818921 — NEISS basketball mechanism study
-wi_cite = "Williams T, et al. (2024). Mechanisms of dental injuries in basketball, United States, 2003-2022. Dental Traumatology."
-write_csv("williams2024", [make("williams2024",
+wi_cite = "Liang L, Chuang SK. (2024). Mechanisms of dental injuries in basketball, United States, 2003-2022. Dental traumatology : official publication of International Association for Dental Traumatology."
+write_csv("liang2024", [make("liang2024",
     citation=wi_cite, pub_year=2024, study_type="surveillance",
     country="US", region="", population_setting="mixed",
     age_min=0, age_max=99, age_category="mixed",  # NEISS analysis, full age range
@@ -88,8 +88,8 @@ write_csv("williams2024", [make("williams2024",
 
 
 # 37743045 — NEISS soccer craniomaxillofacial 2003-2022
-wi23_cite = "Williams T, et al. (2023). Trends in Soccer-Related Craniomaxillofacial Injuries, United States 2003-2022. Journal of Oral & Maxillofacial Surgery."
-write_csv("williams2023", [make("williams2023",
+wi23_cite = "Liang L, Chuang SK. (2023). Trends in Soccer-Related Craniomaxillofacial Injuries, United States 2003-2022. Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons."
+write_csv("liang2023", [make("liang2023",
     citation=wi23_cite, pub_year=2023, study_type="surveillance",
     country="US", region="", population_setting="mixed",
     age_min=0, age_max=99, age_category="mixed",
@@ -109,14 +109,14 @@ write_csv("williams2023", [make("williams2023",
 
 
 # 36929194 — Japan HICBT
-nasu_cite = "Nasu A, et al. (2023). Head injuries caused by contact with teeth during sports and exercise activities in Japanese schools during the period 2012-2018. Dental Traumatology."
+nasu_cite = "Kanemitsu A, Nakajima K, Tsutsui A, Sakaue T, Togo S, Takeda T, Fukuda K. (2023). Head injuries caused by contact with teeth during sports and exercise activities in Japanese schools during the period 2012-2018. Dental traumatology : official publication of International Association for Dental Traumatology."
 nasu_common = dict(citation=nasu_cite, pub_year=2023, study_type="surveillance",
     country="JP", region="", population_setting="school",
     sex="mixed", level_of_play="school_jv",
     season_or_timeframe="2012-2018 (7 years)",
 )
-write_csv("nasu2023", [
-    make("nasu2023", **nasu_common,
+write_csv("kanemitsu2023", [
+    make("kanemitsu2023", **nasu_common,
         age_min=4, age_max=18, age_category="mixed",
         sport_raw="all school sports (HICBT aggregate)",
         sport="all_sports_aggregate", sport_category="",
@@ -128,7 +128,7 @@ write_csv("nasu2023", [
         rate_raw=0.79, rate_denominator_raw="(%) of 463,527 school head injuries = HICBT sport-related (3650)",
         extraction_notes="Japan Sport Council 2012-2018 school head injuries. 4495 HICBT total (1% of head injuries), 3650 (81.2%) sport-related. Basketball 57.07% (JHS) / 50.43% (HS) of HICBT; soccer/futsal 13.38% / 24.01%; tag games 22.73% (kindergarten) / 39.03% (elementary).",
     ),
-    make("nasu2023", **nasu_common,
+    make("kanemitsu2023", **nasu_common,
         age_min=12, age_max=15, age_category="adolescent",
         sport_raw="basketball — junior high school (HICBT)",
         sport="basketball", sport_category="limited_contact",
@@ -137,7 +137,7 @@ write_csv("nasu2023", [
         rate_raw=57.07, rate_denominator_raw="(%) of HICBT in JHS attributed to basketball",
         extraction_notes="Basketball was the #1 cause of HICBT in Japanese junior high schools (57.07%).",
     ),
-    make("nasu2023", **nasu_common,
+    make("kanemitsu2023", **nasu_common,
         age_min=15, age_max=18, age_category="adolescent",
         sport_raw="basketball — high school (HICBT)",
         sport="basketball", sport_category="limited_contact",
@@ -150,8 +150,8 @@ write_csv("nasu2023", [
 
 
 # 34643329 — Gaelic football children
-mo_cite = "Mooney J, et al. (2021). Cross-sectional cohort study on the use of mouthguards by children playing Gaelic football in Ireland. Dental Traumatology."
-write_csv("mooney2021", [make("mooney2021",
+mo_cite = "Shore E, O'Connell AC. (2021). Cross-sectional cohort study on the use of mouthguards by children playing Gaelic football in Ireland. Dental traumatology : official publication of International Association for Dental Traumatology."
+write_csv("shore2021", [make("shore2021",
     citation=mo_cite, pub_year=2021, study_type="cross_sectional",
     country="IE", region="", population_setting="club",
     age_min=9, age_max=16, age_category="mixed",
@@ -169,7 +169,7 @@ write_csv("mooney2021", [make("mooney2021",
 
 
 # 33746633 — Lebanon
-na_cite = "Naasan H, et al. (2021). Prevalence and Etiological Factors of Dental Trauma among 12- and 15-Year-Old Schoolchildren of Lebanon: A National Study."
+na_cite = "Abdel Malak C, Chakar C, Romanos A, Rachidi S. (2021). Prevalence and Etiological Factors of Dental Trauma among 12- and 15-Year-Old Schoolchildren of Lebanon: A National Study. TheScientificWorldJournal."
 na_common = dict(citation=na_cite, pub_year=2021, study_type="cross_sectional",
     country="LB", region="", population_setting="school",
     sport_raw="all causes (national TDI study — sport one of several etiologies)",
@@ -177,8 +177,8 @@ na_common = dict(citation=na_cite, pub_year=2021, study_type="cross_sectional",
     season_or_timeframe="national cross-sectional",
     level_of_play="recreational", sex="mixed",
 )
-write_csv("naasan2021", [
-    make("naasan2021", **na_common,
+write_csv("abdel2021", [
+    make("abdel2021", **na_common,
         age_min=12, age_max=15, age_category="mixed",
         subgroup_label="overall",
         sample_size=7902,
@@ -188,14 +188,14 @@ write_csv("naasan2021", [
         rate_raw=10.9, rate_denominator_raw="(%) of 7902 schoolchildren with TDI",
         extraction_notes="National stratified study Lebanon. 3806M / 4096F. Maxillary central incisors 83.7%. Causes: falls 52.5% leading. Risk factors: overjet (OR=2.32), deficient lip coverage (OR=5.73), gender (OR=5.36).",
     ),
-    make("naasan2021", **na_common,
+    make("abdel2021", **na_common,
         age_min=12, age_max=12, age_category="youth",
         subgroup_label="age_12",
         sample_size=3985, injury_count="",
         rate_raw="", rate_denominator_raw="age-12 subset of national sample (n=3985, prevalence not stratified in abstract)",
         extraction_notes="Age-12 subset; per-age prevalence not in abstract.",
     ),
-    make("naasan2021", **na_common,
+    make("abdel2021", **na_common,
         age_min=15, age_max=15, age_category="adolescent",
         subgroup_label="age_15",
         sample_size=3917, injury_count="",
@@ -206,8 +206,8 @@ write_csv("naasan2021", [
 
 
 # 33292522 — Hamadan Iran random forest
-az_cite = "Azizi A, et al. (2020). Random forest algorithm to identify factors associated with sports-related dental injuries in 6 to 13-year-old athlete children in Hamadan, Iran-2018."
-write_csv("azimi2020", [make("azimi2020",
+az_cite = "Farhadian M, Torkaman S, Mojarad F. (2020). Random forest algorithm to identify factors associated with sports-related dental injuries in 6 to 13-year-old athlete children in Hamadan, Iran-2018 -a cross-sectional study. BMC sports science, medicine & rehabilitation."
+write_csv("farhadian2020", [make("farhadian2020",
     citation=az_cite, pub_year=2020, study_type="cross_sectional",
     country="IR", region="Hamadan", population_setting="club",
     age_min=6, age_max=13, age_category="youth",
@@ -225,8 +225,8 @@ write_csv("azimi2020", [make("azimi2020",
 
 
 # 31765062 — Catalonia field hockey
-ca_cite = "Calderon-Diaz J, et al. (2020). Experience with mouthguards and prevalence of orofacial injuries among field hockey players in Catalonia."
-write_csv("calderon2020", [make("calderon2020",
+ca_cite = "Zamora-Olave C, Willaert E, Parera L, Riera-Puñet N, Martinez-Gomis J. (2020). Experience with mouthguards and prevalence of orofacial injuries among field hockey players in Catalonia. Dental traumatology : official publication of International Association for Dental Traumatology."
+write_csv("zamoraolave2020", [make("zamoraolave2020",
     citation=ca_cite, pub_year=2020, study_type="cross_sectional",
     country="ES", region="Catalonia", population_setting="club",
     age_min=10, age_max=99, age_category="mixed",
@@ -246,15 +246,15 @@ write_csv("calderon2020", [make("calderon2020",
 
 
 # 29526055 — 4 contact sports
-za_cite = "Zaror et al. (2018). Knowledge and attitudes about sports-related dental injuries and mouthguard use in young athletes in four different contact sports."
+za_cite = "Galic T, Kuncic D, Poklepovic Pericic T, Galic I, Mihanovic F, Bozic J, Herceg M. (2018). Knowledge and attitudes about sports-related dental injuries and mouthguard use in young athletes in four different contact sports-water polo, karate, taekwondo and handball. Dental traumatology : official publication of International Association for Dental Traumatology."
 za_common = dict(citation=za_cite, pub_year=2018, study_type="cross_sectional",
     country="", region="", population_setting="club",
     age_min=10, age_max=20, age_category="mixed",
     sex="mixed", level_of_play="mixed",
     season_or_timeframe="cross-sectional",
 )
-write_csv("zaror2018", [
-    make("zaror2018", **za_common,
+write_csv("galic2018", [
+    make("galic2018", **za_common,
         sport_raw="all 4 contact sports (aggregate)",
         sport="all_sports_aggregate", sport_category="contact",
         subgroup_label="all_4_sports",
@@ -264,25 +264,25 @@ write_csv("zaror2018", [
         mouthguard_use_rate=0.41, mouthguard_injury_relation="analyzed",
         extraction_notes="229 young athletes (mean age 12.9 ± 3.2). Orofacial injury 25.3% (58); dental 13.5% (31). MG use 41% overall (taekwondo 73.7%, karate 70.7%, handball 14.5%, water polo 5.1%).",
     ),
-    make("zaror2018", **za_common, sport_raw="water polo", sport="water_polo", sport_category="contact",
+    make("galic2018", **za_common, sport_raw="water polo", sport="water_polo", sport_category="contact",
         subgroup_label="", sample_size=59,
         injury_count=int(round(59 * 0.186)),
         rate_raw=18.6, rate_denominator_raw="(%) of 59 water polo athletes with dental injury",
         mouthguard_use_rate=0.051, extraction_notes="Water polo subset: dental injury 18.6%, MG 5.1%.",
     ),
-    make("zaror2018", **za_common, sport_raw="karate", sport="martial_arts_other", sport_category="contact",
+    make("galic2018", **za_common, sport_raw="karate", sport="martial_arts_other", sport_category="contact",
         subgroup_label="karate", sample_size=58,
         injury_count=int(round(58 * 0.172)),
         rate_raw=17.2, rate_denominator_raw="(%) of 58 karate athletes with dental injury",
         mouthguard_use_rate=0.707, extraction_notes="Karate subset: dental 17.2%, MG 70.7%.",
     ),
-    make("zaror2018", **za_common, sport_raw="taekwondo", sport="martial_arts_other", sport_category="contact",
+    make("galic2018", **za_common, sport_raw="taekwondo", sport="martial_arts_other", sport_category="contact",
         subgroup_label="taekwondo", sample_size=57,
         injury_count=int(round(57 * 0.035)),
         rate_raw=3.5, rate_denominator_raw="(%) of 57 taekwondo athletes with dental injury",
         mouthguard_use_rate=0.737, extraction_notes="Taekwondo subset: dental 3.5% (lowest), MG 73.7% (highest).",
     ),
-    make("zaror2018", **za_common, sport_raw="handball", sport="handball", sport_category="contact",
+    make("galic2018", **za_common, sport_raw="handball", sport="handball", sport_category="contact",
         subgroup_label="", sample_size=55,
         injury_count=int(round(55 * 0.218)),
         rate_raw=21.8, rate_denominator_raw="(%) of 55 handball athletes with dental injury",
@@ -292,7 +292,7 @@ write_csv("zaror2018", [
 
 
 # 26093006 — NCAA women's field hockey
-yard_cite = "Yard EE, Comstock RD. (2015). Head, Face, and Eye Injuries in Collegiate Women's Field Hockey."
+yard_cite = "Gardner EC. (2015). Head, Face, and Eye Injuries in Collegiate Women's Field Hockey. The American journal of sports medicine."
 yard_common = dict(citation=yard_cite, pub_year=2015, study_type="surveillance",
     country="US", region="", population_setting="club",
     age_min=18, age_max=22, age_category="collegiate",
@@ -301,8 +301,8 @@ yard_common = dict(citation=yard_cite, pub_year=2015, study_type="surveillance",
     sport="hockey_field", sport_category="limited_contact",
     season_or_timeframe="2004-05 through 2008-09 seasons",
 )
-write_csv("yard2015", [
-    make("yard2015", **yard_common,
+write_csv("gardner2015", [
+    make("gardner2015", **yard_common,
         subgroup_label="head_face_eye_aggregate",
         sample_size=150, injury_count=150,
         injury_type_raw="head/face/eye traumatic injury (composite)",
@@ -310,7 +310,7 @@ write_csv("yard2015", [
         rate_per_1000_ae=0.94,
         extraction_notes="NCAA ISS 2004-05 through 2008-09 seasons. 150 traumatic head/face/eye injuries; weighted occurrence 1587.3. Contact with apparatus caused 72.9% (elevated ball 47.9%).",
     ),
-    make("yard2015", **yard_common,
+    make("gardner2015", **yard_common,
         subgroup_label="dental_subset",
         sample_size="", injury_count="",
         injury_type_raw="traumatic dental injury (subset of head/face/eye)",
@@ -323,7 +323,7 @@ write_csv("yard2015", [
 
 
 # 25500920 — central India 12-22
-de_cite = "Deshpande et al. (2014). Dental trauma and mouthguard awareness and use among contact and noncontact athletes in central India."
+de_cite = "Tiwari V, Saxena V, Tiwari U, Singh A, Jain M, Goud S. (2014). Dental trauma and mouthguard awareness and use among contact and noncontact athletes in central India. Journal of oral science."
 de_common = dict(citation=de_cite, pub_year=2014, study_type="cross_sectional",
     country="IN", region="Central India", population_setting="club",
     age_min=12, age_max=22, age_category="mixed",
@@ -331,8 +331,8 @@ de_common = dict(citation=de_cite, pub_year=2014, study_type="cross_sectional",
     season_or_timeframe="cross-sectional",
     mouthguard_injury_relation="analyzed",
 )
-write_csv("deshpande2014", [
-    make("deshpande2014", **de_common,
+write_csv("tiwari2014", [
+    make("tiwari2014", **de_common,
         sport_raw="contact sports (subset)",
         sport="all_sports_aggregate", sport_category="contact",
         subgroup_label="contact",
@@ -341,7 +341,7 @@ write_csv("deshpande2014", [
         rate_raw=9.0, rate_denominator_raw="(%) of contact athletes with dental injury",
         extraction_notes="Contact sports n~167 (15 dental injuries / 0.09). Dental injuries significantly more in contact (9%) vs noncontact (2.5%).",
     ),
-    make("deshpande2014", **de_common,
+    make("tiwari2014", **de_common,
         sport_raw="noncontact sports (subset)",
         sport="all_sports_aggregate", sport_category="non_contact",
         subgroup_label="noncontact",

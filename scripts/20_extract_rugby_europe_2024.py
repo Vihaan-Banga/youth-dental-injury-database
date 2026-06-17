@@ -74,7 +74,7 @@ rows.append(make(
     injury_category="orofacial_with_dental",
     rate_raw=63.0,
     rate_denominator_raw="per 1000 player-match-hours (Sevens — U18 Men's Championship)",
-    rate_per_1000_ae=63.0,  # PMH ≈ AE in 7s context
+    rate_per_1000_ae="",  # C11: player-match-hours is not an athlete-exposure denominator (decisions 2026-06-13)
     extraction_notes="Table 2. U18 Men's Championship 2022/23 Rugby Europe Sevens. 7 injuries / 111.1 PMH. Head/face = 3/7 (42.8%) per Table 5.",
 ))
 rows.append(make(
@@ -86,7 +86,7 @@ rows.append(make(
     injury_category="orofacial_with_dental",
     rate_raw=70.6,
     rate_denominator_raw="per 1000 player-match-hours (Sevens — U18 Men's Trophy)",
-    rate_per_1000_ae=70.6,
+    rate_per_1000_ae="",  # C11: player-match-hours is not an athlete-exposure denominator (decisions 2026-06-13)
     extraction_notes="Table 2. U18 Men's Trophy. 9 injuries / 127.4 PMH. Head/face = 1/9 (11.1%) per Table 5.",
 ))
 rows.append(make(
@@ -98,7 +98,7 @@ rows.append(make(
     injury_category="orofacial_with_dental",
     rate_raw=23.6,
     rate_denominator_raw="per 1000 player-match-hours (Sevens — U18 Women's Championship)",
-    rate_per_1000_ae=23.6,
+    rate_per_1000_ae="",  # C11: player-match-hours is not an athlete-exposure denominator (decisions 2026-06-13)
     extraction_notes="Table 2. U18 Women's Championship. 2 injuries / 84.9 PMH. Head/face = 1/2 (50.0%) per Table 5.",
 ))
 rows.append(make(
@@ -110,7 +110,7 @@ rows.append(make(
     injury_category="orofacial_with_dental",
     rate_raw=15.2,
     rate_denominator_raw="per 1000 player-match-hours (Sevens — U18 Women's Trophy)",
-    rate_per_1000_ae=15.2,
+    rate_per_1000_ae="",  # C11: player-match-hours is not an athlete-exposure denominator (decisions 2026-06-13)
     extraction_notes="Table 2. U18 Women's Trophy. 1 injury / 65.6 PMH. That 1 injury was head/face (100%) per Table 5.",
 ))
 
@@ -131,7 +131,7 @@ for label, n_total, head_face_n, head_face_pct, pmh, sex in (
         injury_category="orofacial_with_dental",
         rate_raw=round(head_face_rate, 2),
         rate_denominator_raw="per 1000 player-match-hours (head/face subset)",
-        rate_per_1000_ae=round(head_face_rate, 2),
+        rate_per_1000_ae="",  # C11: player-match-hours is not an athlete-exposure denominator (decisions 2026-06-13)
         extraction_notes=(
             f"Head/face subset: {head_face_n}/{n_total} injuries ({head_face_pct}%). "
             f"Calculated rate {head_face_rate:.2f}/1000 PMH. Rugby Europe reports head/face as "

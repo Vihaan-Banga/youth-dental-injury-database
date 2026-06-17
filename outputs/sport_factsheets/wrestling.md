@@ -6,13 +6,13 @@ _Auto-generated from `master.csv`. 13 rows across 13 sources._
 **Sport category:** `contact`
 **Countries:** US
 **Year span:** 2004-2025
-**Sources contributing:** collins2004, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025
+**Sources contributing:** beachy2004, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025
 
 ## Rates per 1000 athlete-exposures
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| collins2004 | 2004 | US | mixed | female | school_varsity | **0.243** | — | per 1000 athlete-sessions (95% CI 0-2.3) |
+| beachy2004 | 2004 | US | mixed | female | school_varsity | **0.243** | — | per 1000 athlete-sessions (95% CI 0-2.3) |
 
 _Min 0.243, max 0.243, n=1._
 

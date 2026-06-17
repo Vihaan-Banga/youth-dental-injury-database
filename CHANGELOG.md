@@ -6,6 +6,20 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 
 (Working state on `main`. Will become v0.1.0 at the next tag.)
 
+### 2026-06-16 — Author-attribution integrity repair
+
+#### Fixed
+- **Corrected fabricated author attributions across 67 of 93 PubMed sources.** An audit found the AI-assisted extractions had copied paper titles correctly but invented author names (e.g. `williams2024`→ actually Liang & Chuang; `collins2004`→ Beachy; `radelet1996`→ Pasternack; `benson2002`→ Stuart). Rebuilt every `source_id` + `citation` from the authoritative PubMed abstract metadata. Audit (`scripts/34`) now reports **0 author/year mismatches**; re-running the extraction scripts reproduces `master.csv` byte-for-byte. See `docs/decisions.md` 2026-06-16.
+
+#### Added
+- `scripts/34_audit_citations.py` — reusable citation/author audit against cached PubMed abstracts (run before releases).
+- `scripts/35_fix_attributions.py`, `scripts/36_fix_batch_script_attributions.py` — the one-time repair (data + scripts).
+
+#### Changed
+- `scripts/26_bibliography.py` — BibTeX keys now parsed from `docs/sources.md` (was a hardcoded map that carried the wrong ids).
+- `scripts/03_apply_screening_to_sources.py` — `source_id`s are ASCII-folded (e.g. `omalley2012`, `gabris2001`) for valid filenames/BibTeX keys.
+- C11 rate blanking (2026-06-13) encoded into `scripts/19` and `scripts/20` so it survives re-extraction.
+
 ### 2026-06-12 — full-text review of the open-access `needs_human_review` subset
 
 #### Added

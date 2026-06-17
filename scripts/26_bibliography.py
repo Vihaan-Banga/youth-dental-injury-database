@@ -21,48 +21,17 @@ DEC = ROOT / "data/extracted/_screening/screening_decisions.csv"
 OUT = ROOT / "outputs/sources_bibliography.bib"
 
 
-# Map PMID -> source_id where known (so the BibTeX key matches our naming)
-PMID_TO_SOURCE_ID = {
-    "26408377": "collins2016",     "11782645": "labella2002",
-    "19614738": "stewart2009",     "36317716": "azadani2023",
-    "31506903": "quarrie2020",     "21197817": "welch2010",
-    "41501720": "hamdan2026",      "38131151": "udayamalee2024",
-    "33848349": "vanierssel2021",  "29403232": "goswami2017",
-    "29284466": "tsuchiya2017",    "25520762": "singh2014",
-    "21457187": "chan2011",        "18821957": "cetinbas2008",
-    "17991235": "levin2007",       "36394781": "shore2023",
-    "15876321": "amy2005",         "14708646": "levin2003",
-    "40771058": "cetin2026",       "37818921": "williams2024",
-    "37743045": "williams2023",    "36929194": "nasu2023",
-    "34643329": "mooney2021",      "33746633": "naasan2021",
-    "33292522": "azimi2020",       "31765062": "calderon2020",
-    "29526055": "zaror2018",       "26093006": "yard2015",
-    "25500920": "deshpande2014",   "23532813": "yildirim2013",
-    "23045787": "mcevoy2012",      "21063551": "zazryn2010",
-    "19290905": "naidoo2009",      "19030141": "yard2008",
-    "18821952": "mcdonough2008",   "18689347": "mahlangu2008",
-    "17670881": "trinidad2007",    "11499758": "mate2001",
-    "8883693": "hosea1996",        "15592602": "collins2004",
-    "16809595": "pattussi2006",    "11202877": "carter2000",
-    "11678540": "marcenes2001",    "11798994": "benson2002",
-    "15660753": "ranalli2005",     "16162986": "mcintosh2005",
-    "17073918": "nalcaci2006",     "17635356": "ali2007",
-    "18203866": "collins_rugby2008", "18410389": "wong2008",
-    "18721348": "livny2008",       "19208012": "fakhruddin2009",
-    "19566982": "yamada2009",      "20486946": "hayran2010",
-    "22976571": "ivanovics2012",   "11003192": "danis2000",
-    "15178672": "chapman2004",     "16081755": "finch2005",
-    "18519488": "collins_baseball2008", "22260909": "leite2012",
-    "24813778": "alotaibi2014",    "32866487": "baek2021",
-    "33614796": "alawawdeh2021",   "34973164": "alawawdeh2022",
-    "35340727": "wormald2022",     "8784371": "radelet1996",
-    "9191640": "emshoff1997",      "31179757": "collins_neiss2019",
-    "34879017": "kaplan2022",      "33710051": "rajan2021",
-    "33710063": "ekanayake2021",   "33741876": "dafnis_soccer2021",
-    "33654038": "basketball_craniofacial2021",
-    "31937578": "chisholm2020",    "30865370": "alkilzy2019",
-    "27452795": "otsuru2016",      "25881567": "kanagasingam2016",
-}
+# Map PMID -> source_id, parsed from docs/sources.md (authoritative; generated
+# by scripts/03 from the PubMed first author). Parsed rather than hardcoded so
+# the BibTeX keys cannot drift out of sync with the dataset — a hardcoded map
+# here previously carried fabricated ids (williams2024, collins2004, ...); see
+# docs/decisions.md 2026-06-16.
+_SOURCES_MD = ROOT / "docs/sources.md"
+PMID_TO_SOURCE_ID = {}
+for _line in _SOURCES_MD.read_text().splitlines():
+    _m = re.match(r"^\|\s*([A-Za-z0-9_\-]+)\s*\|\s*\[(\d+)\]", _line)
+    if _m:
+        PMID_TO_SOURCE_ID[_m.group(2)] = _m.group(1)
 
 
 def escape_bib(s):

@@ -6,7 +6,7 @@ _Auto-generated from `master.csv`. 12 rows across 11 sources._
 **Sport category:** `limited_contact`
 **Countries:** ES, US
 **Year span:** 2013-2025
-**Sources contributing:** azadani2023, calderon2020, collins2016, neiss2013, neiss2014, neiss2017, neiss2021, neiss2023, neiss2024, neiss2025, yard2015
+**Sources contributing:** azadani2023, collins2016, gardner2015, neiss2013, neiss2014, neiss2017, neiss2021, neiss2023, neiss2024, neiss2025, zamoraolave2020
 
 ## Rates per 1000 athlete-exposures
 
@@ -14,8 +14,8 @@ _Auto-generated from `master.csv`. 12 rows across 11 sources._
 |---|---:|---|---|---|---|---:|---|---|
 | azadani2023 | 2023 | US | adolescent | female | school_varsity | **0.035** | — | per 100,000 athlete-exposures |
 | collins2016 | 2016 | US | adolescent | female | school_varsity | **0.039** | — | per 100,000 athlete-exposures |
-| yard2015 | 2015 | US | collegiate | female | elite | **0.060** | dental_subset | per 1000 AE (dental specifically) |
-| yard2015 | 2015 | US | collegiate | female | elite | **0.940** | head_face_eye_aggregate | per 1000 AE (head/face/eye combined) |
+| gardner2015 | 2015 | US | collegiate | female | elite | **0.060** | dental_subset | per 1000 AE (dental specifically) |
+| gardner2015 | 2015 | US | collegiate | female | elite | **0.940** | head_face_eye_aggregate | per 1000 AE (head/face/eye combined) |
 
 _Min 0.035, max 0.940, n=4._
 
@@ -23,7 +23,7 @@ _Min 0.035, max 0.940, n=4._
 
 | source | year | sex | subgroup | use rate | injury-relation analysis |
 |---|---:|---|---|---:|---|
-| calderon2020 | 2020 | mixed | — | **96%** | mentioned_only |
+| zamoraolave2020 | 2020 | mixed | — | **96%** | mentioned_only |
 
 ## Distribution of rows
 

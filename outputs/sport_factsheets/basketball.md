@@ -6,7 +6,7 @@ _Auto-generated from `master.csv`. 28 rows across 25 sources._
 **Sport category:** `limited_contact`
 **Countries:** IL, IN, JP, NZ, TR, US
 **Year span:** 1996-2026
-**Sources contributing:** azadani2023, basketball_craniofacial2021, cetin2026, collins2016, hosea1996, labella2002, levin2003, nasu2023, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, singh2014, trinidad2007, welch2010, williams2024, wormald2022
+**Sources contributing:** azadani2023, cohenca2007, collins2016, comert2026, gomez1996, kanemitsu2023, labella2002, levin2003, liang2024, mertz2022, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, singh2014, slavin2021, welch2010
 
 ## Rates per 1000 athlete-exposures
 
@@ -24,7 +24,7 @@ _Min 0.024, max 0.670, n=4._
 | source | year | sex | subgroup | use rate | injury-relation analysis |
 |---|---:|---|---|---:|---|
 | labella2002 | 2002 | male | mouthguard_users | **100%** | analyzed |
-| cetin2026 | 2026 | mixed | — | **7%** | mentioned_only |
+| comert2026 | 2026 | mixed | — | **7%** | mentioned_only |
 | levin2003 | 2003 | male | — | **3%** | mentioned_only |
 | labella2002 | 2002 | male | mouthguard_nonusers | **0%** | analyzed |
 

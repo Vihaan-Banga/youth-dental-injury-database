@@ -6,13 +6,13 @@ _Auto-generated from `master.csv`. 9 rows across 8 sources._
 **Sport category:** `contact`
 **Countries:** IR, US
 **Year span:** 2004-2025
-**Sources contributing:** alawawdeh2022, collins2004, halabchi2007, neiss2017, neiss2018, neiss2022, neiss2025, zaror2018
+**Sources contributing:** beachy2004, galic2018, halabchi2007, neiss2017, neiss2018, neiss2022, neiss2025, stanbouly2022c
 
 ## Rates per 1000 athlete-exposures
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| collins2004 | 2004 | US | mixed | male | school_varsity | **0.189** | — | per 1000 athlete-sessions |
+| beachy2004 | 2004 | US | mixed | male | school_varsity | **0.189** | — | per 1000 athlete-sessions |
 
 _Min 0.189, max 0.189, n=1._
 
@@ -20,8 +20,8 @@ _Min 0.189, max 0.189, n=1._
 
 | source | year | sex | subgroup | use rate | injury-relation analysis |
 |---|---:|---|---|---:|---|
-| zaror2018 | 2018 | mixed | taekwondo | **74%** | not_addressed |
-| zaror2018 | 2018 | mixed | karate | **71%** | not_addressed |
+| galic2018 | 2018 | mixed | taekwondo | **74%** | not_addressed |
+| galic2018 | 2018 | mixed | karate | **71%** | not_addressed |
 
 ## Distribution of rows
 

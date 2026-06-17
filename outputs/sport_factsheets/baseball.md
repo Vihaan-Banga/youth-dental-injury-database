@@ -6,16 +6,15 @@ _Auto-generated from `master.csv`. 17 rows across 16 sources._
 **Sport category:** `limited_contact`
 **Countries:** US
 **Year span:** 1996-2025
-**Sources contributing:** collins_baseball2008, danis2000, kaplan2022, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, radelet1996
+**Sources contributing:** collins2008, danis2000, kaplan2022, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, pasternack1996
 
 ## Rates per 1000 athlete-exposures
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| radelet1996 | 1996 | US | mixed | mixed | club | **0.570** | — | per 100 player-hours (overall) |
-| collins_baseball2008 | 2008 | US | adolescent | male | school_varsity | **1.260** | — | per 1000 athlete-exposures (HS baseball overall) |
+| collins2008 | 2008 | US | adolescent | male | school_varsity | **1.260** | — | per 1000 athlete-exposures (HS baseball overall) |
 
-_Min 0.570, max 1.260, n=2._
+_Min 1.260, max 1.260, n=1._
 
 ## Distribution of rows
 

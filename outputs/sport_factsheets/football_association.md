@@ -6,13 +6,13 @@ _Auto-generated from `master.csv`. 20 rows across 20 sources._
 **Sport category:** `limited_contact`
 **Countries:** IL, KW, NZ, US
 **Year span:** 2003-2025
-**Sources contributing:** alkilzy2019, chapman2004, collins2004, dafnis_soccer2021, levin2003, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, nilsson2017, welch2010, williams2023
+**Sources contributing:** beachy2004, faude2017, levin2003, liang2023, nahas2021, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, pribble2004, qudeimat2019, welch2010
 
 ## Rates per 1000 athlete-exposures
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| collins2004 | 2004 | US | mixed | male | school_varsity | **0.127** | — | per 1000 athlete-sessions |
+| beachy2004 | 2004 | US | mixed | male | school_varsity | **0.127** | — | per 1000 athlete-sessions |
 
 _Min 0.127, max 0.127, n=1._
 
@@ -20,7 +20,7 @@ _Min 0.127, max 0.127, n=1._
 
 | source | year | sex | subgroup | use rate | injury-relation analysis |
 |---|---:|---|---|---:|---|
-| chapman2004 | 2004 | mixed | — | **14%** | analyzed |
+| pribble2004 | 2004 | mixed | — | **14%** | analyzed |
 | levin2003 | 2003 | male | — | **3%** | mentioned_only |
 
 ## Distribution of rows

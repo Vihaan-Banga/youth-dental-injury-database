@@ -42,7 +42,7 @@ def w(sid, rows):
 
 # 15022997 — Norway 7-18
 w("skaare2003", [make("skaare2003",
-    citation="Skaare AB, Jacobsen I. (2003). Etiological factors related to dental injuries in Norwegians aged 7-18 years.",
+    citation="Skaare AB, Jacobsen I. (2003). Etiological factors related to dental injuries in Norwegians aged 7-18 years. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2003, study_type="cross_sectional", country="NO", region="Nord-Trøndelag + Oslo",
     population_setting="mixed", age_min=7, age_max=18, age_category="mixed",
     sex="mixed", level_of_play="recreational",
@@ -56,8 +56,8 @@ w("skaare2003", [make("skaare2003",
 )])
 
 # 15522054 — UK London cost study
-w("lee2004", [make("lee2004",
-    citation="Lee JY, Divaris K. (2004). The cost of treating children and adolescents with injuries to their permanent incisors at a dental hospital in the United Kingdom.",
+w("wong2004", [make("wong2004",
+    citation="Wong FS, Kolokotsa K. (2004). The cost of treating children and adolescents with injuries to their permanent incisors at a dental hospital in the United Kingdom. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2004, study_type="case_series", country="GB", region="London",
     population_setting="mixed", age_min=5, age_max=18, age_category="mixed",
     sex="mixed", level_of_play="mixed",
@@ -71,8 +71,8 @@ w("lee2004", [make("lee2004",
 )])
 
 # 21299945 — Cork Ireland
-w("lewis2011", [make("lewis2011",
-    citation="Lewis B, et al. (2011). Clinical audit of children with permanent tooth injuries treated at a dental hospital in Ireland.",
+w("stewart2011", [make("stewart2011",
+    citation="Stewart C, Kinirons M, Delaney P. (2011). Clinical audit of children with permanent tooth injuries treated at a dental hospital in Ireland. European archives of paediatric dentistry : official journal of the European Academy of Paediatric Dentistry.",
     pub_year=2011, study_type="case_series", country="IE", region="Cork",
     population_setting="mixed", age_min=5, age_max=15, age_category="mixed",
     sex="mixed", level_of_play="mixed",
@@ -86,8 +86,8 @@ w("lewis2011", [make("lewis2011",
 )])
 
 # 22051036 — kick-scooter
-w("muller_bolla2012", [make("muller_bolla2012",
-    citation="Müller-Bolla M, et al. (2012). Dental injuries with kick-scooters in 6- to 12-year-old children.",
+w("baumgartner2012", [make("baumgartner2012",
+    citation="Baumgartner EN, Krastl G, Kühl S, Filippi A. (2012). Dental injuries with kick-scooters in 6- to 12-year-old children. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2012, study_type="cross_sectional", country="CH", region="near Basel",
     population_setting="school", age_min=6, age_max=12, age_category="youth",
     sex="mixed", level_of_play="recreational",
@@ -104,8 +104,8 @@ w("muller_bolla2012", [make("muller_bolla2012",
 )])
 
 # 28054391 — children's football
-w("nilsson2017", [make("nilsson2017",
-    citation="Nilsson D, Faber MT, Steffen K, et al. (2017). Head injuries in children's football-results from two prospective cohort studies in four European countries.",
+w("faude2017", [make("faude2017",
+    citation="Faude O, Rössler R, Junge A, Aus der Fünten K, Chomiak J, Verhagen E, Beaudouin F, Dvorak J, Feddermann-Demont N. (2017). Head injuries in children's football-results from two prospective cohort studies in four European countries. Scandinavian journal of medicine & science in sports.",
     pub_year=2017, study_type="cohort", country="", region="4 European countries",
     population_setting="club", age_min=7, age_max=12, age_category="youth",
     sex="mixed", level_of_play="club",
@@ -122,8 +122,8 @@ w("nilsson2017", [make("nilsson2017",
 )])
 
 # 28969286 — India 10-17 self-esteem
-w("jain2017", [make("jain2017",
-    citation="Jain S, et al. (2017). Traumatic Dental Injuries Prevalence and their Impact on Self-esteem among Adolescents in India.",
+w("goyal2017", [make("goyal2017",
+    citation="Goyal N, Singh S, Mathur A, Makkar DK, Aggarwal VP, Sharma A, Kaur P. (2017). Traumatic Dental Injuries Prevalence and their Impact on Self-esteem among Adolescents in India: A Comparative Study. Journal of clinical and diagnostic research : JCDR.",
     pub_year=2017, study_type="case_series", country="IN",
     population_setting="school", age_min=10, age_max=17, age_category="mixed",
     sex="mixed", level_of_play="recreational",
@@ -139,8 +139,8 @@ w("jain2017", [make("jain2017",
 )])
 
 # 29406619 — Alberta ice hockey 15-yr
-w("nielsen2018", [make("nielsen2018",
-    citation="Nielsen TA, et al. (2018). Oral injuries related to Ice Hockey in the province of Alberta, Canada: Trends over the last 15 years.",
+w("rattai2018", [make("rattai2018",
+    citation="Rattai J, Levin L. (2018). Oral injuries related to Ice Hockey in the province of Alberta, Canada: Trends over the last 15 years. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2018, study_type="surveillance", country="CA", region="Alberta",
     population_setting="club", age_min=5, age_max=99, age_category="mixed",
     extraction_basis="youth_primary",
@@ -155,8 +155,8 @@ w("nielsen2018", [make("nielsen2018",
 )])
 
 # 31228311 — Norway 16-yo life course
-w("schuller2019", [make("schuller2019",
-    citation="Schuller AA, et al. (2019). Traumatic dental injuries and experiences along the life course - a study among 16-yr-old pupils in western Norway.",
+w("bratteberg2019", [make("bratteberg2019",
+    citation="Bratteberg M, Thelen DS, Klock KS, Bårdsen A. (2019). Traumatic dental injuries and experiences along the life course - a study among 16-yr-old pupils in western Norway. European journal of oral sciences.",
     pub_year=2019, study_type="cross_sectional", country="NO", region="western Norway",
     population_setting="school", age_min=16, age_max=16, age_category="adolescent",
     sex="mixed", level_of_play="recreational",
@@ -170,14 +170,14 @@ w("schuller2019", [make("schuller2019",
 )])
 
 # 31624810 — Lithuania 11-13
-narb_common = dict(citation="Narbutaite J, Kazimieras K. (2020). Dental Trauma Experience, Attitudes and Trauma Prevention in 11- to 13-Year-Old Lithuanian Schoolchildren.",
+narb_common = dict(citation="Zaleckienė V, Pečiulienė V, Aleksejūnienė J, Drukteinis S, Zaleckas L, Brukienė V. (2020). Dental Trauma Experience, Attitudes and Trauma Prevention in 11- to 13-Year-Old Lithuanian Schoolchildren. Oral health & preventive dentistry.",
     pub_year=2020, study_type="cross_sectional", country="LT",
     population_setting="school", age_min=11, age_max=13, age_category="youth",
     sex="mixed", level_of_play="recreational",
     season_or_timeframe="cross-sectional",
 )
-w("narbutaite2020", [
-    make("narbutaite2020", **narb_common,
+w("zaleckiene2020", [
+    make("zaleckiene2020", **narb_common,
         sport_raw="all causes (sport/leisure = 32% of self-reported)",
         sport="all_activities_aggregate", sport_category="",
         subgroup_label="overall_clinical",
@@ -187,7 +187,7 @@ w("narbutaite2020", [
         mouthguard_use_rate=0.03, mouthguard_injury_relation="analyzed",
         extraction_notes="Probability-sampled. 807 6th graders Lithuania (31% consent return). 52% clinical TDI, 13% self-reported, 7% did not remember. Sport/leisure = 32% of self-reported TDI causes; falls/collisions = 63%. 1/3 played contact sport; only 3% always wore MG. ~50% of severe injuries untreated.",
     ),
-    make("narbutaite2020", **narb_common,
+    make("zaleckiene2020", **narb_common,
         sport_raw="contact-sport children subset (~1/3 of cohort)",
         sport="all_sports_aggregate", sport_category="contact",
         subgroup_label="contact_sport_subset",
@@ -200,8 +200,8 @@ w("narbutaite2020", [
 ])
 
 # 36428271 — Japan 5 sports text analysis
-w("nasu2023b", [make("nasu2023b",
-    citation="Nasu A, et al. (2023). Quantitative text analysis of the mechanisms of tooth injury: Analysis of accidents in five sports that occurred in 15 years under school control.",
+w("shimizu2023", [make("shimizu2023",
+    citation="Shimizu S, Tanabe G, Hayashi K, Churei H, Anzai T, Takahashi K, Ueno T, Fueki K. (2023). Quantitative text analysis of the mechanisms of tooth injury: Analysis of accidents in five sports that occurred in 15 years under school control. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2023, study_type="surveillance", country="JP",
     population_setting="school", age_min=12, age_max=18, age_category="adolescent",
     sex="mixed", level_of_play="school_jv",
@@ -216,8 +216,8 @@ w("nasu2023b", [make("nasu2023b",
 )])
 
 # 39297708 — Sydney avulsion
-w("madireddy2024", [make("madireddy2024",
-    citation="Madireddy R, et al. (2024). Permanent tooth avulsions: A retrospective analysis of the demographics and aetiology of cases at a tertiary hospital in Sydney, Australia.",
+w("bradshaw2024", [make("bradshaw2024",
+    citation="Bradshaw J, Kahler B, Nanayakkara S, Prabhu N. (2024). Permanent tooth avulsions: A retrospective analysis of the demographics and aetiology of cases at a tertiary hospital in Sydney, Australia. Australian endodontic journal : the journal of the Australian Society of Endodontology Inc.",
     pub_year=2024, study_type="case_series", country="AU", region="Sydney",
     population_setting="mixed", age_min=5, age_max=22, age_category="mixed",
     sex="mixed", level_of_play="mixed",
@@ -232,8 +232,8 @@ w("madireddy2024", [make("madireddy2024",
 )])
 
 # 39452438 — Italy kickboxing
-w("dipalma2024", [make("dipalma2024",
-    citation="Di Palma M, et al. (2024). Traumatic Dental Injuries: Prevalence, First Aid, and Mouthguard Use in a Sample of Italian Kickboxing Athletes.",
+w("biagi2024", [make("biagi2024",
+    citation="Biagi R, Mirelli C, Ventimiglia R, Ceraulo S. (2024). Traumatic Dental Injuries: Prevalence, First Aid, and Mouthguard Use in a Sample of Italian Kickboxing Athletes. Dentistry journal.",
     pub_year=2024, study_type="cross_sectional", country="IT",
     population_setting="club", age_min=5, age_max=65, age_category="mixed",
     extraction_basis="youth_primary",
@@ -249,8 +249,8 @@ w("dipalma2024", [make("dipalma2024",
 )])
 
 # 40655786 — 100 cases
-w("patel2025", [make("patel2025",
-    citation="Patel, et al. (2025). Prevalence and Outcomes of Dental Trauma in Sports-Related Injuries in the Last 2 Years.",
+w("pandey2025", [make("pandey2025",
+    citation="Pandey A, Singh S, Mukul P, Bharti A, Verma S, Kumar R, Jain S, Mittal M. (2025). Prevalence and Outcomes of Dental Trauma in Sports-Related Injuries in the Last 2 Years. Journal of pharmacy & bioallied sciences.",
     pub_year=2025, study_type="case_series", country="",
     population_setting="mixed", age_min=6, age_max=99, age_category="mixed",
     extraction_basis="youth_primary",
@@ -265,8 +265,8 @@ w("patel2025", [make("patel2025",
 )])
 
 # 40917008 — Syria 6-16
-w("dashash2026", [make("dashash2026",
-    citation="Dashash M, et al. (2026). Epidemiology of Orofacial Trauma in Syrian Pediatric Athletes: A Cross-Sectional Study on Prevalence and Injury Patterns.",
+w("hamdan2026b", [make("hamdan2026b",
+    citation="Hamdan TR, Dashash M. (2026). Epidemiology of Orofacial Trauma in Syrian Pediatric Athletes: A Cross-Sectional Study on Prevalence and Injury Patterns. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2026, study_type="cross_sectional", country="SY", region="Damascus",
     population_setting="club", age_min=6, age_max=16, age_category="mixed",
     sex="mixed", level_of_play="club",
@@ -280,7 +280,7 @@ w("dashash2026", [make("dashash2026",
 )])
 
 # 42052228 — NEISS softball HS vs college
-ty_common = dict(citation="Tyler JR, et al. (2026). Epidemiology of Softball Injuries: Comparison of Softball-Related Injuries at US EDs Between High School and Collegiate Athletes. Orthop J Sports Med.",
+ty_common = dict(citation="Tyler JR, Jensen B, Rice I, Card R, Paulini A, Scanaliato JP, Parnes N. (2026). Epidemiology of Softball Injuries Comparison of Softball-Related Injuries at US Emergency Departments Between High School and Collegiate Athletes: A 10-Year NEISS Analysis, 2015-2024. Orthopaedic journal of sports medicine.",
     pub_year=2026, study_type="surveillance", country="US",
     population_setting="mixed", sex="female",
     sport_raw="female softball (US NEISS 2015-2024)",

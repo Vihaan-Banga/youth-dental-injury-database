@@ -40,8 +40,8 @@ def w(sid, rows):
 
 
 # 11202877 — UK aetiology (mostly non-sport)
-w("carter2000", [make("carter2000",
-    citation="Carter NL, Jones JE, Newton JT. (2000). The aetiology of dento-alveolar injuries and factors influencing attendance for emergency care of adolescents in the north west of England.",
+w("blinkhorn2000", [make("blinkhorn2000",
+    citation="Blinkhorn FA. (2000). The aetiology of dento-alveolar injuries and factors influencing attendance for emergency care of adolescents in the north west of England. Endodontics & dental traumatology.",
     pub_year=2000, study_type="cross_sectional", country="GB", region="North West England",
     population_setting="school", age_min=5, age_max=18, age_category="mixed",
     sex="mixed", level_of_play="recreational",
@@ -54,8 +54,8 @@ w("carter2000", [make("carter2000",
 )])
 
 # 11678540 — Brazil 13-yo (sport small but isolated)
-w("marcenes2001", [make("marcenes2001",
-    citation="Marcenes W, Beiruti N, Tayfour D, Issa S. (2001). Prevalence, causes and correlates of traumatic dental injuries among 13-year-olds in Brazil.",
+w("nicolau2001", [make("nicolau2001",
+    citation="Nicolau B, Marcenes W, Sheiham A. (2001). Prevalence, causes and correlates of traumatic dental injuries among 13-year-olds in Brazil. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2001, study_type="cross_sectional", country="BR", region="Cianorte",
     population_setting="school", age_min=13, age_max=13, age_category="adolescent",
     sex="mixed", level_of_play="recreational",
@@ -69,7 +69,7 @@ w("marcenes2001", [make("marcenes2001",
 )])
 
 # 11798994 — Junior A hockey (player-game hours rate)
-benson_common = dict(citation="Benson BW, Mohtadi NG, Rose MS, Meeuwisse WH. (2002). A comparison of facial protection and the incidence of head, neck, and facial injuries in Junior A hockey players.",
+benson_common = dict(citation="Stuart MJ, Smith AM, Malo-Ortiguera SA, Fischer TL, Larson DR. (2002). A comparison of facial protection and the incidence of head, neck, and facial injuries in Junior A hockey players. A function of individual playing time. The American journal of sports medicine.",
     pub_year=2002, study_type="cohort", country="CA", region="",
     population_setting="club", age_min=16, age_max=20, age_category="mixed",
     sex="male", level_of_play="elite",
@@ -78,8 +78,8 @@ benson_common = dict(citation="Benson BW, Mohtadi NG, Rose MS, Meeuwisse WH. (20
     season_or_timeframe="prospective cohort", sample_size=282,
     mouthguard_injury_relation="analyzed",
 )
-w("benson2002", [
-    make("benson2002", **benson_common,
+w("stuart2002", [
+    make("stuart2002", **benson_common,
         subgroup_label="no_facial_protection",
         injury_count=52, rate_raw=158.9,
         rate_denominator_raw="per 1000 player-game hours (no facial protection)",
@@ -87,7 +87,7 @@ w("benson2002", [
         injury_category="orofacial_with_dental",
         extraction_notes="282 Junior A elite amateur ice hockey players. No protection: 52 injuries, 158.9/1000 player-game hours.",
     ),
-    make("benson2002", **benson_common,
+    make("stuart2002", **benson_common,
         subgroup_label="partial_facial_protection",
         injury_count=45, rate_raw=73.5,
         rate_denominator_raw="per 1000 player-game hours (partial = half shield)",
@@ -95,7 +95,7 @@ w("benson2002", [
         injury_category="orofacial_with_dental",
         extraction_notes="Half shield: 45 injuries, 73.5/1000 player-game hours.",
     ),
-    make("benson2002", **benson_common,
+    make("stuart2002", **benson_common,
         subgroup_label="full_facial_protection",
         injury_count=16, rate_raw=23.2,
         rate_denominator_raw="per 1000 player-game hours (full cage or shield)",
@@ -106,8 +106,8 @@ w("benson2002", [
 ])
 
 # 15660753 — Turkish premier ice hockey (sparse abstract)
-w("ranalli2005", [make("ranalli2005",
-    citation="Ranalli DN. (2005). Dental trauma and mouthguard usage among ice hockey players in Turkey premier league.",
+w("caglar2005", [make("caglar2005",
+    citation="Caglar E, Kargul B, Tanboga I. (2005). Dental trauma and mouthguard usage among ice hockey players in Turkey premier league. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2005, study_type="cross_sectional", country="TR", region="",
     population_setting="club", age_min=15, age_max=35, age_category="mixed",
     extraction_basis="youth_primary",
@@ -123,15 +123,15 @@ w("ranalli2005", [make("ranalli2005",
 )])
 
 # 16162986 — RCT football+rugby Ontario
-mc_common = dict(citation="McIntosh AS, McCrory P. (2005). Comparison of mouth guard designs and concussion prevention in contact sports: a multicenter randomized controlled trial.",
+mc_common = dict(citation="Barbic D, Pater J, Brison RJ. (2005). Comparison of mouth guard designs and concussion prevention in contact sports: a multicenter randomized controlled trial. Clinical journal of sport medicine : official journal of the Canadian Academy of Sport Medicine.",
     pub_year=2005, study_type="cohort", country="CA", region="Ontario",
     population_setting="club", age_min=18, age_max=22, age_category="collegiate",
     level_of_play="elite",
     season_or_timeframe="2003 fall season",
     mouthguard_use_rate=1.0, mouthguard_injury_relation="analyzed",
 )
-w("mcintosh2005", [
-    make("mcintosh2005", **mc_common, sex="male",
+w("barbic2005", [
+    make("barbic2005", **mc_common, sex="male",
         sport_raw="varsity football (university male)",
         sport="football_american", sport_category="contact",
         subgroup_label="football_male",
@@ -140,7 +140,7 @@ w("mcintosh2005", [
         rate_raw=0, rate_denominator_raw="dental-trauma events in 2003 fall season",
         extraction_notes="5 Ontario universities, varsity football. 394 male athletes. ZERO dental trauma events during season (mandatory MG context). Primary endpoint was concussion — no significant MG-design difference.",
     ),
-    make("mcintosh2005", **mc_common, sex="male",
+    make("barbic2005", **mc_common, sex="male",
         sport_raw="varsity rugby (university male)",
         sport="rugby", sport_category="contact",
         subgroup_label="rugby_male",
@@ -149,7 +149,7 @@ w("mcintosh2005", [
         injury_type_raw="dental trauma events (RCT secondary endpoint)",
         extraction_notes="University male rugby 129 athletes. Zero dental events.",
     ),
-    make("mcintosh2005", **mc_common, sex="female",
+    make("barbic2005", **mc_common, sex="female",
         sport_raw="varsity rugby (university female)",
         sport="rugby", sport_category="contact",
         subgroup_label="rugby_female",
@@ -161,8 +161,8 @@ w("mcintosh2005", [
 ])
 
 # 17073918 — pony/horseback riding children
-w("nalcaci2006", [make("nalcaci2006",
-    citation="Nalçaci R, Nalçaci A, Pekiner FN. (2006). Dental and orofacial trauma in pony and horseback riding children.",
+w("caglar2006", [make("caglar2006",
+    citation="Caglar E, Sandalli N. (2006). Dental and orofacial trauma in pony and horseback riding children. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2006, study_type="cross_sectional", country="TR", region="Istanbul",
     population_setting="club", age_min=5, age_max=18, age_category="mixed",
     sex="mixed", level_of_play="club",
@@ -177,14 +177,14 @@ w("nalcaci2006", [make("nalcaci2006",
 )])
 
 # 17635356 — Glasgow audit
-ali_common = dict(citation="Ali J, Jamieson L. (2007). Dentoalveolar trauma in Glasgow: an audit of mechanism and injury.",
+ali_common = dict(citation="Wright G, Bell A, McGlashan G, Vincent C, Welbury RR. (2007). Dentoalveolar trauma in Glasgow: an audit of mechanism and injury. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2007, study_type="case_series", country="GB", region="Glasgow",
     population_setting="mixed", age_min=4, age_max=16, age_category="mixed",
     sex="mixed", level_of_play="recreational",
     season_or_timeframe="2002-2004",
 )
-w("ali2007", [
-    make("ali2007", **ali_common,
+w("wright2007", [
+    make("wright2007", **ali_common,
         sport_raw="all etiologies (sport 18% subset)",
         sport="all_activities_aggregate", sport_category="",
         subgroup_label="overall",
@@ -193,7 +193,7 @@ w("ali2007", [
         rate_raw=49.0, rate_denominator_raw="(%) of all injuries from falls (sport = 18%)",
         extraction_notes="Glasgow Dental Hospital pediatric trauma clinic audit 2002-2004. Falls 49%, sport 18%, bike/scooter 13%, assault 7%, MVA 1.5%. Peak 8-11yo (43%). 64% trauma to >1 tooth. 58% involved hard tissue+pulp.",
     ),
-    make("ali2007", **ali_common,
+    make("wright2007", **ali_common,
         sport_raw="sports-related subset of dentoalveolar trauma",
         sport="all_sports_aggregate", sport_category="",
         subgroup_label="sport_related",
@@ -205,7 +205,7 @@ w("ali2007", [
 ])
 
 # 18203866 — Collegiate rugby NE
-co08_common = dict(citation="Collins CL, Micheli LJ, Yard EE, Comstock RD. (2008). Collegiate rugby union injury patterns in New England: a prospective cohort study.",
+co08_common = dict(citation="Kerr HA, Curtis C, Micheli LJ, Kocher MS, Zurakowski D, Kemp SP, Brooks JH. (2008). Collegiate rugby union injury patterns in New England: a prospective cohort study. British journal of sports medicine.",
     pub_year=2008, study_type="cohort", country="US", region="New England",
     population_setting="club", age_min=18, age_max=22, age_category="collegiate",
     level_of_play="elite",
@@ -213,8 +213,8 @@ co08_common = dict(citation="Collins CL, Micheli LJ, Yard EE, Comstock RD. (2008
     sport="rugby", sport_category="contact",
     season_or_timeframe="2005-06 season",
 )
-w("collins_rugby2008", [
-    make("collins_rugby2008", **co08_common, sex="male",
+w("kerr2008", [
+    make("kerr2008", **co08_common, sex="male",
         subgroup_label="male_game",
         sample_size="", athlete_exposures=13943,
         injury_count=447,  # all 447 male injuries (game + practice combined)
@@ -224,7 +224,7 @@ w("collins_rugby2008", [
         rate_per_1000_ae=22.5,
         extraction_notes="31 men's collegiate rugby teams. 447 male injuries during 13,943 game AE + 24,280 practice AE. Game rate 22.5/1000 (95% CI 20.2-25.0). 56% of male match injuries were major (>7 days).",
     ),
-    make("collins_rugby2008", **co08_common, sex="female",
+    make("kerr2008", **co08_common, sex="female",
         subgroup_label="female_game",
         sample_size="", athlete_exposures=11865,
         injury_count=400,
@@ -237,8 +237,8 @@ w("collins_rugby2008", [
 ])
 
 # 18410389 — Ontario 12-14
-w("wong2008", [make("wong2008",
-    citation="Wong KM, et al. (2008). Etiology and environment of dental injuries in 12- to 14-year-old Ontario schoolchildren.",
+w("fakhruddin2008", [make("fakhruddin2008",
+    citation="Fakhruddin KS, Lawrence HP, Kenny DJ, Locker D. (2008). Etiology and environment of dental injuries in 12- to 14-year-old Ontario schoolchildren. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2008, study_type="cross_sectional", country="CA", region="Ontario",
     population_setting="school", age_min=12, age_max=14, age_category="adolescent",
     sex="mixed", level_of_play="recreational",
@@ -253,8 +253,8 @@ w("wong2008", [make("wong2008",
 )])
 
 # 18721348 — Arab Jerusalem 5th-6th
-w("livny2008", [make("livny2008",
-    citation="Livny A, Sgan-Cohen HD. (2008). Dental trauma among 5th and 6th grade Arab schoolchildren in Eastern Jerusalem.",
+w("sgancohen2008", [make("sgancohen2008",
+    citation="Sgan-Cohen HD, Yassin H, Livny A. (2008). Dental trauma among 5th and 6th grade Arab schoolchildren in Eastern Jerusalem. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2008, study_type="cross_sectional", country="IL", region="East Jerusalem",
     population_setting="school", age_min=10, age_max=12, age_category="youth",
     sex="mixed", level_of_play="recreational",
@@ -268,8 +268,8 @@ w("livny2008", [make("livny2008",
 )])
 
 # 19208012 — Taiwan 15-18
-w("fakhruddin2009", [make("fakhruddin2009",
-    citation="Fakhruddin K, Locker D, Lawrence H, Kenny D. (2009). Activities related to the occurrence of traumatic dental injuries in 15- to 18-year-olds.",
+w("huang2009", [make("huang2009",
+    citation="Huang B, Marcenes W, Croucher R, Hector M. (2009). Activities related to the occurrence of traumatic dental injuries in 15- to 18-year-olds. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2009, study_type="cross_sectional", country="TW", region="southern Taiwan",
     population_setting="school", age_min=15, age_max=18, age_category="adolescent",
     sex="mixed", level_of_play="recreational",
@@ -284,7 +284,7 @@ w("fakhruddin2009", [make("fakhruddin2009",
 )])
 
 # 19566982 — schoolboy cricketers
-ya_common = dict(citation="Yamada T, Sawaki Y, Tomida S, Tohnai I, Ueda M. (2009). A pilot study of the prevalence of orofacial and head injuries in schoolboy cricketers at eight private schools in England and Australia.",
+ya_common = dict(citation="Jagger RG, Vaithianathan V, Jagger DC. (2009). A pilot study of the prevalence of orofacial and head injuries in schoolboy cricketers at eight private schools in England and Australia. Primary dental care : journal of the Faculty of General Dental Practitioners (UK).",
     pub_year=2009, study_type="cross_sectional",
     population_setting="school", age_min=11, age_max=18, age_category="mixed",
     sex="male", level_of_play="school_varsity",
@@ -292,8 +292,8 @@ ya_common = dict(citation="Yamada T, Sawaki Y, Tomida S, Tohnai I, Ueda M. (2009
     sport="all_sports_aggregate", sport_category="limited_contact",  # cricket not in vocab
     season_or_timeframe="pilot study",
 )
-w("yamada2009", [
-    make("yamada2009", **ya_common, country="GB", region="England",
+w("jagger2009", [
+    make("jagger2009", **ya_common, country="GB", region="England",
         subgroup_label="cricket_england",
         sample_size=207,
         injury_count=50,
@@ -302,7 +302,7 @@ w("yamada2009", [
         rate_raw=24.1, rate_denominator_raw="(%) of English schoolboy cricketers reporting head/face/dental injury",
         extraction_notes="411 schoolboy cricketers, 4 English + 4 Australian private schools, 100% response. 16 loosened/broken teeth, 2 avulsed across the cohort.",
     ),
-    make("yamada2009", **ya_common, country="AU", region="Australia",
+    make("jagger2009", **ya_common, country="AU", region="Australia",
         subgroup_label="cricket_australia",
         sample_size=204,
         injury_count=52,
@@ -314,8 +314,8 @@ w("yamada2009", [
 ])
 
 # 20486946 — snowboarders Turkey
-w("hayran2010", [make("hayran2010",
-    citation="Hayran O, Sahin O. (2010). Orofacial and dental injuries of snowboarders in Turkey.",
+w("caglar2010", [make("caglar2010",
+    citation="Caglar E, Kuscu OO, Calişkan S, Sandalli N. (2010). Orofacial and dental injuries of snowboarders in Turkey. Dental traumatology : official publication of International Association for Dental Traumatology.",
     pub_year=2010, study_type="cross_sectional", country="TR", region="",
     population_setting="recreational", age_min=12, age_max=22, age_category="mixed",
     sex="mixed", level_of_play="recreational",
@@ -332,8 +332,8 @@ w("hayran2010", [make("hayran2010",
 )])
 
 # 22976571 — Targu Mures
-w("ivanovics2012", [make("ivanovics2012",
-    citation="Ivanovic et al. (2012). Prevalence of traumatic dental injuries in children who attended two dental clinics in Targu Mures between 2003 and 2011.",
+w("kovacs2012", [make("kovacs2012",
+    citation="Kovacs M, Pacurar M, Petcu B, Bukhari C. (2012). Prevalence of traumatic dental injuries in children who attended two dental clinics in Targu Mures between 2003 and 2011. Oral health and dental management.",
     pub_year=2012, study_type="case_series", country="RO", region="Targu Mures",
     population_setting="mixed", age_min=1, age_max=18, age_category="mixed",
     sex="mixed", level_of_play="recreational",

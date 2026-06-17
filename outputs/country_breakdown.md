@@ -17,25 +17,25 @@ _Auto-generated from `data/harmonized/master.csv`. 30 unique country tags across
 | Ireland (`IE`) | 4 | 4 | 1 | 2011-2023 | 65 |
 | New Zealand (`NZ`) | 3 | 18 | 8 | 2010-2020 | 13,013 |
 | Israel (`IL`) | 3 | 5 | 2 | 2003-2008 | 644 |
+| Norway (`NO`) | 2 | 2 | 0 | 2003-2019 | 102 |
 | Iran (`IR`) | 2 | 2 | 1 | 2007-2020 | 58 |
 | Syria (`SY`) | 2 | 2 | 0 | 2026-2026 | 476 |
 | Brazil (`BR`) | 2 | 2 | 0 | 2001-2006 | 133 |
-| Norway (`NO`) | 2 | 2 | 0 | 2003-2019 | 102 |
-| Austria (`AT`) | 1 | 3 | 2 | 1997-1997 | 1,163 |
 | Lebanon (`LB`) | 1 | 3 | 0 | 2021-2021 | 861 |
-| Lithuania (`LT`) | 1 | 2 | 0 | 2020-2020 | 420 |
+| Austria (`AT`) | 1 | 3 | 2 | 1997-1997 | 1,163 |
 | Sri Lanka (`LK`) | 1 | 2 | 0 | 2024-2024 | 800 |
-| Kuwait (`KW`) | 1 | 1 | 1 | 2019-2019 | 169 |
+| Lithuania (`LT`) | 1 | 2 | 0 | 2020-2020 | 420 |
 | Puerto Rico (`PR`) | 1 | 1 | 0 | 2005-2005 | 18 |
-| South Korea (`KR`) | 1 | 1 | 0 | 2021-2021 | 517 |
-| Spain (`ES`) | 1 | 1 | 1 | 2020-2020 | 163 |
+| Switzerland (`CH`) | 1 | 1 | 1 | 2012-2012 | 31 |
 | Italy (`IT`) | 1 | 1 | 1 | 2024-2024 | 18 |
+| Hungary (`HU`) | 1 | 1 | 0 | 2001-2001 | 590 |
 | Taiwan (`TW`) | 1 | 1 | 0 | 2009-2009 | 387 |
 | Romania (`RO`) | 1 | 1 | 0 | 2012-2012 | 0 |
 | Lesotho (`LS`) | 1 | 1 | 0 | 2008-2008 | 0 |
-| Hungary (`HU`) | 1 | 1 | 0 | 2001-2001 | 590 |
-| Switzerland (`CH`) | 1 | 1 | 1 | 2012-2012 | 31 |
 | South Africa (`ZA`) | 1 | 1 | 0 | 2009-2009 | 106 |
+| South Korea (`KR`) | 1 | 1 | 0 | 2021-2021 | 517 |
+| Kuwait (`KW`) | 1 | 1 | 1 | 2019-2019 | 169 |
+| Spain (`ES`) | 1 | 1 | 1 | 2020-2020 | 163 |
 
 ## Geographic gaps & observations
 

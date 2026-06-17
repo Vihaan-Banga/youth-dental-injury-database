@@ -69,7 +69,7 @@ This database does that reconciliation, once, openly, with a transparent methodo
 - **NEISS US youth dental-sport ED visits**: weighted national estimate ranged from 26,424 (2013) → 17,000 (2019) → ~15,000 (2021, COVID trough) → 21,000 (2024–25 recovery).
 - **Cross-source US HS basketball internal consistency**: `collins2016` reports 0.026 per 100k AE; `azadani2023` reports 0.024 per 100k AE — statistically indistinguishable estimates from two independent papers covering overlapping years.
 - **Mouthguard effect (`labella2002` college basketball RCT)**: 0.12 (MG users) vs 0.67 (non-users) per 1000 AE — 5.6× reduction.
-- **Junior A hockey facial-protection dose-response (`benson2002`)**: 158.9 → 73.5 → 23.2 per 1000 player-game-hours across no / partial / full facial protection.
+- **Junior A hockey facial-protection dose-response (`stuart2002`)**: 158.9 → 73.5 → 23.2 per 1000 player-game-hours across no / partial / full facial protection.
 
 ## 4. What's NOT yet done (the gap an advisor would help close)
 

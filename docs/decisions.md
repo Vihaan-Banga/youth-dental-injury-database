@@ -438,4 +438,32 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 
 ---
 
+### 2026-06-16: Repair of fabricated author attributions across the extracted sources
+
+**Trigger:** A reader question about Liang & Chuang (2024) "Mechanisms of dental injuries in basketball" surfaced that its master.csv row was attributed to a non-existent first author ("Williams T") under source_id `williams2024`. A systematic audit (`scripts/34_audit_citations.py`) then compared every extracted source's citation against the authoritative cached PubMed abstract metadata (`data/raw/papers/_abstracts/<PMID>.json`) by matching on title.
+
+**Finding (serious):** the AI-assisted batch extractions had copied paper **titles** correctly but **invented author names** for a large fraction of sources, and derived `source_id`s from those wrong authors. **67 of the 106 sources** (67 of the 93 PubMed-keyed sources) carried an incorrect author-derived id and a fabricated citation. Examples: `collins2004`→ actually **Beachy G** (PMID 15592602); `radelet1996`→ **Pasternack JS et al.**; `hosea1996`→ **Gomez E et al.**; `zazryn2010`→ **Shirani G et al.**; `benson2002`→ **Stuart MJ et al.**; `williams2024`/`williams2023`→ **Liang & Chuang**. The 39 unchanged ids were 26 already-correct PubMed sources + 12 NEISS year files + Rugby Europe + `halabchi2007`.
+
+**Root causes (two layers):**
+1. The per-source extraction scripts (`scripts/14-19, 25, 28`) hardcoded the wrong `source_id` and a fabricated `citation=` string for each affected source.
+2. `scripts/26_bibliography.py` carried a **hardcoded** `PMID_TO_SOURCE_ID` map echoing the same wrong ids.
+
+**Decision:** correct authorship from the authoritative PubMed metadata, end-to-end (data, scripts, and generators), and add guards so it cannot recur.
+
+**Implementation:**
+- `scripts/34_audit_citations.py` — new reusable audit; FAILs if any source's first-author surname (ASCII-folded) disagrees with its PMID's abstract. Run it before releases.
+- `scripts/35_fix_attributions.py` — rewrote `source_id` + `citation` (+ doi) in every extracted CSV from `sources.md` (authoritative ids) + the abstract JSON (authoritative authors/title/journal), joining by title. Renamed the per-source files.
+- `scripts/36_fix_batch_script_attributions.py` — applied the same correction to the hardcoded id/citation literals **inside** the batch extraction scripts, so re-running them reproduces the corrected data rather than reverting it.
+- `scripts/26_bibliography.py` — replaced the hardcoded `PMID_TO_SOURCE_ID` with a parse of `docs/sources.md`, so BibTeX keys can no longer drift from the dataset.
+- `scripts/03_apply_screening_to_sources.py` — `lastname()` now ASCII-folds (Cetinbaş→cetinbas, O'Malley→omalley, Gábris→gabris, Zaleckienė→zaleckiene) so ids are valid filenames and BibTeX keys; `sources.md` regenerated.
+- The 2026-06-13 C11 blanking (radelet/pasternack, rugby_europe) was encoded into `scripts/19` and `scripts/20` so it survives re-extraction.
+
+**Verification:** `scripts/34` now reports **0 author mismatches / 0 year mismatches** (92 of 93 confirmed against PubMed; `stuart2002` correct but its title isn't auto-matchable). Re-running all batch extraction scripts → `07_harmonize.py` reproduces `data/harmonized/master.csv` **byte-for-byte** (md5 identical to the pre-repair-verified corrected snapshot). Validator: 426 rows, **0 FAILs / 0 WARNs**.
+
+**Note on prior references:** entries in this log dated before 2026-06-16, plus older `CHANGELOG.md` and `outputs/session_*_summary.md` entries, refer to sources by their **old** ids (e.g. `zazryn2010`, `collins2004`, `radelet1996`, `benson2002`, `collins_rugby2008`). Those are point-in-time records and are left intact (append-only); the authoritative current id for any of them is whatever `docs/sources.md` now lists for that PMID. The full 67-id old→new mapping is reproducible from `git show HEAD~:data/harmonized/master.csv` vs the current file.
+
+**Reviewer:** Pending advisor review. Recommend the advisor spot-check a sample of citations against PubMed as part of sign-off.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

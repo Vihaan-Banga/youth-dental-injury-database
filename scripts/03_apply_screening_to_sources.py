@@ -16,6 +16,7 @@ replaces the candidate table.
 import csv
 import json
 import re
+import unicodedata
 from collections import Counter
 from datetime import date
 from pathlib import Path
@@ -34,7 +35,12 @@ def first_author(rec):
 
 
 def lastname(name):
-    return name.split()[0].lower()
+    # ASCII-fold the surname so source_ids are valid filenames and BibTeX keys
+    # (e.g. "Cetinbaş" -> cetinbas, "O'Malley" -> omalley, "Gábris" -> gabris).
+    surname = name.split()[0] if name else ""
+    folded = unicodedata.normalize("NFKD", surname)
+    folded = "".join(c for c in folded if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]", "", folded.lower())
 
 
 def short_cite(rec):

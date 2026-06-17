@@ -6,7 +6,7 @@ _Auto-generated from `master.csv`. 16 rows across 12 sources._
 **Sport category:** `contact`
 **Countries:** CA, TR, US
 **Year span:** 2002-2024
-**Sources contributing:** benson2002, chisholm2020, ekanayake2021, neiss2013, neiss2014, neiss2015, neiss2016, neiss2018, neiss2022, neiss2024, nielsen2018, ranalli2005
+**Sources contributing:** caglar2005, chisholm2020, neiss2013, neiss2014, neiss2015, neiss2016, neiss2018, neiss2022, neiss2024, pierrot2021, rattai2018, stuart2002
 
 ## Rates per 1000 athlete-exposures
 

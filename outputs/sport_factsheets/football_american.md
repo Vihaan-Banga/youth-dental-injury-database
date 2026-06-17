@@ -3,16 +3,16 @@
 _Auto-generated from `master.csv`. 15 rows across 15 sources._
 
 **Sport identifier in database:** `football_american`
-**Sport category:** `limited_contact`
+**Sport category:** `contact`
 **Countries:** CA, US
 **Year span:** 2004-2025
-**Sources contributing:** alawawdeh2021, collins2004, mcintosh2005, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025
+**Sources contributing:** barbic2005, beachy2004, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, zendler2021
 
 ## Rates per 1000 athlete-exposures
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| collins2004 | 2004 | US | mixed | male | school_varsity | **0.029** | — | per 1000 athlete-sessions |
+| beachy2004 | 2004 | US | mixed | male | school_varsity | **0.029** | — | per 1000 athlete-sessions |
 
 _Min 0.029, max 0.029, n=1._
 
@@ -20,7 +20,7 @@ _Min 0.029, max 0.029, n=1._
 
 | source | year | sex | subgroup | use rate | injury-relation analysis |
 |---|---:|---|---|---:|---|
-| mcintosh2005 | 2005 | male | football_male | **100%** | analyzed |
+| barbic2005 | 2005 | male | football_male | **100%** | analyzed |
 
 ## Distribution of rows
 
