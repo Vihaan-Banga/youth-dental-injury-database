@@ -39,7 +39,7 @@ The repo is now public at https://github.com/Vihaan-Banga/youth-dental-injury-da
 |---|---:|
 | screened_included (PubMed) | 78 |
 | extracted (PubMed pilots) | 3 |
-| needs_human_review (PubMed) | 85 |
+| needs_additional_review (PubMed) | 85 |
 | screened_excluded (PubMed) | 166 |
 | **PubMed total** | **332** |
 | governing-body sources included | 11 |

@@ -21,16 +21,16 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 - `scripts/03_apply_screening_to_sources.py` — `source_id`s are ASCII-folded (e.g. `omalley2012`, `gabris2001`) for valid filenames/BibTeX keys.
 - C11 rate blanking (2026-06-13) encoded into `scripts/19` and `scripts/20` so it survives re-extraction.
 
-### 2026-06-12 — full-text review of the open-access `needs_human_review` subset
+### 2026-06-12 — full-text review of the open-access `needs_additional_review` subset
 
 #### Added
-- `scripts/30_oa_url_lookup.py` + `outputs/needs_human_review_oa_urls.csv` — Unpaywall best-OA-URL lookup for all 91 `needs_human_review` records (24 have a free URL).
-- `scripts/31_pmc_availability.py` + `outputs/needs_human_review_pmc.csv` — PubMed→PMC lookup (8 have free PMC full text).
+- `scripts/30_oa_url_lookup.py` + `outputs/needs_additional_review_oa_urls.csv` — Unpaywall best-OA-URL lookup for all 91 `needs_additional_review` records (24 have a free URL).
+- `scripts/31_pmc_availability.py` + `outputs/needs_additional_review_pmc.csv` — PubMed→PMC lookup (8 have free PMC full text).
 - `scripts/32_extract_halabchi2007.py` + `data/extracted/halabchi2007.csv` — new included source: **halabchi2007** (women's Shotokan karate championships, Iran; 3 dental avulsion/subluxation of 186 injuries). First Iran source and first `martial_arts_other` row from a dedicated study.
-- `outputs/needs_human_review_fulltext_review_2026-06-12.md` — audit log of every fetch attempt and per-record decision.
+- `outputs/needs_additional_review_fulltext_review_2026-06-12.md` — audit log of every fetch attempt and per-record decision.
 
 #### Changed
-- `needs_human_review` pile **91 → 84**: 1 record promoted to `included`/`extracted`, 6 `fulltext_excluded` (E-age ×4, E-offtop, E-nodent). Logged in `docs/decisions.md` and `scripts/screening_overrides.py`.
+- `needs_additional_review` pile **91 → 84**: 1 record promoted to `included`/`extracted`, 6 `fulltext_excluded` (E-age ×4, E-offtop, E-nodent). Logged in `docs/decisions.md` and `scripts/screening_overrides.py`.
 - `data/harmonized/master.csv` **425 → 426 rows**, **105 → 106 sources**; SQLite, bibliography (93 → 94), country breakdown, sport factsheets, and figures regenerated. Validator: 0 FAILs / 0 WARNs.
 - `scripts/26_bibliography.py` — now includes full-text-promoted `included` records, not just `screened_included`.
 - `scripts/03_apply_screening_to_sources.py` — screening-summary percentages now use the real denominator (was a hardcoded `/200`, producing a >100% figure) and list the `included`/`extracted`/`fulltext_excluded` statuses.

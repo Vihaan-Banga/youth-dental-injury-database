@@ -12,7 +12,7 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 
 1. **Spot-check exclusions first.** Wrong exclusions cost the most because excluded records exit the audit. The high-confidence excludes (non-English, case reports, off-topic) are low-risk; the `E-age` and `E-noprim` excludes are worth confirming.
 
-2. **Then work through `needs_human_review`.** Most of these are blocked on age range or sport-related subset visibility — answerable from the methods section of the full text.
+2. **Then work through `needs_additional_review`.** Most of these are blocked on age range or sport-related subset visibility — answerable from the methods section of the full text.
 
 3. **Then second-screen 20% of the `screened_included` rows** to satisfy PROTOCOL §4.4 inter-rater reliability.
 
@@ -20,7 +20,7 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 ## Totals
 
 - `screened_included`: **93**
-- `needs_human_review`: **84**
+- `needs_additional_review`: **84**
 - `screened_excluded`: **252**
 - Total: **436**
 
@@ -219,7 +219,7 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 
 ---
 
-## needs_human_review  (84)
+## needs_additional_review  (84)
 
 ### R-age — Needs review — age range / population unclear from abstract  (52)
 
@@ -228,7 +228,7 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 - **41087084** (2025) — Concussion in Australian community rugby union part 1: a nationwide concussion management procedure.
   - confidence: `medium` — Australian community rugby union concussion management — adult-leaning.
 - **40662680** (2025) — From Fitness to Fight: Associations between training motivation and injury prevalence in Muay Thai, K-1 and Kickboxing.
-  - confidence: `low` — FULL TEXT RETRIEVED 2026-06-12 (Swiss Dental Journal 2025, Robbiani & Filippi). Swiss nationwide survey of Muay Thai/K-1/kickboxing martial artists (n=419 analysed). Reports dental injuries (52 cases, 19%, all-ages; 8.7% during competition) and MG use (75% any, 31.5% professional). STILL needs_human_review: subject age distribution is in a PDF table that did not extract cleanly (the readable strata are training-experience bands, not ages), so whether a 5-22 subset is present/separable could not be confirmed. Human read of the age table required before include/exclude.
+  - confidence: `low` — FULL TEXT RETRIEVED 2026-06-12 (Swiss Dental Journal 2025, Robbiani & Filippi). Swiss nationwide survey of Muay Thai/K-1/kickboxing martial artists (n=419 analysed). Reports dental injuries (52 cases, 19%, all-ages; 8.7% during competition) and MG use (75% any, 31.5% professional). STILL needs_additional_review: subject age distribution is in a PDF table that did not extract cleanly (the readable strata are training-experience bands, not ages), so whether a 5-22 subset is present/separable could not be confirmed. Human read of the age table required before include/exclude.
 - **38084787** (2024) — Use of mouthguards in Latin American field hockey athletes during the ODESUR 2022 Games.
   - confidence: `medium` — Latin American field hockey ODESUR 2022 Games — ODESUR is multi-age regional games; need full text.
 - **37055924** (2024) — Sports-related dental injuries and oral health status among Malaysian para-athletes: A cross-sectional study.
@@ -929,9 +929,9 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 ## How decisions were made
 
 - **Auto-rules** (`02_screen_candidates.py`): non-English (`language != 'eng'`), `PublicationType = 'Case Reports'`, and `PublicationType ∈ {Review, Systematic Review, Meta-Analysis}` → automatic `screened_excluded` with reason `E-lang`, `E-case`, or `E-review`. Reviews are kept in the source list because PROTOCOL §3.2 explicitly allows them to be mined for primary-source citations — they are just not extracted themselves.
-- **Manual decisions** (`screening_overrides.py`): every other record was assigned a decision after reading the title, abstract, and publication-type list from the per-PMID JSON in `data/raw/papers/_abstracts/`. Where the abstract did not disclose age range, sport-related subset, or extractable numerical data, the decision defaulted to `needs_human_review` rather than risking a wrong exclusion.
+- **Manual decisions** (`screening_overrides.py`): every other record was assigned a decision after reading the title, abstract, and publication-type list from the per-PMID JSON in `data/raw/papers/_abstracts/`. Where the abstract did not disclose age range, sport-related subset, or extractable numerical data, the decision defaulted to `needs_additional_review` rather than risking a wrong exclusion.
 - **No full texts were retrieved.** All decisions are reversible by the project lead reading the full text.
-- **Confidence ratings**: `high` = the abstract is decisive; `medium` = abstract supports the call but a reasonable reader could disagree; `low` = used only for genuine ambiguity in `needs_human_review`.
+- **Confidence ratings**: `high` = the abstract is decisive; `medium` = abstract supports the call but a reasonable reader could disagree; `low` = used only for genuine ambiguity in `needs_additional_review`.
 
 ## Files referenced
 

@@ -359,13 +359,13 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 ---
 
-### 2026-06-12: Full-text review of the open-access subset of the needs_human_review pile
+### 2026-06-12: Full-text review of the open-access subset of the needs_additional_review pile
 
-**Trigger:** `scripts/30_oa_url_lookup.py` (Unpaywall) and `scripts/31_pmc_availability.py` (NCBI PMC) identified which of the 91 `needs_human_review` PubMed records have free full text. Full texts were retrieved (PMC HTML, repository PDFs read with pdfplumber, OA-journal redirects) and reviewed against PROTOCOL §3.1/§3.3. This is the project lead's full-text screening step (AI-assisted, same basis as the 2026-05-21 abstract screen), not the §4.4 reliability re-screen, which still awaits the advisor.
+**Trigger:** `scripts/30_oa_url_lookup.py` (Unpaywall) and `scripts/31_pmc_availability.py` (NCBI PMC) identified which of the 91 `needs_additional_review` PubMed records have free full text. Full texts were retrieved (PMC HTML, repository PDFs read with pdfplumber, OA-journal redirects) and reviewed against PROTOCOL §3.1/§3.3. This is the project lead's full-text screening step (AI-assisted, same basis as the 2026-05-21 abstract screen), not the §4.4 reliability re-screen, which still awaits the advisor.
 
-**Retrievability (why most of the 91 stay pending):** publisher PDFs behind Cloudflare (Wiley `pdfdirect`, BMJ, JOMS, lww) return 403/402 to any non-browser client; three PMC records (PMIDs 18254, 1982928, 6130812 — pre-1995 BJSM rugby papers) are scanned page-images with no OCR text; two Swiss Dental Journal download URLs now 404. These remain `needs_human_review` (advisor library access or a browser session needed).
+**Retrievability (why most of the 91 stay pending):** publisher PDFs behind Cloudflare (Wiley `pdfdirect`, BMJ, JOMS, lww) return 403/402 to any non-browser client; three PMC records (PMIDs 18254, 1982928, 6130812 — pre-1995 BJSM rugby papers) are scanned page-images with no OCR text; two Swiss Dental Journal download URLs now 404. These remain `needs_additional_review` (advisor library access or a browser session needed).
 
-**Decisions made (7 records resolved; needs_human_review 91 → 84):**
+**Decisions made (7 records resolved; needs_additional_review 91 → 84):**
 
 | PMID | source_id | decision | reason | basis |
 |---|---|---|---|---|
@@ -377,11 +377,11 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 | 36538371 | — | fulltext_excluded | E-age | Finnish trauma-centre ice-hockey facial fractures; adult-dominated (98.5% male), not age-stratified |
 | 39060115 | tadmor2025 | fulltext_excluded | E-nodent | UK rugby league (brain) concussion symptom non-reporting; no dental/orofacial injury outcome |
 
-One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 2025) had its full text retrieved but stays `needs_human_review` (confidence lowered to `low`): it reports all-ages dental injuries (52 cases, 19%) and MG use, but the subject age distribution sits in a PDF table that did not extract cleanly, so a 5-22 subset could not be confirmed or isolated.
+One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 2025) had its full text retrieved but stays `needs_additional_review` (confidence lowered to `low`): it reports all-ages dental injuries (52 cases, 19%) and MG use, but the subject age distribution sits in a PDF table that did not extract cleanly, so a 5-22 subset could not be confirmed or isolated.
 
 **Reasoning for the exclusions:** several of these report real dental/orofacial data but at the population level with no way to isolate the 5-22 band (§3.1) — consistent with the existing rule that a row needs an identifiable youth (or extractable adult-comparator alongside youth) population. Excluding all-ages-only sources where no youth slice is separable is the honest PRISMA outcome of full-text review, not a scope change.
 
-**Audit trail:** decisions live in `scripts/screening_overrides.py` (with per-record full-text notes dated 2026-06-12); `outputs/needs_human_review_fulltext_review_2026-06-12.md` records every fetch attempt and outcome; `docs/sources.md` and `outputs/screening_report_2026-05-21.md` regenerated via scripts 02→03→04.
+**Audit trail:** decisions live in `scripts/screening_overrides.py` (with per-record full-text notes dated 2026-06-12); `outputs/needs_additional_review_fulltext_review_2026-06-12.md` records every fetch attempt and outcome; `docs/sources.md` and `outputs/screening_report_2026-05-21.md` regenerated via scripts 02→03→04.
 
 **Reviewer:** Pending advisor review.
 

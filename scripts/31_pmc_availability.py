@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Find which needs_human_review PMIDs have a free PMC full-text version.
+"""Find which needs_additional_review PMIDs have a free PMC full-text version.
 
 Unpaywall (scripts/30) points mostly at publisher PDFs that sit behind
 Cloudflare/paywall bot-checks and 403 on programmatic fetch. PubMed Central
 (PMC), by contrast, serves free full-text HTML that is cleanly fetchable.
 
-For each needs_human_review PMID this script asks NCBI elink
+For each needs_additional_review PMID this script asks NCBI elink
 (dbfrom=pubmed, db=pmc) whether a PMC record exists, and writes:
 
-    outputs/needs_human_review_pmc.csv
+    outputs/needs_additional_review_pmc.csv
       pmid, pmcid, pmc_url
 
 A non-empty pmcid means the article's full text is readable at
@@ -27,7 +27,7 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
 SCREENING_CSV = ROOT / "data/extracted/_screening/screening_decisions.csv"
-OUT_CSV = ROOT / "outputs/needs_human_review_pmc.csv"
+OUT_CSV = ROOT / "outputs/needs_additional_review_pmc.csv"
 EMAIL = "Vihaan-Banga@users.noreply.github.com"
 UA = f"YouthDentalInjuryDB/0.1 (+{EMAIL})"
 ELINK = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi"
@@ -64,7 +64,7 @@ def main() -> None:
     pmids = [
         r["pmid"]
         for r in csv.DictReader(open(SCREENING_CSV))
-        if r["decision"] == "needs_human_review"
+        if r["decision"] == "needs_additional_review"
     ]
     rows = []
     found = 0

@@ -68,7 +68,7 @@ Once a source qualifies under the above, **all** its age-stratified rows are ext
 
 **5. Governing-body reports** (PROTOCOL §4.3): AAPD Policy on Prevention of Sports-Related Orofacial Injuries (2025–26 edition), NATA position statement, Rugby Europe 2024 Injury Surveillance Report (includes U-18 Sevens data), World Rugby 2023 ISS review, England PRISP 2022-23.
 
-Each candidate logged in `docs/sources.md` with a screening status: `identified` → `screened_included` / `screened_excluded` / `needs_human_review` → (full-text) `included` / `fulltext_excluded` → `extracted`. The 436 candidate records were screened against PROTOCOL §3.1–3.3 using a hybrid pipeline: automatic exclusion rules (non-English, Case Reports, Reviews, Editorials/Letters/Comments) cleared ~14%, AI-assisted abstract review (model: Claude Opus) handled the remainder. AI-assisted decisions tagged with extractor=`VB-AI-assisted-<date>` for audit. Full reasoning per decision captured in `outputs/screening_report_*.md`. Records whose abstract could not confirm a key §3.1 attribute were held as `needs_human_review` (84 at the current snapshot); a full-text review pass of the open-access subset (2026-06-12) resolved 7 of these (`outputs/needs_human_review_fulltext_review_2026-06-12.md`), the remainder being blocked by paywalled or scanned full text pending advisor library access. The project lead (V.B.) is the final screener; an advisor will perform 20% inter-rater reliability re-screening prior to v1.0.
+Each candidate logged in `docs/sources.md` with a screening status: `identified` → `screened_included` / `screened_excluded` / `needs_additional_review` → (full-text) `included` / `fulltext_excluded` → `extracted`. The 436 candidate records were screened against PROTOCOL §3.1–3.3 using a hybrid pipeline: automatic exclusion rules (non-English, Case Reports, Reviews, Editorials/Letters/Comments) cleared ~14%, AI-assisted abstract review (model: Claude Opus) handled the remainder. AI-assisted decisions tagged with extractor=`VB-AI-assisted-<date>` for audit. Full reasoning per decision captured in `outputs/screening_report_*.md`. Records whose abstract could not confirm a key §3.1 attribute were held as `needs_additional_review` (84 at the current snapshot); a full-text review pass of the open-access subset (2026-06-12) resolved 7 of these (`outputs/needs_additional_review_fulltext_review_2026-06-12.md`), the remainder being blocked by paywalled or scanned full text pending advisor library access. The project lead (V.B.) is the final screener; an advisor will perform 20% inter-rater reliability re-screening prior to v1.0.
 
 ### Data extraction (PROTOCOL §5)
 
@@ -216,6 +216,6 @@ _Draft last updated 2026-06-12 (numbers reflect the 426-row / 106-source working
 - _File OSF pre-registration_
 - _Complete 20% inter-rater reliability re-screening_
 - _Re-extract `quality_flag=partial_data` rows from full text and graduate clean rows to `quality_flag=clean`_
-- _Resolve the remaining 84 `needs_human_review` records (advisor library access for paywalled/scanned full text)_
+- _Resolve the remaining 84 `needs_additional_review` records (advisor library access for paywalled/scanned full text)_
 - _Fill external citation placeholders (ref. 2, lifetime-cost figure) and expand the reference list from `docs/sources.md`_
 - _Mint Zenodo DOI; populate DOI/OSF placeholders_

@@ -25,7 +25,6 @@ header_pages:
 
 # Don't render these as pages (they're either Claude-Code-specific or notes folders)
 exclude:
-  - claude_code_prompts.md
   - meeting_notes/
   - _config.yml
   - Gemfile

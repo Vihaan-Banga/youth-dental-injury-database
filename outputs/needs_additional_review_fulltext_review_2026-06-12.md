@@ -1,7 +1,7 @@
-# Full-text review of the open-access `needs_human_review` subset — 2026-06-12
+# Full-text review of the open-access `needs_additional_review` subset — 2026-06-12
 
 This logs the full-text review pass that resolved part of the 91-record
-`needs_human_review` pile. It is the project lead's full-text screening step
+`needs_additional_review` pile. It is the project lead's full-text screening step
 (AI-assisted, same basis as the 2026-05-21 abstract screen). It is **not** the
 PROTOCOL §4.4 20% inter-rater reliability re-screen, which still awaits the
 advisor.
@@ -38,13 +38,13 @@ Union of fetchable records: 25 distinct PMIDs.
 | 36538371 | (n/a) | E-age | Finnish trauma-centre ice-hockey facial fractures (Acta Odontol Scand); adult-dominated (98.5% male), not age-stratified. |
 | 39060115 | tadmor2025 | E-nodent | UK rugby league (brain) concussion symptom non-reporting (Leeds Beckett repository); no dental/orofacial injury outcome. |
 
-### Reviewed but still `needs_human_review` (1)
+### Reviewed but still `needs_additional_review` (1)
 
 | PMID | reason | note |
 |---|---|---|
 | 40662680 | R-age (confidence → low) | Swiss Muay Thai/K-1/kickboxing survey (Robbiani & Filippi 2025). Full text retrieved; reports all-ages dental injuries (52 cases, 19%; 8.7% during competition) and MG use (75% any, 31.5% professional). The subject **age distribution** sits in a PDF table that did not extract cleanly (readable strata are training-experience bands, not ages), so a 5-22 subset could not be confirmed/isolated. Needs a human read of the age table. |
 
-### Not resolvable programmatically (stay `needs_human_review`)
+### Not resolvable programmatically (stay `needs_additional_review`)
 
 - **Scanned page-image PMC records** (no OCR text): PMID 18254, 1982928, 6130812 (pre-1995 BJSM rugby papers).
 - **Cloudflare / paywalled publisher PDFs** (403/402 to any non-browser client): Wiley `pdfdirect` (15853840, 19021650, 20666978, 21199336, 23374909, 25721283, 30431180, 37431232), JOMS (19615582), lww (25244279).
@@ -54,6 +54,6 @@ These need advisor library access or an interactive browser session (Chrome MCP)
 
 ## Net effect
 
-- `needs_human_review`: **91 → 84**.
+- `needs_additional_review`: **91 → 84**.
 - master.csv: **425 → 426 rows**, **105 → 106 sources** (halabchi2007; +Iran, +karate via `martial_arts_other`).
 - All 10 validation checks still pass: **0 FAILs, 0 WARNs**.

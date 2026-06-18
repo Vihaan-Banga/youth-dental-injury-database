@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Resolve OA URLs for the needs_human_review PubMed records.
+"""Resolve OA URLs for the needs_additional_review PubMed records.
 
-For each needs_human_review PMID:
+For each needs_additional_review PMID:
   1. Use NCBI eutils (efetch) to pull the DOI from the article metadata
   2. Query Unpaywall for the best OA URL
   3. Persist a CSV: pmid, doi, journal, title, oa_url, oa_host_type, publisher
 
-Output: outputs/needs_human_review_oa_urls.csv
+Output: outputs/needs_additional_review_oa_urls.csv
 """
 
 from __future__ import annotations
@@ -23,7 +23,7 @@ from xml.etree import ElementTree as ET
 ROOT = Path(__file__).resolve().parent.parent
 SCREENING_CSV = ROOT / "data/extracted/_screening/screening_decisions.csv"
 ABSTRACT_DIR = ROOT / "data/raw/papers/_abstracts"
-OUT_CSV = ROOT / "outputs/needs_human_review_oa_urls.csv"
+OUT_CSV = ROOT / "outputs/needs_additional_review_oa_urls.csv"
 EMAIL = "Vihaan-Banga@users.noreply.github.com"
 
 UA = f"YouthDentalInjuryDB/0.1 (+{EMAIL})"
@@ -78,9 +78,9 @@ def main() -> None:
     nhr = []
     with open(SCREENING_CSV) as f:
         for r in csv.DictReader(f):
-            if r["decision"] == "needs_human_review":
+            if r["decision"] == "needs_additional_review":
                 nhr.append(r)
-    print(f"{len(nhr)} needs_human_review records")
+    print(f"{len(nhr)} needs_additional_review records")
 
     OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
     fields = [

@@ -10,7 +10,7 @@ This script combines two layers:
 Decisions follow PROTOCOL §4.4 status vocabulary:
   - screened_included         meets §3.1–3.3, queue for full-text
   - screened_excluded         fails ≥1 inclusion or hits an exclusion criterion
-  - needs_human_review        ambiguous; final call requires the project lead
+  - needs_additional_review        ambiguous; final call requires the project lead
                               (and/or advisor) to read the full text
 
 Confidence: high | medium | low. Anything below 'high' should be re-checked.
@@ -42,7 +42,7 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Manual decisions populated after reading abstracts.
 # Format: PMID (str) -> (decision, reason_code, confidence, note)
-# decision in {"screened_included","screened_excluded","needs_human_review"}
+# decision in {"screened_included","screened_excluded","needs_additional_review"}
 MANUAL_DECISIONS: dict[str, tuple[str, str, str, str]] = {
     # Populated by 02_screen_candidates_decisions.py — see that file.
 }
@@ -93,7 +93,7 @@ def main():
         elif auto:
             d, code, conf, note = auto
         else:
-            d, code, conf, note = ("needs_human_review", "R-other", "low",
+            d, code, conf, note = ("needs_additional_review", "R-other", "low",
                                    "No manual decision recorded yet; review abstract.")
         decisions.append({
             "pmid": pmid,

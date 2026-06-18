@@ -44,7 +44,7 @@ CPSC does not publish stable direct download URLs (verified 2026-05-22). The pip
 
 ### Screening pile reduction
 
-PMC + Unpaywall full-text checks resolved 5 of the 68 `needs_human_review` records:
+PMC + Unpaywall full-text checks resolved 5 of the 68 `needs_additional_review` records:
 
 | PMID | Before | After | What full text revealed |
 |---|---|---|---|
@@ -65,7 +65,7 @@ Most other journals (Wiley, Elsevier) blocked automated PDF downloads with 403, 
 
 - `screened_included`: **70** ↗ (was 69)
 - `extracted`: **3** ↗ (was 0)
-- `needs_human_review`: **63** ↘ (was 68)
+- `needs_additional_review`: **63** ↘ (was 68)
 - `screened_excluded`: **64** ↗ (was 63)
 
 `data/harmonized/master.csv`: 11 rows, 3 sources.
@@ -84,7 +84,7 @@ In rough order of leverage:
 
 5. **Download a recent NEISS year manually** — follow `data/raw/neiss/README.md` and run `python3 scripts/05_neiss_filter.py`. That unblocks the biggest single surveillance dataset for the project.
 
-6. **Work through the 63 `needs_human_review` records** at your own pace — `outputs/screening_report_2026-05-21.md` groups them by reason. Most are blocked on a single methods-section sentence about age range.
+6. **Work through the 63 `needs_additional_review` records** at your own pace — `outputs/screening_report_2026-05-21.md` groups them by reason. Most are blocked on a single methods-section sentence about age range.
 
 ## Notes & known issues
 

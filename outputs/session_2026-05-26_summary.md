@@ -24,9 +24,9 @@ Read this when you wake up.
 
 4. **`CONTRIBUTING.md` + `CHANGELOG.md`** — repo polish. CONTRIBUTING covers how to report a bad row, suggest a source, add an extraction via PR. CHANGELOG follows Keep-a-Changelog format with history back to 2026-05-21.
 
-5. **Final PubMed extraction batch (#7)** — extracted the remaining 15 screened_included sources I hadn't gotten to: skaare2003, lee2004, lewis2011, muller_bolla2012, nilsson2017, jain2017, nielsen2018, schuller2019, narbutaite2020, nasu2023b, madireddy2024, dipalma2024, patel2025, dashash2026, tyler2026 (NEISS softball HS vs college 2015-2024). **The `screened_included` pile is now FULLY EXTRACTED — only `needs_human_review` remains.**
+5. **Final PubMed extraction batch (#7)** — extracted the remaining 15 screened_included sources I hadn't gotten to: skaare2003, lee2004, lewis2011, muller_bolla2012, nilsson2017, jain2017, nielsen2018, schuller2019, narbutaite2020, nasu2023b, madireddy2024, dipalma2024, patel2025, dashash2026, tyler2026 (NEISS softball HS vs college 2015-2024). **The `screened_included` pile is now FULLY EXTRACTED — only `needs_additional_review` remains.**
 
-6. **Final Unpaywall sweep** for the 91-record `needs_human_review` pile: found OA URLs for 18 of them but publisher 403s blocked 17 of 18 downloads (Wiley, BMJ, Elsevier all use Cloudflare bot-detection). Documented as `outputs/needs_human_review_status.md` with three resolution paths (Chrome MCP batch fetch / manual library access / accept as pending for v0.1).
+6. **Final Unpaywall sweep** for the 91-record `needs_additional_review` pile: found OA URLs for 18 of them but publisher 403s blocked 17 of 18 downloads (Wiley, BMJ, Elsevier all use Cloudflare bot-detection). Documented as `outputs/needs_additional_review_status.md` with three resolution paths (Chrome MCP batch fetch / manual library access / accept as pending for v0.1).
 
 7. **Tagged v0.1.0** with comprehensive release notes. GitHub release at https://github.com/Vihaan-Banga/youth-dental-injury-database/releases/tag/v0.1.0. This sets up the workflow for v1.0 — when Zenodo is connected, the next tag push will mint a DOI.
 
@@ -55,7 +55,7 @@ The full list (none are blocked by code; all need you):
 2. **Secure a senior advisor** (you said you're doing outreach independently).
 3. **OSF pre-registration** filed (depends on advisor for sign-off).
 4. **20% inter-rater reliability re-screening** (depends on advisor).
-5. **Resolve the 91 `needs_human_review` records** — either accept as transparent limitation OR I batch-fetch them via Chrome MCP one session.
+5. **Resolve the 91 `needs_additional_review` records** — either accept as transparent limitation OR I batch-fetch them via Chrome MCP one session.
 6. **Final methods-paper polish** — `outputs/methods_paper_draft.md` has the skeleton; needs author/reference fills + post-advisor inputs.
 
 None of this needs nightly work from me. **The data-assembly phase is meaningfully complete.** v0.1.0 stands as a substantial deliverable on its own.
@@ -72,7 +72,7 @@ None of this needs nightly work from me. **The data-assembly phase is meaningful
 
 ```
 feea500  Zenodo setup walkthrough — last step before v1.0 DOI
-cf98181  Document needs_human_review pile + OA-fetch limits
+cf98181  Document needs_additional_review pile + OA-fetch limits
 e6313e7  Bulk extraction batch 7 — final 15 PubMed sources (+18 rows)
 6aae10e  Bibliography, SQLite export, CONTRIBUTING, CHANGELOG, link Pages site
 a57a61c  Add Jekyll site config + landing page for GitHub Pages

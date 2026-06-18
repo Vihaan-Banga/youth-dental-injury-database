@@ -71,7 +71,7 @@ Statistically indistinguishable. Good signal that the database is internally coh
 ## What's still pending
 
 - ~26 unextracted screened_included PubMed sources (lower yield — mostly papers with sparse abstracts).
-- 91 needs_human_review records — full-text retrieval blocked by publisher 403s for most.
+- 91 needs_additional_review records — full-text retrieval blocked by publisher 403s for most.
 - The remaining international PDFs: World Rugby 2023 ISS, England PRISP 2022-23, AAPD policy doc — adult-leaning, would yield maybe 5–10 more rows.
 - OSF pre-registration, advisor sign-off, formal v1.0 release.
 

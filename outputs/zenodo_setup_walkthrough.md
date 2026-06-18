@@ -18,7 +18,7 @@ Best moment: **right before submitting v1.0** for academic use (or before any ex
 
 - [ ] Advisor has signed off on the methodology
 - [ ] OSF pre-registration is filed
-- [ ] All `needs_human_review` records resolved or transparently documented
+- [ ] All `needs_additional_review` records resolved or transparently documented
 - [ ] Methods paper is at least in draft
 
 Tagging v1.0.0 in GitHub triggers Zenodo to mint the DOI automatically.

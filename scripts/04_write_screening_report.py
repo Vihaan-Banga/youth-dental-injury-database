@@ -57,7 +57,7 @@ W("This is the audit trail for the first-pass screening of the 200 PubMed candid
 W("**This is not a final screening decision.** Per PROTOCOL.md §4.4, the project lead is the primary screener and an advisor (or designee) second-screens 20% of records. Treat each row below as the AI-assisted screener's recommendation; verify before promoting any record to `included`.\n")
 W("**Where to start as the human screener:** \n")
 W("1. **Spot-check exclusions first.** Wrong exclusions cost the most because excluded records exit the audit. The high-confidence excludes (non-English, case reports, off-topic) are low-risk; the `E-age` and `E-noprim` excludes are worth confirming.\n")
-W("2. **Then work through `needs_human_review`.** Most of these are blocked on age range or sport-related subset visibility — answerable from the methods section of the full text.\n")
+W("2. **Then work through `needs_additional_review`.** Most of these are blocked on age range or sport-related subset visibility — answerable from the methods section of the full text.\n")
 W("3. **Then second-screen 20% of the `screened_included` rows** to satisfy PROTOCOL §4.4 inter-rater reliability.\n\n")
 
 # Totals
@@ -65,12 +65,12 @@ from collections import Counter
 by_dec = Counter(d["decision"] for d in decisions)
 W("## Totals\n")
 W(f"- `screened_included`: **{by_dec.get('screened_included', 0)}**")
-W(f"- `needs_human_review`: **{by_dec.get('needs_human_review', 0)}**")
+W(f"- `needs_additional_review`: **{by_dec.get('needs_additional_review', 0)}**")
 W(f"- `screened_excluded`: **{by_dec.get('screened_excluded', 0)}**")
 W(f"- Total: **{sum(by_dec.values())}**\n")
 
 # Per-decision breakdown
-for dec in ("screened_included", "needs_human_review", "screened_excluded"):
+for dec in ("screened_included", "needs_additional_review", "screened_excluded"):
     if dec not in by_dec_reason:
         continue
     W(f"---\n\n## {dec}  ({by_dec.get(dec, 0)})\n")
@@ -92,9 +92,9 @@ for dec in ("screened_included", "needs_human_review", "screened_excluded"):
 
 W("---\n\n## How decisions were made\n")
 W("- **Auto-rules** (`02_screen_candidates.py`): non-English (`language != 'eng'`), `PublicationType = 'Case Reports'`, and `PublicationType ∈ {Review, Systematic Review, Meta-Analysis}` → automatic `screened_excluded` with reason `E-lang`, `E-case`, or `E-review`. Reviews are kept in the source list because PROTOCOL §3.2 explicitly allows them to be mined for primary-source citations — they are just not extracted themselves.")
-W("- **Manual decisions** (`screening_overrides.py`): every other record was assigned a decision after reading the title, abstract, and publication-type list from the per-PMID JSON in `data/raw/papers/_abstracts/`. Where the abstract did not disclose age range, sport-related subset, or extractable numerical data, the decision defaulted to `needs_human_review` rather than risking a wrong exclusion.")
+W("- **Manual decisions** (`screening_overrides.py`): every other record was assigned a decision after reading the title, abstract, and publication-type list from the per-PMID JSON in `data/raw/papers/_abstracts/`. Where the abstract did not disclose age range, sport-related subset, or extractable numerical data, the decision defaulted to `needs_additional_review` rather than risking a wrong exclusion.")
 W("- **No full texts were retrieved.** All decisions are reversible by the project lead reading the full text.")
-W("- **Confidence ratings**: `high` = the abstract is decisive; `medium` = abstract supports the call but a reasonable reader could disagree; `low` = used only for genuine ambiguity in `needs_human_review`.\n")
+W("- **Confidence ratings**: `high` = the abstract is decisive; `medium` = abstract supports the call but a reasonable reader could disagree; `low` = used only for genuine ambiguity in `needs_additional_review`.\n")
 
 W("## Files referenced\n")
 W("- `data/raw/papers/_abstracts/<PMID>.json` — full parsed record per candidate")

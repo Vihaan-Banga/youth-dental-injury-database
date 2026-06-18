@@ -59,7 +59,7 @@ Each batch is a separate `scripts/14...19_extract_batchN.py` for reproducibility
 2. **Download more NEISS years** — same flow you used for 2023, but with "Most Recent 5 Years (2021-2025)" or "Date Range 2018-2022". Each year adds ~500-800 cases. The bug fix I made today already recovers ~15% more cases per year than the original filter did.
 3. **Decide whether to extract from `data/raw/surveillance_reports/_international/*.pdf`.** Rugby Europe in particular has U-18/U-20 data that's directly in §3.1 scope.
 4. **Look at the figures** in `outputs/figures/` and tell me which (if any) are useful for your Conrad submission / advisor outreach. I can iterate on them.
-5. **Resume needs_human_review screening** — 91 records still pending your full-text review. Most are "age range not in abstract" calls.
+5. **Resume needs_additional_review screening** — 91 records still pending your full-text review. Most are "age range not in abstract" calls.
 
 ## Schema / methodology decisions I made overnight
 
@@ -71,7 +71,7 @@ All logged in `docs/decisions.md`:
 ## What's NOT done
 
 - The remaining ~38 unextracted screened_included PubMed sources (most are very abstract-sparse or repetitive with already-extracted papers). Could extract on request.
-- The 91 needs_human_review records — those genuinely need full-text retrieval, which mostly hits publisher paywalls.
+- The 91 needs_additional_review records — those genuinely need full-text retrieval, which mostly hits publisher paywalls.
 - The 11 governing-body PDFs (RIO summary years + AAPD + the 4 international ones) — they're logged as `identified` but not extracted into master.csv. Would yield ~30-50 more rows.
 - The `docs/decisions.md` proposed sport-taxonomy expansion (cricket, netball, hurling, kabaddi, etc.) is still pending your decision.
 

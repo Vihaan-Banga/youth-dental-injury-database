@@ -41,7 +41,7 @@ This database does that reconciliation, once, openly, with a transparent methodo
 - **Pre-registered research protocol** (`PROTOCOL.md`) covering inclusion/exclusion criteria, search strategy, harmonization rules, validation, and authorship. Currently `Draft v0.1 — pre-registration pending`.
 - **Data dictionary** (`DATA_DICTIONARY.md`) — 34 columns, each with type, allowed values, and definition.
 - **Append-only decisions log** (`docs/decisions.md`) capturing every non-mechanical harmonization decision with date, options considered, reasoning, and affected rows.
-- **Source tracking** (`docs/sources.md`) showing every candidate source's screening journey: identified → screened_included / screened_excluded / needs_human_review.
+- **Source tracking** (`docs/sources.md`) showing every candidate source's screening journey: identified → screened_included / screened_excluded / needs_additional_review.
 - **AI-assisted screening**: 444 PubMed candidates screened against PROTOCOL §3.1–3.3 using rule-based auto-exclusion + Claude-assisted abstract review, with full per-decision reasoning logged.
 
 ### Pipeline (reproducibility)
@@ -76,7 +76,7 @@ This database does that reconciliation, once, openly, with a transparent methodo
 1. **No senior advisor co-author yet** — this is what I'm trying to fix.
 2. **OSF pre-registration not filed** — depends on advisor sign-off.
 3. **20% inter-rater reliability re-screening not done** — depends on advisor (or designee).
-4. **91 records still in `needs_human_review` status** — most are publisher-paywalled abstracts where I can't see the methods section. An advisor with university library access could resolve these quickly.
+4. **91 records still in `needs_additional_review` status** — most are publisher-paywalled abstracts where I can't see the methods section. An advisor with university library access could resolve these quickly.
 5. **Methods paper not yet drafted in full** — skeleton exists; needs co-author input.
 6. **Not yet submitted to Conrad Challenge or any journal**.
 
@@ -88,7 +88,7 @@ I am asking for **co-authorship of the v1.0 release and the methods paper**, in 
 - **Conducting (or supervising) the 20% inter-rater reliability re-screening** (~4–6 hours)
 - **Reviewing the methods paper draft** (~2–3 hours)
 - **Lending institutional / academic credibility** to the project (no specific time cost — just letting their name be on it)
-- **Optional but appreciated**: helping resolve the 91 `needs_human_review` records via library full-text access, and/or letting me use a library subscription for future extractions.
+- **Optional but appreciated**: helping resolve the 91 `needs_additional_review` records via library full-text access, and/or letting me use a library subscription for future extractions.
 
 **Estimated total time commitment: 10–15 hours over the next 3–6 months**, spread out, not concentrated. Most can be done asynchronously.
 

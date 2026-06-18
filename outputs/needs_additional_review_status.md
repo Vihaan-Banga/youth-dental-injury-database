@@ -1,4 +1,4 @@
-# `needs_human_review` pile — status & next steps
+# `needs_additional_review` pile — status & next steps
 
 _As of 2026-06-12 (originally 2026-05-25)._
 
@@ -9,9 +9,9 @@ _As of 2026-06-12 (originally 2026-05-25)._
 > found a free PMC full text for **8/91**. The rest are still unreachable
 > programmatically (Cloudflare/paywalled publisher PDFs, scanned page-image PMC
 > records, dead URLs). Per-record decisions and the full fetch log:
-> `outputs/needs_human_review_fulltext_review_2026-06-12.md` and `docs/decisions.md`.
+> `outputs/needs_additional_review_fulltext_review_2026-06-12.md` and `docs/decisions.md`.
 
-**84 PubMed records** remain in `needs_human_review` status — abstracts (and, for the unreachable open-access subset, the still-unread full text) lack enough information (usually age range or sport-specific subset) to make a final include/exclude call.
+**84 PubMed records** remain in `needs_additional_review` status — abstracts (and, for the unreachable open-access subset, the still-unread full text) lack enough information (usually age range or sport-specific subset) to make a final include/exclude call.
 
 ## Why they're stuck
 
@@ -46,7 +46,7 @@ You pull up each PubMed abstract on your end (publisher access via library, scho
 
 ### Option C — Accept current state
 
-Lock the v0.1 release with these 91 as `needs_human_review` and document the limitation transparently. They're not actively blocking any analysis — just an inventory of "couldn't fully resolve from the abstract."
+Lock the v0.1 release with these 91 as `needs_additional_review` and document the limitation transparently. They're not actively blocking any analysis — just an inventory of "couldn't fully resolve from the abstract."
 
 ## What we already know about the 91
 

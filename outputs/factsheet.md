@@ -58,7 +58,7 @@ Full cross-source table at [`cross_source_rate_comparison.md`](cross_source_rate
 
 ## What's still in progress
 
-- **Active screening pile:** 91 candidate papers in `needs_human_review` (mostly blocked on age range not visible in the abstract). Most need full-text retrieval.
+- **Active screening pile:** 91 candidate papers in `needs_additional_review` (mostly blocked on age range not visible in the abstract). Most need full-text retrieval.
 - **NEISS gap years:** 2018-2022 + 2024-2025 not yet pulled. Pipeline + filter scripts ready to ingest these as soon as the user runs the CPSC query.
 - **Pre-registration:** OSF pre-registration not yet filed. Advisor not yet secured.
 - **Formal license sign-off:** MIT (code) + CC BY 4.0 (data) are in `LICENSE` / `LICENSE-DATA`, matching PROTOCOL §9, but advisor sign-off pending before v1.0.
