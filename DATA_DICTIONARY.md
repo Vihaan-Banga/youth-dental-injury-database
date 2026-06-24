@@ -74,6 +74,17 @@ When adding a new source, follow these definitions exactly. When a definition is
 | `extraction_notes` | string | Any extraction-time notes; empty if none | "Combined ages 13–14 and 15–17 reported separately; aggregated for this row" |
 | `quality_flag` | category | One of: `clean`, `assumption_made`, `partial_data`, `review_needed` | `clean` |
 
+### Derived comparability columns (master only)
+
+These two columns are **derived at harmonization** by `scripts/07_harmonize.py` (via `scripts/_derived_columns.py`). They appear in `data/harmonized/master.csv` and the SQLite export, **not** in the per-source extraction CSVs (which hold only source-reported fields). They were added 2026-06-24 to make cross-row comparability machine-readable (see `docs/decisions.md`).
+
+| Column | Type | Description | Example |
+|---|---|---|---|
+| `measure_type` | category | The row's outcome-measure / rate basis. One of: `incidence_per_AE` (per athlete-exposure; the directly-comparable rate tier, normalized in `rate_per_1000_ae`), `incidence_per_exposure_hours` (per player/athlete/match-hours), `incidence_per_population` (per 100,000 population, **not** AE), `incidence_per_season` (per season / player-year), `prevalence_proportion` (a reported proportion/percentage — of a sample or of injuries; check `rate_denominator_raw` for the proportion's population before pooling), `ed_visit_estimate` (NEISS/ED weighted national estimate or ED count), `raw_count` (unnormalized injury/case count), `rate_ratio_or_effect_size` (rate ratio / odds ratio / effect size), `unclassified_pending_review` (temporary; auto-classifier was not confident — awaiting manual classification). | `incidence_per_AE` |
+| `comparability_group` | string | Coarse key on which **direct** comparison is permitted: the short `measure_type` family, suffixed `__aggregate` for pooled / non-sport-specific rows (`all_sports_aggregate`, etc.). **Two rows are directly comparable only when they share the same `comparability_group`.** Rate magnitudes still differ by scale within `incidence_per_AE` — use `rate_per_1000_ae` for those. | `per_AE`, `prevalence__aggregate` |
+
+**Comparability rule:** never compare values across different `measure_type` / `comparability_group` (e.g., a NEISS `ed_visit_estimate` count is not comparable to an `incidence_per_AE` rate or a `prevalence_proportion`). The harmonized `rate_per_1000_ae` column is populated only for `incidence_per_AE` rows.
+
 ---
 
 ## Naming conventions

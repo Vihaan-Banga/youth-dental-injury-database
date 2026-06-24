@@ -24,12 +24,15 @@ diffs are reviewable.
 import csv
 from pathlib import Path
 
+from _derived_columns import measure_type, comparability_group
+
 # Resolve relative to this script's location so it works on any machine / CI.
 ROOT = Path(__file__).resolve().parent.parent
 EXTRACTED_DIR = ROOT / "data/extracted"
 HARMONIZED = ROOT / "data/harmonized/master.csv"
 
-EXPECTED_COLUMNS = [
+# Columns present in the per-source extraction CSVs (the source-of-truth schema).
+EXTRACTED_COLUMNS = [
     "source_id", "citation", "doi", "pub_year", "study_type", "peer_reviewed",
     "country", "region", "population_setting",
     "age_min", "age_max", "age_category", "extraction_basis",
@@ -41,6 +44,12 @@ EXPECTED_COLUMNS = [
     "mouthguard_required", "mouthguard_use_rate", "mouthguard_injury_relation",
     "extraction_date", "extractor", "extraction_notes", "quality_flag",
 ]
+
+# Derived columns computed here at harmonization (not stored in extraction CSVs).
+DERIVED_COLUMNS = ["measure_type", "comparability_group"]
+
+# Full master schema = extracted columns + derived columns.
+EXPECTED_COLUMNS = EXTRACTED_COLUMNS + DERIVED_COLUMNS
 
 
 def main():
@@ -57,15 +66,18 @@ def main():
         with path.open(encoding="utf-8") as f:
             reader = csv.DictReader(f)
             file_cols = reader.fieldnames or []
-            unexpected = set(file_cols) - set(EXPECTED_COLUMNS)
-            missing = set(EXPECTED_COLUMNS) - set(file_cols)
+            unexpected = set(file_cols) - set(EXTRACTED_COLUMNS)
+            missing = set(EXTRACTED_COLUMNS) - set(file_cols)
             if unexpected:
                 issues.append(f"{path.name}: unexpected columns dropped: {sorted(unexpected)}")
             if missing:
                 issues.append(f"{path.name}: missing columns (filled empty): {sorted(missing)}")
             for row in reader:
-                # Coerce to the expected schema
-                clean = {c: row.get(c, "") for c in EXPECTED_COLUMNS}
+                # Coerce to the extracted schema, then add derived columns.
+                clean = {c: row.get(c, "") for c in EXTRACTED_COLUMNS}
+                mt = measure_type(clean)
+                clean["measure_type"] = mt
+                clean["comparability_group"] = comparability_group(clean, mt)
                 all_rows.append(clean)
         print(f"  read {path.name}: {sum(1 for _ in open(path)) - 1} rows")
 

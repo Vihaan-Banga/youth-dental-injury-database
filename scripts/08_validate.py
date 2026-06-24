@@ -24,6 +24,7 @@ Checks:
        season_or_timeframe) combinations — surfaces accidental re-extractions
   C11. rate_per_1000_ae is populated only when rate_denominator_raw names an
        athlete-exposure denominator (not hours / season / population / % of injuries)
+  C12. measure_type populated + in controlled vocabulary; comparability_group populated
 
 Output: outputs/validation_report.md with per-check counts and any failing rows.
 Exit code 0 if all hard checks pass (any C5/C9 mismatches surface as warnings,
@@ -36,6 +37,8 @@ import sys
 from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
+
+from _derived_columns import MEASURE_TYPES
 
 # Resolve relative to this script so it works on any machine / CI.
 ROOT = Path(__file__).resolve().parent.parent
@@ -53,6 +56,8 @@ EXPECTED_COLUMNS = [
     "rate_raw", "rate_denominator_raw", "rate_per_1000_ae",
     "mouthguard_required", "mouthguard_use_rate", "mouthguard_injury_relation",
     "extraction_date", "extractor", "extraction_notes", "quality_flag",
+    # Derived at harmonization (scripts/07 via scripts/_derived_columns.py):
+    "measure_type", "comparability_group",
 ]
 
 ALLOWED = {
@@ -280,6 +285,23 @@ def main():
                                f"athlete-exposure denominator — move the value to "
                                f"rate_raw and leave rate_per_1000_ae empty")
 
+    # C12 — comparability columns populated and in vocabulary.
+    # measure_type must be one of the controlled values; comparability_group
+    # must be non-empty. See DATA_DICTIONARY.md and docs/decisions.md 2026-06-24.
+    for i, r in enumerate(rows):
+        mt = (r.get("measure_type") or "").strip()
+        if not mt:
+            add("FAIL", "C12", f"row {i+1}: measure_type is empty")
+        elif mt not in MEASURE_TYPES:
+            add("FAIL", "C12", f"row {i+1}: measure_type='{mt}' not in controlled vocabulary")
+        if not (r.get("comparability_group") or "").strip():
+            add("FAIL", "C12", f"row {i+1}: comparability_group is empty")
+    n_pending = sum(1 for r in rows
+                    if r.get("measure_type") == "unclassified_pending_review")
+    if n_pending:
+        add("WARN", "C12", f"{n_pending} rows are measure_type="
+                           f"'unclassified_pending_review' — awaiting manual classification")
+
     # Generate report
     fails = [f for f in findings if f[0] == "FAIL"]
     warns = [f for f in findings if f[0] == "WARN"]
@@ -321,6 +343,7 @@ def main():
     W("- **C9** every source has at least one `youth_primary` row")
     W("- **C10** no duplicate (source × sport × age × sex × level × basis × season) keys")
     W("- **C11** `rate_per_1000_ae` populated only when `rate_denominator_raw` is an athlete-exposure denominator")
+    W("- **C12** `measure_type` populated and in the controlled vocabulary; `comparability_group` populated")
     W("\n## Per-source row count\n")
     W("| source_id | rows | bases |")
     W("|---|---|---|")

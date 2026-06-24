@@ -145,6 +145,21 @@ function mgCell(r){
   return bits.length?bits.join('<br>'):'<span class="den">—</span>';
 }
 
+// Measure-type tiers: order (most comparable first) + label + one-line meaning.
+// Rows in DIFFERENT tiers are NOT directly comparable and are shown in separate tables.
+const MEASURE_META = {
+  incidence_per_AE:            {order:1, label:"Incidence per athlete-exposure (AE)", note:"Directly comparable across these rows (same denominator); the normalized per-1000-AE value is shown. Still mind injury definition, age range, and era."},
+  incidence_per_exposure_hours:{order:2, label:"Incidence per player/athlete-hours", note:"A rate, but per exposure-HOURS — not comparable to per-AE rates."},
+  incidence_per_population:    {order:3, label:"Incidence per 100,000 population", note:"Population-denominated (not athlete-exposures) — a different basis."},
+  incidence_per_season:        {order:4, label:"Incidence per season / player-year", note:"Per-season basis — not comparable to per-AE or per-hour rates."},
+  prevalence_proportion:       {order:5, label:"Prevalence / proportion (%)", note:"A proportion (of a sample, or of injuries) — not an incidence rate. Read the denominator population before comparing even within this group."},
+  ed_visit_estimate:           {order:6, label:"ED-visit estimate (NEISS)", note:"Emergency-department-treated weighted national estimates / counts — absolute magnitudes, ED-treated only, NOT rates."},
+  raw_count:                   {order:7, label:"Raw injury count", note:"Unnormalized counts — magnitudes only, no denominator."},
+  rate_ratio_or_effect_size:   {order:8, label:"Rate ratio / effect size", note:"Relative effect measures (e.g. mouthguard user vs non-user) — not absolute rates."},
+  unclassified_pending_review: {order:9, label:"Unclassified (pending review)", note:"Measure basis not yet classified — do not compare."},
+};
+const prettyMeasure = m => (MEASURE_META[m]||{label:m}).label;
+
 function render(){
   const sport=document.getElementById('sport').value;
   const age=document.getElementById('age').value;
@@ -174,19 +189,36 @@ function render(){
 
   const res=document.getElementById('results');
   if(!rows.length){res.innerHTML='<p class="none">No matching rows. Try "All age groups" or a different sport.</p>';return;}
-  rows.sort((a,b)=>(b.pub_year||'').localeCompare(a.pub_year||''));
-  res.innerHTML='<table><thead><tr>'+
-    '<th>Population</th><th>Context</th><th>Injuries</th><th>Reported rate</th><th>Mouthguard</th><th>Source</th>'+
-    '</tr></thead><tbody>'+
-    rows.map(r=>`<tr>
-      <td>${popCell(r)}</td>
-      <td>${ctxCell(r)}</td>
-      <td>${injCell(r)}</td>
-      <td>${reportedRate(r)}</td>
-      <td>${mgCell(r)}</td>
-      <td><span class="cite">${esc(r.citation)}</span>${r.country?`<br><span class="den">${esc(r.country)} · ${esc(r.pub_year)}</span>`:''}</td>
-    </tr>`).join('')+
-    '</tbody></table>';
+
+  // Segregate by measure_type — incompatible tiers are shown in SEPARATE tables
+  // so rows that aren't comparable are never lined up in one list.
+  const groups={};
+  rows.forEach(r=>{(groups[r.measure_type||'unclassified_pending_review']??=[]).push(r);});
+  const order=Object.keys(groups).sort((a,b)=>(MEASURE_META[a]?.order||99)-(MEASURE_META[b]?.order||99));
+
+  let html='';
+  if(order.length>1){
+    html+=`<div class="callout"><strong>${order.length} different measure types below.</strong> Each table is a separate, non-comparable basis (denominator) — compare rows <em>within</em> a table, never across tables.</div>`;
+  }
+  for(const m of order){
+    const g=groups[m].slice().sort((a,b)=>(b.pub_year||'').localeCompare(a.pub_year||''));
+    const meta=MEASURE_META[m]||{label:m,note:''};
+    html+=`<h3 style="margin:1.2rem 0 .2rem;font-size:1.02rem">${esc(meta.label)} <span class="den">(${g.length})</span></h3>`+
+      `<p class="den" style="margin:.1rem 0 .4rem">${esc(meta.note)}</p>`+
+      '<table><thead><tr>'+
+      '<th>Population</th><th>Context</th><th>Injuries</th><th>Reported value</th><th>Mouthguard</th><th>Source</th>'+
+      '</tr></thead><tbody>'+
+      g.map(r=>`<tr>
+        <td>${popCell(r)}</td>
+        <td>${ctxCell(r)}</td>
+        <td>${injCell(r)}</td>
+        <td>${reportedRate(r)}</td>
+        <td>${mgCell(r)}</td>
+        <td><span class="cite">${esc(r.citation)}</span>${r.country?`<br><span class="den">${esc(r.country)} · ${esc(r.pub_year)}</span>`:''}</td>
+      </tr>`).join('')+
+      '</tbody></table>';
+  }
+  res.innerHTML=html;
 }
 
 fetch('rate_explorer_data.json').then(r=>r.json()).then(d=>{

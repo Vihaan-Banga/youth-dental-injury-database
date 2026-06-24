@@ -21,7 +21,8 @@ ROOT = Path(__file__).resolve().parent.parent
 MASTER = ROOT / "data/harmonized/master.csv"
 OUT = ROOT / "docs/rate_explorer_data.json"
 
-# Fields the page shows. Subset of the 36-column schema.
+# Fields the page shows. Subset of the 38-column schema, incl. the derived
+# measure_type / comparability_group so the page can segregate by rate basis.
 FIELDS = [
     "source_id", "citation", "pub_year", "study_type", "country",
     "age_category", "age_min", "age_max", "extraction_basis", "sex",
@@ -31,7 +32,7 @@ FIELDS = [
     "injury_count", "injury_type_raw", "injury_category",
     "rate_raw", "rate_denominator_raw", "rate_per_1000_ae",
     "mouthguard_required", "mouthguard_use_rate", "mouthguard_injury_relation",
-    "quality_flag",
+    "quality_flag", "measure_type", "comparability_group",
 ]
 
 

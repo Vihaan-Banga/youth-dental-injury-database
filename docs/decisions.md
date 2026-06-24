@@ -466,4 +466,27 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 
 ---
 
+### 2026-06-24: Comparability tiering — `measure_type` + `comparability_group` columns
+
+**Trigger:** A senior surveillance researcher (Christy Collins, President of Datalys / NCAA-ISP) warned that "these databases/studies are not actually comparable due to differences in definitions, methodology, inclusion/exclusion criteria." An audit confirmed the database mixed at least 7 incompatible outcome-measure bases in one value space (ED-visit estimates, per-AE rates, per-hours rates, per-population rates, per-season rates, prevalence proportions, raw counts) with **no machine-readable flag** distinguishing them — so a consumer of `master.csv`/SQLite could naively line up a NEISS ED estimate next to a per-100k-AE rate next to a survey prevalence.
+
+**Decision:** Add two **derived** columns to `master.csv` (computed at harmonization, not stored in the per-source extraction CSVs):
+- `measure_type` — controlled vocabulary of the row's outcome-measure / rate basis: `incidence_per_AE`, `incidence_per_exposure_hours`, `incidence_per_population`, `incidence_per_season`, `prevalence_proportion`, `ed_visit_estimate`, `raw_count`, `rate_ratio_or_effect_size`, plus a temporary `unclassified_pending_review`.
+- `comparability_group` — coarse key on which **direct** comparison is permitted: the short measure family, suffixed `__aggregate` for pooled / non-sport-specific rows. Two rows are directly comparable only when they share this value.
+
+**Implementation:**
+- `scripts/_derived_columns.py` (new) — deterministic classifier from `rate_denominator_raw` + `source_id`, a `MANUAL_MEASURE_TYPE` override table for the long tail, and the `comparability_group` derivation. Imported by `07` (populate) and `08` (validate).
+- `scripts/07_harmonize.py` — separates `EXTRACTED_COLUMNS` (36, source-of-truth) from `DERIVED_COLUMNS` (2); master is now 38 columns.
+- `scripts/08_validate.py` — new check **C12** (FAIL if `measure_type` empty or out-of-vocab, or `comparability_group` empty; WARN listing the `unclassified_pending_review` count).
+- `DATA_DICTIONARY.md` — documents both columns + the comparability rule.
+- `scripts/27` (SQLite) and `scripts/33` + `docs/rate-explorer.html` regenerated/updated: the Rate Explorer now **segregates results into one table per `measure_type`** (ordered most-comparable-first) and never co-plots incompatible tiers.
+
+**Auto-classification result (426 rows):** ed_visit_estimate 255, prevalence_proportion 89, incidence_per_AE 22, incidence_per_exposure_hours 17, incidence_per_season 11, raw_count 6, rate_ratio_or_effect_size 4, incidence_per_population 2, **unclassified_pending_review 20** (all empty-denominator rows — listed in the 2026-06-24 session report for manual classification; to be pinned via `MANUAL_MEASURE_TYPE`).
+
+**Limitation (phase 2):** `prevalence_proportion` currently lumps population-prevalence (% of athletes injured) with within-injury proportions (% of injuries that were dental); separating those needs the planned `case_definition` flag. Validator: 426 rows, 0 FAILs, 1 WARN (the 20 pending rows).
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->
