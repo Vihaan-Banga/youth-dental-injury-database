@@ -7,16 +7,12 @@ _Run against `data/harmonized/master.csv` (426 rows)._
 - Rows checked: **426**
 - Distinct sources: **106**
 - FAILs: **0**
-- WARNs: **1**
+- WARNs: **0**
 - Rows flagged `quality_flag=review_needed`: **0**
 
 ## ✅ No FAILs
 
 All hard validation checks (schema, categorical values, numeric ranges, age consistency, source coverage) passed.
-
-## ⚠️  WARNs (review, not blocking)
-
-- **C12** — 20 rows are measure_type='unclassified_pending_review' — awaiting manual classification
 
 ## Check reference
 

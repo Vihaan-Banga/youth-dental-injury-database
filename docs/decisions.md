@@ -514,4 +514,24 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 
 ---
 
+### 2026-06-24: Classify the 20 long-tail rows; add `mouthguard_use_proportion` measure type
+
+**Trigger:** The 2026-06-24 comparability tiering left 20 empty-denominator rows as `unclassified_pending_review` for manual classification by the project lead.
+
+**Decision (project-lead classifications):**
+- **`ed_visit_estimate`** (8 rows) — NEISS / pediatric-ED craniofacial counts & weighted estimates: `kaplan2022`, `nahas2021`, `pierrot2021`, `slavin2021`, `stewart2009` (×3), `van2021`.
+- **`raw_count`** (6 rows) — raw injury / insurance-claim counts: `chan2011`, `pandey2025`, `quarrie2020`, `welch2010` (×2), `danis2000`.
+- **`prevalence_proportion`** (2 rows) — population prevalence / awareness surveys: `pattussi2006`, `caglar2005`.
+- **`mouthguard_use_proportion`** (4 rows) — see new measure type below: `kroon2016`, `shore2021`, `shore2023`, `stanbouly2021`.
+
+These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed by `(source_id, "")` (all are empty-denominator rows).
+
+**New measure type — `mouthguard_use_proportion`:** added as a 9th controlled value. Rationale: four rows measure protective-equipment (mouthguard) **use** as a proportion (e.g. "99.2% wore a mouthguard") and have **no injury outcome** — none of the eight injury-measure types fit, and forcing them into `prevalence_proportion` would conflate equipment-use prevalence with injury prevalence. The new value is explicitly **not comparable to any injury measure**. Added to `DATA_DICTIONARY.md`, the `MEASURE_TYPES` vocab (so validator C12 accepts it), and the Rate Explorer's tier metadata.
+
+**Result:** all 426 rows now carry a `measure_type`; **0 remain `unclassified_pending_review`**. Validator: 426 rows, **0 FAILs, 0 WARNs**. Final distribution: ed_visit_estimate 263, prevalence_proportion 91, incidence_per_AE 22, incidence_per_exposure_hours 17, raw_count 12, incidence_per_season 11, mouthguard_use_proportion 4, rate_ratio_or_effect_size 4, incidence_per_population 2.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

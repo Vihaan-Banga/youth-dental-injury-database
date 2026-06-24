@@ -21,6 +21,9 @@ machine-readable flag).
                               or of injuries). NOTE: the proportion's denominator
                               population is in rate_denominator_raw and must be
                               checked before pooling (phase-2 case_definition).
+  mouthguard_use_proportion   a proportion measuring protective-equipment (mouth-
+                              guard) USE, not an injury outcome. Not comparable to
+                              any injury measure.
   ed_visit_estimate           NEISS / ED weighted national estimate or ED count
   raw_count                   an unnormalised count of injuries/cases
   rate_ratio_or_effect_size   a rate ratio / odds ratio / effect size
@@ -38,8 +41,9 @@ import re
 
 MEASURE_TYPES = {
     "incidence_per_AE", "incidence_per_exposure_hours", "incidence_per_population",
-    "incidence_per_season", "prevalence_proportion", "ed_visit_estimate",
-    "raw_count", "rate_ratio_or_effect_size", "unclassified_pending_review",
+    "incidence_per_season", "prevalence_proportion", "mouthguard_use_proportion",
+    "ed_visit_estimate", "raw_count", "rate_ratio_or_effect_size",
+    "unclassified_pending_review",
 }
 
 AGGREGATE_SPORTS = {
@@ -53,6 +57,7 @@ _SHORT = {
     "incidence_per_population": "per_population",
     "incidence_per_season": "per_season",
     "prevalence_proportion": "prevalence",
+    "mouthguard_use_proportion": "mg_use",
     "ed_visit_estimate": "ed_estimate",
     "raw_count": "count",
     "rate_ratio_or_effect_size": "effect_size",
@@ -60,10 +65,30 @@ _SHORT = {
 }
 
 # Manual classifications for the long-tail the auto-classifier can't resolve.
-# Keyed by (source_id, rate_denominator_raw.lower().strip()). Fill in after
-# manual review; until then those rows are 'unclassified_pending_review'.
-# Example: ("shore2021", ""): "raw_count",
+# Keyed by (source_id, rate_denominator_raw.lower().strip()). Classified by the
+# project lead 2026-06-24 (all empty-denominator rows; see docs/decisions.md).
 MANUAL_MEASURE_TYPE: dict[tuple[str, str], str] = {
+    # NEISS / pediatric-ED craniofacial counts & weighted estimates
+    ("kaplan2022", ""): "ed_visit_estimate",
+    ("nahas2021", ""): "ed_visit_estimate",
+    ("pierrot2021", ""): "ed_visit_estimate",
+    ("slavin2021", ""): "ed_visit_estimate",
+    ("stewart2009", ""): "ed_visit_estimate",
+    ("van2021", ""): "ed_visit_estimate",
+    # Raw injury / insurance-claim counts
+    ("chan2011", ""): "raw_count",
+    ("pandey2025", ""): "raw_count",
+    ("quarrie2020", ""): "raw_count",
+    ("welch2010", ""): "raw_count",
+    ("danis2000", ""): "raw_count",
+    # Population prevalence / awareness surveys
+    ("pattussi2006", ""): "prevalence_proportion",
+    ("caglar2005", ""): "prevalence_proportion",
+    # Mouthguard-use-only studies (no injury outcome) — see new measure type
+    ("kroon2016", ""): "mouthguard_use_proportion",
+    ("shore2021", ""): "mouthguard_use_proportion",
+    ("shore2023", ""): "mouthguard_use_proportion",
+    ("stanbouly2021", ""): "mouthguard_use_proportion",
 }
 
 
