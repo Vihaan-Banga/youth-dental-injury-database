@@ -3,7 +3,7 @@
 **Status:** Draft v0.1 — pre-registration pending
 **Last updated:** 2026-05-21
 **Project lead:** Vihaan Banga (Olentangy Liberty High School)
-**Advisor:** [TBD — outreach in progress, project lead leading recruitment independently as of 2026-05-21]
+**Advisor:** [TBD — outreach in progress, project lead leading recruitment independently]
 **Pre-registration:** [OSF link when filed]
 
 ---
