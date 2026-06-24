@@ -138,6 +138,18 @@ Limitations transparently documented:
 
 ---
 
+## Comparability & Limitations
+
+Harmonizing heterogeneous sources into one schema does not render all rows mutually comparable — a caveat raised directly by a senior surveillance reviewer. Two machine-readable columns make this explicit: **`measure_type`** (the outcome-measure / rate basis) and **`comparability_group`** (the key on which direct comparison is permitted). **Rows are directly comparable only within the same `comparability_group`.** Concretely:
+
+- **Denominators differ.** The dataset spans incidence per athlete-exposure (`incidence_per_AE`; normalized in `rate_per_1000_ae`), per player/athlete-hours, per 100,000 population, per season, prevalence proportions, NEISS/ED weighted estimates, and raw counts. Only same-`measure_type` rows are comparable.
+- **NEISS figures are emergency-department-treated only** (weighted national estimates; `measure_type = ed_visit_estimate`); they undercount injuries treated outside the ED and are not comparable to athlete-exposure rates.
+- **Aggregate rows** (`all_sports_aggregate`, `all_activities_aggregate`, …) carry an `__aggregate` `comparability_group` suffix and must not be pooled with sport-specific rows.
+- **Definitions and inclusion criteria vary** across sources (all-cause dental-trauma prevalence vs sport-related ED-treated incidence, differing age bands and eras). The companion Rate Explorer segregates results by `measure_type` and never co-plots incompatible tiers.
+- All current rows are `quality_flag = partial_data` (schema- and vocabulary-validated; full-text numeric verification pending). A `case_definition` flag to capture methodological differences within a `measure_type` is planned (phase 2).
+
+---
+
 ## Usage Notes
 
 The headline scope is the youth-primary subset; subset on `extraction_basis == "youth_primary"` for the v1.0-scope view, or include `adult_comparator` rows for cross-age comparison. Always read a rate together with its `rate_denominator_raw`: the 20 rows with a non-empty `rate_per_1000_ae` share a common athlete-exposure denominator and are directly comparable on that axis (subject to the usual definitional, age, and era differences); the rest preserve heterogeneous native denominators (per-1000-player-hours, per-100k-population, per-season, % of injuries) in `rate_raw` and must not be pooled blindly. Empty cell = not reported; `0` = reported zero; `NA` = not applicable.

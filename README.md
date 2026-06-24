@@ -17,6 +17,16 @@ This is a *secondary data* project. We are not collecting injuries directly from
 
 The gap we fill: youth dental injury data exists in dozens of fragmented sources using different definitions, age ranges, and injury classifications. No unified resource lets a researcher answer questions like "what is the rate of avulsed teeth across youth contact sports in North America?" without manually reconciling 40 papers. We are building that resource.
 
+## Comparability & limitations (read before comparing rows)
+
+Harmonizing these sources into one schema does **not** make every row comparable. Sources use fundamentally different measures, so each row carries a `measure_type` and a `comparability_group` (see `DATA_DICTIONARY.md`), and **values are only directly comparable within the same `comparability_group`.**
+
+- **Denominators differ.** Rows are incidence per athlete-exposure, per player/athlete-hours, per 100,000 population, per season, prevalence proportions, ED-visit estimates, or raw counts. Only rows sharing the same `measure_type` are comparable; for per-AE rates use the normalized `rate_per_1000_ae`.
+- **NEISS figures are emergency-department-treated only** (weighted national estimates). They undercount injuries treated in dental/primary-care settings and are **not** comparable to athlete-exposure rates.
+- **Aggregate rows exist** (`all_sports_aggregate`, `all_activities_aggregate`, etc.) — do not pool them with sport-specific rows.
+- **Definitions and inclusion criteria vary** across sources (e.g., all-cause dental-trauma prevalence vs sport-related ED-treated incidence). Make cross-source comparisons within a `comparability_group`, not naively across the whole table.
+- **Quality:** all current rows are `quality_flag = partial_data` — validated against schema and controlled vocabularies, with full-text numeric verification still pending.
+
 ## Repository structure
 
 ```

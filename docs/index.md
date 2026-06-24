@@ -29,6 +29,16 @@ Aggregating evidence on individuals aged 5–22, drawn from national surveillanc
 
 > **New:** try the [interactive Rate Explorer](rate-explorer.html) — filter cited dental-injury rates and mouthguard effect sizes by sport and age group. (A population rate explorer, *not* an individual risk calculator — see the note on the page.)
 
+## Comparability & limitations (read before comparing rows)
+
+Harmonizing into one schema does **not** make every row comparable. Each row carries a `measure_type` and `comparability_group`, and **values are only directly comparable within the same `comparability_group`.**
+
+- **Denominators differ** — incidence per athlete-exposure, per player/athlete-hours, per 100,000 population, per season, prevalence proportions, ED-visit estimates, or raw counts. Compare only within the same `measure_type` (use `rate_per_1000_ae` for per-AE rates).
+- **NEISS figures are emergency-department-treated only** (weighted national estimates) — they undercount dental-office-treated injuries and are not comparable to athlete-exposure rates.
+- **Aggregate rows exist** (`all_sports_aggregate`, etc.) — don't pool them with sport-specific rows.
+- **Definitions/inclusion criteria vary** across sources; the Rate Explorer segregates results by `measure_type` for exactly this reason.
+- All current rows are `quality_flag = partial_data` (schema-validated; full-text numeric verification pending).
+
 ## How to access the data
 
 - **Single best link:** [`data/harmonized/master.csv`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/data/harmonized/master.csv) — the harmonized master spreadsheet.

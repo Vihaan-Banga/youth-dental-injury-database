@@ -504,4 +504,14 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 
 ---
 
+### 2026-06-24: Prominent "Comparability & limitations" note in public-facing docs
+
+**Trigger:** Same reviewer critique (comparability). Beyond the machine-readable `measure_type` tiering (2026-06-24 entry above), readers arriving at the repo/site/paper need a plain-language warning.
+
+**Decision:** Add a "Comparability & limitations" section to the three public-facing surfaces — `README.md`, the live landing page (`docs/index.md`), and `outputs/methods_paper_draft.md` — stating that denominators differ across sources, that aggregate rows exist, that NEISS figures are ED-treated only, that all rows are `quality_flag = partial_data`, and that comparisons must be made within a `comparability_group` / `measure_type` tier. Documentation only; no data change.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->
