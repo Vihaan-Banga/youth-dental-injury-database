@@ -69,4 +69,4 @@ Use the code freely (with attribution per MIT). Use the data freely (with attrib
 
 ## Contact
 
-Vihaan Banga — GitHub [@Vihaan-Banga](https://github.com/Vihaan-Banga) ([email to be added])
+Vihaan Banga — GitHub [@Vihaan-Banga](https://github.com/Vihaan-Banga) Email: vihaansbanga@gmail.com
