@@ -183,15 +183,8 @@ The following are known limitations to be stated transparently in the data descr
 - **Project website:** Static site with interactive dashboard, hosted on free infrastructure
 - **GitHub repository:** Public, MIT-licensed code
 
-## 10. Timeline
 
-- **Weeks 1–2:** Protocol finalization, advisor sign-off, OSF pre-registration
-- **Weeks 3–4:** Source identification and screening
-- **Weeks 5–7:** Data extraction
-- **Week 8:** Harmonization, validation, publication
-- **September–November:** Data descriptor paper drafting, Conrad Challenge submission
-
-## 11. Authorship and contribution
+## 10. Authorship and contribution
 
 - **Project lead:** Vihaan Banga (Olentangy Liberty High School) — conceived project, designed protocol, performed extraction and harmonization, drafted manuscript
 - **Senior advisor:** [TBD] — provided methodological guidance, performed reliability review, reviewed manuscript
@@ -200,7 +193,7 @@ Both must approve v1.0 release before publication.
 
 ---
 
-## 12. Data provenance and redistribution rights
+## 11. Data provenance and redistribution rights
 
 This is a *secondary-data* project. It redistributes, under CC BY 4.0, only material it is entitled to share, and it contains **no raw or restricted microdata** from any access-controlled surveillance system. Every row carries a `data_provenance` flag (see DATA_DICTIONARY.md) classifying its source as one of:
 
