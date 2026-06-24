@@ -11,6 +11,18 @@ An open-access harmonized database aggregating epidemiological data on dental an
 
 **Project lead:** Vihaan Banga, Olentangy Liberty High School, in collaboration with [Advisor name when secured].
 
+## At a glance
+
+| | |
+|---|---|
+| Harmonized rows | **426** |
+| Distinct sources | **106** (93 peer-reviewed papers · 12 NEISS treatment-years · 1 governing-body report) |
+| Countries | **29** |
+| Publication years | **1996–2026** |
+| NEISS case-level coverage | **12 treatment-years** (2013–2019, 2021–2025; 2020 is a real COVID-era gap), ~8,800 underlying records |
+| Validation | **0 FAILs / 0 WARNs** across 13 automated checks (run in CI on every push) |
+| Provenance | every row author-verified against PubMed; carries `measure_type`, `comparability_group`, and `data_provenance` flags |
+
 ## What this is and isn't
 
 This is a *secondary data* project. We are not collecting injuries directly from athletes or clinicians. We are aggregating data that has already been collected and published by national surveillance systems, peer-reviewed studies, and sport-governing-body injury reports, then standardizing it into a single comparable format.
@@ -68,7 +80,7 @@ Banga, V., [Advisor name]. (2026). Youth Sports Dental Injury Database (Version 
 [Data set]. Zenodo. https://doi.org/[TBD]
 ```
 
-A formal `CITATION.cff` file will be added at publication.
+A `CITATION.cff` file is at the repo root — GitHub renders a "Cite this repository" button on the repo home.
 
 ## License
 

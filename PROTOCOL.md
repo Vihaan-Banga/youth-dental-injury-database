@@ -1,7 +1,7 @@
 # Research Protocol: Youth Sports Dental Injury Database
 
 **Status:** Draft v0.1 — pre-registration pending
-**Last updated:** 2026-05-21
+**Last updated:** 2026-06-24
 **Project lead:** Vihaan Banga (Olentangy Liberty High School)
 **Advisor:** [TBD — outreach in progress, project lead leading recruitment independently]
 **Pre-registration:** [OSF link when filed]
@@ -71,10 +71,10 @@ Sources reporting only lip lacerations, soft-tissue mouth injuries without denta
 
 ### 4.1 Surveillance systems
 
-- **NEISS** (Consumer Product Safety Commission): All entries with body part code 76 (mouth) or 77 (lower trunk/teeth) or 88 (face) where the diagnosis includes dental injury and the product code is sport-related. Years 2000–most recent available.
+- **NEISS** (Consumer Product Safety Commission): primary filter is **body part code 88 (Mouth — including lips, tongue, and teeth)**, the code that captures dental injuries; **76 (Face)** is used as a secondary filter only where the diagnosis text indicates dental involvement (per §3.3). Product code must be sport-related. Years 2000–most recent available. (The official 2024 NEISS Coding Manual codes are used; an earlier draft of this protocol mislabeled codes 76/77/88 — corrected per `docs/decisions.md`, 2026-05-21.)
 - **High School RIO** (Nationwide Children's Hospital): All published reports.
 - **NCAA Injury Surveillance Program:** Annual public reports.
-- **National Health Information Survey** subset on sports injuries.
+- **National Health Interview Survey (NHIS)** subset on sports injuries.
 
 ### 4.2 Peer-reviewed literature
 
@@ -146,7 +146,7 @@ Rationale: many of the strongest surveillance sources (NEISS, ACC NZ, multi-age 
 
 ### 6.3 Injury classification
 
-Original injury terminology preserved in a `raw_injury_description` column. Standardized classification applied in `injury_category` per the Andreasen classification (the standard taxonomy in dental traumatology).
+Original injury terminology preserved in the `injury_type_raw` column. Standardized classification applied in `injury_category` per the Andreasen classification (the standard taxonomy in dental traumatology) **where the source reports a specific injury breakdown**. Most surveillance and epidemiology sources report aggregate dental-injury counts rather than avulsion/luxation/fracture splits; those rows take `injury_category = unspecified_dental`, with the verbatim source description retained in `injury_type_raw`.
 
 ### 6.4 Rate normalization
 
