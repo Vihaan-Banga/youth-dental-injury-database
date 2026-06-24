@@ -66,7 +66,7 @@ df[(df.sport == "basketball") & (df.extraction_basis == "youth_primary")].head()
 
 ## Pipeline
 
-32 versioned Python scripts cover source identification → AI-assisted screening → per-source extraction → harmonization → validation → analysis. Reproducibility is enforced via CI: every push to `main` re-runs `scripts/07_harmonize.py` + `scripts/08_validate.py` and fails the build on any FAIL.
+A versioned Python pipeline covers source identification → AI-assisted screening → per-source extraction → harmonization → validation → analysis. Reproducibility is enforced via CI: every push to `main` re-runs `scripts/07_harmonize.py` + `scripts/08_validate.py` and fails the build on any FAIL.
 
 ```
 scripts/00_pubmed_seed_sources.py        # E-utilities seed

@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 MASTER = ROOT / "data/harmonized/master.csv"
 OUT = ROOT / "docs/rate_explorer_data.json"
 
-# Fields the page shows. Subset of the 34-column schema.
+# Fields the page shows. Subset of the 36-column schema.
 FIELDS = [
     "source_id", "citation", "pub_year", "study_type", "country",
     "age_category", "age_min", "age_max", "extraction_basis", "sex",

@@ -30,11 +30,11 @@ This data descriptor fills that gap.
 
 **Contributions of this work:**
 
-1. A **harmonized schema** (34 columns; documented in DATA_DICTIONARY.md) that captures the dimensions on which dental-sport-injury epidemiology typically varies: population (age/sex/level), exposure context (competition vs. practice), within-source subgroup (e.g., mouthguard users vs nonusers), outcome (count, rate, denominator phrasing), and protective equipment. Critically, a `extraction_basis` column distinguishes "youth_primary" rows (within the v1.0 inclusion scope of ages 5–22) from "adult_comparator" rows extracted alongside, preserving cross-age context without bloating the v1.0 scope.
+1. A **harmonized schema** (36 columns; documented in DATA_DICTIONARY.md) that captures the dimensions on which dental-sport-injury epidemiology typically varies: population (age/sex/level), exposure context (competition vs. practice), within-source subgroup (e.g., mouthguard users vs nonusers), outcome (count, rate, denominator phrasing), and protective equipment. Critically, a `extraction_basis` column distinguishes "youth_primary" rows (within the v1.0 inclusion scope of ages 5–22) from "adult_comparator" rows extracted alongside, preserving cross-age context without bloating the v1.0 scope.
 
 2. **Twelve treatment-years of NEISS** youth dental-sport case-level data (2013–2025 except 2020), unified and queryable. To our knowledge this is the first published aggregation of NEISS dental-sport data at this temporal breadth for the youth subset; the constituent year-CSVs and the year-over-year trend table are released as part of the database.
 
-3. **A reproducible end-to-end pipeline** (32 versioned Python scripts) covering source identification, AI-assisted screening, per-source extraction, harmonization, validation, and visualization. The pipeline is bound to a pre-registered protocol; every harmonization decision is logged in an append-only decisions file. A CI workflow runs the validator on every commit.
+3. **A reproducible end-to-end pipeline** (a versioned Python script suite) covering source identification, AI-assisted screening, per-source extraction, harmonization, validation, and visualization. The pipeline is bound to a pre-registered protocol; every harmonization decision is logged in an append-only decisions file. A CI workflow runs the validator on every commit.
 
 4. **Cross-source consistency analysis** built into the deliverable: paired sources for the same sport (e.g., RIO HS basketball across years; NCAA collegiate basketball; comparator international cohorts) are compared on a per-1000-AE basis, surfacing real disagreements (e.g., MG-mandate effects) and incompatible-denominator issues (e.g., per-AE-hours vs per-AE).
 
@@ -110,7 +110,7 @@ Validation runs on every commit via GitHub Actions CI (`.github/workflows/valida
 
 The database is distributed as:
 
-- **`data/harmonized/master.csv`** — the main tabular product. **426 rows from 106 sources** (current release). 34 columns per DATA_DICTIONARY.md. Rows split `youth_primary` (424) vs `adult_comparator` (2); study types span surveillance (37 sources), cross-sectional (41), cohort (13), case series (14), and governing-body report (1).
+- **`data/harmonized/master.csv`** — the main tabular product. **426 rows from 106 sources** (current release). 36 columns per DATA_DICTIONARY.md. Rows split `youth_primary` (424) vs `adult_comparator` (2); study types span surveillance (37 sources), cross-sectional (41), cohort (13), case series (14), and governing-body report (1).
 - **`data/harmonized/master.sqlite`** — SQLite mirror of `master.csv` with sample queries in `data/harmonized/README_sqlite.md`.
 - **`data/extracted/<source_id>.csv`** — one file per source. Useful for source-level audit. Includes the per-NEISS-year extractions (`neiss2013.csv` through `neiss2025.csv` except `neiss2020.csv` for which NEISS returned zero matching cases).
 - **`data/raw/papers/_abstracts/<PMID>.json`** — parsed PubMed abstract data per candidate (parsed via E-utilities efetch).

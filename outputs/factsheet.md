@@ -21,7 +21,7 @@ Repository: **https://github.com/Vihaan-Banga/youth-dental-injury-database**
 
 ## Schema highlights
 
-Each row represents one extracted statistic. The data dictionary defines 34 columns including:
+Each row represents one extracted statistic. The data dictionary defines 36 columns including:
 
 - **Source provenance:** citation, DOI, study type, peer-reviewed flag
 - **Population:** country, age range + age category (youth 5–12 / adolescent 13–17 / collegiate 18–22 / adult 23+ as comparator), sex, level of play
@@ -58,8 +58,8 @@ Full cross-source table at [`cross_source_rate_comparison.md`](cross_source_rate
 
 ## What's still in progress
 
-- **Active screening pile:** 91 candidate papers in `needs_additional_review` (mostly blocked on age range not visible in the abstract). Most need full-text retrieval.
-- **NEISS gap years:** 2018-2022 + 2024-2025 not yet pulled. Pipeline + filter scripts ready to ingest these as soon as the user runs the CPSC query.
+- **Active screening pile:** 84 candidate papers in `needs_additional_review` (mostly blocked on age range not visible in the abstract). Most need full-text retrieval.
+- **NEISS coverage:** 12 treatment years pulled (2013–2019, 2021–2025). Only 2020 is absent — a real COVID-era gap (no matching youth dental-sport cases), not a data gap to fill.
 - **Pre-registration:** OSF pre-registration not yet filed. Advisor not yet secured.
 - **Formal license sign-off:** MIT (code) + CC BY 4.0 (data) are in `LICENSE` / `LICENSE-DATA`, matching PROTOCOL §9, but advisor sign-off pending before v1.0.
 
