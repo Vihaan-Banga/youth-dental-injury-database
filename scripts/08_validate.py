@@ -25,6 +25,7 @@ Checks:
   C11. rate_per_1000_ae is populated only when rate_denominator_raw names an
        athlete-exposure denominator (not hours / season / population / % of injuries)
   C12. measure_type populated + in controlled vocabulary; comparability_group populated
+  C13. data_provenance populated + in controlled vocabulary
 
 Output: outputs/validation_report.md with per-check counts and any failing rows.
 Exit code 0 if all hard checks pass (any C5/C9 mismatches surface as warnings,
@@ -38,7 +39,7 @@ from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 
-from _derived_columns import MEASURE_TYPES
+from _derived_columns import MEASURE_TYPES, DATA_PROVENANCE
 
 # Resolve relative to this script so it works on any machine / CI.
 ROOT = Path(__file__).resolve().parent.parent
@@ -57,7 +58,7 @@ EXPECTED_COLUMNS = [
     "mouthguard_required", "mouthguard_use_rate", "mouthguard_injury_relation",
     "extraction_date", "extractor", "extraction_notes", "quality_flag",
     # Derived at harmonization (scripts/07 via scripts/_derived_columns.py):
-    "measure_type", "comparability_group",
+    "measure_type", "comparability_group", "data_provenance",
 ]
 
 ALLOWED = {
@@ -302,6 +303,15 @@ def main():
         add("WARN", "C12", f"{n_pending} rows are measure_type="
                            f"'unclassified_pending_review' — awaiting manual classification")
 
+    # C13 — data_provenance populated and in vocabulary (redistribution-rights
+    # clarity). See docs/decisions.md 2026-06-24.
+    for i, r in enumerate(rows):
+        dp = (r.get("data_provenance") or "").strip()
+        if not dp:
+            add("FAIL", "C13", f"row {i+1}: data_provenance is empty")
+        elif dp not in DATA_PROVENANCE:
+            add("FAIL", "C13", f"row {i+1}: data_provenance='{dp}' not in controlled vocabulary")
+
     # Generate report
     fails = [f for f in findings if f[0] == "FAIL"]
     warns = [f for f in findings if f[0] == "WARN"]
@@ -344,6 +354,7 @@ def main():
     W("- **C10** no duplicate (source × sport × age × sex × level × basis × season) keys")
     W("- **C11** `rate_per_1000_ae` populated only when `rate_denominator_raw` is an athlete-exposure denominator")
     W("- **C12** `measure_type` populated and in the controlled vocabulary; `comparability_group` populated")
+    W("- **C13** `data_provenance` populated and in the controlled vocabulary")
     W("\n## Per-source row count\n")
     W("| source_id | rows | bases |")
     W("|---|---|---|")

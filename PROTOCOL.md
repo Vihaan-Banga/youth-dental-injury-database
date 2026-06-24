@@ -200,6 +200,20 @@ Both must approve v1.0 release before publication.
 
 ---
 
+## 12. Data provenance and redistribution rights
+
+This is a *secondary-data* project. It redistributes, under CC BY 4.0, only material it is entitled to share, and it contains **no raw or restricted microdata** from any access-controlled surveillance system. Every row carries a `data_provenance` flag (see DATA_DICTIONARY.md) classifying its source as one of:
+
+- **`public_domain_raw`** — extracted from public-domain raw data. The only such source is **NEISS** (US Consumer Product Safety Commission), a public-use dataset. Master rows are *aggregated* yearly estimates, not raw case records (the raw NEISS query outputs are gitignored).
+- **`published_summary`** — summary statistics already published in a peer-reviewed paper. We reproduce only the specific reported figures (counts, rates, prevalences) with full citation. Individual published facts are not themselves copyrightable; the *compilation* is what is licensed.
+- **`governing_body_public`** — figures taken from a publicly released governing-body report (currently only the Rugby Europe 2024 Injury Surveillance Report). **[TODO: confirm the Rugby Europe report's reuse/redistribution terms before v1.0.]**
+
+**Specifically, the database does NOT contain raw or restricted data from NCAA-ISP, High School RIO, or NZ ACC.** Where NCAA-ISP-, RIO-, or ACC-derived numbers appear, they are figures reported in a peer-reviewed publication (`data_provenance = published_summary`) — i.e., citing the published literature, not redistributing the owners' datasets. (Datasets such as NCAA-ISP are owned by their respective bodies and carry use restrictions; this project does not access or redistribute them.)
+
+**Licensing framing:** the CC BY 4.0 data license covers *this project's harmonized compilation* (the schema, harmonization, classifications, and the assembled table). Underlying facts remain attributable to their original sources, every one of which is cited in the `citation` column and `outputs/sources_bibliography.bib`.
+
+---
+
 ## Pre-registration checklist (complete before extraction begins)
 
 - [ ] Protocol reviewed and signed off by advisor

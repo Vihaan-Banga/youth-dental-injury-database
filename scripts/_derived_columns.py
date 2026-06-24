@@ -113,3 +113,27 @@ def comparability_group(row: dict, mtype: str | None = None) -> str:
     if (row.get("sport") or "") in AGGREGATE_SPORTS:
         return base + "__aggregate"
     return base
+
+
+# --- Data provenance / redistribution rights (per source) ----------------
+# Added 2026-06-24 (see docs/decisions.md) after a data-rights critique
+# (NCAA-ISP data are owned by the NCAA with redistribution restrictions). The
+# database holds NO raw/restricted microdata; every value is one of:
+DATA_PROVENANCE = {
+    "public_domain_raw",     # extracted from public-domain raw data (NEISS / CPSC)
+    "published_summary",     # summary statistics reported in a peer-reviewed paper
+    "governing_body_public",  # figures from a public governing-body report
+}
+
+# Governing-body / report sources (not peer-reviewed papers, not public-raw).
+GOVERNING_BODY_SOURCES = {"rugby_europe_iss_2024"}
+
+
+def data_provenance(row: dict) -> str:
+    """Provenance class of a row's source, for redistribution-rights clarity."""
+    src = row.get("source_id") or ""
+    if src.startswith("neiss"):
+        return "public_domain_raw"
+    if src in GOVERNING_BODY_SOURCES:
+        return "governing_body_public"
+    return "published_summary"

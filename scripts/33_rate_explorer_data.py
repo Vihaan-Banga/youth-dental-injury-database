@@ -32,7 +32,7 @@ FIELDS = [
     "injury_count", "injury_type_raw", "injury_category",
     "rate_raw", "rate_denominator_raw", "rate_per_1000_ae",
     "mouthguard_required", "mouthguard_use_rate", "mouthguard_injury_relation",
-    "quality_flag", "measure_type", "comparability_group",
+    "quality_flag", "measure_type", "comparability_group", "data_provenance",
 ]
 
 

@@ -14,6 +14,34 @@ License — see the `LICENSE` file.
 
 ---
 
+# Data provenance and redistribution rights
+
+This CC BY 4.0 license applies to **this project's harmonized compilation** — the
+schema, the harmonization and classification work, and the assembled database —
+not to ownership of the underlying source facts, which remain attributable to
+their original publishers (every row is cited in its `citation` field and in
+`outputs/sources_bibliography.bib`).
+
+The database is *secondary data* and contains **no raw or restricted microdata**
+from any access-controlled surveillance system. Each row carries a
+`data_provenance` flag with one of three values:
+
+  - public_domain_raw    — public-domain raw data (NEISS / US CPSC), redistributable;
+                           master rows are aggregated yearly estimates, not raw cases.
+  - published_summary    — summary statistics already published in a peer-reviewed
+                           paper, reproduced with citation (facts are not copyrightable;
+                           the compilation is what is licensed here).
+  - governing_body_public — figures from a publicly released governing-body report.
+
+In particular, the database does **not** include and does **not** redistribute raw
+or restricted datasets owned by third parties — e.g. NCAA-ISP, High School RIO, or
+NZ ACC. Where numbers derived from those systems appear, they are figures already
+reported in a peer-reviewed publication (`published_summary`), cited accordingly.
+See PROTOCOL.md §12. (Note: the reuse terms of the Rugby Europe report are still
+to be confirmed before the v1.0 release.)
+
+---
+
 # Human-readable summary (from creativecommons.org)
 
 You are free to:

@@ -29,7 +29,7 @@ SCHEMA = {
     "mouthguard_required": "TEXT", "mouthguard_use_rate": "REAL", "mouthguard_injury_relation": "TEXT",
     "extraction_date": "TEXT", "extractor": "TEXT", "extraction_notes": "TEXT",
     "quality_flag": "TEXT",
-    "measure_type": "TEXT", "comparability_group": "TEXT",
+    "measure_type": "TEXT", "comparability_group": "TEXT", "data_provenance": "TEXT",
 }
 
 def coerce(value, sql_type):

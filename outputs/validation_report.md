@@ -32,6 +32,7 @@ All hard validation checks (schema, categorical values, numeric ranges, age cons
 - **C10** no duplicate (source × sport × age × sex × level × basis × season) keys
 - **C11** `rate_per_1000_ae` populated only when `rate_denominator_raw` is an athlete-exposure denominator
 - **C12** `measure_type` populated and in the controlled vocabulary; `comparability_group` populated
+- **C13** `data_provenance` populated and in the controlled vocabulary
 
 ## Per-source row count
 

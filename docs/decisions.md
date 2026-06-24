@@ -489,4 +489,19 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 
 ---
 
+### 2026-06-24: Data provenance flag + redistribution-rights documentation
+
+**Trigger:** Christy Collins (Datalys / NCAA-ISP) cautioned: "make sure each of the datasets [is] able to be used in this manner. For example, the NCAA-ISP data are owned by the NCAA, and they have restrictions on who can use the data and for what purposes." A provenance audit confirmed the database holds **no** raw NCAA-ISP / RIO / ACC microdata — every NCAA/RIO/ACC-derived number comes from a peer-reviewed publication reporting its own results.
+
+**Decision:** Make provenance explicit and document redistribution rights.
+- Added a derived per-source column **`data_provenance`** ∈ {`public_domain_raw`, `published_summary`, `governing_body_public`} (computed in `scripts/_derived_columns.py`; master now 39 columns). Result: 12 NEISS sources → `public_domain_raw`; Rugby Europe → `governing_body_public`; 93 peer-reviewed papers → `published_summary`.
+- Added **PROTOCOL.md §12 "Data provenance and redistribution rights"** and a matching section in **LICENSE-DATA**, stating the database redistributes only public-domain surveillance (NEISS, aggregated), published summary statistics, and public governing-body reports; contains no raw/restricted NCAA-ISP/RIO/ACC microdata; and that CC BY 4.0 covers the *compilation*, with all source facts attributed.
+- Added validator check **C13** (`data_provenance` populated + in vocabulary).
+
+**Open item flagged for the project lead:** confirm the **Rugby Europe 2024 Injury Surveillance Report** reuse/redistribution terms before v1.0 (marked TODO in PROTOCOL §12 and LICENSE-DATA). It is the one `governing_body_public` source.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->
