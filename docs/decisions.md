@@ -2,7 +2,7 @@
 
 Every non-mechanical decision about how to classify, harmonize, or handle ambiguous data goes here, with date and reasoning.
 
-**Why this exists:** A reviewer (advisor, journal reviewer, future Claude session, future you) will eventually ask "why did you classify X this way?" The answer must exist somewhere in writing. This is that place.
+**Why this exists:** A reviewer (advisor, journal reviewer, future you) will eventually ask "why did you classify X this way?" The answer must exist somewhere in writing. This is that place.
 
 **Format:** Append-only. Never delete entries. If a decision is revised, add a new entry referencing the old one and update affected data.
 
