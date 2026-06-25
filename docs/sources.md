@@ -33,7 +33,7 @@ Every candidate source — whether eventually included or excluded — is logged
 
 ## Sources
 
-**Screening summary** (abstract screen 2026-05-21, AI-assisted first pass; full-text review of the open-access `needs_additional_review` subset 2026-06-12 — see `docs/decisions.md` and `outputs/needs_additional_review_fulltext_review_2026-06-12.md`. The project lead and advisor still need to second-screen the 20% reliability sample per PROTOCOL §4.4.) Percentages are of 436 screened records:
+**Screening summary** (abstract screen 2026-05-21, AI-assisted first pass; full-text review of the open-access `needs_additional_review` subset 2026-06-12 — see `docs/decisions.md` (2026-06-12). The project lead and advisor still need to second-screen the 20% reliability sample per PROTOCOL §4.4.) Percentages are of 436 screened records:
 
 - `screened_included`: **1** (0%) — abstract passed, full-text pending
 - `included`: **0** (0%) — full-text passed, queued for extraction

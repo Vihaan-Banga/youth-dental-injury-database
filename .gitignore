@@ -67,3 +67,6 @@ outputs/tables/draft_*
 
 # Claude Code local dev config (not part of the dataset)
 .claude/
+
+# Internal working docs (strategy notes, AI-session logs, screening scratch) — not part of the public scientific artifact
+internal/

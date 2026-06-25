@@ -534,4 +534,21 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ---
 
+### 2026-06-24: Move internal working docs out of the public repo (`internal/`, gitignored)
+
+**Trigger:** Pre-meeting repo review. The public repository mixed the scientific artifact (data, protocol, dictionary, decisions, methods, validation) with *internal working docs* — outreach strategy, AI-session logs, and screening scratch files — which add noise and reveal project-management detail not relevant to a research consumer.
+
+**Decision:** Moved the following into a new **gitignored `internal/` folder** (kept locally, removed from the public/deployed repo): `advisor_outreach_brief.md`; the seven `session_2026-*_summary.md` logs; `zenodo_setup_walkthrough.md`; the four `needs_additional_review_*` screening-scratch files (OA-URL and PMC lookup CSVs, the status doc, and the 2026-06-12 full-text review log); and the `_pdf_upload_server.py` dev helper.
+
+**Reference fixes (so the public repo has no dead links):**
+- `scripts/30`, `scripts/31` now write their lookup CSVs to `internal/` (created on run).
+- `scripts/03` template and `outputs/methods_paper_draft.md` no longer link the moved full-text-review file; they point to `docs/decisions.md` (which stays public). `sources.md` regenerated.
+- Append-only historical mentions in this log and `CHANGELOG.md` (dated 2026-06-12 entries) are left intact per the append-only convention; the artifacts they name now live in `internal/`.
+
+**Note:** the screening audit trail itself remains fully public — every record's status and reason is in `docs/sources.md` and `outputs/screening_report_2026-05-21.md`; only the supplementary scratch/lookup files moved. Nothing affecting reproducibility of `master.csv` was moved.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

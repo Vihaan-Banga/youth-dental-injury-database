@@ -8,7 +8,7 @@ Cloudflare/paywall bot-checks and 403 on programmatic fetch. PubMed Central
 For each needs_additional_review PMID this script asks NCBI elink
 (dbfrom=pubmed, db=pmc) whether a PMC record exists, and writes:
 
-    outputs/needs_additional_review_pmc.csv
+    internal/needs_additional_review_pmc.csv
       pmid, pmcid, pmc_url
 
 A non-empty pmcid means the article's full text is readable at
@@ -27,7 +27,7 @@ from xml.etree import ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
 SCREENING_CSV = ROOT / "data/extracted/_screening/screening_decisions.csv"
-OUT_CSV = ROOT / "outputs/needs_additional_review_pmc.csv"
+OUT_CSV = ROOT / "internal/needs_additional_review_pmc.csv"
 EMAIL = "Vihaan-Banga@users.noreply.github.com"
 UA = f"YouthDentalInjuryDB/0.1 (+{EMAIL})"
 ELINK = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi"

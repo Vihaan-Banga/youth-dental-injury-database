@@ -6,7 +6,7 @@ For each needs_additional_review PMID:
   2. Query Unpaywall for the best OA URL
   3. Persist a CSV: pmid, doi, journal, title, oa_url, oa_host_type, publisher
 
-Output: outputs/needs_additional_review_oa_urls.csv
+Output: internal/needs_additional_review_oa_urls.csv
 """
 
 from __future__ import annotations
@@ -23,7 +23,7 @@ from xml.etree import ElementTree as ET
 ROOT = Path(__file__).resolve().parent.parent
 SCREENING_CSV = ROOT / "data/extracted/_screening/screening_decisions.csv"
 ABSTRACT_DIR = ROOT / "data/raw/papers/_abstracts"
-OUT_CSV = ROOT / "outputs/needs_additional_review_oa_urls.csv"
+OUT_CSV = ROOT / "internal/needs_additional_review_oa_urls.csv"
 EMAIL = "Vihaan-Banga@users.noreply.github.com"
 
 UA = f"YouthDentalInjuryDB/0.1 (+{EMAIL})"
