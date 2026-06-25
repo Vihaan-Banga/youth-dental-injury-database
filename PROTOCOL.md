@@ -71,7 +71,7 @@ Sources reporting only lip lacerations, soft-tissue mouth injuries without denta
 
 ### 4.1 Surveillance systems
 
-- **NEISS** (Consumer Product Safety Commission): primary filter is **body part code 88 (Mouth — including lips, tongue, and teeth)**, the code that captures dental injuries; **76 (Face)** is used as a secondary filter only where the diagnosis text indicates dental involvement (per §3.3). Product code must be sport-related. Years 2000–most recent available. (The official 2024 NEISS Coding Manual codes are used; an earlier draft of this protocol mislabeled codes 76/77/88 — corrected per `docs/decisions.md`, 2026-05-21.)
+- **NEISS** (Consumer Product Safety Commission): per the official 2024 NEISS Coding Manual (Appendix C), the relevant body-part codes are **88 = Mouth** (includes lips, tongue, **and teeth**), **76 = Face**, and **77 = Eyeball**. The primary filter for dental injuries is **88 (Mouth)**; **76 (Face)** is used as a secondary filter only where the diagnosis text indicates dental involvement (per §3.3); **77 (Eyeball)** is not used. Product code must be sport-related. Years 2000–most recent available. (An earlier draft of this protocol mislabeled codes 76/77/88 — corrected per `docs/decisions.md`, 2026-05-21.)
 - **High School RIO** (Nationwide Children's Hospital): All published reports.
 - **NCAA Injury Surveillance Program:** Annual public reports.
 - **National Health Interview Survey (NHIS)** subset on sports injuries.
