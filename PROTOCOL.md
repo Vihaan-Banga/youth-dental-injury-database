@@ -30,7 +30,7 @@ The database is designed to enable researchers to answer questions including:
 - How have reported rates changed over time?
 - What are the gaps in current surveillance coverage?
 
-The project does not itself test specific hypotheses. It is an *infrastructure* project — a data resource for future research.
+The project does not itself test specific hypotheses. It is an *infrastructure* project and acts as a data resource for future research.
 
 ## 3. Scope and eligibility criteria
 
