@@ -1,12 +1,12 @@
 # Per-country breakdown
 
-_Auto-generated from `data/harmonized/master.csv`. 30 unique country tags across 426 rows._
+_Auto-generated from `data/harmonized/master.csv`. 29 unique country tags across 421 rows._
 
 ## Coverage table
 
 | country | sources | rows | distinct sports | year span | cumulative injury count |
 |---|---:|---:|---:|---|---:|
-| United States (`US`) | 40 | 306 | 21 | 1996-2026 | 679,607 |
+| United States (`US`) | 38 | 304 | 21 | 2000-2026 | 679,465 |
 | (no country tag) (`(no country tag)`) | 6 | 17 | 5 | 2010-2025 | 329 |
 | Canada (`CA`) | 6 | 11 | 3 | 2002-2021 | 3,982 |
 | Turkey (`TR`) | 6 | 7 | 4 | 2005-2026 | 306 |
@@ -22,7 +22,6 @@ _Auto-generated from `data/harmonized/master.csv`. 30 unique country tags across
 | Syria (`SY`) | 2 | 2 | 0 | 2026-2026 | 476 |
 | Brazil (`BR`) | 2 | 2 | 0 | 2001-2006 | 133 |
 | Lebanon (`LB`) | 1 | 3 | 0 | 2021-2021 | 861 |
-| Austria (`AT`) | 1 | 3 | 2 | 1997-1997 | 1,163 |
 | Sri Lanka (`LK`) | 1 | 2 | 0 | 2024-2024 | 800 |
 | Lithuania (`LT`) | 1 | 2 | 0 | 2020-2020 | 420 |
 | Puerto Rico (`PR`) | 1 | 1 | 0 | 2005-2005 | 18 |

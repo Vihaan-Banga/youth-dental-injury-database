@@ -24,6 +24,7 @@ Every candidate source — whether eventually included or excluded — is logged
 | E-noprim | no extractable primary numerical injury data (§3.1) |
 | E-nodent | no dental/orofacial-with-dental outcome (§3.3) |
 | E-nonpr  | non-peer-reviewed and not an approved surveillance/governing body source (§3.2) |
+| E-date   | published before 2000 — outside the §3.1 publication window |
 | R-age    | age range / population unclear from abstract |
 | R-mixed  | mixed adult+youth, youth subset extractability needs full text |
 | R-data   | not obvious whether numerical injury counts are extractable |
@@ -37,10 +38,10 @@ Every candidate source — whether eventually included or excluded — is logged
 
 - `screened_included`: **1** (0%) — abstract passed, full-text pending
 - `included`: **0** (0%) — full-text passed, queued for extraction
-- `extracted`: **93** (21%) — data in master.csv
+- `extracted`: **90** (20%) — data in master.csv
 - `needs_additional_review`: **84** (19%)
 - `fulltext_excluded`: **6** (1%) — excluded after full-text review
-- `screened_excluded`: **252** (57%)
+- `screened_excluded`: **255** (58%)
 
 PubMed initial seed (search run 2026-05-21, query per PROTOCOL.md §4.2 — 202 hits, top 200 retrieved). See `outputs/screening_report_2026-05-21.md` for per-decision reasoning. Raw esearch/esummary/efetch dumps preserved under `data/raw/papers/_search_logs/`.
 
@@ -136,9 +137,6 @@ PubMed initial seed (search run 2026-05-21, query per PROTOCOL.md §4.2 — 202 
 | gabris2001 | [11499758](https://pubmed.ncbi.nlm.nih.gov/11499758/) | Gábris K (2001) — Dental trauma in children presenting for treatment at the Department of Dentistry for Chil... | Dental traumatology : official publication of International Association for Dental Traumatology |  | extracted |  | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | blinkhorn2000 | [11202877](https://pubmed.ncbi.nlm.nih.gov/11202877/) | Blinkhorn FA (2000) — The aetiology of dento-alveolar injuries and factors influencing attendance for emergency ... | Endodontics & dental traumatology |  | extracted |  | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | danis2000 | [11003192](https://pubmed.ncbi.nlm.nih.gov/11003192/) | Danis RP (2000) — Acceptability of baseball face guards and reduction of oculofacial injury in receptive you... | Injury prevention : journal of the International Society for Child and Adolescent Injury Prevention |  | extracted |  | 2026-05-21 | VB-AI-assisted-2026-05-21 |
-| emshoff1997 | [9191640](https://pubmed.ncbi.nlm.nih.gov/9191640/) | Emshoff R (1997) — Trends in the incidence and cause of sport-related mandibular fractures: a retrospective a... | Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons |  | extracted |  | 2026-05-21 | VB-AI-assisted-2026-05-21 |
-| gomez1996 | [8883693](https://pubmed.ncbi.nlm.nih.gov/8883693/) | Gomez E (1996) — Incidence of injury in Texas girls' high school basketball | The American journal of sports medicine |  | extracted |  | 2026-05-21 | VB-AI-assisted-2026-05-21 |
-| pasternack1996 | [8784371](https://pubmed.ncbi.nlm.nih.gov/8784371/) | Pasternack JS (1996) — Baseball injuries: a Little League survey | Pediatrics |  | extracted |  | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | chaboussie2026 | [41871283](https://pubmed.ncbi.nlm.nih.gov/41871283/) | Chaboussie M (2026) — Occurrence of Orofacial and Dental Injuries in Rugby: Systematic Review and Meta-Analysis | Clinical and experimental dental research |  | screened_excluded | E-review | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | chu2026 | [41798103](https://pubmed.ncbi.nlm.nih.gov/41798103/) | Chu CH (2026) — Midterm Results of Large-Caliber Tendon Allografting for Chronic Achilles Tendon Rupture W... | Orthopaedic journal of sports medicine |  | screened_excluded | E-offtop | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | st2026 | [41760758](https://pubmed.ncbi.nlm.nih.gov/41760758/) | St George G (2026) — Emergency management of sport-related orofacial trauma | British dental journal |  | screened_excluded | E-review | 2026-05-21 | VB-AI-assisted-2026-05-21 |
@@ -366,11 +364,14 @@ PubMed initial seed (search run 2026-05-21, query per PROTOCOL.md §4.2 — 202 
 | schlesinger1997 | [9338837](https://pubmed.ncbi.nlm.nih.gov/9338837/) | Schlesinger ER (1997) — A controlled study of health education in accident prevention: the Rockland County Child I... | Injury prevention : journal of the International Society for Child and Adolescent Injury Prevention |  | screened_excluded | E-offtop | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | dickson1997 | [9338836](https://pubmed.ncbi.nlm.nih.gov/9338836/) | Dickson DG (1997) — Medically attended injuries among young children: observations in a suburban area. 1964 | Injury prevention : journal of the International Society for Child and Adolescent Injury Prevention |  | screened_excluded | E-offtop | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | brouns1997 | [9298567](https://pubmed.ncbi.nlm.nih.gov/9298567/) | Brouns F (1997) — Sports drinks and teeth | British journal of sports medicine |  | screened_excluded | E-noprim | 2026-05-21 | VB-AI-assisted-2026-05-21 |
+| emshoff1997 | [9191640](https://pubmed.ncbi.nlm.nih.gov/9191640/) | Emshoff R (1997) — Trends in the incidence and cause of sport-related mandibular fractures: a retrospective a... | Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons |  | screened_excluded | E-date | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | greasley1997 | [9132208](https://pubmed.ncbi.nlm.nih.gov/9132208/) | Greasley A (1997) — Towards the development of a standard test procedure for mouthguard assessment | British journal of sports medicine |  | screened_excluded | E-noprim | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | milosevic1997 | [9132205](https://pubmed.ncbi.nlm.nih.gov/9132205/) | Milosevic A (1997) — Sports drinks hazard to teeth | British journal of sports medicine |  | screened_excluded | E-offtop | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | laskin1997 | [9024345](https://pubmed.ncbi.nlm.nih.gov/9024345/) | Laskin DM (1997) — Giving your patients a sporting chance | Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons |  | screened_excluded | E-noprim | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | muneta1997 | [9006695](https://pubmed.ncbi.nlm.nih.gov/9006695/) | Muneta T (1997) — Intercondylar notch width and its relation to the configuration and cross-sectional area o... | The American journal of sports medicine |  | screened_excluded | E-offtop | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | callaghan1996 | [9015601](https://pubmed.ncbi.nlm.nih.gov/9015601/) | Callaghan MJ (1996) — Evaluation of elite British cyclists: the role of the squad medical | British journal of sports medicine |  | screened_excluded | E-offtop | 2026-05-21 | VB-AI-assisted-2026-05-21 |
+| gomez1996 | [8883693](https://pubmed.ncbi.nlm.nih.gov/8883693/) | Gomez E (1996) — Incidence of injury in Texas girls' high school basketball | The American journal of sports medicine |  | screened_excluded | E-date | 2026-05-21 | VB-AI-assisted-2026-05-21 |
+| pasternack1996 | [8784371](https://pubmed.ncbi.nlm.nih.gov/8784371/) | Pasternack JS (1996) — Baseball injuries: a Little League survey | Pediatrics |  | screened_excluded | E-date | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | sailors1996 | [16558422](https://pubmed.ncbi.nlm.nih.gov/16558422/) | Sailors ME (1996) — Evaluation of sports-related temporomandibular dysfunctions | Journal of athletic training |  | screened_excluded | E-offtop | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | moss1996 | [16558367](https://pubmed.ncbi.nlm.nih.gov/16558367/) | Moss CL (1996) — 1994 entry-level athletic training salaries | Journal of athletic training |  | screened_excluded | E-offtop | 2026-05-21 | VB-AI-assisted-2026-05-21 |
 | murray1995 | [7862484](https://pubmed.ncbi.nlm.nih.gov/7862484/) | Murray TM (1995) — Hockey helmets, face masks, and injurious behavior | Pediatrics |  | screened_excluded | E-offtop | 2026-05-21 | VB-AI-assisted-2026-05-21 |

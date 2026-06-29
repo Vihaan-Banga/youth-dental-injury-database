@@ -4,8 +4,8 @@ _One-page Markdown summary per sport with ≥3 rows in master.csv. Auto-generate
 
 | sport | rows | sources | year span | countries |
 |---|---:|---:|---|---|
-| [baseball](baseball.md) | 17 | 16 | 1996-2025 | US |
-| [basketball](basketball.md) | 28 | 25 | 1996-2026 | IL, IN, JP, NZ, TR, US |
+| [baseball](baseball.md) | 16 | 15 | 2000-2025 | US |
+| [basketball](basketball.md) | 27 | 24 | 2002-2026 | IL, IN, JP, NZ, TR, US |
 | [boxing](boxing.md) | 5 | 5 | 2013-2025 | US |
 | [cheerleading](cheerleading.md) | 11 | 11 | 2013-2025 | US |
 | [football_american](football_american.md) | 15 | 15 | 2004-2025 | CA, US |

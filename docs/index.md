@@ -15,16 +15,16 @@ Aggregating evidence on individuals aged 5–22, drawn from national surveillanc
 
 ---
 
-## At a glance (v0.1-dev, updated 2026-06-12)
+## At a glance (v0.1-dev, updated 2026-06-24)
 
 |  |  |
 |---|---|
-| Rows in `master.csv` | **426** |
-| Distinct sources | **106** |
+| Rows in `master.csv` | **421** |
+| Distinct sources | **103** |
 | NEISS treatment-years covered | **12** (2013–2019, 2021–2025; 2020 is a real COVID-era gap) |
-| Countries represented | **29** |
-| Years of publication | 1996–2026 |
-| Validation status | **0 FAILs, 0 WARNs** (10 automated checks) |
+| Countries represented | **28** |
+| Years of publication | 2000–2026 (per PROTOCOL §3.1) |
+| Validation status | **0 FAILs, 0 WARNs** (13 automated checks) |
 | Underlying NEISS case-level records | **~8,800** |
 
 > **New:** try the [interactive Rate Explorer](rate-explorer.html) — filter cited dental-injury rates and mouthguard effect sizes by sport and age group. (A population rate explorer, *not* an individual risk calculator — see the note on the page.)
@@ -71,7 +71,7 @@ df[(df.sport == "basketball") & (df.extraction_basis == "youth_primary")].head()
 - **[NEISS 12-year trends](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/neiss_trends.md)** — first published aggregation of NEISS youth dental-sport data across 2013–2025.
 - **[Cross-source rate comparison](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/cross_source_rate_comparison.md)** — internal-consistency check across sources reporting the same sport.
 - **[Per-sport factsheets](https://github.com/Vihaan-Banga/youth-dental-injury-database/tree/main/outputs/sport_factsheets)** — one-page summary per sport (19 covered).
-- **[Per-country breakdown](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/country_breakdown.md)** — coverage across 29 countries.
+- **[Per-country breakdown](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/country_breakdown.md)** — coverage across 28 countries.
 - **[Overall factsheet](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/factsheet.md)** — project-level one-pager.
 
 ## Pipeline

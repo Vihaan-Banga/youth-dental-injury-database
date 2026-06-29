@@ -1,12 +1,12 @@
 # Baseball — Factsheet
 
-_Auto-generated from `master.csv`. 17 rows across 16 sources._
+_Auto-generated from `master.csv`. 16 rows across 15 sources._
 
 **Sport identifier in database:** `baseball`
 **Sport category:** `limited_contact`
 **Countries:** US
-**Year span:** 1996-2025
-**Sources contributing:** collins2008, danis2000, kaplan2022, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, pasternack1996
+**Year span:** 2000-2025
+**Sources contributing:** collins2008, danis2000, kaplan2022, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025
 
 ## Rates per 1000 athlete-exposures
 
@@ -21,9 +21,9 @@ _Min 1.260, max 1.260, n=1._
 | age_category | count |     | sex | count |
 |---|---:|---|---|---:|
 | adolescent | 1 | | male | 1 |
-| mixed | 16 | | mixed | 16 |
+| mixed | 15 | | mixed | 15 |
 
-_Cumulative reported `injury_count` across these 17 rows: **1,973**._
+_Cumulative reported `injury_count` across these 16 rows: **1,892**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

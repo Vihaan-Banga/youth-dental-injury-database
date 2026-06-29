@@ -551,4 +551,26 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ---
 
+### 2026-06-24: Remove 3 pre-2000 publications to resolve the §3.1 / §4.2 inconsistency
+
+**Trigger:** A date inconsistency surfaced in pre-meeting review: the database was described as spanning "1996–2026," but PROTOCOL §3.1 requires publications **on or after 1 January 2000**. Investigation showed "1996" was a **publication** year (not a data year), contributed by sources actually *published* before 2000 — a direct breach of §3.1.
+
+**Root cause:** §3.1 sets a ≥2000 publication window, but §4.2 also runs **targeted journal searches** (Dental Traumatology, Pediatric Dentistry, AJSM, BJSM) that were **not date-capped**. Three topically-eligible but pre-2000 papers entered through that gap:
+- `gomez1996` (PMID 8883693, AJSM 1996) — Texas girls' HS basketball injury incidence.
+- `pasternack1996` (PMID 8784371, Pediatrics 1996) — Little League baseball survey.
+- `emshoff1997` (PMID 9191640, JOMS 1997) — sport-related mandibular fractures (Innsbruck).
+
+**Decision: Option A — remove the 3 sources** so the dataset matches the stated §3.1 rule (cleaner than relaxing the protocol before an external review).
+- Reclassified the 3 PMIDs in `scripts/screening_overrides.py` from `screened_included` to `screened_excluded` with a **new reason code `E-date`** ("published before 2000 — outside the §3.1 publication window"), added to the reason-code legend in `scripts/03`.
+- Deleted their `data/extracted/*.csv` files and removed their blocks from `scripts/16` and `scripts/19` so re-running the pipeline does not resurrect them (verified: scripts run clean and recreate nothing).
+- Regenerated `master.csv`, `sources.md`, screening report, bibliography, SQLite, NEISS trends, cross-source comparison, country breakdown, sport factsheets, figures, and the Rate Explorer JSON.
+
+**New totals:** 426 → **421 rows**; 106 → **103 sources** (90 peer-reviewed papers + 12 NEISS + 1 governing-body); 29 → **28 countries** (Austria dropped — `emshoff1997` was its only source); publication range now **2000–2026**, consistent with §3.1. Validator: **0 FAILs, 0 WARNs**; citation audit: 0 author/year mismatches.
+
+**Date-range wording fixed** (was an ambiguous "1996–2026" that could be misread as a data span): README, landing page, factsheet, and the methods-paper abstract now read **"publications 2000–2026"**, explicitly labeled as publication years.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

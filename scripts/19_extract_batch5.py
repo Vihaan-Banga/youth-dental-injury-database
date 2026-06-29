@@ -233,64 +233,8 @@ w("mertz2022", [
 ])
 
 # 8784371 — Little League baseball
-w("pasternack1996", [make("pasternack1996",
-    citation="Pasternack JS, Veenema KR, Callahan CM. (1996). Baseball injuries: a Little League survey. Pediatrics.",
-    pub_year=1996, study_type="cohort", country="US", region="",
-    population_setting="club", age_min=7, age_max=18, age_category="mixed",
-    sex="mixed", level_of_play="club",
-    sport_raw="Little League baseball",
-    sport="baseball", sport_category="limited_contact",
-    sample_size=2861, athlete_exposures=140932,  # player-hours (close)
-    injury_count=81,
-    injury_type_raw="baseball injuries (acute + overuse; 18 ball-related facial)",
-    injury_category="orofacial_with_dental",
-    rate_raw=0.057, rate_denominator_raw="per 100 player-hours (overall)",
-    rate_per_1000_ae="",  # C11: per-100-player-hours is not an athlete-exposure denominator (decisions 2026-06-13); rate kept in rate_raw
-    extraction_notes="2861 Little League players 7-18, 140,932 player-hours. 81 injuries total (66 acute, 15 overuse). Overall rate 0.057/100 player-hours = 0.57/1000. Severe rate 0.008/100. 62% of acute = hit by ball; 18 ball-related facial injuries (16 on defense).",
-    season_or_timeframe="prospective survey",
-)])
-
-# 9191640 — Innsbruck mandibular fractures
-emshoff_common = dict(citation="Emshoff R, Schöning H, Röthler G, Waldhart E. (1997). Trends in the incidence and cause of sport-related mandibular fractures: a retrospective analysis. Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons.",
-    pub_year=1997, study_type="case_series", country="AT", region="Innsbruck",
-    population_setting="mixed", age_min=5, age_max=99, age_category="mixed",
-    extraction_basis="youth_primary",
-    sex="mixed", level_of_play="mixed",
-    season_or_timeframe="1984-1993 (10 years)",
-)
-w("emshoff1997", [
-    make("emshoff1997", **emshoff_common,
-        sport_raw="all causes mandibular fracture (sport = 31.5%)",
-        sport="all_activities_aggregate", sport_category="",
-        subgroup_label="overall",
-        sample_size=712, injury_count=982,
-        injury_type_raw="mandibular fractures (982 total in 712 patients)",
-        injury_category="orofacial_with_dental",
-        rate_raw="", rate_denominator_raw="case count",
-        extraction_notes="712 patients with 982 mandibular fractures, Innsbruck 1984-1993. Causes: sport 31.5% (#1, ↑ from 28.6% to 34.5% over decade), MVA 27.2%, falls 20.8%. M:F 2.5:1.",
-    ),
-    make("emshoff1997", **emshoff_common,
-        sport_raw="skiing (55.3% of sport-related mandibular fractures)",
-        sport="skiing", sport_category="non_contact",
-        subgroup_label="",
-        sample_size="",
-        injury_count=int(round(712 * 0.315 * 0.553)),
-        injury_type_raw="skiing-related mandibular fractures",
-        injury_category="orofacial_with_dental",
-        rate_raw=55.3, rate_denominator_raw="(%) of sport-related mandibular fractures from skiing",
-        extraction_notes="Skiing was #1 sport for mandibular fractures (55.3% of sport-related). Decreased 19.5% over decade as cycling grew.",
-    ),
-    make("emshoff1997", **emshoff_common,
-        sport_raw="cycling (25.4% of sport-related)",
-        sport="cycling", sport_category="non_contact",
-        subgroup_label="",
-        sample_size="",
-        injury_count=int(round(712 * 0.315 * 0.254)),
-        injury_type_raw="cycling-related mandibular fractures",
-        injury_category="orofacial_with_dental",
-        rate_raw=25.4, rate_denominator_raw="(%) of sport-related mandibular fractures from cycling",
-        extraction_notes="Cycling 25.4% (↑ 19.3% over decade). Associated injuries rate 133.3/100 mandibular fractures.",
-    ),
-])
+# pasternack1996 (PMID 8784371, pub. 1996) and emshoff1997 (PMID 9191640,
+# pub. 1997) removed 2026-06-24 — pre-2000 publications, outside PROTOCOL §3.1
+# time window. See docs/decisions.md (2026-06-24).
 
 print("\nDone — batch 5 complete.")

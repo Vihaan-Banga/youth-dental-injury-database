@@ -15,10 +15,10 @@ An open-access harmonized database aggregating epidemiological data on dental an
 
 | | |
 |---|---|
-| Harmonized rows | **426** |
-| Distinct sources | **106** (93 peer-reviewed papers · 12 NEISS treatment-years · 1 governing-body report) |
-| Countries | **29** |
-| Publication years | **1996–2026** |
+| Harmonized rows | **421** |
+| Distinct sources | **103** (90 peer-reviewed papers · 12 NEISS treatment-years · 1 governing-body report) |
+| Countries | **28** |
+| Publication years | **2000–2026** (per PROTOCOL §3.1) |
 | NEISS case-level coverage | **12 treatment-years** (2013–2019, 2021–2025; 2020 is a real COVID-era gap), ~8,800 underlying records |
 | Validation | **0 FAILs / 0 WARNs** across 13 automated checks (run in CI on every push) |
 | Provenance | every row author-verified against PubMed; carries `measure_type`, `comparability_group`, and `data_provenance` flags |

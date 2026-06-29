@@ -384,8 +384,8 @@ MANUAL_DECISIONS.update({
         "Kick-scooters dental injuries in 6-12 yr children — perfect age + activity fit (recreational sport)."),
     "31937578": ("screened_included", "I-pri", "high",
         "Nested case-control of mouthguard use vs concussion in youth ice hockey (n=315 cases) — exactly the kind of study the protocol §3.3 wants."),
-    "8883693": ("screened_included", "I-pri", "high",
-        "Texas girls' high school basketball injury incidence — perfect §3.1 fit (HS = adolescent)."),
+    "8883693": ("screened_excluded", "E-date", "high",
+        "Texas girls' HS basketball injury incidence. Topically eligible, but PUBLISHED 1996 — outside PROTOCOL §3.1 (publications on/after 2000). Was admitted via a non-date-capped §4.2 targeted journal search; removed 2026-06-24 (see docs/decisions.md)."),
     "39417350": ("screened_included", "I-pri", "high",
         "Pediatric patients with proclined anterior teeth, stress distribution with/without MG — pediatric pop with mouthguard outcome."),
 
@@ -678,10 +678,10 @@ MANUAL_DECISIONS.update({
         "2,845 head & neck injuries across various martial arts — relevant; large surveillance dataset."),
     "35340727": ("screened_included", "I-pri", "high",
         "Maxillofacial injuries NCAA Division I athletes 13 sports — collegiate + sport-specific, large dataset."),
-    "8784371":  ("screened_included", "I-pri", "high",
-        "Little League baseball survey — youth baseball epi."),
-    "9191640":  ("screened_included", "I-pri", "high",
-        "Sport-related mandibular fractures retrospective — mandible includes dental adjacency."),
+    "8784371":  ("screened_excluded", "E-date", "high",
+        "Little League baseball survey. Topically eligible, but PUBLISHED 1996 — outside PROTOCOL §3.1 (publications on/after 2000). Admitted via a non-date-capped §4.2 targeted search; removed 2026-06-24 (see docs/decisions.md)."),
+    "9191640":  ("screened_excluded", "E-date", "high",
+        "Sport-related mandibular fractures retrospective. Topically eligible, but PUBLISHED 1997 — outside PROTOCOL §3.1 (publications on/after 2000). Admitted via a non-date-capped §4.2 targeted search; removed 2026-06-24 (see docs/decisions.md)."),
 
     # --- needs_additional_review (interesting but full-text needed) ---
     "20493614": ("needs_additional_review", "R-data", "medium",

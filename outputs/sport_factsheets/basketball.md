@@ -1,12 +1,12 @@
 # Basketball — Factsheet
 
-_Auto-generated from `master.csv`. 28 rows across 25 sources._
+_Auto-generated from `master.csv`. 27 rows across 24 sources._
 
 **Sport identifier in database:** `basketball`
 **Sport category:** `limited_contact`
 **Countries:** IL, IN, JP, NZ, TR, US
-**Year span:** 1996-2026
-**Sources contributing:** azadani2023, cohenca2007, collins2016, comert2026, gomez1996, kanemitsu2023, labella2002, levin2003, liang2024, mertz2022, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, singh2014, slavin2021, welch2010
+**Year span:** 2002-2026
+**Sources contributing:** azadani2023, cohenca2007, collins2016, comert2026, kanemitsu2023, labella2002, levin2003, liang2024, mertz2022, neiss2013, neiss2014, neiss2015, neiss2016, neiss2017, neiss2018, neiss2019, neiss2021, neiss2022, neiss2023, neiss2024, neiss2025, singh2014, slavin2021, welch2010
 
 ## Rates per 1000 athlete-exposures
 
@@ -32,11 +32,11 @@ _Min 0.024, max 0.670, n=4._
 
 | age_category | count |     | sex | count |
 |---|---:|---|---|---:|
-| adolescent | 5 | | female | 2 |
+| adolescent | 4 | | female | 1 |
 | collegiate | 6 | | male | 7 |
 | mixed | 17 | | mixed | 19 |
 
-_Cumulative reported `injury_count` across these 28 rows: **26,252**._
+_Cumulative reported `injury_count` across these 27 rows: **26,191**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

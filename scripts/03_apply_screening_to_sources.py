@@ -145,6 +145,7 @@ Every candidate source — whether eventually included or excluded — is logged
 | E-noprim | no extractable primary numerical injury data (§3.1) |
 | E-nodent | no dental/orofacial-with-dental outcome (§3.3) |
 | E-nonpr  | non-peer-reviewed and not an approved surveillance/governing body source (§3.2) |
+| E-date   | published before 2000 — outside the §3.1 publication window |
 | R-age    | age range / population unclear from abstract |
 | R-mixed  | mixed adult+youth, youth subset extractability needs full text |
 | R-data   | not obvious whether numerical injury counts are extractable |

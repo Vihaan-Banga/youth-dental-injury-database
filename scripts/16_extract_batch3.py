@@ -211,19 +211,8 @@ w("gabris2001", [make("gabris2001",
 )])
 
 # 8883693 — Texas girls' HS basketball
-w("gomez1996", [make("gomez1996",
-    citation="Gomez E, DeLee JC, Farney WC. (1996). Incidence of injury in Texas girls' high school basketball. The American journal of sports medicine.",
-    pub_year=1996, study_type="cohort", country="US", region="Texas",
-    population_setting="school", age_min=14, age_max=18, age_category="adolescent",
-    sex="female", level_of_play="school_varsity",
-    sport_raw="girls' varsity basketball (Texas Class 4A/5A)",
-    sport="basketball", sport_category="limited_contact",
-    sample_size=890, injury_count=int(round(436 * 0.14)),
-    injury_type_raw="dental injuries (14% of all 436 reported injuries)",
-    rate_raw=14.0, rate_denominator_raw="(%) of 436 total injuries that were dental",
-    extraction_notes="Prospective 1993-94 season, 100 Texas Class 4A/5A HS with full-time ATCs. 890 athletes 14-18. 436 injuries (0.49/athlete/season, 0.4%/hour). Game time = 12.5% of exposure but 50% of injuries. Most: sprain/strain 56%, contusion 15%, dental 14%. Ankle/knee most-injured body parts overall.",
-    season_or_timeframe="1993-94 season",
-)])
+# gomez1996 (PMID 8883693, pub. 1996) removed 2026-06-24 — pre-2000 publication,
+# outside PROTOCOL §3.1 time window. See docs/decisions.md (2026-06-24).
 
 # 15592602 — Punahou 15-yr
 collins04_common = dict(citation="Beachy G. (2004). Dental Injuries in Intermediate and High School Athletes: A 15-Year Study at Punahou School. Journal of athletic training.",

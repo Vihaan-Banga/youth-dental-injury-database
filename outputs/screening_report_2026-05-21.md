@@ -1,6 +1,6 @@
 # Screening Report — PubMed seed of 2026-05-21
 
-_Generated 2026-06-17 from `data/extracted/_screening/screening_decisions.csv`._
+_Generated 2026-06-29 from `data/extracted/_screening/screening_decisions.csv`._
 
 ## What this is
 
@@ -19,16 +19,16 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 
 ## Totals
 
-- `screened_included`: **93**
+- `screened_included`: **90**
 - `needs_additional_review`: **84**
-- `screened_excluded`: **252**
+- `screened_excluded`: **255**
 - Total: **436**
 
 ---
 
-## screened_included  (93)
+## screened_included  (90)
 
-### I-pri — Primary epidemiology — sport-related dental/orofacial injury data, ages overlap 5–22  (93)
+### I-pri — Primary epidemiology — sport-related dental/orofacial injury data, ages overlap 5–22  (90)
 
 - **42052228** (2026) — Epidemiology of Softball Injuries Comparison of Softball-Related Injuries at US Emergency Departments Between High School and Collegiate Athletes: A 10-Year NEISS Analysis, 2015-2024.
   - confidence: `high` — 10-yr NEISS analysis 2015–2024 comparing HS vs collegiate softball injuries — direct §3.1 fit with AE-comparable data.
@@ -210,12 +210,6 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
   - confidence: `high` — Schoolchildren n=2022, sport-related causes ~30% of TDI; primary epidemiology data, age range consistent with 5–18.
 - **11003192** (2000) — Acceptability of baseball face guards and reduction of oculofacial injury in receptive youth league players.
   - confidence: `high` — Baseball face guards RCT in receptive youth league — youth + sport + protective equipment + acceptability outcome.
-- **9191640** (1997) — Trends in the incidence and cause of sport-related mandibular fractures: a retrospective analysis.
-  - confidence: `high` — Sport-related mandibular fractures retrospective — mandible includes dental adjacency.
-- **8883693** (1996) — Incidence of injury in Texas girls' high school basketball.
-  - confidence: `high` — Texas girls' high school basketball injury incidence — perfect §3.1 fit (HS = adolescent).
-- **8784371** (1996) — Baseball injuries: a Little League survey.
-  - confidence: `high` — Little League baseball survey — youth baseball epi.
 
 ---
 
@@ -400,7 +394,7 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
 
 ---
 
-## screened_excluded  (252)
+## screened_excluded  (255)
 
 ### E-age — Excluded — population outside 5–22 age range (§3.1)  (22)
 
@@ -483,6 +477,15 @@ This is the audit trail for the first-pass screening of the 200 PubMed candidate
   - confidence: `high` — Impacted 3rd molars + mandibular fractures (case) — auto-handled.
 - **1061792** (1975) — Traumatized maxillary incisors.
   - confidence: `high` — PubMed PublicationType 'Case Reports' — excluded per §3.2.
+
+### E-date — E-date  (3)
+
+- **9191640** (1997) — Trends in the incidence and cause of sport-related mandibular fractures: a retrospective analysis.
+  - confidence: `high` — Sport-related mandibular fractures retrospective. Topically eligible, but PUBLISHED 1997 — outside PROTOCOL §3.1 (publications on/after 2000). Admitted via a non-date-capped §4.2 targeted search; removed 2026-06-24 (see docs/decisions.md).
+- **8883693** (1996) — Incidence of injury in Texas girls' high school basketball.
+  - confidence: `high` — Texas girls' HS basketball injury incidence. Topically eligible, but PUBLISHED 1996 — outside PROTOCOL §3.1 (publications on/after 2000). Was admitted via a non-date-capped §4.2 targeted journal search; removed 2026-06-24 (see docs/decisions.md).
+- **8784371** (1996) — Baseball injuries: a Little League survey.
+  - confidence: `high` — Little League baseball survey. Topically eligible, but PUBLISHED 1996 — outside PROTOCOL §3.1 (publications on/after 2000). Admitted via a non-date-capped §4.2 targeted search; removed 2026-06-24 (see docs/decisions.md).
 
 ### E-lang — Excluded — non-English (§3.1 v1.0 scope)  (8)
 
