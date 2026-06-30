@@ -587,4 +587,12 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ---
 
+### 2026-06-30: Rate Explorer — remove the standalone mouthguard panel entirely
+
+**Follow-up to the 2026-06-24 entry.** After redesigning the mouthguard panel to show mouthguard-use rates and effect contrasts (rather than duplicated injury rates), it still read as confusing on the live page — it sat above the tables and partly echoed rows already listed below it. Decision: **remove the standalone "Mouthguard evidence for this sport" panel entirely.** No data is lost — every row's mouthguard fields (`mouthguard_injury_relation`, `mouthguard_use_rate`, `mouthguard_required`) are already shown inline in the **Mouthguard** column of the per-measure_type tables, and mouthguard-use-proportion rows have their own measure_type group. Removed the `#mg` heading/container and its JS render block from `docs/rate-explorer.html`. Verified in-browser (panel gone, tables and Mouthguard column intact, no console errors).
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->
