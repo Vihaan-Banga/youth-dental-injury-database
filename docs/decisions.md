@@ -573,4 +573,18 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ---
 
+### 2026-06-24: Rate Explorer mouthguard panel — show mouthguard data, not injury rates
+
+**Trigger:** The Rate Explorer's "Mouthguard evidence" panel was displaying the same numbers as the per-1000-AE injury-rate table below it (e.g., for basketball: azadani2023 2.4, collins2016 2.6). Diagnosis (read-only): a **display bug**, not a data error — `master.csv` was correct.
+
+**Root cause:** the panel selected rows by `mouthguard_injury_relation === 'analyzed'` and rendered each row's *injury rate* (`reportedRate`). Those analyzed rows are the same `incidence_per_AE` rows shown in the table below, so the injury rates appeared twice. The panel showed no mouthguard-specific value at all.
+
+**Fix (presentation only; no data change):** the panel now selects rows that actually carry mouthguard data — a non-empty `mouthguard_use_rate`, or a mouthguard-vs-no-mouthguard contrast (`subgroup_label` marking mouthguard users/non-users) — and renders the **mouthguard metric**: use % and, for contrasts, the user-vs-nonuser injury rates. Overall surveillance rows merely flagged `analyzed` (azadani2023, collins2016) are excluded from the panel (still flagged in the tables' Mouthguard column). For basketball the panel now shows the genuine evidence: labella2002's 0.67 (non-users) vs 0.12 (users) per 1000 AE, plus mouthguard-use prevalence (comert2026 7.2%, levin2003 3%).
+
+**Affected file:** `docs/rate-explorer.html` only. Verified in-browser (no console errors; azadani/collins no longer duplicated).
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

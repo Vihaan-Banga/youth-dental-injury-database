@@ -176,16 +176,32 @@ function render(){
     (age==='__all'?', all age groups':`, ${esc(prettyAge(age))}`)+
     `. ${nAE} carry a value in the normalized per-1000-athlete-exposure field; those share a common denominator and are comparable on that axis (still mind differences in injury definition, age range, and era). Rows without it show the source's native rate in its own denominator (per player-hours, per season, % of injuries, …) — always read the denominator next to each rate.`;
 
-  // Mouthguard evidence panel (analyzed rows for this sport, any age)
-  const mgRows=DATA.rows.filter(r=>r.sport===sport && r.mouthguard_injury_relation==='analyzed');
+  // Mouthguard panel — show ACTUAL mouthguard data only: a reported mouthguard-
+  // USE rate, or a mouthguard-vs-no-mouthguard EFFECT contrast (a row whose
+  // subgroup_label marks mouthguard users/non-users). We show the mouthguard
+  // metric (use %, and for contrasts the user-vs-nonuser injury rates) — NOT a
+  // bare injury rate. Rows that merely flag mouthguard_injury_relation='analyzed'
+  // without a use rate or a contrast (e.g. overall surveillance rates) are
+  // excluded here so the panel never just re-lists the injury-rate tables below.
+  const pct = v => (v && v.trim()) ? (+v * 100).toFixed(1).replace(/\.0$/,'') + '%' : '';
+  const mgRows=DATA.rows.filter(r=>r.sport===sport && (
+     (r.mouthguard_use_rate && r.mouthguard_use_rate.trim()) ||
+     (r.subgroup_label && /mouthguard/i.test(r.subgroup_label))
+  ));
   const mgDiv=document.getElementById('mg');
   if(mgRows.length){
-    mgDiv.innerHTML = mgRows.map(r=>`<div class="mg"><b>${esc(prettySport(sport))}</b> —
-      ${reportedRate(r).replace(/<br>/g,' ')} ${r.subgroup_label?`<span class="tag">${esc(r.subgroup_label)}</span>`:''}
-      ${r.mouthguard_use_rate&&r.mouthguard_use_rate.trim()?`· mouthguard use ${esc(r.mouthguard_use_rate)}`:''}
-      <br><span class="cite">${esc(r.citation)}</span></div>`).join('');
+    mgDiv.innerHTML = mgRows.map(r=>{
+      const isContrast = r.subgroup_label && /mouthguard/i.test(r.subgroup_label);
+      const bits=[];
+      if(isContrast)
+        bits.push(`<span class="tag">${esc(r.subgroup_label)}</span> injury rate ${reportedRate(r).replace(/<br>/g,' ')}`);
+      if(r.mouthguard_use_rate && r.mouthguard_use_rate.trim())
+        bits.push(`mouthguard use ${pct(r.mouthguard_use_rate)}`);
+      return `<div class="mg"><b>${esc(prettySport(sport))}</b> — ${bits.join(' · ')}`+
+             `<br><span class="cite">${esc(r.citation)}</span></div>`;
+    }).join('');
   } else {
-    mgDiv.innerHTML='<p class="none">No source for this sport explicitly analyzed mouthguard use vs. injury. (Other rows may mention mouthguards — see the table.)</p>';
+    mgDiv.innerHTML='<p class="none">No mouthguard-use rate or mouthguard-vs-no-mouthguard contrast reported for this sport. (Studies that analyzed mouthguards only as a risk factor are flagged in the <em>Mouthguard</em> column of the tables below.)</p>';
   }
 
   const res=document.getElementById('results');
