@@ -1,7 +1,8 @@
 name: Validate master.csv
 
 # Runs the harmonization + validation pipeline on every push and PR to main.
-# Fails the build if validator C1-C10 checks report any FAIL.
+# Fails the build if any validator check (C1-C13) reports a FAIL, or if a fresh
+# harmonize does not reproduce the committed master.csv byte-for-byte.
 # Does NOT regenerate visualizations (those need matplotlib which is fine but
 # we don't want PR builds modifying images).
 
@@ -27,22 +28,14 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install validator dependencies
-        # Only the bare minimum needed to run harmonize + validate.
-        # (matplotlib / requests / pdfplumber etc. only needed for extraction-time scripts.)
-        run: |
-          python -m pip install --upgrade pip
-          # No external deps required for harmonize.py + validate.py themselves —
-          # they use stdlib csv only. Listed here for future-proofing.
-          pip install --quiet --no-deps "pandas>=2.0" || true
+      # No external deps: the core pipeline (harmonize + validate) is stdlib-only.
 
-      - name: Harmonize master.csv
-        run: python3 scripts/07_harmonize.py
-
-      - name: Validate against DATA_DICTIONARY.md
-        # validate.py exits 1 if there's any FAIL — that fails this step
-        # and therefore the whole workflow.
-        run: python3 scripts/08_validate.py
+      - name: Rebuild, validate, and check reproducibility
+        # run_all.py --core runs 07_harmonize -> 08_validate (validate.py exits 1 on
+        # any FAIL). --check additionally fails the build if a fresh harmonize produces
+        # a master.csv that differs from the committed one — so the published dataset
+        # is guaranteed to reproduce byte-for-byte from the extraction CSVs.
+        run: python3 scripts/run_all.py --core --check
 
       - name: Show validation report on failure
         if: failure()

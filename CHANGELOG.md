@@ -6,6 +6,16 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 
 (Working state on `main`. Will become v0.1.0 at the next tag.)
 
+### 2026-07-01 — Reproducibility scaffolding
+
+#### Added
+- **`scripts/run_all.py`** — one-command, offline, deterministic rebuild of the whole database from the committed extraction CSVs: harmonize → validate → regenerate all outputs (figures, factsheets, bibliography, SQLite export, per-country / cross-source / NEISS-trend reports, Rate Explorer JSON) → citation audit. Flags: `--core` (stdlib-only harmonize+validate), `--check` (fail if a fresh build changes `master.csv`), `--no-audit`.
+- **`requirements.txt`** — the single external dependency (`matplotlib`, for figures only); the core pipeline is Python-stdlib-only.
+- **README "Reproduce the database"** section documenting the commands and the three pipeline tiers (core / outputs / extraction).
+
+#### Changed
+- **CI** (`.github/workflows/validate.yml`) now runs `run_all.py --core --check`, so every push is gated on the published `master.csv` reproducing byte-for-byte from source-of-truth inputs (previously CI only harmonized + validated). Removed the unused `pandas` install. Fixed a stale "C1-C10" comment → C1-C13.
+
 ### 2026-06-30 — Rate Explorer mouthguard panel removed
 
 #### Fixed

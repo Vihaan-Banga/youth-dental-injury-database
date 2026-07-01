@@ -1,0 +1,18 @@
+# Python dependencies for the Youth Sports Dental Injury Database.
+#
+# The CORE pipeline — 07_harmonize.py (builds master.csv) and 08_validate.py
+# (the 13 validation checks) — uses the Python standard library ONLY and needs
+# nothing here. You can reproduce and validate the database with a bare Python.
+#
+# The single external dependency below is used only by the output-regeneration
+# scripts that draw figures (18_visualize, 23_neiss_trends, 29_per_country_analysis)
+# via scripts/run_all.py. Everything else (SQLite export, bibliography, factsheets,
+# Rate Explorer JSON, audits) is also stdlib-only.
+#
+# Tested with Python 3.9-3.11.
+#
+#   python3 -m pip install -r requirements.txt   # only needed for figures
+#   python3 scripts/run_all.py                   # full offline rebuild + validate
+#   python3 scripts/run_all.py --core            # harmonize + validate, zero deps
+
+matplotlib>=3.7,<4

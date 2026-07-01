@@ -73,6 +73,22 @@ youth-dental-injury-database/
 5. **Run harmonization scripts** to build `data/harmonized/master.csv`.
 6. **Commit early and often.** Every meaningful change gets a git commit with a clear message.
 
+## Reproduce the database
+
+The entire dataset rebuilds from the committed per-source extraction CSVs — deterministically and offline — with one command:
+
+```bash
+python3 scripts/run_all.py            # rebuild master.csv, validate, regenerate all outputs
+python3 scripts/run_all.py --core     # just harmonize + validate (Python stdlib only, no installs)
+python3 scripts/run_all.py --check    # reproducibility gate: fail if a fresh build changes master.csv
+```
+
+- **Core pipeline** (`07_harmonize.py` → `08_validate.py`) uses **only the Python standard library** — no dependencies to install. It rebuilds `data/harmonized/master.csv` from `data/extracted/*.csv` and runs all 13 validation checks (C1–C13).
+- **Figures** need `matplotlib` (`pip install -r requirements.txt`); every other output (SQLite export, bibliography, factsheets, per-country and cross-source reports, Rate Explorer JSON) is stdlib-only.
+- The **extraction stage** (scripts `00`–`06`, `09`–`32`) queries PubMed / Unpaywall / NEISS and is how the committed extraction CSVs were originally produced. It needs network access and is documented provenance, not part of the offline rebuild.
+
+CI (`.github/workflows/validate.yml`) runs `run_all.py --core --check` on every push, so the published `master.csv` is guaranteed to reproduce byte-for-byte from source-of-truth inputs.
+
 ## How this will be cited (when published)
 
 ```
