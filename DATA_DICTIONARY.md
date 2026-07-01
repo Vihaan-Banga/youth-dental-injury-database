@@ -76,7 +76,7 @@ When adding a new source, follow these definitions exactly. When a definition is
 
 ### Derived comparability columns (master only)
 
-These two columns are **derived at harmonization** by `scripts/07_harmonize.py` (via `scripts/_derived_columns.py`). They appear in `data/harmonized/master.csv` and the SQLite export, **not** in the per-source extraction CSVs (which hold only source-reported fields). They were added 2026-06-24 to make cross-row comparability machine-readable (see `docs/decisions.md`).
+These three columns are **derived at harmonization** by `scripts/07_harmonize.py` (via `scripts/_derived_columns.py`). They appear in `data/harmonized/master.csv` and the SQLite export, **not** in the per-source extraction CSVs (which hold only source-reported fields). They were added 2026-06-24 to make cross-row comparability and redistribution rights machine-readable (see `docs/decisions.md`). The master dataset therefore has **39 columns** — the 36 source-extraction columns above plus these 3 derived columns.
 
 | Column | Type | Description | Example |
 |---|---|---|---|

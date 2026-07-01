@@ -21,7 +21,7 @@ Repository: **https://github.com/Vihaan-Banga/youth-dental-injury-database**
 
 ## Schema highlights
 
-Each row represents one extracted statistic. The data dictionary defines 36 columns including:
+Each row represents one extracted statistic. The data dictionary defines 36 source-extraction columns (plus 3 derived comparability columns — 39 total in `master.csv`), including:
 
 - **Source provenance:** citation, DOI, study type, peer-reviewed flag
 - **Population:** country, age range + age category (youth 5–12 / adolescent 13–17 / collegiate 18–22 / adult 23+ as comparator), sex, level of play
@@ -71,7 +71,7 @@ All publicly viewable on the repo:
 - **`DATA_DICTIONARY.md`** — column-by-column data dictionary.
 - **`docs/decisions.md`** — append-only log of every harmonization decision and why. Includes corrections (e.g., NEISS body-part code labels in PROTOCOL §4.1).
 - **`docs/sources.md`** — full audit trail of every candidate source through screening.
-- **`outputs/validation_report.md`** — current pass/fail status against the 11 validation checks.
+- **`outputs/validation_report.md`** — current pass/fail status against the 13 validation checks.
 - **`outputs/screening_report_2026-05-21.md`** — per-decision screening audit.
 
 ## Citation

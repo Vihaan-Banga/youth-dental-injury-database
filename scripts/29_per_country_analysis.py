@@ -46,6 +46,14 @@ for r in rows:
 # Sort by source count desc
 ranked = sorted(by_country.items(), key=lambda x: (-len(x[1]["sources"]), -x[1]["rows"]))
 
+# Count real countries separately from the untagged bucket, so the header
+# doesn't report "(no country tag)" as if it were a country.
+NO_TAG = "(no country tag)"
+n_countries = sum(1 for c in by_country if c != NO_TAG)
+untagged = by_country.get(NO_TAG)
+n_untagged_rows = untagged["rows"] if untagged else 0
+n_untagged_sources = len(untagged["sources"]) if untagged else 0
+
 ISO_TO_NAME = {
     "US": "United States", "GB": "United Kingdom", "CA": "Canada",
     "AU": "Australia", "IE": "Ireland", "IL": "Israel", "IN": "India",
@@ -63,7 +71,9 @@ ISO_TO_NAME = {
 
 # Markdown report
 md = ["# Per-country breakdown\n",
-      f"_Auto-generated from `data/harmonized/master.csv`. {len(by_country)} unique country tags across {len(rows)} rows._\n",
+      f"_Auto-generated from `data/harmonized/master.csv`. {n_countries} countries across {len(rows)} rows"
+      + (f"; {n_untagged_rows} rows from {n_untagged_sources} multi-country / untagged sources are grouped under \"(no country tag)\"." if n_untagged_rows else ".")
+      + "_\n",
       "## Coverage table\n",
       "| country | sources | rows | distinct sports | year span | cumulative injury count |",
       "|---|---:|---:|---:|---|---:|"]
@@ -97,7 +107,7 @@ labels = [ISO_TO_NAME.get(c, c) for c, _ in top]
 values = [len(e["sources"]) for _, e in top]
 plt.barh(labels[::-1], values[::-1], color="#55a868")
 plt.xlabel("Distinct sources contributing to master.csv")
-plt.title(f"Source count by country — top {len(top)} of {len(by_country)}")
+plt.title(f"Source count by country — top {len(top)} of {n_countries}")
 plt.tight_layout()
 plt.savefig(OUT_PNG, dpi=160, bbox_inches="tight")
 plt.close()

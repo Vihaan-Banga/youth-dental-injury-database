@@ -6,6 +6,22 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 
 (Working state on `main`. Will become v0.1.0 at the next tag.)
 
+### 2026-06-30 — Rate Explorer mouthguard panel removed
+
+#### Fixed
+- **Rate Explorer mouthguard panel showed the same numbers as the injury-rate table.** Diagnosed as a display bug (not a data error): the panel selected rows by `mouthguard_injury_relation='analyzed'` and rendered their injury rate, re-listing rows already in the per-1000-AE table. First reworked the panel to show genuine mouthguard data (use % + user-vs-nonuser contrast), then removed the standalone panel entirely — every row's mouthguard fields already appear inline in the tables' **Mouthguard** column. `docs/rate-explorer.html` only; no data change. See `docs/decisions.md` 2026-06-24 / 2026-06-30.
+
+### 2026-06-24 — Comparability metadata, provenance, and date-range cleanup
+
+#### Added
+- **Three derived comparability columns** in `master.csv` (computed at harmonization, not stored in extraction CSVs): `measure_type` (9-value outcome-measure vocabulary), `comparability_group` (the key on which direct comparison is permitted), and `data_provenance` (redistribution-rights class: `public_domain_raw` / `published_summary` / `governing_body_public`). Master is now **39 columns** (36 source + 3 derived). All rows manually classified — **0 remain `unclassified_pending_review`**.
+- **Validator checks C12 and C13** — `measure_type`/`comparability_group` populated and in-vocabulary; `data_provenance` populated and in-vocabulary. The validator now runs **13 checks (C1–C13)**.
+- **Comparability & limitations** notes across `README.md`, `docs/index.md`, and the methods draft, plus a data-rights statement (PROTOCOL §12, `LICENSE-DATA`).
+
+#### Changed
+- **Removed 3 pre-2000 publications** (`gomez1996`, `pasternack1996`, `emshoff1997`) to resolve the PROTOCOL §3.1 "on or after 2000" inconsistency. New totals: **421 rows / 103 sources / 28 countries**, publication range **2000–2026**. Austria dropped (its only source was `emshoff1997`).
+- Regenerated bibliography, SQLite export, country breakdown, factsheets, and figures against the new totals. Validator: **0 FAILs / 0 WARNs**; citation audit: 0 author/year mismatches.
+
 ### 2026-06-16 — Author-attribution integrity repair
 
 #### Fixed

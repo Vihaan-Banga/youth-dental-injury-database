@@ -44,7 +44,7 @@ The CI workflow at `.github/workflows/validate.yml` runs on every push and PR. D
 | `04_write_screening_report.py` | Update `outputs/screening_report_*.md` | after any screening change |
 | `05_neiss_filter.py` | Filter manually-downloaded NEISS TSV → CSV | after dropping a new TSV in `data/raw/neiss/` |
 | `07_harmonize.py` | Combine `data/extracted/*.csv` → `master.csv` | after any new extraction |
-| `08_validate.py` | Run 11 validation checks | after harmonization |
+| `08_validate.py` | Run 13 validation checks | after harmonization |
 | `18_visualize.py` | Regenerate baseline figures | after major data updates |
 | `21_cross_source_compare.py` | Cross-source rate comparison | after any new sport extraction |
 | `22_neiss_extract_all_years.py` | Split multi-year NEISS files into per-year extractions | after running 05 on new years |

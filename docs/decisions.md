@@ -595,4 +595,20 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ---
 
+### 2026-07-01: Documentation consistency pass + country-tag data-quality gap
+
+**Trigger:** Full read-only audit of the repository for stale numbers and internal inconsistencies after the recent 421/103 changes.
+
+**Fixed (documentation only, no data change):**
+- `scripts/29_per_country_analysis.py` counted the `(no country tag)` bucket as a country, so `country_breakdown.md` reported "29 unique country tags." Now reports **28 countries** and separately notes the 17 untagged rows. Regenerated.
+- `DATA_DICTIONARY.md` said "these **two** columns are derived" — there are **three** (`measure_type`, `comparability_group`, `data_provenance`). Corrected, and added the explicit "39 columns = 36 source + 3 derived" statement.
+- `outputs/methods_paper_draft.md` Technical Validation snapshot still read "426 rows / 106 sources" (contradicting its own 421/103 abstract) and "11 checks (C1–C11)". Updated to **421 / 103** and **13 checks (C1–C13)**, and added C12/C13 to the enumerated check list. Fixed the same "11 checks" claim in `docs/index.md`, `outputs/factsheet.md`, `CONTRIBUTING.md`, and the NEISS "250 aggregated rows" → **253**.
+- `CHANGELOG.md` had no entries after 2026-06-16; added the 2026-06-24 (comparability/provenance columns, pre-2000 removal → 421/103) and 2026-06-30 (Rate Explorer panel) entries.
+
+**Data-quality gap logged (NOT auto-filled):** 4 single-country studies carry an empty `country` tag — `galic2018` (Croatia?), `isokungas2012` (Finland?), `pandey2025` (India?), `shirani2010` (Iran?). The country was not captured at extraction and is not recoverable from the extraction notes, so it is **left blank pending full-text verification** rather than inferred from author affiliations (per the project's verify-first / no-invented-data rule). The other 13 untagged rows (`rugby_europe_iss_2024`, `faude2017`) are legitimately multi-country and correctly left blank. To be resolved when the source PDFs are next reviewed.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

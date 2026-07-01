@@ -1,6 +1,6 @@
 # Per-country breakdown
 
-_Auto-generated from `data/harmonized/master.csv`. 29 unique country tags across 421 rows._
+_Auto-generated from `data/harmonized/master.csv`. 28 countries across 421 rows; 17 rows from 6 multi-country / untagged sources are grouped under "(no country tag)"._
 
 ## Coverage table
 
