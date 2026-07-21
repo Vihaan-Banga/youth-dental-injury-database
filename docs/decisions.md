@@ -611,4 +611,24 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ---
 
+### 2026-07-03: Re-screen of the 84 needs_additional_review records — 11 excluded, 73 prioritized for full text
+
+**Trigger:** With advisor library access now available, the `needs_additional_review` pile (84 records) was systematically re-screened from the cached PubMed abstracts to (a) clear records that can be decided from the abstract and (b) prioritize the rest for full-text retrieval.
+
+**Method:** Read the full cached abstract + MeSH + publication types for all 84. Applied PROTOCOL §3.1–3.3 (youth ≤22, sport/athletic-related, dental/orofacial injury, ≥2000, primary data). Full-text fetch was attempted for the 18 records with a PMC/OA link but was almost entirely blocked (Wiley 402, LWW/Elsevier paywalls, Swiss-journal URLs 404, older PMC papers are scanned page-images) — confirming full text is the bottleneck, now addressable via the advisor.
+
+**Excluded (11 → decisions moved to `screened_excluded` in `scripts/screening_overrides.py`, each with a quoted rationale):**
+- **6 pre-2000** (`E-date`): 18254 (1977), 6130812 (1982), 2907269 (1988), 2638006 (1989), 1982928 (1990), 9566015 (1998) — fail the §3.1 ≥2000 rule, consistent with the 2026-06-24 Option-A removal.
+- **5 out-of-scope**: 17227375 (`E-nodent` — outcome is concussion neurocognition, no dental datum), 41087084 (`E-nodent` — community-rugby concussion *procedure* paper), 23374909 (`E-noprim` — Part I "materials and method", no results), 26545273 (`E-noprim` — HS mouthguard-mandate policy article, no primary data), 31884077 (`E-age` — US major men's *professional* leagues, adults only).
+
+**Result:** `needs_additional_review` 84 → **73**; `screened_excluded` 255 → 266. Re-ran `02→03→04`; `master.csv` unchanged (these were never extracted), validator still 421 / 0 FAILs / 0 WARNs.
+
+**Not extracted from abstracts (deliberate):** several held records (e.g. mixed-age adult-club surveys with mean age ~23, or pooled/relative numbers) could have yielded a rough row from the abstract alone, but extracting them would dilute the database's youth (≤22) specificity — its stated differentiator (PROTOCOL §1). Decision: hold these for clean full-text extraction rather than admit mixed-age survey aggregates. Flag for advisor if a broader young-adult scope is ever desired.
+
+**Deliverable:** `internal/fulltext_request_list.md` — the 73 remaining records tiered by extraction yield (Tier 1 = 10 with an explicit youth subset / age-banded sport-dental data; Tier 2 = 35 sport-specific surveys needing age confirmation; Tier 3 = 28 general dental-trauma / school-prevalence studies), with free PMC/OA links where they exist.
+
+**Reviewer:** Pending advisor review — the exclusion set and the "don't dilute with mixed-age data" call are the kind of scope judgment worth confirming.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

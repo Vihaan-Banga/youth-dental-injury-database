@@ -1,4 +1,4 @@
-# Validation Report — 2026-07-01
+# Validation Report — 2026-07-21
 
 _Run against `data/harmonized/master.csv` (421 rows)._
 

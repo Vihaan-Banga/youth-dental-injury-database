@@ -15,7 +15,7 @@ Repository: **https://github.com/Vihaan-Banga/youth-dental-injury-database**
   - 90 peer-reviewed primary research papers (PubMed-keyed)
   - **12 NEISS year extractions** (2013–2017 via the hadley archive + 2018, 2019, 2021, 2022, 2023, 2024, 2025 directly from CPSC; 2020 returned no matching cases — COVID youth-sport shutdown)
   - 1 international governing-body report (Rugby Europe 2024 U-18 Sevens)
-- **436 candidate records** screened in total (PubMed-keyed). 84 still pending full-text review (down from 91 after the 2026-06-12 open-access full-text pass).
+- **436 candidate records** screened in total (PubMed-keyed). 73 still pending full-text review (down from 91 → 84 → 73 after the 2026-06-12 open-access pass and the 2026-07-03 abstract re-screen, which excluded 6 pre-2000 and 5 out-of-scope records).
 - **28 countries** represented (US, GB, CA, AU, IE, IL, IN, BR, ZA, LB, NZ, JP, TR, ES, HU, RO, NO, KR, SY, LK, KW, IR, IT, CH, LT, LS, PR, TW)
 - **Years covered:** 2000 to 2026 (publication years, per PROTOCOL §3.1); injury data collected as far back as the mid-1980s.
 
@@ -58,7 +58,7 @@ Full cross-source table at [`cross_source_rate_comparison.md`](cross_source_rate
 
 ## What's still in progress
 
-- **Active screening pile:** 84 candidate papers in `needs_additional_review` (mostly blocked on age range not visible in the abstract). Most need full-text retrieval.
+- **Active screening pile:** 73 candidate papers in `needs_additional_review` (mostly blocked on age range or sport-subset not visible in the abstract). Prioritized for full-text retrieval in a 3-tier list; 10 Tier-1 records have an explicit youth subset and are the highest-yield to extract next.
 - **NEISS coverage:** 12 treatment years pulled (2013–2019, 2021–2025). Only 2020 is absent — a real COVID-era gap (no matching youth dental-sport cases), not a data gap to fill.
 - **Pre-registration:** OSF pre-registration not yet filed. Advisor not yet secured.
 - **Formal license sign-off:** MIT (code) + CC BY 4.0 (data) are in `LICENSE` / `LICENSE-DATA`, matching PROTOCOL §9, but advisor sign-off pending before v1.0.

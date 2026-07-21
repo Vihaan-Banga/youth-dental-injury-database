@@ -6,6 +6,14 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 
 (Working state on `main`. Will become v0.1.0 at the next tag.)
 
+### 2026-07-03 — Re-screen of the needs_additional_review pile (84 → 73)
+
+#### Changed
+- Systematically re-screened all 84 `needs_additional_review` candidates from their cached abstracts. Excluded **11**: 6 pre-2000 (`E-date`) and 5 out-of-scope (concussion-only outcome, methods-only Part I, mouthguard-policy article, US professional-league adults). Decisions recorded in `scripts/screening_overrides.py`; re-ran `02→03→04`. `needs_additional_review` 84 → **73**; `master.csv` unchanged (validator still 0 FAILs / 0 WARNs).
+
+#### Added
+- `internal/fulltext_request_list.md` — the 73 remaining records tiered by extraction yield (Tier 1 = 10 explicit-youth-subset records; Tier 2 = 35 sport surveys; Tier 3 = 28 general prevalence), with free PMC/OA links where available, for advisor-assisted full-text retrieval.
+
 ### 2026-07-01 — Reproducibility scaffolding
 
 #### Added
