@@ -6,6 +6,11 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 
 (Working state on `main`. Will become v0.1.0 at the next tag.)
 
+### 2026-07-03 — Internal numeric-consistency audit
+
+#### Added
+- **`scripts/38_recompute_audit.py`** + `outputs/recompute_audit.md` — recomputes every derivable value from a row's own inputs (back-calculated counts, rate unit-conversions, count/AE rates) and flags internal inconsistencies and field-labeling errors. Read-only; added to the `run_all.py` audit stage. First run: 61/66 checks consistent, **5 rows flagged** for source verification (`beachy2004` rate vs count, `huang2009` two-step base mismatch, `kerr2008` ×2 count-vs-rate denominator, `levin2003` injury_count likely a denominator). No data changed — flags are logged for one-at-a-time adjudication (see `docs/decisions.md`).
+
 ### 2026-07-03 — Re-screen of the needs_additional_review pile (84 → 73)
 
 #### Changed

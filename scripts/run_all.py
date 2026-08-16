@@ -55,6 +55,7 @@ OUTPUTS = [
 ]
 AUDIT = [
     ("34_audit_citations.py", "Citation / author attribution audit"),
+    ("38_recompute_audit.py", "Internal numeric-consistency (re-computation) audit"),
 ]
 
 

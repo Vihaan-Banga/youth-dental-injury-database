@@ -631,4 +631,22 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ---
 
+### 2026-07-03: Internal-consistency (re-computation) audit — `scripts/38`
+
+**Trigger:** All rows are `quality_flag=partial_data`; full-text source verification is gated on access. As an automated first pass that needs no source, added a re-computation audit that checks whether each stored number *follows from the row's own inputs*.
+
+**What it does (`scripts/38_recompute_audit.py`, read-only):** recomputes (1) `injury_count` vs `rate_raw% × base` (base parsed from `rate_denominator_raw`), (2) `rate_per_1000_ae` vs the `rate_raw` unit-conversion, (3) `rate_per_1000_ae` vs `injury_count / athlete_exposures × 1000`, and (4) a mislabel heuristic (the `injury_count` value appearing as "<n> of <population>" in the denominator → likely a denominator, not a count). Loose tolerances (12% for %×base) so rounding doesn't flag. Writes `outputs/recompute_audit.md`; added to the `run_all.py` audit stage. Internal-consistency only — it does **not** confirm a figure against the source (that still needs full text; see `scripts/37` for abstract corroboration).
+
+**Result:** 63 rows recomputable, 61 checks consistent, **5 flagged for source adjudication (not auto-fixed):**
+- `beachy2004 [all_sports]` — `injury_count=56` is stated ("19,492 injuries → 56 dental"), but `rate_raw=0.2` is inconsistent: 56/19,492 = **0.29%**, so `rate_raw` should be ~0.3, not 0.2. Likely a rounding/transcription error.
+- `huang2009 [sport_leisure_subset]` — `injury_count=387` is a two-step derivation (30.8% of causes × 19.9% TDI × 6,312), but `rate_raw=19.9` is the *overall* TDI prevalence, not the sport-leisure rate — count and rate on different bases in one row.
+- `kerr2008 [male_game]` and `[female_game]` — `injury_count` (447 / 400) is total (game + practice), but the row's rate is game-only over game-only AE (447/13,943×1000 = 32 ≠ stored 22.5). Count and rate denominators don't correspond.
+- `levin2003 [basketball]` — `injury_count=96` appears to be the number of *basketball players* ("~96 of total sample played basketball"), not injuries; actual injuries ≈ 7.2% × 96 ≈ 7. Same pattern likely affects `levin2003 [football_association]` (`injury_count=94`).
+
+These are logged for one-at-a-time verification against the sources; no data changed.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->
