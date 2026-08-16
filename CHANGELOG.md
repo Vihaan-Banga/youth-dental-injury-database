@@ -6,6 +6,14 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 
 (Working state on `main`. Will become v0.1.0 at the next tag.)
 
+### 2026-07-03 — Data-quality report, rate-scope guard, beachy2004 fix
+
+#### Fixed
+- **`beachy2004 [all_sports]`** — `rate_raw` **0.2 → 0.29** (derived "% of 19,492 injuries that were dental" = 56/19,492; the stored 0.2 was internally inconsistent, caught by the recompute audit). Only data value changed this pass; validator still 0 FAILs / 0 WARNs.
+
+#### Added
+- **`scripts/39_data_quality.py`** + `outputs/data_quality.md` — consolidated data-quality report (verification-risk tiers + external/internal numeric audits) with a **rate-scope guard** that flags ~15 rows carrying an all-cause / head-neck injury rate (not dental-specific) that sit in a dental comparability group — a comparability hazard surfaced for advisor reclassification (e.g. `kerr2008`, `collins2008`). Added to the `run_all.py` audit stage. Methods-paper Technical Validation + Limitations updated accordingly.
+
 ### 2026-07-03 — Internal numeric-consistency audit
 
 #### Added

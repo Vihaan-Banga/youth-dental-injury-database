@@ -649,4 +649,18 @@ These are logged for one-at-a-time verification against the sources; no data cha
 
 ---
 
+### 2026-07-03: beachy2004 percentage fix + data-quality report + rate-scope guard
+
+**Follow-up to the same-day recompute audit.**
+
+**(a) Fixed `beachy2004 [all_sports]`** — `rate_raw` corrected **0.2 → 0.29**. This cell is a derived percentage ("% of 19,492 total injuries that were dental") and must equal 56 / 19,492 = 0.29%; the stored 0.2 was internally inconsistent (the recompute audit flagged it). 56 breaks down as 23 tooth + 20 jaw + 13 soft-tissue in the source note. `master.csv` re-harmonized; validator 0 FAILs / 0 WARNs; the row now clears the audit. Full-text spot-check of the underlying 56 and 19,492 still advised (they are full-text figures, not in the abstract).
+
+**(b) Added `scripts/39_data_quality.py` → `outputs/data_quality.md`** (read-only, in the `run_all` audit stage): one consolidated report combining the verification-risk tiers, the two numeric audits (`scripts/37` external, `scripts/38` internal), and a new rate-scope guard.
+
+**(c) Rate-scope guard finding (needs advisor decision):** ~15 rows store a rate that is **broader than dental** — all-cause or head/neck injury incidence from studies whose injury definition merely *included* dental — yet they sit in a dental incidence comparability group. Examples: `kerr2008` (collegiate rugby all-injury 22.5 / 22.7 per 1000 game-AE), `collins2008` (all baseball injuries 1.26 per 1000 AE), `rugby_europe_iss_2024` all-cause match-injury rows, `quarrie2020` any-injury-claim age bands (already caveated), `faude2017` (head/neck), `huffman2008` (rare-injury composite). Head/face-specific orofacial rows are correctly **not** flagged (in scope). These all-cause rows are a comparability hazard (e.g. rugby 22.5 sitting next to basketball *dental* 0.026 in the same per-AE tier). **Recommendation:** the advisor decides whether to reclassify (own measure_type / comparability group), caveat, or exclude them. Not changed pending that call.
+
+**Reviewer:** Pending advisor review — (c) is a scope/comparability judgment.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->
