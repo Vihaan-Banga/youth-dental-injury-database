@@ -663,4 +663,20 @@ These are logged for one-at-a-time verification against the sources; no data cha
 
 ---
 
+### 2026-07-03: `dental_specific` derived column + Rate Explorer scope warning + datapackage.json
+
+**Follow-up to the same-day rate-scope finding** — promoting it from a report-only flag to an enforced, machine-readable safeguard.
+
+**(a) New derived column `dental_specific`** (`TRUE`/`FALSE`), computed in `scripts/_derived_columns.py` from the primary descriptor of `injury_type_raw`. `FALSE` = the row's outcome is a broader all-cause / head-neck / composite injury measure (not a dental rate); head/face-specific orofacial rows are `TRUE`. **19 of 421 rows are FALSE** (e.g. `kerr2008`, `collins2008`, `rugby_europe` all-cause bands, `quarrie2020`, `faude2017`, `huffman2008`). Master is now **40 columns** (36 source + 4 derived). Validator gains **C14** (boolean check; the count is reported by `scripts/39`, not warned, so validation stays 0 FAILs / 0 WARNs). Documented in DATA_DICTIONARY.md.
+
+**(b) Rate Explorer now honors it** — any `dental_specific=FALSE` row renders a visible warning under its value ("⚠ not dental-specific — this is an all-injury / broader rate, not a dental rate"), so an all-injury rugby rate can no longer be mis-read next to a dental per-AE rate. Verified in-browser (10 warnings on the rugby view, no console errors).
+
+**(c) Added `datapackage.json`** (root) via `scripts/40_datapackage.py` — a Frictionless tabular data-package descriptor (field names + inferred types + data-dictionary descriptions + CC BY 4.0 licence + primary key), making the dataset machine-consumable by standard open-data tooling. Regenerated in the `run_all` pipeline.
+
+This is the enforcement of the 2026-07-03 rate-scope finding; the underlying question of whether to also *reclassify/exclude* those rows remains an advisor decision. No injury data values changed.
+
+**Reviewer:** Pending advisor review.
+
+---
+
 <!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->

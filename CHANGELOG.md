@@ -6,6 +6,12 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 
 (Working state on `main`. Will become v0.1.0 at the next tag.)
 
+### 2026-07-03 — dental_specific column, Rate Explorer scope warning, data package
+
+#### Added
+- **Derived column `dental_specific`** (`TRUE`/`FALSE`) in `master.csv` (now **40 columns**; validator gains **C14**). Marks the 19 rows whose outcome is a broader all-cause / head-neck injury measure rather than a dental rate. The **Rate Explorer** now shows a visible "⚠ not dental-specific" warning on those rows so an all-injury rate can't be mis-compared as a dental rate (verified in-browser).
+- **`datapackage.json`** (Frictionless tabular data-package descriptor, via `scripts/40_datapackage.py`) — field names, inferred types, data-dictionary descriptions, CC BY 4.0 licence, primary key. Makes the dataset machine-consumable by standard open-data tooling; regenerated in `run_all`.
+
 ### 2026-07-03 — Data-quality report, rate-scope guard, beachy2004 fix
 
 #### Fixed

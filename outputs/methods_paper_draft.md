@@ -30,7 +30,7 @@ This data descriptor fills that gap.
 
 **Contributions of this work:**
 
-1. A **harmonized schema** (36 source-extraction columns, plus 3 derived comparability columns in `master.csv`; documented in DATA_DICTIONARY.md) that captures the dimensions on which dental-sport-injury epidemiology typically varies: population (age/sex/level), exposure context (competition vs. practice), within-source subgroup (e.g., mouthguard users vs nonusers), outcome (count, rate, denominator phrasing), and protective equipment. Critically, a `extraction_basis` column distinguishes "youth_primary" rows (within the v1.0 inclusion scope of ages 5–22) from "adult_comparator" rows extracted alongside, preserving cross-age context without bloating the v1.0 scope.
+1. A **harmonized schema** (36 source-extraction columns, plus 4 derived comparability columns in `master.csv`; documented in DATA_DICTIONARY.md) that captures the dimensions on which dental-sport-injury epidemiology typically varies: population (age/sex/level), exposure context (competition vs. practice), within-source subgroup (e.g., mouthguard users vs nonusers), outcome (count, rate, denominator phrasing), and protective equipment. Critically, a `extraction_basis` column distinguishes "youth_primary" rows (within the v1.0 inclusion scope of ages 5–22) from "adult_comparator" rows extracted alongside, preserving cross-age context without bloating the v1.0 scope.
 
 2. **Twelve treatment-years of NEISS** youth dental-sport case-level data (2013–2025 except 2020), unified and queryable. To our knowledge this is the first published aggregation of NEISS dental-sport data at this temporal breadth for the youth subset; the constituent year-CSVs and the year-over-year trend table are released as part of the database.
 
@@ -89,7 +89,7 @@ Sport classification follows a controlled vocabulary maintained in `docs/decisio
 
 ### Technical validation (PROTOCOL §7)
 
-A versioned validator (`scripts/08_validate.py`) runs 13 checks (C1-C13) on `data/harmonized/master.csv`:
+A versioned validator (`scripts/08_validate.py`) runs 14 checks (C1-C14) on `data/harmonized/master.csv`:
 - **C1–C2:** schema completeness; categorical-vocabulary conformance
 - **C3:** numeric plausibility (`rate_per_1000_ae < 100` per PROTOCOL §7)
 - **C4–C5:** age-min ≤ age-max; `age_category` consistency with the age range
@@ -101,8 +101,9 @@ A versioned validator (`scripts/08_validate.py`) runs 13 checks (C1-C13) on `dat
 - **C11:** `rate_per_1000_ae` populated only when `rate_denominator_raw` is an athlete-exposure denominator
 - **C12:** `measure_type` populated and in the controlled vocabulary; `comparability_group` populated (rows still pending manual classification surface as a warning)
 - **C13:** `data_provenance` populated and in the controlled vocabulary (redistribution-rights class)
+- **C14:** `dental_specific` populated and boolean (`TRUE`/`FALSE`); marks rows whose outcome is a broader all-cause / head-neck measure rather than a dental rate
 
-C1–C4, C6–C8, C10, C11, C12 and C13 are hard checks (a violation fails the build); C5 and C9 surface as warnings, since age-category banding is intentionally permissive.
+C1–C4, C6–C8, C10, C11, C12, C13 and C14 are hard checks (a violation fails the build); C5 and C9 surface as warnings, since age-category banding is intentionally permissive.
 
 Validation runs on every commit via GitHub Actions CI (`.github/workflows/validate.yml`).
 
@@ -112,7 +113,7 @@ Validation runs on every commit via GitHub Actions CI (`.github/workflows/valida
 
 The database is distributed as:
 
-- **`data/harmonized/master.csv`** — the main tabular product. **421 rows from 103 sources** (current release). 39 columns (36 source-extraction + 3 derived) per DATA_DICTIONARY.md. Rows split `youth_primary` (419) vs `adult_comparator` (2); study types span surveillance (37 sources), cross-sectional (41), case series (13), cohort (11), and governing-body report (1).
+- **`data/harmonized/master.csv`** — the main tabular product. **421 rows from 103 sources** (current release). 40 columns (36 source-extraction + 4 derived) per DATA_DICTIONARY.md. Rows split `youth_primary` (419) vs `adult_comparator` (2); study types span surveillance (37 sources), cross-sectional (41), case series (13), cohort (11), and governing-body report (1).
 - **`data/harmonized/master.sqlite`** — SQLite mirror of `master.csv` with sample queries in `data/harmonized/README_sqlite.md`.
 - **`data/extracted/<source_id>.csv`** — one file per source. Useful for source-level audit. Includes the per-NEISS-year extractions (`neiss2013.csv` through `neiss2025.csv` except `neiss2020.csv` for which NEISS returned zero matching cases).
 - **`data/raw/papers/_abstracts/<PMID>.json`** — parsed PubMed abstract data per candidate (parsed via E-utilities efetch).
@@ -126,7 +127,7 @@ Each source carries a stable `source_id` of form `<firstauthor><year>` (PubMed-k
 
 ## Technical Validation
 
-Current state (v0.1.x snapshot, 2026-06-30): **421 rows / 103 sources / 0 FAILs / 0 WARNs** against the 13 validation checks (`outputs/validation_report.md`), run on every commit via GitHub Actions CI. 23 PMC full-text XMLs cached. Cross-source rate comparison confirms tight agreement on US high-school basketball rates between `collins2016` (0.026 per 1000 AE) and `azadani2023` (0.024 per 1000 AE) — equivalently 2.6 and 2.4 per 100,000 AE — independent surveillance covering overlapping years yielding statistically indistinguishable estimates (`outputs/cross_source_rate_comparison.md`).
+Current state (v0.1.x snapshot, 2026-07-03): **421 rows / 103 sources / 0 FAILs / 0 WARNs** against the 14 validation checks (`outputs/validation_report.md`), run on every commit via GitHub Actions CI. 23 PMC full-text XMLs cached. Cross-source rate comparison confirms tight agreement on US high-school basketball rates between `collins2016` (0.026 per 1000 AE) and `azadani2023` (0.024 per 1000 AE) — equivalently 2.6 and 2.4 per 100,000 AE — independent surveillance covering overlapping years yielding statistically indistinguishable estimates (`outputs/cross_source_rate_comparison.md`).
 
 Beyond schema validation, two independent audits check the *numbers themselves* and are re-run in the pipeline (`scripts/run_all.py`). **External corroboration** (`scripts/37`) matches every extracted value against the source's PubMed abstract text: 287 of 352 checked values (81%) corroborate in-abstract, the remainder coming from full-text tables or computed percentages and flagged for full-text review. **Internal consistency** (`scripts/38`) recomputes every derivable value from the row's own inputs (back-calculated counts as `rate% × base`, unit conversions, and `count / exposures`): across the recomputable rows all but four are internally consistent, and those four are logged for source adjudication. A consolidated `outputs/data_quality.md` reports both alongside the verification-risk tiers. These are reviewer aids, not pass/fail gates — they localize where full-text verification should be spent.
 

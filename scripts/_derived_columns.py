@@ -162,3 +162,31 @@ def data_provenance(row: dict) -> str:
     if src in GOVERNING_BODY_SOURCES:
         return "governing_body_public"
     return "published_summary"
+
+
+# --- Dental-specificity of the outcome (per row) --------------------------
+# Added 2026-07-03 (see docs/decisions.md, and the rate-scope guard in
+# scripts/39). A handful of rows carry an ALL-CAUSE / head-neck / composite
+# injury measure from a study whose injury definition merely *included* dental
+# (e.g. collegiate rugby all-injury incidence). Such a value is NOT a dental
+# injury rate and must not be compared as one. This boolean makes that scope
+# machine-readable so the Rate Explorer can warn and analysts can filter.
+_DENTAL_KW = re.compile(
+    r"dental|oral|tooth|teeth|mouth|orofacial|maxillofacial|dentoalveolar|"
+    r"dento-alveolar|dentition|dentofacial|orodental|\btdi\b|\bodt\b|lip|facial|"
+    r"head/face|craniofacial|\bface\b|jaw|incisor|avuls|luxat|subluxat|intrusi|"
+    r"crown|root fractur|stomatognath", re.I)
+_INJURY_KW = re.compile(r"injur|claim|trauma|fractur", re.I)
+
+
+def dental_specific(row: dict) -> str:
+    """'TRUE' if the row's outcome is a dental/orofacial injury measure, 'FALSE'
+    if it is a broader all-cause / head-neck / composite injury measure that
+    merely contains dental. Judged from the PRIMARY descriptor of
+    injury_type_raw (text before any parenthetical), so a parenthetical noting
+    'dental defined-as-injury' does not make an all-injury rate read as dental.
+    Rows with no injury descriptor (e.g. mouthguard-use surveys) default TRUE."""
+    primary = (row.get("injury_type_raw") or "").split("(")[0]
+    if not _INJURY_KW.search(primary):
+        return "TRUE"
+    return "TRUE" if _DENTAL_KW.search(primary) else "FALSE"

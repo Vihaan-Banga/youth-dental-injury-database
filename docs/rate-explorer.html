@@ -27,6 +27,7 @@
   tr:nth-child(even) td{background:#fafafa}
   .rate{font-weight:600;white-space:nowrap}
   .den{color:var(--mut);font-size:.82rem}
+  .scopewarn{display:inline-block;margin-top:.25rem;font-size:.72rem;line-height:1.25;color:#8a4b00;background:#fff4e5;border:1px solid #f0c67a;border-radius:4px;padding:.15rem .4rem}
   .cite{font-size:.8rem;color:#444}
   .tag{display:inline-block;font-size:.72rem;background:#eef;border-radius:4px;padding:.05rem .35rem;margin-right:.25rem;color:#334}
   .none{color:var(--mut);font-style:italic;padding:.6rem 0}
@@ -104,13 +105,18 @@ const cell = v => (v && String(v).trim()) ? esc(v) : '<span class="den">—</spa
 let DATA = null;
 
 function reportedRate(r){
+  // Rows whose outcome is broader than dental (all-cause / head-neck / composite
+  // injury from a study that merely *included* dental) carry a scope warning so
+  // the value is never mis-read as a dental injury rate. See scripts/39.
+  const warn = (r.dental_specific==='FALSE')
+    ? `<br><span class="scopewarn">⚠ not dental-specific — this is an all-injury / broader rate, not a dental rate</span>` : '';
   if(r.rate_raw && r.rate_raw.trim()){
-    return `<span class="rate">${esc(r.rate_raw)}</span><br><span class="den">${cell(r.rate_denominator_raw)}</span>`;
+    return `<span class="rate">${esc(r.rate_raw)}</span><br><span class="den">${cell(r.rate_denominator_raw)}</span>${warn}`;
   }
   if(r.rate_per_1000_ae && r.rate_per_1000_ae.trim()){
-    return `<span class="rate">${esc(r.rate_per_1000_ae)}</span><br><span class="den">${cell(r.rate_denominator_raw||'per 1000 AE')}</span>`;
+    return `<span class="rate">${esc(r.rate_per_1000_ae)}</span><br><span class="den">${cell(r.rate_denominator_raw||'per 1000 AE')}</span>${warn}`;
   }
-  return '<span class="den">not reported</span>';
+  return `<span class="den">not reported</span>${warn}`;
 }
 
 function popCell(r){

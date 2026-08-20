@@ -52,6 +52,7 @@ OUTPUTS = [
     ("27_sqlite_export.py", "SQLite export"),
     ("29_per_country_analysis.py", "Per-country breakdown + figure"),
     ("33_rate_explorer_data.py", "Rate Explorer data JSON"),
+    ("40_datapackage.py", "Frictionless datapackage.json descriptor"),
 ]
 AUDIT = [
     ("34_audit_citations.py", "Citation / author attribution audit"),

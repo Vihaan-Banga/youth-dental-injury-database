@@ -30,6 +30,7 @@ SCHEMA = {
     "extraction_date": "TEXT", "extractor": "TEXT", "extraction_notes": "TEXT",
     "quality_flag": "TEXT",
     "measure_type": "TEXT", "comparability_group": "TEXT", "data_provenance": "TEXT",
+    "dental_specific": "TEXT",
 }
 
 def coerce(value, sql_type):

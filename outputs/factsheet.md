@@ -21,7 +21,7 @@ Repository: **https://github.com/Vihaan-Banga/youth-dental-injury-database**
 
 ## Schema highlights
 
-Each row represents one extracted statistic. The data dictionary defines 36 source-extraction columns (plus 3 derived comparability columns — 39 total in `master.csv`), including:
+Each row represents one extracted statistic. The data dictionary defines 36 source-extraction columns (plus 4 derived comparability columns — 40 total in `master.csv`), including:
 
 - **Source provenance:** citation, DOI, study type, peer-reviewed flag
 - **Population:** country, age range + age category (youth 5–12 / adolescent 13–17 / collegiate 18–22 / adult 23+ as comparator), sex, level of play
@@ -32,7 +32,7 @@ Each row represents one extracted statistic. The data dictionary defines 36 sour
 
 `extraction_basis` distinguishes `youth_primary` rows (within the v1.0 scope) from `adult_comparator` rows (extracted alongside when the source reports adult bands).
 
-Validation rules check 10 things — schema, categorical vocabulary, numeric plausibility, age-category consistency, source coverage, uniqueness. **Latest validation: 0 FAILs, 0 WARNs.**
+Validation runs 14 checks (C1–C14) — schema, categorical vocabulary, numeric plausibility, age-category consistency, source coverage, uniqueness, comparability metadata, provenance, and dental-specificity of the outcome. **Latest validation: 0 FAILs, 0 WARNs.** Three further audits (external abstract corroboration, internal re-computation, and a consolidated data-quality report) run in the pipeline as reviewer aids.
 
 ## Sport coverage
 
@@ -71,7 +71,7 @@ All publicly viewable on the repo:
 - **`DATA_DICTIONARY.md`** — column-by-column data dictionary.
 - **`docs/decisions.md`** — append-only log of every harmonization decision and why. Includes corrections (e.g., NEISS body-part code labels in PROTOCOL §4.1).
 - **`docs/sources.md`** — full audit trail of every candidate source through screening.
-- **`outputs/validation_report.md`** — current pass/fail status against the 13 validation checks.
+- **`outputs/validation_report.md`** — current pass/fail status against the 14 validation checks.
 - **`outputs/screening_report_2026-05-21.md`** — per-decision screening audit.
 
 ## Citation

@@ -26,6 +26,7 @@ Checks:
        athlete-exposure denominator (not hours / season / population / % of injuries)
   C12. measure_type populated + in controlled vocabulary; comparability_group populated
   C13. data_provenance populated + in controlled vocabulary
+  C14. dental_specific populated + boolean (WARN counts non-dental-specific rows)
 
 Output: outputs/validation_report.md with per-check counts and any failing rows.
 Exit code 0 if all hard checks pass (any C5/C9 mismatches surface as warnings,
@@ -58,7 +59,7 @@ EXPECTED_COLUMNS = [
     "mouthguard_required", "mouthguard_use_rate", "mouthguard_injury_relation",
     "extraction_date", "extractor", "extraction_notes", "quality_flag",
     # Derived at harmonization (scripts/07 via scripts/_derived_columns.py):
-    "measure_type", "comparability_group", "data_provenance",
+    "measure_type", "comparability_group", "data_provenance", "dental_specific",
 ]
 
 ALLOWED = {
@@ -311,6 +312,16 @@ def main():
             add("FAIL", "C13", f"row {i+1}: data_provenance is empty")
         elif dp not in DATA_PROVENANCE:
             add("FAIL", "C13", f"row {i+1}: data_provenance='{dp}' not in controlled vocabulary")
+
+    # C14 — dental_specific populated and boolean. FALSE marks a row whose
+    # outcome is a broader all-cause/head-neck injury measure (not a dental
+    # rate); such rows must not be compared as dental rates. The count of FALSE
+    # rows is reported by scripts/39 (data_quality.md) and warned in the Rate
+    # Explorer, so C14 only hard-fails on a malformed value here.
+    for i, r in enumerate(rows):
+        ds = (r.get("dental_specific") or "").strip()
+        if ds not in ("TRUE", "FALSE"):
+            add("FAIL", "C14", f"row {i+1}: dental_specific='{ds}' is not TRUE/FALSE")
 
     # Generate report
     fails = [f for f in findings if f[0] == "FAIL"]

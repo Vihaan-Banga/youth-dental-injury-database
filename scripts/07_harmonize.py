@@ -24,7 +24,8 @@ diffs are reviewable.
 import csv
 from pathlib import Path
 
-from _derived_columns import measure_type, comparability_group, data_provenance
+from _derived_columns import (measure_type, comparability_group, data_provenance,
+                              dental_specific)
 
 # Resolve relative to this script's location so it works on any machine / CI.
 ROOT = Path(__file__).resolve().parent.parent
@@ -46,7 +47,8 @@ EXTRACTED_COLUMNS = [
 ]
 
 # Derived columns computed here at harmonization (not stored in extraction CSVs).
-DERIVED_COLUMNS = ["measure_type", "comparability_group", "data_provenance"]
+DERIVED_COLUMNS = ["measure_type", "comparability_group", "data_provenance",
+                   "dental_specific"]
 
 # Full master schema = extracted columns + derived columns.
 EXPECTED_COLUMNS = EXTRACTED_COLUMNS + DERIVED_COLUMNS
@@ -79,6 +81,7 @@ def main():
                 clean["measure_type"] = mt
                 clean["comparability_group"] = comparability_group(clean, mt)
                 clean["data_provenance"] = data_provenance(clean)
+                clean["dental_specific"] = dental_specific(clean)
                 all_rows.append(clean)
         print(f"  read {path.name}: {sum(1 for _ in open(path)) - 1} rows")
 

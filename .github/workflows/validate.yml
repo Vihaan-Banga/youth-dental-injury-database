@@ -1,7 +1,7 @@
 name: Validate master.csv
 
 # Runs the harmonization + validation pipeline on every push and PR to main.
-# Fails the build if any validator check (C1-C13) reports a FAIL, or if a fresh
+# Fails the build if any validator check (C1-C14) reports a FAIL, or if a fresh
 # harmonize does not reproduce the committed master.csv byte-for-byte.
 # Does NOT regenerate visualizations (those need matplotlib which is fine but
 # we don't want PR builds modifying images).

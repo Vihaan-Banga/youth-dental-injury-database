@@ -83,7 +83,7 @@ python3 scripts/run_all.py --core     # just harmonize + validate (Python stdlib
 python3 scripts/run_all.py --check    # reproducibility gate: fail if a fresh build changes master.csv
 ```
 
-- **Core pipeline** (`07_harmonize.py` → `08_validate.py`) uses **only the Python standard library** — no dependencies to install. It rebuilds `data/harmonized/master.csv` from `data/extracted/*.csv` and runs all 13 validation checks (C1–C13).
+- **Core pipeline** (`07_harmonize.py` → `08_validate.py`) uses **only the Python standard library** — no dependencies to install. It rebuilds `data/harmonized/master.csv` from `data/extracted/*.csv` and runs all 14 validation checks (C1–C14).
 - **Figures** need `matplotlib` (`pip install -r requirements.txt`); every other output (SQLite export, bibliography, factsheets, per-country and cross-source reports, Rate Explorer JSON) is stdlib-only.
 - The **extraction stage** (scripts `00`–`06`, `09`–`32`) queries PubMed / Unpaywall / NEISS and is how the committed extraction CSVs were originally produced. It needs network access and is documented provenance, not part of the offline rebuild.
 
