@@ -46,7 +46,9 @@ data/raw/neiss/*.csv
 data/raw/neiss/*.tsv
 data/raw/neiss/*.zip
 data/raw/neiss/*.rda
+data/raw/papers/**/*.pdf
 data/raw/papers/*.pdf
+data/raw/surveillance_reports/**/*.pdf
 data/raw/surveillance_reports/*.pdf
 
 # Keep the folder structure though
