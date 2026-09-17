@@ -5,115 +5,95 @@ title: Home
 
 # Youth Sports Dental Injury Database
 
-[![Validate master.csv](https://github.com/Vihaan-Banga/youth-dental-injury-database/actions/workflows/validate.yml/badge.svg)](https://github.com/Vihaan-Banga/youth-dental-injury-database/actions/workflows/validate.yml)
-[![License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/LICENSE)
+**A free, open collection of published statistics on dental and mouth injuries in young athletes — gathered from 103 research studies and national injury-surveillance reports and organized into one consistent, searchable dataset.**
 
-**An open-access harmonized database of dental and orofacial injury epidemiology in youth sports.**
+- 🔍 **[Explore the data in your browser](rate-explorer.html)** — filter by sport and age group; no download or login
+- 📥 **[Download the full dataset (CSV — opens in Excel or Google Sheets)](https://raw.githubusercontent.com/Vihaan-Banga/youth-dental-injury-database/main/data/harmonized/master.csv)**
+- 📖 **[What each column means](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/DATA_DICTIONARY.md)** · 💻 **[Full project on GitHub](https://github.com/Vihaan-Banga/youth-dental-injury-database)**
 
-Aggregating evidence on individuals aged 5–22, drawn from national surveillance systems, peer-reviewed studies, and sport-governing-body reports — into a single comparable schema. CC BY 4.0 for the data; MIT for the code.
+> **⚠️ Read before using the data**
+>
+> - **These are published findings, not patient cases.** Each of the 421 entries is a statistic reported by a study or surveillance system — for example, *"459 dental injuries across nearly 50 million athlete-exposures."* Entries should not be added together or counted as individual injuries.
+> - **The data are mostly from the United States.** 28 countries are represented, but US sources contribute about **72%** of entries. Findings may not apply to other countries.
+> - **Most entries don't say what kind of dental injury occurred.** **84%** of entries report only "dental injury," without separating avulsion, fracture, or luxation (87% of sources never specify the type).
+> - **Numbers are not yet fully verified.** Every entry is currently flagged as not fully verified. Entries were extracted by one reviewer with AI assistance; values have been checked for internal consistency and, where possible, against each study's abstract, but verification against the full-text articles is still in progress.
+> - **Entries are not all directly comparable.** Studies measure injuries differently — per athlete-exposure, per season, as a percentage of athletes, or as emergency-department visits. Compare only entries that use the same measure (the explorer keeps them in separate tables).
+> - **Not for individual clinical decisions.** This summarizes population-level research and cannot predict any individual patient's risk.
 
----
-
-## At a glance (v0.1-dev, updated 2026-06-24)
+## What's in it
 
 |  |  |
 |---|---|
-| Rows in `master.csv` | **421** |
-| Distinct sources | **103** |
-| NEISS treatment-years covered | **12** (2013–2019, 2021–2025; 2020 is a real COVID-era gap) |
-| Countries represented | **28** |
-| Years of publication | 2000–2026 (per PROTOCOL §3.1) |
-| Validation status | **0 FAILs, 0 WARNs** (13 automated checks) |
-| Underlying NEISS case-level records | **~8,800** |
+| **Entries** | 421 published findings |
+| **Sources** | 103 — 90 peer-reviewed studies, 12 years of US emergency-department surveillance (NEISS), and 1 sport governing-body report |
+| **Ages** | Focus on ages 5–22 (some studies also report wider age ranges; these are labeled) |
+| **Countries** | 28 (US-weighted — see above) |
+| **Publication years** | 2000–2026 |
+| **US emergency-department data** | NEISS, 2013–2019 and 2021–2025 (~8,200 sampled emergency-department records); 2020 not yet included |
+| **Sports** | 30 specific sports; the most-studied are basketball, rugby, soccer, ice hockey, and baseball |
+| **Mouthguard information** | Mouthguard use is reported for 41 entries |
+| **License** | Free to use and share with attribution ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)) |
 
-> **New:** try the [interactive Rate Explorer](rate-explorer.html) — filter cited dental-injury rates and mouthguard effect sizes by sport and age group. (A population rate explorer, *not* an individual risk calculator — see the note on the page.)
+## What it can — and can't — help answer
 
-## Comparability & limitations (read before comparing rows)
+**Good for:**
+- How often high school athletes sustain dental injuries in a given sport (e.g., basketball: 2.4 per 100,000 athlete-exposures in US high school surveillance)
+- Whether injured athletes were wearing mouthguards, where studies report it
+- What published studies found about mouthguard effectiveness in specific sports
+- Which sports, ages, and countries are well studied — and where the evidence gaps are
 
-Harmonizing into one schema does **not** make every row comparable. Each row carries a `measure_type` and `comparability_group`, and **values are only directly comparable within the same `comparability_group`.**
+**Not designed for:**
+- The mix of injury types (avulsion vs. fracture vs. luxation) — most sources don't report it
+- Treatment details such as storage medium, time to treatment, or tooth survival — these are not recorded
+- Estimating an individual patient's risk
 
-- **Denominators differ** — incidence per athlete-exposure, per player/athlete-hours, per 100,000 population, per season, prevalence proportions, ED-visit estimates, or raw counts. Compare only within the same `measure_type` (use `rate_per_1000_ae` for per-AE rates).
-- **NEISS figures are emergency-department-treated only** (weighted national estimates) — they undercount dental-office-treated injuries and are not comparable to athlete-exposure rates.
-- **Aggregate rows exist** (`all_sports_aggregate`, etc.) — don't pool them with sport-specific rows.
-- **Definitions/inclusion criteria vary** across sources; the Rate Explorer segregates results by `measure_type` for exactly this reason.
-- All current rows are `quality_flag = partial_data` (schema-validated; full-text numeric verification pending).
+## How it was built
 
-## How to access the data
+Sources were identified through systematic PubMed searches, targeted journal searches, US Consumer Product Safety Commission (NEISS) data, and sport governing-body reports, then screened against a written [research protocol](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/PROTOCOL.md): ages 5–22, sport-related, dental or orofacial injury, published 2000 or later. Each finding was extracted into a standard format with its full source citation, and every data decision is logged in the [decisions log](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/docs/decisions.md).
 
-- **Single best link:** [`data/harmonized/master.csv`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/data/harmonized/master.csv) — the harmonized master spreadsheet.
-- **Per-source CSVs:** [`data/extracted/`](https://github.com/Vihaan-Banga/youth-dental-injury-database/tree/main/data/extracted) — one file per source for audit purposes.
-- **NEISS year files:** [`data/extracted/neiss2013.csv`](https://github.com/Vihaan-Banga/youth-dental-injury-database/tree/main/data/extracted) through `neiss2025.csv` (excluding 2020).
-- **Raw NEISS dumps:** [`data/raw/neiss/`](https://github.com/Vihaan-Banga/youth-dental-injury-database/tree/main/data/raw/neiss) (gitignored — re-fetch from CPSC).
+Automated checks run on every update to catch formatting errors and internal inconsistencies. These checks confirm the data are well-formed — **not** that every number matches its original source (see "Read before using" above).
 
-```python
-import pandas as pd
-df = pd.read_csv(
-    "https://raw.githubusercontent.com/Vihaan-Banga/youth-dental-injury-database/main/data/harmonized/master.csv"
-)
-df[(df.sport == "basketball") & (df.extraction_basis == "youth_primary")].head()
-```
+## Status and how to cite
 
-## Methods, documentation, and audit trail
+**Pre-release (version 0.1).** You're welcome to explore the data and use it to find and read the underlying research. Until the formal v1.0 release, please cite the **original studies** — every entry includes its full source citation — rather than database-wide totals.
+
+To reference the database itself:
+
+> Banga V. (2026). *Youth Sports Dental Injury Database* (Version 0.1, pre-release) [Data set]. GitHub. https://github.com/Vihaan-Banga/youth-dental-injury-database
+
+## About and contact
+
+Created and maintained by **Vihaan Banga**, Olentangy Liberty High School (Powell, Ohio).
+
+Questions, corrections, or suggestions: email **vihaansbanga@gmail.com** or open an [issue on GitHub](https://github.com/Vihaan-Banga/youth-dental-injury-database/issues). If you spot an error in an entry, please include the source and the value you believe is correct — corrections are logged publicly.
+
+---
+
+## For researchers and developers
 
 | | |
 |---|---|
-| Protocol | [`PROTOCOL.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/PROTOCOL.md) — pre-registration-pending research protocol (inclusion criteria, search strategy, harmonization rules) |
-| Data dictionary | [`DATA_DICTIONARY.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/DATA_DICTIONARY.md) — column-by-column definitions |
-| Source tracking | [`docs/sources.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/docs/sources.md) — every candidate source through screening |
-| Governing-body sources | [`docs/governing_body_sources.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/docs/governing_body_sources.md) — non-PubMed surveillance sources |
-| Harmonization decisions log | [`docs/decisions.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/docs/decisions.md) — append-only |
-| Validation report | [`outputs/validation_report.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/validation_report.md) |
+| Full dataset | [`data/harmonized/master.csv`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/data/harmonized/master.csv) (421 rows × 40 columns) · [SQLite](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/data/harmonized/master.sqlite) · [`datapackage.json`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/datapackage.json) |
+| Per-source files | [`data/extracted/`](https://github.com/Vihaan-Banga/youth-dental-injury-database/tree/main/data/extracted) — one file per source |
+| Data dictionary | [`DATA_DICTIONARY.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/DATA_DICTIONARY.md) |
+| Protocol | [`PROTOCOL.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/PROTOCOL.md) |
+| Source screening | [`docs/sources.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/docs/sources.md) |
+| Decisions log | [`docs/decisions.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/docs/decisions.md) |
+| Data-quality report | [`outputs/data_quality.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/data_quality.md) |
 | Methods-paper draft | [`outputs/methods_paper_draft.md`](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/methods_paper_draft.md) |
 
-## Derived analyses
+**Comparing entries correctly.** Each row carries a `measure_type` and a `comparability_group`; values are directly comparable only within the same `comparability_group`. NEISS figures count emergency-department-treated injuries only. Aggregate rows (`all_sports_aggregate`, etc.) should not be pooled with sport-specific rows. `dental_specific = FALSE` marks entries whose rate covers all injuries rather than dental injuries specifically.
 
-- **[NEISS 12-year trends](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/neiss_trends.md)** — first published aggregation of NEISS youth dental-sport data across 2013–2025.
-- **[Cross-source rate comparison](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/cross_source_rate_comparison.md)** — internal-consistency check across sources reporting the same sport.
-- **[Per-sport factsheets](https://github.com/Vihaan-Banga/youth-dental-injury-database/tree/main/outputs/sport_factsheets)** — one-page summary per sport (19 covered).
-- **[Per-country breakdown](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/country_breakdown.md)** — coverage across 28 countries.
-- **[Overall factsheet](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/factsheet.md)** — project-level one-pager.
+**Derived analyses:** [NEISS year-over-year trends](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/neiss_trends.md) · [Cross-source rate comparison](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/cross_source_rate_comparison.md) · [Per-sport factsheets](https://github.com/Vihaan-Banga/youth-dental-injury-database/tree/main/outputs/sport_factsheets) · [Per-country breakdown](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/outputs/country_breakdown.md)
 
-## Pipeline
-
-A versioned Python pipeline covers source identification → AI-assisted screening → per-source extraction → harmonization → validation → analysis. Reproducibility is enforced via CI: every push to `main` re-runs `scripts/07_harmonize.py` + `scripts/08_validate.py` and fails the build on any FAIL.
-
-```
-scripts/00_pubmed_seed_sources.py        # E-utilities seed
-scripts/01_parse_abstracts.py            # parse efetch XML to per-PMID JSON
-scripts/02_screen_candidates.py          # auto rules + manual decisions
-scripts/05_neiss_filter.py               # filter NEISS TSV by body part 88 + 23 sport codes + age 5-22
-scripts/07_harmonize.py                  # combine data/extracted/*.csv → master.csv
-scripts/08_validate.py                   # 14 validation checks (C1–C14)
-scripts/18_visualize.py                  # baseline figures
-scripts/22_neiss_extract_all_years.py    # multi-year NEISS orchestrator
-scripts/23_neiss_trends.py               # year-over-year trend report
-scripts/24_sport_factsheets.py           # per-sport one-pagers
+```python
+import pandas as pd
+df = pd.read_csv("https://raw.githubusercontent.com/Vihaan-Banga/youth-dental-injury-database/main/data/harmonized/master.csv")
+df[(df.sport == "basketball") & (df.dental_specific == True)].head()
 ```
 
-(Plus 14+ numbered extraction scripts for individual sources. Full list in the [scripts directory](https://github.com/Vihaan-Banga/youth-dental-injury-database/tree/main/scripts).)
-
-## How to cite
-
-Until v1.0 release (which will mint a Zenodo DOI):
-
-> Banga, V., [Advisor name]. (2026). Youth Sports Dental Injury Database (Version 0.1-dev) [Data set]. GitHub. https://github.com/Vihaan-Banga/youth-dental-injury-database
-
-A formal `CITATION.cff` is at the repo root — GitHub renders a "Cite this repository" button on the repo home.
-
-## Status
-
-This is a pre-launch, pre-registration-pending database. The methodology is established and validated; advisor sign-off and OSF pre-registration are in progress. Do not cite externally for clinical decision-making until v1.0 release.
-
-## Contact / contributing
-
-- Project lead: **Vihaan Banga**, Olentangy Liberty High School (Powell, OH)
-- GitHub: [@Vihaan-Banga](https://github.com/Vihaan-Banga)
-- Contributions: see [CONTRIBUTING.md](https://github.com/Vihaan-Banga/youth-dental-injury-database/blob/main/CONTRIBUTING.md) at the repo root
-- Issues / suggestions: open an issue on GitHub
+The full dataset rebuilds offline with `python3 scripts/run_all.py` (14 automated checks, re-run on every push). See the [GitHub repository](https://github.com/Vihaan-Banga/youth-dental-injury-database) for code, license (data CC BY 4.0, code MIT), and contribution guidelines.
 
 ## Acknowledgements
 
-This project uses data from the US Consumer Product Safety Commission (NEISS), the National High School Sports-Related Injury Surveillance Study (RIO / NFHS), Rugby Europe, and numerous peer-reviewed primary research studies. Each row in `master.csv` carries a full citation in its `citation` column.
-
-The historical 2013–2017 NEISS coverage was enabled by [@hadley](https://github.com/hadley)'s `neiss` R-package archive.
+This project uses data from the US Consumer Product Safety Commission (NEISS), the National High School Sports-Related Injury Surveillance Study (High School RIO™), Rugby Europe, and many peer-reviewed studies; each entry carries its full citation. Historical 2013–2017 NEISS coverage was enabled by [@hadley](https://github.com/hadley)'s `neiss` R-package archive.

@@ -1,110 +1,106 @@
 # Youth Sports Dental Injury Database
 
-[![Validate master.csv](https://github.com/Vihaan-Banga/youth-dental-injury-database/actions/workflows/validate.yml/badge.svg)](https://github.com/Vihaan-Banga/youth-dental-injury-database/actions/workflows/validate.yml)
-[![Website](https://img.shields.io/badge/website-vihaan--banga.github.io-blue)](https://vihaan-banga.github.io/youth-dental-injury-database/)
+**A free, open collection of published statistics on dental and mouth injuries in young athletes — gathered from 103 research studies and national injury-surveillance reports and organized into one consistent, searchable dataset.**
 
-**Website:** https://vihaan-banga.github.io/youth-dental-injury-database/
+- 🔍 **[Explore the data in your browser](https://vihaan-banga.github.io/youth-dental-injury-database/rate-explorer.html)** — filter by sport and age group; no download or login
+- 📥 **[Download the full dataset (CSV — opens in Excel or Google Sheets)](https://raw.githubusercontent.com/Vihaan-Banga/youth-dental-injury-database/main/data/harmonized/master.csv)**
+- 🌐 **[Project website](https://vihaan-banga.github.io/youth-dental-injury-database/)** · 📖 **[What each column means](DATA_DICTIONARY.md)**
 
-An open-access harmonized database aggregating epidemiological data on dental and orofacial injuries in youth sports, drawn from national surveillance systems, published research, and sport-governing-body reports.
+> [!IMPORTANT]
+> **Read before using the data**
+> - **These are published findings, not patient cases.** Each of the 421 entries is a statistic reported by a study or surveillance system — for example, *"459 dental injuries across nearly 50 million athlete-exposures."* Entries should not be added together or counted as individual injuries.
+> - **The data are mostly from the United States.** 28 countries are represented, but US sources contribute about **72%** of entries. Findings may not apply to other countries.
+> - **Most entries don't say what kind of dental injury occurred.** **84%** of entries report only "dental injury," without separating avulsion, fracture, or luxation (87% of sources never specify the type).
+> - **Numbers are not yet fully verified.** Every entry is currently flagged as not fully verified. Entries were extracted by one reviewer with AI assistance; values have been checked for internal consistency and, where possible, against each study's abstract, but verification against the full-text articles is still in progress.
+> - **Entries are not all directly comparable.** Studies measure injuries differently — per athlete-exposure, per season, as a percentage of athletes, or as emergency-department visits. Compare only entries that use the same measure (each entry is labeled).
+> - **Not for individual clinical decisions.** This summarizes population-level research and cannot predict any individual patient's risk.
 
-**Status:** Pre-launch (data collection phase). Not yet published. Do not cite externally until v1.0 release.
-
-**Project lead:** Vihaan Banga, Olentangy Liberty High School, in collaboration with [Advisor name when secured].
-
-## At a glance
+## What's in it
 
 | | |
 |---|---|
-| Harmonized rows | **421** |
-| Distinct sources | **103** (90 peer-reviewed papers · 12 NEISS treatment-years · 1 governing-body report) |
-| Countries | **28** |
-| Publication years | **2000–2026** (per PROTOCOL §3.1) |
-| NEISS case-level coverage | **12 treatment-years** (2013–2019, 2021–2025; 2020 is a real COVID-era gap), ~8,800 underlying records |
-| Validation | **0 FAILs / 0 WARNs** across 13 automated checks (run in CI on every push) |
-| Provenance | every row author-verified against PubMed; carries `measure_type`, `comparability_group`, and `data_provenance` flags |
+| **Entries** | 421 published findings |
+| **Sources** | 103 — 90 peer-reviewed studies, 12 years of US emergency-department surveillance (NEISS), and 1 sport governing-body report |
+| **Ages** | Focus on ages 5–22 (some studies also report wider age ranges; these are labeled) |
+| **Countries** | 28 (US-weighted — see above) |
+| **Publication years** | 2000–2026 |
+| **US emergency-department data** | NEISS, 2013–2019 and 2021–2025 (~8,200 sampled emergency-department records); 2020 not yet included |
+| **Sports** | 30 specific sports; the most-studied are basketball, rugby, soccer, ice hockey, and baseball |
+| **Mouthguard information** | Mouthguard use is reported for 41 entries |
+| **License** | Free to use and share with attribution ([CC BY 4.0](LICENSE-DATA)) |
 
-## What this is and isn't
+## What it can — and can't — help answer
 
-This is a *secondary data* project. We are not collecting injuries directly from athletes or clinicians. We are aggregating data that has already been collected and published by national surveillance systems, peer-reviewed studies, and sport-governing-body injury reports, then standardizing it into a single comparable format.
+**Good for:**
+- How often high school athletes sustain dental injuries in a given sport (e.g., basketball: 2.4 per 100,000 athlete-exposures in US high school surveillance)
+- Whether injured athletes were wearing mouthguards, where studies report it
+- What published studies found about mouthguard effectiveness in specific sports
+- Which sports, ages, and countries are well studied — and where the evidence gaps are
 
-The gap we fill: youth dental injury data exists in dozens of fragmented sources using different definitions, age ranges, and injury classifications. No unified resource lets a researcher answer questions like "what is the rate of avulsed teeth across youth contact sports in North America?" without manually reconciling 40 papers. We are building that resource.
+**Not designed for:**
+- The mix of injury types (avulsion vs. fracture vs. luxation) — most sources don't report it
+- Treatment details such as storage medium, time to treatment, or tooth survival — these are not recorded
+- Estimating an individual patient's risk
 
-## Comparability & limitations (read before comparing rows)
+## How it was built
 
-Harmonizing these sources into one schema does **not** make every row comparable. Sources use fundamentally different measures, so each row carries a `measure_type` and a `comparability_group` (see `DATA_DICTIONARY.md`), and **values are only directly comparable within the same `comparability_group`.**
+Sources were identified through systematic PubMed searches, targeted journal searches, US Consumer Product Safety Commission (NEISS) data, and sport governing-body reports, then screened against a written [research protocol](PROTOCOL.md): ages 5–22, sport-related, dental or orofacial injury, published 2000 or later. Each finding was extracted into a standard format with its full source citation, and every data decision is logged in [`docs/decisions.md`](docs/decisions.md).
 
-- **Denominators differ.** Rows are incidence per athlete-exposure, per player/athlete-hours, per 100,000 population, per season, prevalence proportions, ED-visit estimates, or raw counts. Only rows sharing the same `measure_type` are comparable; for per-AE rates use the normalized `rate_per_1000_ae`.
-- **NEISS figures are emergency-department-treated only** (weighted national estimates). They undercount injuries treated in dental/primary-care settings and are **not** comparable to athlete-exposure rates.
-- **Aggregate rows exist** (`all_sports_aggregate`, `all_activities_aggregate`, etc.) — do not pool them with sport-specific rows.
-- **Definitions and inclusion criteria vary** across sources (e.g., all-cause dental-trauma prevalence vs sport-related ED-treated incidence). Make cross-source comparisons within a `comparability_group`, not naively across the whole table.
-- **Quality:** all current rows are `quality_flag = partial_data` — validated against schema and controlled vocabularies, with full-text numeric verification still pending.
+Automated checks run on every update to catch formatting errors and internal inconsistencies. These checks confirm the data are well-formed — **not** that every number matches its original source (see "Read before using" above).
 
-## Repository structure
+## Status and how to cite
 
-```
-youth-dental-injury-database/
-├── README.md                  This file
-├── PROTOCOL.md                Pre-registered research protocol — read this first
-├── DATA_DICTIONARY.md         Column-by-column definitions of the master dataset
-├── data/
-│   ├── raw/                   Original downloaded sources (NEISS CSVs, paper PDFs)
-│   │   ├── neiss/
-│   │   ├── papers/
-│   │   └── surveillance_reports/
-│   ├── extracted/             Tables and figures extracted from each source
-│   ├── cleaned/               Per-source cleaned data, one file per source
-│   └── harmonized/            The unified database (master.csv)
-├── scripts/                   Python scripts for download, extraction, harmonization
-├── docs/
-│   ├── sources.md             Running list of all candidate sources with status
-│   ├── decisions.md           Log of every harmonization decision and why
-│   └── meeting_notes/         Notes from advisor meetings
-└── outputs/
-    ├── figures/               Charts for the methods paper and website
-    └── tables/                Summary tables
-```
+**Pre-release (version 0.1).** You're welcome to explore the data and use it to find and read the underlying research. Until the formal v1.0 release, please cite the **original studies** — every entry includes its full source citation — rather than database-wide totals.
 
-## How to use this repo (workflow)
+To reference the database itself:
 
-1. **Read PROTOCOL.md first.** It defines what's in, what's out, and how decisions get made.
-2. **Add candidate sources to `docs/sources.md`** as you find them. Mark status (identified → screened → included → extracted → harmonized).
-3. **Extract data from included sources** into `data/extracted/<source_id>.csv` using the template in `DATA_DICTIONARY.md`.
-4. **Log every non-obvious harmonization decision** in `docs/decisions.md`. When a future reviewer asks "why did you classify X this way?" — you need an answer.
-5. **Run harmonization scripts** to build `data/harmonized/master.csv`.
-6. **Commit early and often.** Every meaningful change gets a git commit with a clear message.
+> Banga V. (2026). *Youth Sports Dental Injury Database* (Version 0.1, pre-release) [Data set]. GitHub. https://github.com/Vihaan-Banga/youth-dental-injury-database
 
-## Reproduce the database
+GitHub's **"Cite this repository"** button (right sidebar) provides this in other formats.
 
-The entire dataset rebuilds from the committed per-source extraction CSVs — deterministically and offline — with one command:
+## About and contact
+
+Created and maintained by **Vihaan Banga**, Olentangy Liberty High School (Powell, Ohio).
+
+Questions, corrections, or suggestions: email **vihaansbanga@gmail.com** or open an [issue on GitHub](https://github.com/Vihaan-Banga/youth-dental-injury-database/issues). If you spot an error in an entry, please include the source and the value you believe is correct — corrections are logged publicly.
+
+---
+
+## For researchers and developers
+
+### Files
+
+| File | What it is |
+|---|---|
+| [`data/harmonized/master.csv`](data/harmonized/master.csv) | The full dataset (421 rows × 40 columns) |
+| [`data/harmonized/master.sqlite`](data/harmonized/master.sqlite) | The same data as a SQLite database |
+| [`datapackage.json`](datapackage.json) | Machine-readable dataset description ([Frictionless Data](https://frictionlessdata.io/) standard) |
+| [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) | Definition of every column |
+| [`PROTOCOL.md`](PROTOCOL.md) | Research protocol: inclusion criteria, search strategy, harmonization rules |
+| [`docs/sources.md`](docs/sources.md) | Every candidate source and its screening decision |
+| [`docs/decisions.md`](docs/decisions.md) | Log of every data decision and the reason for it |
+| [`outputs/data_quality.md`](outputs/data_quality.md) | Data-quality report: verification tiers and flagged entries |
+| [`data/extracted/`](data/extracted/) | One file per source, before combining |
+
+### Comparing entries correctly
+
+Each row carries a `measure_type` and a `comparability_group`. **Values are directly comparable only within the same `comparability_group`**; for per-athlete-exposure rates, use the normalized `rate_per_1000_ae`. NEISS figures count emergency-department-treated injuries only and undercount injuries treated in dental offices. Aggregate rows (`all_sports_aggregate`, etc.) should not be pooled with sport-specific rows. `dental_specific = FALSE` marks entries whose rate covers all injuries rather than dental injuries specifically. Every row is currently `quality_flag = partial_data`.
+
+### Reproduce the database
+
+The entire dataset rebuilds from the committed per-source extraction files — deterministically and offline — with one command:
 
 ```bash
 python3 scripts/run_all.py            # rebuild master.csv, validate, regenerate all outputs
-python3 scripts/run_all.py --core     # just harmonize + validate (Python stdlib only, no installs)
-python3 scripts/run_all.py --check    # reproducibility gate: fail if a fresh build changes master.csv
+python3 scripts/run_all.py --core     # just harmonize + validate (Python standard library only)
+python3 scripts/run_all.py --check    # fail if a fresh build changes master.csv
 ```
 
-- **Core pipeline** (`07_harmonize.py` → `08_validate.py`) uses **only the Python standard library** — no dependencies to install. It rebuilds `data/harmonized/master.csv` from `data/extracted/*.csv` and runs all 14 validation checks (C1–C14).
-- **Figures** need `matplotlib` (`pip install -r requirements.txt`); every other output (SQLite export, bibliography, factsheets, per-country and cross-source reports, Rate Explorer JSON) is stdlib-only.
-- The **extraction stage** (scripts `00`–`06`, `09`–`32`) queries PubMed / Unpaywall / NEISS and is how the committed extraction CSVs were originally produced. It needs network access and is documented provenance, not part of the offline rebuild.
+The core pipeline (`07_harmonize.py` → `08_validate.py`) needs only the Python standard library and runs 14 automated checks (C1–C14). Figures need `matplotlib` (`pip install -r requirements.txt`). The source-extraction scripts (`00`–`06`, `09`–`32`) query PubMed, Unpaywall, and NEISS; they document how the extraction files were produced and are not part of the offline rebuild. Continuous integration re-runs `run_all.py --core --check` on every push.
 
-CI (`.github/workflows/validate.yml`) runs `run_all.py --core --check` on every push, so the published `master.csv` is guaranteed to reproduce byte-for-byte from source-of-truth inputs.
+To contribute a source or correction, see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-## How this will be cited (when published)
+### License
 
-```
-Banga, V., [Advisor name]. (2026). Youth Sports Dental Injury Database (Version 1.0)
-[Data set]. Zenodo. https://doi.org/[TBD]
-```
-
-A `CITATION.cff` file is at the repo root — GitHub renders a "Cite this repository" button on the repo home.
-
-## License
-
-- **Code:** MIT — see [`LICENSE`](LICENSE)
 - **Data:** Creative Commons Attribution 4.0 International (CC BY 4.0) — see [`LICENSE-DATA`](LICENSE-DATA)
-
-Use the code freely (with attribution per MIT). Use the data freely (with attribution per CC BY 4.0). The two-license split is standard for open-research projects: open code, open data.
-
-## Contact
-
-Vihaan Banga — GitHub [@Vihaan-Banga](https://github.com/Vihaan-Banga) Email: vihaansbanga@gmail.com
+- **Code:** MIT — see [`LICENSE`](LICENSE)
