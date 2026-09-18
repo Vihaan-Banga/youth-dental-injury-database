@@ -28,7 +28,7 @@ I'll add it to `docs/sources.md` with status `identified`, screen it against the
 2. Add the citation to `docs/sources.md` with status `screened_included`.
 3. Read the source's abstract (or full text if available) and create `data/extracted/<source_id>.csv` following the schema in `DATA_DICTIONARY.md`. Use an existing extraction (e.g., `data/extracted/labella2002.csv`) as a template.
 4. Run `python3 scripts/07_harmonize.py` to regenerate `master.csv`.
-5. Run `python3 scripts/08_validate.py` — fix any FAILs.
+5. Run `python3 scripts/08_validate.py`. Fix any FAILs.
 6. Regenerate the downstream outputs with `python3 scripts/run_all.py` (or just re-run the specific output script you affect).
 7. Open a PR. CI will re-run the validator on your branch.
 

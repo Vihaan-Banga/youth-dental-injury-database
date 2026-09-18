@@ -1,9 +1,9 @@
 # Research Protocol: Youth Sports Dental Injury Database
 
-**Status:** Draft v0.1 — pre-registration pending
+**Status:** Draft v0.1, pre-registration pending
 **Last updated:** 2026-06-24
 **Project lead:** Vihaan Banga (Olentangy Liberty High School)
-**Advisor:** [TBD — outreach in progress, project lead leading recruitment independently]
+**Advisor:** [TBD: outreach in progress, project lead leading recruitment independently]
 **Pre-registration:** [OSF link when filed]
 
 ---
@@ -71,7 +71,7 @@ Sources reporting only lip lacerations, soft-tissue mouth injuries without denta
 
 ### 4.1 Surveillance systems
 
-- **NEISS** (Consumer Product Safety Commission): per the official 2024 NEISS Coding Manual (Appendix C), the relevant body-part codes are **88 = Mouth** (includes lips, tongue, **and teeth**), **76 = Face**, and **77 = Eyeball**. The primary filter for dental injuries is **88 (Mouth)**; **76 (Face)** is used as a secondary filter only where the diagnosis text indicates dental involvement (per §3.3); **77 (Eyeball)** is not used. Product code must be sport-related. Years 2000–most recent available. (An earlier draft of this protocol mislabeled codes 76/77/88 — corrected per `docs/decisions.md`, 2026-05-21.)
+- **NEISS** (Consumer Product Safety Commission): per the official 2024 NEISS Coding Manual (Appendix C), the relevant body-part codes are **88 = Mouth** (includes lips, tongue, **and teeth**), **76 = Face**, and **77 = Eyeball**. The primary filter for dental injuries is **88 (Mouth)**; **76 (Face)** is used as a secondary filter only where the diagnosis text indicates dental involvement (per §3.3); **77 (Eyeball)** is not used. Product code must be sport-related. Years 2000–most recent available. (An earlier draft of this protocol mislabeled codes 76/77/88. Corrected per `docs/decisions.md`, 2026-05-21.)
 - **High School RIO** (Nationwide Children's Hospital): All published reports.
 - **NCAA Injury Surveillance Program:** Annual public reports.
 - **National Health Interview Survey (NHIS)** subset on sports injuries.
@@ -134,7 +134,7 @@ Original age data preserved when available. Standardized categories applied for 
 - Youth (5–12)
 - Adolescent (13–17)
 - Collegiate (18–22)
-- Adult (23+) — *comparator only*, see §6.2.1
+- Adult (23+): *comparator only*, see §6.2.1
 
 When a source reports a range spanning categories, it is flagged and reported in whichever category contains the majority of the sample.
 
@@ -186,8 +186,8 @@ The following are known limitations to be stated transparently in the data descr
 
 ## 10. Authorship and contribution
 
-- **Project lead:** Vihaan Banga (Olentangy Liberty High School) — conceived project, designed protocol, performed extraction and harmonization, drafted manuscript
-- **Senior advisor:** [TBD] — provided methodological guidance, performed reliability review, reviewed manuscript
+- **Project lead:** Vihaan Banga (Olentangy Liberty High School): conceived project, designed protocol, performed extraction and harmonization, drafted manuscript
+- **Senior advisor:** [TBD]: provided methodological guidance, performed reliability review, reviewed manuscript
 
 Both must approve v1.0 release before publication.
 
@@ -197,11 +197,11 @@ Both must approve v1.0 release before publication.
 
 This is a *secondary-data* project. It redistributes, under CC BY 4.0, only material it is entitled to share, and it contains **no raw or restricted microdata** from any access-controlled surveillance system. Every row carries a `data_provenance` flag (see DATA_DICTIONARY.md) classifying its source as one of:
 
-- **`public_domain_raw`** — extracted from public-domain raw data. The only such source is **NEISS** (US Consumer Product Safety Commission), a public-use dataset. Master rows are *aggregated* yearly estimates, not raw case records (the raw NEISS query outputs are gitignored).
-- **`published_summary`** — summary statistics already published in a peer-reviewed paper. We reproduce only the specific reported figures (counts, rates, prevalences) with full citation. Individual published facts are not themselves copyrightable; the *compilation* is what is licensed.
-- **`governing_body_public`** — figures taken from a publicly released governing-body report (currently only the Rugby Europe 2024 Injury Surveillance Report). **[TODO: confirm the Rugby Europe report's reuse/redistribution terms before v1.0.]**
+- **`public_domain_raw`**: extracted from public-domain raw data. The only such source is **NEISS** (US Consumer Product Safety Commission), a public-use dataset. Master rows are *aggregated* yearly estimates, not raw case records (the raw NEISS query outputs are gitignored).
+- **`published_summary`**: summary statistics already published in a peer-reviewed paper. We reproduce only the specific reported figures (counts, rates, prevalences) with full citation. Individual published facts are not themselves copyrightable; the *compilation* is what is licensed.
+- **`governing_body_public`**: figures taken from a publicly released governing-body report (currently only the Rugby Europe 2024 Injury Surveillance Report). **[TODO: confirm the Rugby Europe report's reuse/redistribution terms before v1.0.]**
 
-**Specifically, the database does NOT contain raw or restricted data from NCAA-ISP, High School RIO, or NZ ACC.** Where NCAA-ISP-, RIO-, or ACC-derived numbers appear, they are figures reported in a peer-reviewed publication (`data_provenance = published_summary`) — i.e., citing the published literature, not redistributing the owners' datasets. (Datasets such as NCAA-ISP are owned by their respective bodies and carry use restrictions; this project does not access or redistribute them.)
+**Specifically, the database does NOT contain raw or restricted data from NCAA-ISP, High School RIO, or NZ ACC.** Where NCAA-ISP-, RIO-, or ACC-derived numbers appear, they are figures reported in a peer-reviewed publication (`data_provenance = published_summary`), i.e., citing the published literature, not redistributing the owners' datasets. (Datasets such as NCAA-ISP are owned by their respective bodies and carry use restrictions; this project does not access or redistribute them.)
 
 **Licensing framing:** the CC BY 4.0 data license covers *this project's harmonized compilation* (the schema, harmonization, classifications, and the assembled table). Underlying facts remain attributable to their original sources, every one of which is cited in the `citation` column and `outputs/sources_bibliography.bib`.
 

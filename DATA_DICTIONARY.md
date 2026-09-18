@@ -28,8 +28,8 @@ When adding a new source, follow these definitions exactly. When a definition is
 | `population_setting` | category | One of: `school`, `club`, `recreational`, `professional`, `mixed`, `unspecified` | `school` |
 | `age_min` | integer | Minimum age in sample (years) | `12` |
 | `age_max` | integer | Maximum age in sample (years) | `17` |
-| `age_category` | category | One of: `youth` (5–12), `adolescent` (13–17), `collegiate` (18–22), `adult` (23+ — see "Adult comparator rows" below), `mixed`, `unspecified`. See PROTOCOL §6.2 for rules when sample spans categories. | `adolescent` |
-| `extraction_basis` | category | `youth_primary` (row is within the v1.0 inclusion scope of 5–22) or `adult_comparator` (row was extracted alongside the youth data for context — see "Adult comparator rows" below). | `youth_primary` |
+| `age_category` | category | One of: `youth` (5–12), `adolescent` (13–17), `collegiate` (18–22), `adult` (23+, see "Adult comparator rows" below), `mixed`, `unspecified`. See PROTOCOL §6.2 for rules when sample spans categories. | `adolescent` |
+| `extraction_basis` | category | `youth_primary` (row is within the v1.0 inclusion scope of 5–22) or `adult_comparator` (row was extracted alongside the youth data for context, see "Adult comparator rows" below). | `youth_primary` |
 | `sex` | category | One of: `male`, `female`, `mixed`, `unspecified` | `mixed` |
 | `level_of_play` | category | One of: `recreational`, `school_jv`, `school_varsity`, `club`, `elite`, `mixed`, `unspecified` | `school_varsity` |
 
@@ -54,8 +54,8 @@ When adding a new source, follow these definitions exactly. When a definition is
 | `injury_type_raw` | string | Injury terminology as used in source | `"tooth avulsion"` |
 | `injury_category` | category | Standardized per Andreasen classification: `enamel_fracture`, `crown_fracture`, `root_fracture`, `luxation`, `avulsion`, `concussion`, `other_dental`, `orofacial_with_dental`, `unspecified_dental` | `avulsion` |
 | `rate_raw` | float | Rate as reported in source (in the source's own denominator) | `0.43` |
-| `rate_denominator_raw` | string | Original denominator phrasing — describes **`rate_raw`**, not `rate_per_1000_ae`. | `"per 100,000 athlete-exposures"` |
-| `rate_per_1000_ae` | float | Standardized rate per 1000 **athlete-exposures (AE)**. Populated **iff** the source's denominator is an athlete-exposure: athlete-/athletic-exposure, athlete-session (1 athlete in 1 practice or game = 1 AE = 1 session), or a rate already expressed "per … AE". A per-100,000-AE raw rate is stored here already divided by 100 (e.g. `rate_raw` 2.4 per 100k AE → `0.024`). **Leave empty** when the denominator is time (hours, player-match-hours), athlete-seasons, players, population, or percent-of-injuries — those values stay only in `rate_raw` + `rate_denominator_raw`. Enforced by validator check C11. See `docs/decisions.md` 2026-05-24 and 2026-06-13. | `0.024` |
+| `rate_denominator_raw` | string | Original denominator phrasing: describes **`rate_raw`**, not `rate_per_1000_ae`. | `"per 100,000 athlete-exposures"` |
+| `rate_per_1000_ae` | float | Standardized rate per 1000 **athlete-exposures (AE)**. Populated **iff** the source's denominator is an athlete-exposure: athlete-/athletic-exposure, athlete-session (1 athlete in 1 practice or game = 1 AE = 1 session), or a rate already expressed "per … AE". A per-100,000-AE raw rate is stored here already divided by 100 (e.g. `rate_raw` 2.4 per 100k AE → `0.024`). **Leave empty** when the denominator is time (hours, player-match-hours), athlete-seasons, players, population, or percent-of-injuries. Those values stay only in `rate_raw` + `rate_denominator_raw`. Enforced by validator check C11. See `docs/decisions.md` 2026-05-24 and 2026-06-13. | `0.024` |
 
 ### Protective equipment
 
@@ -76,14 +76,14 @@ When adding a new source, follow these definitions exactly. When a definition is
 
 ### Derived comparability columns (master only)
 
-These four columns are **derived at harmonization** by `scripts/07_harmonize.py` (via `scripts/_derived_columns.py`). They appear in `data/harmonized/master.csv` and the SQLite export, **not** in the per-source extraction CSVs (which hold only source-reported fields). They were added to make cross-row comparability, redistribution rights, and outcome scope machine-readable (see `docs/decisions.md`, 2026-06-24 and 2026-07-03). The master dataset therefore has **40 columns** — the 36 source-extraction columns above plus these 4 derived columns.
+These four columns are **derived at harmonization** by `scripts/07_harmonize.py` (via `scripts/_derived_columns.py`). They appear in `data/harmonized/master.csv` and the SQLite export, **not** in the per-source extraction CSVs (which hold only source-reported fields). They were added to make cross-row comparability, redistribution rights, and outcome scope machine-readable (see `docs/decisions.md`, 2026-06-24 and 2026-07-03). The master dataset therefore has **40 columns**: the 36 source-extraction columns above plus these 4 derived columns.
 
 | Column | Type | Description | Example |
 |---|---|---|---|
-| `measure_type` | category | The row's outcome-measure / rate basis. One of: `incidence_per_AE` (per athlete-exposure; the directly-comparable rate tier, normalized in `rate_per_1000_ae`), `incidence_per_exposure_hours` (per player/athlete/match-hours), `incidence_per_population` (per 100,000 population, **not** AE), `incidence_per_season` (per season / player-year), `prevalence_proportion` (a reported proportion/percentage — of a sample or of injuries; check `rate_denominator_raw` for the proportion's population before pooling), `mouthguard_use_proportion` (a proportion measuring protective-equipment / mouthguard **use**, not an injury outcome — e.g. "99.2% wore a mouthguard"; **not comparable to any injury measure**), `ed_visit_estimate` (NEISS/ED weighted national estimate or ED count), `raw_count` (unnormalized injury/case count), `rate_ratio_or_effect_size` (rate ratio / odds ratio / effect size), `unclassified_pending_review` (temporary; auto-classifier was not confident — awaiting manual classification). | `incidence_per_AE` |
-| `comparability_group` | string | Coarse key on which **direct** comparison is permitted: the short `measure_type` family, suffixed `__aggregate` for pooled / non-sport-specific rows (`all_sports_aggregate`, etc.). **Two rows are directly comparable only when they share the same `comparability_group`.** Rate magnitudes still differ by scale within `incidence_per_AE` — use `rate_per_1000_ae` for those. | `per_AE`, `prevalence__aggregate` |
-| `data_provenance` | category | Redistribution-rights class of the row's source. One of: `public_domain_raw` (extracted from public-domain raw data — NEISS/CPSC), `published_summary` (summary statistics reported in a peer-reviewed paper), `governing_body_public` (figures from a public governing-body report). The database holds **no** raw/restricted microdata (e.g. no raw NCAA-ISP, RIO, or ACC datasets). See PROTOCOL.md §12 and LICENSE-DATA. | `published_summary` |
-| `dental_specific` | boolean (`TRUE`/`FALSE`) | Whether the row's outcome is a **dental/orofacial** injury measure. `FALSE` marks the small number of rows (~19) whose stored value is a broader **all-cause / head-neck / composite** injury measure from a study whose injury definition merely *included* dental (e.g. collegiate rugby all-injury incidence) — these must **not** be read or compared as dental injury rates. Judged from the primary descriptor of `injury_type_raw`; head/face-specific orofacial rows are `TRUE`. Surfaced as a warning in the Rate Explorer and flagged by validator C14 / `scripts/39`. Added 2026-07-03. | `TRUE` |
+| `measure_type` | category | The row's outcome-measure / rate basis. One of: `incidence_per_AE` (per athlete-exposure; the directly-comparable rate tier, normalized in `rate_per_1000_ae`), `incidence_per_exposure_hours` (per player/athlete/match-hours), `incidence_per_population` (per 100,000 population, **not** AE), `incidence_per_season` (per season / player-year), `prevalence_proportion` (a reported proportion/percentage, of a sample or of injuries; check `rate_denominator_raw` for the proportion's population before pooling), `mouthguard_use_proportion` (a proportion measuring protective-equipment / mouthguard **use**, not an injury outcome, e.g. "99.2% wore a mouthguard"; **not comparable to any injury measure**), `ed_visit_estimate` (NEISS/ED weighted national estimate or ED count), `raw_count` (unnormalized injury/case count), `rate_ratio_or_effect_size` (rate ratio / odds ratio / effect size), `unclassified_pending_review` (temporary; auto-classifier was not confident, awaiting manual classification). | `incidence_per_AE` |
+| `comparability_group` | string | Coarse key on which **direct** comparison is permitted: the short `measure_type` family, suffixed `__aggregate` for pooled / non-sport-specific rows (`all_sports_aggregate`, etc.). **Two rows are directly comparable only when they share the same `comparability_group`.** Rate magnitudes still differ by scale within `incidence_per_AE`. Use `rate_per_1000_ae` for those. | `per_AE`, `prevalence__aggregate` |
+| `data_provenance` | category | Redistribution-rights class of the row's source. One of: `public_domain_raw` (extracted from public-domain raw data, NEISS/CPSC), `published_summary` (summary statistics reported in a peer-reviewed paper), `governing_body_public` (figures from a public governing-body report). The database holds **no** raw/restricted microdata (e.g. no raw NCAA-ISP, RIO, or ACC datasets). See PROTOCOL.md §12 and LICENSE-DATA. | `published_summary` |
+| `dental_specific` | boolean (`TRUE`/`FALSE`) | Whether the row's outcome is a **dental/orofacial** injury measure. `FALSE` marks the small number of rows (~19) whose stored value is a broader **all-cause / head-neck / composite** injury measure from a study whose injury definition merely *included* dental (e.g. collegiate rugby all-injury incidence). These must **not** be read or compared as dental injury rates. Judged from the primary descriptor of `injury_type_raw`; head/face-specific orofacial rows are `TRUE`. Surfaced as a warning in the Rate Explorer and flagged by validator C14 / `scripts/39`. Added 2026-07-03. | `TRUE` |
 
 **Comparability rule:** never compare values across different `measure_type` / `comparability_group` (e.g., a NEISS `ed_visit_estimate` count is not comparable to an `incidence_per_AE` rate or a `prevalence_proportion`). The harmonized `rate_per_1000_ae` column is populated only for `incidence_per_AE` rows.
 
@@ -109,25 +109,25 @@ These four columns are **derived at harmonization** by `scripts/07_harmonize.py`
 
 ## Exposure context and subgroup rows
 
-Sports-injury sources routinely report the same outcome more than once for the same population — broken out by competition vs practice, by mouthguard wearer vs non-wearer, etc. `exposure_context` and `subgroup_label` are how the schema distinguishes those rows from each other (and from accidental duplicates).
+Sports-injury sources routinely report the same outcome more than once for the same population: broken out by competition vs practice, by mouthguard wearer vs non-wearer, etc. `exposure_context` and `subgroup_label` are how the schema distinguishes those rows from each other (and from accidental duplicates).
 
-**`exposure_context`** — *what activity is the row's count/rate measuring?*
+**`exposure_context`**: *what activity is the row's count/rate measuring?*
 
-- `all` — combined estimate across activity contexts (competition + practice, or "during the season," etc.). Most rows.
-- `competition` — competition / games / matches only.
-- `practice` — practice / drills only.
-- `training` — strength-and-conditioning / off-season training only (distinguished from `practice` only when the source itself distinguishes them).
-- `other` — anything that doesn't fit; explain in `extraction_notes`.
-- *(empty)* — row isn't exposure-stratified at all (e.g., a one-shot prevalence survey where the rate isn't tied to an exposure window).
+- `all`: combined estimate across activity contexts (competition + practice, or "during the season," etc.). Most rows.
+- `competition`: competition / games / matches only.
+- `practice`: practice / drills only.
+- `training`: strength-and-conditioning / off-season training only (distinguished from `practice` only when the source itself distinguishes them).
+- `other`: anything that doesn't fit; explain in `extraction_notes`.
+- *(empty)*: row isn't exposure-stratified at all (e.g., a one-shot prevalence survey where the rate isn't tied to an exposure window).
 
-**`subgroup_label`** — *what within-source subgroup is this row?*
+**`subgroup_label`**: *what within-source subgroup is this row?*
 
 Use a short snake_case label, only when the row represents a subgroup that isn't already captured by sex, `age_category`, `level_of_play`, `sport`, or `exposure_context`. Examples:
 
 - `mouthguard_users` / `mouthguard_nonusers`
 - `with_helmet` / `without_helmet`
 - `with_orthodontic_appliance`
-- `varsity_jv_combined` (rare — typically use `level_of_play` instead)
+- `varsity_jv_combined` (rare, typically use `level_of_play` instead)
 
 Leave empty when the row is the source's main / pooled estimate. Document the labeling decision in `docs/decisions.md` if you invent a new label.
 
@@ -142,7 +142,7 @@ The v1.0 inclusion criterion (PROTOCOL §3.1) restricts the **source** scope to 
 Rule (decision 2026-05-22, see `docs/decisions.md`):
 
 - A source qualifies for inclusion **iff** it reports some data on individuals aged 5–22 (criterion unchanged).
-- When extracting from an included source, all of its age-stratified rows are extracted — including adult bands when reported alongside youth.
+- When extracting from an included source, all of its age-stratified rows are extracted, including adult bands when reported alongside youth.
 - Adult rows are tagged `age_category = adult` and `extraction_basis = adult_comparator`.
 - Youth rows (5–22) are tagged with the appropriate youth/adolescent/collegiate/mixed value and `extraction_basis = youth_primary`.
 - Analyses can subset by `extraction_basis = 'youth_primary'` to get a v1.0-scope view (the headline result), or include adult rows for comparator context.

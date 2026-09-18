@@ -1,4 +1,4 @@
-# Youth Sports Dental Injury Database — Data Descriptor (working draft)
+# Youth Sports Dental Injury Database: Data Descriptor (working draft)
 
 _Target venue: Nature Scientific Data (data descriptor) or Elsevier Data in Brief. This draft follows Scientific Data's structure. Numbers reflect the current working release (v0.1.x snapshot, 2026-06-12) and will be frozen at v1.0; remaining square-bracket items are placeholders awaiting v1.0 (advisor, Zenodo DOI, OSF link, a small number of external citations)._
 
@@ -14,13 +14,13 @@ _Target venue: Nature Scientific Data (data descriptor) or Elsevier Data in Brie
 
 ## Abstract (~200 words)
 
-Dental and orofacial injuries are among the most common facial injuries in youth sports, yet incidence estimates are fragmented across dozens of national surveillance systems, peer-reviewed studies, and sport-governing-body reports — each using different definitions, age ranges, and exposure denominators. We aggregate **421** epidemiological data points (rows) from **103** sources into a harmonized open-access database covering individuals aged 5–22 across **28 countries**, drawn from publications spanning **2000–2026**. Twelve treatment years of US National Electronic Injury Surveillance System (NEISS) case-level data (2013–2019, 2021–2025; n ≈ 8,200 sampled sport-related youth mouth-injury records; 253 aggregated rows) are integrated alongside published research and governing-body surveillance reports. A consistent column schema captures population, exposure context, intervention subgroup, outcome, and protective-equipment data per row, with explicit provenance and uncertainty flags. The database, code, and pre-registered protocol are public under CC BY 4.0 and MIT licenses. The intended use is to enable cross-sport, cross-age, and cross-geography comparison of youth dental injury epidemiology without re-reconciling each source manually.
+Dental and orofacial injuries are among the most common facial injuries in youth sports, yet incidence estimates are fragmented across dozens of national surveillance systems, peer-reviewed studies, and sport-governing-body reports, each using different definitions, age ranges, and exposure denominators. We aggregate **421** epidemiological data points (rows) from **103** sources into a harmonized open-access database covering individuals aged 5–22 across **28 countries**, drawn from publications spanning **2000–2026**. Twelve treatment years of US National Electronic Injury Surveillance System (NEISS) case-level data (2013–2019, 2021–2025; n ≈ 8,200 sampled sport-related youth mouth-injury records; 253 aggregated rows) are integrated alongside published research and governing-body surveillance reports. A consistent column schema captures population, exposure context, intervention subgroup, outcome, and protective-equipment data per row, with explicit provenance and uncertainty flags. The database, code, and pre-registered protocol are public under CC BY 4.0 and MIT licenses. The intended use is to enable cross-sport, cross-age, and cross-geography comparison of youth dental injury epidemiology without re-reconciling each source manually.
 
 ---
 
 ## Background & Summary
 
-Sports-related dental injuries impose meaningful clinical, psychological, and economic burdens on children and adolescents — the American Academy of Pediatric Dentistry estimates ~22,000 youth dental injuries treated annually in US emergency departments alone¹, with lifetime treatment costs of an avulsed permanent tooth estimated at ~US$20,000². Yet despite the established health and policy relevance, no unified open-access dataset has aggregated youth-specific dental injury epidemiology across the heterogeneous mix of surveillance systems (NEISS, High School RIO/NFHS, NCAA ISP, ACC NZ insurance claims), peer-reviewed primary research, and sport-governing-body reports that report it. The gap leaves clinicians, researchers, and policy-makers unable to easily answer foundational questions like:
+Sports-related dental injuries impose meaningful clinical, psychological, and economic burdens on children and adolescents. The American Academy of Pediatric Dentistry estimates ~22,000 youth dental injuries treated annually in US emergency departments alone¹, with lifetime treatment costs of an avulsed permanent tooth estimated at ~US$20,000². Yet despite the established health and policy relevance, no unified open-access dataset has aggregated youth-specific dental injury epidemiology across the heterogeneous mix of surveillance systems (NEISS, High School RIO/NFHS, NCAA ISP, ACC NZ insurance claims), peer-reviewed primary research, and sport-governing-body reports that report it. The gap leaves clinicians, researchers, and policy-makers unable to easily answer foundational questions like:
 
 - "What is the comparable per-1000-athlete-exposure dental injury rate across youth contact sports?"
 - "How has the rate changed since youth mouthguard mandates were introduced?"
@@ -75,7 +75,7 @@ Each candidate logged in `docs/sources.md` with a screening status: `identified`
 For each included source, a row is written to `data/extracted/<source_id>.csv` following the column schema in `DATA_DICTIONARY.md`. Sources can produce multiple rows when they report stratifications (sport, sex, age band, exposure context, subgroup). Where the source's terminology doesn't match the project's controlled vocabulary, the source's original phrasing is preserved in `sport_raw` (free text) and the standardized `sport` value is assigned per the §6.1 taxonomy, with any new sport addition logged as a `docs/decisions.md` entry.
 
 NEISS case-level extractions use a deterministic filter (`scripts/05_neiss_filter.py`):
-- `Body_Part == 88` (Mouth, including teeth) — primary filter, OR
+- `Body_Part == 88` (Mouth, including teeth): primary filter, OR
 - `Body_Part_2 == 88` (Mouth as secondary, available since 2019), OR
 - `Body_Part == 76` (Face) AND diagnosis text contains dental terminology
 - `Product_1 ∈ {23 sport-related NEISS product codes}` (verified against 2024 NEISS Coding Manual Appendix H)
@@ -113,13 +113,13 @@ Validation runs on every commit via GitHub Actions CI (`.github/workflows/valida
 
 The database is distributed as:
 
-- **`data/harmonized/master.csv`** — the main tabular product. **421 rows from 103 sources** (current release). 40 columns (36 source-extraction + 4 derived) per DATA_DICTIONARY.md. Rows split `youth_primary` (419) vs `adult_comparator` (2); study types span surveillance (37 sources), cross-sectional (41), case series (13), cohort (11), and governing-body report (1).
-- **`data/harmonized/master.sqlite`** — SQLite mirror of `master.csv` with sample queries in `data/harmonized/README_sqlite.md`.
-- **`data/extracted/<source_id>.csv`** — one file per source. Useful for source-level audit. Includes the per-NEISS-year extractions (`neiss2013.csv` through `neiss2025.csv` except `neiss2020.csv` for which NEISS returned zero matching cases).
-- **`data/raw/papers/_abstracts/<PMID>.json`** — parsed PubMed abstract data per candidate (parsed via E-utilities efetch).
-- **`data/raw/papers/_pmc/<PMC>.xml`** — full-text XMLs for the PMC-available subset.
-- **`outputs/tables/neiss_trends.csv`** — derived 12-year NEISS trend table.
-- **`outputs/cross_source_rate_comparison.md`** — paired-source rate comparison.
+- **`data/harmonized/master.csv`**: the main tabular product. **421 rows from 103 sources** (current release). 40 columns (36 source-extraction + 4 derived) per DATA_DICTIONARY.md. Rows split `youth_primary` (419) vs `adult_comparator` (2); study types span surveillance (37 sources), cross-sectional (41), case series (13), cohort (11), and governing-body report (1).
+- **`data/harmonized/master.sqlite`**: SQLite mirror of `master.csv` with sample queries in `data/harmonized/README_sqlite.md`.
+- **`data/extracted/<source_id>.csv`**: one file per source. Useful for source-level audit. Includes the per-NEISS-year extractions (`neiss2013.csv` through `neiss2025.csv` except `neiss2020.csv` for which NEISS returned zero matching cases).
+- **`data/raw/papers/_abstracts/<PMID>.json`**: parsed PubMed abstract data per candidate (parsed via E-utilities efetch).
+- **`data/raw/papers/_pmc/<PMC>.xml`**: full-text XMLs for the PMC-available subset.
+- **`outputs/tables/neiss_trends.csv`**: derived 12-year NEISS trend table.
+- **`outputs/cross_source_rate_comparison.md`**: paired-source rate comparison.
 
 Each source carries a stable `source_id` of form `<firstauthor><year>` (PubMed-keyed) or `<system><year>` (surveillance). All citations, DOIs (where assigned), and CC BY 4.0 attribution metadata are in `LICENSE-DATA` and `CITATION.cff`.
 
@@ -127,16 +127,16 @@ Each source carries a stable `source_id` of form `<firstauthor><year>` (PubMed-k
 
 ## Technical Validation
 
-Current state (v0.1.x snapshot, 2026-07-03): **421 rows / 103 sources / 0 FAILs / 0 WARNs** against the 14 validation checks (`outputs/validation_report.md`), run on every commit via GitHub Actions CI. 23 PMC full-text XMLs cached. Cross-source rate comparison confirms tight agreement on US high-school basketball rates between `collins2016` (0.026 per 1000 AE) and `azadani2023` (0.024 per 1000 AE) — equivalently 2.6 and 2.4 per 100,000 AE — independent surveillance covering overlapping years yielding statistically indistinguishable estimates (`outputs/cross_source_rate_comparison.md`).
+Current state (v0.1.x snapshot, 2026-07-03): **421 rows / 103 sources / 0 FAILs / 0 WARNs** against the 14 validation checks (`outputs/validation_report.md`), run on every commit via GitHub Actions CI. 23 PMC full-text XMLs cached. Cross-source rate comparison confirms tight agreement on US high-school basketball rates between `collins2016` (0.026 per 1000 AE) and `azadani2023` (0.024 per 1000 AE), equivalently 2.6 and 2.4 per 100,000 AE, independent surveillance covering overlapping years yielding statistically indistinguishable estimates (`outputs/cross_source_rate_comparison.md`).
 
-Beyond schema validation, two independent audits check the *numbers themselves* and are re-run in the pipeline (`scripts/run_all.py`). **External corroboration** (`scripts/37`) matches every extracted value against the source's PubMed abstract text: 287 of 352 checked values (81%) corroborate in-abstract, the remainder coming from full-text tables or computed percentages and flagged for full-text review. **Internal consistency** (`scripts/38`) recomputes every derivable value from the row's own inputs (back-calculated counts as `rate% × base`, unit conversions, and `count / exposures`): across the recomputable rows all but four are internally consistent, and those four are logged for source adjudication. A consolidated `outputs/data_quality.md` reports both alongside the verification-risk tiers. These are reviewer aids, not pass/fail gates — they localize where full-text verification should be spent.
+Beyond schema validation, two independent audits check the *numbers themselves* and are re-run in the pipeline (`scripts/run_all.py`). **External corroboration** (`scripts/37`) matches every extracted value against the source's PubMed abstract text: 287 of 352 checked values (81%) corroborate in-abstract, the remainder coming from full-text tables or computed percentages and flagged for full-text review. **Internal consistency** (`scripts/38`) recomputes every derivable value from the row's own inputs (back-calculated counts as `rate% × base`, unit conversions, and `count / exposures`): across the recomputable rows all but four are internally consistent, and those four are logged for source adjudication. A consolidated `outputs/data_quality.md` reports both alongside the verification-risk tiers. These are reviewer aids, not pass/fail gates. They localize where full-text verification should be spent.
 
-Of the 421 rows, 20 carry a value in `rate_per_1000_ae` (the rest preserve the source's native denominator in `rate_raw`/`rate_denominator_raw`); 41 rows report a mouthguard use rate and 41 record an analyzed mouthguard-vs-injury relationship. All 20 values sit on a single per-1000-athlete-exposure scale: rates the source reported per 100,000&nbsp;AE are stored already divided by 100, athlete-session denominators are treated as athlete-exposures (the standard "one athlete in one practice or game" unit), and rates with time (hours, player-match-hours), population, or percent-of-injuries denominators are excluded from this column by design — kept only in `rate_raw`/`rate_denominator_raw` — and that exclusion is now enforced by validator check C11 (see `docs/decisions.md`, 2026-06-13). The 20 are therefore directly comparable on the denominator axis; as in any cross-source comparison they still differ in injury definition, age range, era, and competition-vs-practice context, so each rate should be read alongside its row attributes. (A future option to split into explicit `rate_value` + `rate_unit` columns, which would also carry the non-AE rates as structured values, remains available but is not needed for v0.1.x.)
+Of the 421 rows, 20 carry a value in `rate_per_1000_ae` (the rest preserve the source's native denominator in `rate_raw`/`rate_denominator_raw`); 41 rows report a mouthguard use rate and 41 record an analyzed mouthguard-vs-injury relationship. All 20 values sit on a single per-1000-athlete-exposure scale: rates the source reported per 100,000&nbsp;AE are stored already divided by 100, athlete-session denominators are treated as athlete-exposures (the standard "one athlete in one practice or game" unit), and rates with time (hours, player-match-hours), population, or percent-of-injuries denominators are excluded from this column by design (kept only in `rate_raw`/`rate_denominator_raw`), and that exclusion is now enforced by validator check C11 (see `docs/decisions.md`, 2026-06-13). The 20 are therefore directly comparable on the denominator axis; as in any cross-source comparison they still differ in injury definition, age range, era, and competition-vs-practice context, so each rate should be read alongside its row attributes. (A future option to split into explicit `rate_value` + `rate_unit` columns, which would also carry the non-AE rates as structured values, remains available but is not needed for v0.1.x.)
 
 Limitations transparently documented:
 - English-language sources only (v1.0).
 - Single primary extractor with AI assistance; 20% inter-rater reliability re-screening is planned for v1.0 sign-off (pending advisor).
-- NEISS samples ED visits only — undercounts dental injuries treated in dental offices.
+- NEISS samples ED visits only: undercounts dental injuries treated in dental offices.
 - 2020 NEISS gap reflects the COVID-19 youth-sport shutdown; no imputation attempted.
 - All current rows carry `quality_flag = partial_data` (most are abstract-keyed or aggregate extractions); full-text re-extraction and a graduation of clean rows to `quality_flag = clean` are planned for v1.0.
 - Population-denominator surveillance (e.g. ACC NZ, NEISS weighted estimates) is preserved in `rate_raw` but cannot be converted to per-AE rates; such rows leave `rate_per_1000_ae` empty by design.
@@ -146,7 +146,7 @@ Limitations transparently documented:
 
 ## Comparability & Limitations
 
-Harmonizing heterogeneous sources into one schema does not render all rows mutually comparable — a caveat raised directly by a senior surveillance reviewer. Two machine-readable columns make this explicit: **`measure_type`** (the outcome-measure / rate basis) and **`comparability_group`** (the key on which direct comparison is permitted). **Rows are directly comparable only within the same `comparability_group`.** Concretely:
+Harmonizing heterogeneous sources into one schema does not render all rows mutually comparable, a caveat raised directly by a senior surveillance reviewer. Two machine-readable columns make this explicit: **`measure_type`** (the outcome-measure / rate basis) and **`comparability_group`** (the key on which direct comparison is permitted). **Rows are directly comparable only within the same `comparability_group`.** Concretely:
 
 - **Denominators differ.** The dataset spans incidence per athlete-exposure (`incidence_per_AE`; normalized in `rate_per_1000_ae`), per player/athlete-hours, per 100,000 population, per season, prevalence proportions, NEISS/ED weighted estimates, and raw counts. Only same-`measure_type` rows are comparable.
 - **NEISS figures are emergency-department-treated only** (weighted national estimates; `measure_type = ed_visit_estimate`); they undercount injuries treated outside the ED and are not comparable to athlete-exposure rates.
@@ -217,7 +217,7 @@ All data under CC BY 4.0 License. Repository: https://github.com/Vihaan-Banga/yo
 
 ## Acknowledgements
 
-[For v1.0 — placeholder]
+[For v1.0, placeholder]
 
 ## Author Contributions
 
@@ -230,7 +230,7 @@ The authors declare no competing interests.
 ---
 
 _Draft last updated 2026-06-24 (numbers reflect the 421-row / 103-source working release). Next steps before v1.0 submission:_
-- _Secure senior advisor (in progress, project lead leading recruitment) — unlocks the remaining bracketed placeholders (affiliation, acknowledgements, author contributions)_
+- _Secure senior advisor (in progress, project lead leading recruitment): unlocks the remaining bracketed placeholders (affiliation, acknowledgements, author contributions)_
 - _File OSF pre-registration_
 - _Complete 20% inter-rater reliability re-screening_
 - _Re-extract `quality_flag=partial_data` rows from full text and graduate clean rows to `quality_flag=clean`_
