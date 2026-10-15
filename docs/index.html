@@ -8,6 +8,27 @@
 <meta property="og:title" content="Youth Sports Dental Injury Database">
 <meta property="og:description" content="421 published findings on dental injuries in young athletes, from 103 sources across 28 countries — with an explicit system for which findings may validly be compared.">
 <meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#129463;</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Youth Sports Dental Injury Database",
+  "description": "421 published findings on dental and orofacial injuries in athletes aged 5-22, harmonized from 103 sources across 28 countries, with explicit machine-readable metadata recording which findings may validly be compared.",
+  "url": "https://vihaan-banga.github.io/youth-dental-injury-database/",
+  "sameAs": "https://github.com/Vihaan-Banga/youth-dental-injury-database",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "temporalCoverage": "2000/2026",
+  "creator": {"@type": "Person", "name": "Vihaan Banga"},
+  "keywords": ["dental trauma","orofacial injury","sports injury","youth sports","mouthguard","epidemiology","injury surveillance","NEISS","open data"],
+  "distribution": [{
+    "@type": "DataDownload",
+    "encodingFormat": "text/csv",
+    "contentUrl": "https://raw.githubusercontent.com/Vihaan-Banga/youth-dental-injury-database/main/data/harmonized/master.csv"
+  }]
+}
+</script>
 <style>
   :root{
     --ink:#15181d; --body:#3d434d; --mut:#6b7280; --line:#e4e7ec; --soft:#f7f8fa;
@@ -24,6 +45,8 @@
   .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
   a{color:var(--accent); text-decoration:none}
   a:hover{text-decoration:underline}
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+  html{scroll-behavior:smooth}
   h1,h2,h3{color:var(--ink); line-height:1.25; margin:0}
   h1{font-size:clamp(2rem,5vw,2.9rem); letter-spacing:-.02em; font-weight:700}
   h2{font-size:1.45rem; letter-spacing:-.01em; font-weight:650; margin:0 0 .6rem}
@@ -80,6 +103,10 @@
   .files .t{font-weight:600; color:var(--accent)}
   .files .d{font-size:.88rem; color:var(--mut)}
 
+  .finding{border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:0 12px 12px 0; padding:1.15rem 1.3rem; background:#fff}
+  .finding p{margin:0 0 .4rem; font-size:1.02rem; color:var(--ink); font-weight:600; line-height:1.45}
+  .finding .src{margin:0; font-size:.86rem; color:var(--mut); font-weight:400}
+  .stack{display:grid; gap:.9rem; margin-top:1.4rem}
   blockquote{margin:1rem 0 0; padding:.9rem 1.1rem; background:var(--soft); border-left:3px solid var(--line); border-radius:0 8px 8px 0; font-size:.92rem; color:var(--body)}
   footer{border-top:1px solid var(--line); padding:2.4rem 0 3.5rem; color:var(--mut); font-size:.9rem}
   .pill{display:inline-block; font-size:.76rem; font-weight:650; color:var(--accent); background:var(--accent-soft); border-radius:99px; padding:.2rem .6rem; margin-left:.4rem; vertical-align:middle}
@@ -199,6 +226,34 @@
   </div>
 </section>
 
+<section style="background:var(--soft)">
+  <div class="wrap">
+    <p class="eyebrow">What you can find in it</p>
+    <h2>Three examples, each traceable to its source</h2>
+    <div class="stack">
+      <div class="finding">
+        <p>Roughly three in four high-school athletes who sustained a dental injury were not wearing a mouthguard.</p>
+        <p class="src">459 dental injuries across 49,987,927 athlete-exposures, US high-school surveillance,
+        2005/06&ndash;2019/20. Azadani et&nbsp;al., <em>Dental Traumatology</em> (2023).</p>
+      </div>
+      <div class="finding">
+        <p>Basketball carries the highest dental injury rate among boys&rsquo; high-school sports; girls&rsquo; field hockey the highest among girls&rsquo;.</p>
+        <p class="src">2.4 and 3.5 dental injuries per 100,000 athlete-exposures respectively, same surveillance
+        programme. Read each rate together with its denominator.</p>
+      </div>
+      <div class="finding">
+        <p>In one study of college basketball, players without custom-fitted mouthguards recorded 0.67 dental injuries per 1,000 athlete-exposures, against 0.12 for those wearing them.</p>
+        <p class="src">Single season, 1999&ndash;2000, small injury counts. LaBella et&nbsp;al.,
+        <em>Medicine &amp; Science in Sports &amp; Exercise</em> (2002). One study, not a pooled estimate.</p>
+      </div>
+    </div>
+    <p style="margin-top:1.3rem; font-size:.95rem; color:var(--mut)">
+      Mouthguard use is recorded in only 41 of the 421 findings, which is itself a finding: the question
+      most relevant to prevention is the one the literature answers least often.
+    </p>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="note">
@@ -212,9 +267,10 @@
         <li><strong>Most sources never say which injury occurred.</strong> 84% of findings report only
         &ldquo;dental injury&rdquo; without distinguishing avulsion, fracture, or luxation.</li>
         <li><strong>The numbers are not yet independently verified.</strong> Every entry is flagged as
-        not fully verified. Extraction was done by one person with AI assistance; values have been checked
-        for internal consistency and, where possible, against each study&rsquo;s abstract, but verification
-        against full-text articles is still in progress.</li>
+        not fully verified. Values have been checked for internal arithmetic consistency and, where the
+        text allows, against each study&rsquo;s abstract, but checking against full-text articles is still
+        in progress. Extraction was carried out by a single reviewer with AI assistance, and no second
+        reviewer has yet re-screened a sample.</li>
         <li><strong>Not a clinical decision tool.</strong> This describes populations and cannot predict
         any individual patient&rsquo;s risk.</li>
       </ul>
