@@ -18,7 +18,6 @@ author:
 
 # Show navigation links for these pages
 header_pages:
-  - index.md
   - sources.md
   - decisions.md
   - governing_body_sources.md
