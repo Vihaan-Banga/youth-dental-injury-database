@@ -93,7 +93,7 @@ def make_row(source_id, year, label, subset, *,
     secondary_count = sum(1 for c in subset if "secondary" in c["body_part_label"])
     note_parts = [
         f"Raw NEISS case count for {label}, treatment year {year}",
-        f"weighted national estimate = {weighted:,.0f}",
+        f"weighted national estimate = {weighted: .0f}",
     ]
     if secondary_count > 0:
         note_parts.append(
@@ -119,7 +119,7 @@ def make_row(source_id, year, label, subset, *,
         "sample_size": "", "athlete_exposures": "",
         "season_or_timeframe": f"{year} calendar year",
         "injury_count": n,
-        "injury_type_raw": "ED-treated mouth injury (NEISS Body_Part = 88, primary or secondary since 2019) — sport-related",
+        "injury_type_raw": "ED-treated mouth injury (NEISS Body_Part = 88, primary or secondary since 2019), sport-related",
         "injury_category": "unspecified_dental",
         "rate_raw": "", "rate_denominator_raw": "", "rate_per_1000_ae": "",
         "mouthguard_required": "unspecified", "mouthguard_use_rate": "",
@@ -141,8 +141,7 @@ def build_year_extraction(year, cases):
         age_min=5, age_max=22, age_category="mixed", sex="mixed",
         sport_raw="all 23 sport-related product codes",
         sport="all_sports_aggregate", sport_category="",
-        subgroup_label="all_youth_aggregate",
-    ))
+        subgroup_label="all_youth_aggregate"))
 
     # 2. Age bands
     for cat, lo, hi in (("youth", 5, 12), ("adolescent", 13, 17), ("collegiate", 18, 22)):
@@ -152,8 +151,7 @@ def build_year_extraction(year, cases):
             age_min=lo, age_max=hi, age_category=cat, sex="mixed",
             sport_raw=f"all 23 sport-related product codes ({cat} band)",
             sport="all_sports_aggregate", sport_category="",
-            subgroup_label=f"age_band_{cat}",
-        ))
+            subgroup_label=f"age_band_{cat}"))
 
     # 3. Per-sport (>= 5)
     sport_groups = defaultdict(list)
@@ -169,8 +167,7 @@ def build_year_extraction(year, cases):
             age_min=5, age_max=22, age_category="mixed", sex="mixed",
             sport_raw=sport.replace("_", " "),
             sport=sport, sport_category=sport_cats[sport] or "",
-            subgroup_label="",
-        ))
+            subgroup_label=""))
 
     # 4. Sex
     for sex in ("male", "female"):
@@ -180,8 +177,7 @@ def build_year_extraction(year, cases):
             age_min=5, age_max=22, age_category="mixed", sex=sex,
             sport_raw=f"all 23 sport-related product codes ({sex})",
             sport="all_sports_aggregate", sport_category="",
-            subgroup_label=f"sex_{sex}",
-        ))
+            subgroup_label=f"sex_{sex}"))
 
     return source_id, rows
 

@@ -105,7 +105,7 @@ def main() -> None:
         }],
     }
     OUT.write_text(json.dumps(pkg, indent=2, ensure_ascii=False) + "\n")
-    print(f"Wrote {OUT.relative_to(ROOT)} — {len(fields)} fields, "
+    print(f"Wrote {OUT.relative_to(ROOT)}, {len(fields)} fields, "
           f"{sum(1 for f in fields if 'description' in f)} with descriptions.")
 
 

@@ -1,4 +1,4 @@
-# Hockey Unspecified — Factsheet
+# Hockey Unspecified, Factsheet
 
 _Auto-generated from `master.csv`. 13 rows across 13 sources._
 
@@ -18,7 +18,7 @@ _No rows with `rate_per_1000_ae` populated. See `rate_raw` + `rate_denominator_r
 |---|---:|---|---|---:|
 | mixed | 13 | | mixed | 13 |
 
-_Cumulative reported `injury_count` across these 13 rows: **151**._
+_Cumulative reported `injury_count` across these 13 rows: ** 151**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

@@ -37,7 +37,7 @@ Standardized `sport` column values. Add to this list before extracting a new spo
 | sport (column value) | includes | sport_category | notes |
 |---|---|---|---|
 | `basketball` | 5-on-5, 3-on-3, half-court | limited_contact | |
-| `football_american` | tackle, flag (if specified, mark sub-variant in notes) | contact | flag football is limited_contact — split if needed |
+| `football_american` | tackle, flag (if specified, mark sub-variant in notes) | contact | flag football is limited_contact, split if needed |
 | `football_association` | soccer | limited_contact | "Football" outside US contexts |
 | `hockey_ice` | ice hockey, varsity and youth | contact | |
 | `hockey_field` | field hockey | limited_contact | |
@@ -92,9 +92,9 @@ When a new sport is encountered:
 
 | code | meaning | use for this project? |
 |---|---|---|
-| 88 | Mouth (including lips, tongue, **and teeth**) | **Yes — primary inclusion code for dental injuries** |
-| 76 | Face (eyelid, eye area, nose) | Yes — only when filtering for orofacial injury with dental involvement; requires diagnosis review per PROTOCOL §3.3 |
-| 77 | Eyeball | No — not relevant to dental outcomes |
+| 88 | Mouth (including lips, tongue, **and teeth**) | **Yes, primary inclusion code for dental injuries** |
+| 76 | Face (eyelid, eye area, nose) | Yes, only when filtering for orofacial injury with dental involvement; requires diagnosis review per PROTOCOL §3.3 |
+| 77 | Eyeball | No, not relevant to dental outcomes |
 | 75 | Head | No (unless diagnosis explicitly cites dental involvement) |
 
 **Sport product codes** (per 2024 NEISS Coding Manual, Appendix H, pp. 201–202):
@@ -104,7 +104,7 @@ When a new sport is encountered:
 | 1205 | Basketball | `basketball` |
 | 1207 | Boxing | `boxing` |
 | 1211 | Football (American) | `football_american` |
-| 1215 | Lacrosse | needs disambiguation — NEISS does not split men's/women's; default to `lacrosse_mens` and flag with `quality_flag = review_needed` |
+| 1215 | Lacrosse | needs disambiguation, NEISS does not split men's/women's; default to `lacrosse_mens` and flag with `quality_flag = review_needed` |
 | 1266 | Volleyball | `volleyball` |
 | 1267 | Soccer | `football_association` |
 | 1270 | Wrestling | `wrestling` |
@@ -113,7 +113,7 @@ When a new sport is encountered:
 | 1295 | Field hockey | `hockey_field` |
 | 1333 | Skateboards | `skateboarding` |
 | 3234 | Rugby | `rugby` |
-| 3245 | Street hockey | new category — propose `hockey_street`, advisor approval needed |
+| 3245 | Street hockey | new category, propose `hockey_street`, advisor approval needed |
 | 3254 | Cheerleading | `cheerleading` |
 | 3257 | Martial arts | `martial_arts_other` |
 | 3272 | Hockey, not specified | flag for review; assign tentative `hockey_ice` only if comment indicates ice |
@@ -121,7 +121,7 @@ When a new sport is encountered:
 | 3276 | Water polo | `water_polo` |
 | 3284 | Tennis | `tennis` |
 | 5030 | Track and field | `track_and_field` |
-| 5032 | Roller hockey | new category — propose `hockey_roller`, advisor approval needed |
+| 5032 | Roller hockey | new category, propose `hockey_roller`, advisor approval needed |
 | 5034 | Softball | `softball` |
 | 5041 | Baseball (excluding softball) | `baseball` |
 
@@ -131,24 +131,24 @@ Codes not yet mapped because the taxonomy needs an advisor decision: 1200 (sport
 
 ## Decisions (chronological)
 
-### 2026-05-21: Correction to PROTOCOL §4.1 — NEISS body part codes
+### 2026-05-21: Correction to PROTOCOL §4.1: NEISS body part codes
 
 **Trigger:** Verifying NEISS codes before writing `01_neiss_download.py`, as instructed by `scripts/README.md`.
 
-**Question:** PROTOCOL.md §4.1 currently states: *"All entries with body part code 76 (mouth) or 77 (lower trunk/teeth) or 88 (face)..."* — are these labels correct?
+**Question:** PROTOCOL.md §4.1 currently states: *"All entries with body part code 76 (mouth) or 77 (lower trunk/teeth) or 88 (face)..."*, are these labels correct?
 
 **Options considered:**
 - (a) Use the codes as printed in the protocol.
 - (b) Use the codes from the official 2024 NEISS Coding Manual.
 
 **Decision:** Use option (b). The protocol's labels are wrong; the codes appear shuffled. Per the official 2024 manual (Appendix C, p. 24):
-- 76 = **Face** (eyelid, eye area, nose) — *not* mouth
-- 77 = **Eyeball** — *not* "lower trunk/teeth" (which is also not a valid NEISS category)
-- 88 = **Mouth** (including lips, tongue, **and teeth**) — this is the code that captures dental injuries
+- 76 = **Face** (eyelid, eye area, nose): *not* mouth
+- 77 = **Eyeball**: *not* "lower trunk/teeth" (which is also not a valid NEISS category)
+- 88 = **Mouth** (including lips, tongue, **and teeth**): this is the code that captures dental injuries
 
 Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** as the primary filter, with **76 (Face)** as a secondary filter only for cases whose diagnosis text indicates dental involvement (per PROTOCOL §3.3 "orofacial injury with dental involvement").
 
-**Reasoning:** The codes in the original protocol cannot have been correctly verified — Appendix C is unambiguous and the 88-Mouth code is the only one whose definition mentions teeth. Proceeding with the protocol's labels would have excluded the actual dental cases (88) and included unrelated eyeball injuries (77).
+**Reasoning:** The codes in the original protocol cannot have been correctly verified, Appendix C is unambiguous and the 88-Mouth code is the only one whose definition mentions teeth. Proceeding with the protocol's labels would have excluded the actual dental cases (88) and included unrelated eyeball injuries (77).
 
 **Affected rows/sources:** All NEISS extractions. None done yet, so no rework required. PROTOCOL.md §4.1 should be amended in the next protocol revision; until then this decision overrides.
 
@@ -156,7 +156,7 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 **Sources of truth:**
 - [NEISS Coding Manual, January 2024](https://www.cpsc.gov/s3fs-public/January-2024-NEISS-CPSC-only-Coding-Manual.pdf), Appendix C (Body Part Codes), p. 24 of PDF body text
-- A local copy preserved at `data/raw/neiss/_reference/coding_manual_2024.pdf` (after first download — see `scripts/README.md`)
+- A local copy preserved at `data/raw/neiss/_reference/coding_manual_2024.pdf` (after first download, see `scripts/README.md`)
 
 ---
 
@@ -218,9 +218,9 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 ---
 
-### 2026-05-23: Sport taxonomy expansion needed — cricket, netball, cycling, hurling, Kabaddi
+### 2026-05-23: Sport taxonomy expansion needed: cricket, netball, cycling, hurling, Kabaddi
 
-**Trigger:** welch2010 extraction (NZ ACC sports dental claims 1999-2008) reports per-sport shares for cricket, netball, and cycling — none in the current §6.1 controlled vocabulary. Several already-included PubMed sources also reference hurling (PMID 20669600) and Kabaddi (PMID 36922269), which are also not in the vocabulary.
+**Trigger:** welch2010 extraction (NZ ACC sports dental claims 1999-2008) reports per-sport shares for cricket, netball, and cycling, none in the current §6.1 controlled vocabulary. Several already-included PubMed sources also reference hurling (PMID 20669600) and Kabaddi (PMID 36922269), which are also not in the vocabulary.
 
 **Temporary handling (for now):** these sport names are stuffed into `sport = all_activities_aggregate` with the source's original sport name preserved in `subgroup_label = source_sport_<name>` and `quality_flag = review_needed`. Validator passes; the audit trail is preserved.
 
@@ -248,10 +248,10 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 **Decision:** Two new columns added to the master extraction schema:
 
-- `exposure_context` ∈ {`all`, `competition`, `practice`, `training`, `other`, *empty*} — which activity context the row's count/rate covers.
-- `subgroup_label` (free-text snake_case) — within-source subgroups not already captured by sex / age_category / level_of_play / sport / exposure_context (most commonly: protective-equipment splits).
+- `exposure_context` ∈ {`all`, `competition`, `practice`, `training`, `other`, *empty*}, which activity context the row's count/rate covers.
+- `subgroup_label` (free-text snake_case): within-source subgroups not already captured by sex / age_category / level_of_play / sport / exposure_context (most commonly: protective-equipment splits).
 
-**Reasoning:** Even with only 3 pilot sources extracted, both patterns are universal in sports-injury epidemiology — every RIO-style surveillance paper reports competition/practice splits, and every protective-equipment study reports user/non-user subgroups. Waiting until source #10 to introduce the columns would mean re-extracting up to 7 additional sources. Doing it now costs 3 re-extractions (the pilots).
+**Reasoning:** Even with only 3 pilot sources extracted, both patterns are universal in sports-injury epidemiology, every RIO-style surveillance paper reports competition/practice splits, and every protective-equipment study reports user/non-user subgroups. Waiting until source #10 to introduce the columns would mean re-extracting up to 7 additional sources. Doing it now costs 3 re-extractions (the pilots).
 
 **Implementation:**
 - `DATA_DICTIONARY.md`: columns + an "Exposure context and subgroup rows" section spelling out the values and the new uniqueness key `(sport × sex × age × level × basis × exposure_context × subgroup_label × season)`.
@@ -270,15 +270,15 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 **Trigger:** First run of `scripts/07_harmonize.py` + `scripts/08_validate.py` against the three pilot extractions produced two C10 (duplicate-key) warnings flagging legitimate stratifications the schema can't disambiguate:
 
 - **collins2016**: three rows share (source × sport × age × sex × level × basis × season) but differ on **exposure context** (all / competition / practice). Currently disambiguated only via `rate_denominator_raw` free text.
-- **labella2002**: two rows share the same key but differ on **mouthguard subgroup** (users vs non-users). Currently disambiguated only via `mouthguard_use_rate` value (1.0 vs 0.0) — fragile because that field is also used for population-prevalence semantics.
+- **labella2002**: two rows share the same key but differ on **mouthguard subgroup** (users vs non-users). Currently disambiguated only via `mouthguard_use_rate` value (1.0 vs 0.0), fragile because that field is also used for population-prevalence semantics.
 
 **Question:** Add new columns to the data dictionary now to express these stratifications, or wait until more sources demand them?
 
-**Decision (deferred — not making the schema change yet):** Keep `rate_denominator_raw` carrying the exposure context (e.g., "...(competition only)") and `mouthguard_use_rate` carrying the subgroup identifier for now. Revisit at the latest of: (a) the 10th extracted source, (b) advisor sign-off, or (c) the point at which we discover a third stratification dimension. Proposed columns when we do change:
+**Decision (deferred, not making the schema change yet):** Keep `rate_denominator_raw` carrying the exposure context (e.g., "...(competition only)") and `mouthguard_use_rate` carrying the subgroup identifier for now. Revisit at the latest of: (a) the 10th extracted source, (b) advisor sign-off, or (c) the point at which we discover a third stratification dimension. Proposed columns when we do change:
 - `exposure_context` ∈ `all` | `competition` | `practice` | `training` | `other`
 - `subgroup_label` (free-text short label for protective-equipment / risk-modifier subgroups)
 
-**Reasoning:** Two sources is not enough to lock in column choices; we'd risk picking names that don't generalize. Validation C10 will continue to warn on these rows, which is fine — they are surfaced as schema-design todos, not as data quality issues.
+**Reasoning:** Two sources is not enough to lock in column choices; we'd risk picking names that don't generalize. Validation C10 will continue to warn on these rows, which is fine, they are surfaced as schema-design todos, not as data quality issues.
 
 **Affected rows:** collins2016 (3 stratified rows), labella2002 (2 subgroup rows). No change to extractions; only the validator's interpretation of the warning.
 
@@ -290,7 +290,7 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 **Trigger:** Validation check C5 flagged a <50% overlap between the row's age range (0–6) and the `youth` category band (5–12).
 
-**Decision:** Re-tag `age_category = unspecified` for this row. Per PROTOCOL §6.2, when a source reports a range spanning categories, it's reported under the majority category — for this row, the majority is sub-5 (5 of 7 years), which is below the §3.1 inclusion floor and not represented in the youth/adolescent/collegiate/adult taxonomy. `unspecified` is the honest tag.
+**Decision:** Re-tag `age_category = unspecified` for this row. Per PROTOCOL §6.2, when a source reports a range spanning categories, it's reported under the majority category, for this row, the majority is sub-5 (5 of 7 years), which is below the §3.1 inclusion floor and not represented in the youth/adolescent/collegiate/adult taxonomy. `unspecified` is the honest tag.
 
 **Affected rows:** stewart2009 row "primary dentition" (age_min=0, age_max=6). Source still qualifies for inclusion because *other* age bands in the same source (mixed dentition 7–12, permanent 13–17) are squarely within scope.
 
@@ -300,7 +300,7 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 ### 2026-05-22: Issues surfaced by pilot extractions (collins2016, labella2002, stewart2009)
 
-**Trigger:** Three pilot extractions performed against the data dictionary before formal extraction begins (PROTOCOL pre-registration checklist item "First two sources extracted as pilot" — methodologically; formal extraction still gated on OSF pre-registration).
+**Trigger:** Three pilot extractions performed against the data dictionary before formal extraction begins (PROTOCOL pre-registration checklist item "First two sources extracted as pilot", methodologically; formal extraction still gated on OSF pre-registration).
 
 **Issues surfaced and provisional handling:**
 
@@ -311,7 +311,7 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 2. **Population-denominator surveillance is not AE-denominator.** NEISS-based stewart2009 reports rates as "per 100,000 children <18 yrs per year" (population denominator); the data dictionary's `rate_per_1000_ae` assumes athlete-exposure denominator. The two cannot be converted without external exposure data.
    - **Decision:** When the source uses a population denominator, leave `rate_per_1000_ae` empty; preserve the source's number in `rate_raw` and the denominator phrase in `rate_denominator_raw`. Note in `extraction_notes`.
-   - **Why:** Fabricating an AE rate from population data would corrupt downstream analyses. The raw fields exist for exactly this case (PROTOCOL §6.4 — original denominators preserved).
+   - **Why:** Fabricating an AE rate from population data would corrupt downstream analyses. The raw fields exist for exactly this case (PROTOCOL §6.4, original denominators preserved).
 
 3. **`mouthguard_use_rate` semantics are ambiguous.** Sources can report (a) MG use among all athletes in the sample, (b) MG use *among injured* athletes only (e.g., collins2016: "72.5% of injuries occurred while not wearing a MG"). These are different denominators.
    - **Provisional decision:** Use `mouthguard_use_rate` for the population-level prevalence whenever the source reports it. When only the injured-subset prevalence is available, record it in `mouthguard_use_rate` and clearly say so in `extraction_notes`. Add an explicit `mouthguard_use_rate_denominator` column in a future data dictionary revision if this becomes common.
@@ -331,19 +331,19 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 ### 2026-05-22: Extract adult-comparator rows from already-included sources
 
-**Trigger:** Project lead asked whether the youth-only scope (PROTOCOL §3.1, ages 5–22) was too narrow and whether adult populations should be incorporated. Screening of the 200 PubMed candidates produced 51 records held back by age (6 `E-age`, 37 `R-age`, 8 `R-mixed`) — meaningful but not catastrophic.
+**Trigger:** Project lead asked whether the youth-only scope (PROTOCOL §3.1, ages 5–22) was too narrow and whether adult populations should be incorporated. Screening of the 200 PubMed candidates produced 51 records held back by age (6 `E-age`, 37 `R-age`, 8 `R-mixed`), meaningful but not catastrophic.
 
 **Question:** Should the project (a) broaden inclusion to all ages, (b) keep youth-only and discard adult data even when it is present in included sources, or (c) keep youth-only at the *source* level but extract adult bands alongside youth when the source reports both?
 
 **Options considered:**
-- (a) Broaden to all ages. Doubles the include set (~120 records) and dilutes the project's stated differentiator (PROTOCOL §1 — the gap is youth-specific). Rebrand required; Conrad Challenge alignment weakens; ~doubles extraction workload before the Sept–Nov deadline.
+- (a) Broaden to all ages. Doubles the include set (~120 records) and dilutes the project's stated differentiator (PROTOCOL §1, the gap is youth-specific). Rebrand required; Conrad Challenge alignment weakens; ~doubles extraction workload before the Sept–Nov deadline.
 - (b) Status quo. Throws away age-stratified adult data already present in surveillance sources (NEISS, NZ ACC, NCAA-adjacent insurance, multi-age cohort studies) at extraction time. Wasteful.
 - (c) Middle path: source inclusion stays youth-only; extraction captures all age bands the source reports; adult bands tagged `extraction_basis = adult_comparator`.
 
 **Decision:** Option (c).
 
 **Reasoning:**
-- The project's headline identity ("Youth Sports Dental Injury Database") and its stated gap (PROTOCOL §1) remain youth-centred — no rebrand, no narrative shift, no Conrad Challenge framing rework.
+- The project's headline identity ("Youth Sports Dental Injury Database") and its stated gap (PROTOCOL §1) remain youth-centred, no rebrand, no narrative shift, no Conrad Challenge framing rework.
 - Adult rows are essentially free to extract when they sit in the same table as the youth data we are already extracting. Discarding them would be a sunk-cost loss.
 - Researchers using the dataset can answer cross-age questions ("is youth rate higher than adult?") by including the comparator rows; the published headline analyses subset to `extraction_basis = 'youth_primary'`.
 - This does **not** rescue any of the records currently held in `screened_excluded` for `E-age` (adult-only sources), since those sources have no youth data to anchor inclusion.
@@ -363,7 +363,7 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 
 **Trigger:** `scripts/30_oa_url_lookup.py` (Unpaywall) and `scripts/31_pmc_availability.py` (NCBI PMC) identified which of the 91 `needs_additional_review` PubMed records have free full text. Full texts were retrieved (PMC HTML, repository PDFs read with pdfplumber, OA-journal redirects) and reviewed against PROTOCOL §3.1/§3.3. This is the project lead's full-text screening step (AI-assisted, same basis as the 2026-05-21 abstract screen), not the §4.4 reliability re-screen, which still awaits the advisor.
 
-**Retrievability (why most of the 91 stay pending):** publisher PDFs behind Cloudflare (Wiley `pdfdirect`, BMJ, JOMS, lww) return 403/402 to any non-browser client; three PMC records (PMIDs 18254, 1982928, 6130812 — pre-1995 BJSM rugby papers) are scanned page-images with no OCR text; two Swiss Dental Journal download URLs now 404. These remain `needs_additional_review` (advisor library access or a browser session needed).
+**Retrievability (why most of the 91 stay pending):** publisher PDFs behind Cloudflare (Wiley `pdfdirect`, BMJ, JOMS, lww) return 403/402 to any non-browser client; three PMC records (PMIDs 18254, 1982928, 6130812, pre-1995 BJSM rugby papers) are scanned page-images with no OCR text; two Swiss Dental Journal download URLs now 404. These remain `needs_additional_review` (advisor library access or a browser session needed).
 
 **Decisions made (7 records resolved; needs_additional_review 91 → 84):**
 
@@ -371,15 +371,15 @@ Inclusion filter for the NEISS extraction should be **body part = 88 (Mouth)** a
 |---|---|---|---|---|
 | 24198704 | halabchi2007 | **included** → extracted | I-pri | Iran women's Shotokan karate championships; sport-related dental count (3 avulsion/subluxation) with youth competitors present |
 | 15562172 | exadaktylos2004 | fulltext_excluded | E-age | Swiss ED maxillofacial surveillance; not age-stratified, facial fractures w/o separate dental count |
-| 16118304 | — | fulltext_excluded | E-age | NZ rugby ecological MG study; national all-ages ACC dental claims not separable to 5-22 |
-| 19925982 | — | fulltext_excluded | E-offtop | LA adolescents 14-20 orofacial trauma but only 3% sport-related, no sport-specific data |
-| 2893649 | — | fulltext_excluded | E-age | International (elite adult) field hockey; no age data, no youth subset |
-| 36538371 | — | fulltext_excluded | E-age | Finnish trauma-centre ice-hockey facial fractures; adult-dominated (98.5% male), not age-stratified |
+| 16118304 |, | fulltext_excluded | E-age | NZ rugby ecological MG study; national all-ages ACC dental claims not separable to 5-22 |
+| 19925982 |, | fulltext_excluded | E-offtop | LA adolescents 14-20 orofacial trauma but only 3% sport-related, no sport-specific data |
+| 2893649 |, | fulltext_excluded | E-age | International (elite adult) field hockey; no age data, no youth subset |
+| 36538371 |, | fulltext_excluded | E-age | Finnish trauma-centre ice-hockey facial fractures; adult-dominated (98.5% male), not age-stratified |
 | 39060115 | tadmor2025 | fulltext_excluded | E-nodent | UK rugby league (brain) concussion symptom non-reporting; no dental/orofacial injury outcome |
 
 One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 2025) had its full text retrieved but stays `needs_additional_review` (confidence lowered to `low`): it reports all-ages dental injuries (52 cases, 19%) and MG use, but the subject age distribution sits in a PDF table that did not extract cleanly, so a 5-22 subset could not be confirmed or isolated.
 
-**Reasoning for the exclusions:** several of these report real dental/orofacial data but at the population level with no way to isolate the 5-22 band (§3.1) — consistent with the existing rule that a row needs an identifiable youth (or extractable adult-comparator alongside youth) population. Excluding all-ages-only sources where no youth slice is separable is the honest PRISMA outcome of full-text review, not a scope change.
+**Reasoning for the exclusions:** several of these report real dental/orofacial data but at the population level with no way to isolate the 5-22 band (§3.1), consistent with the existing rule that a row needs an identifiable youth (or extractable adult-comparator alongside youth) population. Excluding all-ages-only sources where no youth slice is separable is the honest PRISMA outcome of full-text review, not a scope change.
 
 **Audit trail:** decisions live in `scripts/screening_overrides.py` (with per-record full-text notes dated 2026-06-12); `outputs/needs_additional_review_fulltext_review_2026-06-12.md` records every fetch attempt and outcome; `docs/sources.md` and `outputs/screening_report_2026-05-21.md` regenerated via scripts 02→03→04.
 
@@ -387,7 +387,7 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 
 ---
 
-### 2026-06-12: halabchi2007 — combined "avulsion or subluxation" count and mixed-age pooled row
+### 2026-06-12: halabchi2007: combined "avulsion or subluxation" count and mixed-age pooled row
 
 **Trigger:** Extracting halabchi2007 (see entry above).
 
@@ -413,22 +413,22 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 **Question:** Were the 29 values actually on different scales, and if so how do we put them on one true per-1000-AE scale (or split into value+unit)?
 
 **Investigation (corrects an assumption in the trigger):**
-- The 9 rows whose *raw* rate is reported "per 100,000 athlete-exposures" (azadani2023 ×3, collins2016 ×5, yard2008 ×1) were **already correctly converted** at extraction time: `rate_per_1000_ae = rate_raw ÷ 100` (e.g. azadani2023 basketball `rate_raw = 2.4` per 100k AE → `rate_per_1000_ae = 0.024` per 1000 AE). The "per 100,000" phrasing in `rate_denominator_raw` describes `rate_raw`, **not** the per-1000-AE column. These needed **no** change — dividing them again would have corrupted correct data.
+- The 9 rows whose *raw* rate is reported "per 100,000 athlete-exposures" (azadani2023 ×3, collins2016 ×5, yard2008 ×1) were **already correctly converted** at extraction time: `rate_per_1000_ae = rate_raw ÷ 100` (e.g. azadani2023 basketball `rate_raw = 2.4` per 100k AE → `rate_per_1000_ae = 0.024` per 1000 AE). The "per 100,000" phrasing in `rate_denominator_raw` describes `rate_raw`, **not** the per-1000-AE column. These needed **no** change, dividing them again would have corrupted correct data.
 - `rate_denominator_raw` is, by definition (DATA_DICTIONARY.md), the original phrasing for `rate_raw`. It is *not* a label for `rate_per_1000_ae`. This was the source of the confusion.
 - The only genuinely mis-filed rows were **time-denominator** rates pasted verbatim into the AE column:
   - **radelet1996** (1 row): `0.57` per-1000-*player-hours* (raw `0.057` per 100 player-hours).
   - **rugby_europe_iss_2024** (8 rows): per-1000-*player-match-hours* (Sevens championship/trophy + head/face subsets).
-- **collins2004** (4 rows) reports "per 1000 **athlete-sessions**." An athlete-exposure is, by the standard NCAA-ISS / RIO definition, one athlete participating in one practice or competition — i.e. one session. The 2026-05-24 entry already defines AE as "an athlete-session count." So athlete-sessions **are** the AE unit; these 4 rows are valid per-1000-AE and stay. (An earlier framing of this audit listed athlete-sessions as non-AE; that is incorrect and is overridden here.)
+- **collins2004** (4 rows) reports "per 1000 **athlete-sessions**." An athlete-exposure is, by the standard NCAA-ISS / RIO definition, one athlete participating in one practice or competition, i.e. one session. The 2026-05-24 entry already defines AE as "an athlete-session count." So athlete-sessions **are** the AE unit; these 4 rows are valid per-1000-AE and stay. (An earlier framing of this audit listed athlete-sessions as non-AE; that is incorrect and is overridden here.)
 
 **Decision:**
-- **Approach (a), convert-and-null in place** — keep the `rate_per_1000_ae` column rather than splitting into `rate_value` + `rate_unit`. This honours the 2026-05-24 decision (which reserved this column for AE denominators and explicitly *deferred* a richer multi-column schema because it would force re-extraction). The split option remains available as a future v1.0 step if multi-unit structured comparison is ever needed.
+- **Approach (a), convert-and-null in place**: keep the `rate_per_1000_ae` column rather than splitting into `rate_value` + `rate_unit`. This honours the 2026-05-24 decision (which reserved this column for AE denominators and explicitly *deferred* a richer multi-column schema because it would force re-extraction). The split option remains available as a future v1.0 step if multi-unit structured comparison is ever needed.
 - **Invariant:** `rate_per_1000_ae` is populated **iff** the source denominator is an athlete-exposure (athlete-/athletic-exposure, athlete-session, or "AE"). Per-100,000-AE rates are stored already divided by 100. Time (hours / player-match-hours), season, population, and percent-of-injuries denominators leave `rate_per_1000_ae` empty; their value stays in `rate_raw` + `rate_denominator_raw`.
 - Blanked `rate_per_1000_ae` for the 9 time-denominator rows above (values preserved in `rate_raw`). Result: 20 rows now carry a per-1000-AE value, all on one scale.
 
 **Implementation:**
 - `data/extracted/radelet1996.csv` (1 row) and `data/extracted/rugby_europe_iss_2024.csv` (8 rows): `rate_per_1000_ae` blanked; all other fields unchanged.
 - `DATA_DICTIONARY.md`: `rate_per_1000_ae` and `rate_denominator_raw` definitions tightened to state the AE-only invariant and that `rate_denominator_raw` describes `rate_raw`.
-- `scripts/08_validate.py`: new **C11** (FAIL) — every populated `rate_per_1000_ae` row must have an AE-type `rate_denominator_raw`.
+- `scripts/08_validate.py`: new **C11** (FAIL): every populated `rate_per_1000_ae` row must have an AE-type `rate_denominator_raw`.
 - Re-ran `07_harmonize.py` → `08_validate.py` (0 FAILs), `21_cross_source_compare.py`, `33_rate_explorer_data.py`. As a consequence the cross-source view no longer pools rugby AE rates (collins_rugby2008) with rugby player-match-hours rates (rugby_europe).
 - Methods paper and Rate Explorer caveats updated (count 29 → 20; mixed-denominator warning replaced with the normal cross-source comparability caveats).
 
@@ -451,11 +451,11 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 **Decision:** correct authorship from the authoritative PubMed metadata, end-to-end (data, scripts, and generators), and add guards so it cannot recur.
 
 **Implementation:**
-- `scripts/34_audit_citations.py` — new reusable audit; FAILs if any source's first-author surname (ASCII-folded) disagrees with its PMID's abstract. Run it before releases.
-- `scripts/35_fix_attributions.py` — rewrote `source_id` + `citation` (+ doi) in every extracted CSV from `sources.md` (authoritative ids) + the abstract JSON (authoritative authors/title/journal), joining by title. Renamed the per-source files.
-- `scripts/36_fix_batch_script_attributions.py` — applied the same correction to the hardcoded id/citation literals **inside** the batch extraction scripts, so re-running them reproduces the corrected data rather than reverting it.
-- `scripts/26_bibliography.py` — replaced the hardcoded `PMID_TO_SOURCE_ID` with a parse of `docs/sources.md`, so BibTeX keys can no longer drift from the dataset.
-- `scripts/03_apply_screening_to_sources.py` — `lastname()` now ASCII-folds (Cetinbaş→cetinbas, O'Malley→omalley, Gábris→gabris, Zaleckienė→zaleckiene) so ids are valid filenames and BibTeX keys; `sources.md` regenerated.
+- `scripts/34_audit_citations.py`: new reusable audit; FAILs if any source's first-author surname (ASCII-folded) disagrees with its PMID's abstract. Run it before releases.
+- `scripts/35_fix_attributions.py`: rewrote `source_id` + `citation` (+ doi) in every extracted CSV from `sources.md` (authoritative ids) + the abstract JSON (authoritative authors/title/journal), joining by title. Renamed the per-source files.
+- `scripts/36_fix_batch_script_attributions.py`: applied the same correction to the hardcoded id/citation literals **inside** the batch extraction scripts, so re-running them reproduces the corrected data rather than reverting it.
+- `scripts/26_bibliography.py`: replaced the hardcoded `PMID_TO_SOURCE_ID` with a parse of `docs/sources.md`, so BibTeX keys can no longer drift from the dataset.
+- `scripts/03_apply_screening_to_sources.py`: `lastname()` now ASCII-folds (Cetinbaş→cetinbas, O'Malley→omalley, Gábris→gabris, Zaleckienė→zaleckiene) so ids are valid filenames and BibTeX keys; `sources.md` regenerated.
 - The 2026-06-13 C11 blanking (radelet/pasternack, rugby_europe) was encoded into `scripts/19` and `scripts/20` so it survives re-extraction.
 
 **Verification:** `scripts/34` now reports **0 author mismatches / 0 year mismatches** (92 of 93 confirmed against PubMed; `stuart2002` correct but its title isn't auto-matchable). Re-running all batch extraction scripts → `07_harmonize.py` reproduces `data/harmonized/master.csv` **byte-for-byte** (md5 identical to the pre-repair-verified corrected snapshot). Validator: 426 rows, **0 FAILs / 0 WARNs**.
@@ -466,22 +466,22 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 
 ---
 
-### 2026-06-24: Comparability tiering — `measure_type` + `comparability_group` columns
+### 2026-06-24: Comparability tiering: `measure_type` + `comparability_group` columns
 
-**Trigger:** A senior surveillance researcher (Christy Collins, President of Datalys / NCAA-ISP) warned that "these databases/studies are not actually comparable due to differences in definitions, methodology, inclusion/exclusion criteria." An audit confirmed the database mixed at least 7 incompatible outcome-measure bases in one value space (ED-visit estimates, per-AE rates, per-hours rates, per-population rates, per-season rates, prevalence proportions, raw counts) with **no machine-readable flag** distinguishing them — so a consumer of `master.csv`/SQLite could naively line up a NEISS ED estimate next to a per-100k-AE rate next to a survey prevalence.
+**Trigger:** A senior surveillance researcher (Christy Collins, President of Datalys / NCAA-ISP) warned that "these databases/studies are not actually comparable due to differences in definitions, methodology, inclusion/exclusion criteria." An audit confirmed the database mixed at least 7 incompatible outcome-measure bases in one value space (ED-visit estimates, per-AE rates, per-hours rates, per-population rates, per-season rates, prevalence proportions, raw counts) with **no machine-readable flag** distinguishing them, so a consumer of `master.csv`/SQLite could naively line up a NEISS ED estimate next to a per-100k-AE rate next to a survey prevalence.
 
 **Decision:** Add two **derived** columns to `master.csv` (computed at harmonization, not stored in the per-source extraction CSVs):
-- `measure_type` — controlled vocabulary of the row's outcome-measure / rate basis: `incidence_per_AE`, `incidence_per_exposure_hours`, `incidence_per_population`, `incidence_per_season`, `prevalence_proportion`, `ed_visit_estimate`, `raw_count`, `rate_ratio_or_effect_size`, plus a temporary `unclassified_pending_review`.
-- `comparability_group` — coarse key on which **direct** comparison is permitted: the short measure family, suffixed `__aggregate` for pooled / non-sport-specific rows. Two rows are directly comparable only when they share this value.
+- `measure_type`: controlled vocabulary of the row's outcome-measure / rate basis: `incidence_per_AE`, `incidence_per_exposure_hours`, `incidence_per_population`, `incidence_per_season`, `prevalence_proportion`, `ed_visit_estimate`, `raw_count`, `rate_ratio_or_effect_size`, plus a temporary `unclassified_pending_review`.
+- `comparability_group`: coarse key on which **direct** comparison is permitted: the short measure family, suffixed `__aggregate` for pooled / non-sport-specific rows. Two rows are directly comparable only when they share this value.
 
 **Implementation:**
-- `scripts/_derived_columns.py` (new) — deterministic classifier from `rate_denominator_raw` + `source_id`, a `MANUAL_MEASURE_TYPE` override table for the long tail, and the `comparability_group` derivation. Imported by `07` (populate) and `08` (validate).
-- `scripts/07_harmonize.py` — separates `EXTRACTED_COLUMNS` (36, source-of-truth) from `DERIVED_COLUMNS` (2); master is now 38 columns.
-- `scripts/08_validate.py` — new check **C12** (FAIL if `measure_type` empty or out-of-vocab, or `comparability_group` empty; WARN listing the `unclassified_pending_review` count).
-- `DATA_DICTIONARY.md` — documents both columns + the comparability rule.
+- `scripts/_derived_columns.py` (new): deterministic classifier from `rate_denominator_raw` + `source_id`, a `MANUAL_MEASURE_TYPE` override table for the long tail, and the `comparability_group` derivation. Imported by `07` (populate) and `08` (validate).
+- `scripts/07_harmonize.py`: separates `EXTRACTED_COLUMNS` (36, source-of-truth) from `DERIVED_COLUMNS` (2); master is now 38 columns.
+- `scripts/08_validate.py`: new check **C12** (FAIL if `measure_type` empty or out-of-vocab, or `comparability_group` empty; WARN listing the `unclassified_pending_review` count).
+- `DATA_DICTIONARY.md`: documents both columns + the comparability rule.
 - `scripts/27` (SQLite) and `scripts/33` + `docs/rate-explorer.html` regenerated/updated: the Rate Explorer now **segregates results into one table per `measure_type`** (ordered most-comparable-first) and never co-plots incompatible tiers.
 
-**Auto-classification result (426 rows):** ed_visit_estimate 255, prevalence_proportion 89, incidence_per_AE 22, incidence_per_exposure_hours 17, incidence_per_season 11, raw_count 6, rate_ratio_or_effect_size 4, incidence_per_population 2, **unclassified_pending_review 20** (all empty-denominator rows — listed in the 2026-06-24 session report for manual classification; to be pinned via `MANUAL_MEASURE_TYPE`).
+**Auto-classification result (426 rows):** ed_visit_estimate 255, prevalence_proportion 89, incidence_per_AE 22, incidence_per_exposure_hours 17, incidence_per_season 11, raw_count 6, rate_ratio_or_effect_size 4, incidence_per_population 2, **unclassified_pending_review 20** (all empty-denominator rows, listed in the 2026-06-24 session report for manual classification; to be pinned via `MANUAL_MEASURE_TYPE`).
 
 **Limitation (phase 2):** `prevalence_proportion` currently lumps population-prevalence (% of athletes injured) with within-injury proportions (% of injuries that were dental); separating those needs the planned `case_definition` flag. Validator: 426 rows, 0 FAILs, 1 WARN (the 20 pending rows).
 
@@ -491,7 +491,7 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 
 ### 2026-06-24: Data provenance flag + redistribution-rights documentation
 
-**Trigger:** Christy Collins (Datalys / NCAA-ISP) cautioned: "make sure each of the datasets [is] able to be used in this manner. For example, the NCAA-ISP data are owned by the NCAA, and they have restrictions on who can use the data and for what purposes." A provenance audit confirmed the database holds **no** raw NCAA-ISP / RIO / ACC microdata — every NCAA/RIO/ACC-derived number comes from a peer-reviewed publication reporting its own results.
+**Trigger:** Christy Collins (Datalys / NCAA-ISP) cautioned: "make sure each of the datasets [is] able to be used in this manner. For example, the NCAA-ISP data are owned by the NCAA, and they have restrictions on who can use the data and for what purposes." A provenance audit confirmed the database holds **no** raw NCAA-ISP / RIO / ACC microdata, every NCAA/RIO/ACC-derived number comes from a peer-reviewed publication reporting its own results.
 
 **Decision:** Make provenance explicit and document redistribution rights.
 - Added a derived per-source column **`data_provenance`** ∈ {`public_domain_raw`, `published_summary`, `governing_body_public`} (computed in `scripts/_derived_columns.py`; master now 39 columns). Result: 12 NEISS sources → `public_domain_raw`; Rugby Europe → `governing_body_public`; 93 peer-reviewed papers → `published_summary`.
@@ -508,7 +508,7 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 
 **Trigger:** Same reviewer critique (comparability). Beyond the machine-readable `measure_type` tiering (2026-06-24 entry above), readers arriving at the repo/site/paper need a plain-language warning.
 
-**Decision:** Add a "Comparability & limitations" section to the three public-facing surfaces — `README.md`, the live landing page (`docs/index.md`), and `outputs/methods_paper_draft.md` — stating that denominators differ across sources, that aggregate rows exist, that NEISS figures are ED-treated only, that all rows are `quality_flag = partial_data`, and that comparisons must be made within a `comparability_group` / `measure_type` tier. Documentation only; no data change.
+**Decision:** Add a "Comparability & limitations" section to the three public-facing surfaces, `README.md`, the live landing page (`docs/index.md`), and `outputs/methods_paper_draft.md`: stating that denominators differ across sources, that aggregate rows exist, that NEISS figures are ED-treated only, that all rows are `quality_flag = partial_data`, and that comparisons must be made within a `comparability_group` / `measure_type` tier. Documentation only; no data change.
 
 **Reviewer:** Pending advisor review.
 
@@ -519,14 +519,14 @@ One record (40662680, Swiss Muay Thai/K-1/kickboxing survey, Robbiani & Filippi 
 **Trigger:** The 2026-06-24 comparability tiering left 20 empty-denominator rows as `unclassified_pending_review` for manual classification by the project lead.
 
 **Decision (project-lead classifications):**
-- **`ed_visit_estimate`** (8 rows) — NEISS / pediatric-ED craniofacial counts & weighted estimates: `kaplan2022`, `nahas2021`, `pierrot2021`, `slavin2021`, `stewart2009` (×3), `van2021`.
-- **`raw_count`** (6 rows) — raw injury / insurance-claim counts: `chan2011`, `pandey2025`, `quarrie2020`, `welch2010` (×2), `danis2000`.
-- **`prevalence_proportion`** (2 rows) — population prevalence / awareness surveys: `pattussi2006`, `caglar2005`.
-- **`mouthguard_use_proportion`** (4 rows) — see new measure type below: `kroon2016`, `shore2021`, `shore2023`, `stanbouly2021`.
+- **`ed_visit_estimate`** (8 rows): NEISS / pediatric-ED craniofacial counts & weighted estimates: `kaplan2022`, `nahas2021`, `pierrot2021`, `slavin2021`, `stewart2009` (×3), `van2021`.
+- **`raw_count`** (6 rows): raw injury / insurance-claim counts: `chan2011`, `pandey2025`, `quarrie2020`, `welch2010` (×2), `danis2000`.
+- **`prevalence_proportion`** (2 rows): population prevalence / awareness surveys: `pattussi2006`, `caglar2005`.
+- **`mouthguard_use_proportion`** (4 rows): see new measure type below: `kroon2016`, `shore2021`, `shore2023`, `stanbouly2021`.
 
 These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed by `(source_id, "")` (all are empty-denominator rows).
 
-**New measure type — `mouthguard_use_proportion`:** added as a 9th controlled value. Rationale: four rows measure protective-equipment (mouthguard) **use** as a proportion (e.g. "99.2% wore a mouthguard") and have **no injury outcome** — none of the eight injury-measure types fit, and forcing them into `prevalence_proportion` would conflate equipment-use prevalence with injury prevalence. The new value is explicitly **not comparable to any injury measure**. Added to `DATA_DICTIONARY.md`, the `MEASURE_TYPES` vocab (so validator C12 accepts it), and the Rate Explorer's tier metadata.
+**New measure type, `mouthguard_use_proportion`:** added as a 9th controlled value. Rationale: four rows measure protective-equipment (mouthguard) **use** as a proportion (e.g. "99.2% wore a mouthguard") and have **no injury outcome**: none of the eight injury-measure types fit, and forcing them into `prevalence_proportion` would conflate equipment-use prevalence with injury prevalence. The new value is explicitly **not comparable to any injury measure**. Added to `DATA_DICTIONARY.md`, the `MEASURE_TYPES` vocab (so validator C12 accepts it), and the Rate Explorer's tier metadata.
 
 **Result:** all 426 rows now carry a `measure_type`; **0 remain `unclassified_pending_review`**. Validator: 426 rows, **0 FAILs, 0 WARNs**. Final distribution: ed_visit_estimate 263, prevalence_proportion 91, incidence_per_AE 22, incidence_per_exposure_hours 17, raw_count 12, incidence_per_season 11, mouthguard_use_proportion 4, rate_ratio_or_effect_size 4, incidence_per_population 2.
 
@@ -536,7 +536,7 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ### 2026-06-24: Move internal working docs out of the public repo (`internal/`, gitignored)
 
-**Trigger:** Pre-meeting repo review. The public repository mixed the scientific artifact (data, protocol, dictionary, decisions, methods, validation) with *internal working docs* — outreach strategy, AI-session logs, and screening scratch files — which add noise and reveal project-management detail not relevant to a research consumer.
+**Trigger:** Pre-meeting repo review. The public repository mixed the scientific artifact (data, protocol, dictionary, decisions, methods, validation) with *internal working docs*, outreach strategy, AI-session logs, and screening scratch files, which add noise and reveal project-management detail not relevant to a research consumer.
 
 **Decision:** Moved the following into a new **gitignored `internal/` folder** (kept locally, removed from the public/deployed repo): `advisor_outreach_brief.md`; the seven `session_2026-*_summary.md` logs; `zenodo_setup_walkthrough.md`; the four `needs_additional_review_*` screening-scratch files (OA-URL and PMC lookup CSVs, the status doc, and the 2026-06-12 full-text review log); and the `_pdf_upload_server.py` dev helper.
 
@@ -545,7 +545,7 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 - `scripts/03` template and `outputs/methods_paper_draft.md` no longer link the moved full-text-review file; they point to `docs/decisions.md` (which stays public). `sources.md` regenerated.
 - Append-only historical mentions in this log and `CHANGELOG.md` (dated 2026-06-12 entries) are left intact per the append-only convention; the artifacts they name now live in `internal/`.
 
-**Note:** the screening audit trail itself remains fully public — every record's status and reason is in `docs/sources.md` and `outputs/screening_report_2026-05-21.md`; only the supplementary scratch/lookup files moved. Nothing affecting reproducibility of `master.csv` was moved.
+**Note:** the screening audit trail itself remains fully public, every record's status and reason is in `docs/sources.md` and `outputs/screening_report_2026-05-21.md`; only the supplementary scratch/lookup files moved. Nothing affecting reproducibility of `master.csv` was moved.
 
 **Reviewer:** Pending advisor review.
 
@@ -553,19 +553,19 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ### 2026-06-24: Remove 3 pre-2000 publications to resolve the §3.1 / §4.2 inconsistency
 
-**Trigger:** A date inconsistency surfaced in pre-meeting review: the database was described as spanning "1996–2026," but PROTOCOL §3.1 requires publications **on or after 1 January 2000**. Investigation showed "1996" was a **publication** year (not a data year), contributed by sources actually *published* before 2000 — a direct breach of §3.1.
+**Trigger:** A date inconsistency surfaced in pre-meeting review: the database was described as spanning "1996–2026," but PROTOCOL §3.1 requires publications **on or after 1 January 2000**. Investigation showed "1996" was a **publication** year (not a data year), contributed by sources actually *published* before 2000, a direct breach of §3.1.
 
 **Root cause:** §3.1 sets a ≥2000 publication window, but §4.2 also runs **targeted journal searches** (Dental Traumatology, Pediatric Dentistry, AJSM, BJSM) that were **not date-capped**. Three topically-eligible but pre-2000 papers entered through that gap:
-- `gomez1996` (PMID 8883693, AJSM 1996) — Texas girls' HS basketball injury incidence.
-- `pasternack1996` (PMID 8784371, Pediatrics 1996) — Little League baseball survey.
-- `emshoff1997` (PMID 9191640, JOMS 1997) — sport-related mandibular fractures (Innsbruck).
+- `gomez1996` (PMID 8883693, AJSM 1996): Texas girls' HS basketball injury incidence.
+- `pasternack1996` (PMID 8784371, Pediatrics 1996): Little League baseball survey.
+- `emshoff1997` (PMID 9191640, JOMS 1997): sport-related mandibular fractures (Innsbruck).
 
-**Decision: Option A — remove the 3 sources** so the dataset matches the stated §3.1 rule (cleaner than relaxing the protocol before an external review).
-- Reclassified the 3 PMIDs in `scripts/screening_overrides.py` from `screened_included` to `screened_excluded` with a **new reason code `E-date`** ("published before 2000 — outside the §3.1 publication window"), added to the reason-code legend in `scripts/03`.
+**Decision: Option A, remove the 3 sources** so the dataset matches the stated §3.1 rule (cleaner than relaxing the protocol before an external review).
+- Reclassified the 3 PMIDs in `scripts/screening_overrides.py` from `screened_included` to `screened_excluded` with a **new reason code `E-date`** ("published before 2000, outside the §3.1 publication window"), added to the reason-code legend in `scripts/03`.
 - Deleted their `data/extracted/*.csv` files and removed their blocks from `scripts/16` and `scripts/19` so re-running the pipeline does not resurrect them (verified: scripts run clean and recreate nothing).
 - Regenerated `master.csv`, `sources.md`, screening report, bibliography, SQLite, NEISS trends, cross-source comparison, country breakdown, sport factsheets, figures, and the Rate Explorer JSON.
 
-**New totals:** 426 → **421 rows**; 106 → **103 sources** (90 peer-reviewed papers + 12 NEISS + 1 governing-body); 29 → **28 countries** (Austria dropped — `emshoff1997` was its only source); publication range now **2000–2026**, consistent with §3.1. Validator: **0 FAILs, 0 WARNs**; citation audit: 0 author/year mismatches.
+**New totals:** 426 → **421 rows**; 106 → **103 sources** (90 peer-reviewed papers + 12 NEISS + 1 governing-body); 29 → **28 countries** (Austria dropped, `emshoff1997` was its only source); publication range now **2000–2026**, consistent with §3.1. Validator: **0 FAILs, 0 WARNs**; citation audit: 0 author/year mismatches.
 
 **Date-range wording fixed** (was an ambiguous "1996–2026" that could be misread as a data span): README, landing page, factsheet, and the methods-paper abstract now read **"publications 2000–2026"**, explicitly labeled as publication years.
 
@@ -573,13 +573,13 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ---
 
-### 2026-06-24: Rate Explorer mouthguard panel — show mouthguard data, not injury rates
+### 2026-06-24: Rate Explorer mouthguard panel: show mouthguard data, not injury rates
 
-**Trigger:** The Rate Explorer's "Mouthguard evidence" panel was displaying the same numbers as the per-1000-AE injury-rate table below it (e.g., for basketball: azadani2023 2.4, collins2016 2.6). Diagnosis (read-only): a **display bug**, not a data error — `master.csv` was correct.
+**Trigger:** The Rate Explorer's "Mouthguard evidence" panel was displaying the same numbers as the per-1000-AE injury-rate table below it (e.g., for basketball: azadani2023 2.4, collins2016 2.6). Diagnosis (read-only): a **display bug**, not a data error, `master.csv` was correct.
 
 **Root cause:** the panel selected rows by `mouthguard_injury_relation === 'analyzed'` and rendered each row's *injury rate* (`reportedRate`). Those analyzed rows are the same `incidence_per_AE` rows shown in the table below, so the injury rates appeared twice. The panel showed no mouthguard-specific value at all.
 
-**Fix (presentation only; no data change):** the panel now selects rows that actually carry mouthguard data — a non-empty `mouthguard_use_rate`, or a mouthguard-vs-no-mouthguard contrast (`subgroup_label` marking mouthguard users/non-users) — and renders the **mouthguard metric**: use % and, for contrasts, the user-vs-nonuser injury rates. Overall surveillance rows merely flagged `analyzed` (azadani2023, collins2016) are excluded from the panel (still flagged in the tables' Mouthguard column). For basketball the panel now shows the genuine evidence: labella2002's 0.67 (non-users) vs 0.12 (users) per 1000 AE, plus mouthguard-use prevalence (comert2026 7.2%, levin2003 3%).
+**Fix (presentation only; no data change):** the panel now selects rows that actually carry mouthguard data, a non-empty `mouthguard_use_rate`, or a mouthguard-vs-no-mouthguard contrast (`subgroup_label` marking mouthguard users/non-users), and renders the **mouthguard metric**: use % and, for contrasts, the user-vs-nonuser injury rates. Overall surveillance rows merely flagged `analyzed` (azadani2023, collins2016) are excluded from the panel (still flagged in the tables' Mouthguard column). For basketball the panel now shows the genuine evidence: labella2002's 0.67 (non-users) vs 0.12 (users) per 1000 AE, plus mouthguard-use prevalence (comert2026 7.2%, levin2003 3%).
 
 **Affected file:** `docs/rate-explorer.html` only. Verified in-browser (no console errors; azadani/collins no longer duplicated).
 
@@ -587,9 +587,9 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 ---
 
-### 2026-06-30: Rate Explorer — remove the standalone mouthguard panel entirely
+### 2026-06-30: Rate Explorer: remove the standalone mouthguard panel entirely
 
-**Follow-up to the 2026-06-24 entry.** After redesigning the mouthguard panel to show mouthguard-use rates and effect contrasts (rather than duplicated injury rates), it still read as confusing on the live page — it sat above the tables and partly echoed rows already listed below it. Decision: **remove the standalone "Mouthguard evidence for this sport" panel entirely.** No data is lost — every row's mouthguard fields (`mouthguard_injury_relation`, `mouthguard_use_rate`, `mouthguard_required`) are already shown inline in the **Mouthguard** column of the per-measure_type tables, and mouthguard-use-proportion rows have their own measure_type group. Removed the `#mg` heading/container and its JS render block from `docs/rate-explorer.html`. Verified in-browser (panel gone, tables and Mouthguard column intact, no console errors).
+**Follow-up to the 2026-06-24 entry.** After redesigning the mouthguard panel to show mouthguard-use rates and effect contrasts (rather than duplicated injury rates), it still read as confusing on the live page, it sat above the tables and partly echoed rows already listed below it. Decision: **remove the standalone "Mouthguard evidence for this sport" panel entirely.** No data is lost, every row's mouthguard fields (`mouthguard_injury_relation`, `mouthguard_use_rate`, `mouthguard_required`) are already shown inline in the **Mouthguard** column of the per-measure_type tables, and mouthguard-use-proportion rows have their own measure_type group. Removed the `#mg` heading/container and its JS render block from `docs/rate-explorer.html`. Verified in-browser (panel gone, tables and Mouthguard column intact, no console errors).
 
 **Reviewer:** Pending advisor review.
 
@@ -601,47 +601,47 @@ These are pinned in `scripts/_derived_columns.py` `MANUAL_MEASURE_TYPE`, keyed b
 
 **Fixed (documentation only, no data change):**
 - `scripts/29_per_country_analysis.py` counted the `(no country tag)` bucket as a country, so `country_breakdown.md` reported "29 unique country tags." Now reports **28 countries** and separately notes the 17 untagged rows. Regenerated.
-- `DATA_DICTIONARY.md` said "these **two** columns are derived" — there are **three** (`measure_type`, `comparability_group`, `data_provenance`). Corrected, and added the explicit "39 columns = 36 source + 3 derived" statement.
+- `DATA_DICTIONARY.md` said "these **two** columns are derived": there are **three** (`measure_type`, `comparability_group`, `data_provenance`). Corrected, and added the explicit "39 columns = 36 source + 3 derived" statement.
 - `outputs/methods_paper_draft.md` Technical Validation snapshot still read "426 rows / 106 sources" (contradicting its own 421/103 abstract) and "11 checks (C1–C11)". Updated to **421 / 103** and **13 checks (C1–C13)**, and added C12/C13 to the enumerated check list. Fixed the same "11 checks" claim in `docs/index.md`, `outputs/factsheet.md`, `CONTRIBUTING.md`, and the NEISS "250 aggregated rows" → **253**.
 - `CHANGELOG.md` had no entries after 2026-06-16; added the 2026-06-24 (comparability/provenance columns, pre-2000 removal → 421/103) and 2026-06-30 (Rate Explorer panel) entries.
 
-**Data-quality gap logged (NOT auto-filled):** 4 single-country studies carry an empty `country` tag — `galic2018` (Croatia?), `isokungas2012` (Finland?), `pandey2025` (India?), `shirani2010` (Iran?). The country was not captured at extraction and is not recoverable from the extraction notes, so it is **left blank pending full-text verification** rather than inferred from author affiliations (per the project's verify-first / no-invented-data rule). The other 13 untagged rows (`rugby_europe_iss_2024`, `faude2017`) are legitimately multi-country and correctly left blank. To be resolved when the source PDFs are next reviewed.
+**Data-quality gap logged (NOT auto-filled):** 4 single-country studies carry an empty `country` tag, `galic2018` (Croatia?), `isokungas2012` (Finland?), `pandey2025` (India?), `shirani2010` (Iran?). The country was not captured at extraction and is not recoverable from the extraction notes, so it is **left blank pending full-text verification** rather than inferred from author affiliations (per the project's verify-first / no-invented-data rule). The other 13 untagged rows (`rugby_europe_iss_2024`, `faude2017`) are legitimately multi-country and correctly left blank. To be resolved when the source PDFs are next reviewed.
 
 **Reviewer:** Pending advisor review.
 
 ---
 
-### 2026-07-03: Re-screen of the 84 needs_additional_review records — 11 excluded, 73 prioritized for full text
+### 2026-07-03: Re-screen of the 84 needs_additional_review records: 11 excluded, 73 prioritized for full text
 
 **Trigger:** With advisor library access now available, the `needs_additional_review` pile (84 records) was systematically re-screened from the cached PubMed abstracts to (a) clear records that can be decided from the abstract and (b) prioritize the rest for full-text retrieval.
 
-**Method:** Read the full cached abstract + MeSH + publication types for all 84. Applied PROTOCOL §3.1–3.3 (youth ≤22, sport/athletic-related, dental/orofacial injury, ≥2000, primary data). Full-text fetch was attempted for the 18 records with a PMC/OA link but was almost entirely blocked (Wiley 402, LWW/Elsevier paywalls, Swiss-journal URLs 404, older PMC papers are scanned page-images) — confirming full text is the bottleneck, now addressable via the advisor.
+**Method:** Read the full cached abstract + MeSH + publication types for all 84. Applied PROTOCOL §3.1–3.3 (youth ≤22, sport/athletic-related, dental/orofacial injury, ≥2000, primary data). Full-text fetch was attempted for the 18 records with a PMC/OA link but was almost entirely blocked (Wiley 402, LWW/Elsevier paywalls, Swiss-journal URLs 404, older PMC papers are scanned page-images), confirming full text is the bottleneck, now addressable via the advisor.
 
 **Excluded (11 → decisions moved to `screened_excluded` in `scripts/screening_overrides.py`, each with a quoted rationale):**
-- **6 pre-2000** (`E-date`): 18254 (1977), 6130812 (1982), 2907269 (1988), 2638006 (1989), 1982928 (1990), 9566015 (1998) — fail the §3.1 ≥2000 rule, consistent with the 2026-06-24 Option-A removal.
-- **5 out-of-scope**: 17227375 (`E-nodent` — outcome is concussion neurocognition, no dental datum), 41087084 (`E-nodent` — community-rugby concussion *procedure* paper), 23374909 (`E-noprim` — Part I "materials and method", no results), 26545273 (`E-noprim` — HS mouthguard-mandate policy article, no primary data), 31884077 (`E-age` — US major men's *professional* leagues, adults only).
+- **6 pre-2000** (`E-date`): 18254 (1977), 6130812 (1982), 2907269 (1988), 2638006 (1989), 1982928 (1990), 9566015 (1998), fail the §3.1 ≥2000 rule, consistent with the 2026-06-24 Option-A removal.
+- **5 out-of-scope**: 17227375 (`E-nodent`: outcome is concussion neurocognition, no dental datum), 41087084 (`E-nodent`: community-rugby concussion *procedure* paper), 23374909 (`E-noprim`: Part I "materials and method", no results), 26545273 (`E-noprim`: HS mouthguard-mandate policy article, no primary data), 31884077 (`E-age`: US major men's *professional* leagues, adults only).
 
 **Result:** `needs_additional_review` 84 → **73**; `screened_excluded` 255 → 266. Re-ran `02→03→04`; `master.csv` unchanged (these were never extracted), validator still 421 / 0 FAILs / 0 WARNs.
 
-**Not extracted from abstracts (deliberate):** several held records (e.g. mixed-age adult-club surveys with mean age ~23, or pooled/relative numbers) could have yielded a rough row from the abstract alone, but extracting them would dilute the database's youth (≤22) specificity — its stated differentiator (PROTOCOL §1). Decision: hold these for clean full-text extraction rather than admit mixed-age survey aggregates. Flag for advisor if a broader young-adult scope is ever desired.
+**Not extracted from abstracts (deliberate):** several held records (e.g. mixed-age adult-club surveys with mean age ~23, or pooled/relative numbers) could have yielded a rough row from the abstract alone, but extracting them would dilute the database's youth (≤22) specificity, its stated differentiator (PROTOCOL §1). Decision: hold these for clean full-text extraction rather than admit mixed-age survey aggregates. Flag for advisor if a broader young-adult scope is ever desired.
 
-**Deliverable:** `internal/fulltext_request_list.md` — the 73 remaining records tiered by extraction yield (Tier 1 = 10 with an explicit youth subset / age-banded sport-dental data; Tier 2 = 35 sport-specific surveys needing age confirmation; Tier 3 = 28 general dental-trauma / school-prevalence studies), with free PMC/OA links where they exist.
+**Deliverable:** `internal/fulltext_request_list.md`: the 73 remaining records tiered by extraction yield (Tier 1 = 10 with an explicit youth subset / age-banded sport-dental data; Tier 2 = 35 sport-specific surveys needing age confirmation; Tier 3 = 28 general dental-trauma / school-prevalence studies), with free PMC/OA links where they exist.
 
-**Reviewer:** Pending advisor review — the exclusion set and the "don't dilute with mixed-age data" call are the kind of scope judgment worth confirming.
+**Reviewer:** Pending advisor review, the exclusion set and the "don't dilute with mixed-age data" call are the kind of scope judgment worth confirming.
 
 ---
 
-### 2026-07-03: Internal-consistency (re-computation) audit — `scripts/38`
+### 2026-07-03: Internal-consistency (re-computation) audit: `scripts/38`
 
 **Trigger:** All rows are `quality_flag=partial_data`; full-text source verification is gated on access. As an automated first pass that needs no source, added a re-computation audit that checks whether each stored number *follows from the row's own inputs*.
 
-**What it does (`scripts/38_recompute_audit.py`, read-only):** recomputes (1) `injury_count` vs `rate_raw% × base` (base parsed from `rate_denominator_raw`), (2) `rate_per_1000_ae` vs the `rate_raw` unit-conversion, (3) `rate_per_1000_ae` vs `injury_count / athlete_exposures × 1000`, and (4) a mislabel heuristic (the `injury_count` value appearing as "<n> of <population>" in the denominator → likely a denominator, not a count). Loose tolerances (12% for %×base) so rounding doesn't flag. Writes `outputs/recompute_audit.md`; added to the `run_all.py` audit stage. Internal-consistency only — it does **not** confirm a figure against the source (that still needs full text; see `scripts/37` for abstract corroboration).
+**What it does (`scripts/38_recompute_audit.py`, read-only):** recomputes (1) `injury_count` vs `rate_raw% × base` (base parsed from `rate_denominator_raw`), (2) `rate_per_1000_ae` vs the `rate_raw` unit-conversion, (3) `rate_per_1000_ae` vs `injury_count / athlete_exposures × 1000`, and (4) a mislabel heuristic (the `injury_count` value appearing as "<n> of <population>" in the denominator → likely a denominator, not a count). Loose tolerances (12% for %×base) so rounding doesn't flag. Writes `outputs/recompute_audit.md`; added to the `run_all.py` audit stage. Internal-consistency only, it does **not** confirm a figure against the source (that still needs full text; see `scripts/37` for abstract corroboration).
 
 **Result:** 63 rows recomputable, 61 checks consistent, **5 flagged for source adjudication (not auto-fixed):**
-- `beachy2004 [all_sports]` — `injury_count=56` is stated ("19,492 injuries → 56 dental"), but `rate_raw=0.2` is inconsistent: 56/19,492 = **0.29%**, so `rate_raw` should be ~0.3, not 0.2. Likely a rounding/transcription error.
-- `huang2009 [sport_leisure_subset]` — `injury_count=387` is a two-step derivation (30.8% of causes × 19.9% TDI × 6,312), but `rate_raw=19.9` is the *overall* TDI prevalence, not the sport-leisure rate — count and rate on different bases in one row.
-- `kerr2008 [male_game]` and `[female_game]` — `injury_count` (447 / 400) is total (game + practice), but the row's rate is game-only over game-only AE (447/13,943×1000 = 32 ≠ stored 22.5). Count and rate denominators don't correspond.
-- `levin2003 [basketball]` — `injury_count=96` appears to be the number of *basketball players* ("~96 of total sample played basketball"), not injuries; actual injuries ≈ 7.2% × 96 ≈ 7. Same pattern likely affects `levin2003 [football_association]` (`injury_count=94`).
+- `beachy2004 [all_sports]`: `injury_count=56` is stated ("19,492 injuries → 56 dental"), but `rate_raw=0.2` is inconsistent: 56/19,492 = **0.29%**, so `rate_raw` should be ~0.3, not 0.2. Likely a rounding/transcription error.
+- `huang2009 [sport_leisure_subset]`: `injury_count=387` is a two-step derivation (30.8% of causes × 19.9% TDI × 6,312), but `rate_raw=19.9` is the *overall* TDI prevalence, not the sport-leisure rate, count and rate on different bases in one row.
+- `kerr2008 [male_game]` and `[female_game]`: `injury_count` (447 / 400) is total (game + practice), but the row's rate is game-only over game-only AE (447/13,943×1000 = 32 ≠ stored 22.5). Count and rate denominators don't correspond.
+- `levin2003 [basketball]`: `injury_count=96` appears to be the number of *basketball players* ("~96 of total sample played basketball"), not injuries; actual injuries ≈ 7.2% × 96 ≈ 7. Same pattern likely affects `levin2003 [football_association]` (`injury_count=94`).
 
 These are logged for one-at-a-time verification against the sources; no data changed.
 
@@ -653,25 +653,25 @@ These are logged for one-at-a-time verification against the sources; no data cha
 
 **Follow-up to the same-day recompute audit.**
 
-**(a) Fixed `beachy2004 [all_sports]`** — `rate_raw` corrected **0.2 → 0.29**. This cell is a derived percentage ("% of 19,492 total injuries that were dental") and must equal 56 / 19,492 = 0.29%; the stored 0.2 was internally inconsistent (the recompute audit flagged it). 56 breaks down as 23 tooth + 20 jaw + 13 soft-tissue in the source note. `master.csv` re-harmonized; validator 0 FAILs / 0 WARNs; the row now clears the audit. Full-text spot-check of the underlying 56 and 19,492 still advised (they are full-text figures, not in the abstract).
+**(a) Fixed `beachy2004 [all_sports]`**: `rate_raw` corrected **0.2 → 0.29**. This cell is a derived percentage ("% of 19,492 total injuries that were dental") and must equal 56 / 19,492 = 0.29%; the stored 0.2 was internally inconsistent (the recompute audit flagged it). 56 breaks down as 23 tooth + 20 jaw + 13 soft-tissue in the source note. `master.csv` re-harmonized; validator 0 FAILs / 0 WARNs; the row now clears the audit. Full-text spot-check of the underlying 56 and 19,492 still advised (they are full-text figures, not in the abstract).
 
 **(b) Added `scripts/39_data_quality.py` → `outputs/data_quality.md`** (read-only, in the `run_all` audit stage): one consolidated report combining the verification-risk tiers, the two numeric audits (`scripts/37` external, `scripts/38` internal), and a new rate-scope guard.
 
-**(c) Rate-scope guard finding (needs advisor decision):** ~15 rows store a rate that is **broader than dental** — all-cause or head/neck injury incidence from studies whose injury definition merely *included* dental — yet they sit in a dental incidence comparability group. Examples: `kerr2008` (collegiate rugby all-injury 22.5 / 22.7 per 1000 game-AE), `collins2008` (all baseball injuries 1.26 per 1000 AE), `rugby_europe_iss_2024` all-cause match-injury rows, `quarrie2020` any-injury-claim age bands (already caveated), `faude2017` (head/neck), `huffman2008` (rare-injury composite). Head/face-specific orofacial rows are correctly **not** flagged (in scope). These all-cause rows are a comparability hazard (e.g. rugby 22.5 sitting next to basketball *dental* 0.026 in the same per-AE tier). **Recommendation:** the advisor decides whether to reclassify (own measure_type / comparability group), caveat, or exclude them. Not changed pending that call.
+**(c) Rate-scope guard finding (needs advisor decision):** ~15 rows store a rate that is **broader than dental**: all-cause or head/neck injury incidence from studies whose injury definition merely *included* dental, yet they sit in a dental incidence comparability group. Examples: `kerr2008` (collegiate rugby all-injury 22.5 / 22.7 per 1000 game-AE), `collins2008` (all baseball injuries 1.26 per 1000 AE), `rugby_europe_iss_2024` all-cause match-injury rows, `quarrie2020` any-injury-claim age bands (already caveated), `faude2017` (head/neck), `huffman2008` (rare-injury composite). Head/face-specific orofacial rows are correctly **not** flagged (in scope). These all-cause rows are a comparability hazard (e.g. rugby 22.5 sitting next to basketball *dental* 0.026 in the same per-AE tier). **Recommendation:** the advisor decides whether to reclassify (own measure_type / comparability group), caveat, or exclude them. Not changed pending that call.
 
-**Reviewer:** Pending advisor review — (c) is a scope/comparability judgment.
+**Reviewer:** Pending advisor review, (c) is a scope/comparability judgment.
 
 ---
 
 ### 2026-07-03: `dental_specific` derived column + Rate Explorer scope warning + datapackage.json
 
-**Follow-up to the same-day rate-scope finding** — promoting it from a report-only flag to an enforced, machine-readable safeguard.
+**Follow-up to the same-day rate-scope finding**: promoting it from a report-only flag to an enforced, machine-readable safeguard.
 
 **(a) New derived column `dental_specific`** (`TRUE`/`FALSE`), computed in `scripts/_derived_columns.py` from the primary descriptor of `injury_type_raw`. `FALSE` = the row's outcome is a broader all-cause / head-neck / composite injury measure (not a dental rate); head/face-specific orofacial rows are `TRUE`. **19 of 421 rows are FALSE** (e.g. `kerr2008`, `collins2008`, `rugby_europe` all-cause bands, `quarrie2020`, `faude2017`, `huffman2008`). Master is now **40 columns** (36 source + 4 derived). Validator gains **C14** (boolean check; the count is reported by `scripts/39`, not warned, so validation stays 0 FAILs / 0 WARNs). Documented in DATA_DICTIONARY.md.
 
-**(b) Rate Explorer now honors it** — any `dental_specific=FALSE` row renders a visible warning under its value ("⚠ not dental-specific — this is an all-injury / broader rate, not a dental rate"), so an all-injury rugby rate can no longer be mis-read next to a dental per-AE rate. Verified in-browser (10 warnings on the rugby view, no console errors).
+**(b) Rate Explorer now honors it**: any `dental_specific=FALSE` row renders a visible warning under its value ("⚠ not dental-specific, this is an all-injury / broader rate, not a dental rate"), so an all-injury rugby rate can no longer be mis-read next to a dental per-AE rate. Verified in-browser (10 warnings on the rugby view, no console errors).
 
-**(c) Added `datapackage.json`** (root) via `scripts/40_datapackage.py` — a Frictionless tabular data-package descriptor (field names + inferred types + data-dictionary descriptions + CC BY 4.0 licence + primary key), making the dataset machine-consumable by standard open-data tooling. Regenerated in the `run_all` pipeline.
+**(c) Added `datapackage.json`** (root) via `scripts/40_datapackage.py`: a Frictionless tabular data-package descriptor (field names + inferred types + data-dictionary descriptions + CC BY 4.0 licence + primary key), making the dataset machine-consumable by standard open-data tooling. Regenerated in the `run_all` pipeline.
 
 This is the enforcement of the 2026-07-03 rate-scope finding; the underlying question of whether to also *reclassify/exclude* those rows remains an advisor decision. No injury data values changed.
 
@@ -679,4 +679,4 @@ This is the enforcement of the 2026-07-03 rate-scope finding; the underlying que
 
 ---
 
-<!-- Add new decisions above this line, most recent first or chronological — pick one and stick with it. Chronological recommended for audit trail. -->
+<!-- Add new decisions above this line, most recent first or chronological, pick one and stick with it. Chronological recommended for audit trail. -->

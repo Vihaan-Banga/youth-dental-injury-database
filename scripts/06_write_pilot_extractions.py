@@ -4,14 +4,14 @@ data dictionary and surface harmonization decisions before the formal
 extraction phase.
 
 Pilots:
-  collins2016  PMID 26408377 — National HS Sports-Related Injury Surveillance
+  collins2016  PMID 26408377, National HS Sports-Related Injury Surveillance
                Study (RIO), 2008/09–2013/14, AE-denominator data, multiple sports
-  labella2002  PMID 11782645 — NCAA Division I men's college basketball MG
+  labella2002  PMID 11782645, NCAA Division I men's college basketball MG
                cohort comparison, 1999–2000 season, AE-denominator data
-  stewart2009  PMID 19614738 — NEISS retrospective 1990–2003 dental injuries
+  stewart2009  PMID 19614738, NEISS retrospective 1990–2003 dental injuries
                in children 0–17, population-denominator surveillance
 
-The extractions use the abstract-level data only — no full-text retrieval was
+The extractions use the abstract-level data only, no full-text retrieval was
 performed. Fields not visible in the abstract are left empty and a note is
 recorded in `extraction_notes` indicating the field requires full-text review.
 Every row carries `quality_flag = partial_data` until the full text is read.
@@ -60,7 +60,7 @@ EXTRACTION_DATE = "2026-05-22"
 
 
 # ----------------------------------------------------------------------------
-# collins2016 — RIO HS surveillance (PMID 26408377)
+# collins2016, RIO HS surveillance (PMID 26408377)
 # ----------------------------------------------------------------------------
 collins_citation = (
     "Collins, C. L., McKenzie, L. B., Ferketich, A. K., Andridge, R., & Xiang, H. (2016). "
@@ -108,12 +108,11 @@ collins_aggregate = dict(collins_common,
     extraction_notes=(
         "Aggregate row across all reported sports. Mouthguard use rate is "
         "computed from abstract: 72.5% of injured athletes were not wearing a MG, "
-        "so 27.5% were — note this is MG use AT TIME OF INJURY (not population "
+        "so 27.5% were, note this is MG use AT TIME OF INJURY (not population "
         "prevalence). 95.9% of worn MGs were self-fitted. Per-sport rates by "
         "competition vs practice not extracted at aggregate level (see other rows)."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 # Sport-specific rows visible in the abstract
 collins_field_hockey = dict(collins_common,
     sex="female",
@@ -133,8 +132,7 @@ collins_field_hockey = dict(collins_common,
         "(per 100k AE) was the headline metric; injury_count and "
         "athlete_exposures per-sport require full text."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 collins_basketball_m = dict(collins_common,
     sex="male",
     sport_raw="boys' basketball",
@@ -152,8 +150,7 @@ collins_basketball_m = dict(collins_common,
         "Second-highest sport-specific rate reported in abstract. Per-sport "
         "injury counts and AE denominators require full text."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 # Mechanism-stratified rows (competition vs practice) at the aggregate level
 collins_competition = dict(collins_common,
     sex="mixed",
@@ -173,8 +170,7 @@ collins_competition = dict(collins_common,
         "Rate during competition only. Abstract reports RR competition vs "
         "practice = 3.1 (95% CI 2.3–4.0)."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 collins_practice = dict(collins_common,
     sex="mixed",
     sport_raw="All sports (practice)",
@@ -190,8 +186,7 @@ collins_practice = dict(collins_common,
     rate_denominator_raw="per 100,000 athlete-exposures (practice only)",
     rate_per_1000_ae=0.006,
     extraction_notes="Rate during practice only.",
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 write_csv("collins2016", [
     collins_aggregate, collins_field_hockey, collins_basketball_m,
     collins_competition, collins_practice,
@@ -199,7 +194,7 @@ write_csv("collins2016", [
 
 
 # ----------------------------------------------------------------------------
-# labella2002 — NCAA Div I men's college basketball MG cohort (PMID 11782645)
+# labella2002, NCAA Div I men's college basketball MG cohort (PMID 11782645)
 # ----------------------------------------------------------------------------
 labella_citation = (
     "Labella, C. R., Smith, B. W., & Sigurdsson, A. (2002). "
@@ -243,14 +238,13 @@ labella_mg_users = dict(labella_common,
     rate_raw=0.12,
     rate_denominator_raw="per 1000 athlete-exposures (custom-fitted MG users)",
     rate_per_1000_ae=0.12,
-    mouthguard_use_rate=1.0,  # by construction — this subgroup
+    mouthguard_use_rate=1.0,  # by construction, this subgroup
     extraction_notes=(
         "Subgroup: athletes using custom-fitted mouthguards. AE = 8663 of 70,936 "
         "total (12.2% of AE). Injury count not directly in abstract; back-calc "
         "from rate × AE = ~1 injury. Confirm with full text."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 labella_mg_nonusers = dict(labella_common,
     subgroup_label="mouthguard_nonusers",
     sample_size=50,  # teams
@@ -266,13 +260,12 @@ labella_mg_nonusers = dict(labella_common,
         "back-calc from rate × AE ≈ 42 injuries. Confirm with full text. "
         "Abstract reports P<0.05 for MG vs non-MG dental injury rate difference."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 write_csv("labella2002", [labella_mg_users, labella_mg_nonusers])
 
 
 # ----------------------------------------------------------------------------
-# stewart2009 — NEISS pediatric dental injuries 1990–2003 (PMID 19614738)
+# stewart2009, NEISS pediatric dental injuries 1990–2003 (PMID 19614738)
 # ----------------------------------------------------------------------------
 stewart_citation = (
     "Stewart, G. B., Shields, B. J., Fields, S., Comstock, R. D., & Smith, G. A. (2009). "
@@ -319,7 +312,7 @@ stewart_aggregate = dict(stewart_common,
     rate_denominator_raw="per 100,000 children <18 yrs per year (population denominator)",
     rate_per_1000_ae="",  # NEISS uses population denom, not AE
     extraction_notes=(
-        "Population-denominator surveillance, NOT athlete-exposure denominator — "
+        "Population-denominator surveillance, NOT athlete-exposure denominator, "
         "rate_per_1000_ae left empty (incompatible denominators). NEISS counts all "
         "ED-treated dental injuries, not only sport-related; sport subset is "
         "described qualitatively in the abstract (highest in 13–17 group, "
@@ -327,15 +320,14 @@ stewart_aggregate = dict(stewart_common,
         "overlaps the 5–22 inclusion floor; per PROTOCOL §3.1 the source qualifies "
         "(majority within scope)."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 # Per-dentition-stage rows (qualitative only from abstract; counts not given per stage)
 stewart_primary = dict(stewart_common,
     age_min=0,
     age_max=6,
     age_category="unspecified",  # band crosses §3.1 inclusion floor (5+); majority sub-youth
     extraction_basis="youth_primary",
-    sport_raw="primary dentition group — home structures/furniture leading",
+    sport_raw="primary dentition group, home structures/furniture leading",
     sport="non_sport_setting",
     sport_category="",
     sample_size="",
@@ -350,14 +342,13 @@ stewart_primary = dict(stewart_common,
         "structures/furniture (non-sport). Numerical counts per dentition stage "
         "require full text."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 stewart_mixed = dict(stewart_common,
     age_min=7,
     age_max=12,
     age_category="youth",
     extraction_basis="youth_primary",
-    sport_raw="mixed dentition — outdoor recreational products; ~half bicycle",
+    sport_raw="mixed dentition, outdoor recreational products; ~half bicycle",
     sport="recreational_mixed",
     sport_category="",
     sample_size="",
@@ -371,14 +362,13 @@ stewart_mixed = dict(stewart_common,
         "products/activities led; ~50% bicycle-associated. Numerical counts "
         "per stage require full text."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 stewart_permanent = dict(stewart_common,
     age_min=13,
     age_max=17,
     age_category="adolescent",
     extraction_basis="youth_primary",
-    sport_raw="permanent dentition — sports-related products led; baseball + basketball top",
+    sport_raw="permanent dentition, sports-related products led; baseball + basketball top",
     sport="sports_aggregate",
     sport_category="",
     sample_size="",
@@ -393,8 +383,7 @@ stewart_permanent = dict(stewart_common,
         "counts require full text. Note: would map to two separate sport-specific "
         "rows (`baseball`, `basketball`) when full text is extracted."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 write_csv("stewart2009", [
     stewart_aggregate, stewart_primary, stewart_mixed, stewart_permanent,
 ])

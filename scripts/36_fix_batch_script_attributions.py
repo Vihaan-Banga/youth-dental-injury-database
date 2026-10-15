@@ -128,7 +128,7 @@ def main():
             total_changed += 1
             if apply:
                 path.write_text(text)
-    print(f"\n{'APPLIED' if apply else 'DRY RUN'} — {total_changed} script(s) "
+    print(f"\n{'APPLIED' if apply else 'DRY RUN'}, {total_changed} script(s) "
           f"{'changed' if apply else 'would change'}.")
     if not apply:
         print("Re-run with --apply, then re-run the batch scripts + 07 + 08 + 34 to verify.")

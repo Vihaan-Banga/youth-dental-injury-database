@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Per-country breakdown of the database. Shows which countries are well-
-represented and which are gaps — useful for advisor outreach and for the
+represented and which are gaps, useful for advisor outreach and for the
 methods paper's 'limitations' section.
 """
 
@@ -79,15 +79,15 @@ md = ["# Per-country breakdown\n",
       "|---|---:|---:|---:|---|---:|"]
 
 for code, e in ranked:
-    yr_span = f"{e['min_year']}-{e['max_year']}" if e["min_year"] else "—"
+    yr_span = f"{e['min_year']}-{e['max_year']}" if e["min_year"] else ", "
     name = ISO_TO_NAME.get(code, code)
-    md.append(f"| {name} (`{code}`) | {len(e['sources'])} | {e['rows']} | {len(e['sports'])} | {yr_span} | {e['total_injuries']:,} |")
+    md.append(f"| {name} (`{code}`) | {len(e['sources'])} | {e['rows']} | {len(e['sports'])} | {yr_span} | {e['total_injuries']: } |")
 
 md.append("\n## Geographic gaps & observations\n")
 md.append("- **Heavily-represented regions:** Western Europe + UK, North America, Australia/NZ, parts of Asia (India, Japan, Turkey, Israel).")
 md.append("- **Underrepresented regions:** Sub-Saharan Africa (only South Africa + Lesotho); Latin America (Brazil only); Middle East beyond Israel/Lebanon/Syria; nearly all of central + east Asia outside Japan/Korea.")
 md.append("- **Reasons for gaps:**")
-md.append("  - PROTOCOL §3.1 limits v1.0 to English-language sources — excludes substantial Spanish/Portuguese/Chinese/Arabic literature.")
+md.append("  - PROTOCOL §3.1 limits v1.0 to English-language sources, excludes substantial Spanish/Portuguese/Chinese/Arabic literature.")
 md.append("  - Many low-/middle-income countries lack publicly published youth-sport injury surveillance.")
 md.append("  - PubMed indexing skews toward English-publishing journals.")
 md.append("- **Methods-paper implication:** the 'Limitations' section should explicitly note these gaps and frame the v1.0 dataset as North America + Anglophone-Europe + selected international, not truly global.\n")
@@ -107,7 +107,7 @@ labels = [ISO_TO_NAME.get(c, c) for c, _ in top]
 values = [len(e["sources"]) for _, e in top]
 plt.barh(labels[::-1], values[::-1], color="#55a868")
 plt.xlabel("Distinct sources contributing to master.csv")
-plt.title(f"Source count by country — top {len(top)} of {n_countries}")
+plt.title(f"Source count by country, top {len(top)} of {n_countries}")
 plt.tight_layout()
 plt.savefig(OUT_PNG, dpi=160, bbox_inches="tight")
 plt.close()

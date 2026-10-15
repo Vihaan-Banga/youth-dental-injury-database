@@ -33,7 +33,7 @@ jobs:
       - name: Rebuild, validate, and check reproducibility
         # run_all.py --core runs 07_harmonize -> 08_validate (validate.py exits 1 on
         # any FAIL). --check additionally fails the build if a fresh harmonize produces
-        # a master.csv that differs from the committed one — so the published dataset
+        # a master.csv that differs from the committed one, so the published dataset
         # is guaranteed to reproduce byte-for-byte from the extraction CSVs.
         run: python3 scripts/run_all.py --core --check
 
@@ -50,5 +50,5 @@ jobs:
           import csv
           rows = list(csv.DictReader(open('data/harmonized/master.csv')))
           srcs = {r['source_id'] for r in rows}
-          print(f'master.csv: {len(rows)} rows from {len(srcs)} sources — all validation checks passed.')
+          print(f'master.csv: {len(rows)} rows from {len(srcs)} sources, all validation checks passed.')
           "

@@ -46,7 +46,7 @@ save("rows_per_source_top20.png")
 
 
 # ---------------------------------------------------------------------
-# 2. Sport coverage — distinct sources per sport
+# 2. Sport coverage, distinct sources per sport
 # ---------------------------------------------------------------------
 sport_to_sources = defaultdict(set)
 for r in rows:
@@ -60,12 +60,12 @@ values = [len(srcs) for _, srcs in sport_counts]
 plt.figure(figsize=(10, 7))
 plt.barh(labels[::-1], values[::-1], color="#dd8452")
 plt.xlabel("Distinct sources reporting this sport")
-plt.title(f"Sport coverage — {len(sport_counts)} sport-specific values across sources")
+plt.title(f"Sport coverage, {len(sport_counts)} sport-specific values across sources")
 save("sport_coverage.png")
 
 
 # ---------------------------------------------------------------------
-# 3. Country coverage — distinct sources per country
+# 3. Country coverage, distinct sources per country
 # ---------------------------------------------------------------------
 country_to_sources = defaultdict(set)
 for r in rows:
@@ -78,12 +78,12 @@ values = [len(s) for _, s in ctry]
 plt.figure(figsize=(9, max(4, len(labels) * 0.3)))
 plt.barh(labels[::-1], values[::-1], color="#55a868")
 plt.xlabel("Distinct sources")
-plt.title(f"Country coverage — {len(country_to_sources)} countries")
+plt.title(f"Country coverage, {len(country_to_sources)} countries")
 save("country_coverage.png")
 
 
 # ---------------------------------------------------------------------
-# 4. Year coverage — sources by pub_year
+# 4. Year coverage, sources by pub_year
 # ---------------------------------------------------------------------
 year_to_sources = defaultdict(set)
 for r in rows:
@@ -98,7 +98,7 @@ plt.figure(figsize=(10, 4))
 plt.bar(years, counts, color="#c44e52", edgecolor="none")
 plt.xlabel("Publication / treatment year")
 plt.ylabel("Distinct sources")
-plt.title(f"Year coverage — sources span {min(years)}–{max(years)}")
+plt.title(f"Year coverage, sources span {min(years)}–{max(years)}")
 plt.xticks(rotation=45)
 save("year_coverage.png")
 
@@ -130,7 +130,7 @@ save("extraction_basis_split.png")
 
 
 # ---------------------------------------------------------------------
-# 7. Headline summary — combine sport + N (where N = sum of injury counts)
+# 7. Headline summary, combine sport + N (where N = sum of injury counts)
 # ---------------------------------------------------------------------
 sport_to_inj = defaultdict(int)
 for r in rows:
@@ -153,16 +153,16 @@ save("injury_count_by_sport.png")
 
 
 # ---------------------------------------------------------------------
-# 8. Overall stats panel — one figure with 4 sub-stats
+# 8. Overall stats panel, one figure with 4 sub-stats
 # ---------------------------------------------------------------------
 fig, axes = plt.subplots(1, 4, figsize=(16, 5))
 fig.patch.set_facecolor("white")
 total_inj = sum(sport_to_inj.values())
 tiles = [
-    (f"{len(rows):,}",              "rows in master.csv",       "#4c72b0"),
-    (f"{len(src_counts):,}",        "distinct sources",         "#dd8452"),
-    (f"{len(country_to_sources):,}", "countries represented",   "#55a868"),
-    (f"{total_inj:,}",              "cumulative reported\ninjuries (across sources)", "#c44e52"),
+    (f"{len(rows): }",              "rows in master.csv",       "#4c72b0"),
+    (f"{len(src_counts): }",        "distinct sources",         "#dd8452"),
+    (f"{len(country_to_sources): }", "countries represented",   "#55a868"),
+    (f"{total_inj: }",              "cumulative reported\ninjuries (across sources)", "#c44e52"),
 ]
 for ax, (big, label, color) in zip(axes, tiles):
     # Use explicit limits so text always lands inside the rendered area
@@ -180,7 +180,7 @@ for ax, (big, label, color) in zip(axes, tiles):
     ax.text(0.5, 0.25, label, ha="center", va="center",
             fontsize=13, color="#333333",
             transform=ax.transAxes)
-plt.suptitle("Youth Sports Dental Injury Database — snapshot",
+plt.suptitle("Youth Sports Dental Injury Database, snapshot",
              fontsize=16, y=0.98, fontweight="bold")
 save("headline_snapshot.png", dpi=160)
 

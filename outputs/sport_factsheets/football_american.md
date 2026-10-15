@@ -1,4 +1,4 @@
-# Football American — Factsheet
+# Football American, Factsheet
 
 _Auto-generated from `master.csv`. 15 rows across 15 sources._
 
@@ -12,7 +12,7 @@ _Auto-generated from `master.csv`. 15 rows across 15 sources._
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| beachy2004 | 2004 | US | mixed | male | school_varsity | **0.029** | — | per 1000 athlete-sessions |
+| beachy2004 | 2004 | US | mixed | male | school_varsity | **0.029** | ,  | per 1000 athlete-sessions |
 
 _Min 0.029, max 0.029, n=1._
 
@@ -29,7 +29,7 @@ _Min 0.029, max 0.029, n=1._
 | collegiate | 1 | | male | 2 |
 | mixed | 14 | | mixed | 13 |
 
-_Cumulative reported `injury_count` across these 15 rows: **27,893**._
+_Cumulative reported `injury_count` across these 15 rows: ** 27893**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

@@ -1,4 +1,4 @@
-# Rugby — Factsheet
+# Rugby, Factsheet
 
 _Auto-generated from `master.csv`. 26 rows across 11 sources._
 
@@ -34,7 +34,7 @@ _Min 22.500, max 22.700, n=2._
 | collegiate | 5 | | mixed | 14 |
 
 
-_Cumulative reported `injury_count` across these 26 rows: **13,618**._
+_Cumulative reported `injury_count` across these 26 rows: ** 13618**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

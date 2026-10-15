@@ -2,10 +2,10 @@
 harmonization time (scripts/07). Imported by 07 (populate), 08 (validate C12),
 and consumed downstream by 33 (Rate Explorer).
 
-These columns are DERIVED — they are computed from source-reported fields, not
+These columns are DERIVED, they are computed from source-reported fields, not
 stored in the per-source extraction CSVs.
 
-measure_type — controlled vocabulary describing the row's outcome measure /
+measure_type, controlled vocabulary describing the row's outcome measure /
 rate basis. Two rows are directly comparable only when they share a
 measure_type (and, for the rate families, the same unit; per-AE rates are
 normalised in rate_per_1000_ae). Added 2026-06-24 (see docs/decisions.md) to
@@ -27,10 +27,10 @@ machine-readable flag).
   ed_visit_estimate           NEISS / ED weighted national estimate or ED count
   raw_count                   an unnormalised count of injuries/cases
   rate_ratio_or_effect_size   a rate ratio / odds ratio / effect size
-  unclassified_pending_review TEMPORARY — auto-classifier was not confident;
+  unclassified_pending_review TEMPORARY, auto-classifier was not confident;
                               awaiting manual classification (see decisions.md).
 
-comparability_group — coarse key on which DIRECT comparison is permitted:
+comparability_group, coarse key on which DIRECT comparison is permitted:
 the short measure family, suffixed '__aggregate' for pooled/non-sport-specific
 rows (all_sports_aggregate etc.), which should not be pooled with sport-specific
 rows even at the same measure_type.
@@ -84,7 +84,7 @@ MANUAL_MEASURE_TYPE: dict[tuple[str, str], str] = {
     # Population prevalence / awareness surveys
     ("pattussi2006", ""): "prevalence_proportion",
     ("caglar2005", ""): "prevalence_proportion",
-    # Mouthguard-use-only studies (no injury outcome) — see new measure type
+    # Mouthguard-use-only studies (no injury outcome), see new measure type
     ("kroon2016", ""): "mouthguard_use_proportion",
     ("shore2021", ""): "mouthguard_use_proportion",
     ("shore2023", ""): "mouthguard_use_proportion",

@@ -3,18 +3,18 @@
 builder was down for maintenance.
 
 Sources:
-  azadani2023  PMID 36317716 — Dental Traumatology. Extends collins2016's
+  azadani2023  PMID 36317716, Dental Traumatology. Extends collins2016's
                RIO surveillance through 2019-20 (459 dental injuries in
                49.9M AE; per-sport rates, MG-at-injury).
-  quarrie2020  PMID 31506903 — Sports Medicine. NZ Rugby ACC nationwide
+  quarrie2020  PMID 31506903, Sports Medicine. NZ Rugby ACC nationwide
                claims 2005-2017, ages 5-40 (635,657 claims, 2.0% dental).
                Multi-row per age band; demonstrates the youth_primary /
                adult_comparator split.
-  welch2010    PMID 21197817 — NZ Dental Journal. NZ ACC sports dental
+  welch2010    PMID 21197817, NZ Dental Journal. NZ ACC sports dental
                1999-2008 (~28,000 claims/year); per-sport breakdown for the
                11-20 age group, which is squarely within youth_primary scope.
 
-All extractions are from abstracts only — every row carries
+All extractions are from abstracts only, every row carries
 quality_flag = 'partial_data' until a full-text re-extraction.
 """
 
@@ -54,7 +54,7 @@ EXTRACTION_DATE = "2026-05-23"
 
 
 # ----------------------------------------------------------------------------
-# azadani2023 — PMID 36317716 — RIO HS surveillance 2005-2020 dental
+# azadani2023, PMID 36317716, RIO HS surveillance 2005-2020 dental
 # ----------------------------------------------------------------------------
 azadani_citation = (
     "Azadani, E. N., Peng, J., Townsend, J. A., & Collins, C. L. (2023). "
@@ -104,8 +104,7 @@ azadani_overall = dict(azadani_common,
         "(24.9% wearing MG when injured), not population-level prevalence. "
         "Mechanism: 60.4% contact with another player, 31.9% with apparatus."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 azadani_competition = dict(azadani_common,
     sex="mixed",
     sport_raw="All sports (competition, RIO 2005/06-2019/20)",
@@ -121,10 +120,9 @@ azadani_competition = dict(azadani_common,
     extraction_notes=(
         "Competition-only subset: 256 of 459 dental injuries (55.8%). RR vs "
         "practice = 3.6 (95% CI 3.0-4.4). AE denominator for competition not "
-        "in abstract — needs full text."
+        "in abstract, needs full text."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 azadani_practice = dict(azadani_common,
     sex="mixed",
     sport_raw="All sports (practice, RIO 2005/06-2019/20)",
@@ -140,10 +138,9 @@ azadani_practice = dict(azadani_common,
     extraction_notes=(
         "Practice-only subset: 200 of 459 dental injuries (43.6%). 3 injuries "
         "(0.7%) had unclear exposure context. AE denominator for practice not "
-        "in abstract — needs full text."
+        "in abstract, needs full text."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 azadani_field_hockey = dict(azadani_common,
     sex="female",
     sport_raw="girls' field hockey",
@@ -161,8 +158,7 @@ azadani_field_hockey = dict(azadani_common,
         "Highest per-sport rate among girls' sports. Per-sport AE denominator "
         "and injury count require full text."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 azadani_basketball_m = dict(azadani_common,
     sex="male",
     sport_raw="boys' basketball",
@@ -179,11 +175,10 @@ azadani_basketball_m = dict(azadani_common,
     extraction_notes=(
         "Highest per-sport rate among boys' sports. Per-sport AE denominator "
         "and injury count require full text. Note: collins2016 (same surveillance, "
-        "2008-2014 subset) reported boys' basketball = 2.6 per 100k AE — the rate "
+        "2008-2014 subset) reported boys' basketball = 2.6 per 100k AE, the rate "
         "is broadly stable across the longer window."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 write_csv("azadani2023", [
     azadani_overall, azadani_competition, azadani_practice,
     azadani_field_hockey, azadani_basketball_m,
@@ -191,7 +186,7 @@ write_csv("azadani2023", [
 
 
 # ----------------------------------------------------------------------------
-# quarrie2020 — PMID 31506903 — NZ Rugby ACC claims 2005-2017
+# quarrie2020, PMID 31506903, NZ Rugby ACC claims 2005-2017
 # ----------------------------------------------------------------------------
 quarrie_citation = (
     "Quarrie, K., Gianotti, S., & Murphy, I. (2020). Injury Risk in New Zealand "
@@ -246,9 +241,8 @@ quarrie_overall = dict(quarrie_common,
         "claim rates (probability of at least one claim per season) are "
         "reported in age-stratified rows below; this row is the topline."
     ),
-    quality_flag="partial_data",
-)
-# Per-age-band probability-of-at-least-one-claim rates (rugby OVERALL — not dental specifically)
+    quality_flag="partial_data")
+# Per-age-band probability-of-at-least-one-claim rates (rugby OVERALL, not dental specifically)
 # But these still establish exposure denominators by age band.
 # We can NOT use these probabilities as dental rates; rate_raw left empty.
 age_bands = [
@@ -281,14 +275,13 @@ for lo, hi, season_prob, cat, basis in age_bands:
             f"Demographics: ~10% of players are female; female claim rate is "
             f"0.57x male overall."
         ),
-        quality_flag="partial_data",
-    )
+        quality_flag="partial_data")
     quarrie_rows.append(row)
 write_csv("quarrie2020", quarrie_rows)
 
 
 # ----------------------------------------------------------------------------
-# welch2010 — PMID 21197817 — NZ ACC sports-related dental 1999-2008
+# welch2010, PMID 21197817, NZ ACC sports-related dental 1999-2008
 # ----------------------------------------------------------------------------
 welch_citation = (
     "Welch, C. L., Thomson, W. M., & Kennedy, R. (2010). ACC claims for "
@@ -342,8 +335,7 @@ welch_overall = dict(welch_common,
         "ages 11-20 made 41.7-44.4% of sports-related claims. Sex split: "
         "61.3% male, 38.7% female."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 welch_youth = dict(welch_common,
     age_min=11,
     age_max=20,
@@ -365,13 +357,12 @@ welch_youth = dict(welch_common,
         "across 1999-2008. Absolute count not in abstract; can be computed "
         "from full text or ACC raw."
     ),
-    quality_flag="partial_data",
-)
+    quality_flag="partial_data")
 # Per-sport share within sports-related claims (10-year window)
 welch_sport_rows = []
 for sport_raw, sport, sport_cat, share_pct_low, share_pct_high in [
     ("rugby",         "rugby",                  "contact",         22.2, 33.1),
-    ("water sports",  "swimming",               "non_contact",     14.2, 20.8),  # imperfect — water sports broader than swimming
+    ("water sports",  "swimming",               "non_contact",     14.2, 20.8),  # imperfect, water sports broader than swimming
     ("cycling",       "cycling",                "non_contact",      1.5, 15.3),  # added 2026-05-24 to taxonomy
     ("hockey",        "hockey_unspecified",     "",                 4.4, 4.4),
     ("basketball",    "basketball",             "limited_contact",  4.8, 4.8),
@@ -405,10 +396,9 @@ for sport_raw, sport, sport_cat, share_pct_low, share_pct_high in [
             f"subgroup_label preserves the source's original sport name for those "
             f"that collapse to the same placeholder sport value."
         ),
-        quality_flag="review_needed" if sport in ("non_sport_setting", "all_activities_aggregate") else "partial_data",
-    ))
+        quality_flag="review_needed" if sport in ("non_sport_setting", "all_activities_aggregate") else "partial_data"))
 write_csv("welch2010", [welch_overall, welch_youth] + welch_sport_rows)
 
 print()
-print("Done — 3 additional sources extracted. Run scripts/07_harmonize.py + "
+print("Done, 3 additional sources extracted. Run scripts/07_harmonize.py + "
       "scripts/08_validate.py to re-build master.csv.")

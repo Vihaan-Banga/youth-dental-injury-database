@@ -1,4 +1,4 @@
-# Cheerleading — Factsheet
+# Cheerleading, Factsheet
 
 _Auto-generated from `master.csv`. 11 rows across 11 sources._
 
@@ -18,7 +18,7 @@ _No rows with `rate_per_1000_ae` populated. See `rate_raw` + `rate_denominator_r
 |---|---:|---|---|---:|
 | mixed | 11 | | mixed | 11 |
 
-_Cumulative reported `injury_count` across these 11 rows: **114**._
+_Cumulative reported `injury_count` across these 11 rows: ** 114**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

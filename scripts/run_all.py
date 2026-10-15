@@ -2,8 +2,7 @@
 """End-to-end reproducibility orchestrator for the Youth Sports Dental Injury Database.
 
 Rebuilds `data/harmonized/master.csv` from the committed per-source extraction
-CSVs, validates it, and regenerates every downstream analysis output and figure —
-deterministically and offline. This is the one command a reviewer or collaborator
+CSVs, validates it, and regenerates every downstream analysis output and figure, deterministically and offline. This is the one command a reviewer or collaborator
 runs to reproduce the whole database from source-of-truth inputs.
 
     python3 scripts/run_all.py            # build + validate + regenerate outputs + audit
@@ -17,10 +16,10 @@ STAGES
 ------
   core      07_harmonize  -> data/harmonized/master.csv   (stdlib only)
             08_validate   -> outputs/validation_report.md  (stdlib only; exits 1 on any FAIL)
-  outputs   18,21,23,24,26,27,29,33 — regenerate figures, factsheets, bibliography,
+  outputs   18,21,23,24,26,27,29,33, regenerate figures, factsheets, bibliography,
             SQLite export, country + cross-source + NEISS-trend reports, Rate Explorer
             data. Reads master.csv only. Needs matplotlib (see requirements.txt).
-  audit     34_audit_citations — re-checks author/year attributions against the cached
+  audit     34_audit_citations, re-checks author/year attributions against the cached
             PubMed abstracts. Offline. A reviewer aid, not a pass/fail build gate.
 
 NOT run here: the extraction stage (00-06, 09, 11-17, 19, 20, 22, 25, 28, 30-32).
@@ -64,7 +63,7 @@ AUDIT = [
 def run(script: str, desc: str) -> tuple[bool, float]:
     """Run one pipeline script; return (ok, seconds)."""
     path = ROOT / "scripts" / script
-    print(f"\n\033[1m▶ {script}\033[0m — {desc}")
+    print(f"\n\033[1m▶ {script}\033[0m, {desc}")
     t0 = time.monotonic()
     proc = subprocess.run([sys.executable, str(path)], cwd=ROOT)
     dt = time.monotonic() - t0
@@ -78,8 +77,7 @@ def git_dirty_master() -> bool | None:
     try:
         r = subprocess.run(
             ["git", "diff", "--quiet", "--", str(MASTER.relative_to(ROOT))],
-            cwd=ROOT,
-        )
+            cwd=ROOT)
         return r.returncode != 0
     except (FileNotFoundError, ValueError):
         return None
@@ -108,9 +106,9 @@ def main() -> int:
         total += dt
         if not ok:
             failures.append(script)
-            # A core failure is fatal — downstream stages read master.csv.
+            # A core failure is fatal, downstream stages read master.csv.
             if script in core_names:
-                print(f"\n\033[31mCore stage {script} failed — aborting.\033[0m")
+                print(f"\n\033[31mCore stage {script} failed, aborting.\033[0m")
                 return 1
 
     # Reproducibility gate: committed master.csv must match a fresh harmonize.

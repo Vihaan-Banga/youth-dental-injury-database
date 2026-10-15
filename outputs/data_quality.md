@@ -14,9 +14,9 @@ How each row's numbers are grounded. All rows are `quality_flag=partial_data` pe
 | 🔴 computed / back-calculated | 52 | derived by arithmetic (see scripts/38) |
 | ⚪ public-domain raw (NEISS/gov) | 258 | verify against the source query/report |
 | ⚪ no numeric value | 19 | categorical-only row |
-| ? no usable abstract | 0 | — |
+| ? no usable abstract | 0 |, |
 
-## 2. Rate-scope guard — rows whose rate is NOT dental-specific
+## 2. Rate-scope guard, rows whose rate is NOT dental-specific
 
 These rows store an **overall / non-dental** injury rate yet sit in a dental incidence comparability group. They must **not** be read or compared as dental injury rates. Flagged for advisor review (reclassify, caveat, or exclude).
 
@@ -33,10 +33,10 @@ These rows store an **overall / non-dental** injury rate yet sit in a dental inc
 | `quarrie2020` | age_18_20 | incidence_per_season | 53 | all rugby injury claims (any body site, dental is  |
 | `quarrie2020` | age_21_30 | incidence_per_season | 57 | all rugby injury claims (any body site, dental is  |
 | `quarrie2020` | age_31_40 | incidence_per_season | 47 | all rugby injury claims (any body site, dental is  |
-| `rugby_europe_iss_2024` | u18_men_championship | incidence_per_exposure_hours | 63.0 | all-cause match injury (>1 day loss) — U-18 Men's  |
-| `rugby_europe_iss_2024` | u18_men_trophy | incidence_per_exposure_hours | 70.6 | all-cause match injury (>1 day loss) — U-18 Men's  |
-| `rugby_europe_iss_2024` | u18_women_championship | incidence_per_exposure_hours | 23.6 | all-cause match injury (>1 day loss) — U-18 Women' |
-| `rugby_europe_iss_2024` | u18_women_trophy | incidence_per_exposure_hours | 15.2 | all-cause match injury (>1 day loss) — U-18 Women' |
+| `rugby_europe_iss_2024` | u18_men_championship | incidence_per_exposure_hours | 63.0 | all-cause match injury (>1 day loss), U-18 Men's C |
+| `rugby_europe_iss_2024` | u18_men_trophy | incidence_per_exposure_hours | 70.6 | all-cause match injury (>1 day loss), U-18 Men's T |
+| `rugby_europe_iss_2024` | u18_women_championship | incidence_per_exposure_hours | 23.6 | all-cause match injury (>1 day loss), U-18 Women's |
+| `rugby_europe_iss_2024` | u18_women_trophy | incidence_per_exposure_hours | 15.2 | all-cause match injury (>1 day loss), U-18 Women's |
 
 ## 3. Internal numeric consistency
 

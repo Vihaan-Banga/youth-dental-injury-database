@@ -4,13 +4,13 @@
 Read-only. Brings the project's quality signals into one artifact for the advisor
 and the methods paper:
 
-  1. Verification-risk tiers — how each row's numbers are grounded
+  1. Verification-risk tiers, how each row's numbers are grounded
      (abstract-corroborated / full-text-table / computed / public-domain raw).
-  2. Internal numeric consistency — flag count from scripts/38 (re-run inline).
-  3. Rate-scope guard (NEW) — rows whose stored rate represents ALL injuries
+  2. Internal numeric consistency, flag count from scripts/38 (re-run inline).
+  3. Rate-scope guard (NEW), rows whose stored rate represents ALL injuries
      (not dental-specific) yet sit in a dental incidence comparability group, so
      they must NOT be compared as dental rates.
-  4. Screening backlog — records still pending full-text review.
+  4. Screening backlog, records still pending full-text review.
 
 Writes outputs/data_quality.md and prints a summary. Not a build gate.
 """
@@ -149,8 +149,8 @@ def main() -> None:
          f"| 🔴 computed / back-calculated | {tiers['computed']} | derived by arithmetic (see scripts/38) |",
          f"| ⚪ public-domain raw (NEISS/gov) | {tiers['public_raw']} | verify against the source query/report |",
          f"| ⚪ no numeric value | {tiers['no_numeric']} | categorical-only row |",
-         f"| ? no usable abstract | {tiers['no_abstract']} | — |",
-         "\n## 2. Rate-scope guard — rows whose rate is NOT dental-specific\n",
+         f"| ? no usable abstract | {tiers['no_abstract']} |, |",
+         "\n## 2. Rate-scope guard, rows whose rate is NOT dental-specific\n",
          "These rows store an **overall / non-dental** injury rate yet sit in a dental "
          "incidence comparability group. They must **not** be read or compared as dental "
          "injury rates. Flagged for advisor review (reclassify, caveat, or exclude).\n"]

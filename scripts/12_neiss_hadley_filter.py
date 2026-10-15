@@ -3,7 +3,7 @@
 dental sport injuries, splitting output by year.
 
 hadley's R package pre-processed the data, so this can't share scripts/05's
-filter — the columns are named differently (snake_case) and the values are
+filter, the columns are named differently (snake_case) and the values are
 human-readable text (body_part = 'Mouth', not '88') plus dates are encoded
 as integer days-since-1970.
 
@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data/raw/neiss/injuries_hadley_2013-2017.csv"
 OUT_DIR = ROOT / "data/extracted"
 
-# Same SPORT_PRODUCT_CODES as scripts/05 — codes are numeric in hadley's prod1.
+# Same SPORT_PRODUCT_CODES as scripts/05, codes are numeric in hadley's prod1.
 SPORT_PRODUCT_CODES = {
     "1205": ("basketball",         "limited_contact"),
     "1207": ("boxing",             "contact"),
@@ -57,8 +57,7 @@ SECONDARY_BODY_PART = "Face"
 DENTAL_DX_PATTERNS = re.compile(
     r"\b(tooth|teeth|dental|avuls|luxat|crown\s+fract|root\s+fract|incisor|"
     r"molar|canine|enamel|dentin|pulp|orthodont|mandibul|maxill|alveolar)",
-    re.IGNORECASE,
-)
+    re.IGNORECASE)
 
 
 def days_to_year(d):
@@ -75,7 +74,7 @@ def days_to_year(d):
 
 def filter_row(row):
     """Return (sport, sport_cat, kept_reason) or None."""
-    # prod1 is "3299.0" or "1205.0" — strip ".0"
+    # prod1 is "3299.0" or "1205.0", strip ".0"
     p1_raw = (row.get("prod1") or "").strip()
     try:
         p1 = str(int(float(p1_raw)))
@@ -119,7 +118,7 @@ def main():
         for row in reader:
             counts["total"] += 1
             if counts["total"] % 200000 == 0:
-                print(f"  scanned {counts['total']:,} rows, kept {counts['kept']}")
+                print(f"  scanned {counts['total']: } rows, kept {counts['kept']}")
             res = filter_row(row)
             if res is None:
                 continue
@@ -135,7 +134,7 @@ def main():
             by_year.setdefault(yr, []).append(row)
             counts["kept"] += 1
 
-    print(f"\nScanned {counts['total']:,} rows. Kept {counts['kept']:,} youth dental sport cases across years: {sorted(by_year)}")
+    print(f"\nScanned {counts['total']: } rows. Kept {counts['kept']: } youth dental sport cases across years: {sorted(by_year)}")
 
     # Per-year output
     all_rows = []
@@ -157,7 +156,7 @@ def main():
             w = csv.DictWriter(f, fieldnames=list(all_rows[0].keys()))
             w.writeheader()
             w.writerows(all_rows)
-        print(f"\nCombined: {len(all_rows):,} rows -> {path.name}")
+        print(f"\nCombined: {len(all_rows): } rows -> {path.name}")
 
 
 if __name__ == "__main__":

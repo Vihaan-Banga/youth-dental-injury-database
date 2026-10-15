@@ -3,7 +3,7 @@
 data/extracted/_screening/screening_decisions.csv.
 
 This script combines two layers:
-  1. Automatic rules (language, publication type) — deterministic.
+  1. Automatic rules (language, publication type), deterministic.
   2. A manual override dictionary (`MANUAL_DECISIONS`) populated by the
      project lead / AI-assisted screener after reading abstracts.
 
@@ -17,15 +17,15 @@ Confidence: high | medium | low. Anything below 'high' should be re-checked.
 
 Reason codes (short tags used in sources.md):
   E-lang     non-English (§3.1)
-  E-review   review/SR/MA — kept for source mining, not extracted (§3.2)
+  E-review   review/SR/MA, kept for source mining, not extracted (§3.2)
   E-case     single case report or small case series n<5 (§3.2)
-  E-age      population outside 5–22 (§3.1) — adults only, military, etc.
+  E-age      population outside 5–22 (§3.1), adults only, military, etc.
   E-offtop   abstract not about sport-related dental/orofacial injury (§3.1/3.3)
   E-noprim   no extractable primary numerical data (§3.1)
   E-nodent   no dental/orofacial-with-dental outcome reported (§3.3)
   E-nonpr    non-peer-reviewed and not an approved surveillance/governing body source (§3.2)
   I-pri      primary study, sport-related dental injury, ages overlap 5–22
-  R-age      age boundaries unclear / spans into adult — full-text needed
+  R-age      age boundaries unclear / spans into adult, full-text needed
   R-mixed    mixed adult+youth, can't tell youth subset from abstract
   R-data     not obvious whether numerical injury counts are extractable
   R-other    other ambiguity (logged per case)
@@ -44,7 +44,7 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 # Format: PMID (str) -> (decision, reason_code, confidence, note)
 # decision in {"screened_included","screened_excluded","needs_additional_review"}
 MANUAL_DECISIONS: dict[str, tuple[str, str, str, str]] = {
-    # Populated by 02_screen_candidates_decisions.py — see that file.
+    # Populated by 02_screen_candidates_decisions.py, see that file.
 }
 
 try:
@@ -59,17 +59,17 @@ def auto_decide(rec):
     lang = rec.get("language", "")
     if lang and lang != "eng":
         return ("screened_excluded", "E-lang", "high",
-                f"Language='{lang}' — English-only per PROTOCOL §3.1 v1.0 scope.")
+                f"Language='{lang}', English-only per PROTOCOL §3.1 v1.0 scope.")
     pts = rec.get("publication_types", [])
     if "Case Reports" in pts:
         return ("screened_excluded", "E-case", "high",
-                "PubMed PublicationType 'Case Reports' — excluded per §3.2.")
+                "PubMed PublicationType 'Case Reports', excluded per §3.2.")
     if any(p in pts for p in ("Systematic Review", "Meta-Analysis")):
         return ("screened_excluded", "E-review", "high",
-                "Systematic review or meta-analysis — kept for reference mining; not extracted per §3.2.")
+                "Systematic review or meta-analysis, kept for reference mining; not extracted per §3.2.")
     if "Review" in pts:
         return ("screened_excluded", "E-review", "high",
-                "Narrative review — kept for reference mining; not extracted per §3.2.")
+                "Narrative review, kept for reference mining; not extracted per §3.2.")
     # Non-primary literature types that cannot supply extractable epi data.
     for non_primary, label in [
         ("Editorial", "Editorial"),
@@ -78,7 +78,7 @@ def auto_decide(rec):
     ]:
         if non_primary in pts:
             return ("screened_excluded", "E-noprim", "high",
-                    f"{label} — no extractable primary numerical data (§3.1).")
+                    f"{label}, no extractable primary numerical data (§3.1).")
     return None
 
 
@@ -120,7 +120,7 @@ def main():
     by_dec = Counter(d["decision"] for d in decisions)
     by_code = Counter(d["reason_code"] for d in decisions)
     by_src = Counter(d["auto_or_manual"] for d in decisions)
-    print(f"Wrote {out_csv} — {len(decisions)} rows")
+    print(f"Wrote {out_csv}, {len(decisions)} rows")
     print("By decision:", dict(by_dec))
     print("By reason code:", dict(by_code))
     print("By source (auto/manual/default):", dict(by_src))

@@ -1,4 +1,4 @@
-# Martial Arts Other — Factsheet
+# Martial Arts Other, Factsheet
 
 _Auto-generated from `master.csv`. 9 rows across 8 sources._
 
@@ -12,7 +12,7 @@ _Auto-generated from `master.csv`. 9 rows across 8 sources._
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| beachy2004 | 2004 | US | mixed | male | school_varsity | **0.189** | — | per 1000 athlete-sessions |
+| beachy2004 | 2004 | US | mixed | male | school_varsity | **0.189** | ,  | per 1000 athlete-sessions |
 
 _Min 0.189, max 0.189, n=1._
 
@@ -30,7 +30,7 @@ _Min 0.189, max 0.189, n=1._
 | mixed | 9 | | female | 1 |
 
 
-_Cumulative reported `injury_count` across these 9 rows: **2,891**._
+_Cumulative reported `injury_count` across these 9 rows: ** 2891**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

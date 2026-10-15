@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rate Explorer — Youth Sports Dental Injury Database</title>
+<title>Rate Explorer &middot; Youth Sports Dental Injury Database</title>
 <style>
   :root{--ink:#1a1a1a;--mut:#666;--line:#e2e2e2;--accent:#1f6feb;--warn-bg:#fff8e1;--warn-bd:#e0c200;--card:#fafafa;}
   *{box-sizing:border-box}
@@ -100,7 +100,7 @@ const AGE_LABELS = {youth:"Youth (5–12)", adolescent:"Adolescent (13–17)", c
 const prettySport = s => SPORT_LABELS[s] || s.replace(/_/g," ").replace(/\b\w/g,c=>c.toUpperCase());
 const prettyAge = a => AGE_LABELS[a] || a;
 const esc = s => (s==null?"":String(s)).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const cell = v => (v && String(v).trim()) ? esc(v) : '<span class="den">—</span>';
+const cell = v => (v && String(v).trim()) ? esc(v) : '<span class="den">not reported</span>';
 
 let DATA = null;
 
@@ -131,11 +131,11 @@ function ctxCell(r){
   let bits=[];
   if(r.exposure_context) bits.push(esc(r.exposure_context));
   if(r.subgroup_label) bits.push(`<span class="tag">${esc(r.subgroup_label)}</span>`);
-  return bits.length?bits.join(' '):'<span class="den">—</span>';
+  return bits.length?bits.join(' '):'<span class="den">not reported</span>';
 }
 
 function injCell(r){
-  let c = r.injury_count && r.injury_count.trim() ? `<b>${esc(r.injury_count)}</b>` : '<span class="den">—</span>';
+  let c = r.injury_count && r.injury_count.trim() ? `<b>${esc(r.injury_count)}</b>` : '<span class="den">not reported</span>';
   let t = r.injury_type_raw ? `<br><span class="den">${esc(r.injury_type_raw)}</span>` : (r.injury_category?`<br><span class="den">${esc(r.injury_category)}</span>`:'');
   return c+t;
 }
@@ -145,7 +145,7 @@ function mgCell(r){
   if(r.mouthguard_injury_relation && r.mouthguard_injury_relation!=='not_addressed') bits.push(`<span class="tag">${esc(r.mouthguard_injury_relation)}</span>`);
   if(r.mouthguard_use_rate && r.mouthguard_use_rate.trim()) bits.push(`use ${esc(r.mouthguard_use_rate)}`);
   if(r.mouthguard_required && r.mouthguard_required!=='unspecified') bits.push(`req: ${esc(r.mouthguard_required)}`);
-  return bits.length?bits.join('<br>'):'<span class="den">—</span>';
+  return bits.length?bits.join('<br>'):'<span class="den">not reported</span>';
 }
 
 // Measure-type tiers: order (most comparable first) + label + one-line meaning.

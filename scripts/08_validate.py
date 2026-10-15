@@ -21,7 +21,7 @@ Checks:
   C9. Every row's source_id appears at least once with extraction_basis = youth_primary
         (catches sources where we accidentally extracted only adult rows from a youth-eligible source)
   C10. No duplicate (source_id, sport, age_category, sex, level_of_play, extraction_basis,
-       season_or_timeframe) combinations — surfaces accidental re-extractions
+       season_or_timeframe) combinations, surfaces accidental re-extractions
   C11. rate_per_1000_ae is populated only when rate_denominator_raw names an
        athlete-exposure denominator (not hours / season / population / % of injuries)
   C12. measure_type populated + in controlled vocabulary; comparability_group populated
@@ -169,7 +169,7 @@ def main():
     def add(sev, cid, msg):
         findings.append((sev, cid, msg))
 
-    # C1 — schema
+    # C1, schema
     headers = list(rows[0].keys()) if rows else []
     if headers != EXPECTED_COLUMNS:
         missing = set(EXPECTED_COLUMNS) - set(headers)
@@ -179,20 +179,20 @@ def main():
         if extra:
             add("WARN", "C1", f"Extra columns (not in dictionary): {sorted(extra)}")
 
-    # C2 — categorical values
+    # C2, categorical values
     for col, allowed in ALLOWED.items():
         for i, r in enumerate(rows):
             v = r.get(col, "")
             if v not in allowed:
                 add("FAIL", "C2", f"row {i+1}: {col}='{v}' not in {sorted(allowed)}")
 
-    # C2b — sport vocabulary
+    # C2b, sport vocabulary
     for i, r in enumerate(rows):
         sport = r.get("sport", "")
         if sport not in ALLOWED_SPORTS:
             add("FAIL", "C2", f"row {i+1}: sport='{sport}' not in controlled vocabulary")
 
-    # C3 — numeric ranges
+    # C3, numeric ranges
     for col, (lo, hi, _) in NUMERIC_RULES.items():
         for i, r in enumerate(rows):
             n = parse_num(r.get(col, ""))
@@ -204,14 +204,14 @@ def main():
             if not (lo <= n < hi):
                 add("FAIL", "C3", f"row {i+1}: {col}={n} outside plausible range [{lo}, {hi})")
 
-    # C4 — age_min <= age_max
+    # C4, age_min <= age_max
     for i, r in enumerate(rows):
         nmin = parse_num(r.get("age_min", ""))
         nmax = parse_num(r.get("age_max", ""))
         if isinstance(nmin, float) and isinstance(nmax, float) and nmin > nmax:
             add("FAIL", "C4", f"row {i+1}: age_min={nmin} > age_max={nmax}")
 
-    # C5 — age_category consistency (warnings — categories are intentionally permissive)
+    # C5, age_category consistency (warnings, categories are intentionally permissive)
     for i, r in enumerate(rows):
         cat = r.get("age_category", "")
         nmin = parse_num(r.get("age_min", ""))
@@ -236,9 +236,9 @@ def main():
         if span > 0 and overlap / span < 0.5:
             add("WARN", "C5", f"row {i+1}: age_category='{cat}' "
                               f"({lo}-{hi}) overlaps <50% of row's age range "
-                              f"({nmin:.0f}-{nmax:.0f}) — verify categorization")
+                              f"({nmin:.0f}-{nmax:.0f}), verify categorization")
 
-    # C6 — adult_comparator iff age_category=adult
+    # C6, adult_comparator iff age_category=adult
     for i, r in enumerate(rows):
         cat = r.get("age_category", "")
         basis = r.get("extraction_basis", "")
@@ -249,7 +249,7 @@ def main():
             add("WARN", "C6", f"row {i+1}: extraction_basis='adult_comparator' but "
                               f"age_category='{cat}' (expected 'adult')")
 
-    # C9 — every source has at least one youth_primary row
+    # C9, every source has at least one youth_primary row
     by_source = defaultdict(set)
     for r in rows:
         by_source[r["source_id"]].add(r.get("extraction_basis", ""))
@@ -258,7 +258,7 @@ def main():
             add("FAIL", "C9", f"source_id='{sid}' has no youth_primary row "
                               f"(found only: {sorted(bases)})")
 
-    # C10 — duplicate row check (uniqueness key per DATA_DICTIONARY.md
+    # C10, duplicate row check (uniqueness key per DATA_DICTIONARY.md
     # "Exposure context and subgroup rows")
     seen = Counter()
     for r in rows:
@@ -269,11 +269,11 @@ def main():
         seen[key] += 1
     for key, n in seen.items():
         if n > 1:
-            add("FAIL", "C10", f"{n} rows share key {key} — true duplicate "
+            add("FAIL", "C10", f"{n} rows share key {key}, true duplicate "
                                 "(exposure_context + subgroup_label should already "
                                 "disambiguate legitimate stratifications)")
 
-    # C11 — rate_per_1000_ae is reserved for athlete-exposure denominators.
+    # C11, rate_per_1000_ae is reserved for athlete-exposure denominators.
     # If the row carries a per-1000-AE value, rate_denominator_raw must name an
     # AE denominator (not hours/season/population/% of injuries).
     # See DATA_DICTIONARY.md and docs/decisions.md (2026-05-24, 2026-06-13).
@@ -284,10 +284,10 @@ def main():
         if not denom_is_ae(denom):
             add("FAIL", "C11", f"row {i+1}: rate_per_1000_ae is populated but "
                                f"rate_denominator_raw='{denom}' is not an "
-                               f"athlete-exposure denominator — move the value to "
+                               f"athlete-exposure denominator, move the value to "
                                f"rate_raw and leave rate_per_1000_ae empty")
 
-    # C12 — comparability columns populated and in vocabulary.
+    # C12, comparability columns populated and in vocabulary.
     # measure_type must be one of the controlled values; comparability_group
     # must be non-empty. See DATA_DICTIONARY.md and docs/decisions.md 2026-06-24.
     for i, r in enumerate(rows):
@@ -302,9 +302,9 @@ def main():
                     if r.get("measure_type") == "unclassified_pending_review")
     if n_pending:
         add("WARN", "C12", f"{n_pending} rows are measure_type="
-                           f"'unclassified_pending_review' — awaiting manual classification")
+                           f"'unclassified_pending_review', awaiting manual classification")
 
-    # C13 — data_provenance populated and in vocabulary (redistribution-rights
+    # C13, data_provenance populated and in vocabulary (redistribution-rights
     # clarity). See docs/decisions.md 2026-06-24.
     for i, r in enumerate(rows):
         dp = (r.get("data_provenance") or "").strip()
@@ -313,7 +313,7 @@ def main():
         elif dp not in DATA_PROVENANCE:
             add("FAIL", "C13", f"row {i+1}: data_provenance='{dp}' not in controlled vocabulary")
 
-    # C14 — dental_specific populated and boolean. FALSE marks a row whose
+    # C14, dental_specific populated and boolean. FALSE marks a row whose
     # outcome is a broader all-cause/head-neck injury measure (not a dental
     # rate); such rows must not be compared as dental rates. The count of FALSE
     # rows is reported by scripts/39 (data_quality.md) and warned in the Rate
@@ -331,7 +331,7 @@ def main():
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     lines = []
     W = lines.append
-    W(f"# Validation Report — {date.today().isoformat()}\n")
+    W(f"# Validation Report, {date.today().isoformat()}\n")
     W(f"_Run against `data/harmonized/master.csv` ({len(rows)} rows)._\n")
     W("## Summary\n")
     W(f"- Rows checked: **{len(rows)}**")
@@ -342,7 +342,7 @@ def main():
     if fails:
         W("## ❌ FAILs\n")
         for _, cid, msg in fails:
-            W(f"- **{cid}** — {msg}")
+            W(f"- **{cid}**: {msg}")
         W("")
     else:
         W("## ✅ No FAILs\n")
@@ -350,7 +350,7 @@ def main():
     if warns:
         W("## ⚠️  WARNs (review, not blocking)\n")
         for _, cid, msg in warns:
-            W(f"- **{cid}** — {msg}")
+            W(f"- **{cid}**: {msg}")
         W("")
     W("## Check reference\n")
     W("- **C1** schema completeness")

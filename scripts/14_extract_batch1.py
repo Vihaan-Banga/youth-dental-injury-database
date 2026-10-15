@@ -44,8 +44,7 @@ def make(source_id, **kw):
         mouthguard_injury_relation="not_addressed",
         extraction_date=EXTRACTION_DATE,
         extractor=EXTRACTOR,
-        quality_flag="partial_data",
-    ))
+        quality_flag="partial_data"))
     base.update(kw)
     return base
 
@@ -67,7 +66,7 @@ write_csv("hamdan2026a", [make("hamdan2026a",
     country="SY", region="Damascus", population_setting="club",
     age_min=6, age_max=16, age_category="mixed",
     sex="mixed", level_of_play="mixed",
-    sport_raw="multiple sports — contact and non-contact",
+    sport_raw="multiple sports, contact and non-contact",
     sport="all_sports_aggregate", sport_category="",
     sample_size=445, season_or_timeframe="cross-sectional study period",
     injury_count=int(round(445 * 0.474)),
@@ -76,8 +75,7 @@ write_csv("hamdan2026a", [make("hamdan2026a",
     rate_denominator_raw="prevalence (%) among 445 child/adolescent athletes",
     mouthguard_use_rate=0.339,
     mouthguard_injury_relation="analyzed",
-    extraction_notes="11 sports clubs Damascus, multistage cluster sampling. Contact sports (football, basketball) had higher rates than gymnastics/karate. MG use significantly associated with reduced ODT risk (OR=0.286, 95% CI 0.141-0.577, p<0.004).",
-)])
+    extraction_notes="11 sports clubs Damascus, multistage cluster sampling. Contact sports (football, basketball) had higher rates than gymnastics/karate. MG use significantly associated with reduced ODT risk (OR=0.286, 95% CI 0.141-0.577, p<0.004).")])
 
 
 # ----- udayamalee2024 (PMID 38131151) -----
@@ -87,8 +85,7 @@ ud_common = dict(citation=ud_cite, pub_year=2024, study_type="cross_sectional",
     age_min=13, age_max=18, age_category="adolescent",
     sex="mixed", level_of_play="school_varsity",
     season_or_timeframe="cross-sectional",
-    sample_size=1340, mouthguard_use_rate=0.208, mouthguard_injury_relation="analyzed",
-)
+    sample_size=1340, mouthguard_use_rate=0.208, mouthguard_injury_relation="analyzed")
 write_csv("udayamalee2024", [
     make("udayamalee2024", **ud_common,
         sport_raw="all contact sports (aggregate: football, rugby, hockey, boxing, basketball, martial arts)",
@@ -98,16 +95,14 @@ write_csv("udayamalee2024", [
         injury_type_raw="self-reported oro-dental trauma in last 12 months",
         rate_raw=35.9,
         rate_denominator_raw="self-reported pooled ODT prevalence (%) in 1340 contact-sport school children",
-        extraction_notes="Adolescent contact-sport school players Colombo. 63.1% male / 36.9% female. ODT highest in boxing, rugby, hockey. Dental trauma 23.8% (uncomplicated 15.8% + complicated 8%); soft tissue 12.1%. 91% of MG users wore ready-made.",
-    ),
+        extraction_notes="Adolescent contact-sport school players Colombo. 63.1% male / 36.9% female. ODT highest in boxing, rugby, hockey. Dental trauma 23.8% (uncomplicated 15.8% + complicated 8%); soft tissue 12.1%. 91% of MG users wore ready-made."),
     make("udayamalee2024", **ud_common,
         sport_raw="all contact sports (dental-trauma subset)",
         sport="all_sports_aggregate", sport_category="contact",
         subgroup_label="dental_trauma_subset",
         injury_count=319, injury_type_raw="dental trauma (15.8% uncomplicated + 8% complicated)",
         rate_raw=23.8, rate_denominator_raw="dental-trauma-specific prevalence (%) within 1340",
-        extraction_notes="Of 1340 players, 319 (23.8%) had dental trauma (211 uncomplicated, 108 complicated). 0+/-12 mo recall.",
-    ),
+        extraction_notes="Of 1340 players, 319 (23.8%) had dental trauma (211 uncomplicated, 108 complicated). 0+/-12 mo recall."),
 ])
 
 
@@ -125,8 +120,7 @@ write_csv("van2021", [make("van2021",
     injury_category="concussion",
     mouthguard_use_rate=0.42,
     mouthguard_injury_relation="analyzed",
-    extraction_notes="9 Canadian pediatric EDs. 73% male. Median age 13.43 (IQR 11.01-15.27). 42% wore MG at injury. PRIMARY OUTCOME = concussion symptoms (not dental injury); included because §3.3 captures concussion + MG-relation. No significant group-by-sex-by-time interaction for symptoms.",
-)])
+    extraction_notes="9 Canadian pediatric EDs. 73% male. Median age 13.43 (IQR 11.01-15.27). 42% wore MG at injury. PRIMARY OUTCOME = concussion symptoms (not dental injury); included because §3.3 captures concussion + MG-relation. No significant group-by-sex-by-time interaction for symptoms.")])
 
 
 # ----- goswami2017 (PMID 29403232) -----
@@ -138,37 +132,32 @@ go_common = dict(citation=go_cite, pub_year=2017, study_type="cross_sectional",
     sport_raw="multiple sports (children participating in sports)",
     sport="all_sports_aggregate", sport_category="",
     mouthguard_use_rate=0.209, mouthguard_injury_relation="mentioned_only",
-    season_or_timeframe="cross-sectional pilot",
-)
+    season_or_timeframe="cross-sectional pilot")
 write_csv("goswami2017", [
     make("goswami2017", **go_common, sex="mixed",
         subgroup_label="tooth_fracture",
         injury_count=27, injury_type_raw="chipping or fracture of teeth",
         injury_category="crown_fracture",
         rate_raw=6.0, rate_denominator_raw="(%) of 450 children",
-        extraction_notes="450 children 6-16, New Delhi. 69.6% male, mean age 12.6. Aware of MG 71.3%; used MG 20.9%.",
-    ),
+        extraction_notes="450 children 6-16, New Delhi. 69.6% male, mean age 12.6. Aware of MG 71.3%; used MG 20.9%."),
     make("goswami2017", **go_common, sex="mixed",
         subgroup_label="avulsion",
         injury_count=24, injury_type_raw="avulsion of teeth",
         injury_category="avulsion",
         rate_raw=5.4, rate_denominator_raw="(%) of 450 children",
-        extraction_notes="Avulsion subset, same cohort.",
-    ),
+        extraction_notes="Avulsion subset, same cohort."),
     make("goswami2017", **go_common, sex="mixed",
         subgroup_label="soft_tissue_laceration",
         injury_count=25, injury_type_raw="soft-tissue laceration",
         injury_category="other_dental",
         rate_raw=5.6, rate_denominator_raw="(%) of 450 children",
-        extraction_notes="Soft-tissue laceration subset (oral lacerations).",
-    ),
+        extraction_notes="Soft-tissue laceration subset (oral lacerations)."),
     make("goswami2017", **go_common, sex="mixed",
         subgroup_label="jaw_bone_fracture",
         injury_count=18, injury_type_raw="jaw/bone fracture",
         injury_category="orofacial_with_dental",
         rate_raw=4.0, rate_denominator_raw="(%) of 450 children",
-        extraction_notes="Jaw/bone fracture subset.",
-    ),
+        extraction_notes="Jaw/bone fracture subset."),
 ])
 
 
@@ -180,26 +169,22 @@ ts_common = dict(citation=ts_cite, pub_year=2017, study_type="cross_sectional",
     sport_raw="multiple sports (school-aged athletes)",
     sport="all_sports_aggregate", sport_category="",
     level_of_play="school_jv", season_or_timeframe="cross-sectional self-report",
-    mouthguard_injury_relation="mentioned_only",
-)
+    mouthguard_injury_relation="mentioned_only")
 write_csv("tsuchiya2017", [
     make("tsuchiya2017", **ts_common, sex="mixed", sample_size=5735,
         subgroup_label="overall",
         injury_count=763, injury_type_raw="self-reported sports-related dental injury",
         rate_raw=13.3,
         rate_denominator_raw="(%) of 5735 school-aged athletes",
-        extraction_notes="Large self-report cohort 6-15. Insufficient break, verbal abuse, physical punishment from coaches associated with higher dental injury prevalence in males only.",
-    ),
+        extraction_notes="Large self-report cohort 6-15. Insufficient break, verbal abuse, physical punishment from coaches associated with higher dental injury prevalence in males only."),
     make("tsuchiya2017", **ts_common, sex="male", sample_size=4132,
         subgroup_label="sex_male",
         injury_count=592, rate_raw=14.3, rate_denominator_raw="(%) of 4132 males",
-        extraction_notes="Male subset.",
-    ),
+        extraction_notes="Male subset."),
     make("tsuchiya2017", **ts_common, sex="female", sample_size=1603,
         subgroup_label="sex_female",
         injury_count=171, rate_raw=10.7, rate_denominator_raw="(%) of 1603 females",
-        extraction_notes="Female subset. OR vs male 1.48 (1.22-1.79) for male predominance.",
-    ),
+        extraction_notes="Female subset. OR vs male 1.48 (1.22-1.79) for male predominance."),
 ])
 
 
@@ -219,8 +204,7 @@ write_csv("singh2014", [
         rate_raw=30.3, rate_denominator_raw="(%) of 1105 HS students",
         mouthguard_injury_relation="mentioned_only",
         extraction_notes="1105 students from 19 school sports teams/academies, multistage cluster sampling. Soft tissue 48%, tooth fractures 43%. High-velocity sports 44.1% and medium-intensity 46.6% of injuries. MG use: boys 6%, girls 2%.",
-        season_or_timeframe="cross-sectional",
-    ),
+        season_or_timeframe="cross-sectional"),
     make("singh2014",
         citation=si_cite, pub_year=2014, study_type="cross_sectional",
         country="IN", region="North India", population_setting="school",
@@ -233,8 +217,7 @@ write_csv("singh2014", [
         rate_raw=50.0,
         rate_denominator_raw="(%) of basketball players with injury (sport-specific within study)",
         extraction_notes="Basketball had highest injury rate at 50% (p<0.05). Compared to badminton (lowest at 6.1%).",
-        season_or_timeframe="cross-sectional",
-    ),
+        season_or_timeframe="cross-sectional"),
 ])
 
 
@@ -245,14 +228,13 @@ write_csv("chan2011", [make("chan2011",
     country="NZ", region="Dunedin", population_setting="mixed",
     age_min=0, age_max=10, age_category="youth",
     sex="mixed", level_of_play="recreational",
-    sport_raw="multiple — sport one of several causes (collisions, falls, sports)",
+    sport_raw="multiple, sport one of several causes (collisions, falls, sports)",
     sport="all_activities_aggregate", sport_category="",
     sample_size=288, season_or_timeframe="1999-2000 (2-year retrospective)",
     injury_count=300, injury_type_raw="orofacial trauma episodes (288 children, 300 incidents)",
     injury_category="orofacial_with_dental",
     extraction_notes="University Dental School clinic Dunedin. Ages 0-10. 86.6% had cause noted. In younger children mainly falls; in school-aged children sports + collisions + falls. Predominant dental injuries: concussions and subluxations (more common in primary dentition, p<0.001). Upper central incisors most affected. Lip injuries dominant non-dental.",
-    quality_flag="partial_data",
-)])
+    quality_flag="partial_data")])
 
 
 # ----- cetinbas2008 (PMID 18821957) -----
@@ -272,8 +254,7 @@ write_csv("cetinbas2008", [
         rate_raw=7.43, rate_denominator_raw="(%) of 2570 schoolchildren with dental trauma",
         mouthguard_injury_relation="mentioned_only",
         extraction_notes="2570 students, 10 primary schools, 5 Ankara municipalities. 14.14% of incisal fractures were sport-related. 84% maxillary central incisors. Males higher than females in older group (p<0.01). Bicycling caused significantly higher crown fractures than other sports (p<0.05).",
-        season_or_timeframe="cross-sectional",
-    ),
+        season_or_timeframe="cross-sectional"),
     make("cetinbas2008",
         citation=ce_cite, pub_year=2008, study_type="cross_sectional",
         country="TR", region="Ankara", population_setting="school",
@@ -288,8 +269,7 @@ write_csv("cetinbas2008", [
         injury_category="crown_fracture",
         rate_raw=14.14, rate_denominator_raw="(%) of fractures attributed to sport",
         extraction_notes="14.14% of the 222 fractured incisors attributed to sport activities (~31 of 222).",
-        season_or_timeframe="cross-sectional",
-    ),
+        season_or_timeframe="cross-sectional"),
 ])
 
 
@@ -308,8 +288,7 @@ write_csv("levin2007", [make("levin2007",
     mouthguard_use_rate=0.028,
     mouthguard_injury_relation="mentioned_only",
     extraction_notes="427 young adults aged 18-21, lifetime recall. 31.1% had oral/dental injuries (133 total); 72 (16.9%) dental. Causes of dental injuries: falls 64%, sport 23.2%, fights 7.2%, MVA 5.6%. Laceration 47.3% / fracture 41.9%. MG aware 22.6%; MG used 2.8%.",
-    season_or_timeframe="lifetime recall",
-)])
+    season_or_timeframe="lifetime recall")])
 
 
 # ----- shore2023 (PMID 36394781) -----
@@ -323,12 +302,11 @@ write_csv("shore2023", [make("shore2023",
     sport="gaelic_football_mens", sport_category="contact",
     subgroup_label="mg_quality_assessment",
     sample_size=106, injury_count="",
-    injury_type_raw="(MG-quality assessment cohort — not injury-count study)",
+    injury_type_raw="(MG-quality assessment cohort, not injury-count study)",
     mouthguard_use_rate=1.0,  # all 106 presented WITH MG (cohort definition)
     mouthguard_injury_relation="mentioned_only",
     extraction_notes="n=106 Gaelic football children 9-16 with MG. 66.96% mouth-formed; 3.77% custom; rest stock. 81.13% inadequate retention, 83.96% inadequate labial extension. Study focuses on MG quality (not injury rates). Included because §3.3 captures MG use; no injury counts to extract.",
-    season_or_timeframe="cross-sectional",
-)])
+    season_or_timeframe="cross-sectional")])
 
 
 # ----- amy2005 (PMID 15876321) -----
@@ -347,8 +325,7 @@ write_csv("amy2005", [make("amy2005",
     injury_category="orofacial_with_dental",
     rate_raw=6.0, rate_denominator_raw="(%) of 279 dental-clinic visits = 18 acute orofacial cases",
     extraction_notes="20-year retrospective of Central American + Caribbean Sports Games dental services for the Puerto Rican delegation. 2107 total participants across 6 delegations. 279 (13.2%) seen for dental conditions. 18 (6% of 279, 0.85% of all participants) acute orofacial. Lip contusion most frequent (n=4). Basketball had most injuries (n=3). Note: international elite multi-age games; some delegations include youth.",
-    season_or_timeframe="20-year retrospective (~1985-2005)",
-)])
+    season_or_timeframe="20-year retrospective (~1985-2005)")])
 
 
 # ----- levin2003 (PMID 14708646) -----
@@ -358,8 +335,7 @@ lv3_common = dict(citation=lv3_cite, pub_year=2003, study_type="cross_sectional"
     age_min=18, age_max=19, age_category="collegiate",
     sex="male", level_of_play="mixed",
     sample_size=943, season_or_timeframe="cross-sectional",
-    mouthguard_use_rate=0.03, mouthguard_injury_relation="mentioned_only",
-)
+    mouthguard_use_rate=0.03, mouthguard_injury_relation="mentioned_only")
 write_csv("levin2003", [
     make("levin2003", **lv3_common,
         sport_raw="multi-sport (aggregate, 850 active in at least one sport)",
@@ -367,8 +343,7 @@ write_csv("levin2003", [
         subgroup_label="all_sports",
         injury_count=229, injury_type_raw="dental and oral injuries during sport",
         rate_raw=27.0, rate_denominator_raw="(%) of participants with any oral/dental injury",
-        extraction_notes="943 young adults (95% male, 5% female), ages 18-19, Israel. 850 (90%) active in >=1 sport. 27% had injuries (229 total); 9% had dental injuries (73). MG aware 27%; MG used 3%.",
-    ),
+        extraction_notes="943 young adults (95% male, 5% female), ages 18-19, Israel. 850 (90%) active in >=1 sport. 27% had injuries (229 total); 9% had dental injuries (73). MG aware 27%; MG used 3%."),
     make("levin2003", **lv3_common,
         sport_raw="basketball",
         sport="basketball", sport_category="limited_contact",
@@ -376,8 +351,7 @@ write_csv("levin2003", [
         injury_count=int(round(229 * 0.42)),
         injury_type_raw="dental and oral injuries from basketball",
         rate_raw=7.2, rate_denominator_raw="(%) of basketball players injured (~96 of total sample played basketball)",
-        extraction_notes="Basketball-attributable: 42% of all sport-related injuries; 7.2% of basketball players reported injury.",
-    ),
+        extraction_notes="Basketball-attributable: 42% of all sport-related injuries; 7.2% of basketball players reported injury."),
     make("levin2003", **lv3_common,
         sport_raw="soccer (football_association)",
         sport="football_association", sport_category="limited_contact",
@@ -385,8 +359,7 @@ write_csv("levin2003", [
         injury_count=int(round(229 * 0.41)),
         injury_type_raw="dental and oral injuries from soccer",
         rate_raw=6.6, rate_denominator_raw="(%) of soccer players injured",
-        extraction_notes="Soccer-attributable: 41% of all sport-related injuries; 6.6% of soccer players reported injury.",
-    ),
+        extraction_notes="Soccer-attributable: 41% of all sport-related injuries; 6.6% of soccer players reported injury."),
 ])
 
-print("\nDone — batch 1 complete (12 sources).")
+print("\nDone, batch 1 complete (12 sources).")

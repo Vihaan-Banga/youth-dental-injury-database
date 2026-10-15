@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate outputs/sources_bibliography.bib — BibTeX entries for every
+"""Generate outputs/sources_bibliography.bib, BibTeX entries for every
 screened_included PubMed source.
 
 For each PMID, reads the per-PMID JSON in data/raw/papers/_abstracts/ and
@@ -23,7 +23,7 @@ OUT = ROOT / "outputs/sources_bibliography.bib"
 
 # Map PMID -> source_id, parsed from docs/sources.md (authoritative; generated
 # by scripts/03 from the PubMed first author). Parsed rather than hardcoded so
-# the BibTeX keys cannot drift out of sync with the dataset — a hardcoded map
+# the BibTeX keys cannot drift out of sync with the dataset, a hardcoded map
 # here previously carried fabricated ids (williams2024, collins2004, ...); see
 # docs/decisions.md 2026-06-16.
 _SOURCES_MD = ROOT / "docs/sources.md"
@@ -163,4 +163,4 @@ gov_entries = [
 ]
 
 OUT.write_text(header + "\n".join(entries) + "\n% ---- Governing-body / surveillance ----\n\n" + "\n".join(gov_entries))
-print(f"Wrote {OUT.relative_to(ROOT)} — {len(entries)} @article + {len(gov_entries)} @misc entries (skipped {skipped} PMIDs without abstract JSON)")
+print(f"Wrote {OUT.relative_to(ROOT)}, {len(entries)} @article + {len(gov_entries)} @misc entries (skipped {skipped} PMIDs without abstract JSON)")

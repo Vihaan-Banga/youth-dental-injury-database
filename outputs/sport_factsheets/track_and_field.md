@@ -1,4 +1,4 @@
-# Track And Field — Factsheet
+# Track And Field, Factsheet
 
 _Auto-generated from `master.csv`. 5 rows across 5 sources._
 
@@ -18,7 +18,7 @@ _No rows with `rate_per_1000_ae` populated. See `rate_raw` + `rate_denominator_r
 |---|---:|---|---|---:|
 | mixed | 5 | | mixed | 5 |
 
-_Cumulative reported `injury_count` across these 5 rows: **31**._
+_Cumulative reported `injury_count` across these 5 rows: ** 31**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

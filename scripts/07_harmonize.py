@@ -9,12 +9,12 @@ writing a broken master.
 
 Rules:
   - Skip files whose name starts with '_' (internal: _screening, _abstracts, etc.)
-  - Skip files whose name starts with 'neiss_dental_sports_' — those are the
+  - Skip files whose name starts with 'neiss_dental_sports_': those are the
     raw NEISS filter outputs (full NEISS column set), not yet mapped to the
     data dictionary schema. They will get their own mapping script.
   - Every extraction must have exactly the columns in EXPECTED_COLUMNS; extra
     columns are warned and dropped; missing columns are added as empty.
-  - No type coercion beyond what DictWriter does — values are written as
+  - No type coercion beyond what DictWriter does: values are written as
     strings; pandas-side analysis will re-type.
 
 Output is deterministic: rows sorted by (source_id, sport, age_min) so
@@ -101,7 +101,7 @@ def main():
         w.writeheader()
         w.writerows(all_rows)
 
-    print(f"\nWrote {HARMONIZED.relative_to(ROOT)} — {len(all_rows)} rows from {len(files)} source(s)")
+    print(f"\nWrote {HARMONIZED.relative_to(ROOT)}, {len(all_rows)} rows from {len(files)} source(s)")
     if issues:
         print("\nSchema notes:")
         for line in issues:

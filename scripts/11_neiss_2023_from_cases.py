@@ -9,11 +9,11 @@ Rows produced:
   - 1 aggregate row (all sports, all youth 5-22)
   - 3 age-band rows (youth 5-12, adolescent 13-17, collegiate 18-22) across all sports
   - 1 row per sport with >= 5 raw cases (mixed sex, all youth)
-  - 2 sex rows (male / female) across all sports, all youth — context for the 83% male signal
+  - 2 sex rows (male / female) across all sports, all youth: context for the 83% male signal
 
 Each row's injury_count is the raw NEISS case count. The weighted national
 estimate (sum of the NEISS Weight column for matching cases) is recorded in
-extraction_notes — the data dictionary doesn't currently have a dedicated
+extraction_notes, the data dictionary doesn't currently have a dedicated
 column for it (proposed for next session in docs/decisions.md).
 """
 
@@ -92,7 +92,7 @@ common = {
     "population_setting": "mixed",
     "level_of_play": "mixed",
     "season_or_timeframe": "2023 calendar year",
-    "injury_type_raw": "ED-treated mouth injury (NEISS Body_Part = 88, includes teeth) — sport-related (Product_1 ∈ 23 sport codes)",
+    "injury_type_raw": "ED-treated mouth injury (NEISS Body_Part = 88, includes teeth), sport-related (Product_1 ∈ 23 sport codes)",
     "injury_category": "unspecified_dental",
     "mouthguard_required": "unspecified",
     "mouthguard_use_rate": "",
@@ -110,7 +110,7 @@ def make_row(label, subset, *, age_min, age_max, age_category, sex,
     weighted = sum(c["weight"] for c in subset)
     note = (
         f"Raw NEISS case count for {label}; "
-        f"weighted national estimate = {weighted:,.0f}. "
+        f"weighted national estimate = {weighted: .0f}. "
         f"Filtered from neiss_dental_sports_neiss_2023.csv on 2026-05-23. "
         + extra_note
     ).strip()
@@ -126,36 +126,32 @@ def make_row(label, subset, *, age_min, age_max, age_category, sex,
         rate_denominator_raw="",
         rate_per_1000_ae="",  # NEISS uses population denominator not AE
         extraction_notes=note,
-        quality_flag="partial_data" if n >= 5 else "review_needed",
-    )
+        quality_flag="partial_data" if n >= 5 else "review_needed")
 
 
 rows = []
 
-# 1. Aggregate row — all sports, all youth 5-22
+# 1. Aggregate row, all sports, all youth 5-22
 rows.append(make_row(
     "all sports × all youth (5-22)", cases,
     age_min=5, age_max=22, age_category="mixed", sex="mixed",
     sport_raw="all 23 sport-related product codes",
     sport="all_sports_aggregate", sport_category="",
     subgroup_label="all_youth_aggregate",
-    extra_note="Headline 2023 NEISS rollup for the project's scope.",
-))
+    extra_note="Headline 2023 NEISS rollup for the project's scope."))
 
 # 2. Age-band rows (across all sports)
 for cat, lo, hi, _ in (
     ("youth", 5, 12, "youth_primary"),
     ("adolescent", 13, 17, "youth_primary"),
-    ("collegiate", 18, 22, "youth_primary"),
-):
+    ("collegiate", 18, 22, "youth_primary")):
     subset = [c for c in cases if lo <= c["age"] <= hi]
     rows.append(make_row(
         f"all sports × {cat} ({lo}-{hi})", subset,
         age_min=lo, age_max=hi, age_category=cat, sex="mixed",
         sport_raw=f"all 23 sport-related product codes ({cat} band)",
         sport="all_sports_aggregate", sport_category="",
-        subgroup_label=f"age_band_{cat}",
-    ))
+        subgroup_label=f"age_band_{cat}"))
 
 # 3. Per-sport rows (mixed sex, all youth, only sports with >=5 cases)
 sport_groups = defaultdict(list)
@@ -183,8 +179,7 @@ for sex in ("male", "female"):
         age_min=5, age_max=22, age_category="mixed", sex=sex,
         sport_raw=f"all 23 sport-related product codes ({sex})",
         sport="all_sports_aggregate", sport_category="",
-        subgroup_label=f"sex_{sex}",
-    ))
+        subgroup_label=f"sex_{sex}"))
 
 # Write
 with OUT.open("w", newline="", encoding="utf-8") as f:

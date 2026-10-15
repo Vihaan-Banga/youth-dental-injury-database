@@ -29,6 +29,6 @@ This MIT license covers the *code* in this repository:
 - Any `.py`, `.sh`, `.yml`, `.toml`, or similar build/automation files
 - The documentation that describes how the code works
 
-It does NOT cover the data, which is licensed under CC BY 4.0 — see
+It does NOT cover the data, which is licensed under CC BY 4.0, see
 `LICENSE-DATA` for the data license terms. Per PROTOCOL §9, the two-license
 split is intentional: open code under MIT and open data under CC BY 4.0.

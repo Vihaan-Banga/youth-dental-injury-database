@@ -1,4 +1,4 @@
-# master.sqlite — sample queries
+# master.sqlite, sample queries
 
 This is `data/harmonized/master.csv` loaded into SQLite as a single table `master`.
 Useful when you want a queryable view rather than parsing CSV.

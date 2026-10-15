@@ -1,4 +1,4 @@
-# Wrestling — Factsheet
+# Wrestling, Factsheet
 
 _Auto-generated from `master.csv`. 13 rows across 13 sources._
 
@@ -12,7 +12,7 @@ _Auto-generated from `master.csv`. 13 rows across 13 sources._
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| beachy2004 | 2004 | US | mixed | female | school_varsity | **0.243** | — | per 1000 athlete-sessions (95% CI 0-2.3) |
+| beachy2004 | 2004 | US | mixed | female | school_varsity | **0.243** | ,  | per 1000 athlete-sessions (95% CI 0-2.3) |
 
 _Min 0.243, max 0.243, n=1._
 
@@ -23,7 +23,7 @@ _Min 0.243, max 0.243, n=1._
 | mixed | 13 | | female | 1 |
 
 
-_Cumulative reported `injury_count` across these 13 rows: **162**._
+_Cumulative reported `injury_count` across these 13 rows: ** 162**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

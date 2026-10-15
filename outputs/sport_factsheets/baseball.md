@@ -1,4 +1,4 @@
-# Baseball — Factsheet
+# Baseball, Factsheet
 
 _Auto-generated from `master.csv`. 16 rows across 15 sources._
 
@@ -12,7 +12,7 @@ _Auto-generated from `master.csv`. 16 rows across 15 sources._
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| collins2008 | 2008 | US | adolescent | male | school_varsity | **1.260** | — | per 1000 athlete-exposures (HS baseball overall) |
+| collins2008 | 2008 | US | adolescent | male | school_varsity | **1.260** | ,  | per 1000 athlete-exposures (HS baseball overall) |
 
 _Min 1.260, max 1.260, n=1._
 
@@ -23,7 +23,7 @@ _Min 1.260, max 1.260, n=1._
 | adolescent | 1 | | male | 1 |
 | mixed | 15 | | mixed | 15 |
 
-_Cumulative reported `injury_count` across these 16 rows: **1,892**._
+_Cumulative reported `injury_count` across these 16 rows: ** 1892**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

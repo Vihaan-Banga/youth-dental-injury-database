@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extraction — halabchi2007 (PMID 24198704), resolved from the
+"""Extraction, halabchi2007 (PMID 24198704), resolved from the
 needs_additional_review pile by full-text review on 2026-06-12.
 
 Source: Halabchi F, Ziaee V, Lotfian S. (2007). Injury profile in women

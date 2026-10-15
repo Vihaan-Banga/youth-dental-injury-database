@@ -1,28 +1,28 @@
-# NEISS year-over-year trends — 2013–2025
+# NEISS year-over-year trends, 2013–2025
 
 _Auto-generated from `data/harmonized/master.csv`. Covers 12 treatment years of NEISS data on youth (ages 5–22) sport-related mouth injuries._
 
 ## Overview
 
-This is the first time, to our knowledge, that **12 treatment years** of NEISS dental-sport data has been aggregated into a single comparable table for the youth (5–22) age range. The 2020 gap reflects the COVID-19 youth-sports shutdown — the CPSC query returned zero matching cases for that year.
+This is the first time, to our knowledge, that **12 treatment years** of NEISS dental-sport data has been aggregated into a single comparable table for the youth (5–22) age range. The 2020 gap reflects the COVID-19 youth-sports shutdown, the CPSC query returned zero matching cases for that year.
 
 ## Overall trend
 
 | year | raw NEISS cases | weighted national estimate |
 |---:|---:|---:|
-| 2013 | 857 | 26,424 |
-| 2014 | 727 | 21,276 |
-| 2015 | 716 | 19,073 |
-| 2016 | 740 | 21,565 |
-| 2017 | 737 | 20,967 |
-| 2018 | 647 | 17,383 |
-| 2019 | 644 | 16,962 |
-| 2021 | 511 | 14,572 |
-| 2022 | 596 | 16,555 |
-| 2023 | 630 | 17,128 |
-| 2024 | 675 | 21,267 |
-| 2025 | 719 | 21,347 |
-| **Total** | **8,199** | **234,519** |
+| 2013 |  857 |  26424 |
+| 2014 |  727 |  21276 |
+| 2015 |  716 |  19073 |
+| 2016 |  740 |  21565 |
+| 2017 |  737 |  20967 |
+| 2018 |  647 |  17383 |
+| 2019 |  644 |  16962 |
+| 2021 |  511 |  14572 |
+| 2022 |  596 |  16555 |
+| 2023 |  630 |  17128 |
+| 2024 |  675 |  21267 |
+| 2025 |  719 |  21347 |
+| **Total** | ** 8199** | ** 234519** |
 
 ![overall trend](figures/neiss_trend_overall.png)
 
@@ -68,9 +68,9 @@ This is the first time, to our knowledge, that **12 treatment years** of NEISS d
 
 - **2020 is a true gap, not a download error.** The CPSC NEISS query for 2020 youth mouth-injury sport cases returned zero matching records, reflecting the widespread suspension of organized youth sports during COVID-19 lockdowns.
 - **Rates** are not directly computed here because NEISS uses a population denominator that varies year to year; weighted national estimates above are CPSC's own values (sum of per-case sampling weights).
-- **2013–2017 from hadley archive vs 2018–2025 from direct CPSC query** — the hadley archive used different column names but the same underlying NEISS data. The 2018–2025 extractions recovered an additional ~10–15% of cases per year by accepting `Body_Part_2 = 88` (Mouth as secondary body part — a column added by NEISS in 2019).
+- **2013–2017 from hadley archive vs 2018–2025 from direct CPSC query**, the hadley archive used different column names but the same underlying NEISS data. The 2018–2025 extractions recovered an additional ~10–15% of cases per year by accepting `Body_Part_2 = 88` (Mouth as secondary body part, a column added by NEISS in 2019).
 - **Trend interpretation**: any year-to-year change could reflect (a) real change in incidence, (b) change in youth sports participation, (c) change in NEISS sampling, (d) coding-practice change. Do not assume causality from these counts alone.
-- **Underlying methodology** validated against the 2024 NEISS Coding Manual (Appendix C for body parts, Appendix H for product codes) — see `docs/decisions.md` 2026-05-21 entry for the audit trail and the correction to PROTOCOL §4.1.
+- **Underlying methodology** validated against the 2024 NEISS Coding Manual (Appendix C for body parts, Appendix H for product codes), see `docs/decisions.md` 2026-05-21 entry for the audit trail and the correction to PROTOCOL §4.1.
 
 ## How this was generated
 

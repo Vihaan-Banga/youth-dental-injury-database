@@ -2,7 +2,7 @@
 """Audit every extracted source's citation against the authoritative PubMed
 abstract metadata (data/raw/papers/_abstracts/<PMID>.json).
 
-Motivation: the 2026-06-16 audit found williams2023/williams2024 — two rows
+Motivation: the 2026-06-16 audit found williams2023/williams2024, two rows
 whose citation named a fabricated first author ("Williams T") for a paper
 actually authored by Liang & Chuang. This script systematically hunts for the
 same class of error across all sources.
@@ -19,7 +19,7 @@ Method (title is the join key, since extracted rows carry no PMID column):
      and flag any mismatch.
   4. Sources that match no abstract title are reported separately (expected
      for NEISS year files and governing-body reports; anything else is a
-     suspect — possibly a wrong/invented title).
+     suspect, possibly a wrong/invented title).
 
 Read-only. Prints a report; changes nothing.
 """
@@ -37,7 +37,7 @@ MASTER = ROOT / "data/harmonized/master.csv"
 ABS_DIR = ROOT / "data/raw/papers/_abstracts"
 
 # Sources legitimately without a PubMed abstract (don't expect a title match).
-NON_PUBMED_PREFIXES = ("neiss",)
+NON_PUBMED_PREFIXES = ("neiss")
 NON_PUBMED_IDS = {"rugby_europe_iss_2024"}
 
 
@@ -47,7 +47,7 @@ def norm(s: str) -> str:
 
 
 def ascii_fold(s: str) -> str:
-    """Lowercase, strip diacritics and non-alphanumerics — so 'O'Malley',
+    """Lowercase, strip diacritics and non-alphanumerics, so 'O'Malley',
     'Iso-Kungas', 'Cetinbaş' compare equal to the ASCII source_id forms
     (omalley / isokungas / cetinbas) produced by scripts/03's lastname()."""
     folded = unicodedata.normalize("NFKD", s or "")
@@ -144,7 +144,7 @@ def main() -> None:
     for sid, claim, real, pmid in year_mismatch:
         print(f"  {sid:<22} source_id year {claim} but PMID {pmid} pub_year {real}")
     print()
-    print(f"NO ABSTRACT-TITLE MATCH ({len(no_match)} — expected for governing/surveillance, suspect otherwise):")
+    print(f"NO ABSTRACT-TITLE MATCH ({len(no_match)}, expected for governing/surveillance, suspect otherwise):")
     for sid, title in no_match:
         print(f"  {sid:<22} | {title}")
 

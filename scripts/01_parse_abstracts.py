@@ -6,7 +6,7 @@ Each record captures the fields screening cares about: title, abstract text
 can spot 'Case Reports' / 'Review' / 'Systematic Review'), MeSH headings,
 language, and journal.
 
-Output: data/raw/papers/_abstracts/<PMID>.json — one file per record.
+Output: data/raw/papers/_abstracts/<PMID>.json, one file per record.
 Also writes a single combined CSV at data/raw/papers/_abstracts/_index.csv
 for quick scanning.
 """

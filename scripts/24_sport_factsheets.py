@@ -49,19 +49,19 @@ for sport in sorted(by_sport):
     sources = sorted({r["source_id"] for r in sport_rows})
     countries = sorted({r["country"] for r in sport_rows if r["country"]})
     years = sorted({int(r["pub_year"]) for r in sport_rows if r["pub_year"].isdigit()})
-    year_span = f"{min(years)}-{max(years)}" if years else "—"
+    year_span = f"{min(years)}-{max(years)}" if years else ", "
 
     index_lines.append(f"| [{sport}]({sport}.md) | {len(sport_rows)} | "
-                       f"{len(sources)} | {year_span} | {', '.join(countries) or '—'} |")
+                       f"{len(sources)} | {year_span} | {', '.join(countries) or ', '} |")
 
     # Per-sport markdown
-    md = [f"# {sport.replace('_', ' ').title()} — Factsheet\n",
+    md = [f"# {sport.replace('_', ' ').title()}, Factsheet\n",
           f"_Auto-generated from `master.csv`. {len(sport_rows)} rows across {len(sources)} sources._\n",
           f"**Sport identifier in database:** `{sport}`"]
     if sport_rows:
         cat = sport_rows[0].get("sport_category", "") or "(unset)"
         md.append(f"**Sport category:** `{cat}`")
-    md.append(f"**Countries:** {', '.join(countries) or '—'}")
+    md.append(f"**Countries:** {', '.join(countries) or ', '}")
     md.append(f"**Year span:** {year_span}")
     md.append(f"**Sources contributing:** {', '.join(sources)}\n")
 
@@ -73,11 +73,11 @@ for sport in sorted(by_sport):
         md.append("| source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |")
         md.append("|---|---:|---|---|---|---|---:|---|---|")
         for r in sorted(rate_rows, key=lambda r: float(r["rate_per_1000_ae"])):
-            md.append(f"| {r['source_id']} | {r['pub_year']} | {r['country'] or '—'} | "
-                      f"{r['age_category'] or '—'} | {r['sex'] or '—'} | "
-                      f"{r['level_of_play'] or '—'} | "
+            md.append(f"| {r['source_id']} | {r['pub_year']} | {r['country'] or ', '} | "
+                      f"{r['age_category'] or ', '} | {r['sex'] or ', '} | "
+                      f"{r['level_of_play'] or ', '} | "
                       f"**{float(r['rate_per_1000_ae']):.3f}** | "
-                      f"{r.get('subgroup_label') or '—'} | "
+                      f"{r.get('subgroup_label') or ', '} | "
                       f"{(r.get('rate_denominator_raw') or '')[:60]} |")
         rates = [float(r["rate_per_1000_ae"]) for r in rate_rows]
         md.append(f"\n_Min {min(rates):.3f}, max {max(rates):.3f}, n={len(rates)}._\n")
@@ -97,9 +97,9 @@ for sport in sorted(by_sport):
                 use = float(r["mouthguard_use_rate"])
             except ValueError:
                 continue
-            md.append(f"| {r['source_id']} | {r['pub_year']} | {r['sex'] or '—'} | "
-                      f"{r.get('subgroup_label') or '—'} | **{use:.0%}** | "
-                      f"{r['mouthguard_injury_relation'] or '—'} |")
+            md.append(f"| {r['source_id']} | {r['pub_year']} | {r['sex'] or ', '} | "
+                      f"{r.get('subgroup_label') or ', '} | **{use:.0%}** | "
+                      f"{r['mouthguard_injury_relation'] or ', '} |")
         md.append("")
 
     # ----- Age + sex distribution of rows -----
@@ -121,7 +121,7 @@ for sport in sorted(by_sport):
             inj_total += int(float(r["injury_count"])) if r["injury_count"] else 0
         except ValueError:
             pass
-    md.append(f"\n_Cumulative reported `injury_count` across these {len(sport_rows)} rows: **{inj_total:,}**._\n")
+    md.append(f"\n_Cumulative reported `injury_count` across these {len(sport_rows)} rows: **{inj_total: }**._\n")
     md.append("Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.\n")
 
     md.append("## Related sources outside this sport\n")

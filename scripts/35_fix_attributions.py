@@ -32,8 +32,8 @@ EXTRACTED = ROOT / "data/extracted"
 ABS_DIR = ROOT / "data/raw/papers/_abstracts"
 SOURCES_MD = ROOT / "docs/sources.md"
 
-# Sources that are not PubMed papers — never touch.
-SKIP_PREFIXES = ("neiss",)
+# Sources that are not PubMed papers, never touch.
+SKIP_PREFIXES = ("neiss")
 SKIP_IDS = {"rugby_europe_iss_2024"}
 
 # Title-match failed on punctuation/abbreviation for these; pin the PMID by the
@@ -140,14 +140,14 @@ def main() -> None:
             print(f"     old: {oc[:95]}")
             print(f"     new: {nc[:95]}")
     if collisions:
-        print("\n!!! COLLISIONS (multiple files map to same new id) — MUST resolve before apply:")
+        print("\n!!! COLLISIONS (multiple files map to same new id), MUST resolve before apply:")
         for k, v in collisions.items():
             print(f"    {k}: {v} files")
     if unmatched:
         print(f"\nUNMATCHED (left unchanged): {unmatched}")
 
     if not apply:
-        print("\n(dry run — no files changed. Re-run with --apply once the mapping looks right.)")
+        print("\n(dry run, no files changed. Re-run with --apply once the mapping looks right.)")
         return
 
     if collisions:

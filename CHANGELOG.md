@@ -6,114 +6,114 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 
 (Working state on `main`. Will become v0.1.0 at the next tag.)
 
-### 2026-07-03 — dental_specific column, Rate Explorer scope warning, data package
+### 2026-07-03: dental_specific column, Rate Explorer scope warning, data package
 
 #### Added
 - **Derived column `dental_specific`** (`TRUE`/`FALSE`) in `master.csv` (now **40 columns**; validator gains **C14**). Marks the 19 rows whose outcome is a broader all-cause / head-neck injury measure rather than a dental rate. The **Rate Explorer** now shows a visible "⚠ not dental-specific" warning on those rows so an all-injury rate can't be mis-compared as a dental rate (verified in-browser).
-- **`datapackage.json`** (Frictionless tabular data-package descriptor, via `scripts/40_datapackage.py`) — field names, inferred types, data-dictionary descriptions, CC BY 4.0 licence, primary key. Makes the dataset machine-consumable by standard open-data tooling; regenerated in `run_all`.
+- **`datapackage.json`** (Frictionless tabular data-package descriptor, via `scripts/40_datapackage.py`), field names, inferred types, data-dictionary descriptions, CC BY 4.0 licence, primary key. Makes the dataset machine-consumable by standard open-data tooling; regenerated in `run_all`.
 
-### 2026-07-03 — Data-quality report, rate-scope guard, beachy2004 fix
+### 2026-07-03: Data-quality report, rate-scope guard, beachy2004 fix
 
 #### Fixed
-- **`beachy2004 [all_sports]`** — `rate_raw` **0.2 → 0.29** (derived "% of 19,492 injuries that were dental" = 56/19,492; the stored 0.2 was internally inconsistent, caught by the recompute audit). Only data value changed this pass; validator still 0 FAILs / 0 WARNs.
+- **`beachy2004 [all_sports]`**: `rate_raw` **0.2 → 0.29** (derived "% of 19,492 injuries that were dental" = 56/19,492; the stored 0.2 was internally inconsistent, caught by the recompute audit). Only data value changed this pass; validator still 0 FAILs / 0 WARNs.
 
 #### Added
-- **`scripts/39_data_quality.py`** + `outputs/data_quality.md` — consolidated data-quality report (verification-risk tiers + external/internal numeric audits) with a **rate-scope guard** that flags ~15 rows carrying an all-cause / head-neck injury rate (not dental-specific) that sit in a dental comparability group — a comparability hazard surfaced for advisor reclassification (e.g. `kerr2008`, `collins2008`). Added to the `run_all.py` audit stage. Methods-paper Technical Validation + Limitations updated accordingly.
+- **`scripts/39_data_quality.py`** + `outputs/data_quality.md`: consolidated data-quality report (verification-risk tiers + external/internal numeric audits) with a **rate-scope guard** that flags ~15 rows carrying an all-cause / head-neck injury rate (not dental-specific) that sit in a dental comparability group, a comparability hazard surfaced for advisor reclassification (e.g. `kerr2008`, `collins2008`). Added to the `run_all.py` audit stage. Methods-paper Technical Validation + Limitations updated accordingly.
 
-### 2026-07-03 — Internal numeric-consistency audit
+### 2026-07-03: Internal numeric-consistency audit
 
 #### Added
-- **`scripts/38_recompute_audit.py`** + `outputs/recompute_audit.md` — recomputes every derivable value from a row's own inputs (back-calculated counts, rate unit-conversions, count/AE rates) and flags internal inconsistencies and field-labeling errors. Read-only; added to the `run_all.py` audit stage. First run: 61/66 checks consistent, **5 rows flagged** for source verification (`beachy2004` rate vs count, `huang2009` two-step base mismatch, `kerr2008` ×2 count-vs-rate denominator, `levin2003` injury_count likely a denominator). No data changed — flags are logged for one-at-a-time adjudication (see `docs/decisions.md`).
+- **`scripts/38_recompute_audit.py`** + `outputs/recompute_audit.md`: recomputes every derivable value from a row's own inputs (back-calculated counts, rate unit-conversions, count/AE rates) and flags internal inconsistencies and field-labeling errors. Read-only; added to the `run_all.py` audit stage. First run: 61/66 checks consistent, **5 rows flagged** for source verification (`beachy2004` rate vs count, `huang2009` two-step base mismatch, `kerr2008` ×2 count-vs-rate denominator, `levin2003` injury_count likely a denominator). No data changed, flags are logged for one-at-a-time adjudication (see `docs/decisions.md`).
 
-### 2026-07-03 — Re-screen of the needs_additional_review pile (84 → 73)
+### 2026-07-03: Re-screen of the needs_additional_review pile (84 → 73)
 
 #### Changed
 - Systematically re-screened all 84 `needs_additional_review` candidates from their cached abstracts. Excluded **11**: 6 pre-2000 (`E-date`) and 5 out-of-scope (concussion-only outcome, methods-only Part I, mouthguard-policy article, US professional-league adults). Decisions recorded in `scripts/screening_overrides.py`; re-ran `02→03→04`. `needs_additional_review` 84 → **73**; `master.csv` unchanged (validator still 0 FAILs / 0 WARNs).
 
 #### Added
-- `internal/fulltext_request_list.md` — the 73 remaining records tiered by extraction yield (Tier 1 = 10 explicit-youth-subset records; Tier 2 = 35 sport surveys; Tier 3 = 28 general prevalence), with free PMC/OA links where available, for advisor-assisted full-text retrieval.
+- `internal/fulltext_request_list.md`: the 73 remaining records tiered by extraction yield (Tier 1 = 10 explicit-youth-subset records; Tier 2 = 35 sport surveys; Tier 3 = 28 general prevalence), with free PMC/OA links where available, for advisor-assisted full-text retrieval.
 
-### 2026-07-01 — Reproducibility scaffolding
+### 2026-07-01: Reproducibility scaffolding
 
 #### Added
-- **`scripts/run_all.py`** — one-command, offline, deterministic rebuild of the whole database from the committed extraction CSVs: harmonize → validate → regenerate all outputs (figures, factsheets, bibliography, SQLite export, per-country / cross-source / NEISS-trend reports, Rate Explorer JSON) → citation audit. Flags: `--core` (stdlib-only harmonize+validate), `--check` (fail if a fresh build changes `master.csv`), `--no-audit`.
-- **`requirements.txt`** — the single external dependency (`matplotlib`, for figures only); the core pipeline is Python-stdlib-only.
+- **`scripts/run_all.py`**: one-command, offline, deterministic rebuild of the whole database from the committed extraction CSVs: harmonize → validate → regenerate all outputs (figures, factsheets, bibliography, SQLite export, per-country / cross-source / NEISS-trend reports, Rate Explorer JSON) → citation audit. Flags: `--core` (stdlib-only harmonize+validate), `--check` (fail if a fresh build changes `master.csv`), `--no-audit`.
+- **`requirements.txt`**: the single external dependency (`matplotlib`, for figures only); the core pipeline is Python-stdlib-only.
 - **README "Reproduce the database"** section documenting the commands and the three pipeline tiers (core / outputs / extraction).
 
 #### Changed
 - **CI** (`.github/workflows/validate.yml`) now runs `run_all.py --core --check`, so every push is gated on the published `master.csv` reproducing byte-for-byte from source-of-truth inputs (previously CI only harmonized + validated). Removed the unused `pandas` install. Fixed a stale "C1-C10" comment → C1-C13.
 
-### 2026-06-30 — Rate Explorer mouthguard panel removed
+### 2026-06-30: Rate Explorer mouthguard panel removed
 
 #### Fixed
-- **Rate Explorer mouthguard panel showed the same numbers as the injury-rate table.** Diagnosed as a display bug (not a data error): the panel selected rows by `mouthguard_injury_relation='analyzed'` and rendered their injury rate, re-listing rows already in the per-1000-AE table. First reworked the panel to show genuine mouthguard data (use % + user-vs-nonuser contrast), then removed the standalone panel entirely — every row's mouthguard fields already appear inline in the tables' **Mouthguard** column. `docs/rate-explorer.html` only; no data change. See `docs/decisions.md` 2026-06-24 / 2026-06-30.
+- **Rate Explorer mouthguard panel showed the same numbers as the injury-rate table.** Diagnosed as a display bug (not a data error): the panel selected rows by `mouthguard_injury_relation='analyzed'` and rendered their injury rate, re-listing rows already in the per-1000-AE table. First reworked the panel to show genuine mouthguard data (use % + user-vs-nonuser contrast), then removed the standalone panel entirely, every row's mouthguard fields already appear inline in the tables' **Mouthguard** column. `docs/rate-explorer.html` only; no data change. See `docs/decisions.md` 2026-06-24 / 2026-06-30.
 
-### 2026-06-24 — Comparability metadata, provenance, and date-range cleanup
+### 2026-06-24: Comparability metadata, provenance, and date-range cleanup
 
 #### Added
-- **Three derived comparability columns** in `master.csv` (computed at harmonization, not stored in extraction CSVs): `measure_type` (9-value outcome-measure vocabulary), `comparability_group` (the key on which direct comparison is permitted), and `data_provenance` (redistribution-rights class: `public_domain_raw` / `published_summary` / `governing_body_public`). Master is now **39 columns** (36 source + 3 derived). All rows manually classified — **0 remain `unclassified_pending_review`**.
-- **Validator checks C12 and C13** — `measure_type`/`comparability_group` populated and in-vocabulary; `data_provenance` populated and in-vocabulary. The validator now runs **13 checks (C1–C13)**.
+- **Three derived comparability columns** in `master.csv` (computed at harmonization, not stored in extraction CSVs): `measure_type` (9-value outcome-measure vocabulary), `comparability_group` (the key on which direct comparison is permitted), and `data_provenance` (redistribution-rights class: `public_domain_raw` / `published_summary` / `governing_body_public`). Master is now **39 columns** (36 source + 3 derived). All rows manually classified, **0 remain `unclassified_pending_review`**.
+- **Validator checks C12 and C13**: `measure_type`/`comparability_group` populated and in-vocabulary; `data_provenance` populated and in-vocabulary. The validator now runs **13 checks (C1–C13)**.
 - **Comparability & limitations** notes across `README.md`, `docs/index.md`, and the methods draft, plus a data-rights statement (PROTOCOL §12, `LICENSE-DATA`).
 
 #### Changed
 - **Removed 3 pre-2000 publications** (`gomez1996`, `pasternack1996`, `emshoff1997`) to resolve the PROTOCOL §3.1 "on or after 2000" inconsistency. New totals: **421 rows / 103 sources / 28 countries**, publication range **2000–2026**. Austria dropped (its only source was `emshoff1997`).
 - Regenerated bibliography, SQLite export, country breakdown, factsheets, and figures against the new totals. Validator: **0 FAILs / 0 WARNs**; citation audit: 0 author/year mismatches.
 
-### 2026-06-16 — Author-attribution integrity repair
+### 2026-06-16: Author-attribution integrity repair
 
 #### Fixed
 - **Corrected fabricated author attributions across 67 of 93 PubMed sources.** An audit found the AI-assisted extractions had copied paper titles correctly but invented author names (e.g. `williams2024`→ actually Liang & Chuang; `collins2004`→ Beachy; `radelet1996`→ Pasternack; `benson2002`→ Stuart). Rebuilt every `source_id` + `citation` from the authoritative PubMed abstract metadata. Audit (`scripts/34`) now reports **0 author/year mismatches**; re-running the extraction scripts reproduces `master.csv` byte-for-byte. See `docs/decisions.md` 2026-06-16.
 
 #### Added
-- `scripts/34_audit_citations.py` — reusable citation/author audit against cached PubMed abstracts (run before releases).
-- `scripts/35_fix_attributions.py`, `scripts/36_fix_batch_script_attributions.py` — the one-time repair (data + scripts).
-- `scripts/37_audit_numbers.py` + `outputs/number_audit.md` — sanity-checks extracted numeric values (counts, rates, sample sizes, mouthguard use) against the source abstract. 80% corroborate in-abstract; the rest are flagged for full-text review (full-text-table values, or computed figures such as back-calculated `injury_count`s). Not a pass/fail — a reviewer aid.
+- `scripts/34_audit_citations.py`: reusable citation/author audit against cached PubMed abstracts (run before releases).
+- `scripts/35_fix_attributions.py`, `scripts/36_fix_batch_script_attributions.py`: the one-time repair (data + scripts).
+- `scripts/37_audit_numbers.py` + `outputs/number_audit.md`: sanity-checks extracted numeric values (counts, rates, sample sizes, mouthguard use) against the source abstract. 80% corroborate in-abstract; the rest are flagged for full-text review (full-text-table values, or computed figures such as back-calculated `injury_count`s). Not a pass/fail, a reviewer aid.
 
 #### Changed
-- `scripts/26_bibliography.py` — BibTeX keys now parsed from `docs/sources.md` (was a hardcoded map that carried the wrong ids).
-- `scripts/03_apply_screening_to_sources.py` — `source_id`s are ASCII-folded (e.g. `omalley2012`, `gabris2001`) for valid filenames/BibTeX keys.
+- `scripts/26_bibliography.py`: BibTeX keys now parsed from `docs/sources.md` (was a hardcoded map that carried the wrong ids).
+- `scripts/03_apply_screening_to_sources.py`: `source_id`s are ASCII-folded (e.g. `omalley2012`, `gabris2001`) for valid filenames/BibTeX keys.
 - C11 rate blanking (2026-06-13) encoded into `scripts/19` and `scripts/20` so it survives re-extraction.
 
-### 2026-06-12 — full-text review of the open-access `needs_additional_review` subset
+### 2026-06-12: full-text review of the open-access `needs_additional_review` subset
 
 #### Added
-- `scripts/30_oa_url_lookup.py` + `outputs/needs_additional_review_oa_urls.csv` — Unpaywall best-OA-URL lookup for all 91 `needs_additional_review` records (24 have a free URL).
-- `scripts/31_pmc_availability.py` + `outputs/needs_additional_review_pmc.csv` — PubMed→PMC lookup (8 have free PMC full text).
-- `scripts/32_extract_halabchi2007.py` + `data/extracted/halabchi2007.csv` — new included source: **halabchi2007** (women's Shotokan karate championships, Iran; 3 dental avulsion/subluxation of 186 injuries). First Iran source and first `martial_arts_other` row from a dedicated study.
-- `outputs/needs_additional_review_fulltext_review_2026-06-12.md` — audit log of every fetch attempt and per-record decision.
+- `scripts/30_oa_url_lookup.py` + `outputs/needs_additional_review_oa_urls.csv`: Unpaywall best-OA-URL lookup for all 91 `needs_additional_review` records (24 have a free URL).
+- `scripts/31_pmc_availability.py` + `outputs/needs_additional_review_pmc.csv`: PubMed→PMC lookup (8 have free PMC full text).
+- `scripts/32_extract_halabchi2007.py` + `data/extracted/halabchi2007.csv`: new included source: **halabchi2007** (women's Shotokan karate championships, Iran; 3 dental avulsion/subluxation of 186 injuries). First Iran source and first `martial_arts_other` row from a dedicated study.
+- `outputs/needs_additional_review_fulltext_review_2026-06-12.md`: audit log of every fetch attempt and per-record decision.
 
 #### Changed
 - `needs_additional_review` pile **91 → 84**: 1 record promoted to `included`/`extracted`, 6 `fulltext_excluded` (E-age ×4, E-offtop, E-nodent). Logged in `docs/decisions.md` and `scripts/screening_overrides.py`.
 - `data/harmonized/master.csv` **425 → 426 rows**, **105 → 106 sources**; SQLite, bibliography (93 → 94), country breakdown, sport factsheets, and figures regenerated. Validator: 0 FAILs / 0 WARNs.
-- `scripts/26_bibliography.py` — now includes full-text-promoted `included` records, not just `screened_included`.
-- `scripts/03_apply_screening_to_sources.py` — screening-summary percentages now use the real denominator (was a hardcoded `/200`, producing a >100% figure) and list the `included`/`extracted`/`fulltext_excluded` statuses.
+- `scripts/26_bibliography.py`: now includes full-text-promoted `included` records, not just `screened_included`.
+- `scripts/03_apply_screening_to_sources.py`: screening-summary percentages now use the real denominator (was a hardcoded `/200`, producing a >100% figure) and list the `included`/`extracted`/`fulltext_excluded` statuses.
 
 ### Added
 - GitHub Pages site at https://vihaan-banga.github.io/youth-dental-injury-database/ (Jekyll, theme `minima`).
-- `outputs/sources_bibliography.bib` — BibTeX file with 93 included PubMed sources + 5 governing-body @misc entries.
-- `data/harmonized/master.sqlite` — SQLite export of `master.csv` for easier querying (487 KB). With sample queries in `data/harmonized/README_sqlite.md`.
-- `CONTRIBUTING.md` — contribution guidelines.
+- `outputs/sources_bibliography.bib`: BibTeX file with 93 included PubMed sources + 5 governing-body @misc entries.
+- `data/harmonized/master.sqlite`: SQLite export of `master.csv` for easier querying (487 KB). With sample queries in `data/harmonized/README_sqlite.md`.
+- `CONTRIBUTING.md`: contribution guidelines.
 - `CHANGELOG.md` (this file).
 
-## 2026-05-25 — pre-v0.1 working snapshot
+## 2026-05-25: pre-v0.1 working snapshot
 
 ### Added
 - **NEISS coverage expanded to 12 treatment years** (2013–2019, 2021–2025) after user manually downloaded 2018–2019 and 2021–2025 from CPSC. 2020 returned no matching cases (real COVID-era youth-sport gap). 6 new per-year extractions: `neiss2018`, `neiss2019`, `neiss2021`, `neiss2022`, `neiss2024`, `neiss2025`.
-- `outputs/neiss_trends.md` + 3 trend figures — first published 12-year aggregation of NEISS youth dental-sport data.
-- `outputs/cross_source_rate_comparison.md` + figure — internal consistency check.
-- `outputs/methods_paper_draft.md` — Scientific Data data-descriptor skeleton.
-- `outputs/sport_factsheets/` — 19 per-sport one-pagers.
-- GitHub Actions CI at `.github/workflows/validate.yml` — runs validator on every push and PR.
+- `outputs/neiss_trends.md` + 3 trend figures: first published 12-year aggregation of NEISS youth dental-sport data.
+- `outputs/cross_source_rate_comparison.md` + figure: internal consistency check.
+- `outputs/methods_paper_draft.md`: Scientific Data data-descriptor skeleton.
+- `outputs/sport_factsheets/`: 19 per-sport one-pagers.
+- GitHub Actions CI at `.github/workflows/validate.yml`: runs validator on every push and PR.
 - 10 more PubMed bulk extractions (batch 6): `collins_neiss2019`, `kaplan2022`, `rajan2021`, `ekanayake2021`, `dafnis_soccer2021`, `basketball_craniofacial2021`, `chisholm2020`, `alkilzy2019`, `otsuru2016`, `kanagasingam2016`.
 
 ### Changed
-- All 20 scripts now use `Path(__file__).resolve().parent.parent` for ROOT — portable across machines / CI.
+- All 20 scripts now use `Path(__file__).resolve().parent.parent` for ROOT, portable across machines / CI.
 - `wormald2022` rates moved from `rate_per_1000_ae` to `rate_raw` after cross-source analysis revealed they were per-AE-HOURS not per-AE. Documented as a project-wide rule.
 
 ### Fixed
-- `headline_snapshot.png` rendering — earlier version was blank for some viewers; switched to explicit axis limits.
+- `headline_snapshot.png` rendering: earlier version was blank for some viewers; switched to explicit axis limits.
 
-## 2026-05-24 — sport-taxonomy expansion
+## 2026-05-24: sport-taxonomy expansion
 
 ### Added
 - 19 new sport taxonomy entries: cricket, netball, cycling, mountain_biking, hurling, kabaddi, gaelic_football_mens, gaelic_football_womens, australian_rules_football, skiing, snowboarding, equestrian, inline_skating, crossfit, kickboxing, muay_thai, judo, handball, floorball.
@@ -123,9 +123,9 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 - `CITATION.cff` for GitHub "Cite this repository" button.
 
 ### Changed
-- NEISS filter (`scripts/05_neiss_filter.py`) now also accepts `Body_Part_2 = 88` (Mouth as secondary body part — column added by NEISS in 2019). Recovered ~15% more cases per applicable year.
+- NEISS filter (`scripts/05_neiss_filter.py`) now also accepts `Body_Part_2 = 88` (Mouth as secondary body part, column added by NEISS in 2019). Recovered ~15% more cases per applicable year.
 
-## 2026-05-23 — repo publication + extractions
+## 2026-05-23: repo publication + extractions
 
 ### Added
 - Repo published publicly on GitHub.
@@ -136,17 +136,17 @@ All notable changes to the Youth Sports Dental Injury Database are documented he
 - 3 abstract-only extractions: `azadani2023`, `quarrie2020`, `welch2010`.
 - Initial NEISS pipeline (filter + 2023 extraction + hadley 2013-2017 archive).
 
-## 2026-05-22 — schema-gap fixes
+## 2026-05-22: schema-gap fixes
 
 ### Added
 - 11 governing-body PDFs catalogued.
 - First pilot extractions: `collins2016`, `labella2002`, `stewart2009`.
 
-## 2026-05-21 — project initialization
+## 2026-05-21: project initialization
 
 ### Added
 - Git repo initialized.
-- PubMed seed search via NCBI E-utilities — 200 candidates.
+- PubMed seed search via NCBI E-utilities: 200 candidates.
 - AI-assisted screening of all 200 against PROTOCOL §3.1–3.3.
 - NEISS body-part codes verified against 2024 NEISS Coding Manual (corrected protocol's incorrect labels for codes 76/77/88).
 - Initial scripts: harmonize, validate, screen.

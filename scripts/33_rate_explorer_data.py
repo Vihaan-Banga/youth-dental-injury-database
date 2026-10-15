@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Derive docs/rate_explorer_data.json — the data backing the static Rate
+"""Derive docs/rate_explorer_data.json, the data backing the static Rate
 Explorer page (docs/rate-explorer.html).
 
 This is a faithful projection of data/harmonized/master.csv: it copies the
 fields the explorer displays for each youth-primary row, plus a small meta
-block. It invents nothing — it is a column subset of master.csv, so the page
+block. It invents nothing, it is a column subset of master.csv, so the page
 can run as a simple client-side filter (the v1 spec: "simple filter over
 master.csv, no ML").
 
@@ -64,9 +64,9 @@ def main() -> None:
         "rows": projected,
     }
     OUT.write_text(json.dumps(payload, separators=(",", ":")))
-    print(f"Wrote {OUT.relative_to(ROOT)} — {len(projected)} rows, "
+    print(f"Wrote {OUT.relative_to(ROOT)}, {len(projected)} rows, "
           f"{len(sports)} sports, {n_ae} with per-1000-AE rate, "
-          f"{n_mg} mouthguard-analyzed. ({OUT.stat().st_size:,} bytes)")
+          f"{n_mg} mouthguard-analyzed. ({OUT.stat().st_size: } bytes)")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-# Hockey Field — Factsheet
+# Hockey Field, Factsheet
 
 _Auto-generated from `master.csv`. 12 rows across 11 sources._
 
@@ -12,8 +12,8 @@ _Auto-generated from `master.csv`. 12 rows across 11 sources._
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| azadani2023 | 2023 | US | adolescent | female | school_varsity | **0.035** | — | per 100,000 athlete-exposures |
-| collins2016 | 2016 | US | adolescent | female | school_varsity | **0.039** | — | per 100,000 athlete-exposures |
+| azadani2023 | 2023 | US | adolescent | female | school_varsity | **0.035** | ,  | per 100,000 athlete-exposures |
+| collins2016 | 2016 | US | adolescent | female | school_varsity | **0.039** | ,  | per 100,000 athlete-exposures |
 | gardner2015 | 2015 | US | collegiate | female | elite | **0.060** | dental_subset | per 1000 AE (dental specifically) |
 | gardner2015 | 2015 | US | collegiate | female | elite | **0.940** | head_face_eye_aggregate | per 1000 AE (head/face/eye combined) |
 
@@ -23,7 +23,7 @@ _Min 0.035, max 0.940, n=4._
 
 | source | year | sex | subgroup | use rate | injury-relation analysis |
 |---|---:|---|---|---:|---|
-| zamoraolave2020 | 2020 | mixed | — | **96%** | mentioned_only |
+| zamoraolave2020 | 2020 | mixed | ,  | **96%** | mentioned_only |
 
 ## Distribution of rows
 
@@ -33,7 +33,7 @@ _Min 0.035, max 0.940, n=4._
 | collegiate | 2 | | mixed | 8 |
 
 
-_Cumulative reported `injury_count` across these 12 rows: **371**._
+_Cumulative reported `injury_count` across these 12 rows: ** 371**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

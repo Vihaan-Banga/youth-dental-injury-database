@@ -26,7 +26,7 @@ def first_author(rec):
 
 
 def lastname(name):
-    # esummary returns "Last FM" — first whitespace-delimited token is the surname
+    # esummary returns "Last FM", first whitespace-delimited token is the surname
     return name.split()[0].lower()
 
 
@@ -48,7 +48,7 @@ def short_cite(rec):
     yr = pubyear(rec)
     title = rec.get("title", "").rstrip(".")
     title = (title[:90] + "...") if len(title) > 90 else title
-    return f"{fa} ({yr}) — {title}"
+    return f"{fa} ({yr}), {title}"
 
 
 # Build source_id with collision handling
@@ -93,7 +93,7 @@ for r in rows:
     journal = r["journal"].replace("|", "\\|")
     print(f"| {r['source_id']} | {pmid_link} | {cite} | {journal} | {doi_link} | identified | | {today} | |")
 
-# Summary stats to stderr-ish — print to a separate file
+# Summary stats to stderr-ish, print to a separate file
 journals = Counter(r["journal"] for r in rows if r["journal"])
 years = Counter(r["pub_year"] for r in rows if r["pub_year"])
 Path("/tmp/pubmed_search/summary.txt").write_text(

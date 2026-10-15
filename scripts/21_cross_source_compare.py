@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cross-source rate comparison — for sports we have multiple sources on,
+"""Cross-source rate comparison, for sports we have multiple sources on,
 compare their reported dental-injury rates side-by-side.
 
 Goal: a sanity check on database internal consistency. If 5 sources for
@@ -26,7 +26,7 @@ OUT_PNG = ROOT / "outputs/figures/cross_source_comparison.png"
 
 rows = list(csv.DictReader(open(MASTER)))
 
-# Group by sport — collect rows with extractable numerical rate (rate_per_1000_ae)
+# Group by sport, collect rows with extractable numerical rate (rate_per_1000_ae)
 # OR rate_raw with a clear AE-based denominator
 sport_rows = defaultdict(list)
 for r in rows:
@@ -106,7 +106,7 @@ if sports_to_plot:
     ax.set_yticklabels(sports_to_plot)
     ax.set_xscale("log")
     ax.set_xlabel("Dental / orofacial injury rate per 1000 athlete-exposures (log scale)")
-    ax.set_title("Cross-source rate comparison — sports with ≥ 2 sources reporting AE-denominator rates")
+    ax.set_title("Cross-source rate comparison, sports with ≥ 2 sources reporting AE-denominator rates")
     ax.grid(axis="x", linestyle=":", alpha=0.5)
     ax.invert_yaxis()
     plt.tight_layout()
@@ -114,4 +114,4 @@ if sports_to_plot:
     plt.close()
     print(f"Wrote {OUT_PNG.relative_to(ROOT)}")
 else:
-    print("No multi-source data — skipped figure.")
+    print("No multi-source data, skipped figure.")

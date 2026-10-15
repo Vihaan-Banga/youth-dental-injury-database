@@ -1,4 +1,4 @@
-# Youth Sports Dental Injury Database — Factsheet
+# Youth Sports Dental Injury Database: Factsheet
 
 _Auto-generated; reflects `data/harmonized/master.csv` as of the latest harmonization run._
 
@@ -13,7 +13,7 @@ Repository: **https://github.com/Vihaan-Banga/youth-dental-injury-database**
 - **421 rows in master.csv**
 - **103 distinct sources** extracted
   - 90 peer-reviewed primary research papers (PubMed-keyed)
-  - **12 NEISS year extractions** (2013–2017 via the hadley archive + 2018, 2019, 2021, 2022, 2023, 2024, 2025 directly from CPSC; 2020 returned no matching cases — COVID youth-sport shutdown)
+  - **12 NEISS year extractions** (2013–2017 via the hadley archive + 2018, 2019, 2021, 2022, 2023, 2024, 2025 directly from CPSC; 2020 returned no matching cases, COVID youth-sport shutdown)
   - 1 international governing-body report (Rugby Europe 2024 U-18 Sevens)
 - **436 candidate records** screened in total (PubMed-keyed). 73 still pending full-text review (down from 91 → 84 → 73 after the 2026-06-12 open-access pass and the 2026-07-03 abstract re-screen, which excluded 6 pre-2000 and 5 out-of-scope records).
 - **28 countries** represented (US, GB, CA, AU, IE, IL, IN, BR, ZA, LB, NZ, JP, TR, ES, HU, RO, NO, KR, SY, LK, KW, IR, IT, CH, LT, LS, PR, TW)
@@ -21,18 +21,18 @@ Repository: **https://github.com/Vihaan-Banga/youth-dental-injury-database**
 
 ## Schema highlights
 
-Each row represents one extracted statistic. The data dictionary defines 36 source-extraction columns (plus 4 derived comparability columns — 40 total in `master.csv`), including:
+Each row represents one extracted statistic. The data dictionary defines 36 source-extraction columns (plus 4 derived comparability columns, 40 total in `master.csv`), including:
 
 - **Source provenance:** citation, DOI, study type, peer-reviewed flag
 - **Population:** country, age range + age category (youth 5–12 / adolescent 13–17 / collegiate 18–22 / adult 23+ as comparator), sex, level of play
-- **Exposure context:** all / competition / practice / training — disambiguates which slice of the source's data each row represents
+- **Exposure context:** all / competition / practice / training: disambiguates which slice of the source's data each row represents
 - **Subgroup label:** disambiguates mouthguard-user vs nonuser, age-band subsets, etc.
 - **Outcome:** raw counts, rates, denominator phrasing, the Andreasen-classification injury category
 - **Mouthguard:** mandate status, use rate, whether the source analyzed MG vs injury relationship
 
 `extraction_basis` distinguishes `youth_primary` rows (within the v1.0 scope) from `adult_comparator` rows (extracted alongside when the source reports adult bands).
 
-Validation runs 14 checks (C1–C14) — schema, categorical vocabulary, numeric plausibility, age-category consistency, source coverage, uniqueness, comparability metadata, provenance, and dental-specificity of the outcome. **Latest validation: 0 FAILs, 0 WARNs.** Three further audits (external abstract corroboration, internal re-computation, and a consolidated data-quality report) run in the pipeline as reviewer aids.
+Validation runs 14 checks (C1–C14), schema, categorical vocabulary, numeric plausibility, age-category consistency, source coverage, uniqueness, comparability metadata, provenance, and dental-specificity of the outcome. **Latest validation: 0 FAILs, 0 WARNs.** Three further audits (external abstract corroboration, internal re-computation, and a consolidated data-quality report) run in the pipeline as reviewer aids.
 
 ## Sport coverage
 
@@ -40,9 +40,9 @@ Sport-specific rows exist for: basketball, baseball, football (American), footba
 
 ## Notable surveillance datasets covered
 
-- **NEISS** — 6 treatment-years (2013–2017 from hadley archive, 2023 directly via CPSC). 4,320+ case-level records filtered for body part = 88 (Mouth) + 23 sport product codes + ages 5–22.
-- **National High School Sports-Related Injury Surveillance Study (RIO)** — 8 annual summary reports (2008–2018, 2021–2024); the dental-subset papers `collins2016` and `azadani2023` extracted from the same underlying data.
-- **NCAA ISP via Yard 2015** (women's field hockey AE-denominator rates) and via Wormald 2022 (D-I 13 sports maxillofacial — though note the AE-hours vs AE-count denominator distinction).
+- **NEISS**: 6 treatment-years (2013–2017 from hadley archive, 2023 directly via CPSC). 4,320+ case-level records filtered for body part = 88 (Mouth) + 23 sport product codes + ages 5–22.
+- **National High School Sports-Related Injury Surveillance Study (RIO)**, 8 annual summary reports (2008–2018, 2021–2024); the dental-subset papers `collins2016` and `azadani2023` extracted from the same underlying data.
+- **NCAA ISP via Yard 2015** (women's field hockey AE-denominator rates) and via Wormald 2022 (D-I 13 sports maxillofacial, though note the AE-hours vs AE-count denominator distinction).
 - **NZ ACC insurance claims** via `welch2010` (sports-related dental claims 1999–2008) and `quarrie2020` (rugby claims 2005–2017, ages 5–40 with full age-band breakdown).
 - **Australian Football Injury Prevention Project** via `finch2005` (community-level Aus rules football mouthguard RCT).
 
@@ -50,16 +50,16 @@ Sport-specific rows exist for: basketball, baseball, football (American), footba
 
 Where multiple sources report comparable AE-denominator rates for the same sport, the rates broadly agree:
 
-- **Basketball, US HS:** `collins2016` 0.026 / 100k AE; `azadani2023` 0.024 / 100k AE — essentially identical despite different study windows (2008-14 vs 2005-20).
-- **Field hockey, US HS girls:** `collins2016` 0.039 / 100k AE; `azadani2023` 0.035 / 100k AE — also tightly matched.
-- **Mouthguard effect (college basketball):** `labella2002` reports 0.12 (MG users) vs 0.67 (non-users) per 1000 AE — a 5.6× difference attributable to MG.
+- **Basketball, US HS:** `collins2016` 0.026 / 100k AE; `azadani2023` 0.024 / 100k AE, essentially identical despite different study windows (2008-14 vs 2005-20).
+- **Field hockey, US HS girls:** `collins2016` 0.039 / 100k AE; `azadani2023` 0.035 / 100k AE, also tightly matched.
+- **Mouthguard effect (college basketball):** `labella2002` reports 0.12 (MG users) vs 0.67 (non-users) per 1000 AE, a 5.6× difference attributable to MG.
 
 Full cross-source table at [`cross_source_rate_comparison.md`](cross_source_rate_comparison.md).
 
 ## What's still in progress
 
 - **Active screening pile:** 73 candidate papers in `needs_additional_review` (mostly blocked on age range or sport-subset not visible in the abstract). Prioritized for full-text retrieval in a 3-tier list; 10 Tier-1 records have an explicit youth subset and are the highest-yield to extract next.
-- **NEISS coverage:** 12 treatment years pulled (2013–2019, 2021–2025). Only 2020 is absent — a real COVID-era gap (no matching youth dental-sport cases), not a data gap to fill.
+- **NEISS coverage:** 12 treatment years pulled (2013–2019, 2021–2025). Only 2020 is absent, a real COVID-era gap (no matching youth dental-sport cases), not a data gap to fill.
 - **Pre-registration:** OSF pre-registration not yet filed. Advisor not yet secured.
 - **Formal license sign-off:** MIT (code) + CC BY 4.0 (data) are in `LICENSE` / `LICENSE-DATA`, matching PROTOCOL §9, but advisor sign-off pending before v1.0.
 
@@ -67,12 +67,12 @@ Full cross-source table at [`cross_source_rate_comparison.md`](cross_source_rate
 
 All publicly viewable on the repo:
 
-- **`PROTOCOL.md`** — pre-registration-pending research protocol (inclusion/exclusion criteria, search strategy, harmonization rules).
-- **`DATA_DICTIONARY.md`** — column-by-column data dictionary.
-- **`docs/decisions.md`** — append-only log of every harmonization decision and why. Includes corrections (e.g., NEISS body-part code labels in PROTOCOL §4.1).
-- **`docs/sources.md`** — full audit trail of every candidate source through screening.
-- **`outputs/validation_report.md`** — current pass/fail status against the 14 validation checks.
-- **`outputs/screening_report_2026-05-21.md`** — per-decision screening audit.
+- **`PROTOCOL.md`**: pre-registration-pending research protocol (inclusion/exclusion criteria, search strategy, harmonization rules).
+- **`DATA_DICTIONARY.md`**: column-by-column data dictionary.
+- **`docs/decisions.md`**: append-only log of every harmonization decision and why. Includes corrections (e.g., NEISS body-part code labels in PROTOCOL §4.1).
+- **`docs/sources.md`**: full audit trail of every candidate source through screening.
+- **`outputs/validation_report.md`**: current pass/fail status against the 14 validation checks.
+- **`outputs/screening_report_2026-05-21.md`**: per-decision screening audit.
 
 ## Citation
 

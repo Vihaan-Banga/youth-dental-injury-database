@@ -1,4 +1,4 @@
-# Basketball — Factsheet
+# Basketball, Factsheet
 
 _Auto-generated from `master.csv`. 27 rows across 24 sources._
 
@@ -12,8 +12,8 @@ _Auto-generated from `master.csv`. 27 rows across 24 sources._
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| azadani2023 | 2023 | US | adolescent | male | school_varsity | **0.024** | — | per 100,000 athlete-exposures |
-| collins2016 | 2016 | US | adolescent | male | school_varsity | **0.026** | — | per 100,000 athlete-exposures |
+| azadani2023 | 2023 | US | adolescent | male | school_varsity | **0.024** | ,  | per 100,000 athlete-exposures |
+| collins2016 | 2016 | US | adolescent | male | school_varsity | **0.026** | ,  | per 100,000 athlete-exposures |
 | labella2002 | 2002 | US | collegiate | male | elite | **0.120** | mouthguard_users | per 1000 athlete-exposures (custom-fitted MG users) |
 | labella2002 | 2002 | US | collegiate | male | elite | **0.670** | mouthguard_nonusers | per 1000 athlete-exposures (non-MG users) |
 
@@ -24,8 +24,8 @@ _Min 0.024, max 0.670, n=4._
 | source | year | sex | subgroup | use rate | injury-relation analysis |
 |---|---:|---|---|---:|---|
 | labella2002 | 2002 | male | mouthguard_users | **100%** | analyzed |
-| comert2026 | 2026 | mixed | — | **7%** | mentioned_only |
-| levin2003 | 2003 | male | — | **3%** | mentioned_only |
+| comert2026 | 2026 | mixed | ,  | **7%** | mentioned_only |
+| levin2003 | 2003 | male | ,  | **3%** | mentioned_only |
 | labella2002 | 2002 | male | mouthguard_nonusers | **0%** | analyzed |
 
 ## Distribution of rows
@@ -36,7 +36,7 @@ _Min 0.024, max 0.670, n=4._
 | collegiate | 6 | | male | 7 |
 | mixed | 17 | | mixed | 19 |
 
-_Cumulative reported `injury_count` across these 27 rows: **26,191**._
+_Cumulative reported `injury_count` across these 27 rows: ** 26191**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """NEISS year-over-year trend analysis using the 12 years of NEISS data
-in master.csv (2013-2025 except 2020). This is novel — no single paper has
+in master.csv (2013-2025 except 2020). This is novel, no single paper has
 aggregated this many years of NEISS dental-sport data.
 
 Outputs:
-  outputs/neiss_trends.md         — narrative + tables
-  outputs/figures/neiss_trend_overall.png         — overall cases per year
-  outputs/figures/neiss_trend_per_sport.png       — line chart per major sport
-  outputs/figures/neiss_trend_age_bands.png       — stacked area by age band
-  outputs/tables/neiss_trends.csv                 — tidy long-format CSV
+  outputs/neiss_trends.md        , narrative + tables
+  outputs/figures/neiss_trend_overall.png        , overall cases per year
+  outputs/figures/neiss_trend_per_sport.png      , line chart per major sport
+  outputs/figures/neiss_trend_age_bands.png      , stacked area by age band
+  outputs/tables/neiss_trends.csv                , tidy long-format CSV
 """
 
 import csv
@@ -78,7 +78,7 @@ for y in years:
     overall.append({"year": y, "raw_cases": n, "weighted_estimate": we})
 print(f"\nOverall by year: {len(overall)} year-rows")
 for r in overall:
-    print(f"  {r['year']}: raw={r['raw_cases']:>4}  weighted={r['weighted_estimate']:,}")
+    print(f"  {r['year']}: raw={r['raw_cases']:>4}  weighted={r['weighted_estimate']: }")
 
 
 # -------------------- 2. Per-sport by year --------------------
@@ -146,7 +146,7 @@ ax2.plot(xs, y_we, color="#c44e52", marker="o", linewidth=2,
          label="Weighted national estimate")
 ax2.set_ylabel("Weighted national estimate (CPSC)", color="#c44e52")
 ax2.tick_params(axis="y", labelcolor="#c44e52")
-plt.title("NEISS — youth dental sport injuries by treatment year, 2013–2025")
+plt.title("NEISS, youth dental sport injuries by treatment year, 2013–2025")
 ax1.set_xticks(xs)
 ax1.grid(axis="y", linestyle=":", alpha=0.3)
 # Note 2020 gap
@@ -168,7 +168,7 @@ for i, sp in enumerate(sorted(sports_with_trends, key=lambda s: -sum(per_sport[s
     ax.plot(xs, ys, marker="o", color=palette[i % len(palette)], label=sp, linewidth=2)
 ax.set_xlabel("Treatment year")
 ax.set_ylabel("NEISS raw cases (youth 5-22)")
-ax.set_title(f"NEISS — per-sport trends, {min(years)}–{max(years)} (sports with ≥ 5 years of data)")
+ax.set_title(f"NEISS, per-sport trends, {min(years)}–{max(years)} (sports with ≥ 5 years of data)")
 ax.legend(loc="upper left", fontsize=9, ncol=2)
 ax.grid(axis="y", linestyle=":", alpha=0.3)
 ax.set_xticks(sorted({y for sp in sports_with_trends for y in per_sport[sp]}))
@@ -190,7 +190,7 @@ for i, band in enumerate(age_bands):
 ax.stackplot(xs_all, *stack_data, labels=labels, colors=colors, alpha=0.85)
 ax.set_xlabel("Treatment year")
 ax.set_ylabel("NEISS raw cases (stacked by age band)")
-ax.set_title("NEISS — youth dental sport injuries by age band, 2013–2025")
+ax.set_title("NEISS, youth dental sport injuries by age band, 2013–2025")
 ax.legend(loc="upper left", fontsize=10)
 ax.set_xticks(xs_all)
 ax.grid(axis="y", linestyle=":", alpha=0.3)
@@ -203,7 +203,7 @@ print(f"Wrote outputs/figures/neiss_trend_age_bands.png")
 # -------------------- Markdown report --------------------
 md = []
 W = md.append
-W("# NEISS year-over-year trends — 2013–2025\n")
+W("# NEISS year-over-year trends, 2013–2025\n")
 W("_Auto-generated from `data/harmonized/master.csv`. Covers 12 treatment "
   "years of NEISS data on youth (ages 5–22) sport-related mouth injuries._\n")
 
@@ -211,16 +211,16 @@ W("## Overview")
 W(f"\nThis is the first time, to our knowledge, that **{len(years)} treatment years** "
   f"of NEISS dental-sport data has been aggregated into a single comparable table for "
   "the youth (5–22) age range. The 2020 gap reflects the COVID-19 youth-sports "
-  "shutdown — the CPSC query returned zero matching cases for that year.\n")
+  "shutdown, the CPSC query returned zero matching cases for that year.\n")
 
 W("## Overall trend\n")
 W("| year | raw NEISS cases | weighted national estimate |")
 W("|---:|---:|---:|")
 for r in overall:
-    W(f"| {r['year']} | {r['raw_cases']:,} | {r['weighted_estimate']:,} |")
+    W(f"| {r['year']} | {r['raw_cases']: } | {r['weighted_estimate']: } |")
 total_raw = sum(r["raw_cases"] for r in overall)
 total_we = sum(r["weighted_estimate"] for r in overall)
-W(f"| **Total** | **{total_raw:,}** | **{total_we:,}** |\n")
+W(f"| **Total** | **{total_raw: }** | **{total_we: }** |\n")
 W("![overall trend](figures/neiss_trend_overall.png)\n")
 
 W("## Per-sport trends (sports with ≥ 5 years of data)\n")
@@ -250,17 +250,17 @@ W("- **2020 is a true gap, not a download error.** The CPSC NEISS query "
 W("- **Rates** are not directly computed here because NEISS uses a population "
   "denominator that varies year to year; weighted national estimates above "
   "are CPSC's own values (sum of per-case sampling weights).")
-W("- **2013–2017 from hadley archive vs 2018–2025 from direct CPSC query** — "
+W("- **2013–2017 from hadley archive vs 2018–2025 from direct CPSC query**, "
   "the hadley archive used different column names but the same underlying "
   "NEISS data. The 2018–2025 extractions recovered an additional ~10–15% "
   "of cases per year by accepting `Body_Part_2 = 88` (Mouth as secondary "
-  "body part — a column added by NEISS in 2019).")
+  "body part, a column added by NEISS in 2019).")
 W("- **Trend interpretation**: any year-to-year change could reflect (a) "
   "real change in incidence, (b) change in youth sports participation, "
   "(c) change in NEISS sampling, (d) coding-practice change. Do not assume "
   "causality from these counts alone.")
 W("- **Underlying methodology** validated against the 2024 NEISS Coding "
-  "Manual (Appendix C for body parts, Appendix H for product codes) — see "
+  "Manual (Appendix C for body parts, Appendix H for product codes), see "
   "`docs/decisions.md` 2026-05-21 entry for the audit trail and the "
   "correction to PROTOCOL §4.1.\n")
 

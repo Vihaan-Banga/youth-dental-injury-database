@@ -1,4 +1,4 @@
-# Football Association — Factsheet
+# Football Association, Factsheet
 
 _Auto-generated from `master.csv`. 20 rows across 20 sources._
 
@@ -12,7 +12,7 @@ _Auto-generated from `master.csv`. 20 rows across 20 sources._
 
 | source | year | country | age | sex | level | rate /1000 AE | subgroup | denominator |
 |---|---:|---|---|---|---|---:|---|---|
-| beachy2004 | 2004 | US | mixed | male | school_varsity | **0.127** | — | per 1000 athlete-sessions |
+| beachy2004 | 2004 | US | mixed | male | school_varsity | **0.127** | ,  | per 1000 athlete-sessions |
 
 _Min 0.127, max 0.127, n=1._
 
@@ -20,8 +20,8 @@ _Min 0.127, max 0.127, n=1._
 
 | source | year | sex | subgroup | use rate | injury-relation analysis |
 |---|---:|---|---|---:|---|
-| pribble2004 | 2004 | mixed | — | **14%** | analyzed |
-| levin2003 | 2003 | male | — | **3%** | mentioned_only |
+| pribble2004 | 2004 | mixed | ,  | **14%** | analyzed |
+| levin2003 | 2003 | male | ,  | **3%** | mentioned_only |
 
 ## Distribution of rows
 
@@ -31,7 +31,7 @@ _Min 0.127, max 0.127, n=1._
 | mixed | 18 | | mixed | 17 |
 
 
-_Cumulative reported `injury_count` across these 20 rows: **27,674**._
+_Cumulative reported `injury_count` across these 20 rows: ** 27674**._
 
 Note: rows may double-count cases (e.g., aggregate row + per-sex breakdown of the same cohort). Use unique source-level reasoning when citing.
 

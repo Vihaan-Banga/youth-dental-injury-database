@@ -3,7 +3,7 @@
 injuries per PROTOCOL §3.1 and the corrected NEISS code map (docs/decisions.md
 2026-05-21 entry).
 
-CPSC does not publish stable direct URLs for NEISS annual files — they are
+CPSC does not publish stable direct URLs for NEISS annual files, they are
 accessible only via the on-line query builder at
 https://www.cpsc.gov/cgibin/NEISSQuery/UserCriteria.aspx. The script therefore
 expects a manually-downloaded file in `data/raw/neiss/neiss_<year>.tsv`. See
@@ -11,10 +11,10 @@ the README under `data/raw/neiss/README.md` for step-by-step download
 instructions.
 
 Filter logic (verified against the 2024 NEISS Coding Manual, Appendix C and
-Appendix H — see docs/decisions.md):
+Appendix H, see docs/decisions.md):
 
-  body_part == 88                                  # Mouth (incl. teeth) — primary
-   OR (body_part == 76 AND diagnosis indicates       # Face — only when dental
+  body_part == 88                                  # Mouth (incl. teeth), primary
+   OR (body_part == 76 AND diagnosis indicates       # Face, only when dental
                             dental involvement)      #    involvement per §3.3
   AND product_1 ∈ SPORT_PRODUCT_CODES               # 23 sport codes
   AND 5 ≤ age ≤ 22                                 # NEISS quirk: ages <2y are
@@ -41,9 +41,9 @@ OUT_DIR = ROOT / "data/extracted"
 
 # Body-part codes (per 2024 NEISS Coding Manual, Appendix C)
 PRIMARY_BODY_PART = "88"             # Mouth (incl. teeth)
-SECONDARY_BODY_PART = "76"           # Face — only with dental dx
+SECONDARY_BODY_PART = "76"           # Face, only with dental dx
 
-# NEISS sport product codes (per Appendix H — see docs/decisions.md for the
+# NEISS sport product codes (per Appendix H, see docs/decisions.md for the
 # full mapping to the project's `sport` controlled vocabulary).
 SPORT_PRODUCT_CODES = {
     "1205": ("basketball",         "limited_contact"),
@@ -71,15 +71,14 @@ SPORT_PRODUCT_CODES = {
     "5041": ("baseball",           "limited_contact"),
 }
 
-# Heuristic — when body_part==76, only keep cases whose Diagnosis text or
+# Heuristic, when body_part==76, only keep cases whose Diagnosis text or
 # Narrative mentions a tooth/dental term. Conservative to avoid sweeping in
 # eye-area-only injuries that happen to land in code 76.
 DENTAL_DX_PATTERNS = re.compile(
     r"\b(tooth|teeth|dental|avuls|luxat|crown\s+fract|root\s+fract|incisor|"
     r"molar|canine|enamel|dentin|pulp|denture|orthodont|jaw\s+fract|"
     r"alveolar|mandibul|maxill)",
-    re.IGNORECASE,
-)
+    re.IGNORECASE)
 
 
 def is_in_age_range(age_raw: str) -> bool:
@@ -91,7 +90,7 @@ def is_in_age_range(age_raw: str) -> bool:
     except (TypeError, ValueError):
         return False
     if age >= 200:
-        return False  # under 2 — always below the 5 floor
+        return False  # under 2, always below the 5 floor
     return 5 <= age <= 22
 
 
@@ -129,7 +128,7 @@ def filter_file(in_path: Path, out_path: Path) -> dict:
         reader = csv.DictReader(f, delimiter=delim)
         headers = reader.fieldnames or []
         col_body_part = find_column(headers, "Body_Part", "body_part_1", "body part 1", "body part")
-        # Body_Part_2 was added to NEISS in 2019 — may not exist in older files
+        # Body_Part_2 was added to NEISS in 2019, may not exist in older files
         try:
             col_body_part_2 = find_column(headers, "Body_Part_2", "body_part_2", "body part 2")
         except KeyError:
@@ -228,7 +227,7 @@ def main():
         print("  1. Go to https://www.cpsc.gov/cgibin/NEISSQuery/UserCriteria.aspx")
         print("  2. Choose User Affiliation, accept the data use agreement")
         print("  3. Filter Body Part = 'Mouth' (code 88) and optionally 'Face' (code 76)")
-        print("  4. Filter Product = each sport code (1205, 1211, 1267, ... — see SPORT_PRODUCT_CODES)")
+        print("  4. Filter Product = each sport code (1205, 1211, 1267, ..., see SPORT_PRODUCT_CODES)")
         print("  5. Set Age range 0–22 (we filter to 5–22 here; <2y NEISS codes need exclusion)")
         print("  6. Export as Tab-Delimited Text and save to data/raw/neiss/neiss_<year>.tsv")
         print()
@@ -247,7 +246,7 @@ def main():
         try:
             counts = filter_file(in_path, out_path)
         except KeyError as e:
-            print(f"   SKIPPED — column resolution failed: {e}")
+            print(f"   SKIPPED, column resolution failed: {e}")
             continue
         for k, v in counts.items():
             grand_total[k] = grand_total.get(k, 0) + v

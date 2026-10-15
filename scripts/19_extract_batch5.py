@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Batch 5 — 12 abstract-only extractions for the new includes from round-2
+"""Batch 5, 12 abstract-only extractions for the new includes from round-2
 journal searches (J Endod/J OMFS/Pediatrics/Inj Prev/OJSM)."""
 
 import csv
@@ -40,7 +40,7 @@ def w(sid, rows):
     print(f"wrote {p.name} ({len(rows)} rows)")
 
 
-# 11003192 — Indiana youth baseball face guards
+# 11003192, Indiana youth baseball face guards
 w("danis2000", [make("danis2000",
     citation="Danis RP, Hu K, Bell M. (2000). Acceptability of baseball face guards and reduction of oculofacial injury in receptive youth league players. Injury prevention : journal of the International Society for Child and Adolescent Injury Prevention.",
     pub_year=2000, study_type="cohort", country="US", region="Indiana",
@@ -53,10 +53,9 @@ w("danis2000", [make("danis2000",
     injury_category="orofacial_with_dental",
     mouthguard_injury_relation="analyzed",
     extraction_notes="238 youth baseball teams Central + Southern Indiana 1997. Non-randomized prospective cohort. ~half got face guard helmets (intervention). Significant reduction in oculofacial injury reported by intervention parents/players/coaches (p=0.04). No adverse performance.",
-    season_or_timeframe="1997 season",
-)])
+    season_or_timeframe="1997 season")])
 
-# 15178672 — youth soccer parents MG
+# 15178672, youth soccer parents MG
 w("pribble2004", [make("pribble2004",
     citation="Pribble JM, Maio RF, Freed GL. (2004). Parental perceptions regarding mandatory mouthguard use in competitive youth soccer. Injury prevention : journal of the International Society for Child and Adolescent Injury Prevention.",
     pub_year=2004, study_type="cross_sectional", country="US", region="",
@@ -70,10 +69,9 @@ w("pribble2004", [make("pribble2004",
     rate_raw=11.0, rate_denominator_raw="(%) of 120 youth soccer parents reporting orofacial injury in child",
     mouthguard_use_rate=0.14, mouthguard_injury_relation="analyzed",
     extraction_notes="120 parents of 8-14 yo soccer players (mean 11.8 ± 1.5; 48% female). 14% wore MG; 11% had orofacial injuries. 92% parents thought MG effective; 50% agreed mandatory. Dentist/physician recommendation associated with mandatory support (OR=2.9).",
-    season_or_timeframe="fall 2002",
-)])
+    season_or_timeframe="fall 2002")])
 
-# 16081755 — Australian Football MG RCT
+# 16081755, Australian Football MG RCT
 w("finch2005", [make("finch2005",
     citation="Finch C, Braham R, McIntosh A, McCrory P, Wolfe R. (2005). Should football players wear custom fitted mouthguards? Results from a group randomised controlled trial. Injury prevention : journal of the International Society for Child and Adolescent Injury Prevention.",
     pub_year=2005, study_type="cohort", country="AU", region="",
@@ -84,15 +82,14 @@ w("finch2005", [make("finch2005",
     sport="australian_rules_football", sport_category="contact",
     subgroup_label="",
     sample_size=301,
-    injury_count="", injury_type_raw="head/orofacial (H/O) injuries — Aus rules football",
+    injury_count="", injury_type_raw="head/orofacial (H/O) injuries, Aus rules football",
     injury_category="orofacial_with_dental",
     rate_raw=2.7, rate_denominator_raw="per 1000 person-hours of playing time (H/O combined)",
     mouthguard_use_rate=1.0, mouthguard_injury_relation="analyzed",
     extraction_notes="23 teams, 301 players, largest Australian community football league, 2001 season. Cluster RCT custom vs control MG. Both arms wore MGs (custom less common in controls). Overall H/O rate 2.7/1000 exposure hours. Game > training rate. Adjusted IRR custom-vs-control = 0.56 (95% CI 0.32-0.97) suggesting benefit.",
-    season_or_timeframe="2001 season",
-)])
+    season_or_timeframe="2001 season")])
 
-# 18519488 — HS baseball RIO 2005-07
+# 18519488, HS baseball RIO 2005-07
 w("collins2008", [make("collins2008",
     citation="Collins CL, Comstock RD. (2008). Epidemiological features of high school baseball injuries in the United States, 2005-2007. Pediatrics.",
     pub_year=2008, study_type="surveillance", country="US", region="",
@@ -107,10 +104,9 @@ w("collins2008", [make("collins2008",
     rate_raw=1.26, rate_denominator_raw="per 1000 athlete-exposures (HS baseball overall)",
     rate_per_1000_ae=1.26,
     extraction_notes="National HS RIO 2005-06 + 2006-07. 100 schools. National est 131,555 baseball injuries. 431 reported injuries → rate 1.26/1000 AE. Head/face 12.3% of body sites injured. Of 50 batted-ball injuries (11.6% of all), head/face 48.0% and mouth/teeth 16.0%. 9.7% medical disqualification season; 9.4% surgery.",
-    season_or_timeframe="2005/06 + 2006/07 academic years",
-)])
+    season_or_timeframe="2005/06 + 2006/07 academic years")])
 
-# 22260909 — pediatric facial fractures + dental
+# 22260909, pediatric facial fractures + dental
 w("isokungas2012", [make("isokungas2012",
     citation="Iso-Kungas P, Törnwall J, Suominen AL, Lindqvist C, Thorén H. (2012). Dental injuries in pediatric patients with facial fractures are frequent and severe. Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons.",
     pub_year=2012, study_type="case_series", country="", region="",
@@ -123,10 +119,9 @@ w("isokungas2012", [make("isokungas2012",
     injury_category="crown_fracture",
     rate_raw=22.5, rate_denominator_raw="(%) of 200 pediatric facial fracture pts with dental injury",
     extraction_notes="12-yr study, 200 patients <=16 with facial fracture (59.5% male). Mean age 12.6. 45 (22.5%) had DI. Crown fracture predominant (59.9%); premolars 37.4%. Multiple DIs in 71.1% of those with DI; severe in 66.7%. DI significantly associated with MVC (p=0.02) and mandibular fracture (p=0.03).",
-    season_or_timeframe="12 years",
-)])
+    season_or_timeframe="12 years")])
 
-# 24813778 — Nationwide ED facial fractures
+# 24813778, Nationwide ED facial fractures
 w("allareddy2014", [make("allareddy2014",
     citation="Allareddy V, Itty A, Maiorini E, Lee MK, Rampa S, Allareddy V, Nalliah RP. (2014). Emergency department visits with facial fractures among children and adolescents: an analysis of profile and predictors of causes of injuries. Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons.",
     pub_year=2014, study_type="surveillance", country="US", region="",
@@ -140,27 +135,25 @@ w("allareddy2014", [make("allareddy2014",
     injury_category="orofacial_with_dental",
     rate_raw="", rate_denominator_raw="aggregate ED visit count 2008-2010 (NEDS)",
     extraction_notes="Nationwide Emergency Department Sample 2008-2010, all ED visits with facial fracture aged ≤21. 336,124 visits. Late adolescents 18-21 = 45.6% of visits, middle adolescents 15-17 = 26.6%. 74.7% male. Most common: nasal bones + mandible. Younger: falls/pedal cycle; older: firearm/MVA/assault.",
-    season_or_timeframe="2008-2010",
-)])
+    season_or_timeframe="2008-2010")])
 
-# 32866487 — Pusan 5-yr sports OMF
+# 32866487, Pusan 5-yr sports OMF
 w("park2021", [make("park2021",
     citation="Park HK, Park JY, Choi NR, Kim UK, Hwang DS. (2021). Sports-Related Oral and Maxillofacial Injuries: A 5-Year Retrospective Study, Pusan National University Dental Hospital. Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons.",
     pub_year=2021, study_type="case_series", country="KR", region="Pusan",
     population_setting="mixed", age_min=5, age_max=99, age_category="mixed",
     extraction_basis="youth_primary",
     sex="mixed", level_of_play="mixed",
-    sport_raw="multi-sport — sports-related OMF trauma cohort",
+    sport_raw="multi-sport, sports-related OMF trauma cohort",
     sport="all_sports_aggregate", sport_category="",
     sample_size=517, injury_count=517,
     injury_type_raw="sports-related oral & maxillofacial injuries",
     injury_category="orofacial_with_dental",
     rate_raw="", rate_denominator_raw="case count 2014-2018",
     extraction_notes="517 patients Pusan National University Dental Hospital ED 2014-2018. Teenagers 27.9% (largest age group), <10yo 23.2% (2nd). Cycling = #1 cause overall (43.5%, NC). Within contact sports: football 47.7%. Within limited-contact: baseball 50.0%. Within noncontact: cycling 74.8%. Mechanisms: contact = other person's body 53.4%; LC = other objects 60.9%; NC = slip down 77.4%.",
-    season_or_timeframe="2014-2018 (5 years)",
-)])
+    season_or_timeframe="2014-2018 (5 years)")])
 
-# 33614796 — NEISS non-tackle football youth
+# 33614796, NEISS non-tackle football youth
 w("zendler2021", [make("zendler2021",
     citation="Zendler JM, Jadischke R, Frantz J, Hall S, Goulet GC. (2021). Emergency Department Visits From 2014 to 2018 for Head Injuries in Youth Non-Tackle Football Compared With Other Sports. Orthopaedic journal of sports medicine.",
     pub_year=2021, study_type="surveillance", country="US", region="",
@@ -174,10 +167,9 @@ w("zendler2021", [make("zendler2021",
     injury_category="orofacial_with_dental",
     rate_raw="", rate_denominator_raw="NEISS incident reports 2014-2018",
     extraction_notes="NEISS 2014-2018 ages 6-18, basketball+football+soccer head-region injuries. 26,770 reports. Football manually split into tackle vs non-tackle by narrative. Non-tackle: head most-injured body part, then face; most common dx = laceration. Annual rates per 100k participants computed using SFIA participation data.",
-    season_or_timeframe="2014-2018",
-)])
+    season_or_timeframe="2014-2018")])
 
-# 34973164 — NEISS martial arts head/neck
+# 34973164, NEISS martial arts head/neck
 w("stanbouly2022c", [make("stanbouly2022c",
     citation="Stanbouly D, Richardson J, Lee KC, Zeng Q, Perrino MA, Chuang SK. (2022). A Comparison of 2,845 Head and Neck Injuries in Various Martial Arts. Journal of oral and maxillofacial surgery : official journal of the American Association of Oral and Maxillofacial Surgeons.",
     pub_year=2022, study_type="surveillance", country="US", region="",
@@ -187,20 +179,18 @@ w("stanbouly2022c", [make("stanbouly2022c",
     sport_raw="martial arts (karate, kung fu, kickboxing, taekwondo, judo, jiu jitsu)",
     sport="martial_arts_other", sport_category="contact",
     sample_size=2845, injury_count=2845,
-    injury_type_raw="head + neck injuries — NEISS",
+    injury_type_raw="head + neck injuries, NEISS",
     injury_category="orofacial_with_dental",
     rate_raw="", rate_denominator_raw="20-yr NEISS aggregate count",
     extraction_notes="NEISS 20-yr (2000-2019) head+neck martial arts injuries. 2,845 cases. Taekwondo most likely head injury; jiu jitsu/judo most likely neck. Judo highest admission rate.",
-    season_or_timeframe="2000-2019 (20 years)",
-)])
+    season_or_timeframe="2000-2019 (20 years)")])
 
-# 35340727 — NCAA D-I 13 sports maxillofacial
+# 35340727, NCAA D-I 13 sports maxillofacial
 wormald_common = dict(citation="Mertz KC, Bolia IK, English MG, Cho AW, Trasolini N, Hasan LK, Haratian A, Diaz P, Romano R, Gamradt SC, Weber AE. (2022). Epidemiology and Outcomes of Maxillofacial Injuries in NCAA Division I Athletes Participating in 13 Sports. Orthopaedic journal of sports medicine.",
     pub_year=2022, study_type="surveillance", country="US", region="",
     population_setting="club", age_min=18, age_max=22, age_category="collegiate",
     level_of_play="elite",
-    season_or_timeframe="2015-16 through 2018-19 (4 seasons)",
-)
+    season_or_timeframe="2015-16 through 2018-19 (4 seasons)")
 w("mertz2022", [
     make("mertz2022", **wormald_common, sex="mixed",
         sport_raw="all 13 NCAA D-I sports (aggregate)",
@@ -208,33 +198,30 @@ w("mertz2022", [
         subgroup_label="all_13_sports",
         sample_size="", athlete_exposures="",
         injury_count=193,
-        injury_type_raw="maxillofacial injuries — single-institution registry",
+        injury_type_raw="maxillofacial injuries, single-institution registry",
         injury_category="orofacial_with_dental",
         rate_raw=2.06, rate_denominator_raw="per 1000 athlete-exposure HOURS (not per AE)",
-        rate_per_1000_ae="",  # intentionally empty — different denominator than per-AE rates
-        extraction_notes="Single-institution registry 13 NCAA D-I sports 4 seasons. 193 maxillofacial injuries. Overall 2.06 per 1000 AE-HOURS (not per 1000 AE — different denominator; do not directly compare to RIO/NEISS rates without converting). M 1.92 / F 2.43 per 1000 AE-h.",
-    ),
+        rate_per_1000_ae="",  # intentionally empty, different denominator than per-AE rates
+        extraction_notes="Single-institution registry 13 NCAA D-I sports 4 seasons. 193 maxillofacial injuries. Overall 2.06 per 1000 AE-HOURS (not per 1000 AE, different denominator; do not directly compare to RIO/NEISS rates without converting). M 1.92 / F 2.43 per 1000 AE-h."),
     make("mertz2022", **wormald_common, sex="male",
         sport_raw="men's basketball (NCAA D-I, single institution)",
         sport="basketball", sport_category="limited_contact",
         subgroup_label="",
         rate_raw=8.30, rate_denominator_raw="per 1000 athlete-exposure HOURS (men's BB; not per AE)",
         rate_per_1000_ae="",  # see above
-        extraction_notes="Men's basketball — highest rate at 8.30 per 1000 AE-HOURS. NOT per-AE; not directly comparable to collins2016/azadani2023's per-100k-AE rates. ~60 minutes/AE rough conversion gives ~0.14 per 1000 AE which is in the same ballpark as RIO rates.",
-    ),
+        extraction_notes="Men's basketball, highest rate at 8.30 per 1000 AE-HOURS. NOT per-AE; not directly comparable to collins2016/azadani2023's per-100k-AE rates. ~60 minutes/AE rough conversion gives ~0.14 per 1000 AE which is in the same ballpark as RIO rates."),
     make("mertz2022", **wormald_common, sex="male",
         sport_raw="men's water polo (NCAA D-I)",
         sport="water_polo", sport_category="contact",
         subgroup_label="",
         rate_raw=8.15, rate_denominator_raw="per 1000 athlete-exposure HOURS (men's water polo; not per AE)",
         rate_per_1000_ae="",
-        extraction_notes="Men's water polo — 8.15 per 1000 AE-HOURS. Same denominator caveat as men's basketball row.",
-    ),
+        extraction_notes="Men's water polo, 8.15 per 1000 AE-HOURS. Same denominator caveat as men's basketball row."),
 ])
 
-# 8784371 — Little League baseball
+# 8784371, Little League baseball
 # pasternack1996 (PMID 8784371, pub. 1996) and emshoff1997 (PMID 9191640,
-# pub. 1997) removed 2026-06-24 — pre-2000 publications, outside PROTOCOL §3.1
+# pub. 1997) removed 2026-06-24, pre-2000 publications, outside PROTOCOL §3.1
 # time window. See docs/decisions.md (2026-06-24).
 
-print("\nDone — batch 5 complete.")
+print("\nDone, batch 5 complete.")

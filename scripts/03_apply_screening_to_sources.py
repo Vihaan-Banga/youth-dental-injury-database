@@ -48,7 +48,7 @@ def short_cite(rec):
     yr = rec.get("pub_year") or ""
     title = (rec.get("title") or "").rstrip(".")
     title = title[:90] + "..." if len(title) > 90 else title
-    return f"{fa} ({yr}) — {title}"
+    return f"{fa} ({yr}), {title}"
 
 
 # Build source_id with collision handling (same logic as 00_pubmed_seed_sources.py).
@@ -121,13 +121,13 @@ by_code = Counter(d["reason_code"] for d in decisions if d["decision"] != "scree
 
 content = f"""# Source Tracking Log
 
-Every candidate source — whether eventually included or excluded — is logged here. This creates an audit trail for the systematic review process required for publication.
+Every candidate source, whether eventually included or excluded, is logged here. This creates an audit trail for the systematic review process required for publication.
 
 **Status values:**
 - `identified`: Citation found but not yet reviewed
 - `screened_excluded`: Abstract reviewed, does not meet inclusion criteria. Reason required.
 - `screened_included`: Abstract reviewed, meets criteria, pending full-text review
-- `needs_additional_review`: Abstract reviewed but a key §3.1 attribute (age, sport-relatedness, data extractability) could not be confirmed from the abstract alone — needs full-text review before final include/exclude call.
+- `needs_additional_review`: Abstract reviewed but a key §3.1 attribute (age, sport-relatedness, data extractability) could not be confirmed from the abstract alone, needs full-text review before final include/exclude call.
 - `fulltext_excluded`: Full text reviewed, does not meet criteria. Reason required.
 - `included`: Meets criteria, queued for extraction
 - `extracted`: Data extracted into `data/extracted/<source_id>.csv`
@@ -138,33 +138,33 @@ Every candidate source — whether eventually included or excluded — is logged
 | code | meaning |
 |---|---|
 | E-lang   | non-English (§3.1 v1.0 scope) |
-| E-review | review/SR/MA — kept for source mining, not extracted (§3.2) |
+| E-review | review/SR/MA, kept for source mining, not extracted (§3.2) |
 | E-case   | single case report / n<5 (§3.2) |
-| E-age    | population outside 5–22 (§3.1) — adults only, military, etc. |
+| E-age    | population outside 5–22 (§3.1), adults only, military, etc. |
 | E-offtop | not sport-related or wrong subject (§3.1/§3.3) |
 | E-noprim | no extractable primary numerical injury data (§3.1) |
 | E-nodent | no dental/orofacial-with-dental outcome (§3.3) |
 | E-nonpr  | non-peer-reviewed and not an approved surveillance/governing body source (§3.2) |
-| E-date   | published before 2000 — outside the §3.1 publication window |
+| E-date   | published before 2000, outside the §3.1 publication window |
 | R-age    | age range / population unclear from abstract |
 | R-mixed  | mixed adult+youth, youth subset extractability needs full text |
 | R-data   | not obvious whether numerical injury counts are extractable |
-| R-other  | other ambiguity — see notes in the screening report |
+| R-other  | other ambiguity, see notes in the screening report |
 
 ---
 
 ## Sources
 
-**Screening summary** (abstract screen 2026-05-21, AI-assisted first pass; full-text review of the open-access `needs_additional_review` subset 2026-06-12 — see `docs/decisions.md` (2026-06-12). The project lead and advisor still need to second-screen the 20% reliability sample per PROTOCOL §4.4.) Percentages are of {sum(by_dec.values())} screened records:
+**Screening summary** (abstract screen 2026-05-21, AI-assisted first pass; full-text review of the open-access `needs_additional_review` subset 2026-06-12, see `docs/decisions.md` (2026-06-12). The project lead and advisor still need to second-screen the 20% reliability sample per PROTOCOL §4.4.) Percentages are of {sum(by_dec.values())} screened records:
 
-- `screened_included`: **{by_dec.get('screened_included', 0)}** ({100 * by_dec.get('screened_included', 0) // max(1, sum(by_dec.values()))}%) — abstract passed, full-text pending
-- `included`: **{by_dec.get('included', 0)}** ({100 * by_dec.get('included', 0) // max(1, sum(by_dec.values()))}%) — full-text passed, queued for extraction
-- `extracted`: **{by_dec.get('extracted', 0)}** ({100 * by_dec.get('extracted', 0) // max(1, sum(by_dec.values()))}%) — data in master.csv
+- `screened_included`: **{by_dec.get('screened_included', 0)}** ({100 * by_dec.get('screened_included', 0) // max(1, sum(by_dec.values()))}%), abstract passed, full-text pending
+- `included`: **{by_dec.get('included', 0)}** ({100 * by_dec.get('included', 0) // max(1, sum(by_dec.values()))}%), full-text passed, queued for extraction
+- `extracted`: **{by_dec.get('extracted', 0)}** ({100 * by_dec.get('extracted', 0) // max(1, sum(by_dec.values()))}%), data in master.csv
 - `needs_additional_review`: **{by_dec.get('needs_additional_review', 0)}** ({100 * by_dec.get('needs_additional_review', 0) // max(1, sum(by_dec.values()))}%)
-- `fulltext_excluded`: **{by_dec.get('fulltext_excluded', 0)}** ({100 * by_dec.get('fulltext_excluded', 0) // max(1, sum(by_dec.values()))}%) — excluded after full-text review
+- `fulltext_excluded`: **{by_dec.get('fulltext_excluded', 0)}** ({100 * by_dec.get('fulltext_excluded', 0) // max(1, sum(by_dec.values()))}%), excluded after full-text review
 - `screened_excluded`: **{by_dec.get('screened_excluded', 0)}** ({100 * by_dec.get('screened_excluded', 0) // max(1, sum(by_dec.values()))}%)
 
-PubMed initial seed (search run 2026-05-21, query per PROTOCOL.md §4.2 — 202 hits, top 200 retrieved). See `outputs/screening_report_2026-05-21.md` for per-decision reasoning. Raw esearch/esummary/efetch dumps preserved under `data/raw/papers/_search_logs/`.
+PubMed initial seed (search run 2026-05-21, query per PROTOCOL.md §4.2, 202 hits, top 200 retrieved). See `outputs/screening_report_2026-05-21.md` for per-decision reasoning. Raw esearch/esummary/efetch dumps preserved under `data/raw/papers/_search_logs/`.
 
 | source_id | pmid | citation_short | journal | doi | status | reason_if_excluded | date_added | extractor |
 |---|---|---|---|---|---|---|---|---|
@@ -178,7 +178,7 @@ PubMed initial seed (search run 2026-05-21, query per PROTOCOL.md §4.2 — 202 
 
 | system | url | status | notes |
 |---|---|---|---|
-| NEISS | https://www.cpsc.gov/cgibin/NEISSQuery/ | not_started | Free, public query interface. Annual CSV files at https://www.cpsc.gov/Research--Statistics/NEISS-Injury-Data. Body part code 88=Mouth (incl. teeth) — see `docs/decisions.md` for the correction to PROTOCOL §4.1. |
+| NEISS | https://www.cpsc.gov/cgibin/NEISSQuery/ | not_started | Free, public query interface. Annual CSV files at https://www.cpsc.gov/Research--Statistics/NEISS-Injury-Data. Body part code 88=Mouth (incl. teeth), see `docs/decisions.md` for the correction to PROTOCOL §4.1. |
 | High School RIO | https://www.nationwidechildrens.org/research/areas-of-research/center-for-injury-research-and-policy/research-projects/high-school-rio | not_started | Published annual reports |
 | NCAA ISP | https://www.datalys.org/ncaa-injury-surveillance-program/ | not_started | Aggregate reports public |
 

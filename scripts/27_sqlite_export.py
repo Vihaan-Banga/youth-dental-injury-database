@@ -79,12 +79,12 @@ cur.execute("SELECT COUNT(DISTINCT source_id) FROM master")
 nsrc = cur.fetchone()[0]
 conn.close()
 
-print(f"Wrote {DB.relative_to(ROOT)} — {n} rows / {nsrc} sources")
-print(f"  size: {DB.stat().st_size:,} bytes")
+print(f"Wrote {DB.relative_to(ROOT)}, {n} rows / {nsrc} sources")
+print(f"  size: {DB.stat().st_size: } bytes")
 
 # Sample-query README
 SAMPLE_MD = ROOT / "data/harmonized/README_sqlite.md"
-SAMPLE_MD.write_text("""# master.sqlite — sample queries
+SAMPLE_MD.write_text("""# master.sqlite, sample queries
 
 This is `data/harmonized/master.csv` loaded into SQLite as a single table `master`.
 Useful when you want a queryable view rather than parsing CSV.

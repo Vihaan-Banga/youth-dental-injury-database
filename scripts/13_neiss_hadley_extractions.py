@@ -2,7 +2,7 @@
 """Turn the hadley/neiss 2013-2017 per-year filtered case-level CSVs into
 master.csv extraction rows (one extraction file per year).
 
-Mirrors the structure of scripts/11_neiss_2023_from_cases.py — for each year:
+Mirrors the structure of scripts/11_neiss_2023_from_cases.py, for each year:
   - 1 aggregate row (all sports, all youth 5-22)
   - 3 age-band rows (youth 5-12, adolescent 13-17, collegiate 18-22)
   - 1 row per sport with >= 5 raw cases
@@ -71,7 +71,7 @@ def make_row(source_id, year, label, subset, *,
     facial_with_dental = sum(1 for c in subset if c["body_part_label"] == "Face_with_dental")
     note_parts = [
         f"Raw NEISS case count for {label}, treatment year {year}",
-        f"weighted national estimate = {weighted:,.0f}",
+        f"weighted national estimate = {weighted: .0f}",
     ]
     if facial_with_dental > 0:
         note_parts.append(
@@ -106,7 +106,7 @@ def make_row(source_id, year, label, subset, *,
         "athlete_exposures": "",
         "season_or_timeframe": f"{year} calendar year",
         "injury_count": n,
-        "injury_type_raw": "ED-treated mouth injury (NEISS Body_Part = 88, primary, or 76+dental) — sport-related (Product_1 ∈ 23 sport codes)",
+        "injury_type_raw": "ED-treated mouth injury (NEISS Body_Part = 88, primary, or 76+dental), sport-related (Product_1 ∈ 23 sport codes)",
         "injury_category": "unspecified_dental",
         "rate_raw": "",
         "rate_denominator_raw": "",
@@ -132,8 +132,7 @@ def build_year(year):
         age_min=5, age_max=22, age_category="mixed", sex="mixed",
         sport_raw="all 23 sport-related product codes",
         sport="all_sports_aggregate", sport_category="",
-        subgroup_label="all_youth_aggregate",
-    ))
+        subgroup_label="all_youth_aggregate"))
 
     # 2. Age bands
     for cat, lo, hi in (("youth", 5, 12), ("adolescent", 13, 17), ("collegiate", 18, 22)):
@@ -143,8 +142,7 @@ def build_year(year):
             age_min=lo, age_max=hi, age_category=cat, sex="mixed",
             sport_raw=f"all 23 sport-related product codes ({cat} band)",
             sport="all_sports_aggregate", sport_category="",
-            subgroup_label=f"age_band_{cat}",
-        ))
+            subgroup_label=f"age_band_{cat}"))
 
     # 3. Per-sport (>= 5 cases)
     sport_groups = defaultdict(list)
@@ -160,8 +158,7 @@ def build_year(year):
             age_min=5, age_max=22, age_category="mixed", sex="mixed",
             sport_raw=sport.replace("_", " "),
             sport=sport, sport_category=sport_cats[sport],
-            subgroup_label="",
-        ))
+            subgroup_label=""))
 
     # 4. Sex
     for sex in ("male", "female"):
@@ -171,8 +168,7 @@ def build_year(year):
             age_min=5, age_max=22, age_category="mixed", sex=sex,
             sport_raw=f"all 23 sport-related product codes ({sex})",
             sport="all_sports_aggregate", sport_category="",
-            subgroup_label=f"sex_{sex}",
-        ))
+            subgroup_label=f"sex_{sex}"))
 
     return source_id, rows
 
